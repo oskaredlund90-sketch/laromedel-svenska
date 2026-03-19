@@ -327,7 +327,7 @@ export default function Arskurs6Page() {
           {[
             {
               q: "Hur l\u00e5ng tid har jag p\u00e5 mig?",
-              a: "L\u00e4sdelen tar ungef\u00e4r 80 minuter och skrivdelen ungef\u00e4r 100 minuter. Taldelen varierar beroende p\u00e5 gruppstorlek. Du f\u00e5r veta exakta tider av din l\u00e4rare.",
+              a: "Tiderna kan variera fr\u00e5n \u00e5r till \u00e5r. Du f\u00e5r god tid p\u00e5 dig f\u00f6r b\u00e5de l\u00e4sdelen och skrivdelen. Taldelen varierar beroende p\u00e5 gruppstorlek. Din l\u00e4rare meddelar exakta tider inf\u00f6r provet.",
             },
             {
               q: "F\u00e5r jag anv\u00e4nda ordlista?",

@@ -151,10 +151,10 @@ export default function Arskurs9Page() {
                 Du f&aring;r ett texth&auml;fte med texter kopplade till
                 &aring;rets tema &ndash; sk&ouml;nlitteratur, sakprosatexter
                 och bilder. F&ouml;rst l&auml;ser du texterna p&aring; egen
-                hand i <strong>45&ndash;60 minuter</strong> utan tillg&aring;ng
+                hand i en <strong>l&auml;stid</strong> utan tillg&aring;ng
                 till uppgifterna. D&auml;refter har du{" "}
-                <strong>140 minuter</strong> p&aring; dig att besvara{" "}
-                <strong>35 uppgifter</strong>.
+                <strong>god tid</strong> p&aring; dig att besvara
+                uppgifterna. Din l&auml;rare meddelar exakta tider.
               </p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 Det finns tv&aring; typer av uppgifter:{" "}
@@ -620,9 +620,9 @@ export default function Arskurs9Page() {
                 <li>&bull; <strong>Spr&aring;k:</strong> Variera meningsbyggnad, anv&auml;nd sambandsord och undvik talspr&aring;k.</li>
               </ul>
               <Warning>
-                Tidsplanering &auml;r avg&ouml;rande. Dela upp tiden:
-                planering (10 min), skrivande (60&ndash;70 min),
-                &ouml;verläsning och redigering (15&ndash;20 min).
+                Tidsplanering &auml;r avg&ouml;rande. Dela upp tiden i tre delar:
+                planering f&ouml;rst, sedan skrivande (st&ouml;rsta delen av tiden),
+                och spara tid p&aring; slutet f&ouml;r &ouml;verl&auml;sning och redigering.
               </Warning>
             </CardContent>
           </Card>
@@ -635,7 +635,7 @@ export default function Arskurs9Page() {
           {[
             {
               q: "Hur l\u00e5ng tid har jag p\u00e5 mig?",
-              a: "Delprov B: 45\u201360 minuter l\u00e4stid + 140 minuter f\u00f6r att besvara uppgifterna. Delprov C: hela skrivpasset (vanligtvis 120\u2013150 minuter). Delprov A (muntlig) varierar. Exakta tider meddelas av din l\u00e4rare.",
+              a: "Tiderna kan variera fr\u00e5n \u00e5r till \u00e5r. P\u00e5 delprov B f\u00e5r du en l\u00e4stid f\u00f6ljd av tid f\u00f6r att besvara uppgifterna. Delprov C \u00e4r ett l\u00e4ngre skrivpass. Delprov A (muntlig) varierar. Din l\u00e4rare meddelar exakta tider inf\u00f6r provet.",
             },
             {
               q: "F\u00e5r jag anv\u00e4nda ordlista och andra hj\u00e4lpmedel?",

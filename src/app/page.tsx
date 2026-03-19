@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, GraduationCap, Lightbulb, Sparkles, PenLine, BookA, ClipboardCheck, Dumbbell } from "lucide-react";
+import { BookOpen, GraduationCap, Lightbulb, Sparkles, PenLine, BookA, ClipboardCheck, Dumbbell, Globe } from "lucide-react";
 import { VeckansOrd } from "@/components/veckans-ord";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
@@ -41,6 +41,12 @@ const FEATURE_SECTIONS = [
     description: "Interaktiva övningar i ordklasser, sambandsord, skiljetecken och stavning.",
     href: "/ovningar",
     icon: Dumbbell,
+  },
+  {
+    title: "SVA (andraspråk)",
+    description: "Tips och resurser för dig som läser svenska som andraspråk – ordförråd, grammatik och nationella prov.",
+    href: "/sva",
+    icon: Globe,
   },
 ];
 

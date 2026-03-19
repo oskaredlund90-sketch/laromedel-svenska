@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, Menu, X } from "lucide-react";
+import { BookOpen, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
@@ -18,6 +18,8 @@ const NAV_ITEMS = [
   { href: "/grammatik", label: "Grammatik" },
   { href: "/skrivverkstad", label: "Skrivverkstad" },
   { href: "/ovningar", label: "Övningar" },
+  { href: "/litteraturtips", label: "Litteraturtips" },
+  { href: "/sva", label: "SVA" },
 ];
 
 export function Header() {
@@ -51,6 +53,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/sok"
+            className="rounded-md p-2 text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+            aria-label="Sök"
+          >
+            <Search className="h-5 w-5" />
+          </Link>
           <ThemeToggle />
           <Button
             variant="ghost"

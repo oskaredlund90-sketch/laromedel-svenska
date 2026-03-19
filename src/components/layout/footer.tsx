@@ -34,6 +34,8 @@ export function Footer() {
               <li><Link href="/skrivverkstad" className="hover:text-neutral-900 dark:hover:text-white">Skrivverkstad</Link></li>
               <li><Link href="/nationella-prov" className="hover:text-neutral-900 dark:hover:text-white">Nationella prov</Link></li>
               <li><Link href="/ovningar" className="hover:text-neutral-900 dark:hover:text-white">Övningar</Link></li>
+              <li><Link href="/litteraturtips" className="hover:text-neutral-900 dark:hover:text-white">Litteraturtips</Link></li>
+              <li><Link href="/sva" className="hover:text-neutral-900 dark:hover:text-white">SVA (andrasprak)</Link></li>
             </ul>
           </div>
 
