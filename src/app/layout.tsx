@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import { ServiceWorkerRegister } from "@/components/service-worker-register";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,6 +24,15 @@ export const metadata: Metadata = {
   description:
     "Ett öppet digitalt läromedel i svenska och svenska som andraspråk för alla skolåldrar. Kursplaner, lärarhandledningar, elevtips och AI-verktyg.",
   metadataBase: new URL("https://laromedel-svenska.vercel.app"),
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Svenska",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
 };
 
 export default function RootLayout({
@@ -38,6 +48,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground antialiased">
         <ThemeProvider>
+          <ServiceWorkerRegister />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
