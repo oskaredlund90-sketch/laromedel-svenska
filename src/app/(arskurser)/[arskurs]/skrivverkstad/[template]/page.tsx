@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { PenLine, Lightbulb, AlertTriangle } from "lucide-react";
+import { PenLine, Lightbulb, AlertTriangle, Dumbbell } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
+import { SkrivverkstadOvningar } from "@/components/skrivverkstad-ovningar";
+import type { AgeGroup } from "@/lib/supabase/types";
 import { type ReactNode } from "react";
 
 /* ------------------------------------------------------------------ */
@@ -645,6 +647,528 @@ function KronikaContent() {
   );
 }
 
+function FaktatextContent() {
+  return (
+    <>
+      <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+        En faktatext informerar läsaren om ett ämne på ett sakligt och objektivt
+        sätt. Syftet är att förmedla kunskap - inte att underhålla eller
+        övertyga. Faktatexter finns överallt: i läroböcker, uppslagsverk,
+        tidningsartiklar och rapporter.
+      </p>
+
+      <Section title="Struktur">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <ExampleCard title="1. Rubrik och inledning">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Rubriken ska vara tydlig och informativ. Inledningen ger en
+              överblick över ämnet och väcker läsarens intresse.
+            </p>
+            <ExampleBlock title="Exempel">
+              Isbjörnen - Arktis hotade rovdjur{"\n\n"}
+              Isbjörnen är världens största landlevande rovdjur och en symbol
+              för Arktis. Men klimatförändringarna hotar dess livsmiljö.
+            </ExampleBlock>
+          </ExampleCard>
+
+          <ExampleCard title="2. Brödtext med underrubriker">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Dela upp texten i tydliga avsnitt med underrubriker. Varje avsnitt
+              behandlar en aspekt av ämnet.
+            </p>
+            <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>- En tanke per stycke</li>
+              <li>- Logisk ordning: från allmänt till specifikt</li>
+              <li>- Använd ämnesmeningar i varje stycke</li>
+              <li>- Stöd påståenden med fakta och exempel</li>
+            </ul>
+          </ExampleCard>
+
+          <ExampleCard title="3. Källhantering">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Ange var du hämtat din information. Det ger texten trovärdighet
+              och gör det möjligt för läsaren att kontrollera uppgifterna.
+            </p>
+            <Ex>Enligt Naturvårdsverket (2024) finns det cirka 3 000 isbjörnar i Svalbardområdet.</Ex>
+            <Ex>Källa: WWF, &quot;Isbjörnens status&quot;, publicerad 2024-01-15.</Ex>
+          </ExampleCard>
+
+          <ExampleCard title="4. Avslutning">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Sammanfatta de viktigaste punkterna. Kan innehålla en framåtblick
+              eller en koppling till ett större sammanhang.
+            </p>
+            <ExampleBlock title="Exempel">
+              Isbjörnen står inför stora utmaningar, men internationella insatser
+              för att skydda dess livsmiljö ger hopp. Framtiden beror på hur
+              världen hanterar klimatförändringarna.
+            </ExampleBlock>
+          </ExampleCard>
+        </div>
+      </Section>
+
+      <Section title="Källkritik och objektivitet">
+        <ExampleCard title="Granska dina källor">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p>
+              Inte all information är tillförlitlig. Innan du använder en källa,
+              ställ dig dessa frågor:
+            </p>
+            <ul className="space-y-1">
+              <li>- <strong>Vem</strong> står bakom informationen? Är det en expert, en myndighet eller en okänd bloggare?</li>
+              <li>- <strong>När</strong> publicerades den? Är informationen aktuell?</li>
+              <li>- <strong>Varför</strong> publicerades den? Finns det ett dolt syfte, som reklam eller propaganda?</li>
+              <li>- <strong>Stämmer det</strong> med andra källor? Kan du hitta samma uppgift på flera ställen?</li>
+            </ul>
+          </div>
+          <Tip>
+            Använd Skolverkets källkritiska kriterier: äkthet, tid, beroende
+            och tendens. Ju fler kriterier en källa uppfyller, desto mer
+            tillförlitlig är den.
+          </Tip>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Språk och stil">
+        <ExampleCard title="Tydligt och sakligt språk">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Klarhet:</strong> Skriv korta, tydliga meningar. Förklara
+              svåra begrepp första gången de dyker upp.</p>
+            <p><strong>Precision:</strong> Använd exakta siffror och begrepp
+              istället för vaga uttryck.</p>
+            <Ex>Isbjörnen väger 350-700 kg (inte &quot;isbjörnen väger jättemycket&quot;).</Ex>
+            <p><strong>Objektivitet:</strong> Undvik värdeladdade ord och
+              personliga åsikter. Låt fakta tala.</p>
+          </div>
+          <Warning>
+            Undvik talspråk i faktatexter. Skriv &quot;ungefär&quot; istället för
+            &quot;typ&quot;, &quot;eftersom&quot; istället för &quot;för att&quot; (i betydelsen
+            orsak), och &quot;mycket&quot; istället för &quot;jätte-&quot;.
+          </Warning>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Vanliga misstag att undvika">
+        <ExampleCard title="Checklista">
+          <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <li>- <strong>Inga källor:</strong> Uppgifter utan källa tappar trovärdighet.</li>
+            <li>- <strong>Ostrukturerad text:</strong> Utan underrubriker blir texten svårläst.</li>
+            <li>- <strong>Åsikter istället för fakta:</strong> En faktatext ska informera, inte övertyga.</li>
+            <li>- <strong>Kopierat text:</strong> Skriv om med egna ord - plagiat är aldrig acceptabelt.</li>
+            <li>- <strong>Svåra ord utan förklaring:</strong> Tänk på din målgrupp och förklara facktermer.</li>
+            <li>- <strong>Osammanhängande stycken:</strong> Använd sambandsord för att binda ihop texten.</li>
+          </ul>
+        </ExampleCard>
+      </Section>
+    </>
+  );
+}
+
+function HistoriskTextContent() {
+  return (
+    <>
+      <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+        En historisk text berättar om händelser, personer eller epoker ur det
+        förflutna. Den kan vara strikt saklig eller använda berättande
+        tekniker för att göra historien levande - men den måste alltid vara
+        förankrad i fakta.
+      </p>
+
+      <Section title="Struktur">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <ExampleCard title="1. Inledning och scensättning">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Placera läsaren i tid och rum. Ge en bild av sammanhanget och
+              väck nyfikenhet på vad som ska komma.
+            </p>
+            <ExampleBlock title="Exempel">
+              Stockholm, november 1520. Stortorget var tyst när gryningen kom,
+              men innan dagen var slut skulle platsen vara dränkt i blod. Det
+              som hände gick till historien som Stockholms blodbad.
+            </ExampleBlock>
+          </ExampleCard>
+
+          <ExampleCard title="2. Bakgrund">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Förklara vad som ledde fram till händelsen. Vilka var de
+              viktigaste orsakerna och aktörerna?
+            </p>
+            <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>- Politiska, sociala och ekonomiska orsaker</li>
+              <li>- Viktiga personer och deras roller</li>
+              <li>- Tidigare händelser som påverkade utvecklingen</li>
+              <li>- Konflikter och maktförhållanden</li>
+            </ul>
+          </ExampleCard>
+
+          <ExampleCard title="3. Berättelse och handling">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Berätta vad som hände, steg för steg. Använd en tydlig
+              kronologisk ordning eller tematisk uppdelning.
+            </p>
+            <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>- Följ tidslinjen eller organisera tematiskt</li>
+              <li>- Lyft fram avgörande ögonblick</li>
+              <li>- Använd konkreta detaljer för att göra texten levande</li>
+              <li>- Blanda översikt med närbild</li>
+            </ul>
+          </ExampleCard>
+
+          <ExampleCard title="4. Avslutning och reflektion">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Beskriv konsekvenserna och vad händelsen betydde i ett längre
+              perspektiv. Reflektera över dess relevans idag.
+            </p>
+            <ExampleBlock title="Exempel">
+              Stockholms blodbad blev en vändpunkt. Upproret som följde ledde
+              till att Gustav Vasa valdes till kung och Sverige blev en
+              självständig nation. Händelsen påminner oss om hur våld och
+              maktmissbruk kan få oväntade konsekvenser.
+            </ExampleBlock>
+          </ExampleCard>
+        </div>
+      </Section>
+
+      <Section title="Perspektiv och berättarröst">
+        <ExampleCard title="Välja perspektiv">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Första person (vittne):</strong> Du skriver som om du
+              var på plats. Skapar närhet och inlevelse, men kräver att du
+              skiljer tydligt på fakta och fiktion.</p>
+            <p><strong>Tredje person (historiker):</strong> Du beskriver
+              händelserna utifrån. Mer objektivt och vanligast i skolarbeten.</p>
+          </div>
+          <ExampleBlock title="Första person">
+            Jag stod i folkmassan på Stortorget och kunde inte tro mina ögon.
+            Soldaterna ledde fram männen en efter en...
+          </ExampleBlock>
+          <ExampleBlock title="Tredje person">
+            Folket på Stortorget tvingades bevittna hur soldaterna ledde
+            fram de dömda männen. Enligt samtida källor var stämningen
+            fylld av skräck.
+          </ExampleBlock>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Fakta och fiktion">
+        <ExampleCard title="Var går gränsen?">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p>
+              I en historisk text är det viktigt att skilja på vad vi vet
+              och vad vi antar. Du kan göra texten levande med detaljer,
+              men du får inte hitta på händelser eller förvränga fakta.
+            </p>
+            <p><strong>Tillåtet:</strong> Beskriva väder, stämningar och
+              miljöer baserat på historiska källor och rimliga antaganden.</p>
+            <p><strong>Inte tillåtet:</strong> Hitta på dialoger som
+              förändrar historiens innebörd, eller flytta händelser i tid
+              för att det passar bättre.</p>
+          </div>
+          <Warning>
+            Se upp med anakronismer - saker som inte fanns under den tidsperiod
+            du skriver om. Kontrollera alltid att mat, kläder, teknologi och
+            språkbruk stämmer med epoken.
+          </Warning>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Vanliga misstag att undvika">
+        <ExampleCard title="Checklista">
+          <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <li>- <strong>Anakronismer:</strong> Kontrollera att detaljer stämmer med tidsperioden.</li>
+            <li>- <strong>Ingen kontext:</strong> Förklara varför händelsen var viktig, inte bara vad som hände.</li>
+            <li>- <strong>Bara årtal och namn:</strong> Gör texten levande med scener och detaljer.</li>
+            <li>- <strong>Ensidigt perspektiv:</strong> Försök belysa flera sidor av en historisk händelse.</li>
+            <li>- <strong>Fakta och fiktion blandas:</strong> Var tydlig med vad som är känt och vad som är tolkning.</li>
+            <li>- <strong>Modern moral på historiska händelser:</strong> Försök förstå handlingar i sin tids kontext.</li>
+          </ul>
+        </ExampleCard>
+      </Section>
+    </>
+  );
+}
+
+function PoesiContent() {
+  return (
+    <>
+      <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+        Poesi är en konstform där varje ord räknas. Dikter kan uttrycka
+        känslor, måla bilder och fånga ögonblick på ett sätt som prosa
+        inte kan. Här utforskar du rim, rytm och bildspråk och lär dig
+        att skriva egna dikter.
+      </p>
+
+      <Section title="Versformer">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <ExampleCard title="Fri vers">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Ingen fast form, inget rimmönster, ingen bestämd rytm.
+              Friheten ställer högre krav på varje ordval.
+            </p>
+            <Ex>
+              Morgonen{"\n"}
+              kryper in genom persiennerna{"\n"}
+              och lägger sig som remsor{"\n"}
+              av ljus på golvet.
+            </Ex>
+          </ExampleCard>
+
+          <ExampleCard title="Bunden vers">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Följer ett fast mönster med rim och rytm. Traditionell
+              diktform som kräver hantverksskicklighet.
+            </p>
+            <Ex>
+              Nu grönska alla dalar (A){"\n"}
+              och grönskas alla hagar (B){"\n"}
+              och vårens vindar talar (A){"\n"}
+              om ljusa sommardagar. (B)
+            </Ex>
+          </ExampleCard>
+
+          <ExampleCard title="Haiku">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Japansk diktform: tre rader med 5-7-5 stavelser.
+              Fångar ett ögonblick i naturen.
+            </p>
+            <Ex>
+              Löven faller ner{"\n"}
+              Tyst landar de på vattnet{"\n"}
+              Ringar sprider sig
+            </Ex>
+          </ExampleCard>
+
+          <ExampleCard title="Sonett">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              14 rader med fast rimmönster. En klassisk form som ofta
+              tar upp kärlek, skönhet eller tidens gång.
+            </p>
+            <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>- Shakespearesonett: 3 kvartetter + 1 kuplett</li>
+              <li>- Italiensk sonett: 1 oktav + 1 sextett</li>
+              <li>- Avslutande rader ger ofta en vändning</li>
+            </ul>
+          </ExampleCard>
+        </div>
+      </Section>
+
+      <Section title="Rim och rytm">
+        <ExampleCard title="Rimmönster">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Parrim (AA BB):</strong> Två rader i rad som rimmar.</p>
+            <Ex>Solen sjunker i det blå (A){"\n"}Nu är det dags att sova gå (A)</Ex>
+
+            <p><strong>Korsrim (AB AB):</strong> Varannan rad rimmar.</p>
+            <Ex>Vinden viskar i mitt hår (A){"\n"}Molnen seglar vitt mot blått (B){"\n"}Sommaren som aldrig går (A){"\n"}Värmen som jag aldrig glömt (B)</Ex>
+
+            <p><strong>Omslutande rim (ABBA):</strong> Första och fjärde raden rimmar, liksom andra och tredje.</p>
+            <Ex>Natten sänker sig så still (A){"\n"}Stjärnorna de lyser klart (B){"\n"}Månen visar vägen snart (B){"\n"}Dit jag allra helst vill (A)</Ex>
+          </div>
+          <Tip>
+            Läs dikten högt! Rim och rytm är ljud - du hör om det
+            fungerar bättre än du ser det på papper.
+          </Tip>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Bildspråk">
+        <ExampleCard title="Poetiska verktyg">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Liknelse:</strong> Jämförelse med &quot;som&quot; eller &quot;lik&quot;.</p>
+          </div>
+          <ExampleBlock title="Liknelse">
+            Hennes ögon var som två mörka sjöar.
+          </ExampleBlock>
+
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Metafor:</strong> Direkt jämförelse utan &quot;som&quot;.</p>
+          </div>
+          <ExampleBlock title="Metafor">
+            Livet är en resa utan karta.
+          </ExampleBlock>
+
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Personifikation:</strong> Ge mänskliga egenskaper till
+              döda ting eller abstrakta begrepp.</p>
+          </div>
+          <ExampleBlock title="Personifikation">
+            Vinden viskade hemligheter genom trädkronorna.
+          </ExampleBlock>
+
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Symbol:</strong> Ett konkret föremål som representerar
+              något abstrakt.</p>
+          </div>
+          <ExampleBlock title="Symbol">
+            Den vissna rosen låg kvar på bordet. (rosen = kärlek som tagit slut)
+          </ExampleBlock>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Att skriva dikt">
+        <ExampleCard title="Praktiska råd">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Börja med en känsla eller bild:</strong> Vad vill du
+              förmedla? Utgå från något konkret - ett minne, en plats, ett
+              ögonblick.</p>
+            <p><strong>Välj dina ord med omsorg:</strong> I en dikt bär varje
+              ord vikt. Stryk det som inte behövs.</p>
+            <p><strong>Lyssna på språket:</strong> Prova olika ordföljder,
+              radbrytninar och pauser. Radbrytningen påverkar hur dikten
+              andas.</p>
+            <p><strong>Skriv om, om, om:</strong> Dikter skrivs sällan
+              färdigt i första utkastet. Varje omskrivning gör den starkare.</p>
+          </div>
+          <Warning>
+            Undvik klichéer som &quot;röd som en ros&quot;, &quot;tårar som regn&quot; eller
+            &quot;hjärtat brast&quot;. Hitta dina egna bilder - det är då dikten
+            blir personlig och kraftfull.
+          </Warning>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Vanliga misstag att undvika">
+        <ExampleCard title="Checklista">
+          <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <li>- <strong>Tvingade rim:</strong> Offra inte meningen för rimmets skull. Bättre att bryta mönstret än att skriva nonsens.</li>
+            <li>- <strong>Klichéer:</strong> Hitta egna bilder istället för utslitna uttryck.</li>
+            <li>- <strong>Förklara för mycket:</strong> Låt bilderna tala. Dikten ska visa, inte berätta.</li>
+            <li>- <strong>Ingen röd tråd:</strong> Även en dikt behöver en riktning eller ett tema.</li>
+            <li>- <strong>Glömma ljudet:</strong> Läs alltid dikten högt - rytmen och klangen är en del av dikten.</li>
+          </ul>
+        </ExampleCard>
+      </Section>
+    </>
+  );
+}
+
+function RecensionContent() {
+  return (
+    <>
+      <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+        En recension är en text där du granskar och bedömer ett verk - till
+        exempel en bok, film, serie, datorspel eller musikalbum. En bra
+        recension ger läsaren tillräckligt med information för att avgöra
+        om verket är värt deras tid, utan att avslöja för mycket.
+      </p>
+
+      <Section title="Struktur">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <ExampleCard title="1. Inledning">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Presentera verket: titel, skapare, genre och utgivningsår.
+              Fånga läsarens intresse med en kärnfull öppning.
+            </p>
+            <ExampleBlock title="Exempel">
+              Med &quot;Bäckahästen&quot; visar Camilla Sten att svensk skräck har en
+              självklar plats i den moderna litteraturen. Romanen blandar
+              nordisk folktro med psykologisk spänning på ett sätt som
+              fastnar i minnet.
+            </ExampleBlock>
+          </ExampleCard>
+
+          <ExampleCard title="2. Sammanfattning">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Beskriv verkets handling eller innehåll kort och utan att
+              avslöja avgörande vändningar. Ge läsaren en bild av vad
+              det handlar om.
+            </p>
+            <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>- Berätta vad, inte hur det slutar</li>
+              <li>- Håll det kort: 3-5 meningar räcker ofta</li>
+              <li>- Fokusera på grundpremissen</li>
+              <li>- Nämn genre och ton</li>
+            </ul>
+          </ExampleCard>
+
+          <ExampleCard title="3. Analys och omdöme">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Kärnan i recensionen. Lyft fram vad som fungerar och vad
+              som inte gör det. Motivera alltid ditt omdöme.
+            </p>
+            <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <li>- Karaktärer: Är de trovärdiga och intressanta?</li>
+              <li>- Handling: Är den engagerande och logisk?</li>
+              <li>- Stil/teknik: Språk, bild, ljud, gameplay?</li>
+              <li>- Tema: Vad handlar verket om på djupet?</li>
+            </ul>
+          </ExampleCard>
+
+          <ExampleCard title="4. Avslutning">
+            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Sammanfatta ditt omdöme och ge en tydlig rekommendation.
+              Vem passar verket för?
+            </p>
+            <ExampleBlock title="Exempel">
+              &quot;Bäckahästen&quot; är en stark roman som passar dig som gillar
+              skräck med djup. Vill du ha en bok som får dig att kolla
+              under sängen innan du somnar? Då är det här rätt val.
+            </ExampleBlock>
+          </ExampleCard>
+        </div>
+      </Section>
+
+      <Section title="Argumentation i recensionen">
+        <ExampleCard title="Motivera ditt omdöme">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p>
+              Det räcker inte att säga att något är bra eller dåligt.
+              Du måste förklara varför. Stöd varje påstående med
+              konkreta exempel från verket.
+            </p>
+          </div>
+          <ExampleBlock title="Svagt (bara tyckande)">
+            Boken var jättebra och spännande.
+          </ExampleBlock>
+          <ExampleBlock title="Starkt (motiverat)">
+            Spänningen byggs upp skickligt genom korta kapitel och
+            cliffhangers som gör att man inte kan sluta läsa. Särskilt
+            scenerna vid sjön skapar en nästan fysisk känsla av obehag.
+          </ExampleBlock>
+          <Tip>
+            En bra tumregel: för varje åsikt du uttrycker, ge minst ett
+            konkret exempel. Det visar att du faktiskt har tänkt igenom
+            ditt omdöme.
+          </Tip>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Olika typer av recensioner">
+        <ExampleCard title="Anpassa efter verket">
+          <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+            <p><strong>Bokrecension:</strong> Fokusera på språk, karaktärer,
+              handling och teman. Hur är berättarrösten?</p>
+            <p><strong>Filmrecension:</strong> Bedöm manus, skådespeleri,
+              regi, foto och musik. Hur fungerar helheten?</p>
+            <p><strong>Spelrecension:</strong> Lyft gameplay, grafik, story
+              och spelbarhet. Är det värt priset?</p>
+            <p><strong>Musikrecension:</strong> Analysera text, melodi,
+              produktion och känsla. Hur fungerar albumet som helhet?</p>
+          </div>
+          <Warning>
+            Spoilervarning! Avslöja aldrig slutet eller avgörande
+            vändningar utan att varna läsaren. Skriv &quot;SPOILERVARNING&quot;
+            om du måste diskutera viktiga detaljer i handlingen.
+          </Warning>
+        </ExampleCard>
+      </Section>
+
+      <Section title="Vanliga misstag att undvika">
+        <ExampleCard title="Checklista">
+          <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <li>- <strong>Bara sammanfattning:</strong> En recension kräver analys och omdöme, inte bara en handlingsbeskrivning.</li>
+            <li>- <strong>Omotiverade åsikter:</strong> &quot;Den var bra&quot; säger ingenting. Förklara varför.</li>
+            <li>- <strong>Spoilers:</strong> Avslöja inte slutet eller avgörande vändningar.</li>
+            <li>- <strong>Bara positivt eller bara negativt:</strong> En trovärdig recension lyfter fram både styrkor och svagheter.</li>
+            <li>- <strong>Personangrepp:</strong> Kritisera verket, inte personen bakom det.</li>
+            <li>- <strong>Ingen målgrupp:</strong> Hjälp läsaren avgöra om verket passar just dem.</li>
+          </ul>
+        </ExampleCard>
+      </Section>
+    </>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /*  Template registry                                                  */
 /* ------------------------------------------------------------------ */
@@ -681,6 +1205,30 @@ const TEMPLATES: Record<
     description: "Personliga texter med humor, berättande och eftertanke",
     content: KronikaContent,
     levels: ["hogstadiet", "gymnasiet"],
+  },
+  faktatext: {
+    title: "Faktatext",
+    description: "Skriv tydliga och välstrukturerade faktatexter med korrekta källor",
+    content: FaktatextContent,
+    levels: ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"],
+  },
+  "historisk-text": {
+    title: "Historisk text",
+    description: "Berätta om historiska händelser i modern berättande form",
+    content: HistoriskTextContent,
+    levels: ["mellanstadiet", "hogstadiet", "gymnasiet"],
+  },
+  poesi: {
+    title: "Poesi",
+    description: "Utforska rim, rytm och bildspråk — skriv egna dikter",
+    content: PoesiContent,
+    levels: ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"],
+  },
+  recension: {
+    title: "Recension",
+    description: "Granska och bedöm böcker, filmer och spel med tydlig argumentation",
+    content: RecensionContent,
+    levels: ["mellanstadiet", "hogstadiet", "gymnasiet"],
   },
 };
 
@@ -759,6 +1307,22 @@ export default async function WritingTemplatePage({ params }: Props) {
       </div>
 
       <Content />
+
+      {/* Interactive writing exercises */}
+      <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+        <div className="mb-6 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800">
+            <Dumbbell className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+          </div>
+          <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">
+            Övningar
+          </h2>
+        </div>
+        <SkrivverkstadOvningar
+          template={template}
+          ageGroup={arskurs as AgeGroup}
+        />
+      </div>
     </div>
   );
 }

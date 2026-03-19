@@ -31,9 +31,33 @@ const ALL_TEMPLATES = [
   },
   {
     slug: "kronika",
-    title: "Kronika",
-    description: "Tips och struktur for att skriva personliga kronikor",
+    title: "Krönika",
+    description: "Tips och struktur för att skriva personliga krönikor",
     levels: ["hogstadiet", "gymnasiet"],
+  },
+  {
+    slug: "faktatext",
+    title: "Faktatext",
+    description: "Mall och tips för att skriva tydliga faktatexter med korrekta källor",
+    levels: ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"],
+  },
+  {
+    slug: "historisk-text",
+    title: "Historisk text",
+    description: "Skriv om historiska händelser i berättande form",
+    levels: ["mellanstadiet", "hogstadiet", "gymnasiet"],
+  },
+  {
+    slug: "poesi",
+    title: "Poesi",
+    description: "Rim, rytm och bildspråk – skriv egna dikter",
+    levels: ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"],
+  },
+  {
+    slug: "recension",
+    title: "Recension",
+    description: "Granska och bedöm böcker, filmer och spel",
+    levels: ["mellanstadiet", "hogstadiet", "gymnasiet"],
   },
 ];
 
