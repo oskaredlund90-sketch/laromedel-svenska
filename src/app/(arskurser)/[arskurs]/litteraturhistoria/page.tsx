@@ -85,7 +85,7 @@ function PeriodCard({
 
         <div>
           <h4 className="mb-1 text-sm font-semibold text-neutral-900 dark:text-white">
-            Litterara drag
+            Litterära drag
           </h4>
           <ul className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
             {characteristics.map((c) => (
@@ -99,7 +99,7 @@ function PeriodCard({
 
         <div>
           <h4 className="mb-1 text-sm font-semibold text-neutral-900 dark:text-white">
-            Viktiga forfattare och verk
+            Viktiga författare och verk
           </h4>
           <ul className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
             {authors.map((a) => (
@@ -175,50 +175,50 @@ const PERIODS = [
     years: "ca 1200\u20131500",
     badgeLabel: "Epok 1",
     context:
-      "Sverige var ett kristet bondeland med starkt kyrkligt inflytande. De flesta texter skrevs pa latin av munkar, men mot slutet av perioden borjade man ocksa skriva pa svenska.",
+      "Sverige var ett kristet bondeland med starkt kyrkligt inflytande. De flesta texter skrevs på latin av munkar, men mot slutet av perioden började man också skriva på svenska.",
     characteristics: [
-      "Religiosa texter och predikningar dominerade",
+      "Religiösa texter och predikningar dominerade",
       "Folkliga ballader och visor traderades muntligt",
-      "Landskapslagar skrevs ner pa fornsvenska",
-      "Rimkronikor berattar kungarnas historia",
+      "Landskapslagar skrevs ner på fornsvenska",
+      "Rimkrönikor berättar kungarnas historia",
     ],
     authors: [
       {
-        name: "Erikskronikan",
+        name: "Erikskrönikan",
         description:
-          "Rimkronika fran 1320-talet som skildrar svensk historia och maktkamp.",
+          "Rimkrönika från 1320-talet som skildrar svensk historia och maktkamp.",
       },
       {
         name: "Landskapslagarna",
         description:
-          "De aldsta svenska lagtexterna, skrivna pa folkspraken i olika landskap.",
+          "De äldsta svenska lagtexterna, skrivna på folkspråken i olika landskap.",
       },
       {
         name: "Heliga Birgitta",
         description:
-          "Mystiker och forfattare vars Uppenbarelser spreds over hela Europa.",
+          "Mystiker och författare vars Uppenbarelser spreds över hela Europa.",
       },
     ],
     connection:
-      "Medeltidens texter lade grunden for det svenska skriftspraket. Var lagstiftningstradition har rotter i landskapslagarna, och de folkliga balladerna lever kvar i sanger vi sjunger an idag.",
+      "Medeltidens texter lade grunden för det svenska skriftspråket. Vår lagstiftningstradition har rötter i landskapslagarna, och de folkliga balladerna lever kvar i sånger vi sjunger än idag.",
   },
   {
     title: "Stormaktstiden och 1700-talet",
     years: "ca 1600\u20131800",
     badgeLabel: "Epok 2",
     context:
-      "Sverige vaxte till en stormakt under 1600-talet med starkt fokus pa religion och plikt. Under 1700-talet kom upplysningens ideer och intresset for foernuft, satir och samhallskritik.",
+      "Sverige växte till en stormakt under 1600-talet med starkt fokus på religion och plikt. Under 1700-talet kom upplysningens idéer och intresset för förnuft, satir och samhällskritik.",
     characteristics: [
-      "Religiosa psalmer och andlig diktning under stormaktstiden",
+      "Religiösa psalmer och andlig diktning under stormaktstiden",
       "Upplysningstiden bar med sig satirisk och pedagogisk litteratur",
-      "Viskonsten blomstrade, sarskilt med Bellman",
-      "Tidskrifter och press vaxte fram som nya medier",
+      "Viskonsten blomstrade, särskilt med Bellman",
+      "Tidskrifter och press växte fram som nya medier",
     ],
     authors: [
       {
         name: "Carl Michael Bellman",
         description:
-          "1700-talets stora vispoet som skildrade Stockholmslivet med humor, musik och djup kanslighet.",
+          "1700-talets stora vispoet som skildrade Stockholmslivet med humor, musik och djup känslighet.",
       },
       {
         name: "Olof von Dalin",
@@ -228,181 +228,181 @@ const PERIODS = [
       {
         name: "Anna Maria Lenngren",
         description:
-          "Poet och satiriker som med skarp humor kritiserade samhallets konventioner och kansroller.",
+          "Poet och satiriker som med skarp humor kritiserade samhällets konventioner och könsroller.",
       },
     ],
     connection:
-      "Upplysningens ideal om tryckfrihet och kritiskt tankande ar grundstenar i var demokrati. Bellmans visor sjungs fortfarande vid midsommar och hogtider.",
+      "Upplysningens ideal om tryckfrihet och kritiskt tänkande är grundstenar i vår demokrati. Bellmans visor sjungs fortfarande vid midsommar och högtider.",
   },
   {
     title: "Romantiken",
     years: "ca 1810\u20131850",
     badgeLabel: "Epok 3",
     context:
-      "Som reaktion mot upplysningens fornuftstro svangde pendeln mot kanslor, fantasi och nationalism. Det var en tid av nationalromantik dar man sokte det typiskt svenska i folktraditioner och natur.",
+      "Som reaktion mot upplysningens förnuftstro svängde pendeln mot känslor, fantasi och nationalism. Det var en tid av nationalromantik där man sökte det typiskt svenska i folktraditioner och natur.",
     characteristics: [
-      "Kanslor, fantasi och intuition vades framfor fornuft",
-      "Naturen som inspirationskallla och symbol",
-      "Intresse for folklore, myter och historia",
-      "Gotiska inslag med mystik och skrack",
+      "Känslor, fantasi och intuition värderades framför förnuft",
+      "Naturen som inspirationskälla och symbol",
+      "Intresse för folklore, myter och historia",
+      "Gotiska inslag med mystik och skräck",
     ],
     authors: [
       {
-        name: "Esaias Tegner",
+        name: "Esaias Tegnér",
         description:
-          "Biskop och skald vars Frithiofs saga blev en av Sveriges mest lasta verk internationellt.",
+          "Biskop och skald vars Frithiofs saga blev en av Sveriges mest lästa verk internationellt.",
       },
       {
         name: "Erik Gustaf Geijer",
         description:
-          "Historiker, poet och kompositior som med dikter som Vikingen formade bilden av det svenska.",
+          "Historiker, poet och kompositör som med dikter som Vikingen formade bilden av det svenska.",
       },
       {
         name: "C.J.L. Almqvist",
         description:
-          "Mangsidig forfattare vars Det gar an utmanade tidens syn pa aktenskap och konventioner.",
+          "Mångsidig författare vars Det går an utmanade tidens syn på äktenskap och konventioner.",
       },
     ],
     connection:
-      "Romantikens nationalsanger och dikter praglar fortfarande var kultur. Gotiken lever vidare som genre i bocker och film, och tanken att naturen ar central for den svenska identiteten har rotter har.",
+      "Romantikens nationalsånger och dikter präglar fortfarande vår kultur. Gotiken lever vidare som genre i böcker och film, och tanken att naturen är central för den svenska identiteten har rötter här.",
   },
   {
     title: "Realismen",
     years: "ca 1850\u20131890",
     badgeLabel: "Epok 4",
     context:
-      "Industrialiseringen forandrade Sverige fran ett jordbrukssamhalle. Klasskillnader, fattigdom och kvinnors stallning blev brannande fragor. Litteraturen ville skildra verkligheten som den var.",
+      "Industrialiseringen förändrade Sverige från ett jordbrukssamhälle. Klasskillnader, fattigdom och kvinnors ställning blev brännande frågor. Litteraturen ville skildra verkligheten som den var.",
     characteristics: [
-      "Verklighetstrogen skildring av samhallet",
-      "Social kritik och debatt om klass, kon och makt",
-      "Det moderna genombrottet: litteraturen skulle satta problem under debatt",
+      "Verklighetstrogen skildring av samhället",
+      "Social kritik och debatt om klass, kön och makt",
+      "Det moderna genombrottet: litteraturen skulle sätta problem under debatt",
       "Dramatik och romaner som utmanade normer",
     ],
     authors: [
       {
         name: "August Strindberg",
         description:
-          "Normbrytrande dramatiker och romanforfattare vars Roda rummet och Froken Julie blev milstopar i svensk litteratur.",
+          "Normbrytrande dramatiker och romanförfattare vars Röda rummet och Fröken Julie blev milstolpar i svensk litteratur.",
       },
       {
         name: "Victoria Benedictsson",
         description:
-          "Realistisk forfattare som under pseudonymen Ernst Ahlgren kritiserade kvinnors villkor i romanen Pengar.",
+          "Realistisk författare som under pseudonymen Ernst Ahlgren kritiserade kvinnors villkor i romanen Pengar.",
       },
       {
         name: "Georg Brandes",
         description:
-          "Dansk kritiker vars forelasningar om det moderna genombrottet inspirerade hela Nordens litteratur.",
+          "Dansk kritiker vars föreläsningar om det moderna genombrottet inspirerade hela Nordens litteratur.",
       },
     ],
     connection:
-      "Realismens ideal att litteraturen ska spegla och ifragasatta samhallet lever starkt an idag. Strindberg spelas fortfarande pa teatrar varlden over, och debattromanen ar en levande genre.",
+      "Realismens ideal att litteraturen ska spegla och ifrågasätta samhället lever starkt än idag. Strindberg spelas fortfarande på teatrar världen över, och debattromanen är en levande genre.",
   },
   {
     title: "Sekelskiftet och modernismen",
     years: "ca 1890\u20131940",
     badgeLabel: "Epok 5",
     context:
-      "Kring sekelskiftet praglade oro och framtidstro samhallet parallellt. Forsta varldskriget chockade Europa. Nya konstformer experimenterade med form och spraak, och arbetarklassens roster hordes allt mer.",
+      "Kring sekelskiftet präglade oro och framtidstro samhället parallellt. Första världskriget chockade Europa. Nya konstformer experimenterade med form och språk, och arbetarklassens röster hördes allt mer.",
     characteristics: [
-      "Experimentella former: fri vers, medvetandestrom, fragmentering",
-      "Inre liv, kanslor och symbolism i fokus",
-      "Proletarlitteratur: arbetarklassens egna berattelser",
-      "Kvinnliga forfattare brot ny mark",
+      "Experimentella former: fri vers, medvetandeström, fragmentering",
+      "Inre liv, känslor och symbolism i fokus",
+      "Proletärlitteratur: arbetarklassens egna berättelser",
+      "Kvinnliga författare bröt ny mark",
     ],
     authors: [
       {
-        name: "Selma Lagerlof",
+        name: "Selma Lagerlöf",
         description:
-          "Forsta kvinnan att fa Nobelpriset i litteratur (1909), kand for Nils Holgerssons underbara resa och Gosta Berlings saga.",
+          "Första kvinnan att få Nobelpriset i litteratur (1909), känd för Nils Holgerssons underbara resa och Gösta Berlings saga.",
       },
       {
-        name: "Hjalmar Soderberg",
+        name: "Hjalmar Söderberg",
         description:
-          "Stockholmsskildrare vars Doktor Glas ar en klassiker om moraliska dilemman.",
+          "Stockholmsskildrare vars Doktor Glas är en klassiker om moraliska dilemman.",
       },
       {
         name: "Karin Boye",
         description:
-          "Poet och romanforfattare vars dystopi Kallocain och kanslostarka dikter laser an idag.",
+          "Poet och romanförfattare vars dystopi Kallocain och känslostarka dikter läses än idag.",
       },
       {
         name: "Harry Martinson & Vilhelm Moberg",
         description:
-          "Martinson fick Nobelpriset och Moberg skrev Utvandrarsviten som definerade bilden av den svenska emigrationen.",
+          "Martinson fick Nobelpriset och Moberg skrev Utvandrarsvitten som definierade bilden av den svenska emigrationen.",
       },
     ],
     connection:
-      "Modernismens experimenterande har format all samtida litteratur. Proletarlitteraturens tradition lever i dag hos forfattare som skriver om utanforskap. Lagerlof och Moberg ar fortfarande bland de mest lasta svenska forfattarna.",
+      "Modernismens experimenterande har format all samtida litteratur. Proletärlitteraturens tradition lever i dag hos författare som skriver om utanförskap. Lagerlöf och Moberg är fortfarande bland de mest lästa svenska författarna.",
   },
   {
     title: "Efterkrigstiden",
     years: "ca 1940\u20131970",
     badgeLabel: "Epok 6",
     context:
-      "Sverige forblev neutralt under andra varldskriget och byggde upp folkhemsmodellen. Valfarden vaxte, men existentiella fragor och internationellt engagemang praglade kulturen.",
+      "Sverige förblev neutralt under andra världskriget och byggde upp folkhemsmodellen. Välfärden växte, men existentiella frågor och internationellt engagemang präglade kulturen.",
     characteristics: [
-      "Existentialism: fragor om livets mening och manniskans villkor",
-      "Politiskt engagemang och samhallskritik",
-      "Barn- och ungdomslitteraturen fick en guldalder",
-      "Poesi med bade experimentella och folkliga drag",
+      "Existentialism: frågor om livets mening och människans villkor",
+      "Politiskt engagemang och samhällskritik",
+      "Barn- och ungdomslitteraturen fick en guldålder",
+      "Poesi med både experimentella och folkliga drag",
     ],
     authors: [
       {
         name: "Astrid Lindgren",
         description:
-          "Varldens mest oversatta svenska forfattare, skapare av Pippi Langstrump, Emil och Brorderna Lejonhjarta.",
+          "Världens mest översatta svenska författare, skapare av Pippi Långstrump, Emil och Bröderna Lejonhjärta.",
       },
       {
-        name: "Tomas Transtromer",
+        name: "Tomas Tranströmer",
         description:
-          "Nobelpristagare (2011) vars bildrika, koncentrerade poesi oversatts till over 60 sprak.",
+          "Nobelpristagare (2011) vars bildrika, koncentrerade poesi översatts till över 60 språk.",
       },
       {
-        name: "Lars Noren",
+        name: "Lars Norén",
         description:
-          "Dramatiker som med brutal arlighet skildrade familjerelationer och psykisk utsatthet.",
+          "Dramatiker som med brutal ärlighet skildrade familjerelationer och psykisk utsatthet.",
       },
     ],
     connection:
-      "Astrid Lindgrens inflytande pa barnkulturen ar oovertraffat. Transtromers poesi laser hela varlden. Periodens fragor om rattvisaa och manniskors lika varde praglar fortfarande svensk politik och kultur.",
+      "Astrid Lindgrens inflytande på barnkulturen är oöverträffat. Tranströmers poesi läses hela världen. Periodens frågor om rättvisa och människors lika värde präglar fortfarande svensk politik och kultur.",
   },
   {
     title: "Nutida litteratur",
     years: "ca 1970\u2013nu",
     badgeLabel: "Epok 7",
     context:
-      "Globalisering, invandring och digitalisering har forandrat Sverige och den svenska litteraturen. Nya roster och perspektiv har vidgat vilka berattelser som far plats.",
+      "Globalisering, invandring och digitalisering har förändrat Sverige och den svenska litteraturen. Nya röster och perspektiv har vidgat vilka berättelser som får plats.",
     characteristics: [
-      "Mangfald i teman, perspektiv och genrer",
-      "Genreblandning: fiktion moter sjalvbiografi, reportage moter poesi",
-      "Autofiktion: forfattare som anvander sitt eget liv som material",
-      "Stark barn- och ungdomslitteratur med samhallsrelevans",
+      "Mångfald i teman, perspektiv och genrer",
+      "Genreblandning: fiktion möter självbiografi, reportage möter poesi",
+      "Autofiktion: författare som använder sitt eget liv som material",
+      "Stark barn- och ungdomslitteratur med samhällsrelevans",
     ],
     authors: [
       {
         name: "Henning Mankell",
         description:
-          "Deckarforfattare vars Wallander-serie satte svensk kriminallitteratur pa varldskartan.",
+          "Deckarförfattare vars Wallander-serie satte svensk kriminallitteratur på världskartan.",
       },
       {
         name: "Jonas Hassen Khemiri",
         description:
-          "Flersprakig och formnytankande forfattare som utforskar identitet och utanforskap.",
+          "Flerspråkig och formnytänkande författare som utforskar identitet och utanförskap.",
       },
       {
         name: "Sara Stridsberg",
         description:
-          "Prisbelont forfattare vars poetiska prosa blandar verklighet och fantasi.",
+          "Prisbelönt författare vars poetiska prosa blandar verklighet och fantasi.",
       },
       {
         name: "Fredrik Backman",
         description:
-          "Internationellt bestsaljande forfattare kand for varma berattelser som En man som heter Ove.",
+          "Internationellt bästsäljande författare känd för varma berättelser som En man som heter Ove.",
       },
     ],
     connection:
-      "Dagens litteratur speglar det mangkulturella Sverige och nar lasare varlden over. Deckare, autofiktion och ungdomsromaner ar genrer dar svenska forfattare ligger i framkant internationellt.",
+      "Dagens litteratur speglar det mångkulturella Sverige och når läsare världen över. Deckare, autofiktion och ungdomsromaner är genrer där svenska författare ligger i framkant internationellt.",
   },
 ];
 
@@ -412,20 +412,20 @@ const PERIODS = [
 
 const MELLANSTADIET_PERIODS = [
   {
-    title: "Den aldsta litteraturen",
+    title: "Den äldsta litteraturen",
     years: "ca 1200\u20131800",
     description:
-      "For lange sedan skrevs de forsta texterna pa svenska. Det var mest religiosa texter, lagar och visor. Pa 1700-talet skrev Carl Michael Bellman sina beroemda visor om livet i Stockholm.",
+      "För länge sedan skrevs de första texterna på svenska. Det var mest religiösa texter, lagar och visor. På 1700-talet skrev Carl Michael Bellman sina berömda visor om livet i Stockholm.",
     authors: [
       {
         name: "Heliga Birgitta",
         description:
-          "Levde pa medeltiden och skrev religiosa texter som blev kanda i hela Europa.",
+          "Levde på medeltiden och skrev religiösa texter som blev kända i hela Europa.",
       },
       {
         name: "Carl Michael Bellman",
         description:
-          "Skrev roliga och vackra visor om livet i Stockholm pa 1700-talet.",
+          "Skrev roliga och vackra visor om livet i Stockholm på 1700-talet.",
       },
     ],
   },
@@ -433,12 +433,12 @@ const MELLANSTADIET_PERIODS = [
     title: "Romantiken",
     years: "ca 1810\u20131850",
     description:
-      "Under romantiken skrev forfattarna om kanslor, natur och gamla myter. Man var stolt over Sverige och intresserad av vikingatiden och folksagor.",
+      "Under romantiken skrev författarna om känslor, natur och gamla myter. Man var stolt över Sverige och intresserad av vikingatiden och folksagor.",
     authors: [
       {
-        name: "Esaias Tegner",
+        name: "Esaias Tegnér",
         description:
-          "Skrev Frithiofs saga, en spannande berattelse inspirerad av vikingatiden.",
+          "Skrev Frithiofs saga, en spännande berättelse inspirerad av vikingatiden.",
       },
     ],
   },
@@ -446,40 +446,40 @@ const MELLANSTADIET_PERIODS = [
     title: "Realismen och det moderna genombrottet",
     years: "ca 1850\u20131900",
     description:
-      "Nu ville forfattarna skriva om hur livet verkligen sag ut. De skrev om orattvisor i samhallet och ville forandring.",
+      "Nu ville författarna skriva om hur livet verkligen såg ut. De skrev om orättvisor i samhället och ville förändring.",
     authors: [
       {
         name: "August Strindberg",
         description:
-          "En av Sveriges mest kanda forfattare, som skrev bade romaner och pjaser.",
+          "En av Sveriges mest kända författare, som skrev både romaner och pjäser.",
       },
       {
-        name: "Selma Lagerlof",
+        name: "Selma Lagerlöf",
         description:
-          "Forsta kvinnan att fa Nobelpriset i litteratur. Skrev Nils Holgerssons underbara resa.",
+          "Första kvinnan att få Nobelpriset i litteratur. Skrev Nils Holgerssons underbara resa.",
       },
     ],
   },
   {
-    title: "1900-talet och var tid",
+    title: "1900-talet och vår tid",
     years: "ca 1900\u2013nu",
     description:
-      "Under 1900-talet forandrades litteraturen mycket. Nya forfattare skrev om arbetarnas liv, om barns rattigheter, och om hela varlden. Idag skrivs bocker i alla genrer.",
+      "Under 1900-talet förändrades litteraturen mycket. Nya författare skrev om arbetarnas liv, om barns rättigheter, och om hela världen. Idag skrivs böcker i alla genrer.",
     authors: [
       {
         name: "Astrid Lindgren",
         description:
-          "Skapade Pippi Langstrump, Emil, Ronja och manga fler alskade figurer.",
+          "Skapade Pippi Långstrump, Emil, Ronja och många fler älskade figurer.",
       },
       {
-        name: "Tomas Transtromer",
+        name: "Tomas Tranströmer",
         description:
-          "Nobelpristagare som skrev vackra dikter som lasas over hela varlden.",
+          "Nobelpristagare som skrev vackra dikter som läses över hela världen.",
       },
       {
         name: "Henning Mankell",
         description:
-          "Skrev spannande deckare som blev beroemda internationellt.",
+          "Skrev spännande deckare som blev berömda internationellt.",
       },
     ],
   },
@@ -493,27 +493,27 @@ const LAGSTADIET_AUTHORS = [
   {
     name: "Astrid Lindgren",
     description:
-      "Har du last om Pippi Langstrump, Emil i Lonneberga eller Brorderna Lejonhjarta? Astrid Lindgren ar Sveriges mest alskade barnboksforfattare!",
+      "Har du läst om Pippi Långstrump, Emil i Lönneberga eller Bröderna Lejonhjärta? Astrid Lindgren är Sveriges mest älskade barnboksförfattare!",
   },
   {
     name: "Elsa Beskow",
     description:
-      "Elsa Beskow skrev och ritade vackra sagor om naturen, som Puttes aventyr i blaabarsskogen och Tomtebobarnen.",
+      "Elsa Beskow skrev och ritade vackra sagor om naturen, som Puttes äventyr i blåbärsskogen och Tomtebobarnen.",
   },
   {
     name: "Sven Nordqvist",
     description:
-      "Han ar forfattaren bakom Pettson och Findus - den gamle mannen och hans roliga katt.",
+      "Han är författaren bakom Pettson och Findus - den gamle mannen och hans roliga katt.",
   },
   {
-    name: "Gunilla Bergstrom",
+    name: "Gunilla Bergström",
     description:
-      "Skapade Alfons Aberg, en pojke som manga barn kanner igen sig i.",
+      "Skapade Alfons Åberg, en pojke som många barn känner igen sig i.",
   },
   {
     name: "Barbro Lindgren",
     description:
-      "Skrev bocker som Loranga, Masansen och Dartansen och den alskade Max-serien for de allra minsta.",
+      "Skrev böcker som Loranga, Masansen och Dartansen och den älskade Max-serien för de allra minsta.",
   },
 ];
 
@@ -525,22 +525,22 @@ const LITERARY_THEORY_INTRO = [
   {
     title: "Narratologi",
     description:
-      "Studiet av berattandets strukturer: berattare, fokalisering, tid och rum. Vem berattar? Varifor just sa?",
+      "Studiet av berättandets strukturer: berättare, fokalisering, tid och rum. Vem berättar? Varför just så?",
   },
   {
     title: "Receptionsteori",
     description:
-      "Lasaren ar medskapare av textens mening. En text far olika betydelser beroende pa vem som laser och nar.",
+      "Läsaren är medskapare av textens mening. En text får olika betydelser beroende på vem som läser och när.",
   },
   {
     title: "Genusteori och litteratur",
     description:
-      "Hur konstrueras kon i litteraturen? Vilka roster far horas, och vilka tystas?",
+      "Hur konstrueras kön i litteraturen? Vilka röster får höras, och vilka tystas?",
   },
   {
-    title: "Postkolonial lasning",
+    title: "Postkolonial läsning",
     description:
-      "Att lasa texter med blick for maktstrukturer, kolonialism och representation av 'den andre'.",
+      "Att läsa texter med blick för maktstrukturer, kolonialism och representation av 'den andre'.",
   },
 ];
 
@@ -548,22 +548,22 @@ const INTERNATIONAL_CONTEXT = [
   {
     period: "Romantiken",
     description:
-      "Den svenska romantiken inspirerades av tyska (Goethe, Schiller) och engelska (Byron, Shelley) forfattare. Jamfor Tegners nationalism med Byrons kosmopolitism.",
+      "Den svenska romantiken inspirerades av tyska (Goethe, Schiller) och engelska (Byron, Shelley) författare. Jämför Tegnérs nationalism med Byrons kosmopolitism.",
   },
   {
     period: "Realismen",
     description:
-      "Det moderna genombrottet var en nordisk rorelse. Ibsens dramatik (Norge) och Brandes kritik (Danmark) var lika viktiga som Strindbergs verk.",
+      "Det moderna genombrottet var en nordisk rörelse. Ibsens dramatik (Norge) och Brandes kritik (Danmark) var lika viktiga som Strindbergs verk.",
   },
   {
     period: "Modernismen",
     description:
-      "Internationella influenser fran Kafka, Joyce och Woolf praglade den svenska modernismen. Jamfor Sodbergs stockholmsskildringar med Joyces Dublin.",
+      "Internationella influenser från Kafka, Joyce och Woolf präglade den svenska modernismen. Jämför Söderbergs stockholmsskildringar med Joyces Dublin.",
   },
   {
     period: "Nutida litteratur",
     description:
-      "Globaliseringen har suddat ut nationella granser. Khemiris sprak ekar Salman Rushdie, och nordisk noir ar en internationell genre.",
+      "Globaliseringen har suddat ut nationella gränser. Khemiris språk ekar Salman Rushdie, och nordisk noir är en internationell genre.",
   },
 ];
 
@@ -573,13 +573,13 @@ const INTERNATIONAL_CONTEXT = [
 
 const LEVEL_DESCRIPTIONS: Record<AgeGroup, string> = {
   lagstadiet:
-    "Kanda forfattare som skrivit bocker for barn. Kanner du igen nagon?",
+    "Kända författare som skrivit böcker för barn. Känner du igen någon?",
   mellanstadiet:
-    "En forsta introduktion till svensk litteraturhistoria. Fran de aldsta texterna till bocker som skrivs idag.",
+    "En första introduktion till svensk litteraturhistoria. Från de äldsta texterna till böcker som skrivs idag.",
   hogstadiet:
-    "Svensk litteratur fran medeltiden till idag. En oversikt over epoker, forfattare och stromningar.",
+    "Svensk litteratur från medeltiden till idag. En översikt över epoker, författare och strömningar.",
   gymnasiet:
-    "Fordjupad litteraturhistoria med internationell kontext och introduktion till litteraturvetenskapliga perspektiv.",
+    "Fördjupad litteraturhistoria med internationell kontext och introduktion till litteraturvetenskapliga perspektiv.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -596,7 +596,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!group) return {};
   return {
     title: `Litteraturhistoria - ${group.label}`,
-    description: `Svensk litteraturhistoria anpassad for ${group.label.toLowerCase()}.`,
+    description: `Svensk litteraturhistoria anpassad för ${group.label.toLowerCase()}.`,
   };
 }
 
@@ -628,10 +628,10 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
       {/* ---- Lagstadiet ---- */}
       {level === "lagstadiet" && (
         <>
-          <Section title="Kanda barnboksforfattare">
+          <Section title="Kända barnboksförfattare">
             <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-              Har ar nagra forfattare som skrivit bocker som barn i Sverige alskar.
-              Kanske har du last nagon av deras bocker?
+              Här är några författare som skrivit böcker som barn i Sverige älskar.
+              Kanske har du läst någon av deras böcker?
             </p>
             <div className="space-y-4">
               {LAGSTADIET_AUTHORS.map((author) => (
@@ -651,12 +651,12 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
 
           <Section title="Tips">
             <Tip>
-              <strong>Las en bok!</strong> Fraga din larare eller pa biblioteket
-              om du vill lana en bok av nagon av dessa forfattare.
+              <strong>Läs en bok!</strong> Fråga din lärare eller på biblioteket
+              om du vill låna en bok av någon av dessa författare.
             </Tip>
             <Tip>
-              <strong>Visste du?</strong> Astrid Lindgrens bocker har oversatts
-              till over 100 sprak. Barn i hela varlden laser om Pippi!
+              <strong>Visste du?</strong> Astrid Lindgrens böcker har översatts
+              till över 100 språk. Barn i hela världen läser om Pippi!
             </Tip>
           </Section>
         </>
@@ -667,8 +667,8 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
         <>
           <Section title="Epoker i svensk litteratur">
             <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-              Svensk litteratur har forandrats mycket genom historien. Har far du
-              en oversikt over de viktigaste perioderna och forfattarna.
+              Svensk litteratur har förändrats mycket genom historien. Här får du
+              en översikt över de viktigaste perioderna och författarna.
             </p>
             <div className="space-y-6">
               {MELLANSTADIET_PERIODS.map((period) => (
@@ -677,16 +677,16 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
             </div>
           </Section>
 
-          <Section title="Tips for studier">
+          <Section title="Tips för studier">
             <Tip>
-              <strong>Las nagon bok!</strong> Borja med en bok av Astrid
-              Lindgren eller Selma Lagerlof. Det ar det basta sattet att forsta
+              <strong>Läs någon bok!</strong> Börja med en bok av Astrid
+              Lindgren eller Selma Lagerlöf. Det är det bästa sättet att förstå
               litteraturhistoria.
             </Tip>
             <Tip>
-              <strong>Gor en tidslinje!</strong> Rita en tidslinje pa ett stort
-              papper och placera ut forfattarna och deras viktigaste verk. Det
-              hjalper dig att minnas.
+              <strong>Gör en tidslinje!</strong> Rita en tidslinje på ett stort
+              papper och placera ut författarna och deras viktigaste verk. Det
+              hjälper dig att minnas.
             </Tip>
           </Section>
         </>
@@ -730,18 +730,18 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
 
           {/* Study tips */}
           <div className="mt-12">
-            <Section title="Tips for studier">
+            <Section title="Tips för studier">
               <Tip>
-                <strong>Sa anvander du den har sidan:</strong> Borja med
-                tidslinjen hogst upp for att fa en oversikt. Klicka pa en epok
-                for att hoppa dit. Nar du laser om en period, fokusera forst pa
-                den historiska kontexten och de litterara dragen innan du
-                fordjupar dig i enskilda forfattare.
+                <strong>Så använder du den här sidan:</strong> Börja med
+                tidslinjen högst upp för att få en översikt. Klicka på en epok
+                för att hoppa dit. När du läser om en period, fokusera först på
+                den historiska kontexten och de litterära dragen innan du
+                fördjupar dig i enskilda författare.
               </Tip>
               <Tip>
-                <strong>Fordjupning:</strong> For att forsta en epok pa djupet,
-                las minst ett verk fran perioden. Manga av de namnda verken
-                finns tillgangliga gratis via biblioteken eller som e-bocker.
+                <strong>Fördjupning:</strong> För att förstå en epok på djupet,
+                läs minst ett verk från perioden. Många av de nämnda verken
+                finns tillgängliga gratis via biblioteken eller som e-böcker.
               </Tip>
             </Section>
           </div>
@@ -788,8 +788,8 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
           <div className="mt-12">
             <Section title="Internationell kontext">
               <p className="mb-4 text-neutral-600 dark:text-neutral-400">
-                Svensk litteratur har aldrig existerat i isolation. Har ar
-                kopplingar till den internationella litteraturen for varje
+                Svensk litteratur har aldrig existerat i isolation. Här är
+                kopplingar till den internationella litteraturen för varje
                 period.
               </p>
               <div className="space-y-4">
@@ -814,8 +814,8 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
             <Section title="Introduktion till litteraturteori">
               <p className="mb-4 text-neutral-600 dark:text-neutral-400">
                 Litteraturvetenskap handlar inte bara om <em>vad</em> en text
-                sager utan <em>hur</em> den sager det, och <em>varfor</em> vi
-                tolkar den som vi gor. Har ar nagra centrala perspektiv.
+                säger utan <em>hur</em> den säger det, och <em>varför</em> vi
+                tolkar den som vi gör. Här är några centrala perspektiv.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 {LITERARY_THEORY_INTRO.map((item) => (
@@ -836,23 +836,23 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
 
           {/* Study tips */}
           <div className="mt-12">
-            <Section title="Tips for studier">
+            <Section title="Tips för studier">
               <Tip>
-                <strong>Sa anvander du den har sidan:</strong> Borja med
-                tidslinjen hogst upp for att fa en oversikt. Klicka pa en epok
-                for att hoppa dit. Anvand sedan avsnitten om internationell
-                kontext och litteraturteori for att fordjupa din analys.
+                <strong>Så använder du den här sidan:</strong> Börja med
+                tidslinjen högst upp för att få en översikt. Klicka på en epok
+                för att hoppa dit. Använd sedan avsnitten om internationell
+                kontext och litteraturteori för att fördjupa din analys.
               </Tip>
               <Tip>
-                <strong>Fordjupning:</strong> For att forsta en epok pa djupet,
-                las minst ett verk fran perioden. Jamfor det med ett
-                internationellt verk fran samma tid. Manga av de namnda verken
-                finns tillgangliga gratis via biblioteken eller som e-bocker.
+                <strong>Fördjupning:</strong> För att förstå en epok på djupet,
+                läs minst ett verk från perioden. Jämför det med ett
+                internationellt verk från samma tid. Många av de nämnda verken
+                finns tillgängliga gratis via biblioteken eller som e-böcker.
               </Tip>
               <Tip>
-                <strong>Litteraturvetenskaplig analys:</strong> Valj en roman
-                och analysera den fran tva olika teoretiska perspektiv (t.ex.
-                narratologiskt och genusteoretiskt). Hur forandras din lasning?
+                <strong>Litteraturvetenskaplig analys:</strong> Välj en roman
+                och analysera den från två olika teoretiska perspektiv (t.ex.
+                narratologiskt och genusteoretiskt). Hur förändras din läsning?
               </Tip>
             </Section>
           </div>

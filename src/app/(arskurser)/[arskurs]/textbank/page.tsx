@@ -34,9 +34,9 @@ const ALLOWED_DIFFICULTIES: Record<string, Set<DifficultyLevel>> = {
 };
 
 const ARSKURS_LABELS: Record<string, string> = {
-  lagstadiet: "Lagstadiet",
+  lagstadiet: "Lågstadiet",
   mellanstadiet: "Mellanstadiet",
-  hogstadiet: "Hogstadiet",
+  hogstadiet: "Högstadiet",
   gymnasiet: "Gymnasiet",
 };
 
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!group) return {};
   return {
     title: `Textbank - ${group.label}`,
-    description: `Exempeltexter i olika genrer anpassade for ${group.label.toLowerCase()}. Modellexter med analysfragor och tips.`,
+    description: `Exempeltexter i olika genrer anpassade för ${group.label.toLowerCase()}. Modelltexter med analysfrågor och tips.`,
   };
 }
 
@@ -80,8 +80,8 @@ export default async function TextbankArskursPage({ params }: Props) {
           Textbank
         </h1>
         <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
-          Exempeltexter i olika genrer med analysfragor och tips om texternas uppbyggnad.
-          Anpassade for {group.label.toLowerCase()}.
+          Exempeltexter i olika genrer med analysfrågor och tips om texternas uppbyggnad.
+          Anpassade för {group.label.toLowerCase()}.
         </p>
       </div>
 

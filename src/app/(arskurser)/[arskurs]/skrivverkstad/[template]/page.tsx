@@ -79,93 +79,93 @@ function BerattendeTextContent() {
   return (
     <>
       <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-        En berattande text underhaller, engagerar och tar lasaren med pa en resa.
-        Har lar du dig hur du bygger upp en berattelse med tydlig struktur,
-        levande karaktarer och spannande handling.
+        En berättande text underhåller, engagerar och tar läsaren med på en resa.
+        Här lär du dig hur du bygger upp en berättelse med tydlig struktur,
+        levande karaktärer och spännande handling.
       </p>
 
       <Section title="Struktur">
         <div className="grid gap-4 sm:grid-cols-2">
           <ExampleCard title="1. Inledning">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Fanga lasarens intresse direkt. Presentera huvudpersonen, platsen och
-              tiden. Ge en antydan om vad berattelsen ska handla om.
+              Fånga läsarens intresse direkt. Presentera huvudpersonen, platsen och
+              tiden. Ge en antydan om vad berättelsen ska handla om.
             </p>
             <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Tekniker:</p>
             <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
               <li>- Mitt-i-handlingen (in medias res)</li>
-              <li>- En fraga eller gata</li>
-              <li>- En stamningsfull miljobeskrivning</li>
-              <li>- Dialog som vacker nyfikenhet</li>
+              <li>- En fråga eller gåta</li>
+              <li>- En stämningsfull miljöbeskrivning</li>
+              <li>- Dialog som väcker nyfikenhet</li>
             </ul>
             <ExampleBlock title="Exempel: In medias res">
-              Hjartat bultade sa hart att hon var saker pa att alla kunde hora det.
-              Dorren framfor henne stod pa glant, och ljuset darinne flackade oroligt.
+              Hjärtat bultade så hårt att hon var säker på att alla kunde höra det.
+              Dörren framför henne stod på glänt, och ljuset därinne flackade oroligt.
             </ExampleBlock>
           </ExampleCard>
 
           <ExampleCard title="2. Uppbyggnad">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Utveckla handlingen. Skapa problem och hinder for huvudpersonen.
-              Bygg upp spanningen steg for steg.
+              Utveckla handlingen. Skapa problem och hinder för huvudpersonen.
+              Bygg upp spänningen steg för steg.
             </p>
             <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
               <li>- Introducera konflikten</li>
-              <li>- Lat huvudpersonen mota utmaningar</li>
-              <li>- Hoj insatserna gradvis</li>
+              <li>- Låt huvudpersonen möta utmaningar</li>
+              <li>- Höj insatserna gradvis</li>
               <li>- Varva handling med beskrivning och dialog</li>
             </ul>
           </ExampleCard>
 
           <ExampleCard title="3. Klimax">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Berattelsens mest spannande punkt. Konflikten nar sin hojdpunkt
-              och avgors.
+              Berättelsens mest spännande punkt. Konflikten når sin höjdpunkt
+              och avgörs.
             </p>
             <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
               <li>- Den mest dramatiska scenen</li>
-              <li>- Huvudpersonen stalls infor ett avgorande val</li>
+              <li>- Huvudpersonen ställs inför ett avgörande val</li>
               <li>- Kort, snabba meningar skapar tempo</li>
             </ul>
           </ExampleCard>
 
           <ExampleCard title="4. Avslutning">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Runda av berattelsen. Visa hur konflikten losts och vad som
-              forandrats.
+              Runda av berättelsen. Visa hur konflikten lösts och vad som
+              förändrats.
             </p>
             <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
-              <li>- Knyt ihop losa tradar</li>
-              <li>- Visa hur huvudpersonen har forandrats</li>
-              <li>- Kan vara oppen eller sluten</li>
-              <li>- Undvik att allt loser sig &quot;for latt&quot;</li>
+              <li>- Knyt ihop lösa trådar</li>
+              <li>- Visa hur huvudpersonen har förändrats</li>
+              <li>- Kan vara öppen eller sluten</li>
+              <li>- Undvik att allt löser sig &quot;för lätt&quot;</li>
             </ul>
           </ExampleCard>
         </div>
       </Section>
 
-      <Section title="Karaktarer">
-        <ExampleCard title="Levande karaktarer">
+      <Section title="Karaktärer">
+        <ExampleCard title="Levande karaktärer">
           <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Bra karaktarer har djup - de har drommar, radslor och
-            egenheter. Visa vilka de ar genom handling och dialog,
-            inte bara genom att beratta det.
+            Bra karaktärer har djup - de har drömmar, rädslor och
+            egenheter. Visa vilka de är genom handling och dialog,
+            inte bara genom att berätta det.
           </p>
           <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Visa, beratta inte:</strong></p>
+            <p><strong>Visa, berätta inte:</strong></p>
           </div>
-          <ExampleBlock title="Beratta (svagare)">
-            Erik var nervos infor provet.
+          <ExampleBlock title="Berätta (svagare)">
+            Erik var nervös inför provet.
           </ExampleBlock>
           <ExampleBlock title="Visa (starkare)">
-            Erik trummade med fingrarna mot banken och kastade en blick pa klockan
-            igen. Fem minuter kvar. Han svalde och torkade de fuktiga handerna
+            Erik trummade med fingrarna mot bänken och kastade en blick på klockan
+            igen. Fem minuter kvar. Han svalde och torkade de fuktiga händerna
             mot byxbenen.
           </ExampleBlock>
           <Tip>
-            Ge varje karaktar minst en egenhet eller vana som gor dem
-            minnesvarda: ett speciellt satt att prata, en nervos tic, ett
-            kladesplagg de alltid bar.
+            Ge varje karaktär minst en egenhet eller vana som gör dem
+            minnesvärda: ett speciellt sätt att prata, en nervös tic, ett
+            klädesplagg de alltid bär.
           </Tip>
         </ExampleCard>
       </Section>
@@ -173,52 +173,52 @@ function BerattendeTextContent() {
       <Section title="Dialog">
         <ExampleCard title="Skriv bra dialog">
           <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Dialog gor texten levande och bryter av berattandet. Varje karaktar
-            ska ha sin egen rost.
+            Dialog gör texten levande och bryter av berättandet. Varje karaktär
+            ska ha sin egen röst.
           </p>
-          <ExampleBlock title="Exempel pa dialog">
-            &ndash; Var har du varit? fragade mamma med armarna i kors.
-            {"\n"}&ndash; Hos Alex, mumlade Nora utan att mota hennes blick.
-            {"\n"}&ndash; Klockan ar halv tolv, Nora.
-            {"\n"}&ndash; Jag vet. Forlat.
+          <ExampleBlock title="Exempel på dialog">
+            &ndash; Var har du varit? frågade mamma med armarna i kors.
+            {"\n"}&ndash; Hos Alex, mumlade Nora utan att möta hennes blick.
+            {"\n"}&ndash; Klockan är halv tolv, Nora.
+            {"\n"}&ndash; Jag vet. Förlåt.
           </ExampleBlock>
           <div className="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Tips for dialog:</strong></p>
+            <p><strong>Tips för dialog:</strong></p>
             <ul className="space-y-1">
-              <li>- Anvand tankstreck (&ndash;) fore varje replik</li>
-              <li>- Variera inquit-fraser: sa, fragade, mumlade, viskade</li>
-              <li>- Lagg till kroppssprak och handlingar mellan replikerna</li>
-              <li>- Alla behover inte prata likadant - anpassa efter karaktaren</li>
+              <li>- Använd tankstreck (&ndash;) före varje replik</li>
+              <li>- Variera inquit-fraser: sa, frågade, mumlade, viskade</li>
+              <li>- Lägg till kroppsspråk och handlingar mellan replikerna</li>
+              <li>- Alla behöver inte prata likadant - anpassa efter karaktären</li>
             </ul>
           </div>
           <Warning>
-            Vanligt fel: Att anvanda for avancerade inquit-fraser.
-            &quot;Sa&quot; och &quot;fragade&quot; racker langt. Undvik &quot;exklamerade&quot;,
-            &quot;proklamerade&quot; och liknande i vardagsberattelser.
+            Vanligt fel: Att använda för avancerade inquit-fraser.
+            &quot;Sa&quot; och &quot;frågade&quot; räcker långt. Undvik &quot;exklamerade&quot;,
+            &quot;proklamerade&quot; och liknande i vardagsberättelser.
           </Warning>
         </ExampleCard>
       </Section>
 
-      <Section title="Miljobeskrivning">
-        <ExampleCard title="Skapa stamning med sinnen">
+      <Section title="Miljöbeskrivning">
+        <ExampleCard title="Skapa stämning med sinnen">
           <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Anvand alla fem sinnen (syn, horsel, lukt, smak, kansel) for
-            att gora miljon levande. Miljobeskrivningen ska forsterka stamningen.
+            Använd alla fem sinnen (syn, hörsel, lukt, smak, känsel) för
+            att göra miljön levande. Miljöbeskrivningen ska förstärka stämningen.
           </p>
-          <ExampleBlock title="Kuslig stamning">
-            Grinden gnisslade nar hon skot upp den. Tradgarden lag ode; de
-            vissna loven virvlade over grusgangen som bruna skelett.
-            Luften luktade fukt och ruttnande applen.
+          <ExampleBlock title="Kuslig stämning">
+            Grinden gnisslade när hon sköt upp den. Trädgården låg öde; de
+            vissna löven virvlade över grusgången som bruna skelett.
+            Luften luktade fukt och ruttnande äpplen.
           </ExampleBlock>
-          <ExampleBlock title="Varm och trygg stamning">
-            Koket badade i gult ljus. Doften av nybakat brod blandades med
-            kanel och det svaga brummandet fran radion pa banken. Hon
-            lindade handerna runt den varma koppen.
+          <ExampleBlock title="Varm och trygg stämning">
+            Köket badade i gult ljus. Doften av nybakat bröd blandades med
+            kanel och det svaga brummandet från radion på bänken. Hon
+            lindade händerna runt den varma koppen.
           </ExampleBlock>
           <Tip>
-            Vav in miljobeskrivningar naturligt i handlingen. Undvik langa
+            Väv in miljöbeskrivningar naturligt i handlingen. Undvik långa
             beskrivande stycken som bromsar tempot. Koppla sinnena till
-            karaktarens kanslor.
+            karaktärens känslor.
           </Tip>
         </ExampleCard>
       </Section>
@@ -226,11 +226,11 @@ function BerattendeTextContent() {
       <Section title="Vanliga misstag att undvika">
         <ExampleCard title="Checklista">
           <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <li>- <strong>Platt inledning:</strong> Undvik &quot;Jag vaknade och det var en vanlig dag.&quot; Borja dar det blir intressant.</li>
-            <li>- <strong>Allt loser sig for latt:</strong> Konflikten behover kannas akta och losningen trovarding.</li>
-            <li>- <strong>Bara handling, ingen kansla:</strong> Visa vad karaktarerna tanker och kanner.</li>
-            <li>- <strong>Tempushopp:</strong> Valj presens eller preteritum och hall dig till det.</li>
-            <li>- <strong>Ingen rod trad:</strong> Varje scen ska driva handlingen framat.</li>
+            <li>- <strong>Platt inledning:</strong> Undvik &quot;Jag vaknade och det var en vanlig dag.&quot; Börja där det blir intressant.</li>
+            <li>- <strong>Allt löser sig för lätt:</strong> Konflikten behöver kännas äkta och lösningen trovärdig.</li>
+            <li>- <strong>Bara handling, ingen känsla:</strong> Visa vad karaktärerna tänker och känner.</li>
+            <li>- <strong>Tempushopp:</strong> Välj presens eller preteritum och håll dig till det.</li>
+            <li>- <strong>Ingen röd tråd:</strong> Varje scen ska driva handlingen framåt.</li>
           </ul>
         </ExampleCard>
       </Section>
@@ -242,8 +242,8 @@ function ArgumenterandeTextContent() {
   return (
     <>
       <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-        En argumenterande text syftar till att overtyga lasaren om en asikt
-        eller standpunkt. Den kraver tydlig struktur, starka argument och
+        En argumenterande text syftar till att övertyga läsaren om en åsikt
+        eller ståndpunkt. Den kräver tydlig struktur, starka argument och
         saklig ton.
       </p>
 
@@ -251,91 +251,91 @@ function ArgumenterandeTextContent() {
         <div className="grid gap-4 sm:grid-cols-2">
           <ExampleCard title="1. Inledning med tes">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Presentera amnet och formulera din tes - den asikt du vill
-              forsvara. Tesen ska vara tydlig och ta stallning.
+              Presentera ämnet och formulera din tes - den åsikt du vill
+              försvara. Tesen ska vara tydlig och ta ställning.
             </p>
-            <ExampleBlock title="Exempel pa tes">
-              Alla elever borde fa en timmes fysisk aktivitet per dag i skolan.
-              Det skulle forbattra bade halsa och inlarning.
+            <ExampleBlock title="Exempel på tes">
+              Alla elever borde få en timmes fysisk aktivitet per dag i skolan.
+              Det skulle förbättra både hälsa och inlärning.
             </ExampleBlock>
             <Tip>
-              En bra tes ar specifik och mojlig att argumentera for och emot.
-              &quot;Mobbing ar daligt&quot; ar for vagt. &quot;Skolan borde infora
-              obligatorisk schemalagd rasttid med vuxennarvaro for att motverka
-              mobbning&quot; ar battre.
+              En bra tes är specifik och möjlig att argumentera för och emot.
+              &quot;Mobbning är dåligt&quot; är för vagt. &quot;Skolan borde införa
+              obligatorisk schemalagd rasttid med vuxennärvaro för att motverka
+              mobbning&quot; är bättre.
             </Tip>
           </ExampleCard>
 
           <ExampleCard title="2. Argument">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Presentera 2-4 argument som stoder din tes. Varje argument
-              bor stodjas av fakta, exempel eller expertutlatanden.
+              Presentera 2-4 argument som stöder din tes. Varje argument
+              bör stödjas av fakta, exempel eller expertutlåtanden.
             </p>
             <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
               <p><strong>Typer av argument:</strong></p>
               <ul className="space-y-1">
-                <li>- <strong>Faktaargument:</strong> Baserat pa forskning och statistik</li>
-                <li>- <strong>Erfarenhetsargument:</strong> Bygger pa egna eller andras erfarenheter</li>
-                <li>- <strong>Auktoritetsargument:</strong> Hanvisar till experter</li>
-                <li>- <strong>Vardeargument:</strong> Bygger pa gemensamma varderingar</li>
+                <li>- <strong>Faktaargument:</strong> Baserat på forskning och statistik</li>
+                <li>- <strong>Erfarenhetsargument:</strong> Bygger på egna eller andras erfarenheter</li>
+                <li>- <strong>Auktoritetsargument:</strong> Hänvisar till experter</li>
+                <li>- <strong>Värdeargument:</strong> Bygger på gemensamma värderingar</li>
               </ul>
             </div>
           </ExampleCard>
 
           <ExampleCard title="3. Motargument">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Ta upp och bemot motargument. Det visar att du har tankt
-              igenom fragan fran olika sidor och starker din trovardighet.
+              Ta upp och bemöt motargument. Det visar att du har tänkt
+              igenom frågan från olika sidor och stärker din trovärdighet.
             </p>
             <ExampleBlock title="Exempel">
-              Vissa menar att det inte finns tid i schemat for mer fysisk
-              aktivitet. Men forskning visar att elever som ror sig mer
-              faktiskt presterar battre i andra amnen, vilket gor att tiden
-              inte &quot;forsvinner&quot; utan investeras.
+              Vissa menar att det inte finns tid i schemat för mer fysisk
+              aktivitet. Men forskning visar att elever som rör sig mer
+              faktiskt presterar bättre i andra ämnen, vilket gör att tiden
+              inte &quot;försvinner&quot; utan investeras.
             </ExampleBlock>
             <Warning>
-              Vanligt fel: Att gora motargumenten till &quot;halmgubbar&quot; - det vill saga
-              att presentera motargumenten i forsvagad form. Var arlig med
-              motstandarens basta argument och bemot dem serioust.
+              Vanligt fel: Att göra motargumenten till &quot;halmgubbar&quot; - det vill säga
+              att presentera motargumenten i försvagad form. Var ärlig med
+              motståndarens bästa argument och bemöt dem serioust.
             </Warning>
           </ExampleCard>
 
           <ExampleCard title="4. Slutsats">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
               Sammanfatta dina viktigaste argument och upprepa tesen i ny
-              form. Garna med en blick framat eller uppmaning till handling.
+              form. Gärna med en blick framåt eller uppmaning till handling.
             </p>
             <ExampleBlock title="Exempel">
-              Sammanfattningsvis finns det starka skal - bade halsomassiga
-              och pedagogiska - for att ge elever mer fysisk aktivitet i skolan.
-              Det ar dags att vi slutar se rorelse som ett avbrott fran larandet
-              och i stallet ser det som en forutsattning.
+              Sammanfattningsvis finns det starka skäl - både hälsomässiga
+              och pedagogiska - för att ge elever mer fysisk aktivitet i skolan.
+              Det är dags att vi slutar se rörelse som ett avbrott från lärandet
+              och i stället ser det som en förutsättning.
             </ExampleBlock>
           </ExampleCard>
         </div>
       </Section>
 
       <Section title="Argumentationsteknik">
-        <ExampleCard title="Stark dina argument">
+        <ExampleCard title="Stärk dina argument">
           <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Etos (trovardighet):</strong> Visa att du ar palast och serios.
-              Hanvisa till palitliga kallor.</p>
-            <Ex>Enligt Folkhalsomyndigheten ror sig svenska barn allt mindre...</Ex>
+            <p><strong>Etos (trovärdighet):</strong> Visa att du är påläst och seriös.
+              Hänvisa till pålitliga källor.</p>
+            <Ex>Enligt Folkhälsomyndigheten rör sig svenska barn allt mindre...</Ex>
 
             <p><strong>Logos (logik):</strong> Bygg logiska resonemangskedjor.
-              Om A, sa B, och darfor C.</p>
-            <Ex>Om eleverna ror sig mer, forbattras koncentrationen. Med battre
-              koncentration hojs resultaten. Alltsa leder mer rorelse till battre
+              Om A, så B, och därför C.</p>
+            <Ex>Om eleverna rör sig mer, förbättras koncentrationen. Med bättre
+              koncentration höjs resultaten. Alltså leder mer rörelse till bättre
               skolresultat.</Ex>
 
-            <p><strong>Patos (kansla):</strong> Anvand kanslor for att engagera,
-              men overdriva inte.</p>
-            <Ex>Tank dig en skola dar barn far springa, leka och rora sig varje dag
-              - en skola dar de ser fram emot att ga dit.</Ex>
+            <p><strong>Patos (känsla):</strong> Använd känslor för att engagera,
+              men överdriva inte.</p>
+            <Ex>Tänk dig en skola där barn får springa, leka och röra sig varje dag
+              - en skola där de ser fram emot att gå dit.</Ex>
           </div>
           <Tip>
             En bra argumenterande text kombinerar alla tre - etos, logos och patos.
-            Men i sakprosa bor logos och etos vaga tyngst.
+            Men i sakprosa bör logos och etos väga tyngst.
           </Tip>
         </ExampleCard>
       </Section>
@@ -343,12 +343,12 @@ function ArgumenterandeTextContent() {
       <Section title="Textbindning i argumenterande text">
         <ExampleCard title="Viktiga sambandsord">
           <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Lagga till argument:</strong></p>
-            <Ex>dessutom, vidare, ytterligare ett skal ar, for det andra</Ex>
+            <p><strong>Lägga till argument:</strong></p>
+            <Ex>dessutom, vidare, ytterligare ett skäl är, för det andra</Ex>
             <p><strong>Visa kontrast/motargument:</strong></p>
-            <Ex>a andra sidan, visserligen ... men, trots att, emellertid</Ex>
-            <p><strong>Visa orsak och foljd:</strong></p>
-            <Ex>darfor, foljaktligen, detta leder till, som en konsekvens</Ex>
+            <Ex>å andra sidan, visserligen ... men, trots att, emellertid</Ex>
+            <p><strong>Visa orsak och följd:</strong></p>
+            <Ex>därför, följaktligen, detta leder till, som en konsekvens</Ex>
             <p><strong>Sammanfatta:</strong></p>
             <Ex>sammanfattningsvis, sammantaget, allt detta visar att</Ex>
           </div>
@@ -358,12 +358,12 @@ function ArgumenterandeTextContent() {
       <Section title="Vanliga misstag att undvika">
         <ExampleCard title="Checklista">
           <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <li>- <strong>Oklar tes:</strong> Lasaren ska tidigt forsta vad du argumenterar for.</li>
-            <li>- <strong>Bara tyckande:</strong> &quot;Jag tycker att...&quot; ar inte ett argument. Underbygg med fakta.</li>
-            <li>- <strong>Upprepning:</strong> Tre olika argument ar battre an samma argument tre ganger.</li>
-            <li>- <strong>Ignorera motargument:</strong> Det forsvagar din text om du inte bemoter dem.</li>
-            <li>- <strong>Kansloargument utan substans:</strong> Patos utan logos haller inte.</li>
-            <li>- <strong>Generaliseringar:</strong> &quot;Alla vet att...&quot; och &quot;Det ar uppenbart&quot; ar inte argument.</li>
+            <li>- <strong>Oklar tes:</strong> Läsaren ska tidigt förstå vad du argumenterar för.</li>
+            <li>- <strong>Bara tyckande:</strong> &quot;Jag tycker att...&quot; är inte ett argument. Underbygg med fakta.</li>
+            <li>- <strong>Upprepning:</strong> Tre olika argument är bättre än samma argument tre gånger.</li>
+            <li>- <strong>Ignorera motargument:</strong> Det försvagar din text om du inte bemöter dem.</li>
+            <li>- <strong>Känsloargument utan substans:</strong> Patos utan logos håller inte.</li>
+            <li>- <strong>Generaliseringar:</strong> &quot;Alla vet att...&quot; och &quot;Det är uppenbart&quot; är inte argument.</li>
           </ul>
         </ExampleCard>
       </Section>
@@ -375,120 +375,120 @@ function UtredandeTextContent() {
   return (
     <>
       <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-        En utredande text undersoker en fraga fran flera sidor, analyserar
-        information och drar slutsatser. Till skillnad fran en argumenterande text
+        En utredande text undersöker en fråga från flera sidor, analyserar
+        information och drar slutsatser. Till skillnad från en argumenterande text
         ska den utredande texten vara objektiv och balanserad.
       </p>
 
       <Section title="Struktur">
         <div className="grid gap-4 sm:grid-cols-2">
-          <ExampleCard title="1. Inledning med fragestallning">
+          <ExampleCard title="1. Inledning med frågeställning">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Presentera amnet och formulera en tydlig fragestallning.
-              Ge nodvandig bakgrund sa att lasaren forstar sammanhanget.
+              Presentera ämnet och formulera en tydlig frågeställning.
+              Ge nödvändig bakgrund så att läsaren förstår sammanhanget.
             </p>
             <ExampleBlock title="Exempel">
-              Hur paverkar sociala medier ungdomars psykiska halsa? Under de
-              senaste tio aren har anvandningen av sociala medier bland unga okat
-              dramatiskt, och fragan om dess effekter ar aktuell.
+              Hur påverkar sociala medier ungdomars psykiska hälsa? Under de
+              senaste tio åren har användningen av sociala medier bland unga ökat
+              dramatiskt, och frågan om dess effekter är aktuell.
             </ExampleBlock>
             <Tip>
-              Fragestallningen styr hela texten. Den ska vara oppen (inte ga att
-              besvara med bara ja eller nej) och tillrackligt avgransad for att
+              Frågeställningen styr hela texten. Den ska vara öppen (inte gå att
+              besvara med bara ja eller nej) och tillräckligt avgränsad för att
               kunna besvaras.
             </Tip>
           </ExampleCard>
 
           <ExampleCard title="2. Bakgrund">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Ge lasaren den information som behovs for att forsta fragan.
+              Ge läsaren den information som behövs för att förstå frågan.
               Definiera viktiga begrepp och presentera relevant fakta.
             </p>
             <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
               <li>- Historisk bakgrund vid behov</li>
               <li>- Definitioner av centrala begrepp</li>
               <li>- Relevant statistik eller forskning</li>
-              <li>- Avgransning: vad utredningen inte behandlar</li>
+              <li>- Avgränsning: vad utredningen inte behandlar</li>
             </ul>
           </ExampleCard>
 
           <ExampleCard title="3. Analys / Utredningsdel">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Karnan i texten. Presentera olika perspektiv, undersok orsaker
-              och konsekvenser, och vag olika argument mot varandra.
+              Kärnan i texten. Presentera olika perspektiv, undersök orsaker
+              och konsekvenser, och väg olika argument mot varandra.
             </p>
             <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
               <p><strong>Organisera med tydliga rubriker. Exempel:</strong></p>
               <ul className="space-y-1">
                 <li>- Perspektiv 1: Positiva effekter av sociala medier</li>
                 <li>- Perspektiv 2: Negativa effekter</li>
-                <li>- Vad sager forskningen?</li>
-                <li>- Sammanvagning av olika perspektiv</li>
+                <li>- Vad säger forskningen?</li>
+                <li>- Sammanvägning av olika perspektiv</li>
               </ul>
             </div>
           </ExampleCard>
 
           <ExampleCard title="4. Slutsats">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Besvara fragestallningen baserat pa din utredning. Slutsatsen
-              ska folja logiskt fran analysen.
+              Besvara frågeställningen baserat på din utredning. Slutsatsen
+              ska följa logiskt från analysen.
             </p>
             <ExampleBlock title="Exempel">
               Sammanfattningsvis visar utredningen att sociala medier har
-              bade positiva och negativa effekter pa ungdomars psykiska halsa.
-              Den avgorande faktorn tycks vara hur mycket tid som spenderas
-              och pa vilket satt plattformarna anvands.
+              både positiva och negativa effekter på ungdomars psykiska hälsa.
+              Den avgörande faktorn tycks vara hur mycket tid som spenderas
+              och på vilket sätt plattformarna används.
             </ExampleBlock>
             <Warning>
-              Slutsatsen ska inte innehalla ny information. Den sammanfattar
-              och drar slutsatser fran det som redan presenterats.
+              Slutsatsen ska inte innehålla ny information. Den sammanfattar
+              och drar slutsatser från det som redan presenterats.
             </Warning>
           </ExampleCard>
         </div>
       </Section>
 
-      <Section title="Akademiskt forhallningssatt">
-        <ExampleCard title="Objektivitet och kallhantering">
+      <Section title="Akademiskt förhållningssätt">
+        <ExampleCard title="Objektivitet och källhantering">
           <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Hall objektiv ton:</strong></p>
+            <p><strong>Håll objektiv ton:</strong></p>
             <ul className="space-y-1">
-              <li>- Undvik &quot;jag tycker&quot; - presentera fakta och lat lasaren dra slutsatser</li>
-              <li>- Anvand distanserade formuleringar: &quot;forskning visar&quot;, &quot;det finns indikationer pa&quot;</li>
-              <li>- Presentera bada sidor rattvist, aven om du lutar at en sida</li>
+              <li>- Undvik &quot;jag tycker&quot; - presentera fakta och låt läsaren dra slutsatser</li>
+              <li>- Använd distanserade formuleringar: &quot;forskning visar&quot;, &quot;det finns indikationer på&quot;</li>
+              <li>- Presentera båda sidor rättvist, även om du lutar åt en sida</li>
             </ul>
 
-            <p><strong>Referera till kallor:</strong></p>
-            <Ex>Enligt en studie fran Karolinska Institutet (2023)...</Ex>
-            <Ex>Statistik fran SCB visar att...</Ex>
+            <p><strong>Referera till källor:</strong></p>
+            <Ex>Enligt en studie från Karolinska Institutet (2023)...</Ex>
+            <Ex>Statistik från SCB visar att...</Ex>
             <Ex>Forskaren Anna Svensson menar att...</Ex>
 
-            <p><strong>Markera osakerhet:</strong></p>
-            <Ex>Det finns indikationer pa att... / Det tyder pa att...</Ex>
-            <Ex>En mojlig forklaring ar... / Resultaten pekar mot...</Ex>
+            <p><strong>Markera osäkerhet:</strong></p>
+            <Ex>Det finns indikationer på att... / Det tyder på att...</Ex>
+            <Ex>En möjlig förklaring är... / Resultaten pekar mot...</Ex>
           </div>
           <Tip>
-            Skilj pa fakta och tolkning. Skriv &quot;Studien visar att 70 % av
-            ungdomarna anvander sociala medier dagligen&quot; (fakta) istallet for
-            &quot;Alla ungdomar sitter pa sociala medier hela tiden&quot; (generalisering).
+            Skilj på fakta och tolkning. Skriv &quot;Studien visar att 70 % av
+            ungdomarna använder sociala medier dagligen&quot; (fakta) istället för
+            &quot;Alla ungdomar sitter på sociala medier hela tiden&quot; (generalisering).
           </Tip>
         </ExampleCard>
       </Section>
 
-      <Section title="Sprak och stil">
-        <ExampleCard title="Formellt sprak">
+      <Section title="Språk och stil">
+        <ExampleCard title="Formellt språk">
           <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Anvand:</strong></p>
+            <p><strong>Använd:</strong></p>
             <ul className="space-y-1">
-              <li>- Formella sambandsord: emellertid, vidare, foljaktligen</li>
-              <li>- Passivformer: &quot;undersokningen genomfordes&quot; istallet for &quot;jag undersokte&quot;</li>
-              <li>- Precist sprak: undvik vaga ord som &quot;grej&quot;, &quot;massa&quot;</li>
+              <li>- Formella sambandsord: emellertid, vidare, följaktligen</li>
+              <li>- Passivformer: &quot;undersökningen genomfördes&quot; istället för &quot;jag undersökte&quot;</li>
+              <li>- Precist språk: undvik vaga ord som &quot;grej&quot;, &quot;massa&quot;</li>
             </ul>
             <p><strong>Undvik:</strong></p>
             <ul className="space-y-1">
-              <li>- Talsprak och slang</li>
-              <li>- Retoriska fragor (hor hemma i argumenterande text)</li>
-              <li>- Starka vardeladdade ord</li>
-              <li>- Forkortningar som &quot;typ&quot;, &quot;liksom&quot;, &quot;osv&quot;</li>
+              <li>- Talspråk och slang</li>
+              <li>- Retoriska frågor (hör hemma i argumenterande text)</li>
+              <li>- Starka värdeladdade ord</li>
+              <li>- Förkortningar som &quot;typ&quot;, &quot;liksom&quot;, &quot;osv&quot;</li>
             </ul>
           </div>
         </ExampleCard>
@@ -497,12 +497,12 @@ function UtredandeTextContent() {
       <Section title="Vanliga misstag att undvika">
         <ExampleCard title="Checklista">
           <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <li>- <strong>Ingen tydlig fragestallning:</strong> Utan fraga vet varken du eller lasaren vad texten undersoker.</li>
-            <li>- <strong>Ensidig:</strong> En utredande text maste belysa fler an en sida.</li>
-            <li>- <strong>Pastaenden utan belagg:</strong> Alla pastaenden ska kunna stodjas med kallor.</li>
-            <li>- <strong>Blanda samman fakta och asikt:</strong> Var tydlig med vad som ar vetenskapligt belagt och vad som ar tolkning.</li>
-            <li>- <strong>Slutsats som inte foljer av analysen:</strong> Slutsatsen ska bygga pa det du har presenterat, inget annat.</li>
-            <li>- <strong>For brett amne:</strong> Avgransa! &quot;Klimatforandringen&quot; ar for brett; &quot;Hur paverkar klimatforandringen Ostersjons ekosystem?&quot; ar lagom.</li>
+            <li>- <strong>Ingen tydlig frågeställning:</strong> Utan fråga vet varken du eller läsaren vad texten undersöker.</li>
+            <li>- <strong>Ensidig:</strong> En utredande text måste belysa fler än en sida.</li>
+            <li>- <strong>Påståenden utan belägg:</strong> Alla påståenden ska kunna stödjas med källor.</li>
+            <li>- <strong>Blanda samman fakta och åsikt:</strong> Var tydlig med vad som är vetenskapligt belagt och vad som är tolkning.</li>
+            <li>- <strong>Slutsats som inte följer av analysen:</strong> Slutsatsen ska bygga på det du har presenterat, inget annat.</li>
+            <li>- <strong>För brett ämne:</strong> Avgränsa! &quot;Klimatförändringen&quot; är för brett; &quot;Hur påverkar klimatförändringen Östersjöns ekosystem?&quot; är lagom.</li>
           </ul>
         </ExampleCard>
       </Section>
@@ -514,19 +514,19 @@ function KronikaContent() {
   return (
     <>
       <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-        En kronika ar en personlig text som blandar asikter med berattande.
-        Kronikoren utgar ofta fran en vardaglig handelse och lyfter den till
-        ett storre perspektiv - med humor, ironi eller eftertanke.
+        En krönika är en personlig text som blandar åsikter med berättande.
+        Krönikören utgår ofta från en vardaglig händelse och lyfter den till
+        ett större perspektiv - med humor, ironi eller eftertanke.
       </p>
 
-      <Section title="Vad kannetecknar en kronika?">
-        <ExampleCard title="Kronikans sardrag">
+      <Section title="Vad kännetecknar en krönika?">
+        <ExampleCard title="Krönikans särdrag">
           <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <li>- <strong>Personlig rost:</strong> Du skriver som du sjalv. Kronikoren ar synlig i texten.</li>
-            <li>- <strong>Utgangspunkt i vardagen:</strong> Ofta borjar kronikan med en konkret handelse eller observation.</li>
-            <li>- <strong>Fran litet till stort:</strong> Det vardagliga kopplas till en storre fraga eller insikt.</li>
-            <li>- <strong>Underhallande:</strong> Humor, ironi och kvickhet ar vanliga verktyg.</li>
-            <li>- <strong>Asikt utan att argumentera traditionellt:</strong> Du tar stallning, men genom berattelsen snarare an genom logiska argument.</li>
+            <li>- <strong>Personlig röst:</strong> Du skriver som du själv. Krönikören är synlig i texten.</li>
+            <li>- <strong>Utgångspunkt i vardagen:</strong> Ofta börjar krönikan med en konkret händelse eller observation.</li>
+            <li>- <strong>Från litet till stort:</strong> Det vardagliga kopplas till en större fråga eller insikt.</li>
+            <li>- <strong>Underhållande:</strong> Humor, ironi och kvickhet är vanliga verktyg.</li>
+            <li>- <strong>Åsikt utan att argumentera traditionellt:</strong> Du tar ställning, men genom berättelsen snarare än genom logiska argument.</li>
           </ul>
         </ExampleCard>
       </Section>
@@ -535,96 +535,96 @@ function KronikaContent() {
         <div className="grid gap-4 sm:grid-cols-2">
           <ExampleCard title="1. Krok">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Borja med nagot som fangar lasaren. En konkret situation, en
+              Börja med något som fångar läsaren. En konkret situation, en
               rolig iakttagelse eller en provocerande tanke.
             </p>
             <ExampleBlock title="Exempel">
-              Igar stod jag i ko pa ICA i exakt tjugotre minuter. Jag vet
-              det for jag hann rakna alla chokladkakor i hyllan bredvid.
-              Tre ganger.
+              Igår stod jag i kö på ICA i exakt tjugotre minuter. Jag vet
+              det för jag hann räkna alla chokladkakor i hyllan bredvid.
+              Tre gånger.
             </ExampleBlock>
           </ExampleCard>
 
-          <ExampleCard title="2. Berattelse och reflektion">
+          <ExampleCard title="2. Berättelse och reflektion">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Utveckla berattelsen och vav in dina tankar och reflektioner.
-              Varva det konkreta med det allmanna.
+              Utveckla berättelsen och väv in dina tankar och reflektioner.
+              Varva det konkreta med det allmänna.
             </p>
             <ExampleBlock title="Exempel">
-              Det slog mig att koande kanske ar den mest svenska av alla
-              sysselsattningar. Vi koar till allt. Vi ar varldsmastare i att sta
-              still och vanta pa var tur.
+              Det slog mig att köande kanske är den mest svenska av alla
+              sysselsättningar. Vi köar till allt. Vi är världsmästare i att stå
+              still och vänta på vår tur.
             </ExampleBlock>
           </ExampleCard>
 
-          <ExampleCard title="3. Fordjupning">
+          <ExampleCard title="3. Fördjupning">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Koppla det personliga till ett storre sammanhang. Vad sager din
-              erfarenhet om samhallet, manniskan eller tillvaron?
+              Koppla det personliga till ett större sammanhang. Vad säger din
+              erfarenhet om samhället, människan eller tillvaron?
             </p>
             <ul className="mt-1 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
               <li>- Lyft perspektivet</li>
-              <li>- Lagg in en ovantad vandning</li>
-              <li>- Kommentera ett samhallsfenomen</li>
+              <li>- Lägg in en oväntad vändning</li>
+              <li>- Kommentera ett samhällsfenomen</li>
             </ul>
           </ExampleCard>
 
-          <ExampleCard title="4. Avslutning med poang">
+          <ExampleCard title="4. Avslutning med poäng">
             <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Avsluta med en poang, en tankestallare eller en cirkelkomposition
+              Avsluta med en poäng, en tankställare eller en cirkelkomposition
               som knyter an till inledningen.
             </p>
             <ExampleBlock title="Exempel">
-              Sa nasta gang du star i ko, se det inte som bortkastad tid.
-              Se det som en paminnelse om att du lever i ett land dar
-              folk fortfarande har talamod nog att vanta pa sin tur.
+              Så nästa gång du står i kö, se det inte som bortkastad tid.
+              Se det som en påminnelse om att du lever i ett land där
+              folk fortfarande har tålamod nog att vänta på sin tur.
             </ExampleBlock>
           </ExampleCard>
         </div>
       </Section>
 
-      <Section title="Sprak och stil">
-        <ExampleCard title="Hitta din rost">
+      <Section title="Språk och stil">
+        <ExampleCard title="Hitta din röst">
           <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Blandad stil:</strong> Kronikan blandar talsprak med skriftsprak.
+            <p><strong>Blandad stil:</strong> Krönikan blandar talspråk med skriftspråk.
               Du kan vara ledig utan att vara slarvig.</p>
 
             <p><strong>Humor och ironi:</strong></p>
             <ul className="space-y-1">
-              <li>- Overdrifter for komisk effekt</li>
+              <li>- Överdrifter för komisk effekt</li>
               <li>- Understatement (underdrift)</li>
-              <li>- Sjalvironi</li>
-              <li>- Ovantade jamforelser</li>
+              <li>- Självironi</li>
+              <li>- Oväntade jämförelser</li>
             </ul>
 
             <p><strong>Retoriska grepp:</strong></p>
             <ul className="space-y-1">
-              <li>- Retoriska fragor (till skillnad fran utredande text ar de valkomna har)</li>
-              <li>- Direkt tilltal till lasaren</li>
-              <li>- Korta, klatschiga meningar blandat med langre resonemang</li>
-              <li>- Upprepning for effekt</li>
+              <li>- Retoriska frågor (till skillnad från utredande text är de välkomna här)</li>
+              <li>- Direkt tilltal till läsaren</li>
+              <li>- Korta, klatschiga meningar blandat med längre resonemang</li>
+              <li>- Upprepning för effekt</li>
             </ul>
           </div>
           <Tip>
-            Las kronikor av svenska kronikorer for att hitta inspiration.
-            Lagg marke till hur de blandar det personliga med det allmanna och
-            hur de bygger upp sina texter mot en poang.
+            Läs krönikor av svenska krönikörer för att hitta inspiration.
+            Lägg märke till hur de blandar det personliga med det allmänna och
+            hur de bygger upp sina texter mot en poäng.
           </Tip>
         </ExampleCard>
       </Section>
 
       <Section title="Skillnad mot andra texttyper">
-        <ExampleCard title="Kronika vs. debattartikel vs. dagbok">
+        <ExampleCard title="Krönika vs. debattartikel vs. dagbok">
           <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Kronika:</strong> Personlig, underhallande, blandar berattande med
-              reflektion. Har en poang men &quot;bevisar&quot; den inte med argument.</p>
-            <p><strong>Debattartikel:</strong> Argumenterande, saklig, bygger pa tes och argument.
+            <p><strong>Krönika:</strong> Personlig, underhållande, blandar berättande med
+              reflektion. Har en poäng men &quot;bevisar&quot; den inte med argument.</p>
+            <p><strong>Debattartikel:</strong> Argumenterande, saklig, bygger på tes och argument.
               Mer formell ton.</p>
-            <p><strong>Dagbok:</strong> Helt privat, ingen tydlig lasare, ingen bearbetad poang.</p>
+            <p><strong>Dagbok:</strong> Helt privat, ingen tydlig läsare, ingen bearbetad poäng.</p>
           </div>
           <Warning>
-            Vanligt fel: Att skriva en kronika som bara ar en berattelse utan
-            poang, eller en asiktstext utan berattelse. Kronikan behover bada.
+            Vanligt fel: Att skriva en krönika som bara är en berättelse utan
+            poäng, eller en åsiktstext utan berättelse. Krönikan behöver båda.
           </Warning>
         </ExampleCard>
       </Section>
@@ -632,12 +632,12 @@ function KronikaContent() {
       <Section title="Vanliga misstag att undvika">
         <ExampleCard title="Checklista">
           <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <li>- <strong>Ingen personlig rost:</strong> Kronikan ska lata som du, inte som en larobok.</li>
-            <li>- <strong>Bara rolig, ingen substans:</strong> Humor utan poang blir ytlig.</li>
-            <li>- <strong>Bara allvarlig, ingen underhallning:</strong> Da blir det en debattartikel.</li>
+            <li>- <strong>Ingen personlig röst:</strong> Krönikan ska låta som du, inte som en lärobok.</li>
+            <li>- <strong>Bara rolig, ingen substans:</strong> Humor utan poäng blir ytlig.</li>
+            <li>- <strong>Bara allvarlig, ingen underhållning:</strong> Då blir det en debattartikel.</li>
             <li>- <strong>Ingen koppling litet-stort:</strong> Stanna inte vid det personliga - lyft det.</li>
-            <li>- <strong>Ingen avslutande poang:</strong> Lasaren ska komma ifran texten med en tanke.</li>
-            <li>- <strong>Overdrivet talsprak:</strong> Ledig stil ar inte samma sak som slarvigt sprak.</li>
+            <li>- <strong>Ingen avslutande poäng:</strong> Läsaren ska komma ifrån texten med en tanke.</li>
+            <li>- <strong>Överdrivet talspråk:</strong> Ledig stil är inte samma sak som slarvigt språk.</li>
           </ul>
         </ExampleCard>
       </Section>
@@ -659,26 +659,26 @@ const TEMPLATES: Record<
   }
 > = {
   "berattande-text": {
-    title: "Berattande text",
-    description: "Skriv spannande berattelser med levande karaktarer och miljoer",
+    title: "Berättande text",
+    description: "Skriv spännande berättelser med levande karaktärer och miljöer",
     content: BerattendeTextContent,
     levels: ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"],
   },
   "argumenterande-text": {
     title: "Argumenterande text",
-    description: "Overtygande texter med tes, argument och motargument",
+    description: "Övertygande texter med tes, argument och motargument",
     content: ArgumenterandeTextContent,
     levels: ["mellanstadiet", "hogstadiet", "gymnasiet"],
   },
   "utredande-text": {
     title: "Utredande text",
-    description: "Undersok och analysera fragor objektivt och balanserat",
+    description: "Undersök och analysera frågor objektivt och balanserat",
     content: UtredandeTextContent,
     levels: ["hogstadiet", "gymnasiet"],
   },
   kronika: {
-    title: "Kronika",
-    description: "Personliga texter med humor, berattande och eftertanke",
+    title: "Krönika",
+    description: "Personliga texter med humor, berättande och eftertanke",
     content: KronikaContent,
     levels: ["hogstadiet", "gymnasiet"],
   },

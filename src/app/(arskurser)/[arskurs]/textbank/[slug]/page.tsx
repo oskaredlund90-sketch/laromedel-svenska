@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props) {
   if (!text) return {};
   return {
     title: `${text.title} – Textbank`,
-    description: `${text.categoryLabel}: ${text.title}. Exempeltext med analysfragor och tips.`,
+    description: `${text.categoryLabel}: ${text.title}. Exempeltext med analysfrågor och tips.`,
   };
 }
 
@@ -110,7 +110,7 @@ export default async function TextDetailArskursPage({ params }: Props) {
       {/* Language features */}
       <section className="mb-10">
         <h2 className="mb-4 text-2xl font-semibold text-neutral-900 dark:text-white">
-          Sprakliga drag
+          Språkliga drag
         </h2>
         <Card>
           <CardContent className="pt-6">

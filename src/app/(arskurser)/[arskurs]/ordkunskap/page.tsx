@@ -39,13 +39,13 @@ function Tip({ children }: { children: ReactNode }) {
 
 const LEVEL_DESCRIPTIONS: Record<AgeGroup, string> = {
   lagstadiet:
-    "Bygg ditt ordforrad! Har hittar du veckans ord och tips for att lara dig nya ord.",
+    "Bygg ditt ordförråd! Här hittar du veckans ord och tips för att lära dig nya ord.",
   mellanstadiet:
-    "Utoka ditt ordforrad med ordfamiljer, synonymer och sammansatta ord.",
+    "Utöka ditt ordförråd med ordfamiljer, synonymer och sammansatta ord.",
   hogstadiet:
-    "Akademiska ord, ordnyanser och etymologi. Stark ditt sprak for skola och vardag.",
+    "Akademiska ord, ordnyanser och etymologi. Stärk ditt språk för skola och vardag.",
   gymnasiet:
-    "Avancerat ordforrad, stilnivaer, lanord och latinska/grekiska rotter.",
+    "Avancerat ordförråd, stilnivåer, lånord och latinska/grekiska rötter.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -54,24 +54,24 @@ const LEVEL_DESCRIPTIONS: Record<AgeGroup, string> = {
 
 const LAGSTADIET_TIPS = [
   {
-    title: "Las hogt varje dag",
+    title: "Läs högt varje dag",
     content:
-      "Nar du laser hogt hor du hur orden later. Be en vuxen lasa for dig ocksa - da far du hora nya ord och kan fraga vad de betyder.",
+      "När du läser högt hör du hur orden låter. Be en vuxen läsa för dig också - då får du höra nya ord och kan fråga vad de betyder.",
   },
   {
-    title: "Anvand en bildordbok",
+    title: "Använd en bildordbok",
     content:
-      "En bildordbok hjalper dig att koppla ihop ord med bilder. Peka pa bilden och sag ordet. Forsok anvanda ordet i en egen mening.",
+      "En bildordbok hjälper dig att koppla ihop ord med bilder. Peka på bilden och säg ordet. Försök använda ordet i en egen mening.",
   },
   {
     title: "Ordsamlaren",
     content:
-      "Ha en liten bok dar du skriver ner nya ord du lar dig. Skriv ordet, rita en bild och skriv en mening med ordet. Forsok samla minst tre nya ord varje vecka!",
+      "Ha en liten bok där du skriver ner nya ord du lär dig. Skriv ordet, rita en bild och skriv en mening med ordet. Försök samla minst tre nya ord varje vecka!",
   },
   {
-    title: "Ordlek: Jag tanker pa...",
+    title: "Ordlek: Jag tänker på...",
     content:
-      "Spela ordlekar med kompisar eller familjen. Beskriv ett ord utan att saga det - kan de andra gissa? Till exempel: 'Det ar ett djur som har lang hals och bor i Afrika' (giraff).",
+      "Spela ordlekar med kompisar eller familjen. Beskriv ett ord utan att säga det - kan de andra gissa? Till exempel: 'Det är ett djur som har lång hals och bor i Afrika' (giraff).",
   },
 ];
 
@@ -79,27 +79,27 @@ const MELLANSTADIET_TIPS = [
   {
     title: "Ordfamiljer",
     content:
-      "Manga ord hor ihop i familjer. Till exempel: skriva, skrivare, skrivbok, skrift, skriftlig. Nar du lar dig ett nytt ord, forsok hitta andra ord i samma familj. Det hjalper dig att forsta och minnas fler ord.",
+      "Många ord hör ihop i familjer. Till exempel: skriva, skrivare, skrivbok, skrift, skriftlig. När du lär dig ett nytt ord, försök hitta andra ord i samma familj. Det hjälper dig att förstå och minnas fler ord.",
   },
   {
     title: "Synonymer och antonymer",
     content:
-      "Synonymer ar ord som betyder ungefar samma sak (glad - lycklig - nojd). Antonymer ar motsatsord (glad - ledsen). Ovning: valj fem ord och skriv minst tva synonymer och en antonym till varje.",
+      "Synonymer är ord som betyder ungefär samma sak (glad - lycklig - nöjd). Antonymer är motsatsord (glad - ledsen). Övning: välj fem ord och skriv minst två synonymer och en antonym till varje.",
   },
   {
     title: "Sammansatta ord",
     content:
-      "Svenskan ar fullt av sammansatta ord! 'Fotboll' = fot + boll. 'Skolbok' = skola + bok. Ovning: hur manga sammansatta ord kan du bilda med ordet 'bok'? (bokhylla, bokstav, bokmal, bokhandel...)",
+      "Svenskan är fullt av sammansatta ord! 'Fotboll' = fot + boll. 'Skolbok' = skola + bok. Övning: hur många sammansatta ord kan du bilda med ordet 'bok'? (bokhylla, bokstav, bokmål, bokhandel...)",
   },
   {
     title: "Ord i kontext",
     content:
-      "Nar du laser och stoter pa ett ord du inte forstar, forsok forst gissa vad det betyder genom att titta pa sammanhanget. Las meningen fore och efter. Sla sedan upp ordet for att se om du gissade ratt.",
+      "När du läser och stöter på ett ord du inte förstår, försök först gissa vad det betyder genom att titta på sammanhanget. Läs meningen före och efter. Slå sedan upp ordet för att se om du gissade rätt.",
   },
   {
-    title: "Ovning: Byt ut ordet",
+    title: "Övning: Byt ut ordet",
     content:
-      "Tag en kort text och stryka under fem ord. Forsok byta ut varje ord mot en synonym. Las texten igen - andras betydelsen? Lar dig att olika ord ger olika nyanser.",
+      "Ta en kort text och stryk under fem ord. Försök byta ut varje ord mot en synonym. Läs texten igen - ändras betydelsen? Lär dig att olika ord ger olika nyanser.",
   },
 ];
 
@@ -107,60 +107,60 @@ const HOGSTADIET_TIPS = [
   {
     title: "Akademiska ord",
     content:
-      "I skolan moter du ofta akademiska ord som 'analysera', 'jaemfora', 'sammanfatta', 'argumentera' och 'vardera'. Dessa ord ar nyckeln till bra betyg. Ovning: skriv en egen definition av varje ord och ge ett exempel pa hur du anvander det i en skoluppgift.",
+      "I skolan möter du ofta akademiska ord som 'analysera', 'jämföra', 'sammanfatta', 'argumentera' och 'värdera'. Dessa ord är nyckeln till bra betyg. Övning: skriv en egen definition av varje ord och ge ett exempel på hur du använder det i en skoluppgift.",
   },
   {
     title: "Ordnyanser",
     content:
-      "Orden 'tycka', 'tro' och 'veta' verkar lika men betyder olika saker. 'Tycka' ar en asikt, 'tro' ar en gissning och 'veta' ar sakert. Ovning: skriv tre meningar dar du anvander ratt ord - 'Jag tycker att...', 'Jag tror att...', 'Jag vet att...'.",
+      "Orden 'tycka', 'tro' och 'veta' verkar lika men betyder olika saker. 'Tycka' är en åsikt, 'tro' är en gissning och 'veta' är säkert. Övning: skriv tre meningar där du använder rätt ord - 'Jag tycker att...', 'Jag tror att...', 'Jag vet att...'.",
   },
   {
     title: "Etymologi - ordens ursprung",
     content:
-      "Att foersta var ett ord kommer ifran hjalper dig att minnas det. Till exempel kommer 'telefon' fran grekiskans 'tele' (fjarran) och 'phone' (ljud). Ovning: sla upp fem ord och ta reda pa deras ursprung. Ser du monster?",
+      "Att förstå var ett ord kommer ifrån hjälper dig att minnas det. Till exempel kommer 'telefon' från grekiskans 'tele' (fjärran) och 'phone' (ljud). Övning: slå upp fem ord och ta reda på deras ursprung. Ser du mönster?",
   },
   {
-    title: "Stilnivaer",
+    title: "Stilnivåer",
     content:
-      "Samma sak kan sagas pa olika satt beroende pa situationen. Jemfor: 'snacka' (vardagligt) - 'tala' (neutralt) - 'yttra sig' (formellt). Ovning: valj fem vardagliga ord och hitta en neutral och en formell variant av varje.",
+      "Samma sak kan sägas på olika sätt beroende på situationen. Jämför: 'snacka' (vardagligt) - 'tala' (neutralt) - 'yttra sig' (formellt). Övning: välj fem vardagliga ord och hitta en neutral och en formell variant av varje.",
   },
   {
-    title: "Ovning: Ordbanken",
+    title: "Övning: Ordbanken",
     content:
-      "Skapa en ordbank i en anteckningsbok eller digitalt. For varje nytt ord: skriv definitionen, ordklassen, ett exempel, en synonym och en antonym. Ga igenom ordbanken varje vecka. Mal: 5 nya ord per vecka.",
+      "Skapa en ordbank i en anteckningsbok eller digitalt. För varje nytt ord: skriv definitionen, ordklassen, ett exempel, en synonym och en antonym. Gå igenom ordbanken varje vecka. Mål: 5 nya ord per vecka.",
   },
 ];
 
 const GYMNASIET_TIPS = [
   {
-    title: "Register och stilnivaer",
+    title: "Register och stilnivåer",
     content:
-      "Spraket har olika register: vardagligt, neutralt och formellt. I akademiskt skrivande anvander du formellt register: 'undersokning' istallet for 'koll', 'paverka' istallet for 'stalla till det'. Ovning: ta en vardaglig text (t.ex. ett sms) och skriv om den i formellt register.",
+      "Språket har olika register: vardagligt, neutralt och formellt. I akademiskt skrivande använder du formellt register: 'undersökning' istället för 'koll', 'påverka' istället för 'ställa till det'. Övning: ta en vardaglig text (t.ex. ett sms) och skriv om den i formellt register.",
   },
   {
-    title: "Latinska och grekiska rotter",
+    title: "Latinska och grekiska rötter",
     content:
-      "Manga svenska ord har latinskt eller grekiskt ursprung. Kannedom om vanliga rotter hjalper dig att forsta okanda ord. Exempel: 'bio' (liv), 'geo' (jord), 'psyko' (sjal), 'krono' (tid), 'auto' (sjalv). Ovning: lista tio ord som borjar med 'bio-' och forklara kopplingen till 'liv'.",
+      "Många svenska ord har latinskt eller grekiskt ursprung. Kännedom om vanliga rötter hjälper dig att förstå okända ord. Exempel: 'bio' (liv), 'geo' (jord), 'psyko' (själ), 'krono' (tid), 'auto' (själv). Övning: lista tio ord som börjar med 'bio-' och förklara kopplingen till 'liv'.",
   },
   {
-    title: "Lanord och sprakpaverkan",
+    title: "Lånord och språkpåverkan",
     content:
-      "Svenska har lanord fran manga sprak: tyska (arbete, borgare), franska (restaurang, polis), engelska (mejl, sajt). Ovning: valj tio vanliga svenska ord och ta reda pa vilket sprak de kommer fran. Vad sager det om Sveriges historia?",
+      "Svenska har lånord från många språk: tyska (arbete, borgare), franska (restaurang, polis), engelska (mejl, sajt). Övning: välj tio vanliga svenska ord och ta reda på vilket språk de kommer från. Vad säger det om Sveriges historia?",
   },
   {
-    title: "Facksprak och termer",
+    title: "Fackspråk och termer",
     content:
-      "Varje amne har sitt facksprak. I litteraturvetenskapen talar vi om 'narrativ', 'fokalisering', 'metafor' och 'diegesis'. Ovning: valj ett amne (juridik, medicin, teknik) och samla tio facktermer. Forklara dem med egna ord.",
+      "Varje ämne har sitt fackspråk. I litteraturvetenskapen talar vi om 'narrativ', 'fokalisering', 'metafor' och 'diegesis'. Övning: välj ett ämne (juridik, medicin, teknik) och samla tio facktermer. Förklara dem med egna ord.",
   },
   {
-    title: "Ovning: Ordanalys",
+    title: "Övning: Ordanalys",
     content:
-      "Valj ett ord (t.ex. 'demokrati'). Analysera: 1) Etymologi (demos = folk, kratos = styre). 2) Hur anvands det idag? 3) Vilka sammansattningar finns? (folkomrostning, folkstyre) 4) Finns det ett synonymt uttryck? 5) I vilka kontexter anvands det?",
+      "Välj ett ord (t.ex. 'demokrati'). Analysera: 1) Etymologi (demos = folk, kratos = styre). 2) Hur används det idag? 3) Vilka sammansättningar finns? (folkomröstning, folkstyre) 4) Finns det ett synonymt uttryck? 5) I vilka kontexter används det?",
   },
   {
-    title: "Connotation vs. denotation",
+    title: "Konnotation vs. denotation",
     content:
-      "Denotation ar ordets bokstavliga betydelse. Konnotation ar de associationer och kanslor ordet vackar. 'Hem' och 'bostad' betecknar samma sak, men 'hem' vacker varma kanslor medan 'bostad' ar neutralt. Ovning: jamfor konnotationerna hos 'barn/unge/avkomma', 'gammal/aldre/aalderstigen', 'dod/avliden/bortgangen'.",
+      "Denotation är ordets bokstavliga betydelse. Konnotation är de associationer och känslor ordet väcker. 'Hem' och 'bostad' betecknar samma sak, men 'hem' väcker varma känslor medan 'bostad' är neutralt. Övning: jämför konnotationerna hos 'barn/unge/avkomma', 'gammal/äldre/ålderstigen', 'död/avliden/bortgången'.",
   },
 ];
 
@@ -178,7 +178,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!group) return {};
   return {
     title: `Ordkunskap - ${group.label}`,
-    description: `Ordkunskap och ordforrad for ${group.label.toLowerCase()}.`,
+    description: `Ordkunskap och ordförråd för ${group.label.toLowerCase()}.`,
   };
 }
 
@@ -222,7 +222,7 @@ export default async function OrdkunskapPage({ params }: Props) {
       </Section>
 
       {/* Tips and exercises */}
-      <Section title="Tips och ovningar">
+      <Section title="Tips och övningar">
         <div className="space-y-4">
           {tips.map((tip) => (
             <Card key={tip.title}>
@@ -244,12 +244,12 @@ export default async function OrdkunskapPage({ params }: Props) {
         <Section title="Ordlek">
           <Tip>
             <strong>Rimlek:</strong> Kan du hitta ord som rimmar? Katt - hatt -
-            matt - platt. Forsok hitta sa manga rim som mojligt till orden: bok,
+            matt - platt. Försök hitta så många rim som möjligt till orden: bok,
             sol, dag, natt, ring.
           </Tip>
           <Tip>
-            <strong>Alfabet-leken:</strong> Kan du hitta ett djur for varje
-            bokstav i alfabetet? A som apa, B som bjorn, C som...
+            <strong>Alfabet-leken:</strong> Kan du hitta ett djur för varje
+            bokstav i alfabetet? A som apa, B som björn, C som...
           </Tip>
         </Section>
       )}
@@ -257,54 +257,54 @@ export default async function OrdkunskapPage({ params }: Props) {
       {level === "mellanstadiet" && (
         <Section title="Utmaning">
           <Tip>
-            <strong>Orddetektiven:</strong> Valj en sida ur en bok du laser
-            just nu. Hitta tre ord du inte kanner till. Forsok gissa vad de
-            betyder, och sla sedan upp dem. Var din gissning ratt?
+            <strong>Orddetektiven:</strong> Välj en sida ur en bok du läser
+            just nu. Hitta tre ord du inte känner till. Försök gissa vad de
+            betyder, och slå sedan upp dem. Var din gissning rätt?
           </Tip>
           <Tip>
-            <strong>Sammansattningsrekordet:</strong> Vad ar det langsta
-            sammansatta ordet du kan hitta eller skapa? Kan du sla
-            &quot;nordostpassatvindsbelte&quot;?
+            <strong>Sammansättningsrekordet:</strong> Vad är det längsta
+            sammansatta ordet du kan hitta eller skapa? Kan du slå
+            &quot;nordostpassatvindsbälte&quot;?
           </Tip>
         </Section>
       )}
 
       {level === "hogstadiet" && (
-        <Section title="Fordjupning">
+        <Section title="Fördjupning">
           <Tip>
-            <strong>Sprakhhistoria:</strong> Svenska har forandrats mycket genom
-            historien. Fornsvenska, aldre nysvenska och modern svenska ser helt
-            olika ut. Sla upp en medeltida text och forsok tolka den - hur
-            manga ord kanner du igen?
+            <strong>Språkhistoria:</strong> Svenska har förändrats mycket genom
+            historien. Fornsvenska, äldre nysvenska och modern svenska ser helt
+            olika ut. Slå upp en medeltida text och försök tolka den - hur
+            många ord känner du igen?
           </Tip>
           <Tip>
-            <strong>Ordets resa:</strong> Valj ett ord med utlandskt ursprung
-            (t.ex. &quot;garage&quot; fran franskan) och spoora ordets resa fran
-            kallspraket till svenskan. Har betydelsen andrats pa vagen?
+            <strong>Ordets resa:</strong> Välj ett ord med utländskt ursprung
+            (t.ex. &quot;garage&quot; från franskan) och spåra ordets resa från
+            källspråket till svenskan. Har betydelsen ändrats på vägen?
           </Tip>
         </Section>
       )}
 
       {level === "gymnasiet" && (
-        <Section title="Fordjupning">
+        <Section title="Fördjupning">
           <Tip>
-            <strong>Semantisk analys:</strong> Valj ett abstrakt ord som
-            &quot;frihet&quot;, &quot;rattvisaa&quot; eller
-            &quot;demokrati&quot;. Analysera hur ordet anvands i tre olika
+            <strong>Semantisk analys:</strong> Välj ett abstrakt ord som
+            &quot;frihet&quot;, &quot;rättvisa&quot; eller
+            &quot;demokrati&quot;. Analysera hur ordet används i tre olika
             texter (t.ex. en politisk debatt, en roman och en vetenskaplig
             artikel). Skiftar betydelsen?
           </Tip>
           <Tip>
-            <strong>Spraklig variation:</strong> Jamfor hur samma budskap
-            uttrycks i en tidningsartikel, ett blogginlagg och ett sms. Vilka
-            ord valjs? Vilken meningsbyggnad? Vad sager det om register och
+            <strong>Språklig variation:</strong> Jämför hur samma budskap
+            uttrycks i en tidningsartikel, ett blogginlägg och ett sms. Vilka
+            ord väljs? Vilken meningsbyggnad? Vad säger det om register och
             mottagaranpassning?
           </Tip>
           <Tip>
-            <strong>Nyord och sprakforandring:</strong> Varje ar listar
-            Sprakradet nya ord i svenskan (t.ex.
-            &quot;klimatangest&quot;, &quot;doomscrollning&quot;). Vad sager
-            nyorden om var tid? Hur bildas de (lan, sammansattning,
+            <strong>Nyord och språkförändring:</strong> Varje år listar
+            Språkrådet nya ord i svenskan (t.ex.
+            &quot;klimatångest&quot;, &quot;doomscrollning&quot;). Vad säger
+            nyorden om vår tid? Hur bildas de (lån, sammansättning,
             avledning)?
           </Tip>
         </Section>
