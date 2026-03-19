@@ -1,6 +1,24 @@
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
 
+const AGE_GROUPS = [
+  { href: "/lagstadiet", label: "L\u00e5gstadiet (\u00e5k 1\u20133)" },
+  { href: "/mellanstadiet", label: "Mellanstadiet (\u00e5k 4\u20136)" },
+  { href: "/hogstadiet", label: "H\u00f6gstadiet (\u00e5k 7\u20139)" },
+  { href: "/gymnasiet", label: "Gymnasiet" },
+];
+
+const SECTIONS = [
+  { label: "Kursplan", path: "kursplan" },
+  { label: "Grammatik", path: "grammatik" },
+  { label: "Skrivverkstad", path: "skrivverkstad" },
+  { label: "\u00d6vningar", path: "ovningar" },
+  { label: "Textbank", path: "textbank" },
+  { label: "Nationella prov", path: "nationella-prov" },
+  { label: "Litteraturhistoria", path: "litteraturhistoria" },
+  { label: "Ordkunskap", path: "ordkunskap" },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950">
@@ -9,49 +27,71 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-white">
               <BookOpen className="h-5 w-5" />
-              Läromedel i Svenska
+              L&auml;romedel i Svenska
             </div>
             <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-              Ett öppet digitalt läromedel i svenska och svenska som andraspråk för alla skolåldrar.
+              Ett &ouml;ppet digitalt l&auml;romedel i svenska och svenska som andraspr&aring;k
+              f&ouml;r alla skol&aring;ldrar.
             </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">Årskurser</h3>
+            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">
+              V&auml;lj stadie
+            </h3>
             <ul className="mt-2 space-y-1 text-sm text-neutral-500 dark:text-neutral-400">
-              <li><Link href="/lagstadiet" className="hover:text-neutral-900 dark:hover:text-white">Lågstadiet (åk 1–3)</Link></li>
-              <li><Link href="/mellanstadiet" className="hover:text-neutral-900 dark:hover:text-white">Mellanstadiet (åk 4–6)</Link></li>
-              <li><Link href="/hogstadiet" className="hover:text-neutral-900 dark:hover:text-white">Högstadiet (åk 7–9)</Link></li>
-              <li><Link href="/gymnasiet" className="hover:text-neutral-900 dark:hover:text-white">Gymnasiet</Link></li>
+              {AGE_GROUPS.map((g) => (
+                <li key={g.href}>
+                  <Link
+                    href={g.href}
+                    className="hover:text-neutral-900 dark:hover:text-white"
+                  >
+                    {g.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">Resurser</h3>
+            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">
+              Resurser (h&ouml;gstadiet)
+            </h3>
             <ul className="mt-2 space-y-1 text-sm text-neutral-500 dark:text-neutral-400">
-              <li><Link href="/ai-labbet" className="hover:text-neutral-900 dark:hover:text-white">AI-labbet</Link></li>
-              <li><Link href="/grammatik" className="hover:text-neutral-900 dark:hover:text-white">Grammatik</Link></li>
-              <li><Link href="/skrivverkstad" className="hover:text-neutral-900 dark:hover:text-white">Skrivverkstad</Link></li>
-              <li><Link href="/nationella-prov" className="hover:text-neutral-900 dark:hover:text-white">Nationella prov</Link></li>
-              <li><Link href="/ovningar" className="hover:text-neutral-900 dark:hover:text-white">Övningar</Link></li>
-              <li><Link href="/textbank" className="hover:text-neutral-900 dark:hover:text-white">Textbank</Link></li>
-              <li><Link href="/litteraturtips" className="hover:text-neutral-900 dark:hover:text-white">Litteraturtips</Link></li>
-              <li><Link href="/litteraturhistoria" className="hover:text-neutral-900 dark:hover:text-white">Litteraturhistoria</Link></li>
-              <li><Link href="/sva" className="hover:text-neutral-900 dark:hover:text-white">SVA (andrasprak)</Link></li>
+              {SECTIONS.map((s) => (
+                <li key={s.path}>
+                  <Link
+                    href={`/hogstadiet/${s.path}`}
+                    className="hover:text-neutral-900 dark:hover:text-white"
+                  >
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">Information</h3>
+            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white">
+              Information
+            </h3>
             <ul className="mt-2 space-y-1 text-sm text-neutral-500 dark:text-neutral-400">
-              <li>Kursplaner från Skolverkets öppna API</li>
-              <li>Fritt att använda (CC0)</li>
+              <li>Kursplaner fr&aring;n Skolverkets &ouml;ppna API</li>
+              <li>Fritt att anv&auml;nda (CC0)</li>
+              <li>
+                <Link
+                  href="/sok"
+                  className="hover:text-neutral-900 dark:hover:text-white"
+                >
+                  S&ouml;k i l&auml;romedlet
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-400 dark:border-neutral-800">
-          Läromedel i Svenska &middot; Kursplansdata från Skolverket
+          L&auml;romedel i Svenska &middot; Kursplansdata fr&aring;n Skolverket
         </div>
       </div>
     </footer>

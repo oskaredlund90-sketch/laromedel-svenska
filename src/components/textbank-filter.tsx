@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import type { TextCategory } from "@/lib/data/textbank";
@@ -20,10 +25,17 @@ interface TextPreview {
 interface TextbankFilterProps {
   filterOptions: { value: TextCategory | "alla"; label: string }[];
   texts: TextPreview[];
+  basePath: string; // e.g. "/hogstadiet/textbank"
 }
 
-export function TextbankFilter({ filterOptions, texts }: TextbankFilterProps) {
-  const [activeFilter, setActiveFilter] = useState<TextCategory | "alla">("alla");
+export function TextbankFilter({
+  filterOptions,
+  texts,
+  basePath,
+}: TextbankFilterProps) {
+  const [activeFilter, setActiveFilter] = useState<TextCategory | "alla">(
+    "alla"
+  );
 
   const filtered =
     activeFilter === "alla"
@@ -53,7 +65,7 @@ export function TextbankFilter({ filterOptions, texts }: TextbankFilterProps) {
       {/* Text cards */}
       <div className="grid gap-4">
         {filtered.map((text) => (
-          <Link key={text.slug} href={`/textbank/${text.slug}`}>
+          <Link key={text.slug} href={`${basePath}/${text.slug}`}>
             <Card className="group transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
               <CardHeader>
                 <div className="flex items-center justify-between gap-2">

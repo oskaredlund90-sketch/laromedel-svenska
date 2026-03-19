@@ -8,43 +8,43 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
 
-const NAV_ITEMS = [
-  { href: "/lagstadiet", label: "Lågstadiet" },
-  { href: "/mellanstadiet", label: "Mellanstadiet" },
-  { href: "/hogstadiet", label: "Högstadiet" },
-  { href: "/gymnasiet", label: "Gymnasiet" },
-  { href: "/nationella-prov", label: "Nationella prov" },
-  { href: "/ai-labbet", label: "AI-labbet" },
-  { href: "/grammatik", label: "Grammatik" },
-  { href: "/skrivverkstad", label: "Skrivverkstad" },
-  { href: "/ovningar", label: "Övningar" },
-  { href: "/textbank", label: "Textbank" },
-  { href: "/litteraturtips", label: "Litteraturtips" },
-  { href: "/sva", label: "SVA" },
+const AGE_GROUPS = [
+  { href: "/lagstadiet", label: "Lågstadiet", short: "Åk 1–3" },
+  { href: "/mellanstadiet", label: "Mellanstadiet", short: "Åk 4–6" },
+  { href: "/hogstadiet", label: "Högstadiet", short: "Åk 7–9" },
+  { href: "/gymnasiet", label: "Gymnasiet", short: "Gym" },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Detect which age group is active based on path
+  const activeGroup = AGE_GROUPS.find((g) => pathname.startsWith(g.href));
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/80 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/80">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-white">
-          <BookOpen className="h-6 w-6" />
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-white"
+        >
+          <BookOpen className="h-5 w-5" />
           <span className="hidden sm:inline">Läromedel i Svenska</span>
           <span className="sm:hidden">Svenska</span>
         </Link>
 
+        {/* Desktop: Age group tabs */}
         <nav className="hidden items-center gap-1 md:flex">
-          {NAV_ITEMS.map((item) => (
+          {AGE_GROUPS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800",
-                pathname.startsWith(item.href)
-                  ? "bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-white"
+                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800",
+                activeGroup?.href === item.href
+                  ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                   : "text-neutral-600 dark:text-neutral-400"
               )}
             >
@@ -53,6 +53,7 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Right side */}
         <div className="flex items-center gap-2">
           <Link
             href="/sok"
@@ -69,27 +70,36 @@ export function Header() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Öppna meny"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </Button>
         </div>
       </div>
 
+      {/* Mobile menu */}
       {mobileOpen && (
         <nav className="border-t border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-950 md:hidden">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-400">
+            Välj stadie
+          </p>
           <div className="flex flex-col gap-1">
-            {NAV_ITEMS.map((item) => (
+            {AGE_GROUPS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
                   "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                  pathname.startsWith(item.href)
-                    ? "bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-white"
+                  activeGroup?.href === item.href
+                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                     : "text-neutral-600 hover:bg-neutral-50 dark:text-neutral-400 dark:hover:bg-neutral-900"
                 )}
               >
                 {item.label}
+                <span className="ml-2 text-xs opacity-60">{item.short}</span>
               </Link>
             ))}
           </div>

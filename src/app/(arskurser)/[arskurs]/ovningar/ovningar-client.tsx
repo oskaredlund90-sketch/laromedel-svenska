@@ -4,6 +4,7 @@ import { useState, useCallback, useMemo } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle, RotateCcw, Dumbbell } from "lucide-react";
+import type { AgeGroup } from "@/lib/supabase/types";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                     */
@@ -28,10 +29,40 @@ interface Category {
 }
 
 /* -------------------------------------------------------------------------- */
+/*  Age-group configuration                                                   */
+/* -------------------------------------------------------------------------- */
+
+const AGE_GROUP_CONFIG: Record<
+  AgeGroup,
+  { allowedDifficulties: Difficulty[]; allowedCategories: string[]; label: string }
+> = {
+  lagstadiet: {
+    allowedDifficulties: ["enkel"],
+    allowedCategories: ["ordklasser", "stavning"],
+    label: "Lagstadiet (ak 1-3)",
+  },
+  mellanstadiet: {
+    allowedDifficulties: ["enkel", "medel"],
+    allowedCategories: ["ordklasser", "skiljetecken", "stavning", "sambandsord"],
+    label: "Mellanstadiet (ak 4-6)",
+  },
+  hogstadiet: {
+    allowedDifficulties: ["enkel", "medel", "svar"],
+    allowedCategories: ["ordklasser", "sambandsord", "skiljetecken", "stavning", "de-dem", "verbbojning"],
+    label: "Hogstadiet (ak 7-9)",
+  },
+  gymnasiet: {
+    allowedDifficulties: ["enkel", "medel", "svar"],
+    allowedCategories: ["ordklasser", "sambandsord", "skiljetecken", "stavning", "de-dem", "verbbojning"],
+    label: "Gymnasiet",
+  },
+};
+
+/* -------------------------------------------------------------------------- */
 /*  Difficulty helpers                                                        */
 /* -------------------------------------------------------------------------- */
 
-const DIFFICULTY_OPTIONS: { value: Difficulty | "alla"; label: string }[] = [
+const ALL_DIFFICULTY_OPTIONS: { value: Difficulty | "alla"; label: string }[] = [
   { value: "alla", label: "Alla" },
   { value: "enkel", label: "Enkel" },
   { value: "medel", label: "Medel" },
@@ -56,7 +87,7 @@ function difficultyBadge(d: Difficulty) {
 /*  Data – 6 categories, 10 questions each = 60 total                        */
 /* -------------------------------------------------------------------------- */
 
-const CATEGORIES: Category[] = [
+const ALL_CATEGORIES: Category[] = [
   /* ---- Ordklasser ---- */
   {
     key: "ordklasser",
@@ -611,18 +642,46 @@ function renderSentence(text: string) {
 
 function encouragement(score: number, total: number) {
   const pct = score / total;
-  if (pct === 1) return "Perfekt! Fantastiskt jobbat! 🌟";
-  if (pct >= 0.8) return "Bra jobbat! Nastan alla ratt! 💪";
-  if (pct >= 0.6) return "Bra forsok! Ovning ger fardighet! 📚";
-  return "Fortsatt ova – du blir battre for varje gang! 🚀";
+  if (pct === 1) return "Perfekt! Fantastiskt jobbat!";
+  if (pct >= 0.8) return "Bra jobbat! Nastan alla ratt!";
+  if (pct >= 0.6) return "Bra forsok! Ovning ger fardighet!";
+  return "Fortsatt ova – du blir battre for varje gang!";
 }
 
 /* -------------------------------------------------------------------------- */
 /*  Component                                                                 */
 /* -------------------------------------------------------------------------- */
 
-export default function OvningarPage() {
-  const [activeCategory, setActiveCategory] = useState(CATEGORIES[0].key);
+interface OvningarClientProps {
+  arskurs: AgeGroup;
+}
+
+export function OvningarClient({ arskurs }: OvningarClientProps) {
+  const config = AGE_GROUP_CONFIG[arskurs];
+
+  // Filter categories and questions based on age group
+  const categories = useMemo(() => {
+    return ALL_CATEGORIES
+      .filter((cat) => config.allowedCategories.includes(cat.key))
+      .map((cat) => ({
+        ...cat,
+        questions: cat.questions.filter((q) => config.allowedDifficulties.includes(q.difficulty)),
+      }))
+      .filter((cat) => cat.questions.length > 0);
+  }, [config]);
+
+  // Difficulty filter options scoped to allowed difficulties
+  const difficultyOptions = useMemo(() => {
+    const opts: { value: Difficulty | "alla"; label: string }[] = [{ value: "alla", label: "Alla" }];
+    for (const opt of ALL_DIFFICULTY_OPTIONS) {
+      if (opt.value !== "alla" && config.allowedDifficulties.includes(opt.value)) {
+        opts.push(opt);
+      }
+    }
+    return opts;
+  }, [config]);
+
+  const [activeCategory, setActiveCategory] = useState(categories[0]?.key ?? "");
   const [difficultyFilter, setDifficultyFilter] = useState<Difficulty | "alla">("alla");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
@@ -630,13 +689,15 @@ export default function OvningarPage() {
   const [answered, setAnswered] = useState(false);
   const [finished, setFinished] = useState(false);
 
-  const category = CATEGORIES.find((c) => c.key === activeCategory)!;
+  const category = categories.find((c) => c.key === activeCategory) ?? categories[0];
 
   const filteredQuestions = useMemo(
     () =>
-      difficultyFilter === "alla"
-        ? category.questions
-        : category.questions.filter((q) => q.difficulty === difficultyFilter),
+      !category
+        ? []
+        : difficultyFilter === "alla"
+          ? category.questions
+          : category.questions.filter((q) => q.difficulty === difficultyFilter),
     [category, difficultyFilter]
   );
 
@@ -690,6 +751,14 @@ export default function OvningarPage() {
     setFinished(false);
   }, []);
 
+  if (categories.length === 0) {
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+        <p className="text-neutral-500 dark:text-neutral-400">Inga ovningar tillgangliga for denna arskurs.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       {/* Page header */}
@@ -700,14 +769,14 @@ export default function OvningarPage() {
         <div>
           <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">Ovningar</h1>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            Interaktiva ovningar i svenska – valj en kategori och borja!
+            Interaktiva ovningar i svenska for {config.label} – valj en kategori och borja!
           </p>
         </div>
       </div>
 
       {/* Category tabs */}
       <div className="mb-4 flex flex-wrap gap-2">
-        {CATEGORIES.map((cat) => (
+        {categories.map((cat) => (
           <button
             key={cat.key}
             onClick={() => handleCategoryChange(cat.key)}
@@ -723,25 +792,27 @@ export default function OvningarPage() {
       </div>
 
       {/* Difficulty filter */}
-      <div className="mb-8 flex flex-wrap items-center gap-2">
-        <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">Svarighetsgrad:</span>
-        {DIFFICULTY_OPTIONS.map((opt) => (
-          <button
-            key={opt.value}
-            onClick={() => handleDifficultyChange(opt.value)}
-            className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
-              difficultyFilter === opt.value
-                ? "bg-neutral-700 text-white dark:bg-neutral-300 dark:text-neutral-900"
-                : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
-            }`}
-          >
-            {opt.label}
-          </button>
-        ))}
-        <span className="ml-2 text-xs text-neutral-400">
-          ({filteredQuestions.length} fragor)
-        </span>
-      </div>
+      {difficultyOptions.length > 2 && (
+        <div className="mb-8 flex flex-wrap items-center gap-2">
+          <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">Svarighetsgrad:</span>
+          {difficultyOptions.map((opt) => (
+            <button
+              key={opt.value}
+              onClick={() => handleDifficultyChange(opt.value)}
+              className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
+                difficultyFilter === opt.value
+                  ? "bg-neutral-700 text-white dark:bg-neutral-300 dark:text-neutral-900"
+                  : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
+          <span className="ml-2 text-xs text-neutral-400">
+            ({filteredQuestions.length} fragor)
+          </span>
+        </div>
+      )}
 
       {/* Empty state */}
       {filteredQuestions.length === 0 ? (
@@ -774,7 +845,7 @@ export default function OvningarPage() {
             </Button>
           </CardContent>
         </Card>
-      ) : (
+      ) : question ? (
         /* Question view */
         <Card>
           <CardHeader>
@@ -855,10 +926,10 @@ export default function OvningarPage() {
             )}
           </CardContent>
         </Card>
-      )}
+      ) : null}
 
       {/* Progress bar */}
-      {filteredQuestions.length > 0 && !finished && (
+      {filteredQuestions.length > 0 && !finished && question && (
         <div className="mt-6">
           <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
             <div

@@ -4,13 +4,20 @@ import { BookText, ArrowLeft, PenLine } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TEXTBANK_TEXTS } from "@/lib/data/textbank";
+import { AGE_GROUPS } from "@/lib/skolverket/constants";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ arskurs: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return TEXTBANK_TEXTS.map((text) => ({ slug: text.slug }));
+  const results: { arskurs: string; slug: string }[] = [];
+  for (const group of AGE_GROUPS) {
+    for (const text of TEXTBANK_TEXTS) {
+      results.push({ arskurs: group.slug, slug: text.slug });
+    }
+  }
+  return results;
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -19,12 +26,12 @@ export async function generateMetadata({ params }: Props) {
   if (!text) return {};
   return {
     title: `${text.title} – Textbank`,
-    description: `${text.categoryLabel}: ${text.title}. Exempeltext med analysfrågor och tips.`,
+    description: `${text.categoryLabel}: ${text.title}. Exempeltext med analysfragor och tips.`,
   };
 }
 
-export default async function TextDetailPage({ params }: Props) {
-  const { slug } = await params;
+export default async function TextDetailArskursPage({ params }: Props) {
+  const { arskurs, slug } = await params;
   const text = TEXTBANK_TEXTS.find((t) => t.slug === slug);
 
   if (!text) {
@@ -35,7 +42,7 @@ export default async function TextDetailPage({ params }: Props) {
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       {/* Back link */}
       <Link
-        href="/textbank"
+        href={`/${arskurs}/textbank`}
         className="mb-6 inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
         <ArrowLeft className="h-4 w-4" />
@@ -102,7 +109,7 @@ export default async function TextDetailPage({ params }: Props) {
       {/* Language features */}
       <section className="mb-10">
         <h2 className="mb-4 text-2xl font-semibold text-neutral-900 dark:text-white">
-          Språkliga drag
+          Sprakliga drag
         </h2>
         <Card>
           <CardContent className="pt-6">
@@ -116,12 +123,12 @@ export default async function TextDetailPage({ params }: Props) {
       {/* Link to skrivverkstad */}
       <section>
         <Link
-          href={text.skrivverkstadLink}
+          href={`/${arskurs}${text.skrivverkstadLink}`}
           className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-800"
         >
           <PenLine className="h-4 w-4" />
           {text.skrivverkstadLabel}
-          <span className="text-neutral-400">&mdash; Lär dig skriva denna texttyp</span>
+          <span className="text-neutral-400">&mdash; Lar dig skriva denna texttyp</span>
         </Link>
       </section>
     </div>

@@ -22,6 +22,15 @@ body {
   color: var(--foreground);
 }
 
+/* Hide scrollbar for horizontal nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @media print {
   header, footer, .no-print {
     display: none !important;
