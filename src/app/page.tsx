@@ -15,6 +15,8 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
+import type { AgeGroup } from "@/lib/supabase/types";
+import { getWordsWithFallback } from "@/lib/supabase/words";
 
 const AGE_GROUP_ICONS = {
   lagstadiet: BookOpen,
@@ -46,7 +48,20 @@ const AGE_GROUP_HIGHLIGHTS: Record<string, string[]> = {
   ],
 };
 
-export default function HomePage() {
+const AGE_GROUP_LABELS: Record<AgeGroup, string> = {
+  lagstadiet: "Lågstadiet",
+  mellanstadiet: "Mellanstadiet",
+  hogstadiet: "Högstadiet",
+  gymnasiet: "Gymnasiet",
+};
+
+export default async function HomePage() {
+  // Fetch one set of words per age group for Veckans ord
+  const wordsByGroup = await Promise.all(
+    (["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"] as AgeGroup[]).map(
+      async (ag) => ({ ageGroup: ag, words: await getWordsWithFallback(ag) })
+    )
+  );
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
       {/* Hero */}
@@ -104,8 +119,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Veckans Ord */}
-      <VeckansOrd />
+      {/* Veckans ord — ett per stadie */}
+      <section className="pb-16">
+        <h2 className="mb-6 text-center text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
+          Veckans ord
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {wordsByGroup.map(({ ageGroup, words }) => (
+            <div key={ageGroup}>
+              <h3 className="mb-2 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                {AGE_GROUP_LABELS[ageGroup]}
+              </h3>
+              <VeckansOrd words={words} />
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

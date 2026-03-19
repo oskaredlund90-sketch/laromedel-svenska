@@ -99,7 +99,7 @@ export function VeckansOrd({ words }: VeckansOrdProps) {
   const entry = entries[index];
 
   return (
-    <section className="pb-16">
+    <section>
       <div className="mx-auto max-w-2xl">
         <div className="rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
           {/* Header bar */}
