@@ -6,6 +6,7 @@ import { type ReactNode } from "react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import { VeckansOrd } from "@/components/veckans-ord";
 import { ThemeWordBrowser } from "@/components/theme-word-browser";
+import { VocabularyQuiz } from "@/components/vocabulary-quiz";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { getWordsWithFallback, getThemesWithFallback } from "@/lib/supabase/words";
 
@@ -235,6 +236,15 @@ export default async function OrdkunskapPage({ params }: Props) {
           Här kan du som lärare välja ord efter tema istället för vecka. Klicka på ett tema för att filtrera.
         </p>
         <ThemeWordBrowser words={allWords} themes={themes} />
+      </Section>
+
+      {/* Vocabulary quiz */}
+      <Section title="Testa dina kunskaper">
+        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+          Starta ett quiz och se hur många ord du kan! Frågorna blandar
+          definitioner, exempelmeningar och ordklasser.
+        </p>
+        <VocabularyQuiz words={allWords} questionCount={10} />
       </Section>
 
       {/* Tips and exercises */}
