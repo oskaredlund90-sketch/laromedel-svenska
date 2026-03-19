@@ -10,6 +10,8 @@ const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
 const FILTER_OPTIONS: { value: TextCategory | "alla"; label: string }[] = [
   { value: "alla", label: "Alla" },
+  { value: "berattande", label: "Berättande" },
+  { value: "faktatext", label: "Faktatexter" },
   { value: "kronika", label: "Kronikor" },
   { value: "argumenterande", label: "Argumenterande" },
   { value: "novell", label: "Noveller" },
@@ -25,8 +27,8 @@ const FILTER_OPTIONS: { value: TextCategory | "alla"; label: string }[] = [
  *   gymnasiet    -> all difficulties
  */
 const ALLOWED_DIFFICULTIES: Record<string, Set<DifficultyLevel>> = {
-  lagstadiet: new Set<DifficultyLevel>(["mellanstadiet"]),
-  mellanstadiet: new Set<DifficultyLevel>(["mellanstadiet", "hogstadiet"]),
+  lagstadiet: new Set<DifficultyLevel>(["lagstadiet", "mellanstadiet"]),
+  mellanstadiet: new Set<DifficultyLevel>(["lagstadiet", "mellanstadiet", "hogstadiet"]),
   hogstadiet: new Set<DifficultyLevel>(["mellanstadiet", "hogstadiet", "gymnasiet"]),
   gymnasiet: new Set<DifficultyLevel>(["mellanstadiet", "hogstadiet", "gymnasiet"]),
 };

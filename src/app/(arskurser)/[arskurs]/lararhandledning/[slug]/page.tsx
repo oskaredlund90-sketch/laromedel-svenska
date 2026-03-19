@@ -8,6 +8,7 @@ import {
   TEACHER_GUIDES,
   getGuideBySlug,
 } from "@/lib/data/lararhandledningar";
+import { ShareToolbar } from "@/components/share-toolbar";
 
 interface Props {
   params: Promise<{ arskurs: string; slug: string }>;
@@ -144,8 +145,25 @@ export default async function GuideDetailPage({ params }: Props) {
         </ul>
       </Section>
 
+      {/* Share & Copy */}
+      <ShareToolbar
+        copyText={[
+          guide.title,
+          "",
+          "Syfte: " + guide.syfte,
+          "",
+          "Genomförande:",
+          ...guide.genomforande.map((s) => `• ${s.steg}: ${s.beskrivning}`),
+          "",
+          "Bedömningsstöd:",
+          ...guide.bedomningsstod.map((b) => `• ${b}`),
+        ].join("\n")}
+        copyLabel="Kopiera handledning"
+        className="mt-10 no-print"
+      />
+
       {/* Print hint */}
-      <div className="mt-12 border-t border-neutral-200 pt-8 text-center dark:border-neutral-800 no-print">
+      <div className="mt-6 border-t border-neutral-200 pt-8 text-center dark:border-neutral-800 no-print">
         <p className="text-sm text-neutral-500 dark:text-neutral-400">
           <Printer className="mr-1.5 inline-block h-4 w-4" />
           Skriv ut den här sidan med Ctrl+P / Cmd+P

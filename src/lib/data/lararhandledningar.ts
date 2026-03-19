@@ -175,6 +175,170 @@ export const TEACHER_GUIDES: TeacherGuide[] = [
     ],
   },
 
+  {
+    title: "Sagor och berättande",
+    slug: "sagor-och-berattande",
+    description:
+      "Eleverna utforskar klassiska sagor, identifierar berättelsens delar och utvecklar sin fantasi genom att återberätta och dramatisera.",
+    estimatedTime: "2–3 lektioner",
+    topics: ["Berättande", "Sagor", "Muntlig kommunikation"],
+    ageGroup: "lagstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förståelse för berättandets grundläggande struktur genom att arbeta med klassiska sagor. Sagor erbjuder tydliga mönster – en början, en mitt med problem och prövningar, och ett slut med en lösning – som ger eleverna verktyg att förstå och själva skapa berättelser. Genom att lyssna på, återberätta och dramatisera sagor stärks både den muntliga förmågan och läsförståelsen.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 1–3: berättande texters uppbyggnad med inledning, händelseförlopp och avslutning, att lyssna och återberätta, samt att samtala om texters innehåll och budskap. Den stödjer kunskapskraven kring att läsa och förstå elevnära texter samt att muntligt återberätta en handling.",
+    forberedelser: [
+      "Välj 2–3 klassiska sagor med tydlig struktur – t.ex. De tre bockarna Bruse, Rödluvan, Hans och Greta. Ha gärna bildstöd eller bilderbok.",
+      "Förbered en stor berättelsekarta på tavlan eller blädderblock med fälten: Var? Vem? Problem? Vad händer? Hur slutar det?",
+      "Ta fram rekvisita för enkel dramatisering – enkla hattar, tyger eller handdockor räcker.",
+      "Förbered bildkort med sagofigurer, platser och magiska föremål för sorteringsövning.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Lyssna och förstå (30–40 min)",
+        beskrivning:
+          "Läs en saga högt med inlevelse. Stanna efter varje del och fråga: Vad hände just nu? Vad tror ni händer sen? Efter hela sagan fyller ni gemensamt i berättelsekartan på tavlan. Diskutera sagans delar: Var börjar berättelsen? Vad är problemet? Hur löser det sig? Låt eleverna para-prata: Vilken del tyckte du bäst om?",
+      },
+      {
+        steg: "Lektion 2: Jämföra och sortera (30–40 min)",
+        beskrivning:
+          "Läs en andra saga och fyll i en ny berättelsekarta. Jämför de två sagorna: Vad är lika? Vad är olika? Har båda ett problem och en lösning? Eleverna arbetar i par med bildkorten – de sorterar karaktärer, platser och händelser och försöker bygga en egen sagosekvens. Gemensam genomgång: vilka mönster hittar vi i sagor?",
+      },
+      {
+        steg: "Lektion 3: Dramatisera och återberätta (30–40 min)",
+        beskrivning:
+          "Dela in klassen i smågrupper om 3–4 elever. Varje grupp väljer en saga och förbereder en kort dramatisering. Ge 10–15 minuter för förberedelse med enkel rekvisita. Grupperna framför sina sagor för varandra. Avsluta med att eleverna ritar sin favoritsaga i rätt ordning (3–4 bilder) och återberättar för en kompis.",
+      },
+      {
+        steg: "Avslutning och reflektion (10 min)",
+        beskrivning:
+          "Samla klassen och reflektera: Vad har alla sagor gemensamt? Varför tror ni att vi berättar sagor? Koppla till elevernas egna liv: Berättar någon sagor hemma hos er? Förhandsgranska att ni nästa gång ska skapa egna sagor.",
+      },
+    ],
+    uppfoljning: [
+      "Låt eleverna skapa egna sagor med hjälp av berättelsekartan som stöd.",
+      "Bygg en sagohörna i klassrummet med böcker, rekvisita och berättelsekort.",
+      "Bjud in äldre elever eller föräldrar som berättar sagor från olika kulturer.",
+      "Spela in elevernas återberättande som ljudfiler och samla i en digital sagobok.",
+    ],
+    bedomningsstod: [
+      "Kan eleven identifiera sagans huvudperson och plats?",
+      "Kan eleven peka ut problemet i sagan och hur det löser sig?",
+      "Kan eleven återberätta en saga i rätt ordning med egna ord?",
+      "Deltar eleven aktivt i dramatiseringen och tar en roll?",
+      "Kan eleven jämföra två sagor och hitta likheter och skillnader?",
+    ],
+  },
+  {
+    title: "Ordkunskap genom lek",
+    slug: "ordkunskap-genom-lek",
+    description:
+      "Eleverna bygger sitt ordförråd genom lekfulla aktiviteter som ordlekar, ordsamlingar och temabaserade ordövningar.",
+    estimatedTime: "30–45 min",
+    topics: ["Ordförråd", "Ordlekar", "Språkutveckling"],
+    ageGroup: "lagstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla och bredda sitt ordförråd genom lustfyllda och varierade aktiviteter. Ett rikt ordförråd är grunden för både läsförståelse och skrivförmåga. Genom att arbeta med temaord, synonymer, motsatsord och ordlekar i meningsfulla sammanhang befästs nya ord bättre än genom isolerad ordträning.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 1–3: ord och begrepp för att uttrycka känslor, kunskaper och åsikter, ordbilder och stavning, samt att samtala om ords betydelse. Den stödjer kunskapskraven kring att använda ett grundläggande ordförråd för att uttrycka sig i tal och skrift.",
+    forberedelser: [
+      "Välj ett tema för lektionens ordsamling – t.ex. vinterord, känsloord, rörelseord eller matord. Teman som knyter an till årstid eller pågående arbete fungerar bäst.",
+      "Förbered ordkort (med bild och text) för 10–15 temaord. Ha gärna extra tomma kort där eleverna kan lägga till egna ord.",
+      "Ställ i ordning stationer för ordlekar: memory med ord och bild, ordpussel, ordsortering (t.ex. sortera ord efter lång/kort vokal).",
+      "Ha en stor ordsamlingsaffisch redo att hänga i klassrummet där nya ord samlas löpande.",
+    ],
+    genomforande: [
+      {
+        steg: "Samling och introduktion (5–10 min)",
+        beskrivning:
+          "Presentera dagens tema. Visa 3–4 av ordkorten och förklara orden med hjälp av bilder, gester eller korta meningar. Låt eleverna säga orden högt tillsammans. Spela en snabb runda av Jag tänker på ett ord – ge ledtrådar och låt eleverna gissa. Fråga: Vilka fler ord kan ni som passar temat?",
+      },
+      {
+        steg: "Ordlekar i stationer (15–20 min)",
+        beskrivning:
+          "Dela in klassen i smågrupper som roterar mellan stationer: 1) Ordmemory – para ihop ord med bild. 2) Ordsortering – sortera temaord i kategorier (t.ex. kalla/varma känslor, stor/liten rörelse). 3) Rita och gissa – en elev ritar, de andra gissar ordet. 4) Meningsbygge – bygg meningar med temaorden med hjälp av ordkort. Ge ca 5 minuter per station.",
+      },
+      {
+        steg: "Gemensam ordsamling (5–10 min)",
+        beskrivning:
+          "Samla klassen vid ordsamlingsaffischen. Gå igenom alla temaord och låt eleverna föreslå ytterligare ord. Skriv upp orden tillsammans. Öva att använda orden i meningar: Kan du säga en mening med ordet 'frusen'? Diskutera synonymer och motsatsord om det passar: Vad är motsatsen till kall?",
+      },
+      {
+        steg: "Avslutning (5 min)",
+        beskrivning:
+          "Avsluta med en snabb omgång Ordet runt – varje elev säger ett temaord i tur och ordning så snabbt som möjligt utan att upprepa. Berätta att ordsamlingsaffischen stannar uppe och att eleverna får lägga till nya ord under veckan.",
+      },
+    ],
+    uppfoljning: [
+      "Använd temaorden i skrivövningar under veckan – skriv meningar eller korta texter med minst tre temaord.",
+      "Inför ett nytt tema varje eller varannan vecka och bygg en ordvägg som växer.",
+      "Låt eleverna skapa egna ordböcker där de samlar nya ord med bild och förklaring.",
+      "Spela ordlekar regelbundet som startaktivitet eller avslutning på lektioner.",
+    ],
+    bedomningsstod: [
+      "Kan eleven förklara betydelsen av de nya temaorden?",
+      "Kan eleven använda temaorden i egna meningar?",
+      "Deltar eleven aktivt i ordlekarna och bidrar med egna ordförslag?",
+      "Kan eleven sortera ord i kategorier och motivera sin sortering?",
+      "Visar eleven intresse för nya ord och använder dem i andra sammanhang?",
+    ],
+  },
+  {
+    title: "Att skriva sin första text",
+    slug: "att-skriva-sin-forsta-text",
+    description:
+      "Stöttad skrivundervisning där eleverna med hjälp av bildstöd och mallar skriver sina första korta texter.",
+    estimatedTime: "2–3 lektioner",
+    topics: ["Skrivande", "Stöttning", "Textstruktur"],
+    ageGroup: "lagstadiet",
+    syfte:
+      "Syftet är att alla elever ska få uppleva att de kan skriva en egen text, oavsett var de befinner sig i sin skrivutveckling. Genom tydliga stödstrukturer – bildstöd, gemensam skrivning, meningsstarare och enkla mallar – sänks tröskeln så att varje elev kan delta och lyckas. Lektionerna bygger på principen att skrivande är en process som börjar med att tala och tänka innan pennan sätts på papperet.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 1–3: att skriva enkla texter med läslig handstil och på dator, strategier för att skriva olika typer av texter, stora och små bokstäver samt punkt, och att bearbeta och förtydliga sina texter. Den stödjer kunskapskraven kring att skriva enkla texter med grundläggande struktur.",
+    forberedelser: [
+      "Förbered bildsekvenser (3–4 bilder som berättar en enkel historia) som skrivunderlag – t.ex. bilder av en dag på stranden, en utflykt i skogen eller ett djurs äventyr.",
+      "Skriv ut skrivmallar med plats för bild och text, med meningsstartare: Först..., Sedan..., Till slut..., Jag kände mig...",
+      "Förbered en gemensam modelltext på tavlan med samma mall som eleverna ska använda.",
+      "Ha ordlistor tillgängliga med vanliga ord som eleverna kan behöva: och, men, för att, sedan, plötsligt.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Gemensam skrivning (30–40 min)",
+        beskrivning:
+          "Visa bildsekvensen på tavlan. Berätta tillsammans: Vad händer på den första bilden? Vad händer sen? Skriv en gemensam text på tavlan med hjälp av meningsstartarna – eleverna bidrar med innehållet, läraren skriver. Tänk högt: Nu börjar vi med 'Först' och stor bokstav. Vad ska vi skriva? Visa tydligt hur punkt och stor bokstav fungerar. Läs den färdiga texten högt tillsammans.",
+      },
+      {
+        steg: "Lektion 2: Egen skrivning med stöd (30–40 min)",
+        beskrivning:
+          "Ge varje elev en bildsekvens (samma eller ny) och en skrivmall. Börja med att eleverna berättar sin historia muntligt för en kompis – detta hjälper dem att formulera sig innan de skriver. Eleverna skriver med hjälp av meningsstartarna och ordlistorna. Cirkulera och ge individuellt stöd: ljuda tillsammans, uppmuntra att skriva som det låter, påminn om punkt. Elever som inte skriver än kan rita och diktera för läraren.",
+      },
+      {
+        steg: "Lektion 3: Illustrera och dela (20–30 min)",
+        beskrivning:
+          "Eleverna ritar en illustration till sin text. De övar på att läsa upp sin text för en kompis – kompisen lyssnar och säger en sak de tyckte om. Några frivilliga delar sin text med hela klassen. Samla alla texter och gör en utställning eller en gemensam bok.",
+      },
+      {
+        steg: "Reflektion (5–10 min)",
+        beskrivning:
+          "Fråga eleverna: Var det lätt eller svårt att skriva? Vad är du mest stolt över i din text? Betona att alla texter är fina och att det viktigaste är att man vågade skriva. Förhandsgranska vad de ska skriva om nästa gång.",
+      },
+    ],
+    uppfoljning: [
+      "Inför regelbundna korta skrivstunder där eleverna skriver till bilder eller fria ämnen.",
+      "Bygg vidare med fler meningsstartare och uppmuntra eleverna att skriva utan mall när de är redo.",
+      "Skapa skrivarpar där eleverna stöttar varandra i skrivprocessen.",
+      "Skicka hem en tom skrivmall så att eleverna kan skriva en text hemma med familjen.",
+    ],
+    bedomningsstod: [
+      "Kan eleven formulera en enkel mening som hänger ihop med bilden?",
+      "Använder eleven meningsstartarna som stöd i sitt skrivande?",
+      "Visar eleven förståelse för stor bokstav och punkt?",
+      "Kan eleven berätta sin text muntligt med en tydlig ordning?",
+      "Vågar eleven pröva att skriva och visar uthållighet i skrivprocessen?",
+      "Kan eleven lyssna på en kompis text och ge en positiv kommentar?",
+    ],
+  },
+
   // ─── Mellanstadiet ─────────────────────────────────────────
   {
     title: "Lässtrategier i grupp",
@@ -334,6 +498,172 @@ export const TEACHER_GUIDES: TeacherGuide[] = [
     ],
   },
 
+  {
+    title: "Muntlig framställning",
+    slug: "muntlig-framstallning",
+    description:
+      "Eleverna lär sig att förbereda och hålla korta presentationer med tydlig struktur, kroppsspråk och ögonkontakt.",
+    estimatedTime: "3–4 lektioner",
+    topics: ["Muntlig framställning", "Presentationsteknik", "Självförtroende"],
+    ageGroup: "mellanstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förmåga att förbereda och genomföra muntliga presentationer. Att kunna tala inför andra är en grundläggande kompetens som eleverna har nytta av i alla ämnen och i livet utanför skolan. Genom strukturerad träning i en trygg miljö bygger eleverna både kunskap och självförtroende.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 4–6: muntliga presentationer och muntligt berättande för olika mottagare, att anpassa språk och innehåll efter syfte och mottagare, samt att ge och ta emot respons. Den stödjer kunskapskraven kring att förbereda och genomföra muntliga redogörelser med inledning, innehåll och avslutning.",
+    forberedelser: [
+      "Förbered en lista med presentationsämnen som eleverna kan välja mellan – gärna ämnen nära deras vardag: mitt favoritdjur, en hobby, en bok jag läst, min familj, en plats jag besökt.",
+      "Skriv ut en planeringsmall med rubriker: Inledning (fånga lyssnarnas intresse), Innehåll (2–3 punkter), Avslutning (sammanfatta eller avsluta med en fråga).",
+      "Förbered ett enkelt responschema för åhörarna: Vad var bra? Vad vill jag veta mer om?",
+      "Ordna klassrummet så att det finns en tydlig plats att stå och presentera, gärna med stol för nervösa elever.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Introduktion och modellering (40–50 min)",
+        beskrivning:
+          "Börja med att fråga eleverna: Vad gör en presentation bra? Samla idéer på tavlan. Håll en kort modellpresentation (2 min) och låt eleverna ge feedback utifrån sina egna kriterier. Diskutera konkreta tips: titta på åhörarna, tala tydligt och lagom högt, ha en tydlig början och slut, använda stödord istället för att läsa innantill. Eleverna väljer ämne och börjar fylla i planeringsmallen.",
+      },
+      {
+        steg: "Lektion 2: Förbereda och öva (40–50 min)",
+        beskrivning:
+          "Eleverna färdigställer sin planering. De övar sin presentation i par – kompisen lyssnar och ger respons med hjälp av responschemat. Uppmuntra eleverna att öva utan att läsa innantill – stödord på små kort är okej. Cirkulera och lyssna, ge individuellt stöd. Påminn om kroppsspråk: stå stadigt, titta upp, andas lugnt. Eleverna reviderar sin presentation utifrån kompisens feedback.",
+      },
+      {
+        steg: "Lektion 3–4: Presentationer (2 x 40 min)",
+        beskrivning:
+          "Eleverna håller sina presentationer inför klassen eller i halvklass (för att minska nervositeten). Varje presentation följs av positiv respons från åhörarna och en fråga. Läraren noterar styrkor och utvecklingsområden. Skapa en trygg stämning: applådera varje presentation, betona att alla gör sitt bästa och att nervositet är naturligt och okej.",
+      },
+      {
+        steg: "Reflektion och utvärdering (10–15 min)",
+        beskrivning:
+          "Avsluta med gemensam reflektion: Hur kändes det att presentera? Vad gick bra? Vad vill du förbättra till nästa gång? Eleverna skriver en kort självutvärdering. Lyft goda exempel från presentationerna utan att peka ut enskilda elever negativt.",
+      },
+    ],
+    uppfoljning: [
+      "Inför korta muntliga presentationer regelbundet – t.ex. veckans bok, en nyhet eller en kort redovisning i SO/NO.",
+      "Variera formatet: presentera i par, i grupp, med bildstöd, med rekvisita.",
+      "Filma presentationer (med elevernas godkännande) så att de kan se sig själva och reflektera.",
+      "Bjud in en annan klass att lyssna på presentationerna.",
+    ],
+    bedomningsstod: [
+      "Har presentationen en tydlig inledning, innehåll och avslutning?",
+      "Talar eleven tydligt och med lagom tempo?",
+      "Har eleven ögonkontakt med åhörarna?",
+      "Använder eleven stödord istället för att läsa innantill?",
+      "Kan eleven svara på frågor om sitt ämne?",
+      "Visar eleven förmåga att anpassa sitt språk efter situationen?",
+    ],
+  },
+  {
+    title: "Dikter och poesi",
+    slug: "dikter-och-poesi",
+    description:
+      "Eleverna utforskar poesins värld genom att läsa, tolka och skriva egna dikter med fokus på rim, rytm och bildspråk.",
+    estimatedTime: "3–4 lektioner",
+    topics: ["Poesi", "Kreativt skrivande", "Bildspråk"],
+    ageGroup: "mellanstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förmåga att läsa och tolka dikter samt att uttrycka sig kreativt genom eget poetiskt skrivande. Poesi ger eleverna tillgång till ett koncentrerat och lekfullt språk där de kan experimentera med ord, ljud och bilder. Genom att arbeta med dikter stärks elevernas språkliga medvetenhet och deras förmåga att uttrycka tankar och känslor.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 4–6: berättande och poetiska texter som belyser människors upplevelser och erfarenheter, språkliga drag och uppbyggnad i berättande och poetiska texter, samt bildspråk och ordval. Den stödjer kunskapskraven kring att läsa skönlitteratur med flyt och göra tolkningar av texters budskap.",
+    forberedelser: [
+      "Välj 5–6 dikter av varierande slag: en rolig dikt, en naturdikt, en känslosam dikt, en dikt med tydligt rim och en i fri vers. Anpassa urvalet efter elevgruppen – svenska barnlyrik från t.ex. Lennart Hellsing, Barbro Lindgren eller moderna poeter.",
+      "Förbered ett poetikblad med begrepp: rim (slutrim, inrim), rytm, vers, strof, bildspråk (liknelse, metafor), upprepning.",
+      "Skriv ut skrivmallar för olika diktformer: haiku (5-7-5 stavelser), akrostikon (begynnelsebokstäver bildar ett ord), liknelsedikt (... är som ...).",
+      "Ordna ett mysigt läshörn eller dämpa belysningen – poesi mår bra av en speciell stämning.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Möta dikter (40–50 min)",
+        beskrivning:
+          "Läs flera dikter högt – variera röstläge och tempo. Låt eleverna bara lyssna och känna efter första gången. Läs om och fråga: Vilken dikt tyckte du om? Vad kände du? Såg du några bilder framför dig? Introducera grundbegreppen: rim, rytm, vers, strof. Eleverna arbetar i par med att hitta rim och upprepningar i dikterna. Avsluta med att eleverna väljer sin favoritdikt och övar på att läsa den högt med inlevelse.",
+      },
+      {
+        steg: "Lektion 2: Bildspråk och tolkning (40–50 min)",
+        beskrivning:
+          "Fokusera på bildspråk: Vad är en liknelse? Vad är en metafor? Visa tydliga exempel i dikterna ni läst. Eleverna skapar egna liknelser: Glädje är som... Ilska är som... Vintern är som... Välj en dikt att tolka gemensamt: Vad handlar dikten om egentligen? Kan den betyda flera saker? Diskutera att tolkningar kan vara olika – det finns inte alltid ett rätt svar i poesi.",
+      },
+      {
+        steg: "Lektion 3: Skriv egna dikter (40–50 min)",
+        beskrivning:
+          "Presentera de olika diktformerna och visa mallar. Modellera skrivandet: skriv en haiku och ett akrostikon gemensamt på tavlan. Eleverna väljer en eller flera diktformer och skriver egna dikter. Uppmuntra experiment: det behöver inte rimma, det viktigaste är att det känns rätt. Cirkulera och stöd individuellt – lyft fina formuleringar och uppmuntra de som tycker det är svårt.",
+      },
+      {
+        steg: "Lektion 4: Poesiuppläsning (30–40 min)",
+        beskrivning:
+          "Ordna en poesiuppläsning i klassen. Eleverna läser upp sina dikter – frivilligt eller i par för den som tycker det är jobbigt. Uppmuntra att läsa med inlevelse. Åhörarna lyfter en sak de tyckte om i varje dikt. Samla alla dikter i en klassens diktsamling – digital eller fysisk.",
+      },
+    ],
+    uppfoljning: [
+      "Inför en dikt i veckan – läs en dikt varje måndag eller fredag som stämningssättare.",
+      "Låt eleverna illustrera sina dikter och skapa en poesiutställning.",
+      "Utforska spoken word och slampoesi – visa videoklipp och låt eleverna prova.",
+      "Samarbeta med bildämnet och låt eleverna skapa konst inspirerad av dikter.",
+    ],
+    bedomningsstod: [
+      "Kan eleven identifiera rim, rytm och bildspråk i dikter?",
+      "Kan eleven förklara vad en dikt handlar om med egna ord?",
+      "Kan eleven skriva en egen dikt med medvetet val av ord och form?",
+      "Läser eleven dikter högt med inlevelse och anpassat tempo?",
+      "Visar eleven förståelse för att dikter kan tolkas på olika sätt?",
+      "Kan eleven använda begrepp som vers, strof, rim och metafor?",
+    ],
+  },
+  {
+    title: "Mediakritik och reklam",
+    slug: "mediakritik-och-reklam",
+    description:
+      "Eleverna lär sig granska reklamtexter och medieinnehåll kritiskt och förstå hur reklam försöker påverka oss.",
+    estimatedTime: "2–3 lektioner",
+    topics: ["Mediakritik", "Reklam", "Kritiskt tänkande"],
+    ageGroup: "mellanstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla en grundläggande förståelse för hur reklam och medieinnehåll är konstruerat för att påverka. Genom att analysera reklam från tidningar, tv och sociala medier lär sig eleverna att identifiera avsändare, syfte och målgrupp samt att ställa kritiska frågor. Denna förmåga är allt viktigare i en medievärld där barn dagligen möter stora mängder kommersiella budskap.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 4–6: texter som kombinerar ord och bild, att granska informationens trovärdighet, samt texters avsändare och syfte. Den stödjer kunskapskraven kring att granska och resonera om informationens trovärdighet och källors tillförlitlighet.",
+    forberedelser: [
+      "Samla 6–8 reklamexempel i olika format: en tidningsannons, en reklamfilm (kort klipp), ett sponsrat inlägg från sociala medier, en produktförpackning, en webbannons och gärna en influencer-reklam.",
+      "Förbered analysfrågor på affisch eller utdelningsblad: Vem har gjort reklamen? Vad vill de att du ska göra? Vilka knep använder de? Vem riktar sig reklamen till? Vad berättar de INTE?",
+      "Förbered material för elevernas egen reklamskapande: papper, färgpennor, tidningar att klippa i.",
+      "Skriv ut en lista med vanliga reklamknep: kändisanvändning, känsloargument, före/efter, begränsat erbjudande, humor.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Vad är reklam? (40–50 min)",
+        beskrivning:
+          "Börja med att fråga eleverna: Var möter ni reklam? Samla svar på tavlan – de kommer förmodligen nämna TV, YouTube, TikTok, busshållplatser etc. Visa 2–3 reklamexempel och analysera dem gemensamt med hjälp av analysfrågorna. Introducera de vanliga reklamknepen. Låt eleverna diskutera i par: Har ni någon gång velat köpa något på grund av reklam? Vad var det som lockade?",
+      },
+      {
+        steg: "Lektion 2: Granska och jämföra (40–50 min)",
+        beskrivning:
+          "Eleverna arbetar i grupper med varsin uppsättning reklamexempel. De analyserar varje reklam med hjälp av analysfrågorna och fyller i ett analysblad. Fokusera särskilt på reklam i sociala medier och influencer-samarbeten – diskutera vad som är reklam och vad som är äkta åsikt. Gemensam genomgång: Vilka knep var vanligast? Vilken reklam var svårast att genomskåda? Varför?",
+      },
+      {
+        steg: "Lektion 3: Skapa egen reklam (40–50 min)",
+        beskrivning:
+          "Eleverna skapar en egen reklam för en påhittad eller riktig produkt. De ska medvetet använda minst två reklamknep. Eleverna presenterar sin reklam för klassen. Klassen analyserar: Vilka knep använde de? Var reklamen övertygande? Avsluta med en diskussion: Nu när vi vet hur reklam fungerar, vad ska vi tänka på när vi möter reklam i vardagen?",
+      },
+      {
+        steg: "Avslutande reflektion (10 min)",
+        beskrivning:
+          "Eleverna skriver tre saker de lärt sig om reklam. Diskutera gemensamt: Är all reklam dålig? Finns det skillnad på reklam och information? Vad kan vi göra för att inte luras? Sammanfatta de viktigaste insikterna.",
+      },
+    ],
+    uppfoljning: [
+      "Inför en reklamanalys varje vecka – ta med ett aktuellt reklamexempel och granska det gemensamt.",
+      "Koppla till SO och diskutera konsumentkunskap och reklamens roll i samhället.",
+      "Låt eleverna dokumentera reklam de möter under en dag och analysera den.",
+      "Bjud in någon som arbetar med reklam eller marknadsföring som gästföreläsare.",
+    ],
+    bedomningsstod: [
+      "Kan eleven identifiera avsändare och syfte i en reklamtext?",
+      "Kan eleven ge exempel på vanliga reklamknep och förklara hur de fungerar?",
+      "Kan eleven skilja mellan reklam och annan information?",
+      "Kan eleven resonera om varför en viss reklam riktar sig till en viss målgrupp?",
+      "Visar eleven en kritisk hållning och ställer frågor om reklamens budskap?",
+      "Kan eleven skapa en egen reklam med medveten användning av reklamknep?",
+    ],
+  },
+
   // ─── Högstadiet ────────────────────────────────────────────
   {
     title: "Argumenterande text",
@@ -490,6 +820,177 @@ export const TEACHER_GUIDES: TeacherGuide[] = [
       "Kan eleven identifiera retoriska och språkliga grepp i medietexter?",
       "Kan eleven resonera om trovärdigheten hos olika medieinnehåll?",
       "Kan eleven presentera sin analys på ett tydligt och strukturerat sätt?",
+    ],
+  },
+
+  {
+    title: "Debatt och argumentation",
+    slug: "debatt-och-argumentation",
+    description:
+      "Eleverna lär sig att delta i strukturerade debatter med tydliga roller, argument och motargument i en respektfull samtalsmiljö.",
+    estimatedTime: "3–4 lektioner",
+    topics: ["Debatt", "Argumentation", "Muntlig kommunikation"],
+    ageGroup: "hogstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förmåga att argumentera muntligt, lyssna aktivt på andras argument och bemöta dem sakligt. Strukturerad debatt tränar både kritiskt tänkande och demokratisk kompetens – förmågan att föra en dialog även med den som tycker annorlunda. Genom att förbereda och genomföra debatter stärks elevernas självförtroende i muntliga situationer.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 7–9: att argumentera i olika samtalssituationer, att delta i samtal och diskussioner med sakliga argument, att lyssna, ställa frågor och framföra egna åsikter, samt att anpassa språk och innehåll efter syfte och mottagare. Den stödjer kunskapskraven kring att samtala och diskutera med fungerande argumentation.",
+    forberedelser: [
+      "Välj 3–4 debattämnen med tydligt ja/nej-sida som engagerar eleverna – t.ex. Borde sociala medier vara förbjudet under 15? Borde alla skolor ha skoluniform? Borde läxor avskaffas? Är det rätt att äta kött?",
+      "Förbered regler för debatten: tidsgränser, turordning, respektfull ton, att man debatterar saken – inte personen.",
+      "Skriv ut argumentationsmall med plats för: tes, tre argument med stöd, förväntat motargument, bemötande.",
+      "Ordna klassrummet i debattformat: två lag mittemot varandra, publik i mitten, ordförande vid sidan.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Argumentationsgrunder (45 min)",
+        beskrivning:
+          "Diskutera: Vad är skillnaden mellan att bråka och att debattera? Samla elevernas tankar. Introducera grundbegreppen: tes, argument, stöd/bevis, motargument, bemötande. Visa ett kort debattklipp (t.ex. från Debatt i SVT eller en skoldebatt) och analysera: Vilka argument användes? Var de övertygande? Varför? Eleverna övar i par: ge ett argument för och ett emot ett enkelt påstående (t.ex. Glass är bättre än tårta).",
+      },
+      {
+        steg: "Lektion 2: Förbered debatten (45 min)",
+        beskrivning:
+          "Dela in klassen i debattlag om 3–4 elever. Tilldela ämne och sida (för eller emot) – poängtera att man ibland måste argumentera för en sida man inte håller med om, och att det är en viktig övning. Lagen arbetar med argumentationsmallen: de formulerar sin tes, hittar tre starka argument med stöd och försöker förutse motståndarsidans argument. Cirkulera och utmana: Hur vet du det? Har du bevis? Vad skulle motståndaren säga?",
+      },
+      {
+        steg: "Lektion 3: Genomför debatter (45 min)",
+        beskrivning:
+          "Utse en ordförande (läraren eller en elev) som håller i tider och turordning. Varje debatt följer strukturen: öppningsanförande (2 min/lag), fria argument (5 min), slutanförande (1 min/lag). Publiken antecknar argument de tycker är starka. Efter varje debatt utvärderar publiken: Vilket lag var mest övertygande? Vilket var det starkaste argumentet? Genomför 2–3 debatter.",
+      },
+      {
+        steg: "Lektion 4: Reflektion och utvärdering (45 min)",
+        beskrivning:
+          "Gemensam reflektion: Vad gör ett argument starkt? Hur bemöter man ett argument man inte har svar på? Var det svårt att argumentera för en sida man inte håller med om? Vad lärde ni er? Eleverna skriver en kort reflektion om sin insats och vad de vill förbättra. Koppla till skrivande: de argument ni förberett kan användas i en argumenterande text.",
+      },
+    ],
+    uppfoljning: [
+      "Inför regelbundna korta debatter i klassen – t.ex. veckans debattfråga.",
+      "Låt eleverna omvandla sina debattargument till argumenterande texter.",
+      "Analysera politiska debatter eller debattartiklar i media med samma verktyg.",
+      "Arrangera en debattkväll dit föräldrar eller andra klasser bjuds in.",
+    ],
+    bedomningsstod: [
+      "Formulerar eleven en tydlig tes och relevanta argument?",
+      "Underbygger eleven sina argument med stöd (fakta, exempel, erfarenhet)?",
+      "Bemöter eleven motargument sakligt och konstruktivt?",
+      "Lyssnar eleven aktivt på motståndaren och reagerar på det som sägs?",
+      "Håller eleven en respektfull ton och debatterar saken – inte personen?",
+      "Anpassar eleven sitt språk och sin framtoning efter debattsituationen?",
+    ],
+  },
+  {
+    title: "Kreativt skrivande",
+    slug: "kreativt-skrivande",
+    description:
+      "Eleverna utvecklar sin berättarteknik genom att arbeta med visa-inte-berätta, dialog, miljöbeskrivningar och berättarperspektiv.",
+    estimatedTime: "4–5 lektioner",
+    topics: ["Kreativt skrivande", "Berättarteknik", "Skönlitterärt skrivande"],
+    ageGroup: "hogstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förmåga att skriva gestaltande, levande berättelser genom att medvetet använda olika berättartekniska grepp. Kreativt skrivande ger eleverna verktyg att uttrycka sig personligt och konstnärligt, samtidigt som det stärker deras språkliga medvetenhet och förmåga att göra medvetna stilval. Genom att experimentera med språket i en friare form utvecklas även skrivlusten.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 7–9: skönlitterärt skrivande med variation av berättarperspektiv, språkliga stilmedel och textuppbyggnad, att använda skrivprocessens olika steg, samt att bearbeta texter mot ökad tydlighet och uttrycksfullhet. Den stödjer kunskapskraven kring att skriva berättande texter med gestaltande beskrivningar och berättargrepp.",
+    forberedelser: [
+      "Välj 3–4 korta textutdrag som illustrerar olika berättartekniker: ett med stark visa-inte-berätta, ett med levande dialog, ett med detaljrik miljöbeskrivning och ett med intressant berättarperspektiv.",
+      "Förbered skrivövningar (snabbskrivning 5–10 min) för varje teknik.",
+      "Skriv ut en verktygslåda för kreativt skrivande med tips och exempel för varje teknik.",
+      "Förbered inspirationskort med bilder, första meningar, karaktärsbeskrivningar och situationer som startpunkt för skrivande.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Visa, inte berätta (45 min)",
+        beskrivning:
+          "Introducera principen visa-inte-berätta (show, don't tell) med ett konkret exempel: jämför 'Anna var rädd' med en gestaltande passage som visar rädsla genom fysiska reaktioner, tankar och handlingar. Analysera textutdraget gemensamt: var visar författaren istället för att berätta? Eleverna gör en snabbskrivning: skriv en kort scen som visar en känsla (arg, glad, nervös, ledsen) utan att nämna känslan. Dela och gissa varandras känslor i par.",
+      },
+      {
+        steg: "Lektion 2: Dialog och miljöbeskrivning (45 min)",
+        beskrivning:
+          "Analysera dialogen i ett textutdrag: Hur avslöjar dialogen karaktärernas personlighet? Visa regler för dialogskrivning: replikstreck, inquit-fraser (sa, frågade, viskade), att bryta upp dialog med handling. Eleverna skriver en kort dialogscen mellan två karaktärer. Gå vidare till miljöbeskrivning: visa hur sinnesintryck (syn, hörsel, lukt, känsel, smak) gör en text levande. Eleverna beskriver en plats med alla sinnen.",
+      },
+      {
+        steg: "Lektion 3: Berättarperspektiv och struktur (45 min)",
+        beskrivning:
+          "Presentera olika berättarperspektiv: förstaperson, tredjeperson begränsad, allvetande. Visa samma scen skriven ur olika perspektiv – diskutera effekten. Introducera berättelsestruktur: freytags pyramid med exposition, stigande handling, klimax, fallande handling, upplösning. Planera en egen berättelse: eleverna väljer perspektiv, huvudperson, konflikt och skissar en handlingskurva.",
+      },
+      {
+        steg: "Lektion 4: Skriv din berättelse (45 min)",
+        beskrivning:
+          "Eleverna skriver sin berättelse med medveten användning av de tekniker de lärt sig. Uppmuntra dem att markera i marginalen vilken teknik de använder (V = visa-inte-berätta, D = dialog, M = miljöbeskrivning). Cirkulera och ge individuellt stöd – lyft goda exempel och ge konkreta förslag. De som blir klara kan läsa och ge respons på en kompis berättelse.",
+      },
+      {
+        steg: "Lektion 5: Bearbetning och delning (45 min)",
+        beskrivning:
+          "Strukturerad kamratrespons med fokus på berättarteknik: Var i texten visar författaren istället för att berätta? Fungerar dialogen? Kan du se platsen framför dig? Eleverna bearbetar sin text. Avsluta med uppläsning av utdrag – frivilligt. Samla berättelserna i en antologi eller digital samling.",
+      },
+    ],
+    uppfoljning: [
+      "Inför regelbundna snabbskrivningar som uppvärmning i svensklektionerna.",
+      "Starta en skrivarcirkel där intresserade elever delar och utvecklar sina texter.",
+      "Låt eleverna analysera berättarteknik i de skönlitterära böcker de läser.",
+      "Uppmuntra deltagande i skrivtävlingar som Boktjuvens novelltävling eller liknande.",
+    ],
+    bedomningsstod: [
+      "Använder eleven visa-inte-berätta för att gestalta känslor och stämningar?",
+      "Skriver eleven dialog som driver handlingen framåt och avslöjar karaktärers personlighet?",
+      "Använder eleven sinnesintryck i sina miljöbeskrivningar?",
+      "Har eleven gjort ett medvetet val av berättarperspektiv?",
+      "Har berättelsen en tydlig struktur med konflikt och utveckling?",
+      "Visar eleven förmåga att bearbeta sin text utifrån respons?",
+    ],
+  },
+  {
+    title: "Språkhistoria och språkförändring",
+    slug: "sprakhistoria-och-sprakforandring",
+    description:
+      "Eleverna utforskar hur det svenska språket förändrats från runsvenska till dagens svenska och reflekterar över pågående språkförändring.",
+    estimatedTime: "3–4 lektioner",
+    topics: ["Språkhistoria", "Språkförändring", "Språksociologi"],
+    ageGroup: "hogstadiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förståelse för det svenska språkets historia och hur språk ständigt förändras. Genom att se hur svenska har utvecklats från urnordiska och runsvenska till dagens moderna svenska får eleverna perspektiv på att språkförändring är naturligt och pågående. De lär sig också att reflektera över sin egen roll som språkanvändare och hur nya ord, slang och lånord förändrar språket idag.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i svenska för årskurs 7–9: svenska språkets historia med några viktiga händelser, nordiska språk och deras likheter och skillnader, samt hur språk förändras och varierar beroende på sammanhang och tid. Den stödjer kunskapskraven kring att resonera om svenska språkets historia, varianter och framtid.",
+    forberedelser: [
+      "Förbered en tidslinje över svenska språkets historia med de viktigaste perioderna: urnordiska, runsvenska, fornsvenska, äldre nysvenska, yngre nysvenska, nusvenska.",
+      "Samla textexempel från olika perioder: en runinskription (med översättning), ett utdrag ur en medeltida lagtext, ett stycke av Bellman eller Strindberg och en modern text.",
+      "Förbered en lista med ord som ändrat betydelse, lånord från olika språk (tyska, franska, engelska) och nyord.",
+      "Ha tillgång till SAOL (Svenska Akademiens ordlista) eller SAOL online för övning i att slå upp ord.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Resa genom tiden (45 min)",
+        beskrivning:
+          "Börja med att visa en runinskription och fråga: Kan ni läsa det här? Det är svenska! Presentera tidslinjen och gå igenom perioderna med korta, engagerande exempel. Läs textexemplen högt – från äldst till nyast. Låt eleverna reagera: Vad förstår ni? Vad låter konstigt? Diskutera: Vad tror ni att en viking hade tyckt om er svenska? Eleverna fyller i tidslinjen med egna anteckningar.",
+      },
+      {
+        steg: "Lektion 2: Lånord och påverkan (45 min)",
+        beskrivning:
+          "Fokusera på hur andra språk påverkat svenska: tyska under hansatiden (arbete, köpa, fönster), franska under stormaktstiden (möbel, paraply, fåtölj), engelska idag (cool, dejta, streama). Eleverna arbetar i grupper med att sortera lånord efter ursprungsspråk. Diskutera: Varför lånar vi ord? Är det bra eller dåligt? Jämför med hur Svenska Akademien och Språkrådet arbetar med språkvård idag.",
+      },
+      {
+        steg: "Lektion 3: Levande språkförändring (45 min)",
+        beskrivning:
+          "Fokusera på att språkförändring pågår nu: slang, nyord (lista från Språkrådets nyordslista), engelskans påverkan, genuspronomen (hen). Eleverna samlar slangord och nya uttryck de själva använder. Diskutera: Vilka av era ord tror ni kommer finnas kvar om 50 år? Eleverna skriver en kort text om ett nyord eller slangord: vad det betyder, var det kommer ifrån, och varför det används.",
+      },
+      {
+        steg: "Lektion 4: Presentation och framtidsblick (45 min)",
+        beskrivning:
+          "Eleverna presenterar sina texter om nyord/slangord. Avslutande diskussion: Hur tror ni att svenskan ser ut om 100 år? Kommer vi prata mer engelska? Kommer AI förändra språket? Eleverna skriver en kort framtidsvision om det svenska språket. Sammanfatta: Språk är levande – det förändras hela tiden, och ni är med och förändrar det.",
+      },
+    ],
+    uppfoljning: [
+      "Starta en ordsamling i klassrummet med nya ord och slang som dyker upp under terminen.",
+      "Jämför svenska med norska och danska – läs texter och lyssna på språken.",
+      "Besök Språkrådets webbplats och diskutera deras roll i språkvården.",
+      "Ge eleverna i uppgift att intervjua äldre släktingar om ord och uttryck som inte längre används.",
+    ],
+    bedomningsstod: [
+      "Kan eleven beskriva de viktigaste perioderna i svenska språkets historia?",
+      "Kan eleven ge exempel på lånord och förklara deras ursprung?",
+      "Kan eleven resonera om varför och hur språk förändras?",
+      "Visar eleven förståelse för sambandet mellan samhällsförändringar och språkförändringar?",
+      "Kan eleven reflektera över sin egen roll som språkanvändare och ge exempel på pågående språkförändring?",
+      "Kan eleven jämföra svenska med andra nordiska språk och identifiera likheter?",
     ],
   },
 
@@ -654,6 +1155,186 @@ export const TEACHER_GUIDES: TeacherGuide[] = [
       "Kan eleven koppla litterära verk till sin samhälleliga och kulturella kontext?",
       "Kan eleven jämföra texter från olika epoker och resonera om likheter och skillnader?",
       "Kan eleven resonera om hur litteraturen speglar och påverkar samhället?",
+    ],
+  },
+  {
+    title: "Essäskrivning",
+    slug: "essaskrivning",
+    description:
+      "Eleverna utvecklar det personliga essäuttrycket genom att utforska essäns form, röst och förhållande mellan det personliga och det allmängiltiga.",
+    estimatedTime: "4–5 lektioner",
+    topics: ["Essäskrivning", "Personligt skrivande", "Reflektion"],
+    ageGroup: "gymnasiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla sin förmåga att skriva essäer som förenar personlig reflektion med saklig kunskap. Essän är en unik texttyp som ger skribenten frihet att tänka högt, pröva idéer och röra sig mellan det personliga och det allmängiltiga. Genom essäskrivning stärker eleverna sin förmåga att formulera och utveckla tankar i skrift, hitta sin egen röst och våga ha en hållning i komplexa frågor.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i Svenska 2 och 3: skrivande av texter av vetenskaplig och utredande karaktär, att resonera och reflektera i skrift, samt att utveckla ett personligt och varierat skriftspråk. Den stödjer kunskapskraven kring att skriva texter med tydlig disposition, varierat språk och anpassning till texttyp och sammanhang.",
+    forberedelser: [
+      "Välj 2–3 essäer av kända essäister som modelltexter – t.ex. Montaigne (i översättning), Nina Burton, Lena Andersson, Steve Jobs Stanford-tal (som talad essä) eller Karin Boye.",
+      "Förbered en kort presentation av essäns historia och kännetecken: det personliga anslaget, det undersökande förhållningssättet, rörelsen mellan erfarenhet och tanke.",
+      "Skriv ut en analysram: röst (hur märks skribenten?), ämne (vad handlar det om?), struktur (hur rör sig texten?), förhållande personligt/allmängiltigt.",
+      "Förbered en lista med möjliga essäämnen som inbjuder till reflektion: Mod, Att misslyckas, Hemkänsla, Skärmtid, Att bli vuxen, Tystnad.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Vad är en essä? (50 min)",
+        beskrivning:
+          "Presentera essän som texttyp – ordet kommer från franskans 'essayer' (att försöka/pröva). Det är en text som tänker högt, inte en text som redan vet svaret. Läs en kort essä eller ett essäutdrag gemensamt. Analysera med analysramen: Hur börjar den? Var märker vi skribentens röst? Hur rör sig texten mellan det personliga och det allmänna? Diskutera: Vad skiljer en essä från en debattartikel? Från en krönika? Eleverna skriver en snabb fritext (10 min): Berätta om en vardaglig sak som fick dig att tänka.",
+      },
+      {
+        steg: "Lektion 2: Röst och reflektion (50 min)",
+        beskrivning:
+          "Fördjupning i essäns röst: det personliga tilltalet, det reflekterande tempot, att våga vara osäker och prövande. Analysera ett till essäutdrag och identifiera passager där skribenten reflekterar, associerar, byter perspektiv. Övning i par: Berätta en personlig erfarenhet kopplad till dagens essäämne. Kompisen ställer fördjupande frågor. Eleverna väljer sitt essäämne och börjar skriva ned associationer, minnen och tankar som tankekarta.",
+      },
+      {
+        steg: "Lektion 3: Skrivande (50 min)",
+        beskrivning:
+          "Diskutera essäns struktur: den behöver inte vara linjär men ska ha en röd tråd. Visa hur man kan börja med en konkret scen, ett minne eller en fråga. Modellera en essäinledning gemensamt. Eleverna skriver sin essä – uppmuntra dem att vara personliga, att våga associera fritt och att inte censurera sig själva i första utkastet. Betona processen: det är i skrivandet man upptäcker vad man tänker.",
+      },
+      {
+        steg: "Lektion 4: Kamratsamtal och bearbetning (50 min)",
+        beskrivning:
+          "Eleverna läser varandras essäer i par. Responsen fokuserar på: Var märker jag din röst? Var vill jag veta/höra mer? Rör sig texten mellan det personliga och det allmänna? Finns en röd tråd? Eleverna bearbetar sin essä. Betona att bearbetning av en essä handlar om att fördjupa tanken – inte bara rätta språkfel.",
+      },
+      {
+        steg: "Lektion 5: Essäseminarium (50 min)",
+        beskrivning:
+          "Eleverna läser varandras färdiga essäer i smågrupper och diskuterar dem som i ett litterärt seminarium. Avslutande helklassdiskussion: Vad har ni lärt er om att skriva essä? Vad är det svåraste? Vad är det friaste? Hur skiljer sig essäskrivande från annat skrivande ni gjort?",
+      },
+    ],
+    uppfoljning: [
+      "Läs essäer regelbundet som del av kursen – bygg en essäantologi med klassens texter.",
+      "Introducera den talande essän (spoken essay) som muntlig presentation.",
+      "Koppla till litteraturhistorien: läs Montaigne, Emerson eller svenska essäister i kontext.",
+      "Uppmuntra eleverna att skriva essäer som del av sitt gymnasiearbete eller i andra kurser.",
+    ],
+    bedomningsstod: [
+      "Har essän ett personligt tilltal och en tydlig skrivarröst?",
+      "Rör sig texten mellan det personliga/konkreta och det allmängiltiga/abstrakta?",
+      "Visar eleven förmåga att reflektera, pröva idéer och utveckla tankar?",
+      "Har essän en röd tråd trots eventuella associativa utvikningar?",
+      "Är språket varierat, precist och anpassat till essäformen?",
+      "Visar eleven mod att vara personlig och ha en egen hållning?",
+    ],
+  },
+  {
+    title: "Textanalys med litteraturvetenskapliga begrepp",
+    slug: "textanalys-med-litteraturvetenskapliga-begrepp",
+    description:
+      "Eleverna fördjupar sin textanalys med hjälp av narratologiska och stilistiska begrepp som berättarröst, fokalisering, intertextualitet och stilnivå.",
+    estimatedTime: "4–5 lektioner",
+    topics: ["Textanalys", "Narratologi", "Stilanalys"],
+    ageGroup: "gymnasiet",
+    syfte:
+      "Syftet är att eleverna ska tillägna sig ett precist begreppsapparat för att analysera litterära texter på en fördjupad nivå. Genom att använda narratologiska begrepp som fokalisering, berättartid och intertextualitet samt stilistiska begrepp som stilnivå, syntax och bildspråk får eleverna verktyg att formulera mer nyanserade och välgrundade tolkningar. Dessa begrepp förbereder eleverna för akademiska litteraturstudier.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i Svenska 2 och 3: skönlitteratur och sakprosa med fokus på texternas form och innehåll, litteraturvetenskapliga begrepp och analysmodeller, samt att tolka och resonera kring texter från olika epoker. Den stödjer kunskapskraven kring att analysera skönlitteratur med hjälp av adekvata begrepp och att formulera välgrundade tolkningar.",
+    forberedelser: [
+      "Välj 2–3 litterära texter med rik analytisk potential – gärna en novell med intressant berättarteknik (t.ex. Kafka, Borges, Hjalmar Söderberg, Sara Lidman) och ett romanutdrag med tydlig stilistisk prägel.",
+      "Förbered en begreppslista med definitioner och exempel: fokalisering (intern/extern), berättartid (ordning, varaktighet, frekvens), berättarröst (homodiegetisk/heterodiegetisk), intertextualitet, fri indirekt diskurs, stilnivå, syntax, bildspråk.",
+      "Skriv ut en analysmodell som strukturerar arbetet: 1) Vad berättas? 2) Hur berättas det? 3) Varför berättas det så? 4) Vilken effekt ger det?",
+      "Förbered korta textutdrag som illustrerar varje begrepp tydligt.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Narratologiska grunder (50 min)",
+        beskrivning:
+          "Introducera narratologin som verktyg: skillnaden mellan vad som berättas (historia) och hur det berättas (diskurs). Gå igenom begreppen berättarröst och fokalisering med konkreta exempel. Visa samma händelse berättad med olika fokalisering – diskutera effekten. Eleverna analyserar ett kort textutdrag: Vem berättar? Vem ser? Varför har författaren valt denna lösning?",
+      },
+      {
+        steg: "Lektion 2: Berättartid och struktur (50 min)",
+        beskrivning:
+          "Gå igenom berättartidens dimensioner: ordning (kronologisk, analepser/prolepser), varaktighet (scen, sammanfattning, paus, ellips) och frekvens (singulativ, iterativ). Analysera textutdrag gemensamt: hur hanterar författaren tiden? Var går det snabbt/långsamt och varför? Introducera fri indirekt diskurs och visa hur den sudddar gränsen mellan berättare och karaktär. Eleverna identifierar dessa drag i sin text.",
+      },
+      {
+        steg: "Lektion 3: Stilanalys (50 min)",
+        beskrivning:
+          "Fokusera på textens stilistiska dimension: ordval och stilnivå (högt, neutralt, lågt), syntax (meningslängd, bisatser, fragment), bildspråk (metaforer, liknelser, symbolik), ljudmässiga effekter (allitteration, assonans). Jämför utdrag med olika stilar och diskutera: Vad signalerar stilen? Hur påverkar den läsarens upplevelse? Eleverna gör en detaljerad stilanalys av ett kort utdrag och presenterar för varandra.",
+      },
+      {
+        steg: "Lektion 4: Intertextualitet och kontext (50 min)",
+        beskrivning:
+          "Introducera intertextualitet: hur texter refererar till, citerar eller omarbetar andra texter. Visa exempel – gärna en modern text som medvetet anspelar på en äldre. Diskutera: Vad tillför intertextualiteten? Måste man känna igen referensen? Koppla till litteraturhistorisk kontext: hur påverkar vetskapen om en texts tillkomsttid vår tolkning? Eleverna identifierar möjliga intertextuella kopplingar i texterna de arbetar med.",
+      },
+      {
+        steg: "Lektion 5: Skriva fördjupad analys (50 min)",
+        beskrivning:
+          "Eleverna skriver en fördjupad analystext om en av de litterära texterna. De ska använda minst fyra litteraturvetenskapliga begrepp och koppla sin analys till en övergripande tolkning. Kamratrespons med fokus på: Används begreppen korrekt? Är tolkningen välgrundad och kopplad till texten? Finns det balans mellan beskrivning och analys? Bearbetning och inlämning.",
+      },
+    ],
+    uppfoljning: [
+      "Använd begreppen löpande i all litteraturundervisning under kursen.",
+      "Låt eleverna jämföra analyser av samma text och diskutera hur olika begreppsval ger olika tolkningar.",
+      "Läs litteraturvetenskapliga artiklar eller recensioner och identifiera vilka begrepp som används.",
+      "Koppla till gymnasiearbetet för de som skriver inom litteratur.",
+    ],
+    bedomningsstod: [
+      "Använder eleven narratologiska begrepp korrekt och funktionellt?",
+      "Kan eleven analysera berättarperspektiv och fokalisering och förklara deras effekt?",
+      "Kan eleven genomföra en stilanalys med relevant begreppsanvändning?",
+      "Formulerar eleven en sammanhängande tolkning som bygger på textanalys?",
+      "Visar eleven förståelse för sambandet mellan form och innehåll?",
+      "Kan eleven identifiera och diskutera intertextuella kopplingar?",
+    ],
+  },
+  {
+    title: "Språk och makt",
+    slug: "sprak-och-makt",
+    description:
+      "Eleverna utforskar språkets roll som maktmedel i samhället och analyserar hur språkpolitik, normer och språkbruk skapar och upprätthåller maktstrukturer.",
+    estimatedTime: "4–5 lektioner",
+    topics: ["Språk och makt", "Språkpolitik", "Språksociologi"],
+    ageGroup: "gymnasiet",
+    syfte:
+      "Syftet är att eleverna ska utveckla en fördjupad förståelse för hur språk fungerar som maktmedel i samhället. Genom att analysera hur språknormer, språkpolitik och språkbruk skapar, upprätthåller och utmanar maktstrukturer utvecklar eleverna en kritisk språklig medvetenhet. De lär sig att se samband mellan språk och identitet, språk och demokrati, samt språk och social ojämlikhet.",
+    kopplingKursplan:
+      "Lektionen knyter an till centralt innehåll i Svenska 2 och 3: språkets betydelse för att utöva inflytande och för ens delaktighet i samhället, språklig variation i talat och skrivet språk med tonvikt på hur kön, social bakgrund och kulturell tillhörighet påverkar språket, samt språkvård och språkpolitik i Sverige och internationellt. Den stödjer kunskapskraven kring att resonera om språk och makt.",
+    forberedelser: [
+      "Samla exempel på språk och makt i praktiken: ett utdrag ur en politisk debatt, ett myndighetsbrev med svårt språk, ett exempel på härskartekniker, ett utdrag ur en reklamkampanj som spelar på språkliga normer, och ett exempel på hur minoritetsspråk behandlats historiskt.",
+      "Förbered bakgrundsmaterial om Sveriges språklag (2009), de nationella minoritetsspråken, klarspråksarbetet och debatten om hen.",
+      "Skriv ut nyckelbegrepp: språknorm, standardspråk, dialekt, sociolekt, register, språkpolitik, klarspråk, härskartekniker, språklig diskriminering.",
+      "Förbered diskussionsfrågor som utmanar elevernas egna föreställningar om rätt och fel i språk.",
+    ],
+    genomforande: [
+      {
+        steg: "Lektion 1: Språk som maktverktyg (50 min)",
+        beskrivning:
+          "Börja provocerande: Visa ett myndighetsbrev fullt av facktermer och fråga: Är det här bra svenska? Vem gynnas av att det skrivs så? Diskutera grundtanken: den som behärskar språket har makt – i klassrummet, i samhällsdebatten, i rättsväsendet. Introducera nyckelbegreppen. Analysera exemplen gemensamt: Hur används språk för att inkludera eller exkludera? Eleverna diskuterar i grupper: Har ni själva upplevt att språk skapar makt eller utanförskap?",
+      },
+      {
+        steg: "Lektion 2: Språknormer och status (50 min)",
+        beskrivning:
+          "Fördjupning i språknormer: Vad är korrekt svenska? Vem bestämmer? Diskutera skillnaden mellan standardspråk, dialekt, sociolekt och ungdomsspråk. Analysera: varför har vissa sätt att tala högre status? Undersök hur dialekter och brytning uppfattas – visa forskning om språkattityder. Diskutera: Är det fult att prata dialekt? Varför kan någon med brytning ha svårare att få jobb? Eleverna analyserar sitt eget språkbruk i olika situationer.",
+      },
+      {
+        steg: "Lektion 3: Språkpolitik i Sverige (50 min)",
+        beskrivning:
+          "Presentera Sveriges språklag och dess syfte. Diskutera: Varför behövs en språklag? Vilka minoritetsspråk skyddas och varför? Undersök klarspråksarbetet: varför ska myndigheter skriva begripligt? Diskutera historiska exempel på språkförtryck: samiska språkförbudet, tornedalsfinska. Eleverna arbetar i grupper med att analysera ett konkret fall av språk och makt (valfritt: myndighetsspråk, mediespråk, språkdebatt).",
+      },
+      {
+        steg: "Lektion 4: Språk, genus och identitet (50 min)",
+        beskrivning:
+          "Undersök hur språk och kön hänger samman: yrkestitlar, generiskt maskulinum, hen-debatten. Analysera härskartekniker som språkliga maktstrategier. Diskutera hur språk skapar och speglar identitet: vem får tala? vem blir lyssnad på? vems språk räknas? Eleverna analyserar ett samtal eller en debatt ur ett maktperspektiv: Vem talar mest? Vem avbryter? Vilka ord väljs?",
+      },
+      {
+        steg: "Lektion 5: Syntes och presentation (50 min)",
+        beskrivning:
+          "Eleverna skriver en argumenterande eller utredande text om ett valfritt tema inom språk och makt. Alternativt håller de en kort muntlig presentation. Avslutande klassdiskussion: Vad kan vi göra i vardagen för att använda språket mer medvetet och rättvist? Hur kan kunskap om språk och makt stärka oss som medborgare?",
+      },
+    ],
+    uppfoljning: [
+      "Analysera aktuella språkdebatter i media löpande under kursen.",
+      "Låt eleverna granska skolans egna texter (informationsbrev, regler) ur ett klarspråksperspektiv.",
+      "Bjud in en språkvetare, politiker eller journalist för att diskutera språk och makt.",
+      "Koppla till samhällskunskap och diskutera demokrati, yttrandefrihet och representation.",
+    ],
+    bedomningsstod: [
+      "Kan eleven ge konkreta exempel på hur språk fungerar som maktmedel?",
+      "Kan eleven resonera om sambandet mellan språknormer och social status?",
+      "Visar eleven kunskap om Sveriges språkpolitik och språklag?",
+      "Kan eleven analysera en text eller situation ur ett språk-och-makt-perspektiv?",
+      "Formulerar eleven en välgrundad och nyanserad hållning i frågor om språk och makt?",
+      "Visar eleven förmåga att reflektera över sitt eget språkbruk i relation till makt?",
     ],
   },
 ];

@@ -5,6 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TEXTBANK_TEXTS } from "@/lib/data/textbank";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
+import { ShareToolbar } from "@/components/share-toolbar";
 
 interface Props {
   params: Promise<{ arskurs: string; slug: string }>;
@@ -120,6 +121,13 @@ export default async function TextDetailArskursPage({ params }: Props) {
         </Card>
       </section>
 
+      {/* Share & Copy */}
+      <ShareToolbar
+        copyText={text.content}
+        copyLabel="Kopiera texten"
+        className="mb-10"
+      />
+
       {/* Link to skrivverkstad */}
       <section>
         <Link
@@ -128,7 +136,7 @@ export default async function TextDetailArskursPage({ params }: Props) {
         >
           <PenLine className="h-4 w-4" />
           {text.skrivverkstadLabel}
-          <span className="text-neutral-400">&mdash; Lar dig skriva denna texttyp</span>
+          <span className="text-neutral-400">&mdash; Lär dig skriva denna texttyp</span>
         </Link>
       </section>
     </div>
