@@ -18,6 +18,7 @@ const NAV_ITEMS = [
   { href: "/grammatik", label: "Grammatik" },
   { href: "/skrivverkstad", label: "Skrivverkstad" },
   { href: "/ovningar", label: "Övningar" },
+  { href: "/textbank", label: "Textbank" },
   { href: "/litteraturtips", label: "Litteraturtips" },
   { href: "/sva", label: "SVA" },
 ];
