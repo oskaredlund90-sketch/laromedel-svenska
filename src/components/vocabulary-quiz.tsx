@@ -352,7 +352,7 @@ export function VocabularyQuiz({
         </div>
         <div className="mt-2 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800">
           <div
-            className="h-1.5 rounded-full bg-neutral-900 transition-all duration-300 dark:bg-white"
+            className="h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 transition-all duration-300 dark:from-amber-500 dark:to-amber-400"
             style={{
               width: `${((currentIndex + (answered ? 1 : 0)) / questions.length) * 100}%`,
             }}

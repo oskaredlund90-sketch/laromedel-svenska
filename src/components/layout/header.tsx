@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BookOpen, Menu, Search, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -18,12 +18,32 @@ const AGE_GROUPS = [
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Detect which age group is active based on path
   const activeGroup = AGE_GROUPS.find((g) => pathname.startsWith(g.href));
 
+  // Track scroll for header shadow
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/80 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/80">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm transition-shadow duration-200 dark:bg-neutral-950/80",
+        scrolled
+          ? "border-neutral-200 shadow-sm dark:border-neutral-800"
+          : "border-transparent dark:border-transparent"
+      )}
+    >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link
@@ -68,7 +88,7 @@ export function Header() {
             size="icon"
             className="md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Öppna meny"
+            aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
           >
             {mobileOpen ? (
               <X className="h-5 w-5" />
@@ -79,9 +99,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — slide-down animation */}
       {mobileOpen && (
-        <nav className="border-t border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-950 md:hidden">
+        <nav className="animate-slide-down border-t border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-950 md:hidden">
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-400">
             Välj stadie
           </p>
@@ -90,9 +110,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                  "flex min-h-[48px] items-center rounded-md px-3 text-sm font-medium transition-colors",
                   activeGroup?.href === item.href
                     ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                     : "text-neutral-600 hover:bg-neutral-50 dark:text-neutral-400 dark:hover:bg-neutral-900"

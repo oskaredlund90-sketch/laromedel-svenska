@@ -20,10 +20,35 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
+
+/* Accent colors per age group */
+const ACCENT: Record<string, { icon: string; bg: string; border: string }> = {
+  lagstadiet: {
+    icon: "text-sky-600 dark:text-sky-400",
+    bg: "bg-sky-100 group-hover:bg-sky-200 dark:bg-sky-900/30 dark:group-hover:bg-sky-900/50",
+    border: "hover:border-sky-300 dark:hover:border-sky-700",
+  },
+  mellanstadiet: {
+    icon: "text-emerald-600 dark:text-emerald-400",
+    bg: "bg-emerald-100 group-hover:bg-emerald-200 dark:bg-emerald-900/30 dark:group-hover:bg-emerald-900/50",
+    border: "hover:border-emerald-300 dark:hover:border-emerald-700",
+  },
+  hogstadiet: {
+    icon: "text-violet-600 dark:text-violet-400",
+    bg: "bg-violet-100 group-hover:bg-violet-200 dark:bg-violet-900/30 dark:group-hover:bg-violet-900/50",
+    border: "hover:border-violet-300 dark:hover:border-violet-700",
+  },
+  gymnasiet: {
+    icon: "text-amber-600 dark:text-amber-400",
+    bg: "bg-amber-100 group-hover:bg-amber-200 dark:bg-amber-900/30 dark:group-hover:bg-amber-900/50",
+    border: "hover:border-amber-300 dark:hover:border-amber-700",
+  },
+};
 
 /* Section descriptions change per age group */
 const SECTION_CONFIGS: Record<
@@ -114,10 +139,11 @@ export default async function AgeGroupPage({ params }: Props) {
 
   const group = AGE_GROUPS.find((g) => g.slug === arskurs)!;
   const sections = SECTION_CONFIGS[arskurs] ?? SECTION_CONFIGS.hogstadiet;
+  const accent = ACCENT[arskurs] ?? ACCENT.hogstadiet;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <div className="mb-10">
+      <div className="mb-10 animate-fade-in-up">
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
           {group.label}
         </h1>
@@ -127,20 +153,22 @@ export default async function AgeGroupPage({ params }: Props) {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {sections.map((section) => {
+        {sections.map((section, i) => {
           const Icon = section.icon;
           return (
-            <Link key={section.slug} href={`/${arskurs}/${section.slug}`}>
-              <Card className="group h-full transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
-                <CardHeader>
-                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:group-hover:bg-neutral-700">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <CardTitle className="text-base">{section.title}</CardTitle>
-                  <CardDescription>{section.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
+            <AnimateOnScroll key={section.slug} delay={i * 60}>
+              <Link href={`/${arskurs}/${section.slug}`}>
+                <Card className={`group h-full hover:-translate-y-1 hover:shadow-lg ${accent.border}`}>
+                  <CardHeader>
+                    <div className={`mb-2 flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${accent.bg}`}>
+                      <Icon className={`h-5 w-5 ${accent.icon}`} />
+                    </div>
+                    <CardTitle className="text-base">{section.title}</CardTitle>
+                    <CardDescription>{section.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </AnimateOnScroll>
           );
         })}
       </div>
