@@ -12,6 +12,7 @@ import {
   ClipboardCheck,
   Library,
   MessageSquareText,
+  BarChart3,
 } from "lucide-react";
 import {
   Card,
@@ -39,6 +40,7 @@ const SECTION_CONFIGS: Record<
     { slug: "textbank", title: "Textbank", description: "Korta exempeltexter att l\u00e4sa och diskutera i klassen", icon: BookText },
     { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i \u00e5k 3", icon: ClipboardCheck },
     { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ord\u00f6vningar f\u00f6r \u00e5k 1\u20133", icon: MessageSquareText },
+    { slug: "framsteg", title: "Mina framsteg", description: "Se hur det g\u00e5r \u2013 ord du l\u00e4rt dig, quizresultat och svit", icon: BarChart3 },
     { slug: "ai-i-svenskan", title: "AI i svenskan", description: "Hur l\u00e4rare kan anv\u00e4nda AI-verktyg i undervisningen", icon: Sparkles },
   ],
   mellanstadiet: [
@@ -52,6 +54,7 @@ const SECTION_CONFIGS: Record<
     { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i \u00e5k 6", icon: ClipboardCheck },
     { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "En f\u00f6rsta introduktion till svenska f\u00f6rfattare och epoker", icon: Library },
     { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordberikning f\u00f6r \u00e5k 4\u20136", icon: MessageSquareText },
+    { slug: "framsteg", title: "Mina framsteg", description: "Se hur det g\u00e5r \u2013 ord du l\u00e4rt dig, quizresultat och svit", icon: BarChart3 },
     { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI som verktyg f\u00f6r skrivande och l\u00e4rande", icon: Sparkles },
   ],
   hogstadiet: [
@@ -65,6 +68,7 @@ const SECTION_CONFIGS: Record<
     { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i \u00e5k 9 \u2013 delprov och bed\u00f6mning", icon: ClipboardCheck },
     { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Svenska litteraturens epoker fr\u00e5n medeltid till nutid", icon: Library },
     { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord, akademiska ord och stilniv\u00e5er", icon: MessageSquareText },
+    { slug: "framsteg", title: "Mina framsteg", description: "Se hur det g\u00e5r \u2013 ord du l\u00e4rt dig, quizresultat och svit", icon: BarChart3 },
     { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI-verktyg f\u00f6r skrivande, k\u00e4llkritik och spr\u00e5kutveckling", icon: Sparkles },
   ],
   gymnasiet: [
@@ -78,6 +82,7 @@ const SECTION_CONFIGS: Record<
     { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella proven i Svenska 1 och 3", icon: ClipboardCheck },
     { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "F\u00f6rdjupning i litteraturhistoria fr\u00e5n antiken till samtiden", icon: Library },
     { slug: "ordkunskap", title: "Ordkunskap", description: "Akademiskt ordf\u00f6rr\u00e5d, facktermer och etymologi", icon: MessageSquareText },
+    { slug: "framsteg", title: "Mina framsteg", description: "Se hur det g\u00e5r \u2013 ord du l\u00e4rt dig, quizresultat och svit", icon: BarChart3 },
     { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI i akademiskt skrivande \u2013 m\u00f6jligheter, risker och k\u00e4llkritik", icon: Sparkles },
   ],
 };

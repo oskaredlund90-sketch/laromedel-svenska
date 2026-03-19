@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   CheckCircle,
   XCircle,
@@ -12,6 +12,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { WordRow } from "@/lib/supabase/types";
+import type { AgeGroup } from "@/lib/supabase/types";
+import {
+  recordQuizResult,
+  recordWordCorrect,
+  recordWordIncorrect,
+  recordWordSeen,
+} from "@/lib/progress";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -112,11 +119,14 @@ interface VocabularyQuizProps {
   words: WordRow[];
   /** Number of questions per round */
   questionCount?: number;
+  /** Age group — used for progress tracking */
+  ageGroup?: AgeGroup;
 }
 
 export function VocabularyQuiz({
   words,
   questionCount = 10,
+  ageGroup,
 }: VocabularyQuizProps) {
   const [started, setStarted] = useState(false);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -145,8 +155,13 @@ export function VocabularyQuiz({
       setSelectedOption(optionIndex);
       setAnswered(true);
 
-      const isCorrect = optionIndex === questions[currentIndex].correctIndex;
+      const q = questions[currentIndex];
+      const isCorrect = optionIndex === q.correctIndex;
+
+      // Track word progress
+      recordWordSeen(q.word.word);
       if (isCorrect) {
+        recordWordCorrect(q.word.word);
         setScore((s) => s + 1);
         setStreak((s) => {
           const newStreak = s + 1;
@@ -154,6 +169,7 @@ export function VocabularyQuiz({
           return newStreak;
         });
       } else {
+        recordWordIncorrect(q.word.word);
         setStreak(0);
       }
     },
@@ -170,6 +186,25 @@ export function VocabularyQuiz({
 
   const finished = answered && currentIndex === questions.length - 1;
   const question = questions[currentIndex];
+
+  // Record quiz result when finished
+  const [resultRecorded, setResultRecorded] = useState(false);
+  useEffect(() => {
+    if (finished && !resultRecorded && ageGroup) {
+      recordQuizResult({
+        ageGroup,
+        score,
+        total: questions.length,
+        bestStreak,
+      });
+      setResultRecorded(true);
+    }
+  }, [finished, resultRecorded, ageGroup, score, questions.length, bestStreak]);
+
+  // Reset resultRecorded when starting a new quiz
+  useEffect(() => {
+    if (!started) setResultRecorded(false);
+  }, [started]);
 
   // Not enough words for a quiz
   if (words.length < 4) {

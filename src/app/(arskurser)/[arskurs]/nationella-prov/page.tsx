@@ -14,9 +14,11 @@ import {
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { NationellaProvOvningar } from "@/components/nationella-prov-ovningar";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import type { AgeGroup } from "@/lib/supabase/types";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -175,10 +177,10 @@ export default async function NationellaProvArskursPage({ params }: Props) {
       </section>
 
       {/* Level-specific content */}
-      {arskurs === "lagstadiet" && <Lagstadiet />}
-      {arskurs === "mellanstadiet" && <Mellanstadiet />}
-      {arskurs === "hogstadiet" && <Hogstadiet />}
-      {arskurs === "gymnasiet" && <Gymnasiet />}
+      {arskurs === "lagstadiet" && <Lagstadiet arskurs="lagstadiet" />}
+      {arskurs === "mellanstadiet" && <Mellanstadiet arskurs="mellanstadiet" />}
+      {arskurs === "hogstadiet" && <Hogstadiet arskurs="hogstadiet" />}
+      {arskurs === "gymnasiet" && <Gymnasiet arskurs="gymnasiet" />}
     </div>
   );
 }
@@ -187,7 +189,7 @@ export default async function NationellaProvArskursPage({ params }: Props) {
 /*  LAGSTADIET (Arskurs 3)                                            */
 /* ================================================================== */
 
-function Lagstadiet() {
+function Lagstadiet({ arskurs }: { arskurs: AgeGroup }) {
   return (
     <>
       <div className="mb-6 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-neutral-900">
@@ -361,6 +363,13 @@ function Lagstadiet() {
         </div>
       </Section>
 
+      <Section title="Övningsuppgifter">
+        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+          Testa dig själv med uppgifter som liknar de i det nationella provet.
+        </p>
+        <NationellaProvOvningar level={arskurs} />
+      </Section>
+
       <Section title="Vanliga fr&aring;gor">
         <div className="space-y-4">
           {[
@@ -481,7 +490,7 @@ function Lagstadiet() {
 /*  MELLANSTADIET (Arskurs 6)                                         */
 /* ================================================================== */
 
-function Mellanstadiet() {
+function Mellanstadiet({ arskurs }: { arskurs: AgeGroup }) {
   return (
     <>
       <div className="mb-6 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-neutral-900">
@@ -660,6 +669,13 @@ function Mellanstadiet() {
         </div>
       </Section>
 
+      <Section title="Övningsuppgifter">
+        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+          Testa dig själv med uppgifter som liknar de i det nationella provet.
+        </p>
+        <NationellaProvOvningar level={arskurs} />
+      </Section>
+
       <Section title="Vanliga fr&aring;gor">
         <div className="space-y-4">
           {[
@@ -745,7 +761,7 @@ function Mellanstadiet() {
 /*  HOGSTADIET (Arskurs 9)                                            */
 /* ================================================================== */
 
-function Hogstadiet() {
+function Hogstadiet({ arskurs }: { arskurs: AgeGroup }) {
   return (
     <>
       <div className="mb-6 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-neutral-900">
@@ -971,6 +987,13 @@ function Hogstadiet() {
         </div>
       </Section>
 
+      <Section title="Övningsuppgifter">
+        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+          Testa dig själv med uppgifter som liknar de i det nationella provet.
+        </p>
+        <NationellaProvOvningar level={arskurs} />
+      </Section>
+
       <Section title="Vanliga fr&aring;gor">
         <div className="space-y-4">
           {[
@@ -1048,7 +1071,7 @@ function Hogstadiet() {
 /*  GYMNASIET                                                          */
 /* ================================================================== */
 
-function Gymnasiet() {
+function Gymnasiet({ arskurs }: { arskurs: AgeGroup }) {
   return (
     <>
       <div className="mb-6 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-semibold text-white dark:bg-white dark:text-neutral-900">
@@ -1356,6 +1379,13 @@ function Gymnasiet() {
             </Card>
           </SubSection>
         </div>
+      </Section>
+
+      <Section title="Övningsuppgifter">
+        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+          Testa dig själv med uppgifter som liknar de i det nationella provet.
+        </p>
+        <NationellaProvOvningar level={arskurs} />
       </Section>
 
       <Section title="Vanliga fr&aring;gor">

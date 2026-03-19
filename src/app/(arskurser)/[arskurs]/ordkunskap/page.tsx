@@ -244,7 +244,7 @@ export default async function OrdkunskapPage({ params }: Props) {
           Starta ett quiz och se hur många ord du kan! Frågorna blandar
           definitioner, exempelmeningar och ordklasser.
         </p>
-        <VocabularyQuiz words={allWords} questionCount={10} />
+        <VocabularyQuiz words={allWords} questionCount={10} ageGroup={level} />
       </Section>
 
       {/* Tips and exercises */}
