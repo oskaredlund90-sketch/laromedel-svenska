@@ -17,6 +17,8 @@ const FILTER_OPTIONS: { value: TextCategory | "alla"; label: string }[] = [
   { value: "novell", label: "Noveller" },
   { value: "historisk", label: "Historiska" },
   { value: "utredande", label: "Utredande" },
+  { value: "poesi", label: "Poesi" },
+  { value: "recension", label: "Recensioner" },
 ];
 
 /**

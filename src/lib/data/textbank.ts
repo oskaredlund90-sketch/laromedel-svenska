@@ -5,7 +5,9 @@ export type TextCategory =
   | "historisk"
   | "utredande"
   | "berattande"
-  | "faktatext";
+  | "faktatext"
+  | "poesi"
+  | "recension";
 
 export type DifficultyLevel =
   | "lagstadiet"
@@ -36,6 +38,8 @@ export const CATEGORY_LABELS: Record<TextCategory, string> = {
   utredande: "Utredande text",
   berattande: "Berättande text",
   faktatext: "Faktatext",
+  poesi: "Poesi",
+  recension: "Recension",
 };
 
 export const DIFFICULTY_LABELS: Record<DifficultyLevel, string> = {
@@ -1334,5 +1338,1051 @@ Priset för frihet har aldrig varit att slappna av. Det har alltid varit att bry
       "Högtidligt, engagerande språk. Retoriska figurer: upprepning (att vi röstar, att vi bildar oss), metaforer (karta, mörker), kontraster (brak/tystnad). Sofistikerad argumentation med ethos, logos och pathos integrerade.",
     skrivverkstadLink: "/skrivverkstad/argumenterande-text",
     skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+
+  // ─── POESI ──────────────────────────────────────────────────
+
+  // Lågstadiet — Poesi
+  {
+    slug: "lilla-grodan",
+    title: "Lilla grodan",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Lilla grodan sitter still
+    på sitt blad vid bäckens rand.
+    Hon ser molnen vandra fritt
+    över skog och över strand.
+
+    "Kvack!" säger grodan glad,
+    "Vilken härlig sommardag!
+    Solen lyser, vinden blåser,
+    och jag trivs precis som jag."
+
+    Trollsländan flyger förbi,
+    fjärilen dansar i vind.
+    Lilla grodan hoppar glatt
+    och får regndroppar på kind.`,
+    analysisQuestions: [
+      "Vilka djur finns med i dikten? Vad gör de?",
+      "Vilka ord i dikten rimmar?",
+      "Hur känner sig grodan? Hur vet du det?",
+    ],
+    structure:
+      "Dikten har tre strofer med fyra rader i varje. Varannan rad rimmar. Enkel berättande struktur med en huvudkaraktär.",
+    languageFeatures:
+      "Enkel svenska med korta meningar. Rim skapar rytm och gör dikten lätt att minnas. Personifiering av grodan som talar. Naturbeskrivningar med konkreta ord.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+  {
+    slug: "vinternatten",
+    title: "Vinternatten",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Snön faller tyst i natten,
+    vit och mjuk som bomull.
+    Taken blir till sockertoppar,
+    gatan blir ett skimrande troll.
+
+    Katten sover inomhus
+    och drömmer om en mus.
+    Månen lyser som en lampa
+    över varje litet hus.
+
+    Imorgon ska vi bygga,
+    en snögubbe så stor.
+    Med morotnäsa, stenögon
+    och en halsduk som mor.`,
+    analysisQuestions: [
+      "Vilka jämförelser gör dikten? Vad jämförs med vad?",
+      "Vad handlar dikten om? Berätta med egna ord.",
+      "Vilken årstid beskrivs? Hur vet du det?",
+    ],
+    structure:
+      "Tre strofer med fyra rader. Dikten rör sig från kvällsbild till morgonplanering. Enkel kronologisk ordning.",
+    languageFeatures:
+      "Liknelser (vit och mjuk som bomull, lyser som en lampa). Rim i varannan rad. Sinnesintryck: syn och känsel. Vardagsnära ordval som barn känner igen.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+
+  // Mellanstadiet — Poesi
+  {
+    slug: "basta-vannen",
+    title: "Bästa vännen",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Du var den som väntade vid grinden
+    när alla andra redan gått.
+    Du var den som delade sin smörgås
+    fast du själv hade fått för lått.
+
+    Vi cyklade genom somrarna,
+    förbi åkrar gula av raps,
+    med vinden i håret och skrattet
+    som ekade genom varje klapp.
+
+    Ibland bråkade vi om ingenting,
+    som vänner brukar göra.
+    Men nästa dag var allt som vanligt,
+    som om inget hänt att störa.
+
+    Nu bor du långt härifrån,
+    men varje gång jag ser en cykelväg
+    tänker jag på dig och ler,
+    och minns vår sommar, varje steg.`,
+    analysisQuestions: [
+      "Vilken känsla förmedlar dikten? Ge exempel från texten.",
+      "Hur används naturen i dikten?",
+      "Vad berättar dikten om vänskap? Vad är viktigt i en vänskap enligt dikten?",
+      "Hur förändras stämningen mellan stroferna?",
+    ],
+    structure:
+      "Fyra strofer som följer en kronologisk båge: dåtid (minnen), nutid (saknaden). Varje strof lyfter en aspekt av vänskapen.",
+    languageFeatures:
+      "Direkt tilltal (du). Konkreta bilder (grinden, smörgåsen, raps). Upprepning av 'du var den som' skapar rytm. Enkel men känslosam ton.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+  {
+    slug: "hosten-kommer",
+    title: "Hösten kommer",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Löven byter färg igen,
+    från grönt till guld och rött.
+    Sommaren har packat sina väskor
+    och tyst gett sig av på stött.
+
+    Dimman lägger sig som filtar
+    över ängar, sjö och stig.
+    Spindeln spinner sina nät
+    och väntar tålmodigt och vig.
+
+    Regnet trummar på fönsterblecket,
+    en rytm som aldrig tröttnar.
+    Kökslampan lyser varmt inifrån
+    och tepåsen i koppen mörknar.
+
+    Jag sitter vid mitt fönster,
+    ser hösten sakta landa.
+    Det finns en skönhet i det stilla,
+    i allt som håller på att förandra.
+
+    Snart kommer mörkret tidigare,
+    snart tänds de första ljusen.
+    Men just nu räcker det med regnet
+    och tystnaden i husen.`,
+    analysisQuestions: [
+      "Vilka sinnen (syn, hörsel, känsel) används i dikten? Ge exempel.",
+      "Hur beskrivs hösten? Är det positivt, negativt eller blandat?",
+      "Vad betyder raden 'Det finns en skönhet i det stilla'?",
+      "Hur skapar dikten stämning? Vilka ord bidrar mest?",
+    ],
+    structure:
+      "Fem strofer med fyra rader vardera. Dikten rör sig från yttre natur till inre reflektion. Progressionen följer höstens ankomst.",
+    languageFeatures:
+      "Personifiering (sommaren packar väskor). Sinnesbilder: syn (färger), hörsel (regn), känsel (varmt). Lugn, meditativ ton. Metaforer och liknelser (dimman som filtar).",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+
+  // Högstadiet — Poesi
+  {
+    slug: "spegelbilden",
+    title: "Spegelbilden",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Jag tittar i spegeln
+och ser någon jag inte riktigt känner.
+Ansiktet är mitt, men blicken
+tillhör en annan version av mig —
+den som fanns igår,
+eller kanske den som kommer imorgon.
+
+Alla säger att jag ska vara mig själv.
+Men vilken "mig själv" menar de?
+Den som skrattar högt i korridoren,
+eller den som gråter tyst i duschen?
+Den som räcker upp handen,
+eller den som biter ihop och tiger?
+
+Jag byter skinn som en orm,
+inte av svek utan av överlevnad.
+Varje rum kräver en ny mask,
+varje grupp en ny dialekt.
+
+Ibland, sent på kvällen,
+när alla masker ligger på golvet
+och rummet är tyst,
+hittar jag något som kanske är äkta.
+En röst som inte försöker behaga.
+En tanke som inte är lånad.
+
+Kanske är det där jag börjar.
+Inte i spegeln.
+Utan i tystnaden.`,
+    analysisQuestions: [
+      "Vad handlar dikten om på ett djupare plan?",
+      "Hur används metaforen om masker? Vad symboliserar de?",
+      "Varför är dikten skriven i fri vers? Hur påverkar det läsupplevelsen?",
+      "Vad betyder de avslutande raderna? Var hittar jag-personen sig själv?",
+      "Känner du igen dig i dikten? På vilket sätt?",
+    ],
+    structure:
+      "Fri vers utan fast rimmönster. Fem stycken som rör sig från yttre iakttagelse till inre reflektion. Dikten kulminerar i en stilla insikt.",
+    languageFeatures:
+      "Fri vers med varierande radlängd. Metaforer (masker, skinn, dialekt). Retoriska frågor. Kontraster (skratta/gråta, räcka upp handen/bita ihop). Avskalat, ärligt språk.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+  {
+    slug: "grans",
+    title: "Gräns",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Det finns en gräns jag inte ser
+men alltid känner.
+Den går mellan barnet jag var
+och den vuxna jag förväntas bli.
+
+På ena sidan: sandlådan,
+lördagsgodis, tecknade serier,
+dagarna som aldrig tog slut.
+På andra sidan: ansvar,
+beslut, framtidsplaner
+och frågor jag inte vet svaret på.
+
+Jag står på gränsen
+med en fot på varje sida
+och balanserar.
+
+Ibland vill jag springa tillbaka
+till den tid då världen var enkel
+och allt löstes med ett plåster.
+Ibland vill jag framåt,
+till friheten som väntar,
+till rätten att bestämma själv.
+
+Men mest av allt vill jag stanna här,
+i mellanlandet,
+där det är okej att inte veta.
+Där frågan "Vem vill du bli?"
+inte behöver ett svar ännu.
+
+Gränsen är ingen mur.
+Den är en bro.
+Och jag behöver inte skynda mig över.`,
+    analysisQuestions: [
+      "Vilken gräns talar dikten om? Är det en verklig eller symbolisk gräns?",
+      "Hur kontrasteras barndom och vuxenliv? Vilka bilder används?",
+      "Vad betyder 'mellanlandet'? Varför vill jag-personen stanna där?",
+      "Hur tolkar du de avslutande raderna om bron?",
+      "Hur speglar diktens form dess innehåll?",
+    ],
+    structure:
+      "Fri vers med sex stycken. Dikten byggs kring en central metafor (gränsen) som utvecklas och omtolkas genom texten. Avslutningen erbjuder en ny bild (bron).",
+    languageFeatures:
+      "Symbolspråk (gräns, bro, mellanland). Kontraster strukturerar dikten. Uppräkningar skapar konkretion. Kort, avskalat slutstycke ger eftertryck.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+
+  // Gymnasiet — Poesi
+  {
+    slug: "tidens-anatomi",
+    title: "Tidens anatomi",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Tiden har inga händer
+men den griper.
+Ingen röst
+men den talar genom rynkor,
+genom fotografier som gulnar i lådor
+ingen längre öppnar.
+
+Jag sitter vid köksbordet en söndagsmorgon
+och hör klockan ticka.
+Varje slag är ett löfte och ett hot:
+du har detta ögonblick,
+men bara detta.
+
+Min morfar brukade säga
+att tiden inte existerar —
+bara förändring gör det.
+Trädet som tappar sina löv
+vet ingenting om oktober.
+Det bara lever.
+
+Men vi räknar.
+Vi mäter dagarna i deadlines,
+veckorna i scheman,
+åren i före och efter.
+Vi har gjort tiden till en bur
+och satt oss själva inuti.
+
+Det finns ögonblick som vägrar lyda:
+skrattet som varar längre än det borde,
+samtalet som gör natten kort,
+sömnen som kommer utan att man märker det.
+I de ögonblicken upphör tiden —
+inte för att den stannar,
+utan för att vi slutar räkna.
+
+Kanske är det hela hemligheten.
+Att leva är inte att hinna.
+Det är att glömma att man har bråttom.
+Att sitta vid köksbordet
+och låta kaffet kallna
+medan morgonen bara är.`,
+    analysisQuestions: [
+      "Hur personifieras tiden i dikten? Vilken effekt har det?",
+      "Vad menar morfadern med att tiden inte existerar? Håller du med?",
+      "Hur fungerar metaforen om buren? Vad säger den om vår relation till tid?",
+      "Vilken roll spelar de konkreta bilderna (köksbordet, kaffet) i en abstrakt dikt?",
+      "Jämför diktens syn på tid med ditt eget förhållande till tid.",
+    ],
+    structure:
+      "Sex stycken i fri vers. Dikten pendlar mellan det abstrakta (tid som begrepp) och det konkreta (köksbordet, morfadern). Cirkelkomposition: dikten börjar och slutar vid köksbordet.",
+    languageFeatures:
+      "Modernistisk stil med fri vers och varierande radlängd. Personifiering, paradoxer (löfte och hot). Filosofisk ton med vardagliga ankarpunkter. Aforistiska slutrader.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+  {
+    slug: "det-tomma-rummet",
+    title: "Det tomma rummet",
+    category: "poesi",
+    categoryLabel: "Poesi",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Det finns ett rum i mig
+som jag sällan besöker.
+Det ligger bortom orden,
+bortom de dagliga förhandlingarna
+om vem jag ska vara
+och vad jag ska tycka.
+
+Rummet har inga möbler.
+Inga tavlor på väggarna.
+Bara ett fönster
+som vetter mot ingenting —
+eller kanske mot allting,
+beroende på hur man ser.
+
+Ibland, när världen skriker för högt,
+när nyheterna blöder
+och samtalen kräver ståndpunkter
+jag inte äger,
+flyr jag dit.
+Inte av feghet.
+Utan av nödvändighet.
+
+I rummet behöver jag inte prestera.
+Inte förklara. Inte försvara.
+Jag kan bara finnas,
+som ett träd finns,
+som en sten i en bäck finns —
+utan syfte, utan rättfärdigande.
+
+Filosoferna kallar det kanske medvetande,
+psykologerna inre ro,
+mystikerna tomhet.
+Jag kallar det hem.
+
+Det lustiga är att det tomma rummet
+rymmer mer än alla fyllda rum
+jag någonsin har besökt.
+Kanske för att det enda som fyller det
+är det som blir kvar
+när man slutar fylla.`,
+    analysisQuestions: [
+      "Vad symboliserar det tomma rummet? Varför är det viktigt för jag-personen?",
+      "Hur kontrasteras yttre och inre världen i dikten?",
+      "Vilken roll spelar paradoxen i sista stycket (det tomma rymmer mer)?",
+      "Hur förhåller sig dikten till modernistisk poesi? Ge exempel på modernistiska drag.",
+      "Diskutera diktens syn på existens och vara. Vilken filosofisk hållning uttrycker den?",
+    ],
+    structure:
+      "Sex stycken i fri vers med stigande abstraktion. Inleds med en konkret bild (rummet), utvecklar metaforen, och avslutar med en paradox. Meditativ progression.",
+    languageFeatures:
+      "Modernistisk fri vers. Metafor som bärande princip (rummet). Uppräkningar i tretal. Paradoxer och oxymoron. Anaforer (inte... inte...). Avskalat, filosofiskt språk med existentiella undertoner.",
+    skrivverkstadLink: "/skrivverkstad/poesi",
+    skrivverkstadLabel: "Skrivverkstad: Poesi",
+  },
+
+  // ─── RECENSION ──────────────────────────────────────────────
+
+  // Lågstadiet — Recension
+  {
+    slug: "min-favoritbok-pettson",
+    title: "Min favoritbok: Pettson och Findus",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Jag vill berätta om min favoritbok. Den heter "Pettson får julbesök" och den handlar om en gubbe som heter Pettson och hans katt Findus. Findus är inte en vanlig katt. Han kan prata och han är väldigt busig!
+
+I boken ska Pettson och Findus fira jul. Men det blir problem. Pettson skadar foten och kan inte gå till affären. Hur ska de få julmat? Det är spännande att läsa om hur de löser problemet.
+
+Jag gillar boken för att bilderna är så fina. Man kan titta på dem länge och hitta nya saker varje gång. Findus är rolig och Pettson är snäll. Jag rekommenderar boken till alla som gillar roliga djur och fina bilder.`,
+    analysisQuestions: [
+      "Vad berättar recensenten om boken?",
+      "Varför gillar recensenten boken? Ge exempel.",
+      "Vem tror du boken passar för? Varför?",
+    ],
+    structure:
+      "Enkel tredelad struktur: presentation av boken, handling, egen åsikt. Kort och tydlig.",
+    languageFeatures:
+      "Jag-perspektiv. Enkla meningar. Vardagligt språk. Utropstecken för att visa entusiasm. Positiva värdeord (fina, rolig, snäll).",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+  {
+    slug: "boken-om-dogge",
+    title: "Boken om Dogge",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Jag har läst en bok som heter "Kan du vissla Johanna" av Ulf Stark. Den handlar om två kompisar, Bansen och Ansen. Bansen har en morfar men Ansen har ingen. Då bestämmer de sig för att hitta en morfar åt Ansen.
+
+De går till ett äldreboende och hittar en gammal man som heter Nansen. Han blir Ansens nya morfar. De gör roliga saker ihop som att klättra i träd och äta kakor.
+
+Jag tyckte boken var bra för att den var både rolig och lite ledsen. Ibland skrattade jag och ibland blev jag lite ledsen. Det bästa var att Ansen och Nansen blev riktiga vänner. Jag ger boken fyra av fem stjärnor.`,
+    analysisQuestions: [
+      "Vad handlar boken om? Berätta kort.",
+      "Vad tyckte recensenten om boken? Var den bara rolig?",
+      "Hur betygsätter recensenten boken? Håller du med om att man kan betygsätta böcker så?",
+    ],
+    structure:
+      "Tydlig indelning: bokfakta, handling, personlig åsikt med betyg. Enkel och strukturerad för åldern.",
+    languageFeatures:
+      "Korta meningar. Vardagligt språk. Konkreta exempel (klättra i träd, äta kakor). Känsloord (rolig, ledsen). Betygsättning med stjärnor.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+
+  // Mellanstadiet — Recension
+  {
+    slug: "recension-broder-lejonhjarta",
+    title: "Recension: Bröderna Lejonhjärta",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `"Bröderna Lejonhjärta" av Astrid Lindgren är en bok som handlar om bröderna Karl och Jonathan Lejon. Karl, som kallas Skoransen, är sjuk och rädd för att dö. Hans storebror Jonathan tröstar honom genom att berätta om Nangijala, en plats man kommer till efter döden.
+
+Boken tar oss med till Nangijala, som först verkar vara ett paradis. Men snart visar det sig att det finns ondska även där. En grym ledare vid namn Tengil hotar folket, och bröderna måste kämpa för att befria landet.
+
+Det jag gillar mest med boken är hur Lindgren skriver om svåra ämnen på ett sätt som man förstår. Döden och rädsla är tunga ämnen, men genom äventyret blir de lättare att tänka på. Karl utvecklas från en rädd pojke till en modig hjälte, och det är fint att följa.
+
+Språket är enkelt men vackert. Lindgren använder inte svåra ord, men ändå kan hon beskriva både skrämmande och vackra scener. Slutet är omdiskuterat — vissa tycker det är hoppfullt och andra tycker det är sorgligt. Själv tycker jag att det är modigt.
+
+Jag rekommenderar boken till alla från tio år och uppåt. Den passar både för den som gillar äventyr och för den som vill läsa om känslor.`,
+    analysisQuestions: [
+      "Hur beskriver recensenten bokens handling utan att avslöja för mycket?",
+      "Vilka argument ger recensenten för att boken är bra?",
+      "Vad säger recensenten om språket? Ge exempel.",
+      "Hur avslutas recensionen? Varför är det en bra avslutning?",
+    ],
+    structure:
+      "Fem stycken: presentation, handling, personlig reflektion, språkanalys, rekommendation. Progressionen går från fakta till åsikt.",
+    languageFeatures:
+      "Balans mellan referat och värdering. Konkreta exempel stödjer åsikterna. Nyanserat omdöme (omdiskuterat slut). Ålderanpassat men medvetet språk.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+  {
+    slug: "recension-mitt-liv-som-hund",
+    title: "Filmrecension: Mitt liv som hund",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Filmen "Mitt liv som hund" från 1985 är regisserad av Lasse Hallström och baserad på Reidar Jönssons bok. Den handlar om Ingemar, en pojke som skickas till sina släktingar på landet när hans mamma blir sjuk.
+
+Filmen utspelar sig på 1950-talet i en liten svensk by. Ingemar försöker anpassa sig till sitt nya liv och träffar många märkliga och underbara människor. Han blir kompis med Saga, en tjej som helst vill vara med killarna och spelar fotboll. Ingemar jämför ofta sitt liv med rymdtiken Laika, som sköts ut i rymden utan att någon frågade henne.
+
+Det bästa med filmen är skådespeleriet. Anton Glanzelius, som spelar Ingemar, är helt fantastisk. Man tror på honom hela tiden. Filmen blandar humor och sorg på ett sätt som känns äkta. I ena stunden skrattar man, och i nästa tår man sig i ögonen.
+
+Bilderna är vackra och visar den svenska landsbygden på ett nostalgiskt sätt. Musiken passar perfekt till stämningen. Det enda som kan vara svårt är att tempot ibland är lite långsamt, men det passar berättelsen.
+
+Jag ger filmen fyra av fem stjärnor och rekommenderar den till alla som gillar filmer om att växa upp.`,
+    analysisQuestions: [
+      "Vad skiljer en filmrecension från en bokrecension?",
+      "Vilka aspekter av filmen tar recensenten upp?",
+      "Nämner recensenten något negativt? Varför är det viktigt i en recension?",
+      "Hur används jämförelsen med Laika? Vad tillför den?",
+    ],
+    structure:
+      "Fem stycken: bakgrund, handling, skådespeleri, teknik (bild/musik), betyg. Strukturerad genomgång av filmens olika aspekter.",
+    languageFeatures:
+      "Filmterminologi (regissör, skådespeleri, tempo). Balanser mellan positivt och negativt. Konkreta exempel. Jämförelser och sinnesintryck.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+
+  // Högstadiet — Recension
+  {
+    slug: "recension-en-komikers-uppvaxt",
+    title: "Recension: En komikers uppväxt",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Jonas Gardells "En komikers uppväxt" (1992) är en roman som kretsar kring Juha, en pojke som växer upp i en frikyrkomiljö i en svensk småstad på 1960- och 70-talet. Boken är den första delen i en trilogi och har blivit en modern svensk klassiker.
+
+Juha är en känslig och intelligent pojke som tidigt märker att han inte riktigt passar in. Han observerar sin omgivning med en blick som är både humoristisk och smärtsamt skarp. Frikyrkan, med dess stränga regler och förväntningar, blir både en trygghet och ett fängelse för honom. Samtidigt kämpar han med en växande insikt om sin egen identitet som han ännu inte har ord för.
+
+Det som gör romanen så stark är Gardells förmåga att fånga barnets perspektiv. Juha förstår inte alltid vad som händer runt omkring honom, men läsaren gör det. Denna dubbla läsning — det barnet ser och det läsaren förstår — skapar en berättelse som är både rolig och hjärtskärande.
+
+Språkligt är boken en uppvisning i precision. Gardell kan beskriva en hel social dynamik i en enda mening. Dialogerna känns autentiska, och miljöbeskrivningarna transporterar läsaren till 1960-talets Sverige utan att det känns nostalgiskt eller sentimentalt. Tonen balanserar ständigt mellan komedi och tragedi, precis som titeln antyder.
+
+Bokens tematik — utanförskap, identitet, religionens roll, och modet att vara sig själv — är lika relevant idag som när den skrevs. Den talar till alla som någon gång känt sig annorlunda eller ifrågasatt de normer de vuxit upp med.
+
+Jag rekommenderar boken varmt, särskilt till unga läsare som söker berättelser om att hitta sig själv i en värld som inte alltid gör det lätt. Det är en bok som stannar kvar länge efter att man läst sista sidan.`,
+    analysisQuestions: [
+      "Hur balanserar recensenten referat och analys?",
+      "Vad menas med 'dubbel läsning'? Varför är det en styrka?",
+      "Vilka litterära aspekter lyfts fram i recensionen?",
+      "Hur kopplar recensenten bokens tematik till nutid?",
+      "Vad gör detta till en recension snarare än ett referat?",
+    ],
+    structure:
+      "Sex stycken med tydlig progression: presentation, handling, litterär analys, språkanalys, tematik, rekommendation. Varje stycke har en specifik funktion.",
+    languageFeatures:
+      "Litterär terminologi (trilogi, dubbel läsning, tematik). Nyanserade omdömen med konkreta belägg. Sofistikerat men tillgängligt språk. Balans mellan subjektivt och analytiskt.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+  {
+    slug: "recension-pojkarna",
+    title: "Recension: Pojkarna",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Jessica Schiefauers roman "Pojkarna" (2011) är en mörk och poetisk berättelse om makt, kön och förvandling. Boken belönades med Augustpriset och har sedan dess blivit ett viktigt verk i samtida svensk ungdomslitteratur.
+
+Handlingen kretsar kring Kim, som tillsammans med sina vänner Momo och Bella upptäcker en magisk kraft: de kan förvandlas till pojkar. Det som börjar som en spännande lek utvecklas snart till något farligt. Som pojkar upplever de en ny sorts frihet — att röra sig obehindrat i det offentliga rummet, att ta plats utan att ifrågasättas — men också en lockelse att utöva makt som de inte riktigt förstår.
+
+Schiefauer skriver med en språklig precision som gör att varje mening bär tyngd. Naturbeskrivningarna, särskilt scenerna vid sjön och i skogen, fungerar som speglingar av karaktärernas inre landskap. Sommaren, som normalt förknippas med frihet och lätthet, blir här en tid av gränsöverskridande och förlust.
+
+Det som gör romanen så angelägen är dess utforskning av hur maktstrukturer internaliseras. Flickorna upptäcker inte bara att pojkar har mer makt i samhället — de upptäcker att makten förändrar den som utövar den. Frågan om huruvida våldet ligger i könet eller i strukturerna lämnas öppen, vilket tvingar läsaren att reflektera själv.
+
+Boken är kort men intensiv. Den kräver en uppmärksam läsare som är beredd att stanna upp och tänka. Slutet är oroande och lämnar många frågor obesvarade, men det är en medveten strategi — Schiefauer vill inte ge enkla svar.
+
+"Pojkarna" är en bok som borde läsas i skolan. Den öppnar för samtal om genus, makt och ansvar på ett sätt som är både intellektuellt stimulerande och känslomässigt gripande.`,
+    analysisQuestions: [
+      "Hur analyserar recensenten bokens tematik? Vilka teman lyfts?",
+      "Vad säger recensenten om språket och naturbeskrivningarna?",
+      "Varför menar recensenten att boken borde läsas i skolan?",
+      "Hur hanterar recensenten bokens öppna slut? Är det en styrka eller svaghet?",
+      "Jämför med en enklare recension — vad gör denna mer analytisk?",
+    ],
+    structure:
+      "Sex stycken: kontextualisering, handling, språkanalys, tematisk analys, formmässig kommentar, rekommendation. Analytisk tyngdpunkt snarare än refererande.",
+    languageFeatures:
+      "Akademisk ton med litteraturvetenskapliga begrepp (internaliseras, gränsöverskridande). Konkreta textexempel. Nyanserad argumentation. Medveten balans mellan beröm och kritisk distans.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+
+  // Gymnasiet — Recension
+  {
+    slug: "recension-kallocain",
+    title: "Kulturkritik: Kallocain och övervakningssamhället",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Karin Boyes "Kallocain" (1940) är en dystopisk roman som skrevs i skuggan av andra världskrigets utbrott. Romanen utspelar sig i Världsstaten, ett totalitärt samhälle där individens tankar och känslor tillhör staten. Huvudpersonen Leo Kall, en kemist, uppfinner preparatet Kallocain — ett sanningsserum som tvingar människor att avslöja sina innersta tankar. Det som först framstår som en vetenskaplig triumf visar sig vara ett verktyg för total kontroll.
+
+Boyes roman föregick Orwells "1984" med nio år, och jämförelsen är oundviklig. Medan Orwell fokuserar på den politiska maktens mekanismer, riktar Boye blicken inåt. Hennes fråga är inte bara hur ett totalitärt samhälle fungerar utan hur det påverkar den enskilda människans psyke. Leo Kall är ingen heroisk motståndare. Han är en medlöpare som steg för steg inser vad systemet — och han själv — är kapabla till.
+
+Språkligt är romanen avsiktligt torr och byråkratisk, vilket speglar det samhälle den beskriver. Boye låter Leo berätta i en rapporterande ton som gradvis spricker. Bakom den kontrollerade ytan växer en desperation som är desto mer effektiv för att den aldrig fullt ut artikuleras. Det är i sprickorna mellan vad Leo säger och vad han menar som romanen får sin kraft.
+
+I ljuset av samtida debatter om digital övervakning, datalagring och artificiell intelligens framstår "Kallocain" som mer relevant än någonsin. Boyes vision av ett samhälle där tanken själv inte längre är fri har gått från science fiction till en fråga som teknologiföretag och lagstiftare brottas med dagligen. Sanningsserumet Kallocain kan läsas som en metafor för varje teknik som lovar transparens men levererar kontroll.
+
+Det som gör romanen till mer än en historisk kuriositet är dess psykologiska djup. Boye utforskar inte bara övervakningens mekanismer utan dess inverkan på kärlek, tillit och mänsklig värdighet. Leo och hans hustru Linda lever i ett äktenskap där intimitet är omöjligt, eftersom varje tanke potentiellt kan avlyssnas. Deras relation blir en mikrokosm av samhällets grundläggande brist: ett system som kräver total öppenhet förstör den sårbarhet som mänsklig närhet förutsätter.
+
+"Kallocain" förtjänar en plats inte bara i litteraturhistorien utan i det samtida samtalet om integritet, teknologi och mänskliga rättigheter. Det är en roman som ställer frågor vi fortfarande inte har besvarat — och kanske aldrig kommer att besvara.`,
+    analysisQuestions: [
+      "Hur kombinerar recensionen litterär analys med samhällskritik?",
+      "Vilken funktion fyller jämförelsen med Orwells '1984'?",
+      "Hur analyseras språket i relation till romanens tematik?",
+      "Varför menar recensenten att boken är mer relevant idag?",
+      "Diskutera recensionens avslutande tes. Håller du med?",
+    ],
+    structure:
+      "Sex stycken i essäform: kontextualisering, komparativ analys, språkanalys, samtidsrelevans, psykologisk analys, avslutande tes. Varje stycke har en distinkt analytisk vinkel.",
+    languageFeatures:
+      "Essäistisk prosa med akademisk precision. Komparativa resonemang. Metaanalys (text om text). Abstrakt och konkret i växelverkan. Retorisk medvetenhet i avslutningen.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+  {
+    slug: "recension-ett-halvt-ark-papper",
+    title: "Essä: Strindberg och den moderna ensamheten",
+    category: "recension",
+    categoryLabel: "Recension",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `August Strindbergs novell "Ett halvt ark papper" (1903) är en av den svenska litteraturens mest koncentrerade texter. På bara några sidor berättar den om en man som hittar ett halvt ark papper i sin tomma lägenhet. På papperet finns anteckningar — telefonnummer, namn, adresser — som tillsammans bildar berättelsen om hans äktenskap, från den första förälskelsen till hustruns och barnets död.
+
+Texten är ett mästerverk i litterär ekonomi. Strindberg behöver inte berätta hela historien. Varje anteckning på papperet fungerar som ett fönster in i en episod, och läsaren fyller i resten. Det är en teknik som föregår den modernistiska romanen med decennier — idén att det outsagda kan vara starkare än det sagda.
+
+Vad som slår mig vid omläsning är hur relevant novellen känns i en tid av digital kommunikation. Vi lever alla med halvt ark papper: våra kontaktlistor, sökhistorik, meddelanden. Om någon hittade din telefon om hundra år, vilken berättelse skulle dess innehåll berätta? Strindberg påminner oss om att varje fragment bär en hel värld.
+
+Formellt är novellen uppbyggd kring en enkel ram: mannen, rummet, papperet. Men inom denna ram ryms ett helt liv. Strindberg växlar mellan det yttre (anteckningarna) och det inre (mannens minnen och känslor) med en precision som gör texten närmast filmisk. Varje anteckning utlöser en kaskad av associationer — blomsterhandlare (bröllop), barnmorska (födelse), begravningsbyrå (död) — och läsaren upplever mannens hela emotionella resa på några minuter.
+
+Novellen reser också frågor om berättande och minne. Är våra liv verkligen sammanhängande berättelser, eller är de fragment som vi i efterhand ordnar till en historia? Strindberg antyder det senare, och det är en insikt som känns smärtsamt modern. Vi konstruerar mening, vi hittar den inte.
+
+Att läsa "Ett halvt ark papper" idag, i en tid av informationsöverflöd och ständig dokumentation, är att påminnas om att det viktigaste sällan är det som sägs högt. Strindbergs novell är en övning i att läsa mellan raderna — och i förlängningen en påminnelse om att det mest mänskliga ofta döljer sig i det mest vardagliga.`,
+    analysisQuestions: [
+      "Hur fungerar essän som både recension och kulturkritik?",
+      "Vilken roll spelar samtidsanknytningen (digital kommunikation)?",
+      "Hur analyseras Strindbergs berättarteknik?",
+      "Diskutera essäns tes om fragment och berättande. Håller du med?",
+      "Vad skiljer denna essä från en traditionell bokrecension?",
+    ],
+    structure:
+      "Sex stycken i essäform: presentation, formanalys, samtidsanknytning, närläsning, tematisk reflektion, avslutande syntes. Rör sig fritt mellan analys, tolkning och kulturkritik.",
+    languageFeatures:
+      "Essäistiskt, reflekterande språk. Retoriska frågor som aktiverar läsaren. Metaforiskt tänkande (fönster, kaskad). Växling mellan akademisk analys och personlig ton. Aforistiska formuleringar.",
+    skrivverkstadLink: "/skrivverkstad/recension",
+    skrivverkstadLabel: "Skrivverkstad: Recension",
+  },
+
+  // ─── GAP-FYLLNAD: KRONIKA LÅGSTADIET ───────────────────────
+
+  {
+    slug: "min-hund-rufus",
+    title: "Min hund Rufus",
+    category: "kronika",
+    categoryLabel: "Krönika",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Igår tog jag med min hund Rufus till parken. Rufus är brun och lurvig och han älskar att springa. Han springer jättefort.
+
+I parken såg vi en ekorre. Rufus ville jaga ekorren men jag höll hårt i kopplet. Ekorren klättrade upp i ett träd och tittade ner på oss. Jag tror att ekorren skrattade åt Rufus.
+
+På vägen hem stannade vi vid en vattenpöl. Rufus drack vatten och sedan skakade han sig så jag blev blöt. Alla som gick förbi log.
+
+Att ha hund är det bästa jag vet. Man får motion och man skrattar varje dag. Men ibland luktar Rufus lite illa. Det säger mamma i alla fall.`,
+    analysisQuestions: [
+      "Vad berättar texten om Rufus? Hur är han?",
+      "Vilka roliga saker händer i texten?",
+      "Hur slutar krönikan? Varför är det roligt?",
+    ],
+    structure:
+      "Kort krönika med fyra stycken: inledning, händelse, komiskt ögonblick, reflektion. Enkel kronologisk ordning.",
+    languageFeatures:
+      "Enkla, korta meningar. Jag-berättare. Vardagligt språk. Humor genom oväntade detaljer (ekorren skrattar, lukten).",
+    skrivverkstadLink: "/skrivverkstad/kronika",
+    skrivverkstadLabel: "Skrivverkstad: Krönika",
+  },
+  {
+    slug: "varfor-maste-man-sova",
+    title: "Varför måste man sova?",
+    category: "kronika",
+    categoryLabel: "Krönika",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Igår kväll ville jag inte sova. Jag var inte alls trött. Jag ville leka med mina leksaker och titta på min favoritfilm. Men mamma sa att det var sovdags.
+
+Varför måste man sova egentligen? Man missar ju allt det roliga! Kanske händer det spännande saker på natten som vi aldrig får veta om. Kanske dansar leksakerna när vi sover. Det hade varit häftigt.
+
+Min storebror säger att hjärnan behöver vila. Men min hjärna känns pigg. Det är bara benen som är trötta.
+
+Jag somnade i alla fall till slut. Och vet ni vad? Jag drömde att jag kunde flyga. Så kanske är det lite bra att sova ändå.`,
+    analysisQuestions: [
+      "Vad tycker berättaren om att sova?",
+      "Hur ändrar sig berättaren i slutet?",
+      "Vad gör texten rolig att läsa?",
+    ],
+    structure:
+      "Fyra korta stycken som följer en tankekedja: motstånd, fundering, argument, vändpunkt. Enkel men effektiv dramaturgi.",
+    languageFeatures:
+      "Barnets röst och perspektiv. Retoriska frågor. Humor genom logiska resonemang. Utropstecken för att visa känsla.",
+    skrivverkstadLink: "/skrivverkstad/kronika",
+    skrivverkstadLabel: "Skrivverkstad: Krönika",
+  },
+
+  // ─── GAP-FYLLNAD: ARGUMENTERANDE LÅGSTADIET ────────────────
+
+  {
+    slug: "langre-raster",
+    title: "Vi borde ha längre raster",
+    category: "argumenterande",
+    categoryLabel: "Argumenterande text",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Jag tycker att vi borde ha längre raster i skolan. Det finns flera anledningar till det.
+
+För det första behöver man röra på sig. Om man sitter stilla för länge blir man trött och kan inte tänka bra. Med längre raster kan alla springa och leka ordentligt.
+
+För det andra hinner man inte leka färdigt. Ibland har man precis börjat en lek och då ringer det in. Det är tråkigt. Man behöver tid att leka klart.
+
+Till sist tycker jag att alla barn mår bättre när de får vara ute mer. Vi blir gladare och snällare mot varandra. Längre raster gör skolan roligare. Det borde alla förstå!`,
+    analysisQuestions: [
+      "Hur många argument ger skribenten? Vilka är de?",
+      "Vilka ord använder skribenten för att visa ordningen (först, sedan)?",
+      "Håller du med? Varför eller varför inte?",
+    ],
+    structure:
+      "Tydlig argumenterande struktur: tes, tre argument med signalord, avslutning. Anpassad för åldern men med korrekt uppbyggnad.",
+    languageFeatures:
+      "Signalord (för det första, för det andra, till sist). Jag-perspektiv. Korta meningar. Avslutning med utropstecken för emfas.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "alla-borde-ha-husdjur",
+    title: "Alla barn borde ha husdjur",
+    category: "argumenterande",
+    categoryLabel: "Argumenterande text",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Jag tycker att alla barn borde få ha husdjur. Det kanske inte passar med en stor hund, men man kan ha en hamster eller en fisk.
+
+Ett husdjur lär oss att ta ansvar. Man måste ge djuret mat och vatten varje dag. Man lär sig att tänka på någon annan och inte bara på sig själv.
+
+Husdjur gör oss glada också. När jag kommer hem från skolan väntar min katt vid dörren. Det är skönt att någon alltid är glad att se en.
+
+En del säger att husdjur är för dyra. Men man behöver inte ha det dyraste djuret. En guldfisk kostar inte mycket. Det viktigaste är att man tar hand om den.
+
+Jag tror att barn som har husdjur blir snällare. De lär sig att bry sig om andra. Och det behöver vi alla.`,
+    analysisQuestions: [
+      "Vad är skribentens åsikt? Hur presenteras den?",
+      "Hur svarar skribenten på motargumentet om pengar?",
+      "Vilka argument är starkast? Varför tycker du det?",
+    ],
+    structure:
+      "Fem stycken: tes, argument 1 (ansvar), argument 2 (glädje), motargument och bemötande, avslutning. Enkel men komplett argumenterande struktur.",
+    languageFeatures:
+      "Tydlig åsikt i inledningen. Motargument bemöts. Personliga erfarenheter som stöd. Enkel men övertygande ton.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+
+  // ─── GAP-FYLLNAD: BERÄTTANDE MELLANSTADIET ──────────────────
+
+  {
+    slug: "nyckeln-i-skogsglanten",
+    title: "Nyckeln i skogsgläntan",
+    category: "berattande",
+    categoryLabel: "Berättande text",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Elsa hade alltid tyckt att skogen bakom huset var tråkig. Bara vanliga träd, vanliga stenar och vanliga fåglar. Men en eftermiddag i oktober hittade hon något ovanligt.
+
+Det låg halvt begravt i mossan vid den stora eken — en nyckel. Inte en modern nyckel med plast och siffror, utan en gammal nyckel av metall, med sirliga mönster och en grönaktig färg av ålder.
+
+"Vems är den?" undrade Elsa högt, fast ingen hörde. Hon stoppade nyckeln i fickan och kände hur den var oväntat varm, som om den legat i solen fast det var mulet.
+
+De följande dagarna letade hon efter ett lås som passade. Hon provade garaget, vedboden och den gamla kistan på vinden. Ingenting passade. Men varje kväll drömde hon om en dörr — en liten blå dörr mitt i skogen, täckt av murgröna.
+
+En regnig lördag gick hon tillbaka till eken. Och där, bakom en tät gardin av hängande grenar som hon aldrig hade sett förut, stod en dörr. Liten, blå och täckt av murgröna. Precis som i drömmen.
+
+Elsas hand darrade när hon satte nyckeln i låset. Den passade perfekt. Låset klickade till och dörren öppnades med ett svagt knirk.
+
+Vad som fanns bakom dörren? Det är en annan historia. Men Elsa var aldrig uttråkad i skogen igen.`,
+    analysisQuestions: [
+      "Hur skapar författaren spänning? Ge exempel.",
+      "Vad gör nyckeln speciell? Vilka detaljer ger ledtrådar?",
+      "Varför slutar berättelsen som den gör? Vad hade du velat hände bakom dörren?",
+      "Hur beskrivs skogen i början jämfört med slutet?",
+    ],
+    structure:
+      "Sju stycken med tydlig berättarkurva: utgångssituation, händelse, problem, sökande, klimax, lösning, avslutning. Öppet slut som inbjuder till fantasi.",
+    languageFeatures:
+      "Tredjepersonsberättare. Mystiska detaljer (varm nyckel, drömmar). Kontrast (tråkigt/ovanligt). Sinnliga beskrivningar (grönaktig, knirk). Cliffhanger-teknik.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+  {
+    slug: "matchen",
+    title: "Matchen",
+    category: "berattande",
+    categoryLabel: "Berättande text",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Milo stod vid sidlinjen och kände hur magen vred sig till en knut. Det var final i skolcupen och han hade precis blivit inbytt. Tre minuter kvar. Oavgjort.
+
+Han hade suttit på bänken hela matchen. Tränaren hade inte ens tittat åt hans håll förrän nu. "Milo, du får ta Aksels plats. Aksel har kramp."
+
+Milo sprang ut på planen med ben som kändes som gelé. Motståndarna var stora. Gräset var vått och halt. Publiken — mest föräldrar med termosar — ropade saker han inte hörde.
+
+De första sekunderna var en dimma. Bollen studsade runt och Milo sprang efter utan att nå den. Hans lag pressade framåt och bollen gick från spelare till spelare. Plötsligt hamnade den framför honom.
+
+Milo tvekade. Han hade två spelare framför sig och målvakten var redo. Han hörde lagkamraternas röster men förstod inte orden. Tiden verkade sakta ner.
+
+Sedan sparkade han. Inte hårt, inte perfekt, men med allt han hade. Bollen gick lågt, snuddade vid en försvarares ben, ändrade riktning och rullade in i nätets nedre hörn.
+
+Det blev tyst. Sedan exploderade allt. Lagkamraterna hoppade på honom, tränaren skrek, och Milo kände för första gången i sitt liv vad det innebar att vara i centrum av något fantastiskt.
+
+Efteråt, på väg hem med pappa, sa han ingenting. Han behövde inte det. Leendet räckte.`,
+    analysisQuestions: [
+      "Hur beskrivs Milos nervositet? Vilka kroppsliga detaljer används?",
+      "Vad betyder det att 'tiden verkade sakta ner'? Varför används den tekniken?",
+      "Hur förändras Milos känslor genom berättelsen?",
+      "Varför är det sista stycket effektivt? Vad säger det om Milo?",
+    ],
+    structure:
+      "Åtta stycken med klassisk dramatisk kurva: exposition, stegrande handling, klimax (skottet), fallande handling. Tempot ökar mot klimax och saktar ner i slutet.",
+    languageFeatures:
+      "Korta, snabba meningar i spända scener. Kroppsliga beskrivningar (gelé, knut). Kontrast mellan tystnad och explosion. Sparsmakat slut som låter läsaren fylla i.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+
+  // ─── GAP-FYLLNAD: BERÄTTANDE GYMNASIET ──────────────────────
+
+  {
+    slug: "stationen",
+    title: "Stationen",
+    category: "berattande",
+    categoryLabel: "Berättande text",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Tåget skulle ha kommit klockan 14.23. Det var nu 15.47 och plattformen hade tömts. Alla andra hade hittat alternativ — bussen, en taxi, ett telefonsamtal till någon som kunde hämta. Men Sara satt kvar på bänken.
+
+Det var inte tåget hon väntade på. Det var beslutet.
+
+I fickan hade hon ett brev. Handskrivet, på riktigt papper med riktigt bläck, som om avsändaren försökte ge sina ord fysisk tyngd. Det var ett erbjudande. Ett nytt jobb, i en ny stad, med en ny lön som var tre gånger hennes nuvarande. Allt hon behövde göra var att skriva under.
+
+Hon hade haft brevet i tre veckor. Deadline var idag.
+
+Tanken på att lämna var inte skrämmande i sig. Vad som skrämde henne var hur lätt det skulle vara. Lägenheten var en hyresrätt. Jobbet var ett vikariat. Vänskapskretsarna hade glesnat sedan universitetet — inte av bråk utan av den tysta entropi som drabbar relationer man slutar underhålla.
+
+Det enda som höll henne kvar var Jonas. Eller rättare sagt: tanken på Jonas. De hade träffats fem gånger. Druckit kaffe, delat en sallad, skrattat åt samma ställen i en podcast. Det var ingenting. Det var allt.
+
+Sara visste hur irrationellt det var. Att stanna i en stad för fem kaffedejter och ett löfte om en sjätte. Att väga möjligheten av kärlek mot säkerheten av en karriär. Att sitta på en tom tågstation och låta en deadline passera medan höstlöven blåste över spåren.
+
+Men rationalitet hade aldrig varit hennes starkaste sida. Det var hennes syster som hade Excel-ark. Sara hade instinkter. Och just nu sa instinkten att det fanns något i Jonas ögon — en igenkänning, en nyfikenhet, kanske bara en reflex — som var värt att utforska.
+
+Klockan blev 16.00. Deadline hade passerats. Brevet låg kvar i fickan, osignerat.
+
+Sara reste sig, borstade av kjolen och gick mot utgången. Inte mot kontoret. Inte mot lägenheten. Utan mot kaféet på Storgatan, där Jonas satt på torsdagar med en bok han aldrig verkade bli klar med.
+
+Hon visste inte om hon gjorde rätt. Men hon visste att hon valde. Och det fick räcka.`,
+    analysisQuestions: [
+      "Hur bygger Strindberg upp berättelsen kring ett enda beslut?",
+      "Vad representerar tåget och stationen symboliskt?",
+      "Hur skildras Saras inre konflikt? Vilka argument ställs mot varandra?",
+      "Vad menar berättaren med 'den tysta entropi som drabbar relationer'?",
+      "Diskutera slutet. Vad betyder det att Sara 'valde' snarare än 'visste'?",
+    ],
+    structure:
+      "Elva stycken med kronologisk tid (väntan) och inre tid (minnen, överväganden). Berättelsen rör sig från yttre situation till inre konflikt och tillbaka till handling. Minimalistisk plot — allt händer i huvudet.",
+    languageFeatures:
+      "Kontrollerad prosa med korta stycken. Abstrakt resonemang förankrat i konkreta detaljer (brevet, kaféet). Parentetiska inskott. Precis, medveten stil. Öppet slut utan resolution.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+
+  // ─── GAP-FYLLNAD: FAKTATEXT HÖGSTADIET ──────────────────────
+
+  {
+    slug: "norrsken",
+    title: "Norrsken — ljusfenomenet i norr",
+    category: "faktatext",
+    categoryLabel: "Faktatext",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Norrsken, eller aurora borealis, är ett av naturens mest spektakulära fenomen. Det uppstår när elektriskt laddade partiklar från solen kolliderar med gaser i jordens atmosfär. Resultatet är ett dansande ljusspel på himlen i grönt, lila, rött och blått.
+
+Solen skickar ständigt ut en ström av laddade partiklar, den så kallade solvinden. Normalt skyddas jorden av sitt magnetfält, som leder bort de flesta partiklarna. Men vid polerna är magnetfältet svagare, och där kan partiklarna tränga in i atmosfären. När de kolliderar med syre- och kvävemolekyler frigörs energi i form av ljus.
+
+Färgen på norrskenet beror på vilken gas som träffas och på vilken höjd kollisionen sker. Grönt norrsken, den vanligaste färgen, uppstår när partiklarna kolliderar med syre på cirka 100–300 kilometers höjd. Rött norrsken bildas på ännu högre höjd, medan lila och blå toner kommer från kväve.
+
+Norrsken är vanligast i ett bälte runt de magnetiska polerna, det så kallade norrskensovalet. I Sverige är chansen störst att se norrsken i norra Norrland, men under perioder av hög solaktivitet kan det synas ända ned till Mellansverige.
+
+Historiskt har norrsken fascinerat och skrämt människor. I fornnordisk mytologi kopplades fenomenet till gudarnas aktiviteter. Samerna såg det som ett tecken som krävde respekt och tystnad. Idag lockar norrsken turister från hela världen till nordliga breddgrader.
+
+Forskning om norrsken har också praktisk betydelse. Kraftiga solstormar som orsakar intensivt norrsken kan störa satelliter, GPS-system och elnät. Att förstå solvinden och dess effekter är därför viktigt för modern teknologi.`,
+    analysisQuestions: [
+      "Hur förklarar texten varför norrsken uppstår? Sammanfatta med egna ord.",
+      "Vad avgör norrskens färg? Vilka faktorer spelar in?",
+      "Hur kopplar texten naturvetenskap till historia och kultur?",
+      "Varför är forskning om norrsken viktig idag?",
+    ],
+    structure:
+      "Sex stycken med tematisk progression: fenomenet, orsaken, färgerna, geografin, historien, relevansen. Vetenskaplig text med kulturell breddning.",
+    languageFeatures:
+      "Sakligt, förklarande språk med naturvetenskapliga termer (solvind, magnetfält, molekyler). Parentetiska förtydliganden. Passiv form i vetenskapliga avsnitt. Kulturhistoriska inslag ger bredd.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+
+  // ─── GAP-FYLLNAD: FAKTATEXT GYMNASIET ───────────────────────
+
+  {
+    slug: "sprak-och-identitet",
+    title: "Språk och identitet: hur svenska förändras",
+    category: "faktatext",
+    categoryLabel: "Faktatext",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Svenska språket har aldrig varit statiskt. Från runsvenskans korta inskriptioner till nutidens digitala kommunikation har språket genomgått ständig förändring. Varje epok har tillfört nya ord, ny grammatik och nya sätt att uttrycka tankar. Frågan är inte om språket förändras, utan hur — och vad förändringarna säger om oss.
+
+Den mest synliga förändringen i modern svenska är ordförrådet. Engelska lånord som "dejta", "streama" och "googla" har integrerats i vardagsspråket, ofta med svenska böjningsändelser. Samtidigt har invandringen tillfört ord från arabiska, somaliska och andra språk: "yalla", "kansen" och "habibi" hörs idag i skolkorridorer och på sociala medier. Puristerna beklagar, men språkhistoriskt är lånord det normala. Svenskan är full av tyska, franska och latinska lån som vi inte längre tänker på som främmande.
+
+Mer subtil är den grammatiska förändringen. Det formella tilltalsordet "Ni" har återkommit i kundservice, trots att du-reformen på 1960-talet skulle avskaffa det. "De" och "dem" blandas ihop så regelbundet att Språkrådet diskuterar om "dom" borde accepteras som skriftform. Genuspronomen "hen" gick från kontroversiellt till etablerat på mindre än ett decennium.
+
+Digitaliseringen har skapat helt nya kommunikationsformer. Emojier, förkortningar och memes bildar ett parallellt språk som ibland är mer uttrycksfullt än prosan. En tonåring som skriver "😭😭😭" uttrycker inte nödvändigtvis sorg utan kanske överväldigande skratt. Kontexten avgör, precis som i talat språk.
+
+Språkförändring är inte bara en lingvistisk fråga — den är djupt kopplad till identitet. Att tala rikssvenska, skånska eller rinkebysvenska signalerar tillhörighet. Att välja mellan formellt och informellt register är en social handling. Språket är inte ett neutralt verktyg; det är en del av vem vi är.
+
+Framtidens svenska är omöjlig att förutsäga. Men om historien lär oss något, är det att språket alltid anpassar sig till dem som talar det. Svenskan har överlevt vikingar, reformation och industrialisering. Den kommer att överleva internet också.`,
+    analysisQuestions: [
+      "Vilka typer av språkförändring beskrivs? Ge exempel på varje.",
+      "Hur argumenterar texten mot språkpurism?",
+      "Vad menas med att språkförändring är kopplad till identitet?",
+      "Hur använder texten humor och tonalitet trots att det är en faktatext?",
+      "Diskutera påståendet att emojier bildar ett 'parallellt språk'. Håller du med?",
+    ],
+    structure:
+      "Sex stycken med tematisk indelning: inledning (historiskt perspektiv), ordförråd, grammatik, digitalisering, identitet, framtid. Progressionen går från konkret observation till abstrakt reflektion.",
+    languageFeatures:
+      "Akademisk men tillgänglig ton. Konkreta exempel integrerade i resonemang. Retoriska frågor. Historisk kontextualisering. Balans mellan deskriptivt och analyserande.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+
+  // ─── GAP-FYLLNAD: UTREDANDE LÅGSTADIET ─────────────────────
+
+  {
+    slug: "varfor-ar-himlen-bla",
+    title: "Varför är himlen blå?",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Har du undrat varför himlen är blå? Det är en bra fråga! Det handlar om ljus och luft.
+
+Solens ljus ser vitt ut, men det är egentligen gjort av alla regnbågens färger. När ljuset träffar luften sprids de olika färgerna åt olika håll. Blått ljus sprids mest av allt. Det studsar runt överallt i luften.
+
+När vi tittar upp ser vi allt det blå ljuset som studsar runt. Därför ser himlen blå ut.
+
+På kvällen, när solen står lågt, måste ljuset resa längre genom luften. Då sprids det röda och orange ljuset mer. Det är därför solnedgångar ofta är röda och orange.
+
+Så nästa gång du tittar på himlen vet du varför den är blå! Det är solen och luften som jobbar ihop.`,
+    analysisQuestions: [
+      "Vad är det som gör himlen blå? Förklara med egna ord.",
+      "Varför ser solnedgångar annorlunda ut?",
+      "Hur börjar och slutar texten? Varför är det bra?",
+    ],
+    structure:
+      "Fem korta stycken: fråga, förklaring, svar, tillägg, avslutning. Fråga–svar-struktur som passar åldern.",
+    languageFeatures:
+      "Direkt tilltal (du). Frågor som väcker nyfikenhet. Enkla förklaringar med vardagliga jämförelser (studsar runt). Entusiastisk ton.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "vart-tar-maten-vagen",
+    title: "Vart tar maten vägen?",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `När du äter en smörgås, vart tar den vägen? Den åker på en lång resa genom din kropp!
+
+Först tuggar du maten i munnen. Tänderna krossar den i små bitar och saliven gör den mjuk. Sedan sväljer du och maten åker ner genom matstrupen, som en rutschkana till magen.
+
+I magen blandas maten med speciella vätskor som bryter ner den ännu mer. Det tar ungefär två till fyra timmar. Sedan åker maten vidare till tunntarmen, som är som en lång, lång slang. Där tar kroppen ut allt bra som finns i maten: vitaminer och energi.
+
+Det som blir kvar fortsätter till tjocktarmen. Där suger kroppen upp vatten. Till slut lämnar resterna kroppen. Du vet hur!
+
+Så varje gång du äter något, startar du en spännande resa. Och det bästa är att kroppen gör allt arbete själv. Smart, eller hur?`,
+    analysisQuestions: [
+      "Vilka steg går maten genom? Nämn dem i ordning.",
+      "Hur gör texten svåra saker lättare att förstå?",
+      "Varför tror du texten kallas utredande?",
+    ],
+    structure:
+      "Fem stycken som följer matens resa kronologiskt: mun, mage, tunntarm, tjocktarm, avslutning. Tydlig ordning som hjälper förståelsen.",
+    languageFeatures:
+      "Jämförelser (rutschkana, slang). Direkt tilltal. Enkla förklaringar av svåra begrepp. Humor (Du vet hur!). Entusiastisk avslutning.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+
+  // ─── GAP-FYLLNAD: HISTORISK LÅGSTADIET ──────────────────────
+
+  {
+    slug: "sa-levde-vikingarna",
+    title: "Så levde vikingarna",
+    category: "historisk",
+    categoryLabel: "Historisk text i modern tappning",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Tänk dig att du levde för tusen år sedan. Du är ett vikingabarn i Sverige. Hur hade din dag sett ut?
+
+Du hade vaknat tidigt i ett hus av trä. Hela familjen sov i samma rum. Det fanns ingen el och inga lampor, bara eld i en öppen härd mitt i huset. Röken steg upp genom ett hål i taket.
+
+Till frukost hade du kanske ätit gröt eller bröd med smör. Det fanns inga affärer. All mat fick man göra själv eller byta till sig.
+
+På dagarna hjälpte barnen till. Du kanske matade djuren, samlade ved eller lärde dig sy. Det fanns ingen skola, men du lärde dig viktiga saker av de vuxna.
+
+Ibland berättade de äldre sagor om gudar och hjältar vid elden. Det var vikingarnas sätt att lära ut viktiga saker och underhålla varandra.
+
+Vikingarnas liv var annorlunda, men de ville samma saker som vi: mat, trygghet och en bra berättelse att lyssna på.`,
+    analysisQuestions: [
+      "Hur var vikingarnas liv annorlunda mot ditt? Ge exempel.",
+      "Vad är lika mellan vikingabarnens liv och ditt?",
+      "Hur lärde sig vikingabarnen saker utan skola?",
+    ],
+    structure:
+      "Sex stycken: inbjudan till fantasi, huset, maten, vardagssysslor, berättarkultur, avslutande jämförelse. Kronologisk dagstruktur.",
+    languageFeatures:
+      "Direkt tilltal (tänk dig, du). Jämförelser med nutid (inga lampor, inga affärer). Enkla meningar. Levandegörande detaljer.",
+    skrivverkstadLink: "/skrivverkstad/historisk-text",
+    skrivverkstadLabel: "Skrivverkstad: Historisk text",
+  },
+  {
+    slug: "barnen-pa-fabriken",
+    title: "Barnen på fabriken",
+    category: "historisk",
+    categoryLabel: "Historisk text i modern tappning",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `För ungefär 150 år sedan gick inte alla barn i skolan. Många barn jobbade istället. De arbetade i fabriker, på bondgårdar och i gruvor. Redan när de var sex eller sju år gamla.
+
+Tänk dig att du är ett barn i en gammal fabrik. Det är mörkt, bullrigt och dammigt. Du jobbar hela dagen från tidig morgon till sen kväll. Du är trött, hungrig och längtar hem. Men du måste jobba för att din familj behöver pengarna.
+
+Barnen fick ofta farliga jobb. De kröp in i trånga utrymmen som vuxna inte rymdes i. Många barn blev sjuka av dammet och mörkret.
+
+Till slut förstod folk att detta inte var rätt. Det stiftades lagar som sa att barn måste få gå i skolan istället för att jobba. Det tog lång tid, men sakta blev det bättre.
+
+Idag har alla barn i Sverige rätt att gå i skolan. Det är vi väldigt lyckliga för!`,
+    analysisQuestions: [
+      "Hur hade barnen det på fabrikerna? Berätta med egna ord.",
+      "Vad förändrades? Varför?",
+      "Varför tror du det är viktigt att vi lär oss om detta?",
+    ],
+    structure:
+      "Fem stycken: tidsangivelse, levandegöring, faror, förändring, nutid. Progressionen går från problem till lösning.",
+    languageFeatures:
+      "Direkt tilltal (tänk dig). Sinnliga beskrivningar (mörkt, bullrigt, dammigt). Enkel men tydlig kronologi. Jämförelse mellan då och nu.",
+    skrivverkstadLink: "/skrivverkstad/historisk-text",
+    skrivverkstadLabel: "Skrivverkstad: Historisk text",
   },
 ];

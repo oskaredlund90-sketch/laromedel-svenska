@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BookA, Lightbulb, AlertTriangle, ChevronRight } from "lucide-react";
+import { BookA, Lightbulb, AlertTriangle, ChevronRight, Dumbbell } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { type ReactNode } from "react";
+import { GrammatikOvningar, type GrammarTopic } from "@/components/grammatik-ovningar";
 
 /* ------------------------------------------------------------------ */
 /*  Helper components                                                  */
@@ -982,6 +983,19 @@ export default async function GrammatikTopicPage({ params }: Props) {
 
       {/* Content */}
       <Content />
+
+      {/* Interactive exercises */}
+      <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+        <div className="mb-6 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800">
+            <Dumbbell className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+          </div>
+          <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">
+            Övningar
+          </h2>
+        </div>
+        <GrammatikOvningar topic={topic as GrammarTopic} ageGroup={arskurs as AgeGroup} />
+      </div>
     </div>
   );
 }
