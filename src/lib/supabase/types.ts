@@ -38,4 +38,7 @@ export interface WordRow {
   example: string;
   age_group: AgeGroup;
   week_number: number;
+  etymology?: string;
+  difficulty: "enkel" | "medel" | "avancerad";
+  theme: string;
 }

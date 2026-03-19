@@ -5,7 +5,9 @@ import type { Metadata } from "next";
 import { type ReactNode } from "react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import { VeckansOrd } from "@/components/veckans-ord";
+import { ThemeWordBrowser } from "@/components/theme-word-browser";
 import type { AgeGroup } from "@/lib/supabase/types";
+import { getWordsWithFallback, getThemesWithFallback } from "@/lib/supabase/words";
 
 /* ------------------------------------------------------------------ */
 /*  Helper components                                                  */
@@ -192,6 +194,12 @@ export default async function OrdkunskapPage({ params }: Props) {
 
   const level = arskurs as AgeGroup;
 
+  // Fetch words and themes (Supabase-first, local fallback)
+  const [allWords, themes] = await Promise.all([
+    getWordsWithFallback(level),
+    getThemesWithFallback(level),
+  ]);
+
   const tips =
     level === "lagstadiet"
       ? LAGSTADIET_TIPS
@@ -218,7 +226,15 @@ export default async function OrdkunskapPage({ params }: Props) {
 
       {/* Veckans ord */}
       <Section title="Veckans ord">
-        <VeckansOrd />
+        <VeckansOrd words={allWords} />
+      </Section>
+
+      {/* All words with theme filter */}
+      <Section title="Alla ord — filtrera per tema">
+        <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+          Här kan du som lärare välja ord efter tema istället för vecka. Klicka på ett tema för att filtrera.
+        </p>
+        <ThemeWordBrowser words={allWords} themes={themes} />
       </Section>
 
       {/* Tips and exercises */}

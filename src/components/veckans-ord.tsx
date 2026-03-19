@@ -1,8 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { VECKANS_ORD, type VeckansOrdEntry } from "@/lib/data/veckans-ord";
+import { VECKANS_ORD } from "@/lib/data/veckans-ord";
+import type { WordRow } from "@/lib/supabase/types";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+
+/* -------------------------------------------------------------------------- */
+/*  Types & helpers                                                           */
+/* -------------------------------------------------------------------------- */
+
+export interface WordEntry {
+  word: string;
+  definition: string;
+  wordClass: string;
+  example: string;
+  etymology?: string;
+  difficulty: string;
+  theme?: string;
+}
 
 function getWeekNumber(date: Date): number {
   const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -12,27 +27,76 @@ function getWeekNumber(date: Date): number {
   return Math.ceil(((d.getTime() - yearStart.getTime()) / 86400000 + 1) / 7);
 }
 
-function getWordIndex(): number {
-  const week = getWeekNumber(new Date());
-  return week % VECKANS_ORD.length;
-}
-
 const DIFFICULTY_STYLES: Record<string, string> = {
-  enkel:
-    "bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300",
-  medel:
-    "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
-  avancerad:
-    "bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300",
+  enkel: "bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300",
+  medel: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+  avancerad: "bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300",
 };
 
-export function VeckansOrd() {
+const THEME_LABELS: Record<string, string> = {
+  natur: "🌿 Natur",
+  känslor: "❤️ Känslor",
+  kanslor: "❤️ Känslor",
+  samhälle: "🏛️ Samhälle",
+  samhalle: "🏛️ Samhälle",
+  skola: "📚 Skola",
+  kroppen: "🧬 Kroppen",
+  teknik: "💻 Teknik",
+  historia: "🏺 Historia",
+  litteratur: "📖 Litteratur",
+  vetenskap: "🔬 Vetenskap",
+  vardagsliv: "🏠 Vardagsliv",
+};
+
+/** Convert WordRow (from Supabase) to WordEntry */
+function wordRowToEntry(row: WordRow): WordEntry {
+  return {
+    word: row.word,
+    definition: row.definition,
+    wordClass: row.word_class,
+    example: row.example,
+    etymology: row.etymology ?? undefined,
+    difficulty: row.difficulty,
+    theme: row.theme,
+  };
+}
+
+/** Convert local data to WordEntry */
+function localToEntry(entry: typeof VECKANS_ORD[number]): WordEntry {
+  return {
+    word: entry.word,
+    definition: entry.definition,
+    wordClass: entry.wordClass,
+    example: entry.example,
+    etymology: entry.etymology,
+    difficulty: entry.difficulty,
+    theme: entry.theme,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Component                                                                 */
+/* -------------------------------------------------------------------------- */
+
+interface VeckansOrdProps {
+  /** Pre-fetched words from Supabase (optional — falls back to local data) */
+  words?: WordRow[];
+}
+
+export function VeckansOrd({ words }: VeckansOrdProps) {
   const [offset, setOffset] = useState(0);
-  const baseIndex = getWordIndex();
-  const index =
-    ((baseIndex + offset) % VECKANS_ORD.length + VECKANS_ORD.length) %
-    VECKANS_ORD.length;
-  const entry: VeckansOrdEntry = VECKANS_ORD[index];
+
+  // Use Supabase data if provided, otherwise fall back to local
+  const entries: WordEntry[] = words && words.length > 0
+    ? words.map(wordRowToEntry)
+    : VECKANS_ORD.map(localToEntry);
+
+  if (entries.length === 0) return null;
+
+  const week = getWeekNumber(new Date());
+  const baseIndex = week % entries.length;
+  const index = ((baseIndex + offset) % entries.length + entries.length) % entries.length;
+  const entry = entries[index];
 
   return (
     <section className="pb-16">
@@ -40,9 +104,16 @@ export function VeckansOrd() {
         <div className="rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
           {/* Header bar */}
           <div className="flex items-center justify-between border-b border-neutral-100 px-6 py-3 dark:border-neutral-800">
-            <span className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              Veckans ord
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+                Veckans ord
+              </span>
+              {entry.theme && THEME_LABELS[entry.theme] && (
+                <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
+                  {THEME_LABELS[entry.theme]}
+                </span>
+              )}
+            </div>
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setOffset((o) => o - 1)}
@@ -72,7 +143,7 @@ export function VeckansOrd() {
                 {entry.wordClass}
               </span>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${DIFFICULTY_STYLES[entry.difficulty]}`}
+                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${DIFFICULTY_STYLES[entry.difficulty] ?? DIFFICULTY_STYLES.medel}`}
               >
                 {entry.difficulty}
               </span>
