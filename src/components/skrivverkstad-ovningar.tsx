@@ -6,6 +6,7 @@ import {
   ListOrdered,
   MessageSquare,
   BookOpen,
+  PenLine,
   ChevronDown,
   ChevronUp,
   Search,
@@ -14,6 +15,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import Skrivverktyg from "@/components/skrivverktyg";
 import { Button } from "@/components/ui/button";
 import type { AgeGroup } from "@/lib/supabase/types";
 import {
@@ -30,13 +32,14 @@ import {
 /*  Tab definitions                                                           */
 /* -------------------------------------------------------------------------- */
 
-type TabId = "checklista" | "steg" | "kamratrespons" | "ordbanken";
+type TabId = "checklista" | "steg" | "kamratrespons" | "ordbanken" | "skriv";
 
 const TABS: { id: TabId; label: string; icon: typeof CheckSquare }[] = [
   { id: "checklista", label: "Checklista", icon: CheckSquare },
   { id: "steg", label: "Steg-för-steg", icon: ListOrdered },
   { id: "kamratrespons", label: "Kamratrespons", icon: MessageSquare },
   { id: "ordbanken", label: "Ordbanken", icon: BookOpen },
+  { id: "skriv", label: "Skriv", icon: PenLine },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -509,6 +512,9 @@ export function SkrivverkstadOvningar({
         )}
         {activeTab === "ordbanken" && (
           <OrdbankenTab categories={data.ordbanken} />
+        )}
+        {activeTab === "skriv" && (
+          <Skrivverktyg template={template} ageGroup={ageGroup} />
         )}
       </div>
     </div>

@@ -7,7 +7,10 @@ export type TextCategory =
   | "berattande"
   | "faktatext"
   | "poesi"
-  | "recension";
+  | "recension"
+  | "nyhetsartikel"
+  | "reklam"
+  | "brukstext";
 
 export type DifficultyLevel =
   | "lagstadiet"
@@ -40,6 +43,9 @@ export const CATEGORY_LABELS: Record<TextCategory, string> = {
   faktatext: "Faktatext",
   poesi: "Poesi",
   recension: "Recension",
+  nyhetsartikel: "Nyhetsartikel",
+  reklam: "Reklam",
+  brukstext: "Brukstext",
 };
 
 export const DIFFICULTY_LABELS: Record<DifficultyLevel, string> = {
@@ -2384,5 +2390,374 @@ Idag har alla barn i Sverige rätt att gå i skolan. Det är vi väldigt lycklig
       "Direkt tilltal (tänk dig). Sinnliga beskrivningar (mörkt, bullrigt, dammigt). Enkel men tydlig kronologi. Jämförelse mellan då och nu.",
     skrivverkstadLink: "/skrivverkstad/historisk-text",
     skrivverkstadLabel: "Skrivverkstad: Historisk text",
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  Nyhetsartiklar                                                     */
+  /* ------------------------------------------------------------------ */
+
+  {
+    slug: "nyhetsartikel-skolmat",
+    title: "Ny undersökning: Elever vill ha bättre skolmat",
+    category: "nyhetsartikel",
+    categoryLabel: "Nyhetsartikel",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Elever på Ekbackens skola i Linköping är trötta på tråkig skolmat. Det visar en ny undersökning som elevrådet har gjort.
+
+Av de 340 elever som svarade på enkäten tycker 78 procent att maten borde bli bättre. Många vill ha mer variation och fler vegetariska alternativ.
+
+"Vi äter samma saker varje vecka. Det är pasta på måndag, fisk på tisdag och köttfärs på onsdag. Det blir tråkigt", säger Alva Eriksson i årskurs 5.
+
+Skolans kock, Marcus Lindgren, förstår kritiken men förklarar att budgeten är begränsad.
+
+"Vi har 14 kronor per portion att laga mat för. Det räcker inte alltid till de råvaror vi skulle vilja använda", säger han.
+
+Elevrådet har nu lämnat in en lista med förslag till rektorn. Bland önskemålen finns en salladsbuffé och möjligheten att välja mellan två rätter varje dag.
+
+Rektorn Anna Johansson lovar att titta på förslagen.
+
+"Elevernas åsikter är viktiga. Vi ska se vad vi kan göra inom budgeten", säger hon.`,
+    analysisQuestions: [
+      "Vad är nyheten i artikeln? Sammanfatta i en mening.",
+      "Vilka personer kommer till tals? Varför har journalisten valt just dessa?",
+      "Är artikeln objektiv eller tar den ställning? Ge exempel.",
+      "Vem är avsändaren och vad är syftet med texten?",
+      "Vad skulle du vilja veta mer om efter att ha läst artikeln?",
+    ],
+    structure:
+      "Klassisk nyhetsstruktur: rubrik med nyheten, ingress med det viktigaste, brödtext med citat och bakgrund. Följer den omvända pyramiden — det viktigaste först.",
+    languageFeatures:
+      "Korta stycken och meningar. Direkt anföring med citattecken. Siffror för trovärdighet (340, 78 procent, 14 kronor). Neutralt språk utan värderande ord.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+  {
+    slug: "nyhetsartikel-klimat",
+    title: "Klimatförändringar hotar Östersjöns ekosystem",
+    category: "nyhetsartikel",
+    categoryLabel: "Nyhetsartikel",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Stigande vattentemperaturer och ökad syrebrist i Östersjön skapar allvarliga problem för havsmiljön. Det visar en ny rapport från Stockholms universitet.
+
+Forskarna har mätt vattentemperaturen i Östersjön under de senaste 30 åren och konstaterar att medeltemperaturen har stigit med 1,5 grader. Uppvärmningen leder till att syrefattiga bottnar breder ut sig, vilket slår hårt mot bottenlevande djur som musslor och havsborstmaskar.
+
+"Vi ser en tydlig trend. De syrefria bottenområdena har fördubblats sedan 1990-talet och utgör nu en yta stor som Danmark", säger marinbiolog Sara Henriksson vid Stockholms universitet.
+
+Konsekvenserna sträcker sig genom hela näringskedjan. Torskbeståndet i östra Östersjön har kollapsat, delvis på grund av att fiskens ägg inte överlever i syrefattigt vatten. Även sälpopulationer påverkas när deras föda minskar.
+
+Övergödning från jordbruk och avlopp förvärrar situationen genom att öka algtillväxten, som i sin tur förbrukar syre när algerna bryts ned.
+
+Rapporten föreslår kraftfullare åtgärder mot utsläpp av närsalter samt en ökad satsning på marina skyddade områden. Forskarna betonar att internationellt samarbete mellan Östersjöländerna är avgörande.
+
+"Det här är inte ett problem som Sverige kan lösa ensamt. Östersjön är ett innanhav som delas av nio länder, och alla måste bidra", understryker Henriksson.`,
+    analysisQuestions: [
+      "Sammanfatta artikelns huvudbudskap i två meningar.",
+      "Vilka orsakssamband beskrivs i texten? Rita gärna en orsakskedja.",
+      "Hur används siffror och jämförelser för att göra problemet begripligt?",
+      "Är texten objektiv? Motivera med exempel från texten.",
+      "Vem är avsändaren? Vilka källor används och hur trovärdiga är de?",
+    ],
+    structure:
+      "Nyhetsartikel med vetenskaplig vinkel: rubrik, ingress, forskningsresultat, konsekvenser, orsaker, lösningsförslag. Följer den omvända pyramiden.",
+    languageFeatures:
+      "Facktermer (ekosystem, syrebrist, näringskedja). Konkreta siffror (1,5 grader, fördubblats). Expertcitat som auktoriserar. Sambandsmarkörer (leder till, delvis på grund av, i sin tur).",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "nyhetsartikel-ai-skolan",
+    title: "Debatt: Ska AI-verktyg tillåtas på proven?",
+    category: "nyhetsartikel",
+    categoryLabel: "Nyhetsartikel",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Frågan om AI-verktyg i skolan delar lärarkåren. När Lärarförbundet nyligen genomförde en enkät svarade hälften av de tillfrågade gymnasielärarna att de ser AI som ett hot mot rättvis bedömning, medan den andra hälften menar att skolan måste anpassa sig till verkligheten.
+
+"Vi kan inte låtsas som att AI inte finns. Våra elever kommer att använda dessa verktyg i sitt yrkesliv, och då måste vi lära dem att använda dem kritiskt och ansvarsfullt", säger Sofia Andersson, svensklärare på Katedralskolan i Uppsala.
+
+Hennes kollega Johan Bergström på samma skola har en annan uppfattning.
+
+"Om en elev lämnar in en text som till stor del är genererad av AI, hur ska jag då bedöma elevens egna kunskaper? Det undergräver hela syftet med betyg och examination", argumenterar han.
+
+Skolverket har ännu inte tagit ställning i frågan utan låter varje skola utforma sin egen policy. Generaldirektör Peter Fredriksson har dock konstaterat att regelverket behöver uppdateras.
+
+I flera andra länder pågår liknande diskussioner. Finland har valt att integrera AI-kompetens i läroplanen, medan Frankrike har infört förbud mot AI-verktyg vid nationella examinationer.
+
+Eleverna själva har delade åsikter. I en undersökning bland gymnasieelever i Stockholm uppger 62 procent att de redan använder AI-verktyg regelbundet i sitt skolarbete, men bara 23 procent anser att det borde vara tillåtet på prov.
+
+Debatten handlar i grunden om vad kunskap är och hur den bäst mäts — en fråga som digitaliseringen ställt på sin spets.`,
+    analysisQuestions: [
+      "Artikeln presenterar flera perspektiv. Vilka är de och hur balanseras de?",
+      "Analysera artikelns argumentationsteknik. Hur används ethos, logos och pathos?",
+      "Vilka retoriska grepp använder de intervjuade personerna?",
+      "Är artikeln en nyhetsartikel eller en debattartikel? Motivera med textens språkliga drag.",
+      "Vem är avsändaren? Vilka intressen kan ligga bakom de olika ståndpunkterna?",
+      "Hur trovärdig är informationen? Vilka ytterligare källor skulle du vilja se?",
+    ],
+    structure:
+      "Debattrefererande artikel: rubrik som väcker fråga, presentation av motsatta ståndpunkter med citat, internationell kontext, elevperspektiv, avslutande reflektion. Balanserad presentation.",
+    languageFeatures:
+      "Argumenterande uttryck (menar att, argumenterar, konstaterat). Sifferunderlag för trovärdighet. Retoriska frågor. Koncessioner (dock, medan). Abstrakt avslutning som lyfter frågan.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  Reklamtexter                                                       */
+  /* ------------------------------------------------------------------ */
+
+  {
+    slug: "reklam-sportdryck",
+    title: "AquaBoost — drycken som ger dig superkrafter!",
+    category: "reklam",
+    categoryLabel: "Reklam",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Känner du dig trött efter idrotten? Törstig och slut på energi? Då behöver du AquaBoost!
+
+AquaBoost är den nya sportdrycken som ALLA pratar om. Med smak av tropiska frukter och extra vitaminer ger den dig energi för att klara hela dagen.
+
+★ Naturliga smaker
+★ Tillsatta vitaminer
+★ Utan tillsatt socker*
+
+"AquaBoost är min favoritdryck! Jag dricker den varje dag efter fotbollsträningen." — Emma, 11 år
+
+9 av 10 barn som testade AquaBoost ville ha mer!
+
+Köp AquaBoost i din närmaste matbutik. Bara 15 kr!
+
+*Innehåller sötningsmedel.`,
+    analysisQuestions: [
+      "Hur försöker reklamen få dig att vilja köpa produkten? Ge tre exempel.",
+      "Vad betyder stjärnan (*) vid 'utan tillsatt socker'? Varför står det med liten text?",
+      "Är 'Emma, 11 år' en trovärdig källa? Varför eller varför inte?",
+      "Vem är avsändaren och vad vill de att du ska göra?",
+      "Vilka ord är valda för att låta positivt? Byt ut dem mot neutrala ord.",
+    ],
+    structure:
+      "Klassisk reklamstruktur: problem (trött), lösning (produkten), fördelar (punktlista), socialt bevis (citat + statistik), uppmaning att köpa, pris. Asterisk i liten text.",
+    languageFeatures:
+      "Retoriska frågor. Versaler för betoning (ALLA). Stjärnor som grafiska element. Påstådda fakta (9 av 10). Känsloladdade ord (superkrafter, favorit). Imperativ (Köp!).",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "reklam-influencer",
+    title: "Samarbete: @LivingWithLinn testar EcoGlow hudvård",
+    category: "reklam",
+    categoryLabel: "Reklam",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Hej finaste ni! Idag vill jag berätta om något som verkligen har förändrat min hudvårdsrutin ✨
+
+Ni vet att jag har kämpat med torr hy hela vintern, och jag har testat typ ALLT. Men sen fick jag hem produkterna från @EcoGlow och wow, vilken skillnad!
+
+Deras Daily Glow Serum är helt fantastiskt. Huden känns mjukare redan efter första gången och efter en vecka märkte jag verkligen skillnad. Jag använder det morgon och kväll.
+
+Det bästa? Allt är veganskt, djurförsöksfritt och förpackningarna är gjorda av återvunnen plast 🌿 Äntligen ett märke som bryr sig om planeten!
+
+Just nu har ni 20% rabatt med koden LINN20 — länken finns i min bio!
+
+Har ni testat EcoGlow? Skriv i kommentarerna! 💚
+
+#samarbete #ecoglow #hudvård #veganskhudvård #skincare #ad`,
+    analysisQuestions: [
+      "Hur märker du att det här är reklam och inte ett vanligt inlägg?",
+      "Vilka retoriska strategier använder influencern för att skapa förtroende?",
+      "Vad betyder hashtaggen #samarbete? Varför måste den finnas med?",
+      "Hur skiljer sig den här texten från en traditionell reklamannons?",
+      "Vem är avsändaren — influencern eller företaget? Förklara.",
+      "Är informationen om produkten trovärdig? Vad saknas för att du ska kunna bedöma det?",
+    ],
+    structure:
+      "Influencer-inlägg: personlig hälsning, problemidentifiering, lösning via produkt, fördelar, rabattkod, uppmaning till interaktion. Hashtaggar och emojis. Markering som samarbete (#samarbete, #ad).",
+    languageFeatures:
+      "Talspråkligt och personligt (ni, finaste, typ). Emojis som interpunktion. Versaler för betoning. Superlativ (helt fantastiskt, vilken skillnad). Imperativ (Skriv!). Blandning av svenska och engelska (#skincare).",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "reklam-kampanj",
+    title: "Kommunens kampanj: Källsortera — det är inte så svårt!",
+    category: "reklam",
+    categoryLabel: "Reklam",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Varje svensk producerar i genomsnitt 450 kilo avfall per år. Av detta återvinns bara 34 procent. Resten hamnar på deponi eller förbränns.
+
+Men det behöver inte vara så.
+
+Genom att källsortera kan du göra en verklig skillnad — för klimatet, för kommande generationer och för din egen plånbok.
+
+SÅ HÄR ENKELT ÄR DET:
+■ Papper och kartong → Pappersåtervinningen
+■ Glas → Glasåtervinningen (färgat och ofärgat var för sig)
+■ Plast → Plastförpackningar
+■ Metall → Metallförpackningar
+■ Matavfall → Komposten eller det bruna kärlet
+
+VISSTE DU ATT...
+• En återvunnen aluminiumburk sparar tillräckligt med energi för att driva en TV i tre timmar?
+• Svensk pappersåtervinning sparar utsläpp motsvarande 250 000 bilars årliga körning?
+• Matavfall som komposteras blir biogas som kan driva bussar och bilar?
+
+"Jag trodde det var krångligt, men det tog bara en vecka att vänja sig. Nu känns det naturligt." — Karin, 67 år, Södermalm
+
+Tillsammans kan vi nå målet: 70 procent återvinning till 2030.
+
+Besök malmostad.se/kallsortering för tips och sorteringsguide.
+
+Malmö stad — tillsammans gör vi skillnad.`,
+    analysisQuestions: [
+      "Analysera textens argumentation. Vilka typer av argument (logos, ethos, pathos) används?",
+      "Hur skiljer sig en offentlig kampanj från kommersiell reklam i syfte och språk?",
+      "Vilka retoriska grepp används för att göra budskapet övertygande?",
+      "Granska siffrorna: är de trovärdiga och relevanta? Hur används de retoriskt?",
+      "Vem är avsändaren och vilka intressen har de? Jämför med kommersiell reklam.",
+      "Vad är textens implicita norm — vad förväntas läsaren tycka och göra?",
+    ],
+    structure:
+      "Kampanjtext: problem med siffror, enkel lösning, instruktioner, fascinerande fakta, personligt vittnesmål, gemensamt mål, avsändare. Kombinerar sakargument med känslomässig appell.",
+    languageFeatures:
+      "Direkt tilltal (du, vi). Imperativ form. Siffror och statistik för trovärdighet. Retoriska frågor (Visste du att...). Punktlistor för överskådlighet. Inkluderande vi-form. Slogan (tillsammans gör vi skillnad).",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  Brukstexter                                                        */
+  /* ------------------------------------------------------------------ */
+
+  {
+    slug: "brukstext-recept",
+    title: "Recept: Snabba havregrynsbiffar",
+    category: "brukstext",
+    categoryLabel: "Brukstext",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Havregrynsbiffar (4 portioner)
+
+Du behöver:
+• 3 dl havregryn
+• 2 dl vatten
+• 1 ägg
+• 1 tsk salt
+• smör till stekning
+
+Gör så här:
+1. Blanda havregryn, vatten, ägg och salt i en skål.
+2. Låt stå i 10 minuter så havregrynen sväller.
+3. Värm smör i en stekpanna.
+4. Forma små biffar med en sked och lägg dem i pannan.
+5. Stek på medelvärme i 3–4 minuter på varje sida.
+6. Klart! Servera med lingonsylt.
+
+Tips! Du kan tillsätta riven morot eller hackad persilja i smeten för extra smak.`,
+    analysisQuestions: [
+      "Vilka delar består receptet av? Varför är det uppdelat så?",
+      "Varför står stegen i nummerordning? Vad händer om du byter ordning?",
+      "Vilka ord talar om vad du ska göra? (Hitta alla instruktionsord.)",
+      "Vem är avsändaren? Vem är texten skriven för?",
+    ],
+    structure:
+      "Typisk receptstruktur: rubrik med portionsangivelse, ingredienslista med mått, numrerade steg i kronologisk ordning, tips som tillägg. Tydlig uppdelning för att vara lätt att följa.",
+    languageFeatures:
+      "Imperativ form (blanda, låt, värm, forma). Exakta mått (3 dl, 1 tsk). Tidsangivelser (10 minuter, 3–4 minuter). Korta meningar. Punktlista och numrerad lista.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+  {
+    slug: "brukstext-spelregler",
+    title: "Regler för Kubb",
+    category: "brukstext",
+    categoryLabel: "Brukstext",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Kubb — det svenska vikingaspelet
+
+Antal spelare: 2–12 (uppdelat i två lag)
+Utrustning: 10 kubbar, 6 kastpinnar, 1 kung, 4 hörnpinnar
+
+Uppställning:
+Ställ upp kubbar i två rader mitt emot varandra med kungen i mitten. Markera spelplanen med hörnpinnarna. Planen ska vara ungefär 5 × 8 meter.
+
+Spelets gång:
+1. Lag A kastar sina sex kastpinnar mot lag B:s kubbar. Man kastar underifrån.
+2. Lag B samlar ihop alla kullslagna kubbar och kastar in dem på lag A:s planhalva. Där de landar ställs de upp — dessa kallas fältkubbar.
+3. Lag B kastar nu sina kastpinnar mot fältkubbarna först. Fältkubbar måste slås ned innan man får sikta på baslinjen.
+4. Om ett lag missar en fältkubb får motståndarlaget flytta fram sin kastlinje till den fältkubb som står närmast kungen.
+5. Lagen turas om. Det lag som slagit ned alla motståndarens kubbar får försöka slå ned kungen.
+6. Kungen måste slås ned sist. Om man slår ned kungen i förtid förlorar man!
+
+Vinnare:
+Det lag som slår ned kungen efter att alla kubbar är borta vinner.`,
+    analysisQuestions: [
+      "Texten har flera delar. Vilka är de och varför behövs alla?",
+      "Varför är det viktigt att stegen kommer i rätt ordning?",
+      "Jämför med ett recept — vilka likheter och skillnader finns?",
+      "Hur ser man att texten vill vara tydlig och lätt att följa?",
+      "Vem är avsändaren? Vem har texten skrivits för?",
+    ],
+    structure:
+      "Regeltext: rubrik, fakta (antal, utrustning), uppställning, numrerade steg, specialregler. Uppbyggd från förberedelse till spelets slut. Logisk kronologi.",
+    languageFeatures:
+      "Instruktioner i presens (kastar, ställs, måste). Passiv form (ställs de upp, slås ned). Exakta mått (5 × 8 meter). Villkorssatser (Om... får...). Fet stil för nyckelord. Specialtermer (fältkubbar, baslinjen).",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+  {
+    slug: "brukstext-manual",
+    title: "Användarguide: Så skapar du en presentation i Google Slides",
+    category: "brukstext",
+    categoryLabel: "Brukstext",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Att skapa en presentation i Google Slides
+
+Den här guiden hjälper dig att skapa en presentation steg för steg. Du behöver ett Google-konto och en webbläsare.
+
+Skapa en ny presentation:
+1. Gå till slides.google.com och logga in med ditt Google-konto.
+2. Klicka på "Tom presentation" eller välj en mall.
+3. Ge din presentation ett namn genom att klicka på "Namnlös presentation" uppe till vänster.
+
+Lägg till innehåll:
+4. Klicka på textrutan "Klicka för att lägga till en titel" och skriv din rubrik.
+5. Lägg till en ny bild genom att klicka på plusknappen (+) uppe till vänster eller tryck Ctrl + M.
+6. Välj en layout som passar ditt innehåll: bara titel, titel och text, eller tom bild.
+
+Formatera:
+7. Markera text och använd verktygsfältet för att ändra typsnitt, storlek och färg.
+8. Infoga bilder via Infoga → Bild. Du kan ladda upp, söka på webben eller klistra in en URL.
+9. Lägg till övergångar mellan bilder via Bild → Övergång.
+
+Tips för en bra presentation:
+• Använd max 6 punkter per bild — för mycket text gör den svårläst.
+• Välj ett enhetligt färgschema genom hela presentationen.
+• Kontrollera att text syns tydligt mot bakgrunden.
+• Använd bilder som förstärker ditt budskap, inte bara dekorerar.
+• Spara regelbundet — Google Slides sparar automatiskt, men kontrollera att du är online.
+
+Dela med andra:
+10. Klicka på "Dela" uppe till höger.
+11. Ange e-postadresser eller kopiera en delningslänk.
+12. Välj behörighet: Visningsläge, Kommentarsläge eller Redigeringsläge.`,
+    analysisQuestions: [
+      "Texten är en brukstext. Vilka typiska drag har den?",
+      "Hur hjälper strukturen (numrering, rubriker, punktlistor) läsaren?",
+      "Jämför med en instruktionstext du själv har skrivit. Vad kan du lära dig av den här textens upplägg?",
+      "Vilken förkunskap förutsätts av läsaren? Hur märker man det?",
+      "Vem är avsändaren och vad är textens syfte?",
+      "Är texten trovärdig och aktuell? Hur kan du avgöra det?",
+    ],
+    structure:
+      "Digital brukstext: rubrik, inledning med krav, numrerade steg grupperade under tematiska underrubriker, tips som separat avsnitt. Progressiv uppbyggnad från grundläggande till avancerat.",
+    languageFeatures:
+      "Imperativ (gå, klicka, välj). Exakta hänvisningar (uppe till vänster, Ctrl + M). Villkor och alternativ (eller välj en mall). Tekniska termer (URL, behörighet, delningslänk). Punktlista för tips.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
   },
 ];

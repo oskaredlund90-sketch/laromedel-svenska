@@ -19,6 +19,9 @@ const FILTER_OPTIONS: { value: TextCategory | "alla"; label: string }[] = [
   { value: "utredande", label: "Utredande" },
   { value: "poesi", label: "Poesi" },
   { value: "recension", label: "Recensioner" },
+  { value: "nyhetsartikel", label: "Nyhetsartiklar" },
+  { value: "reklam", label: "Reklam" },
+  { value: "brukstext", label: "Brukstexter" },
 ];
 
 /**

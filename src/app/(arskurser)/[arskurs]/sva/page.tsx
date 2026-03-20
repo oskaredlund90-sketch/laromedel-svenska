@@ -15,7 +15,9 @@ import {
   Lightbulb,
   Globe,
   PenTool,
+  Dumbbell,
 } from "lucide-react";
+import SvaOvningar from "@/components/sva-ovningar";
 
 /* ------------------------------------------------------------------ */
 /*  Age-group adapted content                                          */
@@ -635,6 +637,24 @@ export default async function SvaPage({ params }: Props) {
           Visa kursplan
           <ArrowRight className="h-4 w-4" />
         </Link>
+      </div>
+
+      {/* ---- Interactive SVA exercises ---- */}
+      <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+        <div className="mb-6 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/30">
+            <Dumbbell className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
+              Interaktiva SVA-övningar
+            </h2>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              Träna på vanliga utmaningar för dig som lär dig svenska som andraspråk.
+            </p>
+          </div>
+        </div>
+        <SvaOvningar ageGroup={arskurs as AgeGroup} />
       </div>
 
       {/* ---- Navigation cards ---- */}
