@@ -13,20 +13,20 @@ import type { Metadata } from "next";
 const ALL_TEMPLATES = [
   {
     slug: "berattande-text",
-    title: "Berattande text",
-    description: "Mall och tips for att skriva noveller, sagor och andra berattelser",
+    title: "Berättande text",
+    description: "Mall och tips för att skriva noveller, sagor och andra berättelser",
     levels: ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"],
   },
   {
     slug: "argumenterande-text",
     title: "Argumenterande text",
-    description: "Struktur for debattartiklar, insandare och argumenterande uppsatser",
+    description: "Struktur för debattartiklar, insändare och argumenterande uppsatser",
     levels: ["mellanstadiet", "hogstadiet", "gymnasiet"],
   },
   {
     slug: "utredande-text",
     title: "Utredande text",
-    description: "Mall for utredande och forklarande texter",
+    description: "Mall för utredande och förklarande texter",
     levels: ["hogstadiet", "gymnasiet"],
   },
   {
@@ -79,7 +79,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!group) return {};
   return {
     title: `Skrivverkstad – ${group.label}`,
-    description: `Skrivmallar och verktyg for ${group.label.toLowerCase()}.`,
+    description: `Skrivmallar och verktyg för ${group.label.toLowerCase()}.`,
   };
 }
 
@@ -112,14 +112,14 @@ export default async function SkrivverkstadArskursPage({ params }: Props) {
           Skrivverkstad
         </h1>
         <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
-          Skrivmallar och tips for olika texttyper – anpassade for{" "}
+          Skrivmallar och tips för olika texttyper – anpassade för{" "}
           <strong>{group.label.toLowerCase()}</strong> ({group.description}).
         </p>
       </div>
 
       {templates.length === 0 ? (
         <p className="text-neutral-500 dark:text-neutral-400">
-          Inga skrivmallar tillgangliga for denna arskurs an.
+          Inga skrivmallar tillgängliga för denna årskurs än.
         </p>
       ) : (
         <div className="grid gap-4">

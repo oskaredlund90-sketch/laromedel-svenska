@@ -41,7 +41,7 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
         { afterIndex: 12, mark: "." },
         { afterIndex: 25, mark: "." },
       ],
-      hint: "Det finns tv\u00e5 meningar. Var slutar den f\u00f6rsta?",
+      hint: "Det finns två meningar. Var slutar den första?",
     },
     {
       id: "lag-2",
@@ -51,12 +51,12 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
         { afterIndex: 12, mark: "?" },
         { afterIndex: 28, mark: "." },
       ],
-      hint: "En mening \u00e4r en fr\u00e5ga.",
+      hint: "En mening är en fråga.",
     },
     {
       id: "lag-3",
-      correct: "Titta! En stor f\u00e5gel flyger!",
-      stripped: "Titta En stor f\u00e5gel flyger",
+      correct: "Titta! En stor fågel flyger!",
+      stripped: "Titta En stor fågel flyger",
       slots: [
         { afterIndex: 5, mark: "!" },
         { afterIndex: 26, mark: "!" },
@@ -64,7 +64,7 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "lag-4",
-      correct: "Mamma sa: \u201dKom hit.\u201d",
+      correct: "Mamma sa: ”Kom hit.”",
       stripped: "Mamma sa Kom hit",
       slots: [
         { afterIndex: 8, mark: ":" },
@@ -73,8 +73,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "lag-5",
-      correct: "Det \u00e4r m\u00e5ndag. Vi ska till skolan.",
-      stripped: "Det \u00e4r m\u00e5ndag Vi ska till skolan",
+      correct: "Det är måndag. Vi ska till skolan.",
+      stripped: "Det är måndag Vi ska till skolan",
       slots: [
         { afterIndex: 14, mark: "." },
         { afterIndex: 33, mark: "." },
@@ -95,8 +95,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
   mellanstadiet: [
     {
       id: "mel-1",
-      correct: "Anna sprang hem, \u00f6ppnade d\u00f6rren och ropade: \u201dJag \u00e4r hemma!\u201d",
-      stripped: "Anna sprang hem \u00f6ppnade d\u00f6rren och ropade Jag \u00e4r hemma",
+      correct: "Anna sprang hem, öppnade dörren och ropade: ”Jag är hemma!”",
+      stripped: "Anna sprang hem öppnade dörren och ropade Jag är hemma",
       slots: [
         { afterIndex: 15, mark: "," },
         { afterIndex: 38, mark: ":" },
@@ -105,8 +105,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "mel-2",
-      correct: "Vi k\u00f6pte \u00e4pplen, bananer, mj\u00f6lk och br\u00f6d.",
-      stripped: "Vi k\u00f6pte \u00e4pplen bananer mj\u00f6lk och br\u00f6d",
+      correct: "Vi köpte äpplen, bananer, mjölk och bröd.",
+      stripped: "Vi köpte äpplen bananer mjölk och bröd",
       slots: [
         { afterIndex: 16, mark: "," },
         { afterIndex: 24, mark: "," },
@@ -115,8 +115,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "mel-3",
-      correct: "Har du sett filmen? Den var j\u00e4ttebra, tyckte jag.",
-      stripped: "Har du sett filmen Den var j\u00e4ttebra tyckte jag",
+      correct: "Har du sett filmen? Den var jättebra, tyckte jag.",
+      stripped: "Har du sett filmen Den var jättebra tyckte jag",
       slots: [
         { afterIndex: 17, mark: "?" },
         { afterIndex: 35, mark: "," },
@@ -125,8 +125,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "mel-4",
-      correct: "Det var m\u00f6rkt ute. Tr\u00e4den vajade, och vinden yl\u00e4de.",
-      stripped: "Det var m\u00f6rkt ute Tr\u00e4den vajade och vinden yl\u00e4de",
+      correct: "Det var mörkt ute. Träden vajade, och vinden yläde.",
+      stripped: "Det var mörkt ute Träden vajade och vinden yläde",
       slots: [
         { afterIndex: 16, mark: "." },
         { afterIndex: 30, mark: "," },
@@ -135,8 +135,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "mel-5",
-      correct: "F\u00f6ljande saker beh\u00f6vs: penna, sudd och linj\u00e4l.",
-      stripped: "F\u00f6ljande saker beh\u00f6vs penna sudd och linj\u00e4l",
+      correct: "Följande saker behövs: penna, sudd och linjäl.",
+      stripped: "Följande saker behövs penna sudd och linjäl",
       slots: [
         { afterIndex: 22, mark: ":" },
         { afterIndex: 28, mark: "," },
@@ -145,8 +145,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "mel-6",
-      correct: "Vilken fin dag! Ska vi g\u00e5 ut och leka?",
-      stripped: "Vilken fin dag Ska vi g\u00e5 ut och leka",
+      correct: "Vilken fin dag! Ska vi gå ut och leka?",
+      stripped: "Vilken fin dag Ska vi gå ut och leka",
       slots: [
         { afterIndex: 13, mark: "!" },
         { afterIndex: 37, mark: "?" },
@@ -157,8 +157,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
   hogstadiet: [
     {
       id: "hog-1",
-      correct: "Enligt forskningen, som publicerades i mars, har klimatf\u00f6r\u00e4ndringarna \u00f6kat.",
-      stripped: "Enligt forskningen som publicerades i mars har klimatf\u00f6r\u00e4ndringarna \u00f6kat",
+      correct: "Enligt forskningen, som publicerades i mars, har klimatförändringarna ökat.",
+      stripped: "Enligt forskningen som publicerades i mars har klimatförändringarna ökat",
       slots: [
         { afterIndex: 17, mark: "," },
         { afterIndex: 40, mark: "," },
@@ -167,8 +167,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "hog-2",
-      correct: "Hon fr\u00e5gade: \u201dVarf\u00f6r kom du inte?\u201d Ingen svarade.",
-      stripped: "Hon fr\u00e5gade Varf\u00f6r kom du inte Ingen svarade",
+      correct: "Hon frågade: ”Varför kom du inte?” Ingen svarade.",
+      stripped: "Hon frågade Varför kom du inte Ingen svarade",
       slots: [
         { afterIndex: 12, mark: ":" },
         { afterIndex: 31, mark: "?" },
@@ -177,14 +177,14 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "hog-3",
-      correct: "Trots regnet \u2013 som \u00f6ste ner \u2013 fortsatte matchen.",
-      stripped: "Trots regnet som \u00f6ste ner fortsatte matchen",
+      correct: "Trots regnet – som öste ner – fortsatte matchen.",
+      stripped: "Trots regnet som öste ner fortsatte matchen",
       slots: [
-        { afterIndex: 12, mark: "\u2013" },
-        { afterIndex: 24, mark: "\u2013" },
+        { afterIndex: 12, mark: "–" },
+        { afterIndex: 24, mark: "–" },
         { afterIndex: 44, mark: "." },
       ],
-      hint: "H\u00e4r kan tankstreck anv\u00e4ndas f\u00f6r inskjutna bisatser.",
+      hint: "Här kan tankstreck användas för inskjutna bisatser.",
     },
     {
       id: "hog-4",
@@ -198,8 +198,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "hog-5",
-      correct: "Lektorn, som hade undervitat i \u00e5rtionden, gick i pension.",
-      stripped: "Lektorn som hade undervitat i \u00e5rtionden gick i pension",
+      correct: "Lektorn, som hade undervitat i årtionden, gick i pension.",
+      stripped: "Lektorn som hade undervitat i årtionden gick i pension",
       slots: [
         { afterIndex: 7, mark: "," },
         { afterIndex: 39, mark: "," },
@@ -208,22 +208,22 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "hog-6",
-      correct: "Vad menar du? Jag f\u00f6rst\u00e5r inte; f\u00f6rklara n\u00e4rmare.",
-      stripped: "Vad menar du Jag f\u00f6rst\u00e5r inte f\u00f6rklara n\u00e4rmare",
+      correct: "Vad menar du? Jag förstår inte; förklara närmare.",
+      stripped: "Vad menar du Jag förstår inte förklara närmare",
       slots: [
         { afterIndex: 12, mark: "?" },
         { afterIndex: 29, mark: ";" },
         { afterIndex: 47, mark: "." },
       ],
-      hint: "Semikolon binder samman n\u00e4rliggande tankar.",
+      hint: "Semikolon binder samman närliggande tankar.",
     },
   ],
 
   gymnasiet: [
     {
       id: "gym-1",
-      correct: "Problemet \u00e4r, som Svensson (2024) p\u00e5pekar, att forskningen \u00e4r otillr\u00e4cklig.",
-      stripped: "Problemet \u00e4r som Svensson (2024) p\u00e5pekar att forskningen \u00e4r otillr\u00e4cklig",
+      correct: "Problemet är, som Svensson (2024) påpekar, att forskningen är otillräcklig.",
+      stripped: "Problemet är som Svensson (2024) påpekar att forskningen är otillräcklig",
       slots: [
         { afterIndex: 12, mark: "," },
         { afterIndex: 39, mark: "," },
@@ -232,8 +232,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "gym-2",
-      correct: "Tv\u00e5 perspektiv dominerar: det historiska och det sociologiska; b\u00e5da har brister.",
-      stripped: "Tv\u00e5 perspektiv dominerar det historiska och det sociologiska b\u00e5da har brister",
+      correct: "Två perspektiv dominerar: det historiska och det sociologiska; båda har brister.",
+      stripped: "Två perspektiv dominerar det historiska och det sociologiska båda har brister",
       slots: [
         { afterIndex: 23, mark: ":" },
         { afterIndex: 56, mark: ";" },
@@ -242,8 +242,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "gym-3",
-      correct: "F\u00f6rfattaren menar att \u201dsamh\u00e4llet st\u00e5r vid ett v\u00e4gsk\u00e4l\u201d, vilket \u00e4r en tr\u00e4ffande beskrivning.",
-      stripped: "F\u00f6rfattaren menar att samh\u00e4llet st\u00e5r vid ett v\u00e4gsk\u00e4l vilket \u00e4r en tr\u00e4ffande beskrivning",
+      correct: "Författaren menar att ”samhället står vid ett vägskäl”, vilket är en träffande beskrivning.",
+      stripped: "Författaren menar att samhället står vid ett vägskäl vilket är en träffande beskrivning",
       slots: [
         { afterIndex: 50, mark: "," },
         { afterIndex: 84, mark: "." },
@@ -251,19 +251,19 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "gym-4",
-      correct: "Resultatet \u2013 som var ov\u00e4ntat \u2013 ledde till en ompr\u00f6vning av teorin; dock kr\u00e4vs fler studier.",
-      stripped: "Resultatet som var ov\u00e4ntat ledde till en ompr\u00f6vning av teorin dock kr\u00e4vs fler studier",
+      correct: "Resultatet – som var oväntat – ledde till en omprövning av teorin; dock krävs fler studier.",
+      stripped: "Resultatet som var oväntat ledde till en omprövning av teorin dock krävs fler studier",
       slots: [
-        { afterIndex: 10, mark: "\u2013" },
-        { afterIndex: 26, mark: "\u2013" },
+        { afterIndex: 10, mark: "–" },
+        { afterIndex: 26, mark: "–" },
         { afterIndex: 56, mark: ";" },
         { afterIndex: 80, mark: "." },
       ],
     },
     {
       id: "gym-5",
-      correct: "\u00c4r det verkligen rimligt? Snarare b\u00f6r man, som Andersson f\u00f6resl\u00e5r, ompröva hela ansatsen.",
-      stripped: "\u00c4r det verkligen rimligt Snarare b\u00f6r man som Andersson f\u00f6resl\u00e5r ompröva hela ansatsen",
+      correct: "Är det verkligen rimligt? Snarare bör man, som Andersson föreslår, ompröva hela ansatsen.",
+      stripped: "Är det verkligen rimligt Snarare bör man som Andersson föreslår ompröva hela ansatsen",
       slots: [
         { afterIndex: 24, mark: "?" },
         { afterIndex: 43, mark: "," },
@@ -273,8 +273,8 @@ const EXERCISES: Record<AgeGroup, PunctuationExercise[]> = {
     },
     {
       id: "gym-6",
-      correct: "Sammanfattningsvis: analysen visar att sambandet \u00e4r komplext, mångfacetterat och sv\u00e5rt\u00f6versk\u00e5dligt.",
-      stripped: "Sammanfattningsvis analysen visar att sambandet \u00e4r komplext m\u00e5ngfacetterat och sv\u00e5rt\u00f6versk\u00e5dligt",
+      correct: "Sammanfattningsvis: analysen visar att sambandet är komplext, mångfacetterat och svårtöverskådligt.",
+      stripped: "Sammanfattningsvis analysen visar att sambandet är komplext mångfacetterat och svårtöverskådligt",
       slots: [
         { afterIndex: 18, mark: ":" },
         { afterIndex: 59, mark: "," },
@@ -302,7 +302,7 @@ export function SkiljeteckenClient({ ageGroup }: { ageGroup: AgeGroup }) {
   const PUNCTUATION_OPTIONS = useMemo(() => {
     if (ageGroup === "lagstadiet") return [".", "?", "!", ",", ":"];
     if (ageGroup === "mellanstadiet") return [".", "?", "!", ",", ":", ";"];
-    return [".", "?", "!", ",", ":", ";", "\u2013"];
+    return [".", "?", "!", ",", ":", ";", "–"];
   }, [ageGroup]);
 
   const isCorrect = useCallback(
@@ -428,7 +428,7 @@ export function SkiljeteckenClient({ ageGroup }: { ageGroup: AgeGroup }) {
           Text {currentIndex + 1} av {exercises.length}
         </span>
         <span>
-          {completed} av {exercises.length} r\u00e4tt
+          {completed} av {exercises.length} rätt
         </span>
       </div>
 
@@ -452,7 +452,7 @@ export function SkiljeteckenClient({ ageGroup }: { ageGroup: AgeGroup }) {
 
         {exercise.hint && !isChecked && (
           <p className="mb-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-900/20 dark:text-amber-300">
-            \ud83d\udca1 {exercise.hint}
+            💡 {exercise.hint}
           </p>
         )}
 
@@ -467,12 +467,12 @@ export function SkiljeteckenClient({ ageGroup }: { ageGroup: AgeGroup }) {
             {allCorrect ? (
               <>
                 <CheckCircle className="h-5 w-5" />
-                R\u00e4tt! Alla skiljetecken \u00e4r korrekt placerade.
+                Rätt! Alla skiljetecken är korrekt placerade.
               </>
             ) : (
               <>
                 <XCircle className="h-5 w-5" />
-                Inte helt r\u00e4tt. R\u00e4tt svar visas med gr\u00f6nt, fel med r\u00f6tt (korrekt svar inom parentes).
+                Inte helt rätt. Rätt svar visas med grönt, fel med rött (korrekt svar inom parentes).
               </>
             )}
           </div>
@@ -506,13 +506,13 @@ export function SkiljeteckenClient({ ageGroup }: { ageGroup: AgeGroup }) {
           {isChecked && (
             <Button variant="outline" onClick={handleReset} className="gap-1">
               <RotateCcw className="h-4 w-4" />
-              F\u00f6rs\u00f6k igen
+              Försök igen
             </Button>
           )}
 
           {isChecked && currentIndex < exercises.length - 1 && (
             <Button onClick={handleNext} className="gap-1">
-              N\u00e4sta text
+              Nästa text
               <ArrowRight className="h-4 w-4" />
             </Button>
           )}
