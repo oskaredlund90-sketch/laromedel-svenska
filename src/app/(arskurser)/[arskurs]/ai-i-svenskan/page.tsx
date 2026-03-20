@@ -13,6 +13,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import AiOvningar from "@/components/ai-ovningar";
+import type { AgeGroup } from "@/lib/supabase/types";
 
 interface Props {
   params: Promise<{ arskurs: string }>;
@@ -414,17 +416,28 @@ export default async function AiISvenskanPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Övningar */}
+      {/* Interaktiva övningar */}
       <section className="mb-10">
         <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold text-neutral-900 dark:text-white">
           <PenLine className="h-6 w-6 text-violet-600 dark:text-violet-400" />
-          Prova själv
+          Interaktiva övningar
+        </h2>
+        <div className="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
+          <AiOvningar ageGroup={arskurs as AgeGroup} />
+        </div>
+      </section>
+
+      {/* Fler uppgifter (textbeskrivningar) */}
+      <section className="mb-10">
+        <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold text-neutral-900 dark:text-white">
+          <Lightbulb className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+          Fler uppgifter
         </h2>
         <div className="flex flex-col gap-4">
           {content.exercises.map((exercise, i) => (
             <div key={i} className="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
               <h3 className="mb-2 flex items-center gap-2 font-semibold text-neutral-900 dark:text-white">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-100 text-sm font-bold text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">
                   {i + 1}
                 </span>
                 {exercise.title}
@@ -437,7 +450,7 @@ export default async function AiISvenskanPage({ params }: Props) {
 
       {/* Länk till AI-labbet */}
       <section>
-        <Link
+        <a
           href="/ai-labbet"
           className="group flex items-center gap-3 rounded-xl border border-neutral-200 bg-neutral-50 p-5 transition-all hover:border-amber-300 hover:bg-amber-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-amber-700 dark:hover:bg-amber-950/30"
         >
@@ -449,7 +462,7 @@ export default async function AiISvenskanPage({ params }: Props) {
             </p>
           </div>
           <ArrowRight className="h-5 w-5 text-neutral-400 transition-transform group-hover:translate-x-1" />
-        </Link>
+        </a>
       </section>
     </div>
   );
