@@ -12,17 +12,18 @@ import {
   RotateCcw,
   ArrowLeft,
   ArrowRight,
-  ClipboardCheck,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { AgeGroup } from "@/lib/supabase/types";
 import {
-  getExercises,
-  type TemplateExercises,
-  type ChecklistItem,
-  type StepGuideStep,
-  type PeerReviewCategory,
-  type WordBankCategory,
+  getSkrivovningar,
+  type TemplateSlug,
+  type SkrivovningData,
+  type ChecklistaItem,
+  type StegForStegStep,
+  type KamratresponsCategory,
+  type OrdbankCategory,
 } from "@/lib/data/skrivverkstad-ovningar";
 
 /* -------------------------------------------------------------------------- */
@@ -42,7 +43,7 @@ const TABS: { id: TabId; label: string; icon: typeof CheckSquare }[] = [
 /*  ChecklistaTab                                                             */
 /* -------------------------------------------------------------------------- */
 
-function ChecklistaTab({ items }: { items: ChecklistItem[] }) {
+function ChecklistaTab({ items }: { items: ChecklistaItem[] }) {
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
   const toggle = useCallback((id: string) => {
@@ -56,15 +57,36 @@ function ChecklistaTab({ items }: { items: ChecklistItem[] }) {
 
   const reset = useCallback(() => setChecked(new Set()), []);
 
+  const allDone = checked.size === items.length && items.length > 0;
+
   return (
     <div>
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-base font-semibold text-neutral-900 dark:text-white">
           Checklista
         </h3>
-        <span className="text-sm text-neutral-500 dark:text-neutral-400">
-          {checked.size}/{items.length} avklarade
-        </span>
+        <div className="flex items-center gap-2">
+          {allDone && (
+            <CheckCircle className="h-5 w-5 text-emerald-500" />
+          )}
+          <span className="text-sm text-neutral-500 dark:text-neutral-400">
+            {checked.size}/{items.length} avklarade
+          </span>
+        </div>
+      </div>
+
+      {/* Progress bar */}
+      <div className="mb-4 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div
+          className={`h-1.5 rounded-full transition-all duration-300 ${
+            allDone
+              ? "bg-emerald-500"
+              : "bg-gradient-to-r from-amber-400 to-amber-500 dark:from-amber-500 dark:to-amber-400"
+          }`}
+          style={{
+            width: `${items.length > 0 ? (checked.size / items.length) * 100 : 0}%`,
+          }}
+        />
       </div>
 
       <ul className="space-y-2">
@@ -115,11 +137,16 @@ function ChecklistaTab({ items }: { items: ChecklistItem[] }) {
         })}
       </ul>
 
-      <div className="mt-4">
+      <div className="mt-4 flex items-center gap-3">
         <Button variant="outline" size="sm" onClick={reset}>
           <RotateCcw className="h-3.5 w-3.5" />
           Återställ
         </Button>
+        {allDone && (
+          <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
+            Alla avklarade!
+          </span>
+        )}
       </div>
     </div>
   );
@@ -129,7 +156,7 @@ function ChecklistaTab({ items }: { items: ChecklistItem[] }) {
 /*  StegForStegTab                                                            */
 /* -------------------------------------------------------------------------- */
 
-function StegForStegTab({ steps }: { steps: StepGuideStep[] }) {
+function StegForStegTab({ steps }: { steps: StegForStegStep[] }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [notes, setNotes] = useState<Record<number, string>>({});
   const [showExample, setShowExample] = useState(false);
@@ -208,7 +235,7 @@ function StegForStegTab({ steps }: { steps: StepGuideStep[] }) {
         onChange={(e) =>
           setNotes((prev) => ({ ...prev, [currentStep]: e.target.value }))
         }
-        placeholder={step.placeholder ?? "Skriv dina anteckningar här..."}
+        placeholder={step.placeholder || "Skriv dina anteckningar här..."}
         rows={4}
         className="w-full rounded-lg border border-neutral-200 p-3 text-sm transition-colors focus:border-neutral-400 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:focus:border-neutral-500"
       />
@@ -250,11 +277,13 @@ function StegForStegTab({ steps }: { steps: StepGuideStep[] }) {
 function KamratresponsTab({
   categories,
 }: {
-  categories: PeerReviewCategory[];
+  categories: KamratresponsCategory[];
 }) {
   const [feedback, setFeedback] = useState<Record<string, string>>({});
-  const [expanded, setExpanded] = useState<Set<string>>(new Set());
-  const [showSummary, setShowSummary] = useState(false);
+  // First category expanded by default
+  const [expanded, setExpanded] = useState<Set<string>>(
+    () => new Set(categories.length > 0 ? [categories[0].title] : [])
+  );
 
   const toggleExpanded = useCallback((title: string) => {
     setExpanded((prev) => {
@@ -265,66 +294,8 @@ function KamratresponsTab({
     });
   }, []);
 
-  const feedbackKey = (catTitle: string, promptIndex: number) =>
-    `${catTitle}::${promptIndex}`;
-
-  const filledFeedback = useMemo(() => {
-    const entries: { category: string; prompt: string; text: string }[] = [];
-    for (const cat of categories) {
-      cat.prompts.forEach((prompt, i) => {
-        const key = feedbackKey(cat.title, i);
-        const text = feedback[key];
-        if (text?.trim()) {
-          entries.push({ category: cat.title, prompt, text: text.trim() });
-        }
-      });
-    }
-    return entries;
-  }, [feedback, categories]);
-
-  if (showSummary) {
-    return (
-      <div>
-        <h3 className="mb-4 text-base font-semibold text-neutral-900 dark:text-white">
-          Sammanfattning
-        </h3>
-        {filledFeedback.length === 0 ? (
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            Ingen feedback har fyllts i ännu.
-          </p>
-        ) : (
-          <div className="space-y-4">
-            {filledFeedback.map((entry, i) => (
-              <div
-                key={i}
-                className="rounded-lg border border-neutral-100 bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-800/50"
-              >
-                <div className="mb-1 text-xs font-medium text-neutral-400 dark:text-neutral-500">
-                  {entry.category}
-                </div>
-                <div className="mb-1.5 text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                  {entry.prompt}
-                </div>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  {entry.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-        <div className="mt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowSummary(false)}
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Tillbaka
-          </Button>
-        </div>
-      </div>
-    );
-  }
+  const feedbackKey = (catTitle: string, questionIndex: number) =>
+    `${catTitle}::${questionIndex}`;
 
   return (
     <div>
@@ -359,12 +330,12 @@ function KamratresponsTab({
                 }`}
               >
                 <div className="space-y-3 border-t border-neutral-100 px-4 py-3 dark:border-neutral-800">
-                  {cat.prompts.map((prompt, i) => {
+                  {cat.prompts.map((question: string, i: number) => {
                     const key = feedbackKey(cat.title, i);
                     return (
                       <div key={i}>
                         <label className="mb-1.5 block text-sm text-neutral-600 dark:text-neutral-400">
-                          {prompt}
+                          {question}
                         </label>
                         <textarea
                           value={feedback[key] ?? ""}
@@ -375,6 +346,7 @@ function KamratresponsTab({
                             }))
                           }
                           rows={2}
+                          placeholder="Skriv din feedback här..."
                           className="w-full rounded-lg border border-neutral-200 p-3 text-sm transition-colors focus:border-neutral-400 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:focus:border-neutral-500"
                         />
                       </div>
@@ -386,13 +358,6 @@ function KamratresponsTab({
           );
         })}
       </div>
-
-      <div className="mt-4">
-        <Button size="sm" onClick={() => setShowSummary(true)}>
-          <ClipboardCheck className="h-3.5 w-3.5" />
-          Sammanfattning
-        </Button>
-      </div>
     </div>
   );
 }
@@ -401,7 +366,7 @@ function KamratresponsTab({
 /*  OrdbankenTab                                                              */
 /* -------------------------------------------------------------------------- */
 
-function OrdbankenTab({ categories }: { categories: WordBankCategory[] }) {
+function OrdbankenTab({ categories }: { categories: OrdbankCategory[] }) {
   const [search, setSearch] = useState("");
   const [copiedWord, setCopiedWord] = useState<string | null>(null);
 
@@ -463,7 +428,7 @@ function OrdbankenTab({ categories }: { categories: WordBankCategory[] }) {
 
                     {/* Kopierad toast */}
                     {copiedWord === word && (
-                      <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs text-white shadow-lg animate-[kopieradFade_1.5s_ease-in-out_forwards] dark:bg-white dark:text-neutral-900">
+                      <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs text-white shadow-lg dark:bg-white dark:text-neutral-900 animate-fade-in-out">
                         Kopierad!
                       </span>
                     )}
@@ -474,28 +439,6 @@ function OrdbankenTab({ categories }: { categories: WordBankCategory[] }) {
           ))}
         </div>
       )}
-
-      {/* CSS animation via style tag */}
-      <style jsx>{`
-        @keyframes kopieradFade {
-          0% {
-            opacity: 0;
-            transform: translate(-50%, 4px);
-          }
-          15% {
-            opacity: 1;
-            transform: translate(-50%, 0);
-          }
-          75% {
-            opacity: 1;
-            transform: translate(-50%, 0);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(-50%, -4px);
-          }
-        }
-      `}</style>
     </div>
   );
 }
@@ -513,10 +456,10 @@ export function SkrivverkstadOvningar({
   template,
   ageGroup,
 }: SkrivverkstadOvningarProps) {
-  const exercises = getExercises(template, ageGroup);
+  const data = getSkrivovningar(template as TemplateSlug, ageGroup);
   const [activeTab, setActiveTab] = useState<TabId>("checklista");
 
-  if (!exercises) {
+  if (!data) {
     return (
       <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900">
         <p className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -527,10 +470,10 @@ export function SkrivverkstadOvningar({
   }
 
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
       {/* Tab bar */}
-      <div className="mb-6 -mx-1 overflow-x-auto">
-        <div className="flex gap-1.5 px-1">
+      <div className="px-6 pt-4">
+        <div className="flex gap-1 overflow-x-auto border-b border-neutral-200 dark:border-neutral-800">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -539,10 +482,10 @@ export function SkrivverkstadOvningar({
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                className={`flex whitespace-nowrap items-center gap-1.5 px-4 py-2.5 text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+                    ? "border-b-2 border-neutral-900 text-neutral-900 dark:border-white dark:text-white"
+                    : "text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
                 }`}
               >
                 <Icon className="h-4 w-4" />
@@ -554,16 +497,20 @@ export function SkrivverkstadOvningar({
       </div>
 
       {/* Tab content */}
-      {activeTab === "checklista" && (
-        <ChecklistaTab items={exercises.checklist} />
-      )}
-      {activeTab === "steg" && <StegForStegTab steps={exercises.stepGuide} />}
-      {activeTab === "kamratrespons" && (
-        <KamratresponsTab categories={exercises.peerReview} />
-      )}
-      {activeTab === "ordbanken" && (
-        <OrdbankenTab categories={exercises.wordBank} />
-      )}
+      <div className="p-6">
+        {activeTab === "checklista" && (
+          <ChecklistaTab items={data.checklista} />
+        )}
+        {activeTab === "steg" && (
+          <StegForStegTab steps={data.stegForSteg} />
+        )}
+        {activeTab === "kamratrespons" && (
+          <KamratresponsTab categories={data.kamratrespons} />
+        )}
+        {activeTab === "ordbanken" && (
+          <OrdbankenTab categories={data.ordbanken} />
+        )}
+      </div>
     </div>
   );
 }

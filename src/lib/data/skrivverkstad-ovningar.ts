@@ -1095,6 +1095,36 @@ const EXERCISE_DATA: Record<
 // getExercises
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Aliases for component compatibility
+// ---------------------------------------------------------------------------
+
+export type TemplateSlug = SkrivverkstadTemplate;
+export type ChecklistaItem = ChecklistItem;
+export type StegForStegStep = StepGuideStep;
+export type KamratresponsCategory = PeerReviewCategory;
+export type OrdbankCategory = WordBankCategory;
+export type SkrivovningData = {
+  checklista: ChecklistaItem[];
+  stegForSteg: StegForStegStep[];
+  kamratrespons: KamratresponsCategory[];
+  ordbanken: OrdbankCategory[];
+};
+
+export function getSkrivovningar(
+  template: TemplateSlug,
+  ageGroup: AgeGroup,
+): SkrivovningData | null {
+  const data = getExercises(template, ageGroup);
+  if (!data) return null;
+  return {
+    checklista: data.checklist,
+    stegForSteg: data.stepGuide,
+    kamratrespons: data.peerReview,
+    ordbanken: data.wordBank,
+  };
+}
+
 export function getExercises(
   template: string,
   ageGroup: AgeGroup,

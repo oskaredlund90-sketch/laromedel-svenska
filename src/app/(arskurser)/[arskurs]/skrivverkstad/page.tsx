@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PenLine } from "lucide-react";
+import { PenLine, Type, Palette } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
@@ -143,6 +143,44 @@ export default async function SkrivverkstadArskursPage({ params }: Props) {
           ))}
         </div>
       )}
+
+      {/* Interactive writing exercises */}
+      <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+        <h2 className="mb-2 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
+          Interaktiva övningar
+        </h2>
+        <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+          Träna praktiska skrivfärdigheter med dessa interaktiva övningar.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link href={`/${arskurs}/skrivverkstad/skiljetecken`}>
+            <Card className="group h-full transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
+                  <Type className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+                </div>
+                <CardTitle className="text-base">Placera ut skiljetecken</CardTitle>
+                <CardDescription>
+                  Läs texter utan skiljetecken och placera ut punkt, komma, frågetecken och mer
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          <Link href={`/${arskurs}/skrivverkstad/gestaltning`}>
+            <Card className="group h-full transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
+                  <Palette className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+                </div>
+                <CardTitle className="text-base">Gestaltning &ndash; lägg till beskrivningar</CardTitle>
+                <CardDescription>
+                  Fyll i egna adjektiv, beskrivningar och gestaltningar i texter
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
