@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
-import { SectionNav } from "@/components/layout/section-nav";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -16,10 +15,5 @@ export default async function AgeGroupLayout({ children, params }: Props) {
     notFound();
   }
 
-  return (
-    <>
-      <SectionNav arskurs={arskurs} />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

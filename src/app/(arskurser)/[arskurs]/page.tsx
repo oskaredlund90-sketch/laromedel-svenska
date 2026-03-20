@@ -77,6 +77,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Interaktiva läsförståelseövningar med direkt feedback", icon: BookOpenCheck },
         { slug: "textbank", title: "Textbank", description: "Korta exempeltexter att läsa och diskutera i klassen", icon: BookText },
+        { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordövningar för åk 1–3", icon: MessageSquareText },
       ],
     },
     {
@@ -86,15 +87,15 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "skrivverkstad", title: "Skrivverkstad", description: "Skriv sagor, brev och enkla berättelser med hjälp av mallar", icon: PenLine },
         { slug: "grammatik", title: "Grammatik", description: "Ordklasser och meningsbyggnad på en enkel nivå", icon: BookA },
-        { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordövningar för åk 1–3", icon: MessageSquareText },
       ],
     },
     {
-      groupTitle: "Tala",
-      groupIcon: MessageSquareText,
+      groupTitle: "Öva",
+      groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Interaktiva övningar i stavning, ordklasser och läsförståelse", icon: Dumbbell },
         { slug: "elevtips", title: "Elevtips", description: "Roliga tips för att läsa och skriva – anpassat för de yngsta", icon: GraduationCap },
+        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 3", icon: ClipboardCheck },
       ],
     },
     {
@@ -103,14 +104,6 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för högläsning, bokstäver och enkel berättelse", icon: Users },
         { slug: "kursplan", title: "Kursplan", description: "Centralt innehåll och kunskapskrav från Skolverket för åk 1–3", icon: BookOpen },
-      ],
-    },
-    {
-      groupTitle: "Verktyg",
-      groupIcon: Sparkles,
-      sections: [
-        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 3", icon: ClipboardCheck },
-        { slug: "framsteg", title: "Mina framsteg", description: "Se hur det går – ord du lärt dig, quizresultat och svit", icon: BarChart3 },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "Hur lärare kan använda AI-verktyg i undervisningen", icon: Sparkles },
       ],
     },
@@ -124,6 +117,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs texter och svara på frågor med direkt feedback", icon: BookOpenCheck },
         { slug: "textbank", title: "Textbank", description: "Exempeltexter i olika genrer med analysfrågor", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "En första introduktion till svenska författare och epoker", icon: Library },
+        { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordberikning för åk 4–6", icon: MessageSquareText },
       ],
     },
     {
@@ -133,15 +127,15 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "skrivverkstad", title: "Skrivverkstad", description: "Skriv faktatexter, berättelser och enkla argumentationer", icon: PenLine },
         { slug: "grammatik", title: "Grammatik", description: "Ordklasser, meningsbyggnad och grundläggande skiljetecken", icon: BookA },
-        { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordberikning för åk 4–6", icon: MessageSquareText },
       ],
     },
     {
-      groupTitle: "Tala",
-      groupIcon: MessageSquareText,
+      groupTitle: "Öva",
+      groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i grammatik, stavning och läsförståelse", icon: Dumbbell },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för att bli en bättre läsare och skribent", icon: GraduationCap },
+        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 6", icon: ClipboardCheck },
       ],
     },
     {
@@ -150,14 +144,6 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för lässtrategier, faktatexter och kamratrespons", icon: Users },
         { slug: "kursplan", title: "Kursplan", description: "Centralt innehåll och kunskapskrav från Skolverket för åk 4–6", icon: BookOpen },
-      ],
-    },
-    {
-      groupTitle: "Verktyg",
-      groupIcon: Sparkles,
-      sections: [
-        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 6", icon: ClipboardCheck },
-        { slug: "framsteg", title: "Mina framsteg", description: "Se hur det går – ord du lärt dig, quizresultat och svit", icon: BarChart3 },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI som verktyg för skrivande och lärande", icon: Sparkles },
       ],
     },
@@ -171,6 +157,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs och analysera texter med fördjupande frågor", icon: BookOpenCheck },
         { slug: "textbank", title: "Textbank", description: "Modelltexter i alla genrer med fördjupande analysfrågor", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Svenska litteraturens epoker från medeltid till nutid", icon: Library },
+        { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord, akademiska ord och stilnivåer", icon: MessageSquareText },
       ],
     },
     {
@@ -180,15 +167,15 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "skrivverkstad", title: "Skrivverkstad", description: "Argumenterande, utredande och berättande texter med responsmallar", icon: PenLine },
         { slug: "grammatik", title: "Grammatik", description: "Satsanalys, textbindning, ordbildning och avancerad meningsbyggnad", icon: BookA },
-        { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord, akademiska ord och stilnivåer", icon: MessageSquareText },
       ],
     },
     {
-      groupTitle: "Tala",
-      groupIcon: MessageSquareText,
+      groupTitle: "Öva",
+      groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i textanalys, grammatik och retorik", icon: Dumbbell },
         { slug: "elevtips", title: "Elevtips", description: "Tips för uppsatsskrivning, muntliga presentationer och läsförståelse", icon: GraduationCap },
+        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 9 – delprov och bedömning", icon: ClipboardCheck },
       ],
     },
     {
@@ -197,14 +184,6 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för argumentation, litteraturanalys och kritisk läsning", icon: Users },
         { slug: "kursplan", title: "Kursplan", description: "Centralt innehåll och kunskapskrav från Skolverket för åk 7–9", icon: BookOpen },
-      ],
-    },
-    {
-      groupTitle: "Verktyg",
-      groupIcon: Sparkles,
-      sections: [
-        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 9 – delprov och bedömning", icon: ClipboardCheck },
-        { slug: "framsteg", title: "Mina framsteg", description: "Se hur det går – ord du lärt dig, quizresultat och svit", icon: BarChart3 },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI-verktyg för skrivande, källkritik och språkutveckling", icon: Sparkles },
       ],
     },
@@ -218,6 +197,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs, analysera och värdera texter på avancerad nivå", icon: BookOpenCheck },
         { slug: "textbank", title: "Textbank", description: "Kvalificerade exempeltexter med fördjupande analys", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Fördjupning i litteraturhistoria från antiken till samtiden", icon: Library },
+        { slug: "ordkunskap", title: "Ordkunskap", description: "Akademiskt ordförråd, facktermer och etymologi", icon: MessageSquareText },
       ],
     },
     {
@@ -227,15 +207,15 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "skrivverkstad", title: "Skrivverkstad", description: "Vetenskapligt skrivande, essäer, recensioner och retorisk analys", icon: PenLine },
         { slug: "grammatik", title: "Grammatik", description: "Avancerad grammatik, stilistik och språklig variation", icon: BookA },
-        { slug: "ordkunskap", title: "Ordkunskap", description: "Akademiskt ordförråd, facktermer och etymologi", icon: MessageSquareText },
       ],
     },
     {
-      groupTitle: "Tala",
-      groupIcon: MessageSquareText,
+      groupTitle: "Öva",
+      groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i textanalys, retorik, stilistik och språkhistoria", icon: Dumbbell },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för akademiskt skrivande och muntliga presentationer", icon: GraduationCap },
+        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella proven i Svenska 1 och 3", icon: ClipboardCheck },
       ],
     },
     {
@@ -244,14 +224,6 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för vetenskapligt skrivande, retorik och litteratur", icon: Users },
         { slug: "kursplan", title: "Kursplan", description: "Kursplaner för Svenska 1–3 och SVA 1–3 från Skolverket", icon: BookOpen },
-      ],
-    },
-    {
-      groupTitle: "Verktyg",
-      groupIcon: Sparkles,
-      sections: [
-        { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella proven i Svenska 1 och 3", icon: ClipboardCheck },
-        { slug: "framsteg", title: "Mina framsteg", description: "Se hur det går – ord du lärt dig, quizresultat och svit", icon: BarChart3 },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI i akademiskt skrivande – möjligheter, risker och källkritik", icon: Sparkles },
       ],
     },
@@ -330,6 +302,21 @@ export default async function AgeGroupPage({ params }: Props) {
             </Accordion>
           );
         })}
+
+        {/* Fristående framstegskort */}
+        <Link href={`/${arskurs}/framsteg`}>
+          <Card className={`group hover:-translate-y-1 hover:shadow-lg ${accent.border}`}>
+            <CardHeader className="flex-row items-center gap-4">
+              <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors ${accent.bg}`}>
+                <BarChart3 className={`h-5 w-5 ${accent.icon}`} />
+              </div>
+              <div>
+                <CardTitle className="text-base">Mina framsteg</CardTitle>
+                <CardDescription>Se hur det går – ord du lärt dig, quizresultat och svit</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+        </Link>
       </div>
     </div>
   );
