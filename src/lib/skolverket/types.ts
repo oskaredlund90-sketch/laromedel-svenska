@@ -30,6 +30,22 @@ export interface SkolverketCentralContent {
 export interface SkolverketKnowledgeRequirement {
   text: string;
   year?: string;
+  gradeStep?: string;
+}
+
+export interface TransformedCourse {
+  name: string;
+  code: string;
+  points: number;
+  description: string;
+  centralContents: {
+    heading: string;
+    items: string[];
+  }[];
+  knowledgeRequirements: {
+    grade: string;
+    requirements: string[];
+  }[];
 }
 
 export interface TransformedSubject {
@@ -43,6 +59,8 @@ export interface TransformedSubject {
   }[];
   knowledgeRequirements: {
     grade: string;
+    year: string;
     requirements: string[];
   }[];
+  courses?: TransformedCourse[];
 }

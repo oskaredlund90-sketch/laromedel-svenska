@@ -2479,58 +2479,1747 @@ const stilistikGymnasietMC: MultipleChoiceExercise[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// NEW EXERCISES – Ordklasser (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const ordklasserHogstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "ordklasser-ec-hog-1",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta felaktigt anvand ordklass i meningen.",
+    sentence: "Hon sprang snabbare an jag.",
+    correctedSentence: "Hon sprang snabbare an jag.",
+    errorWord: "jag",
+    correctWord: "jag",
+    explanation:
+      "Har ar meningen korrekt med 'jag' (subjektsform). Vanligt fel ar att skriva 'mig' efter 'an', men efter 'an' i jamforelser ska subjektsform anvandas.",
+  },
+  {
+    id: "ordklasser-ec-hog-2",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Hitta och ratta felet med pronomen i meningen.",
+    sentence: "Dom som vill kan folja med.",
+    correctedSentence: "De som vill kan folja med.",
+    errorWord: "Dom",
+    correctWord: "De",
+    explanation:
+      "I skriftsprak anvands 'de' (subjektsform) och 'dem' (objektsform), inte 'dom'. Har ar det subjektsform som behovs.",
+  },
+  {
+    id: "ordklasser-ec-hog-3",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta felaktigt anvand ordklass i meningen.",
+    sentence: "Jag gav boken till dom.",
+    correctedSentence: "Jag gav boken till dem.",
+    errorWord: "dom",
+    correctWord: "dem",
+    explanation:
+      "Efter preposition ('till') anvands objektsformen 'dem', inte 'dom'.",
+  },
+  {
+    id: "ordklasser-ec-hog-4",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta det felaktiga adjektivet i meningen.",
+    sentence: "De fick en jattestor paketen.",
+    correctedSentence: "De fick ett jattestort paket.",
+    errorWord: "jattestor paketen",
+    correctWord: "jattestort paket",
+    explanation:
+      "'Paket' ar ett ett-ord, sa adjektivet ska vara 'jattestort' (neutrum). Dessutom ska det vara obestamd form 'paket', inte 'paketen'.",
+  },
+  {
+    id: "ordklasser-ec-hog-5",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta pronomenfelet i meningen.",
+    sentence: "Mellan du och jag sagt ar det har en hemlighet.",
+    correctedSentence: "Mellan dig och mig sagt ar det har en hemlighet.",
+    errorWord: "du och jag",
+    correctWord: "dig och mig",
+    explanation:
+      "Efter preposition ('mellan') anvands objektsformen: 'dig' och 'mig', inte 'du' och 'jag'.",
+  },
+];
+
+const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "ordklasser-ec-gym-1",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det grammatiska felet i meningen.",
+    sentence: "Forfattaren vars bok blivit prisbelont tackade publiken.",
+    correctedSentence: "Forfattaren vars bok blivit prisbelont tackade publiken.",
+    errorWord: "prisbelont",
+    correctWord: "prisbelont",
+    explanation:
+      "Meningen ar korrekt. 'Vars' ar genitiv av relativpronomenet 'som/vilken'. Notera att 'prisbelont' bojs i neutrum for att kongruera med 'bok' (ett-ord).",
+  },
+  {
+    id: "ordklasser-ec-gym-2",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med verbkongruens.",
+    sentence: "Ingen av eleverna vare sig vill eller kan losa uppgiften.",
+    correctedSentence: "Ingen av eleverna vare sig vill eller kan losa uppgiften.",
+    errorWord: "vill",
+    correctWord: "vill",
+    explanation:
+      "Meningen ar korrekt. 'Ingen' ar singulart subjekt, sa verbet star i singular: 'vill' och 'kan'. Hade subjektet varit 'inga' (plural) hade verbformen anda blivit densamma i svenska.",
+  },
+  {
+    id: "ordklasser-ec-gym-3",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det felaktiga pronomenet.",
+    sentence: "Uppsatsen som hen lamnade in var valskriven.",
+    correctedSentence: "Uppsatsen som hen lamnade in var valskriven.",
+    errorWord: "hen",
+    correctWord: "hen",
+    explanation:
+      "Pronomenet 'hen' ar ett konsneutralt pronomen som fungerar korrekt har. Det blev officiellt uppfordrat i SAOL 2015.",
+  },
+  {
+    id: "ordklasser-ec-gym-4",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felaktig adjektivbojning.",
+    sentence: "Den nya studenten var mycket duktig.",
+    correctedSentence: "Den nye studenten var mycket duktig.",
+    errorWord: "nya",
+    correctWord: "nye",
+    explanation:
+      "Vid bestämd form singularis maskulinum av adjektiv kan formen 'nye' anvandas for manliga referenter: 'den nye studenten'. Dock accepteras 'nya' alltmer i modernt sprak.",
+  },
+  {
+    id: "ordklasser-ec-gym-5",
+    type: "error-correction",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det felaktiga relativpronomenet.",
+    sentence: "Mannen vad jag traffade igår ar larare.",
+    correctedSentence: "Mannen som jag traffade igår ar larare.",
+    errorWord: "vad",
+    correctWord: "som",
+    explanation:
+      "'Vad' ar ett frageord och anvands inte som relativpronomen. Korrekt relativpronomen ar 'som' eller 'vilken'.",
+  },
+];
+
+const ordklasserHogstadietSA: SentenceAnalysisExercise[] = [
+  {
+    id: "ordklasser-sa-hog-1",
+    type: "sentence-analysis",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Bestam ordklassen for varje markerat ord.",
+    sentence: "Den lilla flickan sprang snabbt over gatan.",
+    parts: [
+      { text: "Den", role: "Artikel" },
+      { text: "lilla", role: "Adjektiv" },
+      { text: "flickan", role: "Substantiv" },
+      { text: "sprang", role: "Verb" },
+      { text: "snabbt", role: "Adverb" },
+      { text: "over", role: "Preposition" },
+      { text: "gatan", role: "Substantiv" },
+    ],
+    roleOptions: [
+      "Substantiv",
+      "Verb",
+      "Adjektiv",
+      "Adverb",
+      "Preposition",
+      "Artikel",
+      "Pronomen",
+      "Konjunktion",
+    ],
+  },
+  {
+    id: "ordklasser-sa-hog-2",
+    type: "sentence-analysis",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Bestam ordklassen for varje markerat ord.",
+    sentence: "Vi och de akte dit eftersom vadret var fint.",
+    parts: [
+      { text: "Vi", role: "Pronomen" },
+      { text: "och", role: "Konjunktion" },
+      { text: "de", role: "Pronomen" },
+      { text: "akte", role: "Verb" },
+      { text: "dit", role: "Adverb" },
+      { text: "eftersom", role: "Konjunktion" },
+      { text: "vadret", role: "Substantiv" },
+      { text: "var", role: "Verb" },
+      { text: "fint", role: "Adjektiv" },
+    ],
+    roleOptions: [
+      "Substantiv",
+      "Verb",
+      "Adjektiv",
+      "Adverb",
+      "Pronomen",
+      "Konjunktion",
+      "Preposition",
+    ],
+  },
+  {
+    id: "ordklasser-sa-hog-3",
+    type: "sentence-analysis",
+    topic: "ordklasser",
+    ageGroup: "hogstadiet",
+    instruction: "Bestam ordklassen for varje markerat ord.",
+    sentence: "Ack, vilken vacker solnedgang bakom bergen!",
+    parts: [
+      { text: "Ack", role: "Interjektion" },
+      { text: "vilken", role: "Pronomen" },
+      { text: "vacker", role: "Adjektiv" },
+      { text: "solnedgang", role: "Substantiv" },
+      { text: "bakom", role: "Preposition" },
+      { text: "bergen", role: "Substantiv" },
+    ],
+    roleOptions: [
+      "Substantiv",
+      "Verb",
+      "Adjektiv",
+      "Adverb",
+      "Preposition",
+      "Pronomen",
+      "Interjektion",
+    ],
+  },
+];
+
+const ordklasserGymnasietSA: SentenceAnalysisExercise[] = [
+  {
+    id: "ordklasser-sa-gym-1",
+    type: "sentence-analysis",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Bestam ordklassen for varje ord i meningen.",
+    sentence: "Den mest framgangsrika forfattaren hade dessutom skrivit tva essaer.",
+    parts: [
+      { text: "Den", role: "Artikel" },
+      { text: "mest", role: "Adverb" },
+      { text: "framgangsrika", role: "Adjektiv" },
+      { text: "forfattaren", role: "Substantiv" },
+      { text: "hade", role: "Verb (hjalpverb)" },
+      { text: "dessutom", role: "Adverb" },
+      { text: "skrivit", role: "Verb (supinum)" },
+      { text: "tva", role: "Raknord" },
+      { text: "essaer", role: "Substantiv" },
+    ],
+    roleOptions: [
+      "Substantiv",
+      "Verb (hjalpverb)",
+      "Verb (supinum)",
+      "Adjektiv",
+      "Adverb",
+      "Artikel",
+      "Raknord",
+      "Preposition",
+    ],
+  },
+  {
+    id: "ordklasser-sa-gym-2",
+    type: "sentence-analysis",
+    topic: "ordklasser",
+    ageGroup: "gymnasiet",
+    instruction: "Bestam ordklassen for varje ord.",
+    sentence: "Om man inte forstar sambandet maste man lasa texten noggrant igen.",
+    parts: [
+      { text: "Om", role: "Konjunktion (subjunktion)" },
+      { text: "man", role: "Pronomen" },
+      { text: "inte", role: "Adverb" },
+      { text: "forstar", role: "Verb" },
+      { text: "sambandet", role: "Substantiv" },
+      { text: "maste", role: "Verb (hjalpverb)" },
+      { text: "man", role: "Pronomen" },
+      { text: "lasa", role: "Verb (infinitiv)" },
+      { text: "texten", role: "Substantiv" },
+      { text: "noggrant", role: "Adverb" },
+      { text: "igen", role: "Adverb" },
+    ],
+    roleOptions: [
+      "Substantiv",
+      "Verb",
+      "Verb (hjalpverb)",
+      "Verb (infinitiv)",
+      "Adjektiv",
+      "Adverb",
+      "Pronomen",
+      "Konjunktion (subjunktion)",
+      "Preposition",
+    ],
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Meningsbyggnad (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "meningsbyggnad-ec-hog-1",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta ordföljdsfelet i meningen.",
+    sentence: "Igår jag gick till skolan.",
+    correctedSentence: "Igår gick jag till skolan.",
+    errorWord: "jag gick",
+    correctWord: "gick jag",
+    explanation:
+      "I svenska har vi omvand ordföljd (inversion) nar meningen borjar med nagot annat an subjektet. Verbet ska komma pa andra plats: 'Igår gick jag...'.",
+  },
+  {
+    id: "meningsbyggnad-ec-hog-2",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta ordföljdsfelet i bisatsen.",
+    sentence: "Hon sa att hon hade inte sett filmen.",
+    correctedSentence: "Hon sa att hon inte hade sett filmen.",
+    errorWord: "hade inte",
+    correctWord: "inte hade",
+    explanation:
+      "I bisatser (efter att, om, nar etc.) placeras negationen 'inte' fore verbet: 'att hon inte hade sett'. Detta kallas BIFF-regeln.",
+  },
+  {
+    id: "meningsbyggnad-ec-hog-3",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta ordföljdsfelet.",
+    sentence: "Pa sommaren vi brukar bada i sjon.",
+    correctedSentence: "Pa sommaren brukar vi bada i sjon.",
+    errorWord: "vi brukar",
+    correctWord: "brukar vi",
+    explanation:
+      "Omvand ordföljd: nar meningen inleds med ett adverbial ('Pa sommaren') maste verbet komma fore subjektet.",
+  },
+  {
+    id: "meningsbyggnad-ec-hog-4",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta meningsbyggnadsfelet.",
+    sentence: "Boken som jag laser den ar jattebra.",
+    correctedSentence: "Boken som jag laser ar jattebra.",
+    errorWord: "laser den",
+    correctWord: "laser",
+    explanation:
+      "Har finns en overflödig pronomenkopiering. Nar 'boken' redan ar namnd som subjekt och refereras via 'som', behovs inte 'den' igen.",
+  },
+  {
+    id: "meningsbyggnad-ec-hog-5",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta bisatsfelet.",
+    sentence: "Nar han inte kom vi blev oroliga.",
+    correctedSentence: "Nar han inte kom blev vi oroliga.",
+    errorWord: "kom vi",
+    correctWord: "kom blev vi",
+    explanation:
+      "Huvudsatsen efter en bisats har omvand ordföljd. Korrekt: 'Nar han inte kom, blev vi oroliga.'",
+  },
+];
+
+const meningsbyggnadGymnasietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "meningsbyggnad-ec-gym-1",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det stilistiska meningsbyggnadsfelet.",
+    sentence: "Rapporten konstaterar att klimatforandringarna gar inte att ignorera.",
+    correctedSentence: "Rapporten konstaterar att klimatforandringarna inte gar att ignorera.",
+    errorWord: "gar inte",
+    correctWord: "inte gar",
+    explanation:
+      "I bisatser (efter 'att') galler BIFF-regeln: satsadverbialet 'inte' placeras fore det finita verbet.",
+  },
+  {
+    id: "meningsbyggnad-ec-gym-2",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det syftningsfelet i meningen.",
+    sentence: "Lisa sa till Anna att hon var dum.",
+    correctedSentence: "Lisa sa till Anna att Anna var dum.",
+    errorWord: "hon",
+    correctWord: "Anna",
+    explanation:
+      "Pronomenet 'hon' har otydlig syftning — det kan syfta pa bade Lisa och Anna. Undvik tvetydig syftning genom att upprepat namn eller omformulera meningen.",
+  },
+  {
+    id: "meningsbyggnad-ec-gym-3",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med satsradning.",
+    sentence: "Hon var trott hon gick och la sig tidigt.",
+    correctedSentence: "Hon var trott, sa hon gick och la sig tidigt.",
+    errorWord: "trott hon",
+    correctWord: "trott, sa hon",
+    explanation:
+      "Tva huvudsatser kan inte bara staplas utan bindeord. Anvand konjunktion ('sa', 'och', 'darfor'), semikolon eller punkt.",
+  },
+  {
+    id: "meningsbyggnad-ec-gym-4",
+    type: "error-correction",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med particip.",
+    sentence: "Sittandes pa banken betraktade han solnedgangen.",
+    correctedSentence: "Sittande pa banken betraktade han solnedgangen.",
+    errorWord: "Sittandes",
+    correctWord: "Sittande",
+    explanation:
+      "Presens particip i skriftsprak har inte s-andelse. 'Sittande' ar korrekt form; 'sittandes' ar talsprak.",
+  },
+];
+
+const meningsbyggnadHogstadietSAExtra: SentenceAnalysisExercise[] = [
+  {
+    id: "meningsbyggnad-sa-hog-5",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Markera satsdelarna i meningen.",
+    sentence: "Med stor entusiasm presenterade eleven sitt projekt for klassen.",
+    parts: [
+      { text: "Med stor entusiasm", role: "Adverbial" },
+      { text: "presenterade", role: "Predikat" },
+      { text: "eleven", role: "Subjekt" },
+      { text: "sitt projekt", role: "Objekt" },
+      { text: "for klassen", role: "Adverbial" },
+    ],
+    roleOptions: ["Subjekt", "Predikat", "Objekt", "Adverbial"],
+  },
+  {
+    id: "meningsbyggnad-sa-hog-6",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Markera satsdelarna i meningen med direkt och indirekt objekt.",
+    sentence: "Coachen visade laget den nya strategin.",
+    parts: [
+      { text: "Coachen", role: "Subjekt" },
+      { text: "visade", role: "Predikat" },
+      { text: "laget", role: "Indirekt objekt" },
+      { text: "den nya strategin", role: "Direkt objekt" },
+    ],
+    roleOptions: [
+      "Subjekt",
+      "Predikat",
+      "Direkt objekt",
+      "Indirekt objekt",
+      "Adverbial",
+    ],
+  },
+  {
+    id: "meningsbyggnad-sa-hog-7",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "hogstadiet",
+    instruction: "Markera satsdelarna, inklusive predikativ.",
+    sentence: "Filmen var otroligt spannande.",
+    parts: [
+      { text: "Filmen", role: "Subjekt" },
+      { text: "var", role: "Predikat" },
+      { text: "otroligt spannande", role: "Predikativ" },
+    ],
+    roleOptions: ["Subjekt", "Predikat", "Objekt", "Adverbial", "Predikativ"],
+  },
+];
+
+const meningsbyggnadGymnasietSAExtra: SentenceAnalysisExercise[] = [
+  {
+    id: "meningsbyggnad-sa-gym-5",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Analysera satsdelarna i denna mening med passiv form.",
+    sentence: "Forslaget har granskats grundligt av den parlamentariska kommitten.",
+    parts: [
+      { text: "Forslaget", role: "Subjekt" },
+      { text: "har granskats", role: "Predikat" },
+      { text: "grundligt", role: "Adverbial" },
+      { text: "av den parlamentariska kommitten", role: "Agentadverbial" },
+    ],
+    roleOptions: [
+      "Subjekt",
+      "Predikat",
+      "Objekt",
+      "Adverbial",
+      "Agentadverbial",
+      "Predikativ",
+    ],
+  },
+  {
+    id: "meningsbyggnad-sa-gym-6",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Analysera satsdelarna med fokus pa bisats.",
+    sentence: "Eftersom regnet tilltagit avbrot domaren matchen efter halvtid.",
+    parts: [
+      { text: "Eftersom regnet tilltagit", role: "Adverbial (bisats)" },
+      { text: "avbrot", role: "Predikat" },
+      { text: "domaren", role: "Subjekt" },
+      { text: "matchen", role: "Objekt" },
+      { text: "efter halvtid", role: "Adverbial" },
+    ],
+    roleOptions: [
+      "Subjekt",
+      "Predikat",
+      "Objekt",
+      "Adverbial",
+      "Adverbial (bisats)",
+      "Predikativ",
+    ],
+  },
+  {
+    id: "meningsbyggnad-sa-gym-7",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "gymnasiet",
+    instruction: "Analysera satsdelarna i denna formella mening.",
+    sentence: "De involverade parterna tilldelades ersattning av forsäkringsbolaget.",
+    parts: [
+      { text: "De involverade parterna", role: "Subjekt" },
+      { text: "tilldelades", role: "Predikat" },
+      { text: "ersattning", role: "Objekt" },
+      { text: "av forsäkringsbolaget", role: "Agentadverbial" },
+    ],
+    roleOptions: [
+      "Subjekt",
+      "Predikat",
+      "Objekt",
+      "Adverbial",
+      "Agentadverbial",
+    ],
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Skiljetecken (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "skiljetecken-ec-hog-1",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta felet med skiljetecken.",
+    sentence: "Han frågade om vi ville folja med?",
+    correctedSentence: "Han frågade om vi ville folja med.",
+    errorWord: "med?",
+    correctWord: "med.",
+    explanation:
+      "Indirekt fragesats (borjar med 'om') avslutas med punkt, inte fragetecken. Fragetecken anvands bara i direkta fragor.",
+  },
+  {
+    id: "skiljetecken-ec-hog-2",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta kommatfelet.",
+    sentence: "Vi akte till stugan som låg vid sjon, och badade hela dagen.",
+    correctedSentence: "Vi akte till stugan som låg vid sjon och badade hela dagen.",
+    errorWord: "sjon,",
+    correctWord: "sjon",
+    explanation:
+      "Komma sätts inte fore 'och' nar det binder ihop tva verb med samma subjekt. Komma fore 'och' anvands bara vid uppräkning eller nar det binder tva fullstandiga huvudsatser.",
+  },
+  {
+    id: "skiljetecken-ec-hog-3",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "hogstadiet",
+    instruction: "Lagg till saknat skiljetecken.",
+    sentence: "Jag tycker om att lasa bocker tidningar och serier.",
+    correctedSentence: "Jag tycker om att lasa bocker, tidningar och serier.",
+    errorWord: "bocker tidningar",
+    correctWord: "bocker, tidningar",
+    explanation:
+      "Vid uppräkning ska komma sättas mellan leden, forutom fore det sista ledet dar 'och' anvands.",
+  },
+  {
+    id: "skiljetecken-ec-hog-4",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta felet med kolon.",
+    sentence: "Vi behovde kopa: mjolk, brod och smor.",
+    correctedSentence: "Vi behovde kopa mjolk, brod och smor.",
+    errorWord: "kopa:",
+    correctWord: "kopa",
+    explanation:
+      "Kolon ska inte anvandas mitt i en mening som flyter pa naturligt. Kolon anvands efter en hel mening som inleder en upprakning.",
+  },
+  {
+    id: "skiljetecken-ec-hog-5",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta kommatfelet.",
+    sentence: "Nar solen gick ner blev det kallt.",
+    correctedSentence: "Nar solen gick ner, blev det kallt.",
+    errorWord: "ner blev",
+    correctWord: "ner, blev",
+    explanation:
+      "Komma ska sättas mellan en inledande bisats och huvudsatsen. 'Nar solen gick ner' ar bisatsen.",
+  },
+];
+
+const skiljeteckenGymnasietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "skiljetecken-ec-gym-1",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med semikolon.",
+    sentence: "Rapporten var tydlig, den visade pa allvarliga brister.",
+    correctedSentence: "Rapporten var tydlig; den visade pa allvarliga brister.",
+    errorWord: "tydlig,",
+    correctWord: "tydlig;",
+    explanation:
+      "Tva besläktade huvudsatser utan bindeord bor skiljas med semikolon, inte komma. Kommafel av denna typ kallas 'satsradning'.",
+  },
+  {
+    id: "skiljetecken-ec-gym-2",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med tankstreck.",
+    sentence: "Den berömda forfattaren - som levde pa 1800-talet - skrev manga romaner.",
+    correctedSentence: "Den berömda forfattaren – som levde pa 1800-talet – skrev manga romaner.",
+    errorWord: "-",
+    correctWord: "–",
+    explanation:
+      "I inskjutna satser anvands tankstreck (–), inte bindestreck (-). Bindestreck ar kortare och anvands i sammansatta ord.",
+  },
+  {
+    id: "skiljetecken-ec-gym-3",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med anforing.",
+    sentence: "\"Jag kommer snart\" sa hon \"vanta pa mig\".",
+    correctedSentence: "\"Jag kommer snart\", sa hon, \"vanta pa mig\".",
+    errorWord: "snart\" sa hon \"vanta",
+    correctWord: "snart\", sa hon, \"vanta",
+    explanation:
+      "Vid delad anforing ska komma sättas efter den forsta anforingen och fore den andra: '...snart\", sa hon, \"vanta...'.",
+  },
+  {
+    id: "skiljetecken-ec-gym-4",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med apostrof.",
+    sentence: "Det ar Alex's bok.",
+    correctedSentence: "Det ar Alex bok.",
+    errorWord: "Alex's",
+    correctWord: "Alex",
+    explanation:
+      "Pa svenska anvands inte apostrof vid genitiv. Korrekt ar 'Alex bok'. Apostrof anvands bara nar namnet slutar pa s, x eller z: 'Agnes' bok'.",
+  },
+  {
+    id: "skiljetecken-ec-gym-5",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta interpunktionsfelet.",
+    sentence: "Det finns tre alternativ, antingen aker vi buss, tag eller bil.",
+    correctedSentence: "Det finns tre alternativ: antingen aker vi buss, tag eller bil.",
+    errorWord: "alternativ,",
+    correctWord: "alternativ:",
+    explanation:
+      "Fore en uppräkning som forklarar ett pastaende anvands kolon, inte komma.",
+  },
+];
+
+const skiljeteckenHogstadietCat: CategorizationExercise[] = [
+  {
+    id: "skiljetecken-cat-hog-1",
+    type: "categorization",
+    topic: "skiljetecken",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera exemplen efter vilken typ av mening de avslutas med.",
+    items: [
+      "Vad heter du",
+      "Stanna dar",
+      "Det var en fin dag",
+      "Vilken fantastisk utsikt",
+      "Nar borjar filmen",
+      "Spring",
+    ],
+    categories: ["Punkt (.)", "Fragetecken (?)", "Utropstecken (!)"],
+    correctMapping: {
+      "Vad heter du": "Fragetecken (?)",
+      "Stanna dar": "Utropstecken (!)",
+      "Det var en fin dag": "Punkt (.)",
+      "Vilken fantastisk utsikt": "Utropstecken (!)",
+      "Nar borjar filmen": "Fragetecken (?)",
+      "Spring": "Utropstecken (!)",
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Stavning (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const stavningHogstadietECExtra: ErrorCorrectionExercise[] = [
+  {
+    id: "stavning-ec-hog-7",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "hogstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Det ar viktigt att skilja mellan de och dem.",
+    correctedSentence: "Det ar viktigt att skilja mellan de och dem.",
+    errorWord: "de",
+    correctWord: "de",
+    explanation:
+      "Meningen ar korrekt. 'De' ar subjektsform och 'dem' ar objektsform. Manga forväxlar dessa i skrift.",
+  },
+  {
+    id: "stavning-ec-hog-8",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "hogstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Han tykte att provet var svart.",
+    correctedSentence: "Han tyckte att provet var svart.",
+    errorWord: "tykte",
+    correctWord: "tyckte",
+    explanation:
+      "Verbet 'tycka' i preteritum stavas 'tyckte' med ck, inte bara k.",
+  },
+  {
+    id: "stavning-ec-hog-9",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "hogstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Vi åt glass efter nåra timmar.",
+    correctedSentence: "Vi åt glass efter några timmar.",
+    errorWord: "nåra",
+    correctWord: "några",
+    explanation:
+      "'Några' stavas med g fore r. 'Nåra' ar talsprak.",
+  },
+  {
+    id: "stavning-ec-hog-10",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "hogstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Hon ska bli injengör nar hon blir stor.",
+    correctedSentence: "Hon ska bli ingenjor nar hon blir stor.",
+    errorWord: "injengör",
+    correctWord: "ingenjor",
+    explanation:
+      "'Ingenjor' stavas med ng fore e och j fore o. Det ar ett vanligt forvaxlingsord.",
+  },
+];
+
+const stavningGymnasietECExtra: ErrorCorrectionExercise[] = [
+  {
+    id: "stavning-ec-gym-7",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "gymnasiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Symposiumet fokuserade pa medier's paverkan.",
+    correctedSentence: "Symposiet fokuserade pa mediers paverkan.",
+    errorWord: "medier's",
+    correctWord: "mediers",
+    explanation:
+      "Pa svenska anvands inte apostrof vid genitiv. Korrekt ar 'mediers'. Dessutom stavas det 'symposiet'.",
+  },
+  {
+    id: "stavning-ec-gym-8",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "gymnasiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Eventuelt kan vi behova omforhandla avtalet.",
+    correctedSentence: "Eventuellt kan vi behova omforhandla avtalet.",
+    errorWord: "Eventuelt",
+    correctWord: "Eventuellt",
+    explanation:
+      "'Eventuellt' stavas med dubbelt l. Jämför med 'aktuellt', 'virtuellt' — adverb pa -ellt har dubbelt l.",
+  },
+  {
+    id: "stavning-ec-gym-9",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "gymnasiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Studien visar att effeckterna ar betydande.",
+    correctedSentence: "Studien visar att effekterna ar betydande.",
+    errorWord: "effeckterna",
+    correctWord: "effekterna",
+    explanation:
+      "'Effekterna' stavas utan ck. Grundformen ar 'effekt' med enbart k.",
+  },
+  {
+    id: "stavning-ec-gym-10",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "gymnasiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Resultat kravde en annan metodik.",
+    correctedSentence: "Resultatet kravde en annan metodik.",
+    errorWord: "Resultat",
+    correctWord: "Resultatet",
+    explanation:
+      "I bestamd form singular ar det 'resultatet' (ett-ord med bestamd andelse -et).",
+  },
+];
+
+const stavningHogstadietCat: CategorizationExercise[] = [
+  {
+    id: "stavning-cat-hog-1",
+    type: "categorization",
+    topic: "stavning",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera orden: ratt eller fel stavning?",
+    items: ["tyckte", "tykte", "började", "borjade", "ingenjor", "injengör", "professor", "professer"],
+    categories: ["Ratt stavat", "Fel stavat"],
+    correctMapping: {
+      tyckte: "Ratt stavat",
+      tykte: "Fel stavat",
+      började: "Ratt stavat",
+      borjade: "Fel stavat",
+      ingenjor: "Ratt stavat",
+      injengör: "Fel stavat",
+      professor: "Ratt stavat",
+      professer: "Fel stavat",
+    },
+  },
+  {
+    id: "stavning-cat-hog-2",
+    type: "categorization",
+    topic: "stavning",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera orden efter om de ar en-ord eller ett-ord.",
+    items: ["stol", "bord", "lampa", "fonster", "dörr", "tak", "bok", "hus"],
+    categories: ["En-ord", "Ett-ord"],
+    correctMapping: {
+      stol: "En-ord",
+      bord: "Ett-ord",
+      lampa: "En-ord",
+      fonster: "Ett-ord",
+      dörr: "En-ord",
+      tak: "Ett-ord",
+      bok: "En-ord",
+      hus: "Ett-ord",
+    },
+  },
+];
+
+const stavningGymnasietCat: CategorizationExercise[] = [
+  {
+    id: "stavning-cat-gym-1",
+    type: "categorization",
+    topic: "stavning",
+    ageGroup: "gymnasiet",
+    instruction: "Sortera orden: skrivs de ihop eller sar?",
+    items: ["idag", "i dag", "med mera", "medmera", "till exempel", "tillexempel", "i stallet", "istallet"],
+    categories: ["Ihopskrivet (korrekt)", "Sarskrivet (korrekt)"],
+    correctMapping: {
+      idag: "Ihopskrivet (korrekt)",
+      "i dag": "Sarskrivet (korrekt)",
+      "med mera": "Sarskrivet (korrekt)",
+      medmera: "Ihopskrivet (korrekt)",
+      "till exempel": "Sarskrivet (korrekt)",
+      tillexempel: "Ihopskrivet (korrekt)",
+      "i stallet": "Sarskrivet (korrekt)",
+      istallet: "Ihopskrivet (korrekt)",
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Ordbildning (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const ordbildningHogstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "ordbildning-ec-hog-1",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta sarskrivningsfelet.",
+    sentence: "Vi koper frukt pa den nya matvarubutik affaren.",
+    correctedSentence: "Vi koper frukt pa den nya matvarubutiksaffaren.",
+    errorWord: "matvarubutik affaren",
+    correctWord: "matvarubutiksaffaren",
+    explanation:
+      "Pa svenska skrivs sammansatta ord ihop. 'Matvarubutiksaffaren' ar ett sammansatt ord och ska inte sarskrivas.",
+  },
+  {
+    id: "ordbildning-ec-hog-2",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta sarskrivningsfelet.",
+    sentence: "Vi hade en traning pass pa eftermiddagen.",
+    correctedSentence: "Vi hade ett traningspass pa eftermiddagen.",
+    errorWord: "traning pass",
+    correctWord: "traningspass",
+    explanation:
+      "'Traningspass' ar ett sammansatt ord med foge-s: traning + s + pass. Sammansatta ord skrivs ihop pa svenska.",
+  },
+  {
+    id: "ordbildning-ec-hog-3",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta sarskrivningsfelet.",
+    sentence: "Han korde en brand bil.",
+    correctedSentence: "Han korde en brandbil.",
+    errorWord: "brand bil",
+    correctWord: "brandbil",
+    explanation:
+      "'Brandbil' ar ett sammansatt substantiv (brand + bil) och skrivs ihop. Sarskrivning andrar ibland betydelsen helt.",
+  },
+  {
+    id: "ordbildning-ec-hog-4",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta sarskrivningsfelet.",
+    sentence: "Dar finns en rull trappa.",
+    correctedSentence: "Dar finns en rulltrappa.",
+    errorWord: "rull trappa",
+    correctWord: "rulltrappa",
+    explanation:
+      "'Rulltrappa' ar sammansatt: rull + trappa. Sarskriver man det far man 'en rull trappa' — en trappa som ar rull?",
+  },
+];
+
+const ordbildningGymnasietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "ordbildning-ec-gym-1",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med ordbildning.",
+    sentence: "Forsknings resultaten var overraskande.",
+    correctedSentence: "Forskningsresultaten var overraskande.",
+    errorWord: "Forsknings resultaten",
+    correctWord: "Forskningsresultaten",
+    explanation:
+      "Sammansatta ord skrivs ihop: forskning + s + resultaten. Foge-s binder samman leden.",
+  },
+  {
+    id: "ordbildning-ec-gym-2",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta felet med prefix.",
+    sentence: "Elevernas resultat var otillfredstallande.",
+    correctedSentence: "Elevernas resultat var otillfredsstallande.",
+    errorWord: "otillfredstallande",
+    correctWord: "otillfredsstallande",
+    explanation:
+      "'Otillfredsstallande' stavas med dubbelt s: o + till + freds + stallande. Det ar sammansatt av 'till freds' + 'stallande' med prefixet 'o-'.",
+  },
+  {
+    id: "ordbildning-ec-gym-3",
+    type: "error-correction",
+    topic: "ordbildning",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det felaktiga sammansatta ordet.",
+    sentence: "Det kravs en risk- och konsekvensanalys.",
+    correctedSentence: "Det kravs en risk- och konsekvensanalys.",
+    errorWord: "risk-",
+    correctWord: "risk-",
+    explanation:
+      "Meningen ar korrekt! Vid samordning med bindestreck behaller forsta ledet sitt streck: 'risk- och konsekvensanalys' (dvs. riskanalys och konsekvensanalys).",
+  },
+];
+
+const ordbildningHogstadietSA: SentenceAnalysisExercise[] = [
+  {
+    id: "ordbildning-sa-hog-1",
+    type: "sentence-analysis",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Dela upp de sammansatta orden i sina delar.",
+    sentence: "fotbollsplan, skolbyggnad, bokhandel",
+    parts: [
+      { text: "fotbollsplan", role: "fot + bolls + plan" },
+      { text: "skolbyggnad", role: "skol + byggnad" },
+      { text: "bokhandel", role: "bok + handel" },
+    ],
+    roleOptions: [
+      "fot + bolls + plan",
+      "skol + byggnad",
+      "bok + handel",
+      "fot + boll + plan",
+      "bok + hand + el",
+    ],
+  },
+  {
+    id: "ordbildning-sa-hog-2",
+    type: "sentence-analysis",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Identifiera prefix och suffix i orden.",
+    sentence: "olycklig, forvaning, barndom",
+    parts: [
+      { text: "olycklig", role: "prefix: o- + lyck + suffix: -lig" },
+      { text: "forvaning", role: "prefix: for- + van + suffix: -ing" },
+      { text: "barndom", role: "barn + suffix: -dom" },
+    ],
+    roleOptions: [
+      "prefix: o- + lyck + suffix: -lig",
+      "prefix: for- + van + suffix: -ing",
+      "barn + suffix: -dom",
+      "prefix: o- + lycklig",
+      "forvan + suffix: -ing",
+    ],
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Textbindning (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const textbindningHogstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "textbindning-ec-hog-1",
+    type: "error-correction",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta det felaktiga bindeordet.",
+    sentence: "Han ar trott men han vaknade tidigt.",
+    correctedSentence: "Han ar trott eftersom han vaknade tidigt.",
+    errorWord: "men",
+    correctWord: "eftersom",
+    explanation:
+      "'Men' uttrycker en kontrast, men har ar sambandet orsak-verkan: han ar trott EFTERSOM han vaknade tidigt.",
+  },
+  {
+    id: "textbindning-ec-hog-2",
+    type: "error-correction",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Ratta det felaktiga bindeordet.",
+    sentence: "Vi hade planerat en utflykt. Darfor regnde det hela dagen.",
+    correctedSentence: "Vi hade planerat en utflykt. Daremot regnade det hela dagen.",
+    errorWord: "Darfor",
+    correctWord: "Daremot",
+    explanation:
+      "'Darfor' anger orsak-verkan, men har behöves en kontrast ('daremot' eller 'men'): utflykten var planerad, MEN det regnade.",
+  },
+  {
+    id: "textbindning-ec-hog-3",
+    type: "error-correction",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Forbattra textbindningen.",
+    sentence: "Jag gillar fotboll. Jag gillar hockey. Jag gillar tennis.",
+    correctedSentence: "Jag gillar fotboll, hockey och tennis.",
+    errorWord: "Jag gillar hockey. Jag gillar tennis.",
+    correctWord: "hockey och tennis.",
+    explanation:
+      "Upprepad meningsstruktur gor texten enformig. Samordna med komma och 'och' for battre flyt.",
+  },
+];
+
+const textbindningGymnasietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "textbindning-ec-gym-1",
+    type: "error-correction",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta det felaktiga konnektivet.",
+    sentence: "Forskning visar att motion forbattrar halsan. Exempelvis bor alla träna mer.",
+    correctedSentence: "Forskning visar att motion forbattrar halsan. Darfor bor alla trana mer.",
+    errorWord: "Exempelvis",
+    correctWord: "Darfor",
+    explanation:
+      "'Exempelvis' inleder ett exempel, men har dras en slutsats. 'Darfor' eller 'följaktligen' uttrycker slutledning.",
+  },
+  {
+    id: "textbindning-ec-gym-2",
+    type: "error-correction",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Forbattra den tematiska bindningen.",
+    sentence: "Romanen skildrar fattigdom. Forfattaren anvander manga metaforer. Boken fick fina recensioner.",
+    correctedSentence: "Romanen skildrar fattigdom. Forfattaren anvander manga metaforer for att gestalta denna tematik. Boken fick darfor fina recensioner.",
+    errorWord: "metaforer. Boken",
+    correctWord: "metaforer for att gestalta denna tematik. Boken fick darfor",
+    explanation:
+      "Texten saknar tematiska kopplingar mellan meningarna. Referensbindning ('denna tematik') och kausala konnektiv ('darfor') skapar sammanhang.",
+  },
+];
+
+const textbindningHogstadietCat: CategorizationExercise[] = [
+  {
+    id: "textbindning-cat-hog-1",
+    type: "categorization",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera bindeorden efter funktion.",
+    items: ["darfor", "men", "dessutom", "eftersom", "daremot", "aven"],
+    categories: ["Orsak/Foljd", "Kontrast", "Tillagg"],
+    correctMapping: {
+      darfor: "Orsak/Foljd",
+      men: "Kontrast",
+      dessutom: "Tillagg",
+      eftersom: "Orsak/Foljd",
+      daremot: "Kontrast",
+      aven: "Tillagg",
+    },
+  },
+  {
+    id: "textbindning-cat-hog-2",
+    type: "categorization",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera bindeorden efter funktion.",
+    items: ["forst", "sedan", "slutligen", "samtidigt", "tidigare", "darefter"],
+    categories: ["Tidsföljd", "Samtidighet"],
+    correctMapping: {
+      forst: "Tidsföljd",
+      sedan: "Tidsföljd",
+      slutligen: "Tidsföljd",
+      samtidigt: "Samtidighet",
+      tidigare: "Tidsföljd",
+      darefter: "Tidsföljd",
+    },
+  },
+];
+
+const textbindningGymnasietCat: CategorizationExercise[] = [
+  {
+    id: "textbindning-cat-gym-1",
+    type: "categorization",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Sortera konnektiven efter logisk funktion.",
+    items: [
+      "sammanfattningsvis",
+      "a andra sidan",
+      "foljaktligen",
+      "emellertid",
+      "darutover",
+      "med andra ord",
+    ],
+    categories: ["Sammanfattning", "Kontrast", "Slutledning", "Tillagg"],
+    correctMapping: {
+      sammanfattningsvis: "Sammanfattning",
+      "a andra sidan": "Kontrast",
+      foljaktligen: "Slutledning",
+      emellertid: "Kontrast",
+      darutover: "Tillagg",
+      "med andra ord": "Sammanfattning",
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Stilistik (hogstadiet & gymnasiet)
+// ---------------------------------------------------------------------------
+
+const stilistikHogstadietMC: MultipleChoiceExercise[] = [
+  {
+    id: "stilistik-mc-hog-1",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur anvands i exemplet?",
+    prompt: "'Hon var snabb som en gazell.'",
+    options: ["Metafor", "Liknelse", "Hyperbol", "Besjälning"],
+    correct: 1,
+    explanation:
+      "Det ar en liknelse — en jamforelse med hjalp av 'som'. Hon jamfors med en gazell.",
+  },
+  {
+    id: "stilistik-mc-hog-2",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur anvands i exemplet?",
+    prompt: "'Havet sjong for oss den kvallen.'",
+    options: ["Liknelse", "Metafor", "Besjälning", "Anafor"],
+    correct: 2,
+    explanation:
+      "Det ar besjälning (personifikation) — havet far en mansklig egenskap (att sjunga).",
+  },
+  {
+    id: "stilistik-mc-hog-3",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur anvands i exemplet?",
+    prompt: "'Jag dog av skratt!'",
+    options: ["Liknelse", "Besjälning", "Anafor", "Hyperbol"],
+    correct: 3,
+    explanation:
+      "Det ar en hyperbol — en medveten overdrift. Man dor forstås inte bokstavligt av skratt.",
+  },
+  {
+    id: "stilistik-mc-hog-4",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur anvands i exemplet?",
+    prompt: "'Tiden ar pengar.'",
+    options: ["Liknelse", "Metafor", "Hyperbol", "Allitteration"],
+    correct: 1,
+    explanation:
+      "Det ar en metafor — tid jamfors direkt med pengar utan 'som' eller 'likt'.",
+  },
+  {
+    id: "stilistik-mc-hog-5",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken typ av sprak anvands i texten?",
+    prompt: "'Asså bror, den var ju fett ball den filmen ju!'",
+    options: ["Formellt sprak", "Slang/ungdomssprak", "Akademiskt sprak", "Nyhetsssprak"],
+    correct: 1,
+    explanation:
+      "Texten innehaller slang och ungdomssprak: 'asså bror', 'fett ball'. Det ar en mycket informell spranniva.",
+  },
+];
+
+const stilistikHogstadietCat: CategorizationExercise[] = [
+  {
+    id: "stilistik-cat-hog-1",
+    type: "categorization",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera exemplen efter stilfigur.",
+    items: [
+      "Stark som en björn",
+      "Tiden ar pengar",
+      "Solen log mot oss",
+      "Snabb som en pil",
+      "Hennes blick var is",
+      "Traden viskade",
+    ],
+    categories: ["Liknelse", "Metafor", "Besjälning"],
+    correctMapping: {
+      "Stark som en björn": "Liknelse",
+      "Tiden ar pengar": "Metafor",
+      "Solen log mot oss": "Besjälning",
+      "Snabb som en pil": "Liknelse",
+      "Hennes blick var is": "Metafor",
+      "Traden viskade": "Besjälning",
+    },
+  },
+];
+
+const stilistikGymnasietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "stilistik-ec-gym-1",
+    type: "error-correction",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta den stilistiska inkonsekvensen.",
+    sentence: "I den vetenskapliga rapporten konstateras att det ar typ jatteviktigt att forska mer.",
+    correctedSentence: "I den vetenskapliga rapporten konstateras att det ar ytterst viktigt att forska mer.",
+    errorWord: "typ jatteviktigt",
+    correctWord: "ytterst viktigt",
+    explanation:
+      "I vetenskapligt/formellt sprak passar inte vardagliga uttryck som 'typ jatteviktigt'. Anvand formella synonymer: 'ytterst viktigt', 'av stor betydelse'.",
+  },
+  {
+    id: "stilistik-ec-gym-2",
+    type: "error-correction",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta den stilistiska inkonsekvensen.",
+    sentence: "Hans argumentation var undermaling, men han fixade en bra slutsats.",
+    correctedSentence: "Hans argumentation var undermalig, men han formulerade en overtygande slutsats.",
+    errorWord: "fixade en bra",
+    correctWord: "formulerade en overtygande",
+    explanation:
+      "'Fixade' och 'bra' ar vardagliga ord som inte passar i en formell analys. Anvand mer precisa och formella uttryck.",
+  },
+  {
+    id: "stilistik-ec-gym-3",
+    type: "error-correction",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Ratta den stilistiska inkonsekvensen.",
+    sentence: "Hej! Jag skriver for att informera er om att erat avtal utgår.",
+    correctedSentence: "Jag skriver for att informera er om att ert avtal utgar.",
+    errorWord: "Hej! Jag",
+    correctWord: "Jag",
+    explanation:
+      "I formella brev ar 'Hej!' for informellt som inledning. Dessutom ar 'erat' felaktigt — korrekt possessivt pronomen ar 'ert' (neutrum).",
+  },
+];
+
+const stilistikGymnasietCat: CategorizationExercise[] = [
+  {
+    id: "stilistik-cat-gym-1",
+    type: "categorization",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Sortera uttrycken efter spraklig register/niva.",
+    items: [
+      "Harmed meddelas",
+      "Kolla in det har",
+      "Undersökningen pavisar",
+      "De gar typ inte",
+      "Resultaten indikerar",
+      "Fett najs",
+    ],
+    categories: ["Formellt/akademiskt", "Informellt/vardagligt"],
+    correctMapping: {
+      "Harmed meddelas": "Formellt/akademiskt",
+      "Kolla in det har": "Informellt/vardagligt",
+      "Undersökningen pavisar": "Formellt/akademiskt",
+      "De gar typ inte": "Informellt/vardagligt",
+      "Resultaten indikerar": "Formellt/akademiskt",
+      "Fett najs": "Informellt/vardagligt",
+    },
+  },
+  {
+    id: "stilistik-cat-gym-2",
+    type: "categorization",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Sortera stilfigurerna i ratt kategori.",
+    items: [
+      "Livet ar en resa",
+      "Stark som en lejon",
+      "Jag har sagt det tusen ganger",
+      "Blommorna dansade i vinden",
+      "Kall som is",
+      "Hon ar en sol",
+    ],
+    categories: ["Metafor", "Liknelse", "Hyperbol", "Besjälning"],
+    correctMapping: {
+      "Livet ar en resa": "Metafor",
+      "Stark som en lejon": "Liknelse",
+      "Jag har sagt det tusen ganger": "Hyperbol",
+      "Blommorna dansade i vinden": "Besjälning",
+      "Kall som is": "Liknelse",
+      "Hon ar en sol": "Metafor",
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Meningsbyggnad lagstadiet
+// ---------------------------------------------------------------------------
+
+const meningsbyggnadLagstadietMC: MultipleChoiceExercise[] = [
+  {
+    id: "meningsbyggnad-mc-lag-1",
+    type: "multiple-choice",
+    topic: "meningsbyggnad",
+    ageGroup: "lagstadiet",
+    instruction: "Vilken mening ar korrekt?",
+    prompt: "Vilken mening ar ratt?",
+    options: [
+      "Hunden ben tuggade pa.",
+      "Hunden tuggade pa benet.",
+      "Pa benet hunden tuggade.",
+    ],
+    correct: 1,
+    explanation:
+      "'Hunden tuggade pa benet' har ratt ordföljd: subjekt + verb + resten av meningen.",
+  },
+  {
+    id: "meningsbyggnad-mc-lag-2",
+    type: "multiple-choice",
+    topic: "meningsbyggnad",
+    ageGroup: "lagstadiet",
+    instruction: "Vilken mening ar en fraga?",
+    prompt: "Vilken av dessa ar en fraga?",
+    options: [
+      "Katten sover pa soffan.",
+      "Var sover katten?",
+      "Katten sover inte.",
+    ],
+    correct: 1,
+    explanation:
+      "'Var sover katten?' ar en fraga — den borjar med ett frageord och slutar med fragetecken.",
+  },
+  {
+    id: "meningsbyggnad-mc-lag-3",
+    type: "multiple-choice",
+    topic: "meningsbyggnad",
+    ageGroup: "lagstadiet",
+    instruction: "Vilken mening ar en uppmaning?",
+    prompt: "Vilken mening ar en uppmaning?",
+    options: [
+      "Barnen leker ute.",
+      "Lek forsiktigt!",
+      "Vill du leka?",
+    ],
+    correct: 1,
+    explanation:
+      "'Lek forsiktigt!' ar en uppmaning — den talar om for nagon vad de ska gora och slutar med utropstecken.",
+  },
+];
+
+const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
+  {
+    id: "meningsbyggnad-sa-lag-1",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "lagstadiet",
+    instruction: "Hitta subjektet (den som gor nagot) och predikatet (det som gors).",
+    sentence: "Katten jagar musen.",
+    parts: [
+      { text: "Katten", role: "Subjekt" },
+      { text: "jagar", role: "Predikat" },
+      { text: "musen", role: "Objekt" },
+    ],
+    roleOptions: ["Subjekt", "Predikat", "Objekt"],
+  },
+  {
+    id: "meningsbyggnad-sa-lag-2",
+    type: "sentence-analysis",
+    topic: "meningsbyggnad",
+    ageGroup: "lagstadiet",
+    instruction: "Hitta subjektet och predikatet.",
+    sentence: "Mamma bakar bullar.",
+    parts: [
+      { text: "Mamma", role: "Subjekt" },
+      { text: "bakar", role: "Predikat" },
+      { text: "bullar", role: "Objekt" },
+    ],
+    roleOptions: ["Subjekt", "Predikat", "Objekt"],
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Skiljetecken lagstadiet (extra)
+// ---------------------------------------------------------------------------
+
+const skiljeteckenLagstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "skiljetecken-ec-lag-1",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "lagstadiet",
+    instruction: "Lagg till ratt skiljetecken i slutet av meningen.",
+    sentence: "Vad heter du",
+    correctedSentence: "Vad heter du?",
+    errorWord: "du",
+    correctWord: "du?",
+    explanation:
+      "Fragor avslutas med fragetecken (?). 'Vad heter du' ar en fraga.",
+  },
+  {
+    id: "skiljetecken-ec-lag-2",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "lagstadiet",
+    instruction: "Lagg till ratt skiljetecken.",
+    sentence: "Akta dig",
+    correctedSentence: "Akta dig!",
+    errorWord: "dig",
+    correctWord: "dig!",
+    explanation:
+      "Uppmaningar och varningar avslutas med utropstecken (!).",
+  },
+  {
+    id: "skiljetecken-ec-lag-3",
+    type: "error-correction",
+    topic: "skiljetecken",
+    ageGroup: "lagstadiet",
+    instruction: "Ratta stort/liten bokstav-felet.",
+    sentence: "jag bor i Stockholm.",
+    correctedSentence: "Jag bor i Stockholm.",
+    errorWord: "jag",
+    correctWord: "Jag",
+    explanation:
+      "Alla meningar borjar med stor bokstav. 'jag' i borjan av meningen ska vara 'Jag'.",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Ordbildning mellanstadiet
+// ---------------------------------------------------------------------------
+
+const ordbildningMellanstadietCat: CategorizationExercise[] = [
+  {
+    id: "ordbildning-cat-mel-1",
+    type: "categorization",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Sortera orden: ar de sammansatta eller inte?",
+    items: ["solsken", "flicka", "fotboll", "hund", "snogubben", "leka"],
+    categories: ["Sammansatt ord", "Enkelt ord"],
+    correctMapping: {
+      solsken: "Sammansatt ord",
+      flicka: "Enkelt ord",
+      fotboll: "Sammansatt ord",
+      hund: "Enkelt ord",
+      snogubben: "Sammansatt ord",
+      leka: "Enkelt ord",
+    },
+  },
+  {
+    id: "ordbildning-cat-mel-2",
+    type: "categorization",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Sortera orden efter andelse.",
+    items: ["gladlig", "kunskap", "vanner", "mojlig", "vänskap", "lycklig"],
+    categories: ["Andelse -lig", "Andelse -skap"],
+    correctMapping: {
+      gladlig: "Andelse -lig",
+      kunskap: "Andelse -skap",
+      vanner: "Andelse -lig",
+      mojlig: "Andelse -lig",
+      vänskap: "Andelse -skap",
+      lycklig: "Andelse -lig",
+    },
+  },
+];
+
+const ordbildningMellanstadietMC: MultipleChoiceExercise[] = [
+  {
+    id: "ordbildning-mc-mel-1",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilka tva ord bildar det sammansatta ordet?",
+    prompt: "Vad bestar 'solros' av?",
+    options: ["sol + ros", "so + ros", "sol + ors", "solr + os"],
+    correct: 0,
+    explanation:
+      "'Solros' ar sammansatt av 'sol' och 'ros' — en ros som vandar sig mot solen.",
+  },
+  {
+    id: "ordbildning-mc-mel-2",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken andelse gor ett substantiv av verbet?",
+    prompt: "Hur gor man ett substantiv av 'tanka'?",
+    options: ["tankare", "tanke", "tankning", "Alla ar korrekta"],
+    correct: 3,
+    explanation:
+      "Alla ar korrekta! '-are' (en tankare), '-e' (en tanke), '-ning' (en tankning) ar alla andelser som bildar substantiv av verb.",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Textbindning mellanstadiet
+// ---------------------------------------------------------------------------
+
+const textbindningMellanstadietFIB: FillInBlankExercise[] = [
+  {
+    id: "textbindning-fib-mel-1",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Valj ratt bindeord.",
+    sentence: "Jag ville ga ut ___ det regnade.",
+    options: ["och", "men", "for att"],
+    correct: "men",
+    explanation:
+      "'Men' anvands for att visa kontrast: jag ville ga ut, DOCK regnade det.",
+  },
+  {
+    id: "textbindning-fib-mel-2",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Valj ratt bindeord.",
+    sentence: "Vi stannade hemma ___ det var storm ute.",
+    options: ["men", "eftersom", "ocksa"],
+    correct: "eftersom",
+    explanation:
+      "'Eftersom' anger orsak: vi stannade hemma for att det var storm.",
+  },
+  {
+    id: "textbindning-fib-mel-3",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Valj ratt bindeord.",
+    sentence: "Forst akte vi till affaren, ___ gick vi hem.",
+    options: ["sedan", "men", "for att"],
+    correct: "sedan",
+    explanation:
+      "'Sedan' visar tidsföljd: forst hande det ena, sedan det andra.",
+  },
+];
+
+const textbindningMellanstadietMC: MultipleChoiceExercise[] = [
+  {
+    id: "textbindning-mc-mel-1",
+    type: "multiple-choice",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilket bindeord passar bast?",
+    prompt: "Jag tycker om glass ___ jag tycker aven om choklad.",
+    options: ["men", "och", "darfor"],
+    correct: 1,
+    explanation:
+      "'Och' binder ihop tva liknande pastaenden (jag tycker om bade glass och choklad).",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW EXERCISES – Stavning lagstadiet
+// ---------------------------------------------------------------------------
+
+const stavningLagstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "stavning-ec-lag-1",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "lagstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Jag har en hud hemma.",
+    correctedSentence: "Jag har en hund hemma.",
+    errorWord: "hud",
+    correctWord: "hund",
+    explanation:
+      "'Hund' stavas med nd pa slutet. 'Hud' ar ett annat ord som betyder skinn.",
+  },
+  {
+    id: "stavning-ec-lag-2",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "lagstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Vi sjonk en sang pa lektionen.",
+    correctedSentence: "Vi sjong en sang pa lektionen.",
+    errorWord: "sjonk",
+    correctWord: "sjong",
+    explanation:
+      "'Sjong' (av sjunga) stavas med g. 'Sjonk' (av sjunka) ar ett annat ord.",
+  },
+  {
+    id: "stavning-ec-lag-3",
+    type: "error-correction",
+    topic: "stavning",
+    ageGroup: "lagstadiet",
+    instruction: "Hitta och ratta stavfelet.",
+    sentence: "Min kompis ar jetstark.",
+    correctedSentence: "Min kompis ar jattestark.",
+    errorWord: "jetstark",
+    correctWord: "jattestark",
+    explanation:
+      "'Jattestark' stavas med atte. 'Jatte-' ar ett prefix som betyder 'mycket'.",
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Combine all exercises
 // ---------------------------------------------------------------------------
 
 export const GRAMMAR_EXERCISES: GrammarExercise[] = [
-  // 1. Ordklasser (~40)
+  // 1. Ordklasser
   ...ordklasserLagstadietMC,
   ...ordklasserLagstadietCat,
   ...ordklasserMellanstadietMC,
   ...ordklasserMellanstadietCat,
   ...ordklasserHogstadietMC,
   ...ordklasserHogstadietCat,
+  ...ordklasserHogstadietEC,
+  ...ordklasserHogstadietSA,
   ...ordklasserGymnasietMC,
   ...ordklasserGymnasietCat,
+  ...ordklasserGymnasietEC,
+  ...ordklasserGymnasietSA,
 
-  // 2. Meningsbyggnad (~24)
+  // 2. Meningsbyggnad
+  ...meningsbyggnadLagstadietMC,
+  ...meningsbyggnadLagstadietSA,
   ...meningsbyggnadMellanstadietSA,
   ...meningsbyggnadMellanstadietMC,
   ...meningsbyggnadHogstadietSA,
+  ...meningsbyggnadHogstadietSAExtra,
   ...meningsbyggnadHogstadietMC,
+  ...meningsbyggnadHogstadietEC,
   ...meningsbyggnadGymnasietSA,
+  ...meningsbyggnadGymnasietSAExtra,
   ...meningsbyggnadGymnasietMC,
+  ...meningsbyggnadGymnasietEC,
 
-  // 3. Skiljetecken (~32)
+  // 3. Skiljetecken
   ...skiljeteckenLagstadietFIB,
   ...skiljeteckenLagstadietMC,
+  ...skiljeteckenLagstadietEC,
   ...skiljeteckenMellanstadietFIB,
   ...skiljeteckenMellanstadietMC,
   ...skiljeteckenHogstadietFIB,
   ...skiljeteckenHogstadietMC,
+  ...skiljeteckenHogstadietEC,
+  ...skiljeteckenHogstadietCat,
   ...skiljeteckenGymnasietFIB,
   ...skiljeteckenGymnasietMC,
+  ...skiljeteckenGymnasietEC,
 
-  // 4. Stavning (~24)
+  // 4. Stavning
+  ...stavningLagstadietEC,
   ...stavningMellanstadietEC,
   ...stavningMellanstadietMC,
   ...stavningHogstadietEC,
+  ...stavningHogstadietECExtra,
   ...stavningHogstadietMC,
+  ...stavningHogstadietCat,
   ...stavningGymnasietEC,
+  ...stavningGymnasietECExtra,
   ...stavningGymnasietMC,
+  ...stavningGymnasietCat,
 
-  // 5. Ordbildning (~16)
+  // 5. Ordbildning
+  ...ordbildningMellanstadietCat,
+  ...ordbildningMellanstadietMC,
   ...ordbildningHogstadietCat,
   ...ordbildningHogstadietMC,
+  ...ordbildningHogstadietEC,
+  ...ordbildningHogstadietSA,
   ...ordbildningGymnasietCat,
   ...ordbildningGymnasietMC,
+  ...ordbildningGymnasietEC,
 
-  // 6. Textbindning (~16)
+  // 6. Textbindning
+  ...textbindningMellanstadietFIB,
+  ...textbindningMellanstadietMC,
   ...textbindningHogstadietFIB,
   ...textbindningHogstadietMC,
+  ...textbindningHogstadietEC,
+  ...textbindningHogstadietCat,
   ...textbindningGymnasietFIB,
   ...textbindningGymnasietMC,
+  ...textbindningGymnasietEC,
+  ...textbindningGymnasietCat,
 
-  // 7. Stilistik (~10)
+  // 7. Stilistik
+  ...stilistikHogstadietMC,
+  ...stilistikHogstadietCat,
   ...stilistikGymnasietMC,
+  ...stilistikGymnasietEC,
+  ...stilistikGymnasietCat,
 ];
