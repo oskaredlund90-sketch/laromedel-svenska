@@ -22,7 +22,6 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Accordion } from "@/components/ui/accordion";
-import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 
@@ -314,19 +313,17 @@ export default async function AgeGroupPage({ params }: Props) {
                 {g.sections.map((section) => {
                   const Icon = section.icon;
                   return (
-                    <AnimateOnScroll key={section.slug} delay={0}>
-                      <Link href={`/${arskurs}/${section.slug}`}>
-                        <Card className={`group h-full hover:-translate-y-1 hover:shadow-lg ${accent.border}`}>
-                          <CardHeader>
-                            <div className={`mb-2 flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${accent.bg}`}>
-                              <Icon className={`h-5 w-5 ${accent.icon}`} />
-                            </div>
-                            <CardTitle className="text-base">{section.title}</CardTitle>
-                            <CardDescription>{section.description}</CardDescription>
-                          </CardHeader>
-                        </Card>
-                      </Link>
-                    </AnimateOnScroll>
+                    <Link key={section.slug} href={`/${arskurs}/${section.slug}`}>
+                      <Card className={`group h-full hover:-translate-y-1 hover:shadow-lg ${accent.border}`}>
+                        <CardHeader>
+                          <div className={`mb-2 flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${accent.bg}`}>
+                            <Icon className={`h-5 w-5 ${accent.icon}`} />
+                          </div>
+                          <CardTitle className="text-base">{section.title}</CardTitle>
+                          <CardDescription>{section.description}</CardDescription>
+                        </CardHeader>
+                      </Card>
+                    </Link>
                   );
                 })}
               </div>
