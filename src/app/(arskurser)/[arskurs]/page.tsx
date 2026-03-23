@@ -14,6 +14,8 @@ import {
   MessageSquareText,
   BarChart3,
   BookOpenCheck,
+  Megaphone,
+  ShieldCheck,
 } from "lucide-react";
 import {
   Card,
@@ -134,6 +136,8 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i grammatik, stavning och läsförståelse", icon: Dumbbell },
+        { slug: "retorik", title: "Retorik", description: "Grunderna i argumentation — ethos, pathos och logos", icon: Megaphone },
+        { slug: "kallkritik", title: "Källkritik", description: "Lär dig bedöma om information är trovärdig", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för att bli en bättre läsare och skribent", icon: GraduationCap },
         { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 6", icon: ClipboardCheck },
       ],
@@ -174,6 +178,8 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i textanalys, grammatik och retorik", icon: Dumbbell },
+        { slug: "retorik", title: "Retorik", description: "Retorisk analys, argumentationsfel och debatteknik", icon: Megaphone },
+        { slug: "kallkritik", title: "Källkritik", description: "Granska källor, upptäck vinkling och faktagranska", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Tips för uppsatsskrivning, muntliga presentationer och läsförståelse", icon: GraduationCap },
         { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 9 – delprov och bedömning", icon: ClipboardCheck },
       ],
@@ -214,6 +220,8 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i textanalys, retorik, stilistik och språkhistoria", icon: Dumbbell },
+        { slug: "retorik", title: "Retorik", description: "Avancerad retorikanalys, debatteknik och argumentationslogik", icon: Megaphone },
+        { slug: "kallkritik", title: "Källkritik", description: "Källkritik med CARS-modellen, intressekonflikt och vetenskapsgranskning", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för akademiskt skrivande och muntliga presentationer", icon: GraduationCap },
         { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella proven i Svenska 1 och 3", icon: ClipboardCheck },
       ],
