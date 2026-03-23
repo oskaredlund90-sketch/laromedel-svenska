@@ -16,6 +16,7 @@ import {
   BookOpenCheck,
   Megaphone,
   ShieldCheck,
+  Quote,
 } from "lucide-react";
 import {
   Card,
@@ -96,6 +97,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Interaktiva övningar i stavning, ordklasser och läsförståelse", icon: Dumbbell },
+        { slug: "ordsprak", title: "Ordspråk och idiom", description: "Lär dig vanliga uttryck och talesätt", icon: Quote },
         { slug: "elevtips", title: "Elevtips", description: "Roliga tips för att läsa och skriva – anpassat för de yngsta", icon: GraduationCap },
         { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 3", icon: ClipboardCheck },
       ],
@@ -136,6 +138,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i grammatik, stavning och läsförståelse", icon: Dumbbell },
+        { slug: "ordsprak", title: "Ordspråk och idiom", description: "Svenska uttryck och talesätt med quiz och matchning", icon: Quote },
         { slug: "retorik", title: "Retorik", description: "Grunderna i argumentation — ethos, pathos och logos", icon: Megaphone },
         { slug: "kallkritik", title: "Källkritik", description: "Lär dig bedöma om information är trovärdig", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för att bli en bättre läsare och skribent", icon: GraduationCap },
@@ -178,6 +181,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i textanalys, grammatik och retorik", icon: Dumbbell },
+        { slug: "ordsprak", title: "Ordspråk och idiom", description: "Idiom, talesätt och bildspråk i svenska", icon: Quote },
         { slug: "retorik", title: "Retorik", description: "Retorisk analys, argumentationsfel och debatteknik", icon: Megaphone },
         { slug: "kallkritik", title: "Källkritik", description: "Granska källor, upptäck vinkling och faktagranska", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Tips för uppsatsskrivning, muntliga presentationer och läsförståelse", icon: GraduationCap },
@@ -220,6 +224,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Dumbbell,
       sections: [
         { slug: "ovningar", title: "Övningar", description: "Övningar i textanalys, retorik, stilistik och språkhistoria", icon: Dumbbell },
+        { slug: "ordsprak", title: "Ordspråk och idiom", description: "Litterära uttryck, ålderdomliga talesätt och bildspråk", icon: Quote },
         { slug: "retorik", title: "Retorik", description: "Avancerad retorikanalys, debatteknik och argumentationslogik", icon: Megaphone },
         { slug: "kallkritik", title: "Källkritik", description: "Källkritik med CARS-modellen, intressekonflikt och vetenskapsgranskning", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för akademiskt skrivande och muntliga presentationer", icon: GraduationCap },
