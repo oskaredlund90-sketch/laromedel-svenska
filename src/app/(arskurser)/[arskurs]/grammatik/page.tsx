@@ -63,7 +63,7 @@ const ALL_TOPICS: GrammarTopic[] = [
 ];
 
 const TOPICS_BY_LEVEL: Record<AgeGroup, string[]> = {
-  lagstadiet: ["ordklasser", "skiljetecken"],
+  lagstadiet: ["ordklasser", "skiljetecken", "meningsbyggnad"],
   mellanstadiet: ["ordklasser", "skiljetecken", "meningsbyggnad", "stavning"],
   hogstadiet: [
     "ordklasser",
@@ -86,7 +86,7 @@ const TOPICS_BY_LEVEL: Record<AgeGroup, string[]> = {
 
 const LEVEL_DESCRIPTIONS: Record<AgeGroup, string> = {
   lagstadiet:
-    "Grundlaggande grammatik for arskurs 1-3. Har lar du dig om ordklasser och skiljetecken.",
+    "Grundlaggande grammatik for arskurs 1-3. Har lar du dig om ordklasser, skiljetecken och meningsbyggnad.",
   mellanstadiet:
     "Grammatik for arskurs 4-6. Bygg vidare med meningsbyggnad och stavning.",
   hogstadiet:

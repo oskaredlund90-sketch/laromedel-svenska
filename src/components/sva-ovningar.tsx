@@ -36,6 +36,8 @@ const CATEGORIES: SvaCategory[] = [
   "genus",
   "ordfoljd",
   "vanliga-fel",
+  "partikelverb",
+  "utokad-ordfoljd",
 ];
 
 /* -------------------------------------------------------------------------- */
