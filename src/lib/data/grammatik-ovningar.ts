@@ -16,6 +16,7 @@ export interface GrammarExerciseBase {
   topic: string;
   ageGroup: AgeGroup;
   instruction: string;
+  relatedTextSlug?: string;
 }
 
 export interface MultipleChoiceExercise extends GrammarExerciseBase {

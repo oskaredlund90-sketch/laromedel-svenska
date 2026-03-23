@@ -64,6 +64,9 @@ function buildSearchIndex(): SearchItem[] {
       { title: "Litteraturhistoria", desc: "Svensk litteraturhistoria från medeltiden till idag", path: "litteraturhistoria" },
       { title: "Ordkunskap", desc: "Veckans ord och ordövningar", path: "ordkunskap" },
       { title: "AI i svenskan", desc: "Hur du kan använda AI-verktyg i svenskundervisningen", path: "ai-i-svenskan" },
+      { title: "Retorik", desc: "Retoriska grepp, argumentationsteknik och talekonst", path: "retorik" },
+      { title: "Källkritik", desc: "Granska och värdera källor — trovärdighetsbedömning och faktakontroll", path: "kallkritik" },
+      { title: "Ordspråk", desc: "Svenska ordspråk, talesätt och idiomatiska uttryck", path: "ordsprak" },
     ];
     sections.forEach((s) => {
       items.push({

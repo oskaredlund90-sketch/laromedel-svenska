@@ -9,7 +9,9 @@ import {
   ArrowRight,
   ArrowLeft,
   ChevronRight,
+  BookText,
 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   getExercisesForTopic,
@@ -977,6 +979,17 @@ export function GrammatikOvningar({ topic, ageGroup }: GrammatikOvningarProps) {
             isCorrect={isCorrect}
             onAnswer={handleAnswer}
           />
+        )}
+
+        {/* Related text link */}
+        {answered && currentExercise.relatedTextSlug && (
+          <Link
+            href={`/${ageGroup}/textbank/${currentExercise.relatedTextSlug}`}
+            className="mt-3 inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
+          >
+            <BookText className="h-4 w-4" />
+            Relaterad text i textbanken
+          </Link>
         )}
 
         {/* Navigation */}

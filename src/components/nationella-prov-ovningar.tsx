@@ -143,6 +143,72 @@ Ali och mamma jobbade hela eftermiddagen. N\u00e4r b\u00e5ten var klar hade det 
       },
     ],
   },
+  {
+    title: "Myran och biet",
+    text: `En liten myra bar ett stort br\u00f6dsmul\u00f6ver \u00e4ngen. Det var tungt och solen var varm. Myran pustade och stannade f\u00f6r att vila.
+
+"Beh\u00f6ver du hj\u00e4lp?" fr\u00e5gade ett bi som fl\u00f6g f\u00f6rbi. "Jag kan inte b\u00e4ra br\u00f6d, men jag kan visa en kortare v\u00e4g."
+
+Biet fl\u00f6g f\u00f6re och myran f\u00f6ljde efter. Snart var de framme vid myrst\u00e4cken. "Tack!" sa myran. "Ibland beh\u00f6ver man inte starka armar \u2013 bara en bra v\u00e4n."`,
+    questions: [
+      {
+        prompt: "Vad bar myran \u00f6ver \u00e4ngen?",
+        options: ["Ett l\u00f6v", "Ett br\u00f6dsmul", "En pinne", "Ett b\u00e4r"],
+        correct: 1,
+        explanation: "Myran bar ett stort br\u00f6dsmul \u00f6ver \u00e4ngen.",
+      },
+      {
+        prompt: "Hur hj\u00e4lpte biet myran?",
+        options: [
+          "Biet bar br\u00f6dsmulet \u00e5t myran",
+          "Biet visade en kortare v\u00e4g",
+          "Biet h\u00e4mtade vatten",
+          "Biet ropade p\u00e5 fler myror",
+        ],
+        correct: 1,
+        explanation: "Biet kunde inte b\u00e4ra br\u00f6d men visade en kortare v\u00e4g till myrst\u00e4cken.",
+      },
+      {
+        prompt: "Vad l\u00e4r sig myran i ber\u00e4ttelsen?",
+        options: [
+          "Att man ska vara stark",
+          "Att man ibland beh\u00f6ver en bra v\u00e4n, inte bara styrka",
+          "Att bin \u00e4r b\u00e4ttre \u00e4n myror",
+          "Att man aldrig ska vila",
+        ],
+        correct: 1,
+        explanation: "Myran s\u00e4ger att man ibland beh\u00f6ver en bra v\u00e4n, inte bara starka armar.",
+      },
+    ],
+  },
+  {
+    title: "P\u00e5 bondg\u00e5rden",
+    text: `Nora och hennes familj bes\u00f6kte en bondg\u00e5rd p\u00e5 h\u00f6stlovet. D\u00e4r fanns kor, h\u00f6ns och en stor gris som hette Bansen. Bonden visade dem hur man mj\u00f6lkade en ko.
+
+"F\u00e5r jag prova?" fr\u00e5gade Nora. Hon var lite nervs men bonden hj\u00e4lpte henne. Mj\u00f6lken skvalpade ner i hinken! Nora log stort.
+
+Sedan fick de mata h\u00f6nsen. Nora kastade ut korn och h\u00f6nsen kom springande. "De \u00e4r j\u00e4ttehungriga!" skrattade hon. P\u00e5 hemv\u00e4gen sa Nora: "Jag vill bli bonde n\u00e4r jag blir stor."`,
+    questions: [
+      {
+        prompt: "N\u00e4r bes\u00f6kte Nora bondg\u00e5rden?",
+        options: ["P\u00e5 sommarlovet", "P\u00e5 h\u00f6stlovet", "P\u00e5 en vanlig skoldag", "P\u00e5 jullovet"],
+        correct: 1,
+        explanation: "Nora och hennes familj bes\u00f6kte bondg\u00e5rden p\u00e5 h\u00f6stlovet.",
+      },
+      {
+        prompt: "Vad fick Nora prova att g\u00f6ra?",
+        options: ["Rida p\u00e5 en h\u00e4st", "Mj\u00f6lka en ko", "K\u00f6ra en traktor", "Klippa ett f\u00e5r"],
+        correct: 1,
+        explanation: "Nora fick prova att mj\u00f6lka en ko med hj\u00e4lp av bonden.",
+      },
+      {
+        prompt: "Vad ville Nora bli n\u00e4r hon blev stor?",
+        options: ["L\u00e4rare", "Doktor", "Bonde", "Kock"],
+        correct: 2,
+        explanation: "P\u00e5 hemv\u00e4gen sa Nora att hon ville bli bonde n\u00e4r hon blev stor.",
+      },
+    ],
+  },
 ];
 
 const LAGSTADIET_WORDS: WordQuestion[] = [
@@ -176,6 +242,18 @@ const LAGSTADIET_WORDS: WordQuestion[] = [
     options: ["Springer snabbt", "G\u00e5r tyst och f\u00f6rsiktigt", "Hoppar h\u00f6gt", "Sover djupt"],
     correct: 1,
   },
+  {
+    sentence: "Katten kurrade n\u00f6jt i soffan.",
+    targetWord: "kurrade",
+    options: ["Skrek h\u00f6gt", "Spann och l\u00e4t mjukt", "Hoppade runt", "Sov tungt"],
+    correct: 1,
+  },
+  {
+    sentence: "Det var s\u00e5 dimmigt att vi knappt kunde urskilja tr\u00e4den.",
+    targetWord: "urskilja",
+    options: ["Kl\u00e4ttra i", "Se tydligt", "R\u00e4kna", "M\u00e5la"],
+    correct: 1,
+  },
 ];
 
 const LAGSTADIET_WRITING: WritingPrompt[] = [
@@ -198,6 +276,17 @@ const LAGSTADIET_WRITING: WritingPrompt[] = [
       "F\u00f6rklara varf\u00f6r",
       "Beskriv vad ni skulle g\u00f6ra ihop",
       "Anv\u00e4nd bindeord som \u201doch\u201d, \u201dmen\u201d, \u201df\u00f6r att\u201d",
+    ],
+  },
+  {
+    title: "Mitt favoritdjur",
+    description: "Skriv om ditt favoritdjur! Beskriv hur djuret ser ut, var det bor, vad det \u00e4ter och varf\u00f6r du tycker om det. Skriv minst fem meningar.",
+    checklist: [
+      "Har du ber\u00e4ttat vilket djur det \u00e4r?",
+      "Har du beskrivit hur djuret ser ut?",
+      "Har du skrivit vad djuret \u00e4ter?",
+      "Har du f\u00f6rklarat varf\u00f6r du tycker om djuret?",
+      "Har du stor bokstav i b\u00f6rjan av varje mening?",
     ],
   },
 ];
@@ -295,6 +384,98 @@ Kvinnorna hade en viktig roll i det nordiska samh\u00e4llet. De sk\u00f6tte g\u0
       },
     ],
   },
+  {
+    title: "Biblioteket som f\u00f6rsvann",
+    text: `En morgon n\u00e4r Hanna kom till skolan stod d\u00f6rren till biblioteket \u00f6ppen p\u00e5 vid gavel. Men n\u00e4r hon tittade in var alla bokhyllor tomma! Inte en enda bok fanns kvar.
+
+"Vad har h\u00e4nt?" ropade hon till vaktm\u00e4staren. Han log hemlighetsfullt. "Titta i gymnastiksalen," sa han.
+
+Hanna sprang dit och \u00f6ppnade d\u00f6rren. D\u00e4r inne hade n\u00e5gon byggt ett j\u00e4ttelikt bokslott! B\u00f6ckerna stod i h\u00f6gar som torn, med tyger som draperier och ljusslingor i taket. En skylt sa: "Bokens dag \u2013 v\u00e4lkommen till l\u00e4sslottet!"
+
+Fr\u00f6ken Maja stod i mitten utkl\u00e4dd till riddare. "Idag l\u00e4ser vi \u00e4ventyr!" sa hon. Alla elever fick v\u00e4lja en bok och s\u00e4tta sig i en av slottets h\u00f6rnor. Hanna valde en bok om drakar och gl\u00f6mde helt bort tiden.`,
+    questions: [
+      {
+        prompt: "Varf\u00f6r var biblioteket tomt?",
+        options: [
+          "N\u00e5gon hade stulit b\u00f6ckerna",
+          "Biblioteket var st\u00e4ngt f\u00f6r renovering",
+          "B\u00f6ckerna hade flyttats till gymnastiksalen f\u00f6r Bokens dag",
+          "B\u00f6ckerna hade \u00e5terl\u00e4mnats till bokhandeln",
+        ],
+        correct: 2,
+        explanation: "B\u00f6ckerna hade flyttats till gymnastiksalen d\u00e4r ett l\u00e4sslott hade byggts f\u00f6r Bokens dag.",
+      },
+      {
+        prompt: "Vad var fr\u00f6ken Maja utkl\u00e4dd till?",
+        options: ["En prinsessa", "En riddare", "En drake", "En h\u00e4xa"],
+        correct: 1,
+        explanation: "Fr\u00f6ken Maja stod i mitten av l\u00e4sslottet utkl\u00e4dd till riddare.",
+      },
+      {
+        prompt: "Vad valde Hanna f\u00f6r typ av bok?",
+        options: ["En bok om h\u00e4star", "En bok om rymden", "En bok om drakar", "En kokbok"],
+        correct: 2,
+        explanation: "Hanna valde en bok om drakar och gl\u00f6mde helt bort tiden.",
+      },
+      {
+        prompt: "Hur reagerade vaktm\u00e4staren n\u00e4r Hanna fr\u00e5gade vad som h\u00e4nt?",
+        options: [
+          "Han blev orolig",
+          "Han log hemlighetsfullt och sa att hon skulle titta i gymnastiksalen",
+          "Han visste inte vad som h\u00e4nt",
+          "Han ringde polisen",
+        ],
+        correct: 1,
+        explanation: "Vaktm\u00e4staren log hemlighetsfullt och tipsade Hanna om att titta i gymnastiksalen.",
+      },
+    ],
+  },
+  {
+    title: "Den magiska tr\u00e4dg\u00e5rden",
+    text: `Bakom mormors hus fanns en tr\u00e4dg\u00e5rd som Olle tyckte var magisk. D\u00e4r v\u00e4xte \u00e4ppeltr\u00e4d, solrosor och b\u00e4rbuskar. P\u00e5 sommaren surrade bin och fj\u00e4rilar \u00f6verallt.
+
+Mormor hade l\u00e4rt Olle namnen p\u00e5 alla blommor. "Den h\u00e4r heter blodrot," sa hon och pekade p\u00e5 en liten gul blomma. "Den anv\u00e4ndes f\u00f6rr som medicin."
+
+Olle hade f\u00e5tt en egen liten bit av tr\u00e4dg\u00e5rden d\u00e4r han fick plantera vad han ville. Han s\u00e5dde solf\u00f6ljare, morots- och pumpafr\u00f6n. Varje g\u00e5ng han bes\u00f6kte mormor sprang han f\u00f6rst ut f\u00f6r att se om n\u00e5got hade vuxit.
+
+I slutet av sommaren sk\u00f6rdade han sin f\u00f6rsta pumpa. Den var inte s\u00e5 stor, men Olle tyckte att det var det finaste han n\u00e5gonsin sett.`,
+    questions: [
+      {
+        prompt: "Var l\u00e5g den magiska tr\u00e4dg\u00e5rden?",
+        options: ["Bredvid skolan", "Bakom mormors hus", "I en park", "P\u00e5 en bondg\u00e5rd"],
+        correct: 1,
+        explanation: "Tr\u00e4dg\u00e5rden l\u00e5g bakom mormors hus.",
+      },
+      {
+        prompt: "Vad hade mormor l\u00e4rt Olle?",
+        options: [
+          "Att laga mat",
+          "Namnen p\u00e5 alla blommor",
+          "Att simma",
+          "Att cykla",
+        ],
+        correct: 1,
+        explanation: "Mormor hade l\u00e4rt Olle namnen p\u00e5 alla blommor i tr\u00e4dg\u00e5rden.",
+      },
+      {
+        prompt: "Vad planterade Olle i sin egen del av tr\u00e4dg\u00e5rden?",
+        options: [
+          "Rosor och tulpaner",
+          "Solf\u00f6ljare, mor\u00f6tter och pumpor",
+          "\u00c4ppeltr\u00e4d",
+          "Jordgubbar",
+        ],
+        correct: 1,
+        explanation: "Olle s\u00e5dde solf\u00f6ljare, morots- och pumpafr\u00f6n.",
+      },
+      {
+        prompt: "Vad sk\u00f6rdade Olle i slutet av sommaren?",
+        options: ["Mor\u00f6tter", "En stor pumpa", "En liten pumpa", "Solrosfr\u00f6n"],
+        correct: 2,
+        explanation: "Olle sk\u00f6rdade sin f\u00f6rsta pumpa som inte var s\u00e5 stor men som han tyckte var j\u00e4ttefin.",
+      },
+    ],
+  },
 ];
 
 const MELLANSTADIET_WORDS: WordQuestion[] = [
@@ -328,6 +509,18 @@ const MELLANSTADIET_WORDS: WordQuestion[] = [
     options: ["Tyst och stilla", "Trivsam och samst\u00e4mmig", "H\u00f6gljudd och glad", "Sp\u00e4nd och orolig"],
     correct: 1,
   },
+  {
+    sentence: "Expeditionen till Antarktis kr\u00e4vde noggranna f\u00f6rberedelser.",
+    targetWord: "expeditionen",
+    options: ["Resan eller f\u00e4rden", "Lektionen", "T\u00e4vlingen", "Utflykten till affren"],
+    correct: 0,
+  },
+  {
+    sentence: "Det var tydligt att hunden var lydig och f\u00f6ljde alla kommandon.",
+    targetWord: "lydig",
+    options: ["Arg och elak", "Tr\u00f6tt och slapp", "Foglig och h\u00f6rsam", "Glad och lekfull"],
+    correct: 2,
+  },
 ];
 
 const MELLANSTADIET_WRITING: WritingPrompt[] = [
@@ -350,6 +543,18 @@ const MELLANSTADIET_WRITING: WritingPrompt[] = [
       "F\u00f6rklara tydligt vad uppfinningen g\u00f6r",
       "Ge minst tv\u00e5 argument f\u00f6r varf\u00f6r den \u00e4r viktig",
       "Avsluta med en sammanfattande mening",
+      "Anv\u00e4nd styckeindelning",
+    ],
+  },
+  {
+    title: "Brev till en v\u00e4n om en resa",
+    description: "Skriv ett brev till en v\u00e4n d\u00e4r du ber\u00e4ttar om en resa du har gjort (eller hittar p\u00e5). Beskriv vart du reste, vad du upplevde och vad som var b\u00e4st. Anv\u00e4nd brevets form med h\u00e4lsningsfras och avslut.",
+    checklist: [
+      "B\u00f6rja brevet med en h\u00e4lsning (t.ex. \u201dHej Kalle!\u201d)",
+      "Beskriv vart du reste och hur det var d\u00e4r",
+      "Ber\u00e4tta om minst tv\u00e5 saker du upplevde",
+      "F\u00f6rklara vad som var allra b\u00e4st",
+      "Avsluta brevet med en avslutningsfras",
       "Anv\u00e4nd styckeindelning",
     ],
   },
@@ -454,6 +659,96 @@ F\u00f6rspr\u00e5kare h\u00e4vdar dock att algoritmerna g\u00f6r internet anv\u0
       },
     ],
   },
+  {
+    title: "Tystnaden i rummet",
+    text: `Det var Saras f\u00f6rsta dag p\u00e5 den nya skolan. Hon stod utanf\u00f6r klassrummet med ryggs\u00e4cken h\u00e5rt pressad mot ryggen, som om den kunde skydda henne fr\u00e5n blickarna d\u00e4rinne.
+
+N\u00e4r hon \u00f6ppnade d\u00f6rren tystnade alla. Tjugofem par \u00f6gon v\u00e4ndes mot henne. Sara k\u00e4nde hur kinderna blev varma och s\u00f6kte desperat efter en ledig plats.
+
+"Sara! V\u00e4lkommen!" L\u00e4raren, en kvinna med v\u00e4nliga \u00f6gon, pekade mot en plats vid f\u00f6nstret. Bredvid satt en tjej med lockigt h\u00e5r som log snett mot henne.
+
+"Jag heter Mira," viskade hon. "Var inte orolig. Jag var ocks\u00e5 ny f\u00f6rra terminen."
+
+I det \u00f6gonblicket l\u00e4ttade n\u00e5got i Saras br\u00f6st. Kanske var den h\u00e4r skolan inte s\u00e5 skr\u00e4mmande \u00e4nd\u00e5.`,
+    questions: [
+      {
+        prompt: "Vad symboliserar ryggs\u00e4cken i textens \u00f6ppning?",
+        options: [
+          "Att Sara har mycket l\u00e4xor",
+          "Att Sara anv\u00e4nder den som en k\u00e4nslom\u00e4ssig sk\u00f6ld",
+          "Att ryggs\u00e4cken \u00e4r ny och dyr",
+          "Att Sara planerar att springa d\u00e4rifr\u00e5n",
+        ],
+        correct: 1,
+        explanation: "Ryggs\u00e4cken beskrivs som n\u00e5got Sara trycker mot ryggen f\u00f6r skydd, vilket symboliserar hennes behov av trygghet.",
+      },
+      {
+        prompt: "Varf\u00f6r tystnade klassen n\u00e4r Sara kom in?",
+        options: [
+          "L\u00e4raren bad dem vara tysta",
+          "Det \u00e4r en naturlig reaktion n\u00e4r n\u00e5gon ny kommer in",
+          "De var mitt i ett prov",
+          "Sara ropade n\u00e5got h\u00f6gt",
+        ],
+        correct: 1,
+        explanation: "Tystnaden speglar nyfikenheten som uppst\u00e5r n\u00e4r n\u00e5gon ny kl\u00e4ver in i en redan etablerad grupp.",
+      },
+      {
+        prompt: "Vilken funktion fyller Miras replik i ber\u00e4ttelsen?",
+        options: [
+          "Den visar att Mira \u00e4r blyg",
+          "Den skapar hopp genom igenkm\u00e4nning \u2013 Mira har varit i samma situation",
+          "Den visar att skolan ofta byter elever",
+          "Den \u00e4r of\u00f6rlig f\u00f6r handlingen",
+        ],
+        correct: 1,
+        explanation: "Miras ord skapar en k\u00e4nsla av gemenskap och f\u00f6rst\u00e5else som l\u00e4ttar Saras oro.",
+      },
+    ],
+  },
+  {
+    title: "Spr\u00e5kets makt",
+    text: `Spr\u00e5k \u00e4r inte bara ett verktyg f\u00f6r kommunikation \u2013 det formar ocks\u00e5 hur vi uppfattar v\u00e4rlden. Forskare inom lingvistik har visat att personer som talar olika spr\u00e5k kan uppleva tid, f\u00e4rger och riktningar p\u00e5 skilda s\u00e4tt.
+
+Till exempel beskriver vissa spr\u00e5k i Australien inte riktningar som \u201dh\u00f6ger\u201d och \u201dv\u00e4nster\u201d, utan anv\u00e4nder v\u00e4derstrecken. Det inneb\u00e4r att talarna alltid m\u00e5ste vara medvetna om var norr \u00e4r, vilket ger dem en remarkabel rumslig orientering.
+
+Spr\u00e5k kan ocks\u00e5 anv\u00e4ndas f\u00f6r att p\u00e5verka. Retorik, propaganda och reklam utnyttjar alla spr\u00e5kets kraft f\u00f6r att styra tankar och k\u00e4nslor. Att vara medveten om hur spr\u00e5k p\u00e5verkar oss \u00e4r d\u00e4rf\u00f6r en viktig del av att vara en kritisk medborgare.`,
+    questions: [
+      {
+        prompt: "Vad menar texten med att spr\u00e5k \u201dformar hur vi uppfattar v\u00e4rlden\u201d?",
+        options: [
+          "Att alla spr\u00e5k \u00e4r likadana",
+          "Att spr\u00e5ket vi talar p\u00e5verkar hur vi t\u00e4nker och upplever saker",
+          "Att man m\u00e5ste kunna m\u00e5nga spr\u00e5k f\u00f6r att f\u00f6rst\u00e5 v\u00e4rlden",
+          "Att spr\u00e5k bara handlar om grammatik",
+        ],
+        correct: 1,
+        explanation: "Texten beskriver hur spr\u00e5ket vi talar p\u00e5verkar v\u00e5r uppfattning av tid, f\u00e4rger och riktningar.",
+      },
+      {
+        prompt: "Varf\u00f6r n\u00e4mns australiska spr\u00e5k i texten?",
+        options: [
+          "F\u00f6r att visa att australier \u00e4r b\u00e4ttre p\u00e5 spr\u00e5k",
+          "Som ett exempel p\u00e5 hur spr\u00e5k p\u00e5verkar rumslig uppfattning",
+          "F\u00f6r att j\u00e4mf\u00f6ra med svenska",
+          "F\u00f6r att visa att deras spr\u00e5k \u00e4r \u00e4ldst",
+        ],
+        correct: 1,
+        explanation: "Exemplet anv\u00e4nds f\u00f6r att visa hur spr\u00e5k som saknar \u201dh\u00f6ger\u201d och \u201dv\u00e4nster\u201d ger talarna en annorlunda rumslig orientering.",
+      },
+      {
+        prompt: "Vilken slutsats drar texten om spr\u00e5k och medborgarskap?",
+        options: [
+          "Att man borde l\u00e4ra sig fler spr\u00e5k",
+          "Att medvetenhet om spr\u00e5kets p\u00e5verkan \u00e4r viktig f\u00f6r att vara en kritisk medborgare",
+          "Att reklam alltid \u00e4r l\u00f6gn",
+          "Att politiska tal b\u00f6r f\u00f6rbjudas",
+        ],
+        correct: 1,
+        explanation: "Texten menar att f\u00f6rst\u00e5elsen av hur spr\u00e5k p\u00e5verkar oss \u00e4r en viktig del av kritiskt medborgarskap.",
+      },
+    ],
+  },
 ];
 
 const HOGSTADIET_WORDS: WordQuestion[] = [
@@ -492,6 +787,12 @@ const HOGSTADIET_WORDS: WordQuestion[] = [
     options: ["Avsikter och syften", "Misstag", "Stilval", "K\u00e4nslor"],
     correct: 0,
   },
+  {
+    sentence: "Rapporten ger en nyanserad bild av ungdomars medievanor.",
+    targetWord: "nyanserad",
+    options: ["F\u00f6renklad", "M\u00e5ngsidigt och detaljerat beskriven", "Negativ", "\u00d6verdrivet positiv"],
+    correct: 1,
+  },
 ];
 
 const HOGSTADIET_WRITING: WritingPrompt[] = [
@@ -517,6 +818,30 @@ const HOGSTADIET_WRITING: WritingPrompt[] = [
       "Bem\u00f6t minst ett motargument",
       "Sammanfatta och f\u00f6rst\u00e4rk din tes i avslutningen",
       "Anv\u00e4nd bindeord: \u201dd\u00e4rf\u00f6r\u201d, \u201ddessutom\u201d, \u201d\u00e5 andra sidan\u201d",
+    ],
+  },
+  {
+    title: "Argumenterande text: Djurh\u00e5llning och etik",
+    description: "B\u00f6r vi \u00e4ta mindre k\u00f6tt av etiska sk\u00e4l? Ta st\u00e4llning och skriv en argumenterande text d\u00e4r du resonerar kring djurh\u00e5llning, milj\u00f6p\u00e5verkan och personligt ansvar. Anv\u00e4nd minst tre argument och bem\u00f6t ett motargument.",
+    checklist: [
+      "Ange din \u00e5sikt tydligt i inledningen",
+      "Presentera tre argument med st\u00f6d och exempel",
+      "Bem\u00f6t minst ett motargument sakligt",
+      "Anv\u00e4nd bindeord f\u00f6r att binda ihop resonemangen",
+      "Avsluta med en sammanfattande slutsats",
+      "Tydlig styckeindelning och korrekt meningsbyggnad",
+    ],
+  },
+  {
+    title: "Ber\u00e4ttande text: F\u00f6r\u00e4ndringen",
+    description: "Skriv en ber\u00e4ttelse om en person som g\u00e5r igenom en f\u00f6r\u00e4ndring. Det kan vara en yttre f\u00f6r\u00e4ndring (flytt, ny skola) eller en inre f\u00f6r\u00e4ndring (nytt perspektiv, mognad). L\u00e5t l\u00e4saren f\u00f6lja huvudpersonens tankar och k\u00e4nslor.",
+    checklist: [
+      "B\u00f6rja mitt i handlingen f\u00f6r att skapa sp\u00e4nning",
+      "Beskriv milj\u00f6 och personer med sinnliga detaljer",
+      "L\u00e5t huvudpersonens inre tankar synas i texten",
+      "Bygg mot en v\u00e4ndpunkt eller insikt",
+      "Variera meningsbyggnad och tempo",
+      "Anv\u00e4nd dialog f\u00f6r att driva handlingen fram\u00e5t",
     ],
   },
 ];
@@ -612,6 +937,92 @@ Att skriva under f\u00f6rtryck kr\u00e4ver ofta att man arbetar med spr\u00e5ket
       },
     ],
   },
+  {
+    title: "Det gr\u00f6na skiftet \u2013 m\u00f6jligheter och konflikter",
+    text: `Omst\u00e4llningen till ett fossilfritt samh\u00e4lle framst\u00e4lls ofta som en teknisk utmaning, men den \u00e4r minst lika mycket en social och politisk fr\u00e5ga. N\u00e4r gruvor ska \u00f6ppnas f\u00f6r att utvinna mineraler till batterier och vindkraftparker placeras i n\u00e4rheten av bostadsomr\u00e5den, uppst\u00e5r konflikter mellan globala klimatm\u00e5l och lokala intressen.
+
+I norra Sverige har etableringen av ny industri f\u00f6r gr\u00f6n teknik lett till en inflyttningsboom som pressar bostadsmarknaden och f\u00f6r\u00e4ndrar sm\u00e5samh\u00e4llens karakt\u00e4r. Kritiker menar att lokalbefolkningens r\u00f6st ofta f\u00f6rsvinner i debatten, medan f\u00f6rspr\u00e5kare betonar att omst\u00e4llningen skapar arbetstillf\u00e4llen och framtidshopp.
+
+Filosofen Hans Jonas myntade begreppet \u201dansvarspr\u00e4principen\u201d \u2013 id\u00e9n att vi har ett moraliskt ansvar mot framtida generationer. Fr\u00e5gan som kvarst\u00e5r \u00e4r vem som b\u00e4r kostnaden f\u00f6r detta ansvar, och hur r\u00e4ttvisan i omst\u00e4llningen kan s\u00e4kerst\u00e4llas.`,
+    questions: [
+      {
+        prompt: "Vilken huvudsaklig sp\u00e4nning identifierar texten i det gr\u00f6na skiftet?",
+        options: [
+          "Sp\u00e4nningen mellan olika politiska partier",
+          "Konflikten mellan globala klimatm\u00e5l och lokala intressen",
+          "Sp\u00e4nningen mellan stad och landsbygd generellt",
+          "Konflikten mellan Sverige och andra l\u00e4nder",
+        ],
+        correct: 1,
+        explanation: "Texten lyfter fram sp\u00e4nningen mellan globala klimatm\u00e5l och de lokala konsekvenserna av omst\u00e4llningen.",
+      },
+      {
+        prompt: "Vad inneb\u00e4r Hans Jonas \u201dansvarspr\u00e4principen\u201d enligt texten?",
+        options: [
+          "Att f\u00f6retag ska betala mer skatt",
+          "Att vi har ett moraliskt ansvar mot framtida generationer",
+          "Att politikerna alltid har r\u00e4tt",
+          "Att individen aldrig b\u00e4r ansvar",
+        ],
+        correct: 1,
+        explanation: "Ansvarsprincipen handlar om v\u00e5rt moraliska ansvar gentemot kommande generationer.",
+      },
+      {
+        prompt: "Vilken retorisk fr\u00e5ga avslutar texten och varf\u00f6r?",
+        options: [
+          "Om klimatf\u00f6r\u00e4ndringarna \u00e4r verkliga \u2013 f\u00f6r att iv\u00e5gas\u00e4tta forskningen",
+          "Vem som b\u00e4r kostnaden och hur r\u00e4ttvisan s\u00e4kerst\u00e4lls \u2013 f\u00f6r att lyfta omst\u00e4llningens etiska dimension",
+          "Om gruvor \u00e4r bra \u2013 f\u00f6r att avsluta med ett klart svar",
+          "Om norra Sverige beh\u00f6ver fler inv\u00e5nare \u2013 f\u00f6r att vara kontroversiell",
+        ],
+        correct: 1,
+        explanation: "Fr\u00e5gan om vem som b\u00e4r kostnaden lyfter textens centrala etiska problematik.",
+      },
+    ],
+  },
+  {
+    title: "Ironi och allvar i kr\u00f6nikan",
+    text: `Kr\u00f6nikan som genre balanserar p\u00e5 gr\u00e4nsen mellan personligt och allm\u00e4nt, mellan humor och allvar. En skicklig kr\u00f6nik\u00f6r kan f\u00e5 l\u00e4saren att skratta och t\u00e4nka i samma mening. Det \u00e4r denna dubbelhet som g\u00f6r kr\u00f6nikan s\u00e5 effektiv.
+
+Ironi \u00e4r ett av kr\u00f6nikans mest anv\u00e4nda verktyg. Genom att s\u00e4ga en sak men mena n\u00e5got annat skapar skribenten en complicitet med l\u00e4saren \u2013 en tyst \u00f6verenskommelse om att texten har fler lager \u00e4n det uppenbara. N\u00e4r Jonas Gardell skriver att \u201ddet vore v\u00e4l fint om alla alltid var snlla\u201d f\u00f6rst\u00e5r de flesta att han egentligen pekar p\u00e5 n\u00e5got mer komplicerat.
+
+Men ironi kr\u00e4ver f\u00f6rkunskap. Den som inte delar skribentens referensram riskerar att missa pomngen. D\u00e4rf\u00f6r \u00e4r kr\u00f6nikan i grunden en demokratisk men ocks\u00e5 exkluderande genre \u2013 \u00f6ppen f\u00f6r alla, men med ett inneh\u00e5ll som kr\u00e4ver l\u00e4sf\u00f6rm\u00e5ga p\u00e5 flera niv\u00e5er.`,
+    questions: [
+      {
+        prompt: "Vad menas med \u201dcomplicitet\u201d mellan skribent och l\u00e4sare?",
+        options: [
+          "Att de k\u00e4nner varandra personligen",
+          "En tyst \u00f6verenskommelse om att texten har fler lager \u00e4n det uppenbara",
+          "Att l\u00e4saren alltid h\u00e5ller med skribenten",
+          "Att texten \u00e4r sv\u00e5rbegriplig f\u00f6r alla",
+        ],
+        correct: 1,
+        explanation: "Compliciteten inneb\u00e4r en delad f\u00f6rst\u00e5else om att ironin b\u00e4r ett djupare budskap.",
+      },
+      {
+        prompt: "Varf\u00f6r beskrivs kr\u00f6nikan som b\u00e5de \u201ddemokratisk\u201d och \u201dexkluderande\u201d?",
+        options: [
+          "F\u00f6r att den bara publiceras i betalmedier",
+          "F\u00f6r att den \u00e4r tillg\u00e4nglig f\u00f6r alla men kr\u00e4ver f\u00f6rkunskap f\u00f6r att fullt uppskattas",
+          "F\u00f6r att bara vissa f\u00e5r skriva kr\u00f6nikor",
+          "F\u00f6r att den \u00e4r skriven p\u00e5 ett sv\u00e5rt spr\u00e5k",
+        ],
+        correct: 1,
+        explanation: "Kr\u00f6nikan \u00e4r \u00f6ppen f\u00f6r alla att l\u00e4sa, men dess ironiska lager kr\u00e4ver referenskunskap.",
+      },
+      {
+        prompt: "Vilken funktion fyller exemplet med Jonas Gardell i texten?",
+        options: [
+          "Det visar att Gardell \u00e4r en d\u00e5lig f\u00f6rfattare",
+          "Det illustrerar hur ironi fungerar i praktiken",
+          "Det motbevisar textens huvudargument",
+          "Det \u00e4r irrelevant f\u00f6r sammanhanget",
+        ],
+        correct: 1,
+        explanation: "Gardell-exemplet anv\u00e4nds f\u00f6r att konkret illustrera hur ironin skapar ett djupare meningslager.",
+      },
+    ],
+  },
 ];
 
 const GYMNASIET_WORDS: WordQuestion[] = [
@@ -655,6 +1066,12 @@ const GYMNASIET_WORDS: WordQuestion[] = [
     options: ["F\u00f6rvirrande", "Tydligt s\u00e4rskiljande och unik", "Vanlig", "Gammalmodig"],
     correct: 1,
   },
+  {
+    sentence: "Romanens narrativ dekonstruerar den traditionella hj\u00e4ltebilden.",
+    targetWord: "dekonstruerar",
+    options: ["F\u00f6rst\u00e4rker", "Plockar is\u00e4r och ifr\u00e5gas\u00e4tter", "Kopierar", "F\u00f6renklar"],
+    correct: 1,
+  },
 ];
 
 const GYMNASIET_WRITING: WritingPrompt[] = [
@@ -682,6 +1099,32 @@ const GYMNASIET_WRITING: WritingPrompt[] = [
       "Visa p\u00e5 samband mellan form och inneh\u00e5ll",
       "Formulera en \u00f6vergripande tolkning",
       "Akademiskt register med tydlig disposition",
+    ],
+  },
+  {
+    title: "Ut\u00f6kad ess\u00e4: Identitet i en globaliserad v\u00e4rld",
+    description: "Skriv en ut\u00f6kad ess\u00e4 d\u00e4r du resonerar kring hur globaliseringen p\u00e5verkar individuell och kulturell identitet. Utg\u00e5 fr\u00e5n begrepp som kulturell hybriditet, tillh\u00f6righet och sj\u00e4lvbild. Integrera minst ett teoretiskt perspektiv och anv\u00e4nd konkreta exempel.",
+    checklist: [
+      "Formulera en tydlig fr\u00e5gest\u00e4llning som driver texten",
+      "Definiera centrala begrepp som identitet och globalisering",
+      "Integrera minst ett teoretiskt perspektiv (t.ex. Hall, Bauman)",
+      "V\u00e4xla mellan abstrakta resonemang och konkreta exempel",
+      "Problematisera \u2013 undvik f\u00f6renklade slutsatser",
+      "Avsluta med en reflekterande syntes",
+      "Akademisk ton med spr\u00e5klig precision",
+    ],
+  },
+  {
+    title: "Retorisk analys: Ett politiskt tal",
+    description: "V\u00e4lj ett politiskt tal (t.ex. ett riksdagstal, ett partiledart tal eller ett historiskt tal) och g\u00f6r en retorisk analys. Unders\u00f6k hur talaren anv\u00e4nder ethos, pathos och logos f\u00f6r att \u00f6vertyga. Analysera \u00e4ven spr\u00e5kliga medel som metaforer, upprepning och kontraster.",
+    checklist: [
+      "Presentera talet och dess kontext kort",
+      "Identifiera och analysera ethos, pathos och logos",
+      "Ge konkreta exempel p\u00e5 spr\u00e5kliga och retoriska medel",
+      "Diskutera talets m\u00e5lgrupp och syfte",
+      "V\u00e4rdera talets effektivitet med st\u00f6d i din analys",
+      "Anv\u00e4nd retoriska facktermer korrekt",
+      "Tydlig disposition med inledning, analys och avslutning",
     ],
   },
 ];
