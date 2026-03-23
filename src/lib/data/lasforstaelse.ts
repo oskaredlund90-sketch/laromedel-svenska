@@ -153,178 +153,175 @@ const lagstadietTexts: ReadingText[] = [
       },
     ],
   },
-  {
+    {
     id: "las-lag-3",
     ageGroup: "lagstadiet",
-    title: "Den röda bollen",
+    title: "Huset vid skogen",
     passage:
-      "Maja hittade en röd boll i parken. Den var stor och blank. Hon studsade bollen på gången och den hoppade högt. " +
-      "Plötsligt kom en hund springande och tog bollen i munnen. Maja blev ledsen. " +
-      "Men hundens ägare, en äldre dam, kom fram och sa: \"Förlåt! Buster älskar bollar.\" " +
-      "Damen tog bollen från hunden och gav den tillbaka till Maja. " +
-      "\"Vill du kasta bollen åt Buster?\" frågade damen. Maja nickade och kastade bollen. " +
-      "Buster sprang som en raket och hämtade den. Maja och Buster lekte hela eftermiddagen.",
+      "Varje sommar åkte Wilma till mormors hus vid skogen. Huset var rött med vita knutar och hade en veranda " +
+      "där mormor brukade sitta och läsa. Bakom huset fanns en stig som ledde ner till en bäck. " +
+      "Wilma älskade att vada i bäcken och leta efter stenar med glittrande fläckar. " +
+      "En dag hittade hon en sten som var alldeles rund och slät. Den var grå med ett vitt streck runt om, som ett bälte. " +
+      '"Mormor, titta!" ropade Wilma. Mormor tog stenen och höll den mot ljuset. ' +
+      '"Det där är en lyckosten," sa mormor. "Man hittar dem bara om man letar utan att stressa." ' +
+      "Wilma stoppade stenen i fickan. Resten av sommaren letade hon efter fler, men hittade aldrig någon lika fin. " +
+      "Kanske hade mormor rätt. Man hittar de bästa sakerna när man inte jagar efter dem.",
     questions: [
       {
         id: "las-lag-3-q1",
         level: "hitta",
-        prompt: "Var hittade Maja bollen?",
-        options: ["I skolan", "I parken", "Hemma i trädgården", "På stranden"],
+        prompt: "Hur såg mormors hus ut?",
+        options: ["Gult med blå dörr", "Rött med vita knutar", "Vitt med grönt tak", "Brunt och litet"],
         correct: 1,
         explanation:
-          "I första meningen står det att Maja hittade bollen i parken.",
+          "I texten står det att huset var \"rött med vita knutar\".",
       },
       {
         id: "las-lag-3-q2",
         level: "hitta",
-        prompt: "Vad hette hunden?",
-        options: ["Buster", "Fansen", "Ludde", "Bella"],
-        correct: 0,
+        prompt: "Vad hittade Wilma i bäcken?",
+        options: ["En fisk", "En rund sten med ett vitt streck", "En snäcka", "En gammal nyckel"],
+        correct: 1,
         explanation:
-          "Damen säger \"Buster älskar bollar\", så hunden heter Buster.",
+          "Texten beskriver stenen som \"alldeles rund och slät\" med \"ett vitt streck runt om, som ett bälte\".",
       },
       {
         id: "las-lag-3-q3",
         level: "tolka",
-        prompt: "Varför blev Maja glad igen?",
+        prompt: "Vad menade mormor med att man hittar lyckostenar \"bara om man letar utan att stressa\"?",
         options: [
-          "Hon hittade en ny boll",
-          "Hunden gick hem",
-          "Hon fick tillbaka bollen och en ny lekkompis",
-          "Damen köpte glass åt henne",
+          "Att man måste springa fort",
+          "Att fina saker händer när man tar det lugnt och är uppmärksam",
+          "Att stenar bara finns på sommaren",
+          "Att mormor inte gillade att Wilma sprang",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Damen gav tillbaka bollen och Maja fick leka med Buster hela eftermiddagen. Ledsamheten försvann när det blev kul igen.",
+          "Mormor menar att de bästa upplevelserna kommer när man inte stressar utan tar sig tid att vara nyfiken.",
       },
       {
         id: "las-lag-3-q4",
         level: "reflektera",
-        prompt: "Vad lär oss berättelsen om oväntade möten?",
+        prompt: "Varför hittade Wilma aldrig en lika fin sten igen, tror du?",
         options: [
-          "Man ska aldrig gå till parken",
-          "Hundar är alltid farliga",
-          "Något som verkar tråkigt kan bli roligt",
-          "Man ska inte prata med främlingar",
+          "Stenarna tog slut i bäcken",
+          "Hon letade för intensivt istället för att bara njuta",
+          "Mormor hade gömt alla stenar",
+          "Det var för kallt i vattnet",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Först blev Maja ledsen, men det oväntade mötet med Buster ledde till en rolig eftermiddag. Ibland kan saker vända till det bättre.",
+          "Texten antyder att Wilma sedan letade aktivt istället för att bara vada och utforska fritt. Poängen är att de finaste upptäckterna ofta kommer av sig själva.",
       },
     ],
   },
   {
     id: "las-lag-4",
     ageGroup: "lagstadiet",
-    title: "Snöflingan",
+    title: "Fågelungen",
     passage:
-      "Det var vinter och Sara tittade ut genom fönstret. Det snöade! Stora vita flingor dansade ner från himlen. " +
-      "Sara tog på sig jackan, mössan och vantarna och sprang ut. Hon öppnade handen och fångade en snöflinga. " +
-      "Den var så liten och vacker med små mönster. Men snöflingan smälte snabbt i hennes varma hand. " +
-      "\"Mamma, varför försvinner snöflingorna?\" frågade Sara. " +
-      "\"För att din hand är varm,\" sa mamma. \"Värme gör att snön blir till vatten.\" " +
-      "Sara tyckte det var lite sorgligt, men sedan lade hon märke till att det kom nya flingor hela tiden. " +
-      "Då log hon och började bygga en snögubbe.",
+      "Lucas hittade en liten fågelunge på marken under det stora äppelträdet. Den var nästan naken, utan riktiga fjädrar, " +
+      "och den pep svagt. Lucas ville ta upp den och bära hem den. " +
+      '"Vänta," sa pappa som stod bredvid. "Titta uppåt." ' +
+      "Lucas tittade. Högt uppe i trädet satt ett bo. Och på en gren alldeles intill satt en fågel och tittade ner på dem med " +
+      "huvudet på sned. " +
+      '"Det är mamman," viskade pappa. "Hon väntar på att vi ska gå, så hon kan hjälpa sin unge." ' +
+      "Lucas ville stanna och titta, men pappa sa att det bästa de kunde göra var att gå därifrån. " +
+      "Nästa dag gick Lucas tillbaka till trädet. Fågelungen var borta. Han tittade upp mot boet och log.",
     questions: [
       {
         id: "las-lag-4-q1",
         level: "hitta",
-        prompt: "Vad tog Sara på sig innan hon gick ut?",
-        options: [
-          "Bara jackan",
-          "Jackan, mössan och vantarna",
-          "Regnjackan och stövlarna",
-          "Mössan och skidorna",
-        ],
+        prompt: "Var hittade Lucas fågelungen?",
+        options: ["I en buske", "På marken under äppelträdet", "I ett fågelhus", "Vid sjön"],
         correct: 1,
         explanation:
-          "Texten säger att Sara tog på sig \"jackan, mössan och vantarna\".",
+          "Texten säger att Lucas hittade fågelungen \"på marken under det stora äppelträdet\".",
       },
       {
         id: "las-lag-4-q2",
         level: "tolka",
-        prompt: "Varför smälte snöflingan?",
+        prompt: "Varför ville pappa att de skulle gå därifrån?",
         options: [
-          "Det regnade",
-          "Solen sken",
-          "Saras hand var varm",
-          "Sara kramade den för hårt",
+          "Han var rädd för fåglarna",
+          "Om de gick kunde fågelmamman komma ner och ta hand om ungen",
+          "Det var dags att äta middag",
+          "Fågelungen var redan död",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Mamma förklarar att Saras hand är varm och att värme gör att snö smälter till vatten.",
+          "Pappa förstod att fågelmamman inte vågade komma ner så länge människor stod intill. Djur behöver ibland att vi håller avstånd.",
       },
       {
         id: "las-lag-4-q3",
         level: "reflektera",
-        prompt: "Varför log Sara till slut fast snöflingan försvann?",
+        prompt: "Varför log Lucas när fågelungen var borta nästa dag?",
         options: [
-          "Hon hittade en leksak",
-          "Hon insåg att det kom nya snöflingor hela tiden",
-          "Mamma gav henne godis",
-          "Solen kom fram",
+          "Han var glad att fågelungen var borta",
+          "Han förstod att mamman hade räddat sin unge tillbaka till boet",
+          "Han hittade en ny fågelunge",
+          "Han var ledsen men låtsades le",
         ],
         correct: 1,
         explanation:
-          "Sara var först ledsen, men blev glad igen när hon såg att det snöade och snöade. Det fanns massor av snö att leka med!",
+          "Lucas log för att han förstod att det goda hade hänt — fågelmamman hade tagit hand om sin unge. Ibland är det bästa man kan göra att låta naturen sköta sig.",
       },
     ],
   },
   {
     id: "las-lag-5",
     ageGroup: "lagstadiet",
-    title: "Nattfjärilen",
+    title: "Mormors händer",
     passage:
-      "En kväll satt Albin vid sitt fönster. Det var mörkt ute men lampan lyste i hans rum. " +
-      "Plötsligt fladdrade en stor fjäril mot fönstret. Den hade bruna vingar med prickar som såg ut som ögon. " +
-      "\"Mamma, det är en jättefjäril!\" ropade Albin. Mamma kom in och tittade. " +
-      "\"Det är en nattfjäril,\" sa mamma. \"De flyger på natten och dras till ljus.\" " +
-      "Albin tyckte det var konstigt att en fjäril var vaken på natten. " +
-      "\"Sover den på dagen då?\" frågade han. \"Ja, precis,\" sa mamma. " +
-      "Albin tittade på fjärilen en lång stund. Sedan släckte han lampan försiktigt " +
-      "så att fjärilen kunde flyga vidare ut i natten.",
+      "Mormors händer var skrynkliga och bruna av solen. De hade blåa ådror som slingrade sig som små floder under huden. " +
+      "Alva brukade sitta i soffan och följa ådrorna med fingret medan mormor berättade. " +
+      "De händerna hade plockat jordgubbar i femtio somrar. De hade stuckit den tjockaste tröjan Alva någonsin sett. " +
+      "De hade lagat tusen pannkakor och torkat lika många tårar. " +
+      '"Dina händer kan allt, mormor," sa Alva. ' +
+      "Mormor skrattade. \"Inte allt. Jag kan inte spela gitarr. Men jag kan hålla din hand, och det räcker gott.\" " +
+      "Alva kramade mormors hand lite hårdare. Den var varm och mjuk, fast den såg skrovlig ut.",
     questions: [
       {
         id: "las-lag-5-q1",
         level: "hitta",
-        prompt: "Vad hade nattfjärilen på sina vingar?",
+        prompt: "Vad brukade Alva göra när de satt i soffan?",
         options: [
-          "Ränder i regnbågens färger",
-          "Bruna vingar med prickar som såg ut som ögon",
-          "Glittrande guldmönster",
-          "Vita prickar",
+          "Titta på TV",
+          "Följa ådrorna på mormors händer med fingret",
+          "Läsa en bok",
+          "Äta godis",
         ],
         correct: 1,
         explanation:
-          "Texten beskriver att fjärilen hade \"bruna vingar med prickar som såg ut som ögon\".",
+          "Texten berättar att Alva brukade \"följa ådrorna med fingret medan mormor berättade\".",
       },
       {
         id: "las-lag-5-q2",
         level: "tolka",
-        prompt: "Varför fladdrade fjärilen mot Albins fönster?",
+        prompt: "Vad berättar texten egentligen om genom att beskriva mormors händer?",
         options: [
-          "Den ville komma in och sova",
-          "Den drogs till ljuset från lampan",
-          "Den var rädd för mörkret",
-          "Den letade efter mat",
+          "Att mormor behöver handkräm",
+          "Att mormor har levt ett långt liv fullt av arbete, omsorg och kärlek",
+          "Att mormor är gammal och trött",
+          "Att Alva tycker mormors händer är konstiga",
         ],
         correct: 1,
         explanation:
-          "Mamma förklarar att nattfjärilar \"dras till ljus\". Det var lampan i Albins rum som lockade fjärilen.",
+          "Händerna är en bild för hela mormors liv — alla jordgubbar, tröjor, pannkakor och torkade tårar representerar omsorg och erfarenhet.",
       },
       {
         id: "las-lag-5-q3",
         level: "reflektera",
-        prompt: "Varför släckte Albin lampan i slutet?",
+        prompt: "Varför säger mormor att det \"räcker gott\" att kunna hålla Alvas hand?",
         options: [
-          "Han var trött och ville sova",
-          "Mamma sa åt honom att göra det",
-          "Han ville hjälpa fjärilen att flyga vidare",
-          "Han var rädd för fjärilen",
+          "Hon vill inte lära sig gitarr",
+          "Hon menar att närheten till Alva är det viktigaste av allt",
+          "Hon skämtar bara",
+          "Hon är för gammal för att göra andra saker",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Albin släckte lampan \"försiktigt så att fjärilen kunde flyga vidare\". Han brydde sig om fjärilen och ville att den skulle kunna fortsätta sin nattflykt.",
+          "Mormor visar att det viktigaste inte är att kunna allt, utan att finnas där för dem man älskar. Att hålla någons hand är ett sätt att visa kärlek.",
       },
     ],
   },
@@ -596,128 +593,142 @@ const hogstadietTexts: ReadingText[] = [
       },
     ],
   },
-  {
+    {
     id: "las-hog-3",
     ageGroup: "hogstadiet",
-    title: "Kommentarsfältet",
+    title: "Ljudet av ingenting",
     passage:
-      "Liams video hade fått tusen visningar på en dag. Han hade filmat sig själv när han spelade gitarr i sitt rum " +
-      "och lagt upp det på sociala medier. De flesta kommentarerna var positiva. Men en kommentar stack ut: " +
-      "\"Haha, patetiskt. Stick och lär dig spela ordentligt.\" " +
-      "Liam läste den om och om igen. De hundra fina kommentarerna försvann ur hans tankar. Han kunde bara se den enda elaka. " +
-      "Han bestämde sig för att ta bort videon. Men innan han hann klicka ringde hans kompis Fatima. " +
-      "\"Jag såg din video! Du måste lägga upp fler!\" sa hon. " +
-      "Liam berättade om kommentaren. Fatima blev tyst en stund. " +
-      "\"En person av tusen tyckte illa om det,\" sa hon. \"Ska den enda personen bestämma vad du gör?\" " +
-      "Liam tänkte efter. Han tog inte bort videon. Men han stängde av kommentarerna.",
+      "Selma hade inte märkt det förrän strömmen gick. Plötsligt var allt tyst. Inte bara tyst — stumt. " +
+      "Kylen slutade brumma. Fläkten i datorn dog. Det eviga surret från lamporna försvann. " +
+      "Hon satt kvar vid skrivbordet i mörkret och lyssnade. Det var som att höra ett rum andas för första gången. " +
+      "Utanför fönstret hördes vinden i björken och någonstans längre bort en hund som skällde. " +
+      "Selma insåg att hon aldrig upplevt äkta tystnad. Hela hennes liv hade fyllts av ett elektroniskt brus som hon slutat lägga märke till. " +
+      "Det var som att ha gått med en tung ryggsäck så länge att man glömt att den fanns — tills någon lyfte av den. " +
+      "Strömmen kom tillbaka efter tjugo minuter. Kylskåpet började brumma, fläkten snurrade igång, lamporna surrade. " +
+      "Selma kände hur ljudet la sig som ett lock över allting igen. " +
+      "Hon gick till fönstret och öppnade det. Björken prasslade fortfarande. Hunden hade tystnat. " +
+      "Men nu hörde Selma dem — de ljud som alltid funnits där bakom bruset.",
     questions: [
       {
         id: "las-hog-3-q1",
         level: "hitta",
-        prompt: "Hur många visningar hade Liams video fått?",
-        options: ["Hundra", "Tusen", "Tiotusen", "En miljon"],
+        prompt: "Vad orsakade tystnaden?",
+        options: ["Selma satte in öronproppar", "Strömmen gick", "Det var mitt i natten", "Hon stängde av allt själv"],
         correct: 1,
         explanation:
-          "Texten säger att videon \"hade fått tusen visningar på en dag\".",
+          "Texten inleds med att \"strömmen gick\" och alla elektroniska ljud försvann.",
       },
       {
         id: "las-hog-3-q2",
         level: "tolka",
-        prompt: "Varför försvann de positiva kommentarerna ur Liams tankar?",
+        prompt: "Vad innebär jämförelsen med ryggsäcken?",
         options: [
-          "De raderades av plattformen",
-          "Negativ kritik tenderar att ta mer plats i våra tankar än positiv",
-          "De positiva kommentarerna var falska",
-          "Liam kunde inte läsa dem",
+          "Att Selma hade ryggont",
+          "Att det elektroniska bruset var en börda hon vant sig vid utan att veta om det",
+          "Att hon hade glömt sin väska i skolan",
+          "Att tystnaden var tung att bära",
         ],
         correct: 1,
         explanation:
-          "Det är ett vanligt psykologiskt fenomen att negativ feedback väger tyngre än positiv. En enda elak kommentar överskuggade hundra positiva.",
+          "Liknelsen med ryggsäcken visar att man kan vänja sig vid något belastande till den grad att man glömmer att det finns — tills det tas bort och man känner lättnaden.",
       },
       {
         id: "las-hog-3-q3",
         level: "tolka",
-        prompt: "Vad menade Fatima med sin fråga om \"den enda personen\"?",
+        prompt: "Vad menar texten med att ljudet la sig \"som ett lock\"?",
         options: [
-          "Att Liam borde konfrontera personen",
-          "Att en enda negativ röst inte bör få bestämma över ens handlingar",
-          "Att Liam borde blockera alla som kommenterar",
-          "Att tusen visningar inte är mycket",
+          "Att rummet blev varmare",
+          "Att det elektroniska bruset döljer naturliga ljud och skärmar av oss",
+          "Att Selma satte på en skiva",
+          "Att kylen var trasig",
         ],
         correct: 1,
         explanation:
-          "Fatima sätter den negativa kommentaren i perspektiv: en av tusen tyckte illa om det. Ska den minoriteten styra Liams beslut?",
+          "Metaforen \"lock\" antyder att det elektriska bruset lägger sig ovanpå och täcker de ljud som egentligen finns — fågelkvitter, vind, det levande. Vi lyssnar men hör inte.",
       },
       {
         id: "las-hog-3-q4",
         level: "reflektera",
-        prompt: "Vad säger Liams beslut att stänga av kommentarerna om hans strategi?",
+        prompt: "Vad vill texten säga om vårt förhållande till ljud och teknik?",
         options: [
-          "Han är feg och borde ha svarat",
-          "Han hittade en kompromiss — han behöll videon men skyddade sig från negativ påverkan",
-          "Han borde ha tagit bort videon ändå",
-          "Han bryr sig inte om vad folk tycker",
+          "Att vi borde slänga alla elektriska apparater",
+          "Att vi omges av ljud vi inte längre är medvetna om, och att det finns en värld av naturliga ljud under bruset",
+          "Att hunden störde Selma",
+          "Att strömavbrott alltid är positiva",
         ],
         correct: 1,
         explanation:
-          "Liam valde en medelväg: han tog inte bort sitt skapande, men satte en gräns för vad han vill utsättas för. Det visar mognad och självkännedom.",
+          "Texten reflekterar över hur tekniken skapar ett konstant brus vi normaliserat. Poängen är inte att tekniken är ond, utan att vi förlorat kontakten med det som finns bakom — naturen, tystnaden, oss själva.",
       },
     ],
   },
   {
     id: "las-hog-4",
     ageGroup: "hogstadiet",
-    title: "Brevet i boken",
+    title: "Arvet",
     passage:
-      "Amira hittade ett handskrivet brev instucket i en begagnad bok hon köpt på loppis. Brevet var daterat 1987 och skrivet av en kvinna som hette Ingrid. " +
-      "Hon skrev till sin dotter Karin om hur stolt hon var över att Karin kommit in på universitetet. " +
-      "\"Du är den första i vår familj som läser vidare,\" stod det. \"Din farmor kunde knappt skriva sitt namn, " +
-      "och nu ska du studera litteratur. Jag önskar att hon kunde se dig nu.\" " +
-      "Amira kände en klump i halsen. Hon visste ingenting om Ingrid eller Karin, men brevets värme nådde ända fram. " +
-      "Hon funderade på att försöka hitta Karin och ge henne brevet. Kanske var det viktigt för henne. " +
-      "Eller kanske hade Karin lagt brevet i boken med flit, som en hälsning till en främling i framtiden.",
+      "Morfar hade alltid haft smutsiga naglar. Inte för att han var slarvig — tvärtom. Han tvättade händerna noggrant " +
+      "varje kväll med en borste vid diskbänken. Men jorden satt i sprickorna och vägrade släppa. " +
+      "Det var trädgården som ägde hans händer. I fyrtio år hade han grävt, planterat och vattnat samma rabatt. " +
+      "Tomaterna vid söderväggen. Rosorna vid grinden. De vilda jordgubbarna som kröp längre utåt för varje år. " +
+      "När morfar dog ärvde Ali huset. Han stod i trädgården den första morgonen och visste inte var han skulle börja. " +
+      "Ogräset hade redan börjat krypa in. Tomaterna hängde tunga och övergivna på sina käppar. " +
+      "Ali böjde sig ner och drog upp ett ogräs. Jorden var fuktig och mörk. Den luktade som morfar. " +
+      "Inte hans raklödder eller hans kaffe, utan något djupare — som tidiga morgnar och tålmodigt arbete. " +
+      "Ali drog upp ett ogräs till. Och ett till. " +
+      "När solen gick ner hade han rensat halva rabatten. Hans naglar var svarta av jord. " +
+      "Han tittade på dem och log.",
     questions: [
       {
         id: "las-hog-4-q1",
         level: "hitta",
-        prompt: "Var hittade Amira brevet?",
-        options: [
-          "I en låda på vinden",
-          "I en begagnad bok från en loppis",
-          "I ett gammalt skåp",
-          "I en tidning på biblioteket",
-        ],
-        correct: 1,
+        prompt: "Hur länge hade morfar skött trädgården?",
+        options: ["Tio år", "Tjugo år", "Fyrtio år", "Hela sitt liv"],
+        correct: 2,
         explanation:
-          "Texten berättar att Amira hittade brevet \"instucket i en begagnad bok hon köpt på loppis\".",
+          "Texten anger att morfar \"i fyrtio år hade grävt, planterat och vattnat samma rabatt\".",
       },
       {
         id: "las-hog-4-q2",
         level: "tolka",
-        prompt: "Varför nämner Ingrid att farmor knappt kunde skriva sitt namn?",
+        prompt: "Vad symboliserar de smutsiga naglarna?",
         options: [
-          "Hon ville kritisera farmor",
-          "Hon ville visa hur stor klassresan var — från analfabetism till universitet",
-          "Hon tyckte att farmor borde ha lärt sig",
-          "Hon ville att Karin skulle skämmas",
+          "Att morfar var fattig",
+          "Att morfar var orenlig",
+          "Engagemang och kärlek till trädgården — ett livsverk som satt i händerna",
+          "Att trädgården var för stor att sköta",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Genom att nämna farmors begränsade läskunnighet framhäver Ingrid vilken enorm utveckling det innebär att Karin nu ska studera litteratur på universitetet.",
+          "Naglarna representerar hur djupt morfars relation till trädgården gick — den satt bokstavligt i hans kropp. Det är en bild för livslång hängivenhet.",
       },
       {
         id: "las-hog-4-q3",
-        level: "reflektera",
-        prompt: "Amira funderar på om Karin lade brevet i boken med flit. Vad säger det om Amiras tolkning?",
+        level: "tolka",
+        prompt: "Varför beskrivs jordens lukt som \"tidiga morgnar och tålmodigt arbete\"?",
         options: [
-          "Amira tror att Karin var slarvig",
-          "Amira ser en poetisk möjlighet — att brevet var menat att hittas av någon",
-          "Amira vill bara hitta en ursäkt att behålla brevet",
-          "Amira tror att boken var stulen",
+          "För att jord luktar kaffe",
+          "För att lukten förknippas med morfars livsstil och karaktär snarare än med en specifik doft",
+          "För att Ali inte gillade lukten",
+          "För att jord luktar konstigt på morgonen",
         ],
         correct: 1,
         explanation:
-          "Amira öppnar för en romantisk tolkning: att brevet medvetet lämnades som ett slags flaskpost, en hälsning genom tid och rum till en okänd läsare.",
+          "Lukten är emotionell snarare än bokstavlig — den väcker minnen av vem morfar var. Att beskriva en lukt med abstrakta begrepp visar hur sinnesintryck och minnen sammanflätas.",
+      },
+      {
+        id: "las-hog-4-q4",
+        level: "reflektera",
+        prompt: "Varför log Ali när han såg sina svarta naglar?",
+        options: [
+          "Han tyckte det var äckligt",
+          "Han insåg att han höll på att ta över morfars livsverk — och att det kändes rätt",
+          "Han skrattade åt sig själv",
+          "Han ville visa sina händer för någon",
+        ],
+        correct: 1,
+        explanation:
+          "Naglarna kopplar tillbaka till textens öppning om morfar. Ali har omedvetet tagit vid där morfar slutade. Leendet visar att arvet inte bara är ett hus — det är en relation till jorden.",
       },
     ],
   },
@@ -783,14 +794,14 @@ const hogstadietTexts: ReadingText[] = [
         level: "reflektera",
         prompt: "Varför bjöd Victor in till en promenad istället för att prata om det han läst?",
         options: [
-          "Han ville spy ut sin ilska",
+          "Han ville distrahera pappan",
           "Han erbjöd närvaro och närhet utan att tvinga fram ett svårt samtal",
-          "Han ville bara komma ut ur huset",
+          "Han ville komma ut ur huset",
           "Han ville berätta om sin egen dag",
         ],
         correct: 1,
         explanation:
-          "Victor visar emotionell intelligens: istället för att konfrontera pappan med det han läst, skapar han ett tillfälle till närhet. Ibland är det viktigaste inte att prata om problemet, utan att visa att man finns där.",
+          "Victor visar emotionell intelligens: istället för att konfrontera pappan med det han läst skapar han ett tillfälle till närhet. Ibland är det viktigaste inte att prata om problemet, utan att visa att man finns där.",
       },
     ],
   },
@@ -952,227 +963,230 @@ const gymnasietTexts: ReadingText[] = [
       },
     ],
   },
-  {
+    {
     id: "las-gym-3",
     ageGroup: "gymnasiet",
-    title: "Språkets makt över tanken",
+    title: "Det försvunna språket",
     passage:
-      "Lingvisten Benjamin Lee Whorf formulerade på 1940-talet en hypotes som fortfarande debatteras: " +
-      "att det språk vi talar påverkar hur vi tänker. Hypotesen, som ibland kallas den sapir-whorfska hypotesen, " +
-      "finns i en stark och en svag version. Den starka versionen hävdar att språket bestämmer tanken — " +
-      "att vi bokstavligen inte kan tänka tankar som vårt språk saknar ord för. " +
-      "Den svaga versionen, som har mer vetenskapligt stöd, menar att språket påverkar och underlättar vissa tankemönster. " +
-      "Ett ofta citerat exempel är att inuiter påstås ha ovanligt många ord för snö, " +
-      "vilket skulle ge dem en rikare perception av snötyper. Denna anekdot har dock ifrågasatts — " +
-      "bland annat av lingvisten Geoffrey Pullum, som menar att påståendet bygger på missförstånd och överdrifter. " +
-      "Nyare forskning har dock visat att språk faktiskt kan påverka färguppfattning: " +
-      "talare av språk som har separata grundord för ljusblått och mörkblått " +
-      "kan urskilja nyansskillnader snabbare än talare av språk som bara har ett ord för blått.",
+      "År 2010 dog Boa Senior, den sista talaren av det andamanesiska språket bo. Med hennes sista andetag försvann " +
+      "inte bara ett ordförråd, utan ett helt sätt att förstå världen. " +
+      "Språkforskare brukar jämföra ett utdöende språk med en bränd biblioteksavdelning: det som försvinner " +
+      "är inte bara ord utan kunskap, berättelser och tankemönster som aldrig dokumenterats på något annat vis. " +
+      "Idag finns cirka 7 000 språk i världen. Hälften beräknas vara borta inom hundra år. " +
+      "Det innebär att ett språk dör ungefär varannan vecka. " +
+      "Men betyder det att vi förlorar något? Kritiker menar att språkdöd är en naturlig process — " +
+      "latin dog, fornnordiska dog, och världen gick vidare. " +
+      "Lingvisten Nicholas Evans invänder: \"Det är skillnad på ett språk som utvecklas till nya former " +
+      "och ett som utplånas utan arvtagare. Latin lever vidare i franska, spanska och italienska. " +
+      "Bo lever ingenstans.\" " +
+      "Frågan handlar i grunden om vad vi menar med mångfald. Om biologisk mångfald är värd att skydda " +
+      "för att den gör ekosystem robustare, kan samma logik tillämpas på språklig mångfald? " +
+      "Varje språk kodar erfarenheter som andra saknar ord för. Yupik-språken har dussintals termer för snöförhållanden " +
+      "som engelskans vocabulary inte kan fånga. Hopi-språket saknar grammatiska tempus och uttrycker tid på sätt " +
+      "som utmanar vår mest grundläggande uppfattning om vad tid är. " +
+      "Att rädda ett språk handlar därför inte om nostalgi. Det handlar om att bevara mänsklighetens kognitiva repertoar.",
     questions: [
       {
         id: "las-gym-3-q1",
         level: "hitta",
-        prompt: "Vem formulerade hypotesen om språkets påverkan på tanken?",
-        options: [
-          "Noam Chomsky",
-          "Geoffrey Pullum",
-          "Benjamin Lee Whorf",
-          "Ferdinand de Saussure",
-        ],
+        prompt: "Hur många språk finns det idag enligt texten?",
+        options: ["Cirka 3 000", "Cirka 5 000", "Cirka 7 000", "Cirka 10 000"],
         correct: 2,
         explanation:
-          "Texten anger att \"Lingvisten Benjamin Lee Whorf formulerade på 1940-talet en hypotes\".",
+          "Texten anger att det \"idag finns cirka 7 000 språk i världen\".",
       },
       {
         id: "las-gym-3-q2",
         level: "tolka",
-        prompt: "Vad är skillnaden mellan den starka och svaga versionen av hypotesen?",
+        prompt: "Vad menar Nicholas Evans med distinktionen mellan latin och bo?",
         options: [
-          "Den starka handlar om skriftspråk, den svaga om talspråk",
-          "Den starka säger att språk bestämmer tanken, den svaga att språk påverkar tanken",
-          "Den starka stöds av forskning, den svaga inte",
-          "Den starka gäller bara inuiter, den svaga alla",
+          "Att latin var ett bättre språk",
+          "Att latin utvecklades till nya språk medan bo försvann helt utan efterföljare",
+          "Att bo hade färre talare",
+          "Att alla språk dör förr eller senare",
         ],
         correct: 1,
         explanation:
-          "Den starka versionen hävdar att språket bestämmer tanken (determinism), medan den svaga versionen menar att det påverkar och underlättar vissa tankemönster (inflytande).",
+          "Evans poäng är kvalitativ: latin \"dog\" men fortsatte genom romanska språk. Bo utplånades utan att lämna spår. Det är skillnaden mellan transformation och total förlust.",
       },
       {
         id: "las-gym-3-q3",
         level: "tolka",
-        prompt: "Varför nämner texten kritiken mot inuit-exemplet?",
+        prompt: "Varför nämner texten biologisk mångfald?",
         options: [
-          "För att visa att hela hypotesen är felaktig",
-          "För att visa att populära argument ibland bygger på felaktiga antaganden",
-          "För att inuiters språk inte har studerats",
-          "För att stärka den starka versionen av hypotesen",
+          "För att byta ämne",
+          "För att argumentera genom analogi: om biologisk mångfald stärker ekosystem, kan språklig mångfald stärka mänskligheten",
+          "För att visa att språk är samma sak som djurarter",
+          "För att kritisera miljörörelsen",
         ],
         correct: 1,
         explanation:
-          "Texten presenterar inuit-exemplet som en vanlig men ifrågasatt anekdot. Det visar att vetenskapliga påståenden behöver granskas kritiskt, även populära sådana.",
+          "Texten använder biologisk mångfald som analogiargument. Om variation gör naturen mer motståndskraftig, kan samma princip gälla för mänsklig kunskap och kognition.",
       },
       {
         id: "las-gym-3-q4",
         level: "reflektera",
-        prompt: "Om den svaga Sapir-Whorf-hypotesen stämmer, vad kan det innebära för flerspråkiga personer?",
+        prompt: "Textens avslutande mening säger att språkbevarande handlar om \"mänsklighetens kognitiva repertoar\". Vad innebär det?",
         options: [
-          "De tänker exakt likadant på alla språk",
-          "De kan ha tillgång till fler tankemönster och nyanser beroende på vilket språk de använder",
-          "De förlorar förmågan att tänka klart",
-          "Det påverkar bara dem som talar ovanliga språk",
+          "Att vi behöver fler ord i svenska",
+          "Att varje språk representerar unika sätt att tänka och förstå verkligheten, och att förlora dem minskar mänsklighetens samlade intellektuella kapacitet",
+          "Att alla borde lära sig fler språk",
+          "Att forskning om språk borde få mer pengar",
         ],
         correct: 1,
         explanation:
-          "Om språket påverkar tankemönster kan flerspråkiga personer potentiellt växla mellan olika kognitiva perspektiv beroende på vilket språk de tänker och kommunicerar på.",
+          "Texten argumenterar för att språk inte bara är kommunikationsverktyg utan tankesystem. Varje utdött språk tar med sig perspektiv som inget annat språk kan ersätta — det handlar om hela mänsklighetens förmåga att begreppsliggöra världen.",
       },
     ],
   },
   {
     id: "las-gym-4",
     ageGroup: "gymnasiet",
-    title: "Den ofrivillige turisten",
+    title: "Fotografiets paradox",
     passage:
-      "Sommaren 1867 steg en ung svensk kvinna ombord på ett fartyg i Göteborg. Hon hette Ulrika och var tjugotvå år gammal. " +
-      "I fickan hade hon ett brev från en kusin i Minnesota som lovade arbete i en textilfabrik. " +
-      "Överfarten tog sex veckor. Under den tiden dog ett barn i skarlaksfeber och en äldre man föll överbord i en storm. " +
-      "Ulrika skrev i sin dagbok att havet var \"som ett grått djur som aldrig sover\". " +
-      "När hon anlände till New York talade hon inte ett ord engelska. En man vid hamnen försökte ta hennes väska och sa något hon inte förstod. " +
-      "En annan svensk kvinna hjälpte henne och följde henne till tågstationen. " +
-      "I Minnesota visade det sig att fabriken hade stängt tre månader tidigare. Kusinen hade redan rest vidare västerut. " +
-      "Ulrika stod ensam på en perrong i ett land hon inte hade valt, med en tom adress i handen. " +
-      "Ändå skrev hon hem: \"Jag tänker inte återvända. Här finns i alla fall möjligheter som inte fanns hemma.\"",
+      "Susan Sontag skrev att fotografera innebär att delta i en annan människas dödlighet och sårbarhet. " +
+      "Varje fotografi fryser ett ögonblick som aldrig återkommer. I samma sekund som slutaren klickar " +
+      "har ögonblicket redan passerat. Fotografiet blir ett bevis på det som inte längre finns. " +
+      "Men Sontag pekade på en djupare paradox: ju fler bilder vi tar, desto mindre ser vi. " +
+      "Turisten som fotograferar varje monument upplever det genom en skärm istället för med egna ögon. " +
+      "Föräldern som filmar barnets första steg ser det i repris — aldrig i realtid. " +
+      "I den digitala eran har denna paradox fördjupats. Vi tar uppskattningsvis 1,4 biljoner fotografier per år. " +
+      "De allra flesta betraktas aldrig igen. De lagras i molntjänster som digitala sediment — " +
+      "lager på lager av ögonblick som ingen återvänder till. " +
+      "Ändå fortsätter vi att fotografera. Kanske för att kameran ger en illusion av kontroll: " +
+      "om jag fångar detta moment bevarar jag det. Men bevarar vi verkligen minnet, eller ersätter vi det? " +
+      "Neurologisk forskning antyder att den som fotograferar en händelse minns den sämre än den som bara var närvarande. " +
+      "Kameran minns åt oss, och vi glömmer. " +
+      "Sontag skulle kanske ha sagt att vi har blivit ett samhälle av samlare — av bilder, inte av upplevelser.",
     questions: [
       {
         id: "las-gym-4-q1",
         level: "hitta",
-        prompt: "Varför emigrerade Ulrika till Amerika?",
-        options: [
-          "Hon ville studera vid ett universitet",
-          "Hon hade fått löfte om arbete i en textilfabrik via sin kusin",
-          "Hon flydde från kriget",
-          "Hon ville bli farmer",
-        ],
+        prompt: "Hur många fotografier tas per år enligt texten?",
+        options: ["1,4 miljarder", "1,4 biljoner", "14 miljarder", "140 miljoner"],
         correct: 1,
         explanation:
-          "Texten berättar att Ulrika hade \"ett brev från en kusin i Minnesota som lovade arbete i en textilfabrik\".",
+          "Texten anger att vi tar \"uppskattningsvis 1,4 biljoner fotografier per år\".",
       },
       {
         id: "las-gym-4-q2",
         level: "tolka",
-        prompt: "Vad förmedlar liknelsen om havet som \"ett grått djur som aldrig sover\"?",
+        prompt: "Vad är den \"djupare paradox\" Sontag pekar på?",
         options: [
-          "Att Ulrika tyckte havet var vackert",
-          "Att havet upplevdes som hotfullt, oförutsägbart och ständigt närvarande",
-          "Att det var många djur i vattnet",
-          "Att resan gick snabbt",
+          "Att kameror är dyra",
+          "Att fotograferande kan göra att vi upplever mindre av det vi försöker bevara",
+          "Att bilder aldrig blir bra",
+          "Att turisterna inte gillar monument",
         ],
         correct: 1,
         explanation:
-          "Metaforen fångar havets obevekliga, farliga natur — det vilar aldrig och kan slå till när som helst, precis som de faror passagerarna upplevde.",
+          "Paradoxen är att akten att dokumentera — som syftar till att bevara — samtidigt distanserar oss från upplevelsen. Vi ser genom skärmen istället för med våra sinnen.",
       },
       {
         id: "las-gym-4-q3",
         level: "tolka",
-        prompt: "Vad symboliserar \"den tomma adressen\" i Ulrikas hand?",
+        prompt: "Vad menar texten med \"digitala sediment\"?",
         options: [
-          "Att hon glömt vägen",
-          "Att hennes plan rasat samman — löftet hon rest för existerar inte längre",
-          "Att hon inte kunde läsa",
-          "Att adressen var felstavad",
+          "Att bilder förstörs med tiden",
+          "Att foton lagras i lager som geologiska avlagringar — ackumulerade men obearbetade och obetraktade",
+          "Att molntjänster är miljöskadliga",
+          "Att bilder blir vackrare med tiden",
         ],
         correct: 1,
         explanation:
-          "Den tomma adressen är en konkret symbol för hur hela grunden för Ulrikas emigration försvunnit. Fabriken är stängd, kusinen borta — allt hon planerat är ogiltigt.",
+          "Metaforen sediment pekar på passiv ackumulation: precis som geologiska lager avsätts utan medveten process, samlas våra bilder i molnet utan att vi granskar eller sorterar dem.",
       },
       {
         id: "las-gym-4-q4",
         level: "reflektera",
-        prompt: "Hur tolkar du Ulrikas beslut att stanna trots att allt gått fel?",
+        prompt: "Texten hävdar att \"kameran minns åt oss, och vi glömmer\". Håller du med? Varför eller varför inte?",
         options: [
-          "Det visar desperation — hon hade inget val",
-          "Det visar en kombination av realism och envishet: hon ser möjligheter som inte fanns i Sverige, trots motgångarna",
-          "Det visar naivitet — hon borde ha åkt hem",
-          "Det visar att hon trivdes i Amerika",
+          "Ja, helt — vi borde sluta fotografera",
+          "Delvis — forskningen stödjer att fotografering minskar minnesbildning, men foton kan också trigga minnen vi annars förlorat",
+          "Nej — foton hjälper alltid minnet",
+          "Det spelar ingen roll — minnen är oviktiga",
         ],
         correct: 1,
         explanation:
-          "Ulrikas brev hem avslöjar att hon ser sin situation nyktert men ändå väljer framåt. De \"möjligheter som inte fanns hemma\" antyder att livet i Sverige var ännu mer begränsat. Det är en komplex bild av emigrantens verklighet.",
+          "Frågan är medvetet öppen. Den neurologiska forskningen stödjer Sontags tes, men fotografier kan också fungera som minnestriggare. Den nyanserade positionen erkänner båda sidorna.",
       },
     ],
   },
   {
     id: "las-gym-5",
     ageGroup: "gymnasiet",
-    title: "Algoritmernas redaktör",
+    title: "Rättvisans vågskål",
     passage:
-      "År 2024 får de flesta svenskar sina nyheter via flöden som styrs av algoritmer. " +
-      "Plattformar som Instagram, TikTok och Google Discover väljer vilka artiklar, videos och inlägg som visas — " +
-      "inte utifrån journalistisk relevans, utan utifrån vad som sannolikt genererar klick och engagemang. " +
-      "Medieforskaren Sigurd Allern har kallat detta en form av \"algoritmisk gatekeeping\": " +
-      "precis som tidningarnas redaktörer en gång valde vilka nyheter som hamnade på förstasidan, " +
-      "bestämmer nu datamodeller vad miljoner människor ser varje dag. " +
-      "Skillnaden är att en mänsklig redaktör har ett publicistiskt ansvar och styrs av pressetiska regler, " +
-      "medan en algoritm optimerar för uppmärksamhet. " +
-      "Konsekvenserna syns i forskning: användare som får nyheter via sociala medier har sämre förståelse för " +
-      "nyhetshändelsers sammanhang jämfört med dem som aktivt söker upp nyheter via traditionella medier. " +
-      "Samtidigt argumenterar teknikförespråkare att algoritmerna demokratiserar information — " +
-      "fler röster hörs, inte bara de som traditionella medier valde att lyfta.",
+      "I rättssalen sitter inte bara en anklagad och en målsägande. Där sitter hela samhällets föreställning om rättvisa. " +
+      "Den svenska rättsprincipen om att hellre fria tio skyldiga än fälla en oskyldig har djupa rötter. " +
+      "Den bottnar i insikten att statens makt över individen är så enorm att varje felaktig fällande dom " +
+      "utgör ett svek mot själva grunden för rättsstaten. " +
+      "Men principen krockar ibland med den folkliga rättskänslan. " +
+      "När en uppenbart skyldig person frias på grund av otillräcklig bevisning känner sig brottsoffret — " +
+      "och ofta allmänheten — svikna. Medier förstärker känslan med rubriker som \"Gick fri trots allt\". " +
+      "Rättsfilosofen Ronald Dworkin har argumenterat för att rättvisa aldrig kan vara perfekt " +
+      "utan handlar om att välja det minst onda misstaget. Att fria en skyldig är ett ont. " +
+      "Att fälla en oskyldig är ett större ont. Rättssystemet måste välja. " +
+      "Beviskravets höjd — att åklagaren måste bevisa skuld \"bortom rimligt tvivel\" — " +
+      "är samhällets svar på detta dilemma. Det är inte en brist i systemet utan en medveten konstruktion. " +
+      "Frågan som kvarstår är om allmänheten har tålamod med ett system som, för att skydda alla, " +
+      "ibland måste acceptera att enskilda brott förblir ostraffade.",
     questions: [
       {
         id: "las-gym-5-q1",
         level: "hitta",
-        prompt: "Vad kallas det fenomen där algoritmer styr nyhetsflödet?",
+        prompt: "Vilken rättsprincip diskuteras i texten?",
         options: [
-          "Digital censur",
-          "Algoritmisk gatekeeping",
-          "Mediemonopol",
-          "Automatiserad journalistik",
+          "Ögat för ögat",
+          "Hellre fria tio skyldiga än fälla en oskyldig",
+          "Alla är skyldiga tills motsatsen bevisas",
+          "Straffet ska vara proportionellt",
         ],
         correct: 1,
         explanation:
-          "Texten refererar till medieforskaren Sigurd Allern som kallat fenomenet \"algoritmisk gatekeeping\".",
+          "Texten utgår från principen att \"hellre fria tio skyldiga än fälla en oskyldig\" som grund för resonemanget.",
       },
       {
         id: "las-gym-5-q2",
         level: "tolka",
-        prompt: "Vad är huvudskillnaden mellan en mänsklig redaktör och en algoritm enligt texten?",
+        prompt: "Varför beskriver texten beviskravet som en \"medveten konstruktion\" snarare än en brist?",
         options: [
-          "Redaktörer är långsammare",
-          "Algoritmer kan inte läsa",
-          "Redaktörer styrs av pressetik, algoritmer av engagemang",
-          "Redaktörer väljer bara utländska nyheter",
+          "För att jurister vill skydda sina jobb",
+          "För att det höga beviskravet är designat att skydda individen från statens makt, inte att låta skyldiga gå fria",
+          "För att det är omöjligt att bevisa något",
+          "För att lagen aldrig kan ändras",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Texten kontrasterar redaktörens publicistiska ansvar och pressetiska regler med algoritmens optimering för uppmärksamhet och klick.",
+          "Texten argumenterar för att beviskravet \"bortom rimligt tvivel\" inte är en olycklig konsekvens utan ett aktivt val — systemet prioriterar skyddet av oskyldiga framför bestraffningen av skyldiga.",
       },
       {
         id: "las-gym-5-q3",
         level: "tolka",
-        prompt: "Varför nämner texten teknikförespråkarnas argument?",
+        prompt: "Vad menar Dworkin med att rättvisa handlar om att \"välja det minst onda misstaget\"?",
         options: [
-          "För att bevisa att algoritmer är bättre",
-          "För att visa att frågan har flera sidor och inte är entydig",
-          "För att kritisera traditionella medier",
-          "För att avsluta texten positivt",
+          "Att domare alltid gör fel",
+          "Att inget rättssystem kan vara felfritt, men vi kan välja vilken typ av fel vi hellre accepterar",
+          "Att rättvisa inte existerar",
+          "Att det minst onda är att inte ha domstolar alls",
         ],
         correct: 1,
         explanation:
-          "Genom att presentera motargumentet — att algoritmer demokratiserar information — ger texten en nyanserad bild av frågan snarare än en ensidig kritik.",
+          "Dworkins poäng är pragmatisk: perfekt rättvisa är ouppnåelig. Valet står mellan att ibland fria skyldiga (typ 1-fel) eller att ibland fälla oskyldiga (typ 2-fel). Samhället har valt att acceptera det förstnämnda.",
       },
       {
         id: "las-gym-5-q4",
         level: "reflektera",
-        prompt: "Vilken slutsats kan man dra om sambandet mellan nyhetskanal och kunskapsnivå?",
+        prompt: "Texten avslutas med frågan om allmänheten har tålamod med systemet. Vad tror du?",
         options: [
-          "Sociala medier ger alltid bättre nyhetsförståelse",
-          "Passivt nyhetskonsumerande via algoritmer ger sämre sammanhang än aktivt uppsökande av nyheter",
-          "Traditionella medier ljuger mindre",
-          "Algoritmer ger bara underhållning, aldrig nyheter",
+          "Tålamodet minskar i takt med medierapportering och sociala medier som förstärker den folkliga rättskänslan",
+          "Alla förstår och accepterar systemet",
+          "Folk bryr sig inte om rättvisa",
+          "Bara jurister tänker på sådana frågor",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "Forskningen som nämns visar att sättet man tar del av nyheter påverkar förståelsen. Algoritmstyrda flöden ger fragmenterad information, medan aktivt uppsökande ger bättre kontext.",
+          "Frågan är öppen och texten ger inga definitiva svar. Men den antyder en spänning: i en medievärld där \"Gick fri trots allt\" skapar upprördhet utmanas det tålmodiga förnuftets principer av den omedelbara känslan.",
       },
     ],
   },
@@ -1187,195 +1201,9 @@ const ALL_READING_TEXTS: ReadingText[] = [
   ...mellanstadietTexts,
   ...hogstadietTexts,
   ...gymnasietTexts,
-  {
-    id: "las-mel-3",
-    ageGroup: "mellanstadiet",
-    title: "Tidskapseln",
-    passage:
-      "Klass 5B hade bestämt sig för att göra en tidskapsel. De skulle gräva ner en låda på skolgården och öppna den om fem år. " +
-      "Alla fick lägga i en sak. Wilma la i en teckning av sin häst Stansen. Omar stoppade ner sin favoritserietidning. " +
-      "Elsa tvekade länge men valde till slut ett foto på hela klassen. " +
-      "\"Om fem år kanske vi inte ens minns varandra,\" sa hon tyst. " +
-      "\"Just därför är fotot perfekt,\" sa fröken och log. " +
-      "De grävde ett hål under den stora björken och la ner lådan. Sedan lade de en platt sten ovanpå som markering. " +
-      "\"Fem år,\" sa Omar. \"Det känns som en evighet.\" " +
-      "\"Det går fortare än du tror,\" sa fröken.",
-    questions: [
-      {
-        id: "las-mel-3-q1",
-        level: "hitta",
-        prompt: "Var grävde klassen ner tidskapseln?",
-        options: [
-          "I klassrummet",
-          "Under den stora björken på skolgården",
-          "I skolans källare",
-          "Vid fotbollsplanen",
-        ],
-        correct: 1,
-        explanation:
-          "Texten säger att de \"grävde ett hål under den stora björken\".",
-      },
-      {
-        id: "las-mel-3-q2",
-        level: "hitta",
-        prompt: "Vad la Elsa i tidskapseln?",
-        options: [
-          "En teckning",
-          "En serietidning",
-          "Ett foto på hela klassen",
-          "En dagbok",
-        ],
-        correct: 2,
-        explanation:
-          "Elsa valde till slut \"ett foto på hela klassen\" att lägga i tidskapseln.",
-      },
-      {
-        id: "las-mel-3-q3",
-        level: "tolka",
-        prompt: "Varför sa Elsa att de kanske inte minns varandra om fem år?",
-        options: [
-          "Hon hade dåligt minne",
-          "Hon visste att klasskamrater ofta tappar kontakten med tiden",
-          "Hon ville inte vara kvar i klassen",
-          "Hon tyckte inte om sina klasskamrater",
-        ],
-        correct: 1,
-        explanation:
-          "Elsa uttrycker en oro för att vänner ibland glömmer varandra när de går skilda vägar efter skolan.",
-      },
-      {
-        id: "las-mel-3-q4",
-        level: "reflektera",
-        prompt: "Varför tyckte fröken att fotot var det perfekta valet?",
-        options: [
-          "Foton tar inte mycket plats",
-          "Just för att de kanske glömmer — fotot hjälper dem minnas",
-          "Fröken gillade att fotografera",
-          "Det var det dyraste föremålet",
-        ],
-        correct: 1,
-        explanation:
-          "Elsas oro om att glömma var just anledningen till att fotot var ett bra val — det bevarar minnet av klassen precis som en tidskapsel ska göra.",
-      },
-    ],
-  },
-  {
-    id: "las-mel-4",
-    ageGroup: "mellanstadiet",
-    title: "Räven i staden",
-    passage:
-      "En morgon på väg till skolan stannade Amir tvärt. Mitt på trottoaren stod en räv. Den var rödorange med en stor lurvig svans " +
-      "och tittade på honom med klara ögon. Amir vågade knappt andas. " +
-      "Räven verkade inte alls rädd. Den nosade på en papperskasse som låg på marken, " +
-      "snappade åt sig en bit av en macka och tassade sedan lugnt in i en buske. " +
-      "\"Ingen kommer tro mig,\" tänkte Amir. Men när han kom till skolan berättade hans kompis Noor att hon också sett räven. " +
-      "\"Den bor under verandan på Storgatan 12,\" sa hon. \"Mamma ringde kommunen, men de sa att räven inte gör någon skada.\" " +
-      "Amir tänkte att det var konstigt att ett vilt djur kunde bo mitt i stan, men samtidigt tyckte han att det var ganska häftigt.",
-    questions: [
-      {
-        id: "las-mel-4-q1",
-        level: "hitta",
-        prompt: "Var bodde räven enligt Noor?",
-        options: [
-          "I parken",
-          "Under verandan på Storgatan 12",
-          "I skogen utanför stan",
-          "I en hundkoja",
-        ],
-        correct: 1,
-        explanation:
-          "Noor berättar att räven \"bor under verandan på Storgatan 12\".",
-      },
-      {
-        id: "las-mel-4-q2",
-        level: "tolka",
-        prompt: "Varför var räven inte rädd för Amir?",
-        options: [
-          "Amir var tyst som en mus",
-          "Räven var van vid människor i stadsmiljön",
-          "Räven kände igen Amir",
-          "Det var för mörkt för räven att se honom",
-        ],
-        correct: 1,
-        explanation:
-          "En räv som bor i staden har vant sig vid människor och trafik, därför flyr den inte som en räv i skogen skulle göra.",
-      },
-      {
-        id: "las-mel-4-q3",
-        level: "reflektera",
-        prompt: "Vad tyder berättelsen på om förhållandet mellan djur och stad?",
-        options: [
-          "Djur hör aldrig hemma i städer",
-          "Vilda djur kan anpassa sig till att leva nära människor",
-          "Alla djur i staden är farliga",
-          "Människor borde aldrig bo nära vilda djur",
-        ],
-        correct: 1,
-        explanation:
-          "Berättelsen visar att räven har anpassat sig till stadslivet — den äter matrester och bor under en veranda utan att ställa till problem.",
-      },
-    ],
-  },
-  {
-    id: "las-mel-5",
-    ageGroup: "mellanstadiet",
-    title: "Målvakten som inte ville",
-    passage:
-      "Saga hade alltid spelat mittfältare i fotbollslaget. Men en dag blev lagets målvakt sjuk precis innan en viktig match. " +
-      "\"Saga, du får ställa dig i mål,\" sa tränaren. Saga protesterade. Hon hatade att vara målvakt. " +
-      "Det var ensamt att stå där bak, och alla skyllde på en om man släppte in mål. " +
-      "Men det fanns ingen annan, så Saga drog på sig handskarna. " +
-      "De första minuterna var lugna. Sedan kom motståndarna med ett hårt skott. Saga slängde sig och fick fingrarna på bollen. " +
-      "Nästa gång kom ett skott nere i hörnet. Saga dök och höll bollen. Laget jublade. " +
-      "När matchen var slut hade Saga hållit nollan. \"Du var fantastisk!\" sa tränaren. " +
-      "Saga log, men sa: \"Jag vill tillbaka till mittfältet nästa match.\" Alla skrattade.",
-    questions: [
-      {
-        id: "las-mel-5-q1",
-        level: "hitta",
-        prompt: "Varför fick Saga stå i mål?",
-        options: [
-          "Hon hade alltid velat prova",
-          "Den vanliga målvakten var sjuk",
-          "Tränaren tyckte hon var bäst",
-          "Hon hade tappat sin plats på mittfältet",
-        ],
-        correct: 1,
-        explanation:
-          "Texten berättar att \"lagets målvakt blev sjuk precis innan en viktig match\".",
-      },
-      {
-        id: "las-mel-5-q2",
-        level: "tolka",
-        prompt: "Varför hatade Saga att vara målvakt?",
-        options: [
-          "Hon var rädd för bollen",
-          "Handskarna var för stora",
-          "Det var ensamt och man fick skulden om man släppte in mål",
-          "Hon kunde inte se bollen på avstånd",
-        ],
-        correct: 2,
-        explanation:
-          "Saga tänker att det är \"ensamt att stå där bak\" och att \"alla skyller på en om man släpper in mål\".",
-      },
-      {
-        id: "las-mel-5-q3",
-        level: "reflektera",
-        prompt: "Vad visar Sagas sista kommentar om hennes karaktär?",
-        options: [
-          "Hon är otacksam och gnällig",
-          "Hon har humor och vet vad hon trivs med, även om hon klarade utmaningen",
-          "Hon vill aldrig prova något nytt",
-          "Hon tycker inte om fotboll",
-        ],
-        correct: 1,
-        explanation:
-          "Saga klarade uppgiften utmärkt men vet fortfarande vad hon föredrar. Att kunna skämta om det visar att hon har bra självkännedom och humor.",
-      },
-    ],
-  },
 ];
 
+// ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // Helper — get texts with fallback chain
 // ---------------------------------------------------------------------------
@@ -1396,5 +1224,172 @@ export function getReadingTexts(ageGroup: AgeGroup): ReadingText[] {
     if (texts.length > 0) return texts;
   }
 
-  return [];
+  return [  {
+    id: "las-mel-3",
+    ageGroup: "mellanstadiet",
+    title: "Kartan i källaren",
+    passage:
+      "Inez och hennes bror Kasper hittade en vikbar karta i en gammal resväska i källaren. Kartan var gulnad och luktade fukt. " +
+      "I ett hörn stod det skrivet med blyerts: \"Sommaren 1978. Ö. utanför Nynäshamn.\" " +
+      "Några ställen på kartan var inringade med rött. Bredvid en av ringarna stod det \"bästa stället\". " +
+      "De tog kartan till mamma. Hon blev alldeles tyst. Sedan sa hon: \"Det där är farmors karta. " +
+      "Hon och farfar brukade ro ut till en ö och tälta varje sommar innan jag föddes.\" " +
+      "Mamma satte sig vid köksbordet och strök med fingret över kartan. \"Jag visste inte att den fanns kvar,\" sa hon. " +
+      "Inez tittade på de röda ringarna och tänkte på en farmor hon aldrig träffat som en gång paddlat till en ö med en röd ring på en karta. " +
+      "Det kändes som om farmor plötsligt blev en verklig person och inte bara ett namn.",
+    questions: [
+      {
+        id: "las-mel-3-q1",
+        level: "hitta",
+        prompt: "Var hittade barnen kartan?",
+        options: ["På vinden", "I en gammal resväska i källaren", "I ett bibliotek", "I en byrålåda"],
+        correct: 1,
+        explanation: "Texten berättar att de hittade kartan \"i en gammal resväska i källaren\".",
+      },
+      {
+        id: "las-mel-3-q2",
+        level: "hitta",
+        prompt: "Vad stod skrivet i kartans hörn?",
+        options: ["Farmors namn", "Sommaren 1978. Ö. utanför Nynäshamn.", "En hemlig kod", "Adressen till huset"],
+        correct: 1,
+        explanation: "På kartan stod det \"Sommaren 1978. Ö. utanför Nynäshamn.\"",
+      },
+      {
+        id: "las-mel-3-q3",
+        level: "tolka",
+        prompt: "Varför blev mamma tyst när hon såg kartan?",
+        options: [
+          "Hon var arg att barnen gått igenom saker i källaren",
+          "Kartan väckte minnen och känslor om hennes egen mamma",
+          "Hon visste inte vad det var för karta",
+          "Hon var trött och ville inte prata",
+        ],
+        correct: 1,
+        explanation: "Mamma blev berörd av att se farmors karta — den väckte känslor kopplade till föräldern hon förlorat.",
+      },
+      {
+        id: "las-mel-3-q4",
+        level: "reflektera",
+        prompt: "Vad menar texten med att farmor \"plötsligt blev en verklig person och inte bara ett namn\"?",
+        options: [
+          "Att Inez trodde att farmor var påhittad",
+          "Att kartan gav farmor en historia och en personlighet som Inez kunde föreställa sig",
+          "Att farmor faktiskt levde och de inte visste om det",
+          "Att Inez inte visste att hon hade en farmor",
+        ],
+        correct: 1,
+        explanation: "Föremål kan göra döda släktingar mer levande. Kartan gav Inez en konkret bild av en kvinna som paddlade till öar och ringade in favoritplatser.",
+      },
+    ],
+  },
+  {
+    id: "las-mel-4",
+    ageGroup: "mellanstadiet",
+    title: "Glaset som rann över",
+    passage:
+      "Det hade börjat med en liten sak. Noel hade glömt sitt gympakläder hemma. Det var inte hela världen, " +
+      "men fröken suckade och sa: \"Igen, Noel?\" " +
+      "Sedan hade Sara tagit hans plats i matsalen, fast hon visste att han alltid satt där. " +
+      "På eftermiddagen missade han ett mål i fotbollen och kompisen Hugo sa: \"Hade du ens ögonen öppna?\" " +
+      "Var för sig var ingen av sakerna särskilt stor. Men tillsammans fyllde de en osynlig bägare inuti honom, " +
+      "droppe för droppe, tills det rann över. " +
+      "När mamma frågade hur dagen hade varit sa Noel \"bra\" och gick raka vägen till sitt rum. " +
+      "Han la sig på sängen och tittade i taket. Det var inte så att han ville gråta. " +
+      "Han kände sig bara som en ballong som sakta tappat all sin luft. " +
+      "Efter en stund knackade mamma på dörren med en kopp varm choklad. Hon sa inget. Hon bara satt där. " +
+      "Och det var precis vad Noel behövde.",
+    questions: [
+      {
+        id: "las-mel-4-q1",
+        level: "hitta",
+        prompt: "Vad hade Noel glömt hemma?",
+        options: ["Mattelexan", "Gympakläder", "Pennan", "Nyckeln"],
+        correct: 1,
+        explanation: "I textens inledning framgår att Noel \"hade glömt sitt gympakläder hemma\".",
+      },
+      {
+        id: "las-mel-4-q2",
+        level: "tolka",
+        prompt: "Vad menar texten med \"en osynlig bägare\" som fylldes droppe för droppe?",
+        options: [
+          "Att Noel drack för mycket vatten",
+          "Att varje liten besvikelse lade sig ovanpå de andra tills han inte orkade mer",
+          "Att han hade ett glas som gick sönder",
+          "Att det regnade hela dagen",
+        ],
+        correct: 1,
+        explanation: "Bägaren är en metafor för Noels tålamod. Varje motgång var liten, men tillsammans blev de för mycket.",
+      },
+      {
+        id: "las-mel-4-q3",
+        level: "reflektera",
+        prompt: "Varför var det viktigt att mamma \"sa inget\" utan bara satt där?",
+        options: [
+          "Hon visste inte vad hon skulle säga",
+          "Ibland är närvaro viktigare än ord — Noel behövde veta att någon fanns där",
+          "Hon var arg och ville inte prata",
+          "Hon hade inte hört vad som hänt",
+        ],
+        correct: 1,
+        explanation: "Mamma visade Noel att han inte var ensam, utan att kräva förklaringar. Tyst närvaro kan vara den bästa trösten.",
+      },
+    ],
+  },
+  {
+    id: "las-mel-5",
+    ageGroup: "mellanstadiet",
+    title: "Trädet som stannade",
+    passage:
+      "Mitt på skolgården stod en gammal ek. Den hade stått där längre än skolan själv — kanske i tvåhundra år. " +
+      "Varje höst tappade den tusentals löv som vaktmästaren muttrade över. " +
+      "En dag kom rektorn och berättade att eken skulle tas ner. Rötterna hade vuxit in i avloppet under skolan. " +
+      "\"Det blir för dyrt att fixa,\" sa rektorn. " +
+      "Ella tyckte att det lät fel. Ett träd som levt i tvåhundra år skulle tas bort för att rör kostade pengar. " +
+      "Hon skrev en insändare till lokaltidningen och samlade 147 namnunderskrifter. " +
+      "Kommunen beslutade att dra om rören runt trädet istället. Det kostade mer, men eken fick stanna. " +
+      "Ella gick förbi den varje morgon efter det. Ibland la hon handen mot barken. Den var varm av solen och grov under fingrarna. " +
+      "Tvåhundra år, tänkte hon. Och nu kanske tvåhundra till.",
+    questions: [
+      {
+        id: "las-mel-5-q1",
+        level: "hitta",
+        prompt: "Varför skulle eken tas ner?",
+        options: [
+          "Den var sjuk och farlig",
+          "Rötterna hade vuxit in i avloppet",
+          "Skolgården skulle byggas om",
+          "Löven var för många att städa",
+        ],
+        correct: 1,
+        explanation: "Rektorn förklarar att rötterna hade vuxit in i avloppet och att det blev för dyrt att fixa.",
+      },
+      {
+        id: "las-mel-5-q2",
+        level: "tolka",
+        prompt: "Varför tyckte Ella att det lät fel att ta ner trädet?",
+        options: [
+          "Hon var allergisk mot avloppslukt",
+          "Hon kände att ett tvåhundra år gammalt levande träd var värt mer än pengar",
+          "Hon ville inte att skolgården skulle bli solig",
+          "Hon var rädd för motorsågar",
+        ],
+        correct: 1,
+        explanation: "Ella reagerade på att ekonomi vägde tyngre än ett levande träds historia.",
+      },
+      {
+        id: "las-mel-5-q3",
+        level: "reflektera",
+        prompt: "Vad visar berättelsen om vad en enskild person kan åstadkomma?",
+        options: [
+          "Att barn inte kan förändra något",
+          "Att en persons engagemang kan sätta igång en förändring som påverkar fler",
+          "Att vuxna alltid lyssnar på barn",
+          "Att insändare inte spelar någon roll",
+        ],
+        correct: 1,
+        explanation: "Ella agerade ensam men fick med sig 147 elever. Berättelsen visar att en person som vågar ta initiativ kan göra skillnad.",
+      },
+    ],
+  },
+];
 }
