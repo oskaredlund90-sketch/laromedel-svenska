@@ -17,6 +17,7 @@ import {
   Megaphone,
   ShieldCheck,
   Quote,
+  Languages,
 } from "lucide-react";
 import {
   Card,
@@ -103,6 +104,13 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       ],
     },
     {
+      groupTitle: "Svenska som andraspråk",
+      groupIcon: Languages,
+      sections: [
+        { slug: "sva", title: "SVA-övningar", description: "Prepositioner, genus, ordföljd och vanliga fel — anpassat för dig som lär dig svenska", icon: Languages },
+      ],
+    },
+    {
       groupTitle: "För lärare",
       groupIcon: Users,
       sections: [
@@ -143,6 +151,13 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "kallkritik", title: "Källkritik", description: "Lär dig bedöma om information är trovärdig", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för att bli en bättre läsare och skribent", icon: GraduationCap },
         { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella provet i åk 6", icon: ClipboardCheck },
+      ],
+    },
+    {
+      groupTitle: "Svenska som andraspråk",
+      groupIcon: Languages,
+      sections: [
+        { slug: "sva", title: "SVA-övningar", description: "Prepositioner, genus, ordföljd, partikelverb och vanliga fel", icon: Languages },
       ],
     },
     {
@@ -189,6 +204,13 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       ],
     },
     {
+      groupTitle: "Svenska som andraspråk",
+      groupIcon: Languages,
+      sections: [
+        { slug: "sva", title: "SVA-övningar", description: "Prepositioner, genus, ordföljd, partikelverb och utökad ordföljd — för SVA-elever", icon: Languages },
+      ],
+    },
+    {
       groupTitle: "För lärare",
       groupIcon: Users,
       sections: [
@@ -229,6 +251,13 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "kallkritik", title: "Källkritik", description: "Källkritik med CARS-modellen, intressekonflikt och vetenskapsgranskning", icon: ShieldCheck },
         { slug: "elevtips", title: "Elevtips", description: "Strategier för akademiskt skrivande och muntliga presentationer", icon: GraduationCap },
         { slug: "nationella-prov", title: "Nationella prov", description: "Information om nationella proven i Svenska 1 och 3", icon: ClipboardCheck },
+      ],
+    },
+    {
+      groupTitle: "Svenska som andraspråk",
+      groupIcon: Languages,
+      sections: [
+        { slug: "sva", title: "SVA-övningar", description: "Avancerad ordföljd, partikelverb, prepositioner och akademiskt språkbruk för SVA", icon: Languages },
       ],
     },
     {
