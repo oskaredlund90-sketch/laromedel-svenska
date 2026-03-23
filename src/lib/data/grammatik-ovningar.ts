@@ -4137,6 +4137,565 @@ const stavningLagstadietEC: ErrorCorrectionExercise[] = [
 // Combine all exercises
 // ---------------------------------------------------------------------------
 
+
+// ---------------------------------------------------------------------------
+// NEW: Stilistik — Högstadiet (extra)
+// ---------------------------------------------------------------------------
+
+const stilistikHogstadietMCExtra: MultipleChoiceExercise[] = [
+  {
+    id: "stilistik-mc-hog-extra-1",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Huset stirrade på oss med sina mörka fönster.'",
+    options: ["Hyperbol", "Besjälning", "Liknelse", "Allitteration"],
+    correct: 1,
+    explanation:
+      "Det är besjälning — huset får mänskliga egenskaper (att stirra). Fönstren liknas vid ögon.",
+  },
+  {
+    id: "stilistik-mc-hog-extra-2",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Ljuset och mörkret, lyckan och sorgen — allt hörde ihop.'",
+    options: ["Anafor", "Antites", "Besjälning", "Hyperbol"],
+    correct: 1,
+    explanation:
+      "Det är en antites — en kontrasterande ställning av motsatser (ljus/mörker, lycka/sorg) för att skapa effekt.",
+  },
+  {
+    id: "stilistik-mc-hog-extra-3",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Solen log mot oss.'",
+    options: ["Metafor", "Besjälning", "Klimax", "Liknelse"],
+    correct: 1,
+    explanation:
+      "Det är besjälning — solen får en mänsklig egenskap (att le).",
+  },
+  {
+    id: "stilistik-mc-hog-extra-4",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Kall som is, varm som eld.'",
+    options: ["Antites med liknelser", "Bara liknelse", "Bara antites", "Hyperbol"],
+    correct: 0,
+    explanation:
+      "Här kombineras antites (kall/varm) med liknelser (som is, som eld). Flera stilfigurer kan samverka.",
+  },
+  {
+    id: "stilistik-mc-hog-extra-5",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Han drack. Han åt. Han somnade.'",
+    options: ["Allitteration", "Hyperbol", "Asyndes", "Anafor"],
+    correct: 2,
+    explanation:
+      "Det är asyndes — uppräkning utan bindeord (och) mellan satserna. Det ger en snabb, avskalad rytm.",
+  },
+];
+
+const stilistikHogstadietEC: ErrorCorrectionExercise[] = [
+  {
+    id: "stilistik-ec-hog-1",
+    type: "error-correction",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur är felaktigt namngiven? Rätta till.",
+    sentence: "Hon var stark som en björn — det är en metafor.",
+    correctedSentence: "Hon var stark som en björn — det är en liknelse.",
+    errorWord: "metafor",
+    correctWord: "liknelse",
+    explanation:
+      "Jämförelser med 'som' är liknelser, inte metaforer. En metafor saknar jämförelseord.",
+  },
+  {
+    id: "stilistik-ec-hog-2",
+    type: "error-correction",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur är felaktigt namngiven? Rätta till.",
+    sentence: "Träden dansade i vinden — det är en hyperbol.",
+    correctedSentence: "Träden dansade i vinden — det är en besjälning.",
+    errorWord: "hyperbol",
+    correctWord: "besjälning",
+    explanation:
+      "När döda ting får mänskliga egenskaper (dansa) är det besjälning, inte hyperbol (överdrift).",
+  },
+  {
+    id: "stilistik-ec-hog-3",
+    type: "error-correction",
+    topic: "stilistik",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken stilfigur är felaktigt namngiven? Rätta till.",
+    sentence: "Jag har väntat i hundra år — det är en liknelse.",
+    correctedSentence: "Jag har väntat i hundra år — det är en hyperbol.",
+    errorWord: "liknelse",
+    correctWord: "hyperbol",
+    explanation:
+      "Det är en överdrift (hyperbol), inte en liknelse. Det finns inget jämförelseord.",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW: Stilistik — Gymnasiet (extra)
+// ---------------------------------------------------------------------------
+
+const stilistikGymnasietMCExtra: MultipleChoiceExercise[] = [
+  {
+    id: "stilistik-mc-gym-extra-1",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken retorisk strategi används?",
+    prompt: "'Tre saker behövs: mod, vilja och uthållighet.'",
+    options: ["Trikolon", "Anafor", "Klimax", "Asyndes"],
+    correct: 0,
+    explanation:
+      "Trikolon är en uppräkning av tre parallella led. Det är ett vanligt retoriskt grepp som ger rytm och tyngd.",
+  },
+  {
+    id: "stilistik-mc-gym-extra-2",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Det var inte bra. Det var inte ens okej. Det var en katastrof.'",
+    options: ["Antites", "Asyndes", "Klimax", "Eufemism"],
+    correct: 2,
+    explanation:
+      "Klimax innebär en stegring — från 'inte bra' via 'inte ens okej' till 'katastrof'. Effekten byggs upp gradvis.",
+  },
+  {
+    id: "stilistik-mc-gym-extra-3",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Han gick bort' istället för 'Han dog'.",
+    options: ["Hyperbol", "Eufemism", "Liknelse", "Ironi"],
+    correct: 1,
+    explanation:
+      "Eufemism är ett mildare uttryck för något obehagligt. 'Gick bort' används istället för det mer direkta 'dog'.",
+  },
+  {
+    id: "stilistik-mc-gym-extra-4",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Vilken fantastisk insats — du satt ju stilla hela matchen.'",
+    options: ["Hyperbol", "Klimax", "Ironi", "Antites"],
+    correct: 2,
+    explanation:
+      "Det är ironi — talaren säger motsatsen till vad hen menar. Berömmet är skenbart.",
+  },
+  {
+    id: "stilistik-mc-gym-extra-5",
+    type: "multiple-choice",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken stilfigur används i exemplet?",
+    prompt: "'Hela Stockholm visste om det.'",
+    options: ["Metonymi", "Metafor", "Hyperbol", "Liknelse"],
+    correct: 0,
+    explanation:
+      "Metonymi innebär att man ersätter ett begrepp med ett närliggande — 'Stockholm' står för 'Stockholms invånare'.",
+  },
+];
+
+const stilistikGymnasietFIB: FillInBlankExercise[] = [
+  {
+    id: "stilistik-fib-gym-1",
+    type: "fill-in-blank",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt stilfigur.",
+    sentence: "Upprepning av samma inledande ord i flera satser kallas ____.",
+    options: ["anafor", "allitteration", "asyndes", "epifor"],
+    correct: "anafor",
+    explanation:
+      "Anafor är upprepning av samma ord i början av flera satser eller versrader.",
+  },
+  {
+    id: "stilistik-fib-gym-2",
+    type: "fill-in-blank",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt stilfigur.",
+    sentence: "Att beskriva något obehagligt med mildare ord kallas ____.",
+    options: ["hyperbol", "ironi", "eufemism", "antites"],
+    correct: "eufemism",
+    explanation:
+      "Eufemism är ett förskönande eller mildrande uttryck, t.ex. 'gå bort' istället för 'dö'.",
+  },
+  {
+    id: "stilistik-fib-gym-3",
+    type: "fill-in-blank",
+    topic: "stilistik",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt stilfigur.",
+    sentence: "En stegring från svagt till starkt kallas ____.",
+    options: ["antiklimax", "klimax", "anafor", "trikolon"],
+    correct: "klimax",
+    explanation:
+      "Klimax är en gradvis upptrappning för retorisk effekt.",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW: Ordbildning — extra övningar
+// ---------------------------------------------------------------------------
+
+const ordbildningMellanstadietMCExtra: MultipleChoiceExercise[] = [
+  {
+    id: "ordbildning-mc-mel-extra-1",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Vad är ett sammansatt ord?",
+    prompt: "Vilket av dessa är ett sammansatt ord?",
+    options: ["springer", "fotboll", "vacker", "snabbt"],
+    correct: 1,
+    explanation:
+      "Fotboll är sammansatt av 'fot' + 'boll'. Två ord bildar ett nytt ord.",
+  },
+  {
+    id: "ordbildning-mc-mel-extra-2",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilket förled har ordet?",
+    prompt: "Vad är förledet i ordet 'snögubbe'?",
+    options: ["gubbe", "snö", "snög", "ubbe"],
+    correct: 1,
+    explanation:
+      "Förledet är 'snö' och efterledet är 'gubbe'. Förledet kommer först i ett sammansatt ord.",
+  },
+  {
+    id: "ordbildning-mc-mel-extra-3",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Vad betyder suffixet -lig?",
+    prompt: "Ordet 'vänlig' har suffixet -lig. Vad gör suffixet?",
+    options: [
+      "Det gör ordet till ett verb",
+      "Det gör ordet till ett adjektiv som beskriver en egenskap",
+      "Det gör ordet till ett substantiv",
+      "Det ändrar inte ordklassen",
+    ],
+    correct: 1,
+    explanation:
+      "Suffixet -lig bildar adjektiv: vän → vänlig, skada → skadlig, möjl → möjlig.",
+  },
+  {
+    id: "ordbildning-mc-mel-extra-4",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "mellanstadiet",
+    instruction: "Identifiera efterledet.",
+    prompt: "Vad är efterledet i 'bokhylla'?",
+    options: ["bok", "hylla", "bokh", "ylla"],
+    correct: 1,
+    explanation:
+      "Efterledet är 'hylla'. Det bestämmer ordets betydelsekategori — en bokhylla är en sorts hylla.",
+  },
+];
+
+const ordbildningHogstadietMCExtra: MultipleChoiceExercise[] = [
+  {
+    id: "ordbildning-mc-hog-extra-1",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken typ av ordbildning?",
+    prompt: "Hur har ordet 'otrolig' bildats?",
+    options: [
+      "Sammansättning",
+      "Avledning med prefix",
+      "Avledning med suffix",
+      "Förkortning",
+    ],
+    correct: 1,
+    explanation:
+      "Prefixet 'o-' har lagts till 'trolig' och ger motsatt betydelse. Det är avledning med prefix.",
+  },
+  {
+    id: "ordbildning-mc-hog-extra-2",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken typ av ordbildning?",
+    prompt: "Ordet 'IT' är en förkortning. Vilken typ?",
+    options: ["Avledning", "Sammansättning", "Akronym", "Suffix"],
+    correct: 2,
+    explanation:
+      "IT (informationsteknik) är en akronym — en förkortning som bildas av begynnelsebokstäverna.",
+  },
+  {
+    id: "ordbildning-mc-hog-extra-3",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Hur bildas verbet av substantivet?",
+    prompt: "Substantivet 'damm' ger verbet 'damma'. Vilken typ av ordbildning?",
+    options: ["Sammansättning", "Avledning med suffix", "Akronym", "Lånord"],
+    correct: 1,
+    explanation:
+      "Genom att lägga till suffixet '-a' har substantivet 'damm' blivit verbet 'damma'. Det är avledning.",
+  },
+  {
+    id: "ordbildning-mc-hog-extra-4",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Identifiera foge-s.",
+    prompt: "Var finns foge-s i ordet 'tidningsartikel'?",
+    options: [
+      "Mellan 'tid' och 'ning'",
+      "Mellan 'tidning' och 'artikel'",
+      "I slutet av ordet",
+      "Det finns inget foge-s",
+    ],
+    correct: 1,
+    explanation:
+      "Foge-s sitter mellan de två leden: tidning-s-artikel. Det binder ihop leden i sammansättningen.",
+  },
+];
+
+const ordbildningGymnasietMCExtra: MultipleChoiceExercise[] = [
+  {
+    id: "ordbildning-mc-gym-extra-1",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken typ av ordbildning?",
+    prompt: "Hur har ordet 'blogg' kommit in i svenska språket?",
+    options: ["Avledning", "Sammansättning", "Lånord", "Förkortning"],
+    correct: 2,
+    explanation:
+      "'Blogg' är ett lånord från engelskans 'blog' (web log). Lånord är en vanlig källa till nya ord.",
+  },
+  {
+    id: "ordbildning-mc-gym-extra-2",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "gymnasiet",
+    instruction: "Analysera ordbildningen.",
+    prompt: "Ordet 'omöjliggöra' — hur många led av ordbildning finns?",
+    options: [
+      "Ett (sammansättning)",
+      "Två (prefix o- + suffix -göra)",
+      "Tre (o- + möjlig + göra)",
+      "Fyra",
+    ],
+    correct: 2,
+    explanation:
+      "Ordet byggs i tre steg: möjlig → omöjlig (prefix o-) → omöjliggöra (sammansättning med göra).",
+  },
+  {
+    id: "ordbildning-mc-gym-extra-3",
+    type: "multiple-choice",
+    topic: "ordbildning",
+    ageGroup: "gymnasiet",
+    instruction: "Identifiera produktiv ordbildning.",
+    prompt: "Vilken av dessa ändelser är mest produktiv i modern svenska?",
+    options: ["-het", "-inna", "-skap", "-ande"],
+    correct: 0,
+    explanation:
+      "Suffixet -het är mycket produktivt och bildar abstrakta substantiv: ensamhet, frihet, snällhet. Det kan läggas till nästan alla adjektiv.",
+  },
+];
+
+const ordbildningCatExtra: CategorizationExercise[] = [
+  {
+    id: "ordbildning-cat-hog-extra-1",
+    type: "categorization",
+    topic: "ordbildning",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera orden efter hur de bildats.",
+    items: ["fotboll", "omöjlig", "datormus", "olycklig", "skolväska", "missförstånd"],
+    categories: ["Sammansättning", "Avledning med prefix"],
+    correctMapping: {
+      fotboll: "Sammansättning",
+      omöjlig: "Avledning med prefix",
+      datormus: "Sammansättning",
+      olycklig: "Avledning med prefix",
+      skolväska: "Sammansättning",
+      missförstånd: "Avledning med prefix",
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// NEW: Textbindning — extra övningar
+// ---------------------------------------------------------------------------
+
+const textbindningMellanstadietFIBExtra: FillInBlankExercise[] = [
+  {
+    id: "textbindning-fib-mel-extra-1",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt bindeord.",
+    sentence: "Maja ville gå ut och leka, ____ det regnade.",
+    options: ["men", "och", "för att", "så"],
+    correct: "men",
+    explanation:
+      "'Men' visar en motsättning: hon ville leka, men vädret hindrade.",
+  },
+  {
+    id: "textbindning-fib-mel-extra-2",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt bindeord.",
+    sentence: "Vi skyndade oss ____ vi inte ville missa bussen.",
+    options: ["eftersom", "men", "dessutom", "eller"],
+    correct: "eftersom",
+    explanation:
+      "'Eftersom' anger orsaken — varför vi skyndade oss.",
+  },
+  {
+    id: "textbindning-fib-mel-extra-3",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt bindeord.",
+    sentence: "Först åt vi glass, ____ gick vi till parken.",
+    options: ["sedan", "men", "trots att", "fast"],
+    correct: "sedan",
+    explanation:
+      "'Sedan' visar tidsordning — vad som hände efter glassätandet.",
+  },
+];
+
+const textbindningHogstadietFIBExtra: FillInBlankExercise[] = [
+  {
+    id: "textbindning-fib-hog-extra-1",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Välj det bindeord som passar bäst.",
+    sentence: "Experimenten misslyckades upprepade gånger. ____ gav forskarna inte upp.",
+    options: ["Likväl", "Dessutom", "Eftersom", "Alltså"],
+    correct: "Likväl",
+    explanation:
+      "'Likväl' uttrycker att något sker trots motstånd — ett starkare alternativ till 'ändå'.",
+  },
+  {
+    id: "textbindning-fib-hog-extra-2",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Välj det bindeord som passar bäst.",
+    sentence: "Priserna steg kraftigt. ____ sjönk efterfrågan.",
+    options: ["Följaktligen", "Dessutom", "Emellertid", "Exempelvis"],
+    correct: "Följaktligen",
+    explanation:
+      "'Följaktligen' visar en logisk konsekvens — stigande priser leder till minskad efterfrågan.",
+  },
+  {
+    id: "textbindning-fib-hog-extra-3",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Välj det bindeord som passar bäst.",
+    sentence: "Boken var intressant. ____ var den ovanligt välskriven.",
+    options: ["Dessutom", "Dock", "Trots det", "Alltså"],
+    correct: "Dessutom",
+    explanation:
+      "'Dessutom' lägger till en ytterligare positiv egenskap — additivt bindeord.",
+  },
+];
+
+const textbindningGymnasietFIBExtra: FillInBlankExercise[] = [
+  {
+    id: "textbindning-fib-gym-extra-1",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Välj det bindeord som passar bäst i akademisk text.",
+    sentence: "Studien visar att stress påverkar sömnen negativt. ____ finns studier som pekar i motsatt riktning.",
+    options: ["Icke desto mindre", "Dessutom", "Exempelvis", "Alltså"],
+    correct: "Icke desto mindre",
+    explanation:
+      "'Icke desto mindre' signalerar en motbild trots tidigare påstående — formellt och nyanserat.",
+  },
+  {
+    id: "textbindning-fib-gym-extra-2",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Välj det bindeord som passar bäst i akademisk text.",
+    sentence: "Resultaten stödjer hypotesen. ____ krävs ytterligare forskning.",
+    options: ["Å andra sidan", "Dock", "Dessutom", "Nämligen"],
+    correct: "Dock",
+    explanation:
+      "'Dock' fungerar som ett formellt 'men' och signalerar en reservation.",
+  },
+  {
+    id: "textbindning-fib-gym-extra-3",
+    type: "fill-in-blank",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Välj det bindeord som passar bäst i akademisk text.",
+    sentence: "Flera faktorer spelar in: ____ socioekonomisk bakgrund, utbildningsnivå och tillgång till vård.",
+    options: ["däremot", "å ena sidan", "bland annat", "trots detta"],
+    correct: "bland annat",
+    explanation:
+      "'Bland annat' inleder en exemplifierande uppräkning som inte är uttömmande.",
+  },
+];
+
+const textbindningCatExtra: CategorizationExercise[] = [
+  {
+    id: "textbindning-cat-hog-extra-1",
+    type: "categorization",
+    topic: "textbindning",
+    ageGroup: "hogstadiet",
+    instruction: "Sortera bindeorden efter funktion.",
+    items: ["dessutom", "dock", "alltså", "emellertid", "följaktligen", "även"],
+    categories: ["Additivt (lägger till)", "Adversativt (motsätter)", "Kausalt (konsekvens)"],
+    correctMapping: {
+      dessutom: "Additivt (lägger till)",
+      dock: "Adversativt (motsätter)",
+      alltså: "Kausalt (konsekvens)",
+      emellertid: "Adversativt (motsätter)",
+      följaktligen: "Kausalt (konsekvens)",
+      även: "Additivt (lägger till)",
+    },
+  },
+  {
+    id: "textbindning-cat-gym-extra-1",
+    type: "categorization",
+    topic: "textbindning",
+    ageGroup: "gymnasiet",
+    instruction: "Sortera bindeorden efter funktion i akademisk text.",
+    items: ["icke desto mindre", "vidare", "sålunda", "å andra sidan", "likaså", "därav"],
+    categories: ["Additivt", "Adversativt", "Kausalt"],
+    correctMapping: {
+      "icke desto mindre": "Adversativt",
+      vidare: "Additivt",
+      sålunda: "Kausalt",
+      "å andra sidan": "Adversativt",
+      likaså: "Additivt",
+      därav: "Kausalt",
+    },
+  },
+];
+
 export const GRAMMAR_EXERCISES: GrammarExercise[] = [
   // 1. Ordklasser
   ...ordklasserLagstadietMC,
@@ -4218,8 +4777,24 @@ export const GRAMMAR_EXERCISES: GrammarExercise[] = [
 
   // 7. Stilistik
   ...stilistikHogstadietMC,
+  ...stilistikHogstadietMCExtra,
+  ...stilistikHogstadietEC,
   ...stilistikHogstadietCat,
   ...stilistikGymnasietMC,
+  ...stilistikGymnasietMCExtra,
   ...stilistikGymnasietEC,
   ...stilistikGymnasietCat,
+  ...stilistikGymnasietFIB,
+
+  // 5b. Ordbildning (extra)
+  ...ordbildningMellanstadietMCExtra,
+  ...ordbildningHogstadietMCExtra,
+  ...ordbildningCatExtra,
+  ...ordbildningGymnasietMCExtra,
+
+  // 6b. Textbindning (extra)
+  ...textbindningMellanstadietFIBExtra,
+  ...textbindningHogstadietFIBExtra,
+  ...textbindningGymnasietFIBExtra,
+  ...textbindningCatExtra,
 ];

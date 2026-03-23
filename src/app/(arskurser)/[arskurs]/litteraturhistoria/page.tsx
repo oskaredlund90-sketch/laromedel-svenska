@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import { type ReactNode } from "react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
+import { getLitExercises } from "@/lib/data/litteraturhistoria-ovningar";
+import { LitteraturhistoriaOvningar } from "@/components/litteraturhistoria-ovningar";
 
 /* ------------------------------------------------------------------ */
 /*  Helper components                                                  */
@@ -609,6 +611,7 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
   }
 
   const level = arskurs as AgeGroup;
+  const exercises = getLitExercises(level);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
@@ -857,6 +860,18 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
             </Section>
           </div>
         </>
+      )}
+
+      {/* Interactive exercises — all levels */}
+      {exercises.length > 0 && (
+        <div className="mt-12">
+          <Section title="Testa dina kunskaper">
+            <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+              Övningar med flerval, para ihop och tidslinjer.
+            </p>
+            <LitteraturhistoriaOvningar exercises={exercises} />
+          </Section>
+        </div>
       )}
     </div>
   );
