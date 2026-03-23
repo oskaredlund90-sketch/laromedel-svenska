@@ -104,7 +104,7 @@ const lagstadietTexts: ReadingText[] = [
     title: "Katten Misse",
     passage:
       "Misse var en liten svart katt med vita tassar. Han bodde hos familjen Lindgren p\u00e5 en g\u00e5rd p\u00e5 landet. " +
-      "Varje morgon gick Misse ut i tr\u00e4dg\u00e5rden f\u00f6r att jaga fj\u00e4rilar. Han smg alltid l\u00e5ngsamt genom gr\u00e4set " +
+      "Varje morgon gick Misse ut i tr\u00e4dg\u00e5rden f\u00f6r att jaga fj\u00e4rilar. Han sm\u00f6g alltid l\u00e5ngsamt genom gr\u00e4set " +
       "och v\u00e4ntade t\u00e5lmodigt. Men han f\u00e5ngade aldrig n\u00e5gon fj\u00e4ril. En dag hittade han en liten igelkott under busken. " +
       "Misse nosade f\u00f6rsiktigt p\u00e5 igelkotten och hoppade bakl\u00e4nges n\u00e4r den rullade ihop sig. " +
       "Fr\u00e5n den dagen gick Misse aldrig under den busken igen.",
@@ -542,11 +542,11 @@ const hogstadietTexts: ReadingText[] = [
     ageGroup: "hogstadiet",
     title: "N\u00e4r tystnaden talar",
     passage:
-      "Klassen fick i uppgift att skriva en insndare om n\u00e5got de tyckte var or\u00e4ttvist. De flesta valde \u00e4mnen som l\u00e4xor, " +
+      "Klassen fick i uppgift att skriva en ins\u00e4ndare om n\u00e5got de tyckte var or\u00e4ttvist. De flesta valde \u00e4mnen som l\u00e4xor, " +
       "mobilf\u00f6rbud och korta raster. Men Fatima skrev om n\u00e5got annat. Hon skrev om hur det k\u00e4nns att vara ny i ett land " +
       "och st\u00e5 i en grupp d\u00e4r alla pratar men ingen pratar med dig. Hon beskrev skolg\u00e5rden som ett hav d\u00e4r alla andra " +
       "hade b\u00e5tar, men hon fick simma. Texten var inte arg. Den var lugn, n\u00e4stan tyst, och det var just det som gjorde den s\u00e5 stark. " +
-      'N\u00e4r l\u00e4raren l\u00e4ste upp den anonym blev det helt knpptyst i klassrummet. N\u00e5gon viskade "wow". ' +
+      'N\u00e4r l\u00e4raren l\u00e4ste upp den anonymt blev det helt kn\u00e4pptyst i klassrummet. N\u00e5gon viskade "wow". ' +
       "Efter lektionen gick tre elever fram till Fatima. De sa ingenting avancerat, bara: \"Vill du h\u00e4nga med p\u00e5 rasten?\" " +
       "Det var f\u00f6rsta g\u00e5ngen n\u00e5gon hade fr\u00e5gat.",
     questions: [
@@ -807,12 +807,12 @@ const gymnasietTexts: ReadingText[] = [
     title: "Masken och m\u00e4nniskan",
     passage:
       "Vi lever i en tid d\u00e4r sj\u00e4lvpresentation har blivit en konstform. Sociala medier erbjuder en sc\u00e9n d\u00e4r vi " +
-      "v\u00e4ljer vilka sidor av oss sj\u00e4lva vi vill visa, och algoritmerna belr den version som genererar mest engagemang. " +
+      "v\u00e4ljer vilka sidor av oss sj\u00e4lva vi vill visa, och algoritmerna bel\u00f6nar den version som genererar mest engagemang. " +
       "Sociologen Erving Goffman skrev redan p\u00e5 1950-talet om hur m\u00e4nniskor spelar roller i vardagen, likt akt\u00f6rer p\u00e5 en teaterscen. " +
-      "Frams\u00e9ngen, det vi visar upp, och bakstaget, det privata, skiljs \u00e5t med medvetna val. Men vad h\u00e4nder n\u00e4r bakstaget krymper? " +
+      "Framscenen, det vi visar upp, och bakstaget, det privata, skiljs \u00e5t med medvetna val. Men vad h\u00e4nder n\u00e4r bakstaget krymper? " +
       "N\u00e4r vi \u00e4ven i ensamheten medvetet \"performar\" f\u00f6r en t\u00e4nkt publik? Forskare inom digital sociologi varnar f\u00f6r att gr\u00e4nsen " +
       "mellan den autentiska och den framst\u00e4llda identiteten h\u00e5ller p\u00e5 att suddas ut. Om vi aldrig sl\u00e4pper masken, " +
-      "vem \u00e4r det d\u00e5 som b\u00e4r den? Frgn \u00e4r inte bara filosofisk. F\u00f6r unga m\u00e4nniskor som formar sin identitet " +
+      "vem \u00e4r det d\u00e5 som b\u00e4r den? Fr\u00e5gan \u00e4r inte bara filosofisk. F\u00f6r unga m\u00e4nniskor som formar sin identitet " +
       "mitt i detta digitala ljus kan konsekvenserna vara h\u00f6gst konkreta: \u00e5ngest, prestationspress och en k\u00e4nsla av att aldrig r\u00e4cka till.",
     questions: [
       {
@@ -836,7 +836,7 @@ const gymnasietTexts: ReadingText[] = [
           'Vad menar f\u00f6rfattaren med fr\u00e5gan "Om vi aldrig sl\u00e4pper masken, vem \u00e4r det d\u00e5 som b\u00e4r den?"',
         options: [
           "Att vi borde sluta anv\u00e4nda sociala medier",
-          "Att det \u00e4r farligt att bra fysiska masker",
+          "Att det \u00e4r farligt att b\u00e4ra fysiska masker",
           "Att om den framst\u00e4llda identiteten tar \u00f6ver finns det ingen autentisk person kvar bakom",
           "Att alla m\u00e4nniskor \u00e4r l\u00f6gnare",
         ],
@@ -881,14 +881,14 @@ const gymnasietTexts: ReadingText[] = [
     ageGroup: "gymnasiet",
     title: "R\u00e4tten att gl\u00f6mmas",
     passage:
-      "I maj 2014 slog EU-domstolen fast att privatpersoner under visa omst\u00e4ndigheter har r\u00e4tt att f\u00e5 s\u00f6kresultat borttagna " +
+      "I maj 2014 slog EU-domstolen fast att privatpersoner under vissa omst\u00e4ndigheter har r\u00e4tt att f\u00e5 s\u00f6kresultat borttagna " +
       "fr\u00e5n s\u00f6kmotorer \u2014 den s\u00e5 kallade r\u00e4tten att bli gl\u00f6md. Beslutet v\u00e4ckte omedelbart debatt. " +
       "F\u00f6rspr\u00e5karna menade att varje m\u00e4nniska f\u00f6rtj\u00e4nar en andra chans och att f\u00f6r\u00e5ldrad, irrelevant information " +
       "inte ska f\u00f6rf\u00f6lja n\u00e5gon f\u00f6r resten av livet. En ung person som beg\u00e5tt ett misstag ska inte beh\u00f6va m\u00f6ta det " +
       "vid varje jobbans\u00f6kan. Kritikerna h\u00e4vdade d\u00e4remot att r\u00e4tten riskerade att bli ett verktyg f\u00f6r m\u00e4ktiga " +
       "att d\u00f6lja obehaglig men samh\u00e4llsrelevant information. Om en politiker eller f\u00f6retagsledare kan radera sitt digitala f\u00f6rflutna, " +
       "vad h\u00e4nder d\u00e5 med allm\u00e4nhetens r\u00e4tt att granska makten? Sp\u00e4nningen mellan integritet och transparens " +
-      "\u00e4r inte ny, men digitaliseringen har sk\u00e4rpt den. I en v\u00e4rld d\u00e4r information \u00e4r permanentär fr\u00e5gan inte om vi beh\u00f6ver " +
+      "\u00e4r inte ny, men digitaliseringen har sk\u00e4rpt den. I en v\u00e4rld d\u00e4r information \u00e4r permanent \u00e4r fr\u00e5gan inte om vi beh\u00f6ver " +
       "en r\u00e4tt att gl\u00f6mmas, utan hur den ska begr\u00e4nsas s\u00e5 att den skyddar individen utan att skada demokratin.",
     questions: [
       {
@@ -1096,7 +1096,7 @@ const gymnasietTexts: ReadingText[] = [
         ],
         correct: 1,
         explanation:
-          "Ulrikas brev hem avslöjar att hon ser sin situation nykert men ändå väljer framåt. De \"möjligheter som inte fanns hemma\" antyder att livet i Sverige var ännu mer begränsat. Det är en komplex bild av emigrantens verklighet.",
+          "Ulrikas brev hem avslöjar att hon ser sin situation nyktert men ändå väljer framåt. De \"möjligheter som inte fanns hemma\" antyder att livet i Sverige var ännu mer begränsat. Det är en komplex bild av emigrantens verklighet.",
       },
     ],
   },
@@ -1193,7 +1193,7 @@ const ALL_READING_TEXTS: ReadingText[] = [
     title: "Tidskapseln",
     passage:
       "Klass 5B hade bestämt sig för att göra en tidskapsel. De skulle gräva ner en låda på skolgården och öppna den om fem år. " +
-      "Alla fick lägga i en sak. Wilma la i en teckning av sin häst Stansen. Omar stoppade ner sitt favoritserietidning. " +
+      "Alla fick lägga i en sak. Wilma la i en teckning av sin häst Stansen. Omar stoppade ner sin favoritserietidning. " +
       "Elsa tvekade länge men valde till slut ett foto på hela klassen. " +
       "\"Om fem år kanske vi inte ens minns varandra,\" sa hon tyst. " +
       "\"Just därför är fotot perfekt,\" sa fröken och log. " +

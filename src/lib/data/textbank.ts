@@ -2900,7 +2900,7 @@ Det handlar inte om att förbjuda sociala medier. Det handlar om att inse att en
 
 Ur klimatperspektiv har kärnkraften låga koldioxidutsläpp under drift, jämförbara med vind- och solkraft. I ett läge där varje gram koldioxid räknas är detta signifikant. Kärnkraften levererar dessutom stabil basenergi oberoende av väder, till skillnad från sol och vind som kräver kompletterande lagring eller reservkapacitet.
 
-Sverige har historiskt haft en framgångsrik kärnkraftsindustri. Den tekniska kompetensen finns. Nya reaktordesigner — så kallade SMR, små modulära reaktorer — lovar kortare byggtider, lägre kostnader och ökad säkerhet jämfört med traditionella storskalereaktor.
+Sverige har historiskt haft en framgångsrik kärnkraftsindustri. Den tekniska kompetensen finns. Nya reaktordesigner — så kallade SMR, små modulära reaktorer — lovar kortare byggtider, lägre kostnader och ökad säkerhet jämfört med traditionella storskalereaktorer.
 
 Men invändningarna är substantiella. Kärnkraftsutbyggnad tar decennier från beslut till driftstart, tid som klimatomställningen inte har. Avfallsfrågan förblir olöst i praktiken, trots tekniska lösningar som Forsmarks slutförvar. Och de ekonomiska riskerna är betydande — internationella projekt som Flamanville och Hinkley Point C har drabbats av massiva fördyringar.
 
@@ -3090,7 +3090,7 @@ Inom sjukvården visar AI-system redan kapacitet att identifiera cancer i röntg
 
 Arbetsmarknaden genomgår samtidigt en transformation. Rutinmässiga kognitiva uppgifter — bokföring, dokumentsammanställning, enklare juridisk analys — automatiseras i snabb takt. Ekonomer vid Oxfords universitet uppskattar att nästan hälften av alla arbetsuppgifter riskerar att påverkas under de kommande decennierna. Samtidigt skapas nya yrkesroller: AI-tränare, etikgranskare och promptingenjörer.
 
-De etiska dimensionerna är komplexa. AI-system tränade på historisk data riskerar att reproducera och förstärka befintliga fördomar. Ansiktsienkänningsteknologi har uppvisat betydligt sämre träffsäkerhet för mörkhyade individer. Frågan om ansvar när ett autonomt system fattar felaktiga beslut saknar ännu entydiga juridiska svar.
+De etiska dimensionerna är komplexa. AI-system tränade på historisk data riskerar att reproducera och förstärka befintliga fördomar. Ansiktsigenk\u00e4nningsteknologi har uppvisat betydligt sämre träffsäkerhet för mörkhyade individer. Frågan om ansvar när ett autonomt system fattar felaktiga beslut saknar ännu entydiga juridiska svar.
 
 Dessutom aktualiserar AI frågor om transparens och makt. De mest avancerade modellerna utvecklas av en handfull teknikföretag med enorm datamängd och beräkningskapacitet. Demokratisk insyn i hur dessa system fungerar och vilka värderingar de kodifierar är begränsad.
 
@@ -3212,11 +3212,11 @@ Men vikingatiden tog slut runt år 1100. Skandinavien blev kristet, kungadömen 
     categoryLabel: "Faktatext",
     difficulty: "hogstadiet",
     difficultyLabel: "Högstadiet",
-    content: `Tropiska regnskogar täcker cirka sex procent av jordens yta men hyser mer än hälften av alla kända arter. De producerar syre, binder koldioxid och reglerar globala vädermönster. Metaforen 'jordens lungor' är ingen överdrift — regneskogarna spelar en nyckelroll för planetens klimat och biologiska mångfald.
+    content: `Tropiska regnskogar täcker cirka sex procent av jordens yta men hyser mer än hälften av alla kända arter. De producerar syre, binder koldioxid och reglerar globala vädermönster. Metaforen 'jordens lungor' är ingen överdrift — regnskogarna spelar en nyckelroll för planetens klimat och biologiska mångfald.
 
 De mest kända regnskogsområdena finns i Amazonas, Kongobäckenet och Sydostasien. Amazonas regnskog ensam producerar ungefär tjugo procent av jordens syre och innehåller tio procent av alla arter på planeten. Ekosystemet är så komplext att forskare uppskattar att miljoner arter ännu inte har identifierats.
 
-Regnskogens struktur är uppdelad i skikt. Kronlagret högst upp fångar det mesta av solljuset. Under det finns mellanskiktet med mindre träd och klätterväxter. Markskiktet är mörkt och fuktigt, hem för svampar, insekter och nedbrytare. Varje skikt bildar sin egen ekologisk nisch med anpassade arter.
+Regnskogens struktur är uppdelad i skikt. Kronlagret högst upp fångar det mesta av solljuset. Under det finns mellanskiktet med mindre träd och klätterväxter. Markskiktet är mörkt och fuktigt, hem för svampar, insekter och nedbrytare. Varje skikt bildar sin egen ekologiska nisch med anpassade arter.
 
 Avskogningen är det mest akuta hotet. Varje minut försvinner regnskog motsvarande ungefär trettio fotbollsplaner, huvudsakligen till förmån för boskapsuppfödning, sojaplantager och palmolja. När skogen försvinner frigörs bunden koldioxid, lokala nederbördsmönster rubbas och arter utrotas.
 
@@ -3226,7 +3226,7 @@ Att bevara regnskogen handlar inte om altruism — det handlar om självbevarels
     analysisQuestions: [
       "Vilka funktioner fyller regnskogen enligt texten? Lista minst fyra.",
       "Hur använder texten siffror och jämförelser för att göra fakta konkreta?",
-      "Varför nämner texten urfolk? Vilken koppling har det till regnksogens bevarande?",
+      "Varför nämner texten urfolk? Vilken koppling har det till regnskogens bevarande?",
       "Diskutera avslutningens påstående att bevarande handlar om 'självbevarelsedrift'. Håller du med?",
     ],
     structure:

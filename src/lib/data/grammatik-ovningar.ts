@@ -1690,7 +1690,7 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "sej",
     correctWord: "sig",
     explanation:
-      "I skriftsprak stavas det 'sig', inte 'sej'. 'Sej' är talsprak.",
+      "I skriftspr\u00e5k stavas det 'sig', inte 'sej'. 'Sej' är talspr\u00e5k.",
   },
   {
     id: "stavning-ec-hog-6",
@@ -1746,7 +1746,7 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "Dom",
     correctWord: "De",
     explanation:
-      "I formellt skriftsprak används 'de' (subjektsform) och 'dem' (objektsform), inte 'dom'.",
+      "I formellt skriftspr\u00e5k används 'de' (subjektsform) och 'dem' (objektsform), inte 'dom'.",
   },
   {
     id: "stavning-ec-gym-2",
@@ -1908,15 +1908,15 @@ const ordbildningHogstadietMC: MultipleChoiceExercise[] = [
     options: ["-lig", "-ig", "-nlig", "-van"],
     correct: 0,
     explanation:
-      "Suffixet är '-lig'. Grundordet är 'van' och suffixet '-lig' bildar adjektivet 'vanlig'.",
+      "Suffixet \u00e4r '-lig'. Grundordet \u00e4r 'v\u00e4n' och suffixet '-lig' bildar adjektivet 'v\u00e4nlig'.",
   },
   {
     id: "ordbildning-mc-hog-2",
     type: "multiple-choice",
     topic: "ordbildning",
     ageGroup: "hogstadiet",
-    instruction: "Vilka två ord bildar sammansattningen?",
-    prompt: "Vilka delar bestar 'flygplats' av?",
+    instruction: "Vilka tv\u00e5 ord bildar sammans\u00e4ttningen?",
+    prompt: "Vilka delar best\u00e5r 'flygplats' av?",
     options: [
       "flyg + plats",
       "fly + gplats",
@@ -1937,7 +1937,7 @@ const ordbildningHogstadietMC: MultipleChoiceExercise[] = [
     options: ["över-", "overr-", "o-", "overras-"],
     correct: 0,
     explanation:
-      "Prefixet är 'över-'. Det läggs före grundordet 'raskad' (från 'raska') för att bilda ett nytt ord.",
+      "Prefixet \u00e4r '\u00f6ver-'. Det l\u00e4ggs f\u00f6re verbet 'raska' f\u00f6r att bilda '\u00f6verraska', vars particip \u00e4r '\u00f6verraskad'.",
   },
   {
     id: "ordbildning-mc-hog-4",
@@ -1945,7 +1945,7 @@ const ordbildningHogstadietMC: MultipleChoiceExercise[] = [
     topic: "ordbildning",
     ageGroup: "hogstadiet",
     instruction: "Hur bildas ordet 'otrolig'?",
-    prompt: "Vilken ordbildningsprocess har anvants?",
+    prompt: "Vilken ordbildningsprocess har anv\u00e4nts?",
     options: [
       "Sammansättning",
       "Avledning med prefix",
@@ -1961,7 +1961,7 @@ const ordbildningHogstadietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "ordbildning",
     ageGroup: "hogstadiet",
-    instruction: "Vad är fogemorfemet i sammansattningen?",
+    instruction: "Vad är fogemorfemet i sammans\u00e4ttningen?",
     prompt: "Vad är fogemorfemet i ordet 'dagstidning'?",
     options: ["-s-", "-t-", "-a-", "inget fogeelement"],
     correct: 0,
@@ -2078,8 +2078,8 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "ordbildning",
     ageGroup: "gymnasiet",
-    instruction: "Analysera sammansattningen.",
-    prompt: "I sammansattningen 'barnboksförfattare', vilken är huvudleden?",
+    instruction: "Analysera sammans\u00e4ttningen.",
+    prompt: "I sammans\u00e4ttningen 'barnboksförfattare', vilken är huvudleden?",
     options: ["barn", "bok", "författare", "barnbok"],
     correct: 2,
     explanation:
@@ -2145,7 +2145,7 @@ const textbindningHogstadietFIB: FillInBlankExercise[] = [
     topic: "textbindning",
     ageGroup: "hogstadiet",
     instruction: "Välj rätt sambandsord.",
-    sentence: "Det regnade hela dagen. ____ bestamde vi oss för att stanna inne.",
+    sentence: "Det regnade hela dagen. ____ best\u00e4mde vi oss för att stanna inne.",
     options: ["Dessutom", "Därför", "Dock", "I stället"],
     correct: "Därför",
     explanation:
@@ -2277,7 +2277,7 @@ const textbindningGymnasietFIB: FillInBlankExercise[] = [
     relatedTextSlug: "ai-i-utbildningen",
     instruction: "Välj det mest passande sambandsordet.",
     sentence:
-      "Undersokningen visar på tydliga skillnader. ____ kan man dra slutsatsen att ytterligare forskning behövs.",
+      "Unders\u00f6kningen visar på tydliga skillnader. ____ kan man dra slutsatsen att ytterligare forskning behövs.",
     options: ["Dock", "Således", "Trots det", "Dessutom"],
     correct: "Således",
     explanation:
@@ -2454,7 +2454,7 @@ const stilistikGymnasietMC: MultipleChoiceExercise[] = [
     options: ["Anafor", "Antites", "Allitteration", "Eufemism"],
     correct: 1,
     explanation:
-      "Det är en antites — två motsatta ideer ställs mot varandra för att skapa effekt (litet steg vs. jättekliv).",
+      "Det är en antites — tv\u00e5 motsatta id\u00e9er ställs mot varandra för att skapa effekt (litet steg vs. jättekliv).",
   },
   {
     id: "stilistik-mc-gym-8",
@@ -2476,7 +2476,7 @@ const stilistikGymnasietMC: MultipleChoiceExercise[] = [
     relatedTextSlug: "sprak-och-makt",
     instruction: "Vilken språknivå representerar texten?",
     prompt:
-      "'Hallå! Kolla, jag fixade det där till slut. Fett nice alltsa!'",
+      "'Hallå! Kolla, jag fixade det där till slut. Fett nice allts\u00e5!'",
     options: [
       "Formellt språk",
       "Informellt språk",
@@ -2498,9 +2498,9 @@ const stilistikGymnasietMC: MultipleChoiceExercise[] = [
       "'Härmed intygas att undertecknad fullgjort samtliga ålagda arbetsuppgifter i enlighet med gällande bestämmelser.'",
     options: [
       "Informellt språk",
-      "Ledigt skriftsprak",
+      "Ledigt skriftspr\u00e5k",
       "Formellt/byråkratiskt språk",
-      "Litterart språk",
+      "Litter\u00e4rt språk",
     ],
     correct: 2,
     explanation:
@@ -2537,7 +2537,7 @@ const ordklasserHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "Dom",
     correctWord: "De",
     explanation:
-      "I skriftsprak används 'de' (subjektsform) och 'dem' (objektsform), inte 'dom'. Här är det subjektsform som behövs.",
+      "I skriftspr\u00e5k används 'de' (subjektsform) och 'dem' (objektsform), inte 'dom'. Här är det subjektsform som behövs.",
   },
   {
     id: "ordklasser-ec-hog-3",
@@ -2563,7 +2563,7 @@ const ordklasserHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "jättestor paketen",
     correctWord: "jättestort paket",
     explanation:
-      "'Paket' är ett ett-ord, sa adjektivet ska vara 'jättestort' (neutrum). Dessutom ska det vara obestamd form 'paket', inte 'paketen'.",
+      "'Paket' är ett ett-ord, s\u00e5 adjektivet ska vara 'jättestort' (neutrum). Dessutom ska det vara obest\u00e4md form 'paket', inte 'paketen'.",
   },
   {
     id: "ordklasser-ec-hog-5",
@@ -2918,7 +2918,7 @@ const meningsbyggnadGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "Sittandes",
     correctWord: "Sittande",
     explanation:
-      "Presens particip i skriftsprak har inte s-ändelse. 'Sittande' är korrekt form; 'sittandes' är talsprak.",
+      "Presens particip i skriftspr\u00e5k har inte s-ändelse. 'Sittande' är korrekt form; 'sittandes' är talspr\u00e5k.",
   },
 ];
 
@@ -3254,7 +3254,7 @@ const stavningHogstadietECExtra: ErrorCorrectionExercise[] = [
     errorWord: "nåra",
     correctWord: "några",
     explanation:
-      "'Några' stavas med g före r. 'Nåra' är talsprak.",
+      "'Några' stavas med g före r. 'Nåra' är talspr\u00e5k.",
   },
   {
     id: "stavning-ec-hog-10",

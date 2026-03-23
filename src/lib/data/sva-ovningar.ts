@@ -209,7 +209,7 @@ const GENUS: SvaExercise[] = [
     options: ["Ett", "En"],
     correct: "Ett",
     explanation:
-      "Äpple är ett ett-ord. Tips: många ord som slutar på -e är ett-ord, som ett äpple, ett borde. Men inte alla!",
+      "Äpple är ett ett-ord. Tips: många ord som slutar på -e är ett-ord, som ett äpple, ett bord. Men inte alla!",
   },
   // --- mellanstadiet ---
   {
@@ -259,7 +259,7 @@ const GENUS: SvaExercise[] = [
     options: ["ett", "en"],
     correct: "ett",
     explanation:
-      "Förslag är ett ett-ord. Många substantiv som slutar på -slag är ett-ord: ett förslag, ett tilslag, ett utslag.",
+      "Förslag är ett ett-ord. Många substantiv som slutar på -slag är ett-ord: ett förslag, ett tillslag, ett utslag.",
   },
   // --- gymnasiet ---
   {
@@ -589,7 +589,7 @@ const PARTIKELVERB: SvaExercise[] = [
     options: ["ser ut", "ser på", "ser till"],
     correct: "ser ut",
     explanation:
-      "'Se ut' betyder att ha ett visst utseende eller verka på ett visst sätt. 'Hon ser ut glad' = hon verkar glad. 'Se på' betyder att titta på något.",
+      "'Se ut' betyder att ha ett visst utseende eller verka på ett visst sätt. 'Hon ser glad ut' = hon verkar glad. 'Se på' betyder att titta på något.",
   },
   {
     id: "part-mel-7",
