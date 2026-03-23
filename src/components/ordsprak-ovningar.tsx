@@ -67,6 +67,7 @@ function QuizCard({
       </div>
       {answered && (
         <div
+          aria-live="polite"
           className={`mt-4 rounded-lg p-3 text-sm ${
             isCorrect
               ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
@@ -75,11 +76,11 @@ function QuizCard({
         >
           {isCorrect ? (
             <span className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4" /> Rätt!
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Rätt!
             </span>
           ) : (
             <span className="flex items-center gap-2">
-              <XCircle className="h-4 w-4" /> Fel.
+              <XCircle className="h-4 w-4" aria-hidden="true" /> Fel.
             </span>
           )}
           <p className="mt-1">{exercise.explanation}</p>
@@ -211,15 +212,15 @@ function MatchCard({
         </button>
       )}
       {checked && (
-        <div className="mt-4 rounded-lg bg-neutral-50 p-3 text-sm dark:bg-neutral-900">
+        <div className="mt-4 rounded-lg bg-neutral-50 p-3 text-sm dark:bg-neutral-900" aria-live="polite">
           {exercise.pairs.every((pair, i) => shuffledRight[matches[i]] === pair.right) ? (
             <span className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
-              <CheckCircle2 className="h-4 w-4" /> Alla rätt!
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Alla rätt!
             </span>
           ) : (
             <div>
               <span className="flex items-center gap-2 text-red-700 dark:text-red-300">
-                <XCircle className="h-4 w-4" /> Inte alla rätt.
+                <XCircle className="h-4 w-4" aria-hidden="true" /> Inte alla rätt.
               </span>
               <p className="mt-2 text-neutral-600 dark:text-neutral-400">
                 Rätt svar:{" "}
@@ -310,6 +311,7 @@ function FillInBlankCard({
       </div>
       {answered && (
         <div
+          aria-live="polite"
           className={`mt-4 rounded-lg p-3 text-sm ${
             isCorrect
               ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
@@ -318,11 +320,11 @@ function FillInBlankCard({
         >
           {isCorrect ? (
             <span className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4" /> Rätt!
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Rätt!
             </span>
           ) : (
             <span className="flex items-center gap-2">
-              <XCircle className="h-4 w-4" /> Fel. Rätt svar: {exercise.correct}
+              <XCircle className="h-4 w-4" aria-hidden="true" /> Fel. Rätt svar: {exercise.correct}
             </span>
           )}
           <p className="mt-1">{exercise.explanation}</p>
@@ -434,9 +436,16 @@ export function OrdsprakOvningar({
         <span>
           Övning {currentIdx + 1} av {exercises.length}
         </span>
-        <span>{score} rätt</span>
+        <span aria-live="polite">{score} rätt</span>
       </div>
-      <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+      <div
+        className="mb-6 h-1.5 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700"
+        role="progressbar"
+        aria-valuenow={currentIdx + 1}
+        aria-valuemin={0}
+        aria-valuemax={exercises.length}
+        aria-label={`Framsteg: ${currentIdx + 1} av ${exercises.length} övningar`}
+      >
         <div
           className="h-full rounded-full bg-neutral-900 transition-all dark:bg-white"
           style={{ width: `${((currentIdx + 1) / exercises.length) * 100}%` }}

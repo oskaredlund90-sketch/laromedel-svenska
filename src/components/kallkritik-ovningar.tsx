@@ -77,10 +77,16 @@ function OptionList({
           </span>
           <span className="flex-1">{opt}</span>
           {answered && i === correctIndex && (
-            <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" />
+            <>
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+              <span className="sr-only">Rätt svar</span>
+            </>
           )}
           {answered && i === selectedIndex && i !== correctIndex && (
-            <XCircle className="h-5 w-5 shrink-0 text-red-500 dark:text-red-400" />
+            <>
+              <XCircle className="h-5 w-5 shrink-0 text-red-500 dark:text-red-400" aria-hidden="true" />
+              <span className="sr-only">Fel svar</span>
+            </>
           )}
         </button>
       ))}
@@ -236,7 +242,14 @@ export default function KallkritikOvningar({
           </span>{" "}
           rätt ({percentage}%)
         </p>
-        <div className="mt-2 h-2 w-48 mx-auto rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div
+          className="mt-2 h-2 w-48 mx-auto rounded-full bg-neutral-100 dark:bg-neutral-800"
+          role="progressbar"
+          aria-valuenow={percentage}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label={`Resultat: ${percentage}%`}
+        >
           <div
             className="h-2 rounded-full bg-emerald-500 transition-all"
             style={{ width: `${percentage}%` }}
@@ -265,11 +278,18 @@ export default function KallkritikOvningar({
           <span className="text-neutral-500 dark:text-neutral-400">
             Övning {currentIndex + 1} av {exercises.length}
           </span>
-          <span className="font-medium text-neutral-900 dark:text-white">
+          <span className="font-medium text-neutral-900 dark:text-white" aria-live="polite">
             {score} rätt
           </span>
         </div>
-        <div className="mt-2 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div
+          className="mt-2 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800"
+          role="progressbar"
+          aria-valuenow={currentIndex + (answered ? 1 : 0)}
+          aria-valuemin={0}
+          aria-valuemax={exercises.length}
+          aria-label={`Framsteg: ${currentIndex + (answered ? 1 : 0)} av ${exercises.length} övningar`}
+        >
           <div
             className="h-1.5 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 transition-all duration-300"
             style={{
@@ -318,7 +338,7 @@ export default function KallkritikOvningar({
 
         {/* Explanation */}
         {answered && currentExercise.explanation && (
-          <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+          <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400" aria-live="polite">
             {currentExercise.explanation}
           </p>
         )}

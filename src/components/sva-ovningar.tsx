@@ -260,12 +260,19 @@ export default function SvaOvningar({ ageGroup }: SvaOvningarProps) {
                 {streak} i rad!
               </span>
             )}
-            <span className="font-medium text-neutral-900 dark:text-white">
+            <span className="font-medium text-neutral-900 dark:text-white" aria-live="polite">
               {score} rätt
             </span>
           </div>
         </div>
-        <div className="mt-2 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div
+          className="mt-2 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800"
+          role="progressbar"
+          aria-valuenow={currentIndex + (answered ? 1 : 0)}
+          aria-valuemin={0}
+          aria-valuemax={exercises.length}
+          aria-label={`Framsteg: ${currentIndex + (answered ? 1 : 0)} av ${exercises.length} övningar`}
+        >
           <div
             className="h-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 transition-all duration-300 dark:from-amber-500 dark:to-amber-400"
             style={{
@@ -327,10 +334,12 @@ function CategoryTabs({
 }) {
   return (
     <div className="border-b border-neutral-100 px-6 py-4 dark:border-neutral-800">
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="SVA-kategorier">
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
+            role="tab"
+            aria-selected={active === cat}
             onClick={() => onChange(cat)}
             className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               active === cat
@@ -400,17 +409,23 @@ function MultipleChoiceBlock({
               </span>
               <span className="flex-1">{option}</span>
               {answered && isThisCorrect && (
-                <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" />
+                <>
+                  <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                  <span className="sr-only">Rätt svar</span>
+                </>
               )}
               {answered && i === selectedIndex && !isCorrect && (
-                <XCircle className="h-5 w-5 shrink-0 text-red-500 dark:text-red-400" />
+                <>
+                  <XCircle className="h-5 w-5 shrink-0 text-red-500 dark:text-red-400" aria-hidden="true" />
+                  <span className="sr-only">Fel svar</span>
+                </>
               )}
             </button>
           );
         })}
       </div>
       {answered && exercise.explanation && (
-        <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400">
+        <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400" aria-live="polite">
           {exercise.explanation}
         </p>
       )}
@@ -497,7 +512,7 @@ function FillInBlankBlock({
         })}
       </div>
       {answered && exercise.explanation && (
-        <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400">
+        <p className="mt-4 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400" aria-live="polite">
           {exercise.explanation}
         </p>
       )}

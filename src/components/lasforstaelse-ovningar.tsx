@@ -326,7 +326,14 @@ export default function LasforstaelseOvningar({
         </div>
 
         {/* Progress bar */}
-        <div className="mt-3 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div
+          className="mt-3 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800"
+          role="progressbar"
+          aria-valuenow={currentQuestionIndex + (answered ? 1 : 0)}
+          aria-valuemin={0}
+          aria-valuemax={totalQuestions}
+          aria-label={`Framsteg: ${currentQuestionIndex + (answered ? 1 : 0)} av ${totalQuestions} frågor`}
+        >
           <div
             className="h-1.5 rounded-full bg-gradient-to-r from-sky-400 to-sky-500 transition-all duration-300 dark:from-sky-500 dark:to-sky-400"
             style={{
@@ -339,7 +346,7 @@ export default function LasforstaelseOvningar({
           <h3 className="font-semibold text-neutral-900 dark:text-white">
             {selectedText.title}
           </h3>
-          <span className="font-medium text-neutral-900 dark:text-white">
+          <span className="font-medium text-neutral-900 dark:text-white" aria-live="polite">
             {score} rätt
           </span>
         </div>
@@ -402,7 +409,10 @@ export default function LasforstaelseOvningar({
                 </span>
                 <span className="flex-1">{option}</span>
                 {answered && isThisCorrect && (
-                  <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" />
+                  <>
+                    <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                    <span className="sr-only">Rätt svar</span>
+                  </>
                 )}
               </button>
             );
@@ -412,6 +422,7 @@ export default function LasforstaelseOvningar({
         {/* Explanation */}
         {answered && currentQuestion.explanation && (
           <div
+            aria-live="polite"
             className={`mt-4 rounded-lg border px-4 py-3 text-sm ${
               isCorrect
                 ? "border-emerald-300 bg-emerald-100 text-emerald-800 dark:border-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300"

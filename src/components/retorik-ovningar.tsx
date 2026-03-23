@@ -217,15 +217,15 @@ function MatchRenderer({
         </button>
       )}
       {checked && (
-        <div className="mt-4 rounded-lg bg-neutral-50 p-3 text-sm dark:bg-neutral-900">
+        <div className="mt-4 rounded-lg bg-neutral-50 p-3 text-sm dark:bg-neutral-900" aria-live="polite">
           {exercise.pairs.every((pair, i) => shuffledRight[matches[i]] === pair.right) ? (
             <span className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
-              <CheckCircle2 className="h-4 w-4" /> Alla rätt!
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Alla rätt!
             </span>
           ) : (
             <div>
               <span className="flex items-center gap-2 text-red-700 dark:text-red-300">
-                <XCircle className="h-4 w-4" /> Inte alla rätt.
+                <XCircle className="h-4 w-4" aria-hidden="true" /> Inte alla rätt.
               </span>
               <p className="mt-2 text-neutral-600 dark:text-neutral-400">
                 Rätt svar:{" "}
@@ -443,10 +443,12 @@ export function RetorikOvningar({ ageGroup }: { ageGroup: AgeGroup }) {
     <Card>
       <CardHeader>
         {/* Category tabs */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Retorikkategorier">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
+              role="tab"
+              aria-selected={activeCategory === cat}
               onClick={() => handleCategoryChange(cat)}
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 activeCategory === cat
@@ -474,11 +476,18 @@ export function RetorikOvningar({ ageGroup }: { ageGroup: AgeGroup }) {
               <span className="text-neutral-500 dark:text-neutral-400">
                 Övning {currentIndex + 1} av {exercises.length}
               </span>
-              <span className="font-medium text-neutral-900 dark:text-white">
+              <span className="font-medium text-neutral-900 dark:text-white" aria-live="polite">
                 {score} rätt
               </span>
             </div>
-            <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+            <div
+              className="mb-6 h-1.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800"
+              role="progressbar"
+              aria-valuenow={currentIndex + (answered ? 1 : 0)}
+              aria-valuemin={0}
+              aria-valuemax={exercises.length}
+              aria-label={`Framsteg: ${currentIndex + (answered ? 1 : 0)} av ${exercises.length} övningar`}
+            >
               <div
                 className="h-full rounded-full bg-neutral-900 transition-all duration-300 dark:bg-white"
                 style={{
@@ -489,14 +498,14 @@ export function RetorikOvningar({ ageGroup }: { ageGroup: AgeGroup }) {
 
             {/* Feedback icon */}
             {answered && (
-              <div className="mb-4 flex items-center gap-2">
+              <div className="mb-4 flex items-center gap-2" aria-live="polite">
                 {isCorrect ? (
                   <span className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                    <CheckCircle2 className="h-5 w-5" /> Rätt!
+                    <CheckCircle2 className="h-5 w-5" aria-hidden="true" /> Rätt!
                   </span>
                 ) : (
                   <span className="inline-flex items-center gap-1.5 text-sm font-medium text-red-600 dark:text-red-400">
-                    <XCircle className="h-5 w-5" /> Fel
+                    <XCircle className="h-5 w-5" aria-hidden="true" /> Fel
                   </span>
                 )}
               </div>
