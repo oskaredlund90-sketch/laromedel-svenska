@@ -2760,4 +2760,480 @@ Dela med andra:
     skrivverkstadLink: "/skrivverkstad/faktatext",
     skrivverkstadLabel: "Skrivverkstad: Faktatext",
   },
+
+  // ─── NYA ARGUMENTERANDE TEXTER ──────────────────────────────
+  {
+    slug: "bor-barn-ha-mobiltelefon",
+    title: "Bör barn ha mobiltelefon?",
+    category: "argumenterande",
+    categoryLabel: "Insändare",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Många barn i vår klass har fått en egen mobiltelefon. Men bör barn verkligen ha en mobil? Det finns både fördelar och nackdelar.
+
+En fördel är att barn kan ringa sina föräldrar om något händer. Om man missar bussen eller om träningen slutar tidigt kan man snabbt ge besked. Det gör att föräldrar känner sig trygga och att barn kan vara mer självständiga.
+
+En annan fördel är att man kan använda mobilen för att lära sig saker. Det finns appar för att öva matte, läsa böcker och lära sig nya språk. Mobilen kan alltså vara ett bra verktyg i skolan och hemma.
+
+Men det finns också nackdelar. Många barn tillbringar för mycket tid framför skärmen. Istället för att leka utomhus eller läsa en bok sitter man och scrollar. Det kan vara dåligt för ögonen och göra att man sover sämre.
+
+Dessutom finns det risker på nätet. Barn kan stöta på obehagligt innehåll eller prata med personer de inte känner. Det kan vara svårt för barn att veta vad som är säkert.
+
+Jag tycker att barn kan ha en mobiltelefon, men med regler. Föräldrarna bör bestämma hur länge man får använda den och vilka appar man får ladda ner. Då kan mobilen vara till nytta istället för att bli ett problem.`,
+    analysisQuestions: [
+      "Vilka argument för mobiltelefoner nämns i texten? Vilka argument emot?",
+      "Hur är texten uppbyggd? I vilken ordning kommer argumenten?",
+      "Vad tycker skribenten själv? Var framgår det?",
+      "Vad tycker du — bör barn ha mobiltelefon? Skriv ett eget argument.",
+    ],
+    structure:
+      "Texten inleds med en fråga, presenterar sedan argument för och emot i separata stycken, och avslutas med skribentens egen åsikt. Tydlig argumenterande struktur anpassad för mellanstadiet.",
+    languageFeatures:
+      "Sambandsord som 'en fördel', 'dessutom', 'men'. Enkla men tydliga meningar. Vardagsnära exempel. Avslutning med egen ståndpunkt och kompromissförslag.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "langre-raster",
+    title: "Varför vi borde ha längre raster",
+    category: "argumenterande",
+    categoryLabel: "Insändare",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Kära rektorn,
+
+Vi i klass 6A vill att rasterna ska bli längre. Just nu har vi bara femton minuter på förmiddagsrasten och det räcker inte. Vi hinner knappt komma ut innan det är dags att gå in igen.
+
+Det viktigaste argumentet är att vi behöver röra på oss. Vi sitter stilla nästan hela dagen. Forskning visar att barn som rör sig mer lär sig bättre. Om rasterna var längre skulle vi kunna springa, spela fotboll och leka ordentligt.
+
+Längre raster skulle också minska konflikter. Många bråk på rasterna beror på stress. Alla vill hinna med att spela och när tiden är kort blir det lätt tjat om vems tur det är. Med mer tid skulle det bli lugnare och roligare.
+
+En del kanske tänker att längre raster betyder mindre tid för lektioner. Men vi tror att det är tvärtom. När vi kommer in från en lång rast är vi piggare och kan koncentrera oss bättre. Då lär vi oss mer på kortare tid.
+
+Vi föreslår att förmiddagsrasten blir trettio minuter istället för femton. Det skulle göra stor skillnad. Vi lovar att om vi får längre raster så kommer vi att jobba extra hårt på lektionerna.
+
+Med hopp om förändring,
+Klass 6A`,
+    analysisQuestions: [
+      "Vem skriver texten och till vem? Hur påverkar det språket?",
+      "Vilka tre huvudargument framför klassen? Vilket tycker du är starkast?",
+      "Hur bemöter texten motargumentet om mindre lektionstid?",
+      "Texten avslutas med ett löfte. Varför är det smart i en argumenterande text?",
+    ],
+    structure:
+      "Brev med tydlig mottagare. Tre argument i egna stycken, ett motargument som bemöts, och ett konkret förslag. Avslutas med en personlig vädjan.",
+    languageFeatures:
+      "Brevform med hälsningsfras och avsändare. Sambandsord som 'det viktigaste', 'dessutom', 'en del kanske tänker'. Tydligt och rakt språk anpassat till mottagaren.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "skoluniformer-for-eller-emot",
+    title: "Skoluniformer — för eller emot",
+    category: "argumenterande",
+    categoryLabel: "Debattartikel",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `I Sverige har vi aldrig haft tradition av skoluniformer. Ändå dyker frågan upp med jämna mellanrum, ofta driven av rapporter om mobbning kopplad till kläder och märken. Är det dags att ompröva vår inställning?
+
+Förespråkarna lyfter framför allt den sociala aspekten. I en skola där alla klär sig likadant försvinner den visuella sorteringen i fack. Elever från ekonomiskt svaga familjer slipper den dagliga påminnelsen om att de inte har de senaste skorna. Uniformen skapar, menar förespråkarna, ett klimat där andra kvaliteter än garderob får ta plats.
+
+Dessutom pekar internationella studier på att skolor med uniformer ofta rapporterar färre disciplinproblem. Fokus hamnar på undervisningen snarare än på utseende. Det signalerar att skolan är en arbetsplats, inte en modevisning.
+
+Mot detta står individens rätt till personligt uttryck. Kläder är identitet, särskilt under tonåren. Att beröva unga den möjligheten riskerar att skapa en konformitet som kväver kreativitet. Kritikerna menar att uniformen behandlar symtom snarare än orsaker — den verkliga frågan handlar om normer, inte kläder.
+
+Det finns även en klassfråga i själva uniformen. Om den kostar mer än vad familjer redan lägger på skolkläder blir effekten den motsatta. Och vem bestämmer utformningen? Risken finns att uniformen reproducerar könsnormer istället för att utmana dem.
+
+Debatten om skoluniformer är i grunden en debatt om vad skolan ska vara: en plats för individuell frihet eller en plats för gemensamma ramar. Svaret behöver inte vara antingen eller.`,
+    analysisQuestions: [
+      "Hur balanserar skribenten argument för och emot? Tar texten ställning?",
+      "Vilka typer av argument används — etiska, praktiska, ekonomiska?",
+      "Vad menar skribenten med att uniformen 'behandlar symtom snarare än orsaker'?",
+      "Hur fungerar avslutningen? Jämför med en text som tar tydligt ställning.",
+    ],
+    structure:
+      "Inledning med kontext, två stycken med argument för, två stycken med argument emot, och en avslutning som öppnar för reflektion snarare än att slå fast en tes.",
+    languageFeatures:
+      "Sakligt och nyanserat. Refererar till forskning och internationella exempel. Bindeord som 'dessutom', 'mot detta står'. Opersonligt perspektiv med passivkonstruktioner.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "sociala-medier-gor-oss-ensamma",
+    title: "Sociala medier gör oss ensamma",
+    category: "argumenterande",
+    categoryLabel: "Debattartikel",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Vi har aldrig varit mer uppkopplade, och vi har aldrig känt oss mer ensamma. Det är paradoxen i vår tid. Sociala medier utlovar gemenskap men levererar något annat: en yta där vi jämför oss med andra, söker bekräftelse i likes och mäter vårt värde i följarantal.
+
+Forskning från Folkhälsomyndigheten visar att den psykiska ohälsan bland unga har ökat markant sedan 2010 — samma period då smartphones och sociala medier blev vardag. Sambandet behöver inte betyda orsak, men det är svårt att ignorera.
+
+Problemet handlar inte bara om skärmtid. Det handlar om vad som ersätts. Varje timme på Instagram är en timme utan ögonkontakt, utan spontana skratt, utan den sorts tystnad som bara fungerar med riktiga vänner. Digital kommunikation saknar nyanser — det går inte att höra ton, se mimik eller känna närvaro genom en skärm.
+
+Dessutom skapar plattformarna en illusion av social aktivitet. Man kan ha tusen följare men ingen att ringa klockan tre på natten. Man kan få hundra kommentarer på en bild men ändå känna sig osedd. Siffrorna ljuger.
+
+Motståndarna menar att sociala medier tvärtom hjälper människor att hitta gemenskaper de saknar i sin vardag. Det är sant. Men frågan är om den digitala gemenskapen räcker, eller om den bara dämpar känslan tillfälligt utan att fylla det verkliga behovet.
+
+Det handlar inte om att förbjuda sociala medier. Det handlar om att inse att en app aldrig kan ersätta en vän.`,
+    analysisQuestions: [
+      "Vad är textens huvudtes? Hur stöds den med fakta och exempel?",
+      "Hur använder skribenten statistik och forskning i argumentationen?",
+      "Vilka motargument nämns? Hur bemöts de?",
+      "Är du övertygad av texten? Vad hade du lagt till eller ändrat?",
+    ],
+    structure:
+      "Inledning med en paradox, tre argument som bygger på varandra, ett motargument som bemöts, och en koncis avslutning med kärnbudskapet.",
+    languageFeatures:
+      "Engagerande retoriska grepp som paradoxer och kontraster. Hänvisning till forskning. Konkreta exempel blandat med abstrakt reflektion. Effektfull kortmening i slutet.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "karnkraft-i-sveriges-energimix",
+    title: "Borde kärnkraft vara en del av Sveriges energimix?",
+    category: "argumenterande",
+    categoryLabel: "Debattartikel",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Frågan om kärnkraftens roll i den svenska energimixen har åter aktualiserats i takt med klimatkrisens acceleration och det ökade elbehovet. Medan somliga betraktar kärnkraften som en nödvändig bro till ett fossilfritt samhälle, ser andra den som en riskfylld och ekonomiskt tveksam relik. Var landar argumenten?
+
+Ur klimatperspektiv har kärnkraften låga koldioxidutsläpp under drift, jämförbara med vind- och solkraft. I ett läge där varje gram koldioxid räknas är detta signifikant. Kärnkraften levererar dessutom stabil basenergi oberoende av väder, till skillnad från sol och vind som kräver kompletterande lagring eller reservkapacitet.
+
+Sverige har historiskt haft en framgångsrik kärnkraftsindustri. Den tekniska kompetensen finns. Nya reaktordesigner — så kallade SMR, små modulära reaktorer — lovar kortare byggtider, lägre kostnader och ökad säkerhet jämfört med traditionella storskalereaktor.
+
+Men invändningarna är substantiella. Kärnkraftsutbyggnad tar decennier från beslut till driftstart, tid som klimatomställningen inte har. Avfallsfrågan förblir olöst i praktiken, trots tekniska lösningar som Forsmarks slutförvar. Och de ekonomiska riskerna är betydande — internationella projekt som Flamanville och Hinkley Point C har drabbats av massiva fördyringar.
+
+Dessutom ifrågasätter kritiker behovet. Sverige har exceptionella förutsättningar för förnybar energi: vattenkraft, vindkraft och en växande solenergimarknad. Investeringar i kärnkraft riskerar att tränga ut satsningar på dessa alternativ.
+
+I slutändan handlar frågan inte bara om teknik utan om riskbedömning, ekonomisk prioritering och tidshorisont. En ansvarsfull energipolitik kräver att alla alternativ utvärderas utifrån evidens, inte ideologi.`,
+    analysisQuestions: [
+      "Vilken tes driver skribenten — eller undviker texten att ta ställning? Motivera.",
+      "Hur balanseras naturvetenskapliga, ekonomiska och politiska argument?",
+      "Vad innebär påståendet att frågan handlar om 'riskbedömning, inte ideologi'?",
+      "Analysera textens trovärdighet: vilka typer av stöd och belägg används?",
+    ],
+    structure:
+      "Inledning med aktualisering, argument för i två stycken, argument emot i två stycken, avslutning med metaperspektiv. Balanserad debattartikel utan explicit tes.",
+    languageFeatures:
+      "Akademiskt register med facktermer (SMR, basenergi, koldioxidutsläpp). Nominaliseringar och passivformer. Källhänvisningar integrerade i texten. Nyanserade formuleringar som 'somliga... andra'.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "algoritmer-och-demokrati",
+    title: "Algoritmer och demokrati",
+    category: "argumenterande",
+    categoryLabel: "Debattartikel",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Varje gång du öppnar ett socialt medium fattar en algoritm beslut åt dig. Den väljer vilka nyheter du ser, vilka röster du hör och vilka perspektiv som hamnar i periferin. Det är inte censur i traditionell mening, men det är en form av informationsstyrning som borde oroa var och en som värnar om demokratin.
+
+Algoritmernas grundläggande logik är engagemang: det som väcker starka känslor sprids, det som nyanserar ignoreras. Forskning vid MIT visade att falska nyheter sprids sex gånger snabbare än sanningsenlig information på sociala medier. Algoritmerna belönar alltså det sensationella på bekostnad av det korrekta.
+
+Konsekvenserna sträcker sig bortom individen. Filterbubblor uppstår när användare matas med information som bekräftar deras befintliga uppfattningar. Den gemensamma offentligheten — den arena där medborgare möter oliktänkande och tvingas ompröva — fragmenteras. Polariseringen ökar, kompromissviljan minskar.
+
+Förespråkarna av algoritmisk kurating invänder att användare alltid har valt informationskällor selektivt. Det stämmer. Skillnaden är skala och automatisering. Ingen tidningsredaktör har någonsin haft makt att personanpassa verklighetsbilden för miljarder människor simultant.
+
+Lösningen handlar inte om att förbjuda algoritmer utan om att reglera dem. Transparenskrav — att användare kan se och påverka hur innehåll sorteras — vore ett första steg. EU:s DSA-lagstiftning rör sig i den riktningen, men implementeringen återstår.
+
+Demokrati förutsätter informerade medborgare. Om de verktyg vi använder dagligen systematiskt underminerar förutsättningarna för informerat beslutsfattande, är det inte en teknisk fråga — det är en demokratifråga.`,
+    analysisQuestions: [
+      "Hur argumenterar skribenten för att algoritmer utgör ett demokratiproblem?",
+      "Vilken funktion fyller forskningsreferensen om MIT-studien i argumentationen?",
+      "Texten nämner motargument. Hur bemöts de och är bemötandet övertygande?",
+      "Diskutera relationen mellan yttrandefrihet och algoritmisk reglering utifrån textens perspektiv.",
+    ],
+    structure:
+      "Inledning med konkret situation som vidgas till principiell fråga. Tre underbyggda argument, ett motargument som bemöts med distinktion, lösningsförslag, och avslutning som återknyter till demokratitemat.",
+    languageFeatures:
+      "Akademisk argumentation med konkreta exempel. Facktermer (filterbubblor, algoritmisk kurating, DSA). Retoriska grepp som klimax och kontrast. Formellt register med opersonligt tilltal.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+
+  // ─── NYA UTREDANDE TEXTER ───────────────────────────────────
+  {
+    slug: "hur-fungerar-minnet",
+    title: "Hur fungerar minnet?",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Har du någonsin undrat varför du minns din bästa födelsedag men glömmer vad du åt till lunch igår? Det beror på hur vårt minne fungerar. Minnet är som en superdator i hjärnan, men det fungerar inte riktigt som en vanlig dator.
+
+Forskare brukar dela in minnet i tre delar. Först finns korttidsminnet. Det håller kvar information i ungefär trettio sekunder. Det är korttidsminnet du använder när du ska komma ihåg ett telefonnummer precis så länge att du hinner slå det.
+
+Sedan finns arbetsminnet. Det hjälper dig att tänka och lösa problem. När du räknar ut ett mattetal i huvudet är det arbetsminnet som jobbar. De flesta kan hålla ungefär sju saker i arbetsminnet samtidigt.
+
+Till sist finns långtidsminnet. Där sparas saker du lärt dig ordentligt, som att cykla eller ditt namn. Långtidsminnet kan lagra enorma mängder information under hela livet.
+
+Men hur hamnar saker i långtidsminnet? Det viktigaste är upprepning. Ju fler gånger du övar något, desto starkare blir minnet. Det hjälper också att koppla ny information till saker du redan kan. Om du ska lära dig att huvudstaden i Australien heter Canberra kan du till exempel tänka på en kanna som bärgar — kan-bärra.
+
+Känslor spelar också roll. Vi minns saker som gör oss glada, rädda eller förvånade mycket bättre än saker som är tråkiga. Därför minns du din bästa födelsedag men inte gårdagens lunch.`,
+    analysisQuestions: [
+      "Hur förklarar texten svåra begrepp på ett enkelt sätt? Ge exempel.",
+      "Vilka jämförelser och exempel används? Varför är de effektiva?",
+      "Hur är texten uppbyggd? I vilken ordning presenteras informationen?",
+      "Vad lärde du dig av texten? Skriv tre saker du inte visste förut.",
+    ],
+    structure:
+      "Inledning med fråga som väcker nyfikenhet. Tre typer av minne presenteras i ordning. Sedan fördjupning om hur minnet fungerar. Avrundning som knyter an till inledningen.",
+    languageFeatures:
+      "Direkt tilltal med 'du'. Jämförelser som gör abstrakt konkret (superdator, telefonnummer). Enkla sambandsord: 'först', 'sedan', 'till sist'. Vardagsnära exempel.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "varfor-forsvinner-djur",
+    title: "Varför försvinner djur?",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Just nu försvinner djurarter snabbare än någon gång under de senaste miljontals åren. Forskare kallar det för den sjätte massutrotningen. Men varför händer det och vad kan vi göra?
+
+Den största orsaken är att djurens hem försvinner. Skogar huggs ner för att ge plats åt jordbruk och städer. Våtmarker dikas ut och ängar blir parkeringsplatser. När livsmiljöerna krymper har djuren ingenstans att bo och hitta mat.
+
+Klimatförändringarna spelar också stor roll. När temperaturen stiger klarar många djur inte av de nya förhållandena. Isbjörnen behöver havsis för att jaga, men isen smälter. Korallerna i havet dör när vattnet blir för varmt, och med dem försvinner alla fiskar som lever där.
+
+Föroreningar är ett tredje hot. Plast i haven skadar sköldpaddor och sjöfåglar. Bekämpningsmedel dödar insekter som bin, vilka behövs för att pollinera våra grödor. Gift sprider sig genom näringskedjorna och påverkar djur långt från föroreningskällan.
+
+Invasiva arter — djur och växter som människor har spridit till nya platser — tränger också undan inhemska arter. I Australien har införda katter och rävar orsakat att flera små däggdjur nästan utrotats.
+
+Men det finns hopp. Naturreservat skyddar livsmiljöer. Avel i fångenskap har räddat arter som pilgrimsfalken. Och varje gång vi återplanterar skog, minskar plastanvändning eller väljer hållbar mat gör vi skillnad.`,
+    analysisQuestions: [
+      "Vilka fyra orsaker till artutrotning nämner texten?",
+      "Hur gör texten problemet begripligt med konkreta exempel?",
+      "Varför är det viktigt att texten avslutas med hopp och lösningar?",
+      "Välj ett av hoten och skriv en egen fördjupande text om det.",
+    ],
+    structure:
+      "Inledning som fastslår problemet, fyra orsaker presenterade i egna stycken med exempel, och avslutning med hopp och handlingsmöjligheter.",
+    languageFeatures:
+      "Enkelt men informativt språk. Konkreta exempel kopplade till varje orsak. Sambandsord som 'den största orsaken', 'också', 'ett tredje hot'. Aktivt tilltal i slutet.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "ungdomars-somnvanor",
+    title: "Ungdomars sömnvanor",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Sömnforskare är eniga: svenska ungdomar sover för lite. Enligt Folkhälsomyndigheten uppger en av tre högstadieelever att de sover mindre än åtta timmar per natt, trots att rekommendationen för tonåringar är åtta till tio timmar. Vad ligger bakom denna sömnbrist och vilka konsekvenser får den?
+
+En central faktor är den biologiska klockans förskjutning. Under puberteten förändras dygnsrytmen så att kroppen vill somna senare och vakna senare. Detta är inte lathet utan fysiologi — hormonet melatonin börjar utsöndras ungefär två timmar senare hos tonåringar jämfört med barn och vuxna.
+
+Skärmanvändning förstärker problemet. Blått ljus från telefoner och datorer signalerar till hjärnan att det fortfarande är dag, vilket ytterligare fördröjer melatoninfrisättningen. Studier visar att ungdomar som använder skärm den sista timmen före sänggåendet har signifikant sämre sömnkvalitet.
+
+Skolans tidiga start krockar med tonåringens biologi. När lektionerna börjar klockan åtta har en genomsnittlig femtonåring fått för lite sömn, oavsett hur disciplinerad hen försöker vara. Forskning vid Karolinska Institutet visar att senare skolstart förbättrar både sömn och skolresultat.
+
+Konsekvenserna av sömnbrist är väldokumenterade: försämrad koncentration, ökad ångest, nedsatt immunförsvar och sämre skolprestationer. Det finns även samband mellan kronisk sömnbrist och ökad risk för depression hos unga.
+
+Lösningarna kräver insatser på flera nivåer. Individen kan begränsa skärmtid kvällstid. Skolan kan överväga senarelagd start. Och samhället behöver erkänna att ungdomars sömn inte är en privat fråga utan en folkhälsofråga.`,
+    analysisQuestions: [
+      "Hur använder texten vetenskapliga belägg för att stärka sina påståenden?",
+      "Vilka orsaker till sömnbrist identifieras? Hur hänger de ihop?",
+      "Texten föreslår lösningar på tre nivåer. Vilka är de och varför är det effektivt?",
+      "Jämför texten med en argumenterande text i samma ämne. Vad skiljer den utredande ansatsen?",
+    ],
+    structure:
+      "Inledning med fakta som etablerar problemet. Tre orsaker analyserade i tur och ordning. Konsekvenser samlas i eget stycke. Avslutning med lösningar på tre nivåer.",
+    languageFeatures:
+      "Sakligt och informativt. Hänvisning till forskning och myndigheter. Facktermer som melatonin och dygnsrytm förklaras i kontext. Passivkonstruktioner och nominaliseringar.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "sprakforandringar-i-svenska",
+    title: "Språkförändringar i svenska",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Det svenska språket har förändrats genom hela sin historia, och det fortsätter att förändras idag. Ord som var vardagliga för hundra år sedan har försvunnit, medan nya tillkommer varje år. Men vad driver dessa förändringar och hur påverkar de hur vi kommunicerar?
+
+Lånord är en av de mest synliga förändringarna. Under medeltiden lånade svenskan in tusentals ord från tyskan, som 'arbete', 'handel' och 'borgare'. Under 1700-talet kom franska ord som 'restaurang' och 'parfym'. Idag dominerar engelskan med ord som 'mejl', 'streama' och 'content'.
+
+Grammatiken förändras också, om än långsammare. Svenskan har gradvis blivit enklare i sin böjning. Vi har tappat kasusformer som fornsvenskan hade, och tempussystemet har förenklats. Pronomenreformen med 'hen' som könsneutralt alternativ till 'han' och 'hon' är ett nutida exempel på grammatisk förändring.
+
+Nya kommunikationsformer driver innovation. SMS och sociala medier har gett upphov till förkortningar, emojier och nya textgenrer. 'Haha' som skriftlig markör för humor eller 'asså' som diskurspartikel i text är fenomen som knappt existerade för tjugo år sedan.
+
+Språkforskare betonar att förändring inte innebär förfall. Varje generation upplever att språket försämras, men det handlar snarare om att normer skiftar. Ungdomars språk, som ofta kritiseras, har visat sig vara en viktig motor för innovation som med tiden absorberas i standardspråket.
+
+Språket är en levande organism. Försök att frysa det i ett idealiskt tillstånd har aldrig lyckats — och språkets förmåga att anpassa sig är kanske dess viktigaste egenskap.`,
+    analysisQuestions: [
+      "Vilka typer av språkförändringar tar texten upp? Ange minst fyra.",
+      "Hur bemöter texten uppfattningen att språkförändring är negativt?",
+      "Ge egna exempel på ord eller uttryck som nyligen kommit in i svenskan.",
+      "Texten kallar språket en 'levande organism'. Diskutera om det är en bra jämförelse.",
+    ],
+    structure:
+      "Inledning som etablerar temat med perspektiv bakåt och framåt. Fyra typer av förändring i egna stycken. Motargument bemöts. Avslutning med metafor som sammanfattar.",
+    languageFeatures:
+      "Formellt men tillgängligt. Historiska exempel ger tyngd. Facktermer som kasusformer och diskurspartikel integreras naturligt. Avslutande metafor som binder ihop texten.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "artificiell-intelligens-i-samhallet",
+    title: "Artificiell intelligens i samhället",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Artificiell intelligens, AI, har under det senaste decenniet gått från att vara ett specialiserat forskningsfält till att genomsyra vardagen. Vi möter AI i allt från prediktiv textinmatning på telefonen till avancerade diagnostikverktyg i sjukvården. Denna genomgripande förändring väcker frågor som sträcker sig bortom tekniken — in i ekonomi, etik och samhällsstruktur.
+
+Inom sjukvården visar AI-system redan kapacitet att identifiera cancer i röntgenbilder med träffsäkerhet som överträffar erfarna radiologer. Algoritmer analyserar patientdata för att förutsäga sjukdomsförlopp och optimera behandlingar. Potentialen att rädda liv och effektivisera resurser är betydande.
+
+Arbetsmarknaden genomgår samtidigt en transformation. Rutinmässiga kognitiva uppgifter — bokföring, dokumentsammanställning, enklare juridisk analys — automatiseras i snabb takt. Ekonomer vid Oxfords universitet uppskattar att nästan hälften av alla arbetsuppgifter riskerar att påverkas under de kommande decennierna. Samtidigt skapas nya yrkesroller: AI-tränare, etikgranskare och promptingenjörer.
+
+De etiska dimensionerna är komplexa. AI-system tränade på historisk data riskerar att reproducera och förstärka befintliga fördomar. Ansiktsienkänningsteknologi har uppvisat betydligt sämre träffsäkerhet för mörkhyade individer. Frågan om ansvar när ett autonomt system fattar felaktiga beslut saknar ännu entydiga juridiska svar.
+
+Dessutom aktualiserar AI frågor om transparens och makt. De mest avancerade modellerna utvecklas av en handfull teknikföretag med enorm datamängd och beräkningskapacitet. Demokratisk insyn i hur dessa system fungerar och vilka värderingar de kodifierar är begränsad.
+
+Samhällets förmåga att hantera AI:s potential och risker beror inte på tekniken i sig, utan på de institutioner, regelverk och värderingar vi väljer att omge den med.`,
+    analysisQuestions: [
+      "Vilka samhällsområden behandlar texten och hur hänger de ihop?",
+      "Analysera textens objektivitet. Finns det implicita värderingar trots den sakliga tonen?",
+      "Vad menar skribenten med att frågan sträcker sig 'bortom tekniken'?",
+      "Jämför textens perspektiv med debatten om AI i svensk media. Vilka aspekter saknas?",
+    ],
+    structure:
+      "Inledning som kontextualiserar AI:s genomslag. Fyra perspektiv — sjukvård, arbetsmarknad, etik, maktkoncentration — i egna stycken. Avslutning med syntes som betonar mänskligt ansvar.",
+    languageFeatures:
+      "Akademiskt register med nominaliseringar och passivformer. Facktermer integrerade med förklaringar. Opersonligt perspektiv. Komplexa meningar med bisatser och inskott. Källhänvisningar integrerade.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "klimatforandringarnas-ekonomiska-konsekvenser",
+    title: "Klimatförändringarnas ekonomiska konsekvenser",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Klimatförändringarna framställs ofta som en miljöfråga, men de är i lika hög grad en ekonomisk realitet. Stigande temperaturer, extremväder och höjda havsnivåer påverkar redan nu globala värdekedjor, försäkringsmarknader och statliga budgetar. Denna text undersöker de ekonomiska konsekvenserna ur flera perspektiv.
+
+De direkta kostnaderna för extremväder ökar dramatiskt. Enligt återförsäkringsbolaget Munich Re uppgick de globala förlusterna från naturkatastrofer till rekordsummor under 2020-talet. Översvämningar, torka och orkaner slår mot infrastruktur, jordbruk och fastighetsmarknader. Kostnaden bärs av försäkringsbolag, skattebetalare och drabbade individer — ofta de som har minst resurser.
+
+Jordbruket står inför särskilt stora utmaningar. Förändrade nederbördsmönster och längre torrperioder hotar skördar i regioner som försörjer miljarder människor. FN:s livsmedelsorganisation, FAO, varnar för att den globala matproduktionen kan minska med upp till tjugofem procent fram till seklets slut om utsläppen inte begränsas kraftigt.
+
+Omställningen till fossilfri ekonomi medför också kostnader, men de bör ses som investeringar. Internationella energiorganet, IEA, beräknar att varje krona investerad i ren energi ger mångfaldigt tillbaka i form av minskade hälsokostnader, energisäkerhet och skapade arbetstillfällen.
+
+Fördelningen av konsekvenserna är djupt ojämlik. Länder i det globala syd — som bidragit minst till utsläppen — drabbas hårdast. Denna asymmetri ställer frågor om klimaträttvisa och internationellt ansvar som inte enbart kan lösas med ekonomiska modeller.
+
+Det är inte längre frågan om klimatförändringarna kommer att kosta — utan vem som betalar, och huruvida vi investerar i förebyggande åtgärder eller reparationer i efterhand.`,
+    analysisQuestions: [
+      "Vilka ekonomiska konsekvenser lyfter texten? Kategorisera dem som direkta och indirekta.",
+      "Hur integrerar texten källor och data i argumentationen? Ge exempel.",
+      "Vad menas med att klimatfrågan också är en fråga om rättvisa?",
+      "Diskutera textens avslutande fråga: är förebyggande åtgärder mer lönsamma än reparationer?",
+    ],
+    structure:
+      "Inledning som omdefinierar klimatfrågan som ekonomisk. Fyra perspektiv: extremväder, jordbruk, omställning och rättvisa. Avslutning med retorisk fråga som öppnar för vidare diskussion.",
+    languageFeatures:
+      "Akademisk sakprosa med källhänvisningar (Munich Re, FAO, IEA). Nominaliseringar och komplexa nominalfraser. Opersonligt perspektiv med distanserade formuleringar. Ekonomisk terminologi.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+
+  // ─── NYA FAKTATEXTER ───────────────────────────────────────
+  {
+    slug: "var-narmaste-stjarna",
+    title: "Vår närmaste stjärna",
+    category: "faktatext",
+    categoryLabel: "Faktatext",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Solen är en stjärna. Den är den stjärna som är närmast jorden. Utan solen skulle det inte finnas något liv på vår planet.
+
+Solen är jättestor. Det skulle gå att fylla den med mer än en miljon jordklot. Men solen ser liten ut på himlen för att den är så långt bort. Ljuset från solen tar åtta minuter att nå oss.
+
+Solen är väldigt het. På ytan är den ungefär sex tusen grader varm. I mitten är den ännu hetare — femton miljoner grader! Det är så varmt att man inte ens kan föreställa sig det.
+
+Solen ger oss ljus och värme. Tack vare solen kan växter växa. Växter behöver solljus för att göra mat åt sig själva. Djur äter växter, och vi äter både växter och djur. Allt börjar med solen.
+
+Solen hjälper oss också att veta vad klockan är. Förr i tiden använde man solur. Solen går upp i öster och ner i väster. Det tar ungefär tolv timmar.
+
+Ibland kan man se fläckar på solen. De kallas solfläckar. De är lite kallare ställen, men de är fortfarande mycket heta. Ibland skickar solen ut stora eldslungor som kallas solstormar.
+
+Solen har funnits i ungefär fem miljarder år. Forskare tror att den kommer att lysa i fem miljarder år till. Det är ganska länge!`,
+    analysisQuestions: [
+      "Vilka fakta om solen lärde du dig? Skriv tre saker.",
+      "Hur gör texten stora tal begripliga? Ge ett exempel.",
+      "Varför är solen viktig för allt liv på jorden?",
+      "Rita en bild av solen och skriv tre fakta bredvid den.",
+    ],
+    structure:
+      "Kort inledning som presenterar ämnet. Varje stycke tar upp en egenskap hos solen. Enkel och logisk ordning från storlek till betydelse. Avslutning med perspektiv på tid.",
+    languageFeatures:
+      "Mycket korta och enkla meningar. Vardagliga jämförelser (en miljon jordklot). Upprepning av 'solen' som subjekt. Utropstecken för att uttrycka förundran. Enkla sambandsord.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+  {
+    slug: "vikingarna-reste-langt",
+    title: "Vikingarna reste långt",
+    category: "faktatext",
+    categoryLabel: "Faktatext",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `För drygt tusen år sedan gav sig vikingarna ut på långa resor från Skandinavien. De var inte bara krigare, som många tror. De var också handelsmän, hantverkare och upptäcktsresande som nådde platser som få européer hade sett.
+
+Vikingarna byggde snabba och starka skepp som kunde segla både på öppet hav och i grunda floder. Långskeppet, som var smalt och hade en drake i fören, användes för krigsresor. Knarren var bredare och användes för att frakta varor och människor.
+
+Österut reste vikingar från nuvarande Sverige längs Rysslands floder ända till Konstantinopel, som idag heter Istanbul. Där handlade de med siden, kryddor och silver. En del blev livvakter åt den bysantinske kejsaren och kallades varjager.
+
+Västerut seglade vikingar från Norge och Danmark till Island, Grönland och till och med Nordamerika. Det var Leif Eriksson som runt år 1000 nådde en plats han kallade Vinland, troligen i nuvarande Kanada. Det var nästan fem hundra år innan Columbus kom till Amerika.
+
+Vikingarna tog med sig mer än varor hem. De spred sin kultur, sitt språk och sina hantverk. Många engelska ord har nordiskt ursprung, och i Frankrike gav vikingarna namn åt Normandie — 'nordmännens land'.
+
+Men vikingatiden tog slut runt år 1100. Skandinavien blev kristet, kungadömen växte fram och de stora resorna upphörde. Men arvet lever kvar i språk, ortsnamn och berättelser runt hela världen.`,
+    analysisQuestions: [
+      "Vilka olika roller hade vikingarna enligt texten?",
+      "Hur långt reste vikingarna? Nämn platser åt öster och väster.",
+      "Texten säger att vikingarna nådde Amerika före Columbus. Varför är det viktigt?",
+      "Jämför texten med en annan faktatext. Vad är lika och vad skiljer sig?",
+    ],
+    structure:
+      "Inledning som utmanar vanliga föreställningar. Stycken om skepp, östliga resor, västliga resor, kulturellt arv och avslutning med vikingatagens slut. Kronologiskt och geografiskt organiserad.",
+    languageFeatures:
+      "Berättande stil blandat med fakta. Förklarande parenteser (som idag heter Istanbul). Tidsangivelser och geografiska hänvisningar. Sambandsord som 'men', 'dessutom'. Lagom komplexitet för mellanstadiet.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+  {
+    slug: "regnskog-jordens-lungor",
+    title: "Regnskog — jordens lungor",
+    category: "faktatext",
+    categoryLabel: "Faktatext",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Tropiska regnskogar täcker cirka sex procent av jordens yta men hyser mer än hälften av alla kända arter. De producerar syre, binder koldioxid och reglerar globala vädermönster. Metaforen 'jordens lungor' är ingen överdrift — regneskogarna spelar en nyckelroll för planetens klimat och biologiska mångfald.
+
+De mest kända regnskogsområdena finns i Amazonas, Kongobäckenet och Sydostasien. Amazonas regnskog ensam producerar ungefär tjugo procent av jordens syre och innehåller tio procent av alla arter på planeten. Ekosystemet är så komplext att forskare uppskattar att miljoner arter ännu inte har identifierats.
+
+Regnskogens struktur är uppdelad i skikt. Kronlagret högst upp fångar det mesta av solljuset. Under det finns mellanskiktet med mindre träd och klätterväxter. Markskiktet är mörkt och fuktigt, hem för svampar, insekter och nedbrytare. Varje skikt bildar sin egen ekologisk nisch med anpassade arter.
+
+Avskogningen är det mest akuta hotet. Varje minut försvinner regnskog motsvarande ungefär trettio fotbollsplaner, huvudsakligen till förmån för boskapsuppfödning, sojaplantager och palmolja. När skogen försvinner frigörs bunden koldioxid, lokala nederbördsmönster rubbas och arter utrotas.
+
+Urfolk som levt i regnskogen i årtusenden besitter ovärderlig kunskap om ekosystemen. Forskning visar att områden som förvaltas av urbefolkningar har lägre avskogningstakt. Ändå hotas dessa gruppers markrättigheter av ekonomiska intressen.
+
+Att bevara regnskogen handlar inte om altruism — det handlar om självbevarelsedrift. Ett klimat i balans och biologisk mångfald är förutsättningar som hela mänskligheten är beroende av.`,
+    analysisQuestions: [
+      "Vilka funktioner fyller regnskogen enligt texten? Lista minst fyra.",
+      "Hur använder texten siffror och jämförelser för att göra fakta konkreta?",
+      "Varför nämner texten urfolk? Vilken koppling har det till regnksogens bevarande?",
+      "Diskutera avslutningens påstående att bevarande handlar om 'självbevarelsedrift'. Håller du med?",
+    ],
+    structure:
+      "Inledning med fakta och metafor. Geografisk överblick, biologisk struktur, hot, urfolksperspektiv och avslutning med argumenterande inslag. Progression från beskrivning till problemanalys.",
+    languageFeatures:
+      "Informativt med inslag av argumentation. Siffror och jämförelser (trettio fotbollsplaner). Facktermer som ekologisk nisch och kronlager. Sambandsord som strukturerar. Retorisk avslutning.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
 ];
