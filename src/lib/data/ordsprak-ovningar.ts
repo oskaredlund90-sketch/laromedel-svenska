@@ -163,6 +163,71 @@ const lagstadietExercises: OrdsprakExercise[] = [
     explanation:
       "\"Stark som en björn\" — björnar är ett av de starkaste djuren i skogen.",
   },
+  // --- nya övningar ---
+  {
+    type: "quiz",
+    id: "ord-lag-q5",
+    ageGroup: "lagstadiet",
+    expression: "Surt sa räven om rönnbären",
+    prompt: "Vad betyder \"surt sa räven om rönnbären\"?",
+    options: [
+      "Att rävar gillar sura bär",
+      "Att man låtsas att något man inte kan få ändå inte är bra",
+      "Att rönnbär smakar surt",
+      "Att rävar inte kan klättra i träd",
+    ],
+    correct: 1,
+    explanation:
+      "\"Surt sa räven om rönnbären\" betyder att man låtsas förakta det man inte kan få tag i. Räven i fabeln kunde inte nå bären och sa därför att de var sura.",
+  },
+  {
+    type: "quiz",
+    id: "ord-lag-q6",
+    ageGroup: "lagstadiet",
+    expression: "Den som väntar på något gott väntar aldrig för länge",
+    prompt: "Vad betyder \"den som väntar på något gott väntar aldrig för länge\"?",
+    options: [
+      "Man ska aldrig vänta",
+      "Bra saker är värda att vänta på",
+      "Man ska skynda sig",
+      "Väntan är alltid tråkig",
+    ],
+    correct: 1,
+    explanation:
+      "\"Den som väntar på något gott väntar aldrig för länge\" betyder att om resultatet blir bra så är det värt att ha tålamod och vänta.",
+  },
+  {
+    type: "match",
+    id: "ord-lag-m3",
+    ageGroup: "lagstadiet",
+    instruction: "Para ihop uttrycket med vad det betyder.",
+    pairs: [
+      { left: "Surt sa räven", right: "Man låtsas inte vilja ha det man inte kan få" },
+      { left: "Den som väntar på något gott", right: "Bra saker är värda att vänta på" },
+      { left: "Slug som en räv", right: "Väldigt smart och listig" },
+      { left: "Modig som ett lejon", right: "Väldigt modig" },
+    ],
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-lag-f4",
+    ageGroup: "lagstadiet",
+    sentence: "Tomma ____ skramlar mest",
+    options: ["burkar", "tunnor", "lådor", "hinkar"],
+    correct: "tunnor",
+    explanation:
+      "\"Tomma tunnor skramlar mest\" betyder att den som pratar mest och högst ofta vet minst. En tom tunna låter mer än en full.",
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-lag-f5",
+    ageGroup: "lagstadiet",
+    sentence: "Bättre ____ än aldrig",
+    options: ["nu", "sent", "snabbt", "fort"],
+    correct: "sent",
+    explanation:
+      "\"Bättre sent än aldrig\" betyder att det är bättre att göra något sent än att inte göra det alls.",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -321,6 +386,99 @@ const mellanstadietExercises: OrdsprakExercise[] = [
     explanation:
       "\"Liten tuva stjälper ofta stort lass\" betyder att även något litet och obetydligt kan orsaka stora problem.",
   },
+  // --- nya övningar ---
+  {
+    type: "quiz",
+    id: "ord-mel-q7",
+    ageGroup: "mellanstadiet",
+    expression: "Att ha fjärilar i magen",
+    prompt: "Vad betyder \"att ha fjärilar i magen\"?",
+    options: [
+      "Att ha ätit fjärilar",
+      "Att vara nervös eller förälskad",
+      "Att ha ont i magen",
+      "Att gilla fjärilar",
+    ],
+    correct: 1,
+    explanation:
+      "\"Att ha fjärilar i magen\" beskriver den pirriga känslan man får i magen när man är nervös, spänd eller förälskad.",
+  },
+  {
+    type: "quiz",
+    id: "ord-mel-q8",
+    ageGroup: "mellanstadiet",
+    expression: "Att vara på bettet",
+    prompt: "Vad betyder \"att vara på bettet\"?",
+    options: [
+      "Att vara arg och redo att bråka",
+      "Att vara hungrig",
+      "Att bita i något",
+      "Att vara trött",
+    ],
+    correct: 0,
+    explanation:
+      "\"Att vara på bettet\" betyder att vara på dåligt humör och redo att säga ifrån eller bråka, ungefär som ett djur som visar tänderna.",
+  },
+  {
+    type: "quiz",
+    id: "ord-mel-q9",
+    ageGroup: "mellanstadiet",
+    expression: "Sila mygg och svälja kameler",
+    prompt: "Vad betyder \"sila mygg och svälja kameler\"?",
+    options: [
+      "Att äta konstiga saker",
+      "Att bry sig om småsaker men missa de stora problemen",
+      "Att vara petig med mat",
+      "Att vara duktig på att sortera saker",
+    ],
+    correct: 1,
+    explanation:
+      "\"Sila mygg och svälja kameler\" betyder att man fäster sig vid småsaker men inte ser de stora problemen. Uttrycket har bibliskt ursprung.",
+  },
+  {
+    type: "match",
+    id: "ord-mel-m3",
+    ageGroup: "mellanstadiet",
+    instruction: "Para ihop uttrycket med den situation där man skulle använda det.",
+    pairs: [
+      { left: "Att ha fjärilar i magen", right: "Du är nervös inför ett tal" },
+      { left: "Övning ger färdighet", right: "Någon vill ge upp för att det är svårt" },
+      { left: "Bränt barn skyr elden", right: "Någon undviker något efter en dålig upplevelse" },
+      { left: "Borta bra men hemma bäst", right: "Du längtar hem efter en resa" },
+    ],
+  },
+  {
+    type: "match",
+    id: "ord-mel-m4",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken situation passar till uttrycket?",
+    pairs: [
+      { left: "Att vara på bettet", right: "Någon är sur och irriterad" },
+      { left: "Sila mygg och svälja kameler", right: "Klagar på småsaker men ignorerar stora problem" },
+      { left: "Liten tuva stjälper stort lass", right: "Något litet orsakar stora bekymmer" },
+      { left: "Morgonstund har guld i mund", right: "Att stiga upp tidigt lönar sig" },
+    ],
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-mel-f4",
+    ageGroup: "mellanstadiet",
+    sentence: "Den som ____ sig i leken får leken tåla",
+    options: ["ger", "tar", "sätter", "ser"],
+    correct: "ger",
+    explanation:
+      "\"Den som ger sig i leken får leken tåla\" betyder att om man frivilligt deltar i något måste man också acceptera konsekvenserna.",
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-mel-f5",
+    ageGroup: "mellanstadiet",
+    sentence: "Lika barn ____ bäst",
+    options: ["leka", "leker", "springer", "trivs"],
+    correct: "leka",
+    explanation:
+      "\"Lika barn leka bäst\" betyder att människor som liknar varandra brukar trivas ihop och ha roligt tillsammans.",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -478,6 +636,99 @@ const hogstadietExercises: OrdsprakExercise[] = [
     correct: 2,
     explanation:
       "\"Att slå huvudet på spiken\" betyder att man träffar helt rätt — att säga exakt det som behöver sägas.",
+  },
+  // --- nya övningar ---
+  {
+    type: "quiz",
+    id: "ord-hog-q7",
+    ageGroup: "hogstadiet",
+    expression: "Att slå mynt av något",
+    prompt: "Vad betyder \"att slå mynt av något\"?",
+    options: [
+      "Att tillverka pengar",
+      "Att utnyttja en situation till sin egen fördel",
+      "Att slösa pengar",
+      "Att vara snål",
+    ],
+    correct: 1,
+    explanation:
+      "\"Att slå mynt av något\" betyder att dra nytta av eller tjäna på en situation, ofta på ett beräknande sätt.",
+  },
+  {
+    type: "quiz",
+    id: "ord-hog-q8",
+    ageGroup: "hogstadiet",
+    expression: "Att dra en lans för",
+    prompt: "Vad betyder \"att dra en lans för någon\"?",
+    options: [
+      "Att attackera någon",
+      "Att försvara eller stödja någon eller något",
+      "Att vara riddare",
+      "Att bära vapen",
+    ],
+    correct: 1,
+    explanation:
+      "\"Att dra en lans för\" betyder att öppet försvara eller stödja någon. Uttrycket kommer från riddartidens turneringar.",
+  },
+  {
+    type: "quiz",
+    id: "ord-hog-q9",
+    ageGroup: "hogstadiet",
+    expression: "Att vända kappan efter vinden",
+    prompt: "Vad betyder \"att vända kappan efter vinden\"?",
+    options: [
+      "Att klä sig efter vädret",
+      "Att ändra åsikt beroende på vad som gynnar en mest",
+      "Att vara flexibel",
+      "Att vara rädd för blåst",
+    ],
+    correct: 1,
+    explanation:
+      "\"Att vända kappan efter vinden\" betyder att anpassa sina åsikter efter vad som för tillfället lönar sig, att vara opålitlig i sina ståndpunkter.",
+  },
+  {
+    type: "match",
+    id: "ord-hog-m3",
+    ageGroup: "hogstadiet",
+    instruction: "Para ihop idiomet med dess ursprung.",
+    pairs: [
+      { left: "Att kasta pärlor för svin", right: "Bibeln (Matteusevangeliet)" },
+      { left: "Att dra en lans för", right: "Riddartidens turneringar" },
+      { left: "Att ha rent mjöl i påsen", right: "Oärliga mjölnare som blandade ut mjölet" },
+      { left: "Att gå som katten kring het gröt", right: "Katter som cirklar runt varm mat" },
+    ],
+  },
+  {
+    type: "match",
+    id: "ord-hog-m4",
+    ageGroup: "hogstadiet",
+    instruction: "Para ihop idiomet med dess historia.",
+    pairs: [
+      { left: "Att vända kappan efter vinden", right: "Att byta sida efter omständigheterna" },
+      { left: "Att slå mynt av något", right: "Myntprägling — att göra pengar av metall" },
+      { left: "Att slå huvudet på spiken", right: "Att träffa rätt med hammaren" },
+      { left: "Att sopa under mattan", right: "Att gömma smuts istället för att städa ordentligt" },
+    ],
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-hog-f4",
+    ageGroup: "hogstadiet",
+    sentence: "Man ska inte ____ skinnet förrän björnen är skjuten",
+    options: ["sälja", "garva", "klippa", "bära"],
+    correct: "sälja",
+    explanation:
+      "\"Man ska inte sälja skinnet förrän björnen är skjuten\" betyder att man inte ska räkna med vinsten innan man faktiskt har lyckats.",
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-hog-f5",
+    ageGroup: "hogstadiet",
+    sentence: "Ingen rök utan ____",
+    options: ["eld", "ved", "rör", "vind"],
+    correct: "eld",
+    explanation:
+      "\"Ingen rök utan eld\" betyder att rykten ofta har en kärna av sanning — där det finns rök (rykten) finns det vanligtvis eld (en orsak).",
   },
 ];
 
@@ -652,6 +903,87 @@ const gymnasietExercises: OrdsprakExercise[] = [
     correct: 0,
     explanation:
       "\"Att komma på skam\" betyder att bli avslöjad eller förödmjukad, ofta för att ens planer eller påståenden visar sig vara felaktiga.",
+  },
+  // --- nya övningar ---
+  {
+    type: "quiz",
+    id: "ord-gym-q8",
+    ageGroup: "gymnasiet",
+    expression: "Pyrrhusseger",
+    prompt: "Vad är en \"pyrrhusseger\"?",
+    options: [
+      "En stor och övertygande seger",
+      "En seger som kostat så mycket att den i praktiken är en förlust",
+      "En seger i ett antikt krig",
+      "En seger som vunnits genom fusk",
+    ],
+    correct: 1,
+    explanation:
+      "En \"pyrrhusseger\" är en seger som kostat så mycket att den knappt är värd att fira. Uttrycket kommer från kung Pyrrhus av Epirus som vann mot romarna men förlorade så många soldater att han sa: \"Ännu en sådan seger och vi är förlorade.\"",
+  },
+  {
+    type: "quiz",
+    id: "ord-gym-q9",
+    ageGroup: "gymnasiet",
+    expression: "Damoklessvärd",
+    prompt: "Vad syftar man på med ett \"damoklessvärd\"?",
+    options: [
+      "Ett väldigt skarpt svärd",
+      "Ett hot som ständigt hänger över en",
+      "En antik vapen",
+      "En symbol för rättvisa",
+    ],
+    correct: 1,
+    explanation:
+      "Ett \"damoklessvärd\" är ett ständigt överhängande hot. Uttrycket kommer från den antika berättelsen om Damokles som fick sitta på kungens tron med ett svärd hängande i ett hårstrå ovanför sig.",
+  },
+  {
+    type: "quiz",
+    id: "ord-gym-q10",
+    ageGroup: "gymnasiet",
+    expression: "Att rensa Augias stall",
+    prompt: "Vad betyder \"att rensa Augias stall\"?",
+    options: [
+      "Att göra rent i ett stall",
+      "Att göra sig av med gammal smuts och oordning, ofta i en organisation",
+      "Att utföra en enkel uppgift",
+      "Att fly från problem",
+    ],
+    correct: 1,
+    explanation:
+      "\"Att rensa Augias stall\" betyder att röja upp i långvarig oordning eller korruption. Det kommer från den grekiska myten där Herakles fick i uppdrag att rengöra kung Augias enorma stall som inte hade städats på trettio år.",
+  },
+  {
+    type: "match",
+    id: "ord-gym-m3",
+    ageGroup: "gymnasiet",
+    instruction: "Para ihop det klassiska uttrycket med dess ursprung.",
+    pairs: [
+      { left: "Pyrrhusseger", right: "Kung Pyrrhus av Epirus krig mot Rom" },
+      { left: "Damoklessvärd", right: "Berättelsen om Damokles vid kungens bord" },
+      { left: "Augias stall", right: "Herakles tolv stordåd i grekisk myt" },
+      { left: "Den som sår vind skördar storm", right: "Bibeln (Hosea 8:7)" },
+    ],
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-gym-f4",
+    ageGroup: "gymnasiet",
+    sentence: "Kriget blev en ren ____ — segern kostade mer än förlusten hade gjort",
+    options: ["pyrrhusseger", "triumf", "katastrof", "tragedi"],
+    correct: "pyrrhusseger",
+    explanation:
+      "En \"pyrrhusseger\" beskriver perfekt en seger vars kostnad överstiger vinsten, uppkallad efter kung Pyrrhus vars segrar decimerade hans egen armé.",
+  },
+  {
+    type: "fill-in-blank",
+    id: "ord-gym-f5",
+    ageGroup: "gymnasiet",
+    sentence: "Hotet om uppsägning hängde som ett ____ över de anställda",
+    options: ["damoklessvärd", "moln", "hot", "mörker"],
+    correct: "damoklessvärd",
+    explanation:
+      "\"Damoklessvärd\" används för att beskriva ett ständigt närvarande hot som kan slå till när som helst, precis som svärdet i berättelsen om Damokles.",
   },
 ];
 

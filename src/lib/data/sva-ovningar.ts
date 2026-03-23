@@ -619,6 +619,75 @@ const PARTIKELVERB: SvaExercise[] = [
     explanation:
       "'Komma ihåg' betyder att minnas. Läraren vill att eleverna ska minnas svaret. 'Komma på' skulle betyda att hitta ett nytt svar.",
   },
+  // --- mellanstadiet nya (5) ---
+  {
+    id: "part-mel-9",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "mellanstadiet",
+    instruction: "Vad betyder partikelverbet?",
+    prompt: "Vad betyder 'att lägga till'?",
+    options: [
+      "Att lägga ner något",
+      "Att lägga ihop eller addera något",
+      "Att lägga sig och sova",
+    ],
+    correct: 1,
+    explanation:
+      "'Lägga till' betyder att addera eller lägga ihop, till exempel att lägga till ett ord eller en sak. Partikeln 'till' ger betydelsen av att något extra tillförs.",
+  },
+  {
+    id: "part-mel-10",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Kan du ____ tv:n? Programmet börjar snart.",
+    options: ["sätta på", "sätta av", "sätta in"],
+    correct: "sätta på",
+    explanation:
+      "'Sätta på' betyder att slå på en apparat som tv, radio eller dator. Motsatsen är 'stänga av'. 'Sätta av' används inte om apparater.",
+  },
+  {
+    id: "part-mel-11",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "mellanstadiet",
+    instruction: "Vad betyder partikelverbet?",
+    prompt: "Vad betyder 'att stänga av datorn'?",
+    options: [
+      "Att slå av datorn så den slutar fungera",
+      "Att stänga datorns lock",
+      "Att gömma datorn",
+    ],
+    correct: 0,
+    explanation:
+      "'Stänga av' betyder att göra så att en apparat slutar vara igång. Partikeln 'av' visar att något upphör. Motsatsen är 'sätta på' eller 'slå på'.",
+  },
+  {
+    id: "part-mel-12",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Du måste ____ de gamla sakerna ur lådan.",
+    options: ["ta bort", "ta på", "ta till"],
+    correct: "ta bort",
+    explanation:
+      "'Ta bort' betyder att avlägsna eller ta undan något. Partikeln 'bort' visar att något ska försvinna härifrån.",
+  },
+  {
+    id: "part-mel-13",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Glöm inte att ____ ditt namn på papperet.",
+    options: ["fylla i", "fylla på", "fylla ut"],
+    correct: "fylla i",
+    explanation:
+      "'Fylla i' betyder att skriva i ett fält, t.ex. på ett formulär eller prov. 'Fylla på' betyder att lägga till mer av en vätska.",
+  },
   // --- hogstadiet (12) ---
   {
     id: "part-hog-1",
@@ -784,6 +853,79 @@ const PARTIKELVERB: SvaExercise[] = [
     explanation:
       "'Slå igenom' betyder att bli framgångsrik. Det är vanligt att använda om artister, författare och uppfinnare som plötsligt blir kända.",
   },
+  // --- hogstadiet nya (5) ---
+  {
+    id: "part-hog-13",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "hogstadiet",
+    instruction: "Vad betyder partikelverbet?",
+    prompt: "Vad betyder 'att ställa in ett möte'?",
+    options: [
+      "Att avboka eller avlysa mötet",
+      "Att planera ett möte",
+      "Att flytta mötet till en annan plats",
+    ],
+    correct: 0,
+    explanation:
+      "'Ställa in' betyder att avboka eller avlysa något som var planerat. Det kan gälla möten, evenemang och resor. Det är ett vanligt förväxlingsord — det betyder INTE att planera in.",
+  },
+  {
+    id: "part-hog-14",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "hogstadiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Kan du ____ hur mycket det kostar sammanlagt?",
+    options: ["räkna ut", "räkna med", "räkna på"],
+    correct: "räkna ut",
+    explanation:
+      "'Räkna ut' betyder att beräkna och komma fram till ett svar. 'Räkna med' betyder att förvänta sig. 'Räkna på' kan betyda att göra beräkningar men är mindre specifikt.",
+  },
+  {
+    id: "part-hog-15",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "hogstadiet",
+    instruction: "Vad betyder partikelverbet?",
+    prompt: "Vad betyder 'att peka ut någon'?",
+    options: [
+      "Att identifiera och utse någon, ofta negativt",
+      "Att peka med fingret åt ett håll",
+      "Att visa vägen för någon",
+    ],
+    correct: 0,
+    explanation:
+      "'Peka ut' betyder att identifiera och framhäva en specifik person, ofta i negativ bemärkelse (t.ex. 'peka ut som skyldig'). Det kan också betyda att utse någon.",
+  },
+  {
+    id: "part-hog-16",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "hogstadiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Samtalet ____ av ett telefonsamtal mitt i meningen.",
+    options: ["bröts av", "bröts ut", "bröts in"],
+    correct: "bröts av",
+    explanation:
+      "'Bryta av' i passiv form ('brytas av') betyder att avbryta. Här avbröts samtalet av ett telefonsamtal. 'Bryta ut' betyder att starta plötsligt.",
+  },
+  {
+    id: "part-hog-17",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken mening använder partikelverbet rätt?",
+    prompt: "Vilken mening är korrekt?",
+    options: [
+      "Vi måste dra igång projektet innan sommarlovet.",
+      "Vi måste dra på projektet innan sommarlovet.",
+      "Vi måste dra in projektet innan sommarlovet.",
+    ],
+    correct: 0,
+    explanation:
+      "'Dra igång' betyder att starta eller sätta igång något. Det är synonymt med 'sätta igång' men mer vardagligt. 'Dra in' betyder att ta tillbaka eller spara in på.",
+  },
   // --- gymnasiet (10) ---
   {
     id: "part-gym-1",
@@ -921,6 +1063,79 @@ const PARTIKELVERB: SvaExercise[] = [
     explanation:
       "'Dra slutsatsen' är ett centralt akademiskt uttryck som används i uppsatser och rapporter. Det betyder att utifrån bevis formulera en konklusion.",
   },
+  // --- gymnasiet nya (5) ---
+  {
+    id: "part-gym-11",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "gymnasiet",
+    instruction: "Vad betyder partikelverbet i formellt sammanhang?",
+    prompt: "Vad betyder 'att lägga fram ett förslag'?",
+    options: [
+      "Att presentera ett förslag för diskussion",
+      "Att lägga ner ett förslag",
+      "Att skjuta upp ett förslag",
+    ],
+    correct: 0,
+    explanation:
+      "'Lägga fram' i formell svenska betyder att presentera och föreslå. Det är vanligt i politiska och akademiska sammanhang: 'Regeringen lade fram en proposition.'",
+  },
+  {
+    id: "part-gym-12",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "gymnasiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Partiet valde att ____ den nya lagen.",
+    options: ["ställa sig bakom", "ställa sig mot", "ställa sig in"],
+    correct: "ställa sig bakom",
+    explanation:
+      "'Ställa sig bakom' betyder att stödja och stå bakom något, t.ex. ett beslut eller förslag. Det är vanligt i politisk debatt och formellt språk.",
+  },
+  {
+    id: "part-gym-13",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken mening använder partikelverbet korrekt?",
+    prompt: "Vilken mening är korrekt i formell stil?",
+    options: [
+      "Styrelsen beslutade att se över reglerna.",
+      "Styrelsen beslutade att se ut reglerna.",
+      "Styrelsen beslutade att se in reglerna.",
+    ],
+    correct: 0,
+    explanation:
+      "'Se över' betyder att granska, utvärdera eller revidera. Det är vanligt i formella sammanhang: 'se över budgeten', 'se över rutinerna'.",
+  },
+  {
+    id: "part-gym-14",
+    type: "fill-in-blank",
+    category: "partikelverb",
+    ageGroup: "gymnasiet",
+    instruction: "Fyll i rätt partikelverb.",
+    sentence: "Informationen ska ____ till nästa instans för granskning.",
+    options: ["föras vidare", "föras fram", "föras ut"],
+    correct: "föras vidare",
+    explanation:
+      "'Föra vidare' betyder att skicka eller förmedla information eller ärenden till nästa steg i en process. Det är vanligt i myndighets- och organisationsspråk.",
+  },
+  {
+    id: "part-gym-15",
+    type: "multiple-choice",
+    category: "partikelverb",
+    ageGroup: "gymnasiet",
+    instruction: "Vad betyder partikelverbet?",
+    prompt: "Vad betyder 'att ta sig an en uppgift'?",
+    options: [
+      "Att börja arbeta med och åta sig en uppgift",
+      "Att tacka nej till en uppgift",
+      "Att delegera en uppgift till någon annan",
+    ],
+    correct: 0,
+    explanation:
+      "'Ta sig an' betyder att åta sig och börja arbeta med något, ofta med engagemang. Det är formellt och vanligt i arbets- och utbildningssammanhang: 'Hon tog sig an utmaningen.'",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -1016,6 +1231,79 @@ const UTOKAD_ORDFOLJD: SvaExercise[] = [
     correct: 0,
     explanation:
       "Platsadverbialet 'I parken' står först, så verbet 'leker' måste komma på plats 2, och subjektet 'barnen' hamnar efter: I parken (1) + leker (2) + barnen (3).",
+  },
+  // --- mellanstadiet nya (5) ---
+  {
+    id: "uord-mel-7",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken mening har rätt ordföljd?",
+    prompt: "Välj meningen med korrekt ordföljd.",
+    options: [
+      "Varje morgon springer han till skolan.",
+      "Varje morgon han springer till skolan.",
+      "Han varje morgon springer till skolan.",
+    ],
+    correct: 0,
+    explanation:
+      "Tidsadverbialet 'Varje morgon' tar plats 1, och verbet 'springer' måste stå på plats 2 (inversion): Varje morgon (1) + springer (2) + han (3).",
+  },
+  {
+    id: "uord-mel-8",
+    type: "fill-in-blank",
+    category: "utokad-ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i rätt ordföljd efter 'Där borta'.",
+    sentence: "Där borta ____ min kompis.",
+    options: ["bor", "min kompis bor", "borta bor"],
+    correct: "bor",
+    explanation:
+      "Platsadverbialet 'Där borta' tar plats 1, så verbet 'bor' måste komma direkt (plats 2), sedan subjektet 'min kompis': Där borta (1) + bor (2) + min kompis (3).",
+  },
+  {
+    id: "uord-mel-9",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken mening har rätt ordföljd?",
+    prompt: "Välj rätt mening.",
+    options: [
+      "Nästa vecka ska vi åka till farmor.",
+      "Nästa vecka vi ska åka till farmor.",
+      "Vi nästa vecka ska åka till farmor.",
+    ],
+    correct: 0,
+    explanation:
+      "Tidsadverbialet 'Nästa vecka' tar plats 1. Verbet 'ska' måste stå på plats 2: Nästa vecka (1) + ska (2) + vi (3) + åka till farmor.",
+  },
+  {
+    id: "uord-mel-10",
+    type: "fill-in-blank",
+    category: "utokad-ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i rätt ordföljd efter 'Efter skolan'.",
+    sentence: "Efter skolan ____ vi fotboll.",
+    options: ["spelar", "vi spelar", "spelat"],
+    correct: "spelar",
+    explanation:
+      "Tidsadverbialet 'Efter skolan' tar plats 1, så verbet 'spelar' kommer direkt efter (plats 2): Efter skolan (1) + spelar (2) + vi (3).",
+  },
+  {
+    id: "uord-mel-11",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken mening har rätt ordföljd?",
+    prompt: "Välj meningen med korrekt ordföljd.",
+    options: [
+      "Under rasten lekte alla barn ute.",
+      "Under rasten alla barn lekte ute.",
+      "Alla barn under rasten lekte ute.",
+    ],
+    correct: 0,
+    explanation:
+      "Tidsadverbialet 'Under rasten' tar plats 1, verbet 'lekte' på plats 2 och subjektet 'alla barn' på plats 3: Under rasten (1) + lekte (2) + alla barn (3).",
   },
   // --- hogstadiet (10) ---
   {
@@ -1162,6 +1450,79 @@ const UTOKAD_ORDFOLJD: SvaExercise[] = [
     explanation:
       "I bisatsen placeras satsadverbet 'kanske' före det finita verbet: 'att hon kanske skulle åka'. BIFF-regeln gäller alla satsadverb: inte, aldrig, alltid, kanske, nog.",
   },
+  // --- hogstadiet nya (5) ---
+  {
+    id: "uord-hog-11",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken mening har rätt ordföljd med relativsats?",
+    prompt: "Välj meningen med korrekt ordföljd.",
+    options: [
+      "Boken som jag läste var spännande.",
+      "Boken som läste jag var spännande.",
+      "Boken jag som läste var spännande.",
+    ],
+    correct: 0,
+    explanation:
+      "I en relativsats (som inleds med 'som') gäller rak ordföljd: 'som jag läste'. Subjektet 'jag' kommer före verbet 'läste' precis som i en vanlig bisats.",
+  },
+  {
+    id: "uord-hog-12",
+    type: "fill-in-blank",
+    category: "utokad-ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Fyll i rätt ordföljd med formellt subjekt.",
+    sentence: "____ sitter en katt på taket.",
+    options: ["Det", "Där", "En"],
+    correct: "Det",
+    explanation:
+      "'Det' används som formellt subjekt (platshållare) när det egentliga subjektet ('en katt') kommer senare i meningen: Det (formellt subjekt) + sitter (verb) + en katt (egentligt subjekt).",
+  },
+  {
+    id: "uord-hog-13",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken mening använder formellt subjekt 'det' korrekt?",
+    prompt: "Välj korrekt mening.",
+    options: [
+      "Det finns många skäl att läsa mer.",
+      "Finns det många skäl att läsa mer.",
+      "Många skäl det finns att läsa mer.",
+    ],
+    correct: 0,
+    explanation:
+      "'Det finns' är en fast konstruktion med formellt subjekt. 'Det' är en platshållare och det egentliga subjektet ('många skäl') kommer efter verbet.",
+  },
+  {
+    id: "uord-hog-14",
+    type: "fill-in-blank",
+    category: "utokad-ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Fyll i rätt ordföljd i relativsatsen.",
+    sentence: "Läraren som ____ oss i matte är snäll.",
+    options: ["undervisar", "oss undervisar", "undervisar oss"],
+    correct: "undervisar",
+    explanation:
+      "I relativsatsen 'som undervisar oss' kommer verbet 'undervisar' direkt efter 'som'. Objektet 'oss' är redan del av resten. 'Som' ersätter subjektet, och verbet följer direkt.",
+  },
+  {
+    id: "uord-hog-15",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken mening har rätt ordföljd med 'det' som formellt subjekt?",
+    prompt: "Välj korrekt mening.",
+    options: [
+      "Det regnar ute idag.",
+      "Regnar det ute idag.",
+      "Ute det regnar idag.",
+    ],
+    correct: 0,
+    explanation:
+      "'Det regnar' är en opersonlig konstruktion där 'det' fungerar som formellt subjekt. Väderbeskrivningar i svenska kräver 'det': det regnar, det snöar, det blåser.",
+  },
   // --- gymnasiet (9) ---
   {
     id: "uord-gym-1",
@@ -1290,6 +1651,79 @@ const UTOKAD_ORDFOLJD: SvaExercise[] = [
     correct: 0,
     explanation:
       "'Vad som...är att...' är en komplex emfatisk konstruktion vanlig i akademisk text. Hela vad-satsen fungerar som subjekt, och 'är' som verb. Det ger tyngd åt det som framhävs.",
+  },
+  // --- gymnasiet nya (5) ---
+  {
+    id: "uord-gym-10",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken mening har korrekt passiv ordföljd?",
+    prompt: "Välj meningen med korrekt ordföljd.",
+    options: [
+      "Boken skrevs av en okänd författare på 1800-talet.",
+      "Boken av en okänd författare skrevs på 1800-talet.",
+      "Skrevs boken av en okänd författare på 1800-talet.",
+    ],
+    correct: 0,
+    explanation:
+      "I passiva påståendesatser gäller samma V2-regel: Subjektet 'Boken' (1) + passivt verb 'skrevs' (2) + agent 'av en okänd författare' + tidsadverbial.",
+  },
+  {
+    id: "uord-gym-11",
+    type: "fill-in-blank",
+    category: "utokad-ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Fyll i rätt konstruktion för en klyvningssats.",
+    sentence: "____ var hon som vann tävlingen.",
+    options: ["Det", "Hon", "Vem"],
+    correct: "Det",
+    explanation:
+      "Klyvningssatser (cleft sentences) inleds med 'Det var...som...'. De används för att framhäva en viss del av meningen: 'Det var hon som vann' betonar att det var just hon.",
+  },
+  {
+    id: "uord-gym-12",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken klyvningssats har korrekt ordföljd?",
+    prompt: "Välj den korrekta klyvningssatsen.",
+    options: [
+      "Det är i den här frågan som åsikterna går isär.",
+      "I den här frågan det är som åsikterna går isär.",
+      "Som åsikterna går isär det är i den här frågan.",
+    ],
+    correct: 0,
+    explanation:
+      "Klyvningssatsen 'Det är...som...' lyfter fram det viktiga ledet. Här framhävs 'i den här frågan': Det är (verb) + i den här frågan (fokus) + som (bisatsinledare) + åsikterna går isär.",
+  },
+  {
+    id: "uord-gym-13",
+    type: "fill-in-blank",
+    category: "utokad-ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Fyll i rätt ordföljd i den passiva konstruktionen.",
+    sentence: "Resultaten ____ av forskarna vid Lunds universitet.",
+    options: ["presenterades", "presenterade", "har presenteras"],
+    correct: "presenterades",
+    explanation:
+      "Passiv form med s-passiv: 'presenterades' (preteritum passiv av 'presentera'). I akademisk text är passiv konstruktion vanlig för att skapa objektivitet.",
+  },
+  {
+    id: "uord-gym-14",
+    type: "multiple-choice",
+    category: "utokad-ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Vilken mening har korrekt ordföljd med passiv och inversion?",
+    prompt: "Välj meningen med korrekt ordföljd.",
+    options: [
+      "Av flera forskare har det hävdats att teorin är felaktig.",
+      "Av flera forskare det har hävdats att teorin är felaktig.",
+      "Har det hävdats av flera forskare att teorin är felaktig.",
+    ],
+    correct: 0,
+    explanation:
+      "Prepositionsfrasen 'Av flera forskare' tar plats 1. Hjälpverbet 'har' måste stå på plats 2 (inversion), sedan det formella subjektet 'det': Av flera forskare (1) + har (2) + det (3) + hävdats.",
   },
 ];
 
