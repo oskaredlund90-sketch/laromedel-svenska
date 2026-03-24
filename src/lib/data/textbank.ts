@@ -3236,4 +3236,380 @@ Att bevara regnskogen handlar inte om altruism — det handlar om självbevarels
     skrivverkstadLink: "/skrivverkstad/faktatext",
     skrivverkstadLabel: "Skrivverkstad: Faktatext",
   },
+
+  // ─── NYA TEXTER: LÅGSTADIET ──────────────────────────────────
+  {
+    slug: "utflykten-till-skogen",
+    title: "Utflykten till skogen",
+    category: "berattande",
+    categoryLabel: "Berättande text",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Vi hade väntat hela veckan. På fredagen var det äntligen dags för utflykten till skogen. Fröken Sara sa att vi skulle ta med ryggsäck och vattenflaska. Alla i klassen var glada.
+
+Vi gick i ett långt led genom byn. Solen sken och fåglarna sjöng. Alva hittade en snigel på stigen. Den var brun med ett runt skal. Vi fick titta men inte röra.
+
+I skogen stannade vi vid en glänta. Fröken berättade om träden. Björken har vit stam och granen har barr som är vassa. Vi fick leta efter kottar och stenar. Jag hittade en sten som såg ut som ett hjärta.
+
+Sen åt vi matsäck på en stor flat sten. Alma spillde saft på sin jacka men det gjorde inget. Vi skrattade och pratade om allt vi hade sett.
+
+På vägen tillbaka var alla trötta men nöjda. Jag tänkte att skogen är som ett stort rum utan väggar. Jag vill gå dit igen snart.`,
+    analysisQuestions: [
+      "Vem berättar i texten? Hur märker du det?",
+      "Vilka sinnen används i texten? Ge exempel på sådant man kan se, höra eller känna.",
+      "Varför tror du att berättaren säger att skogen är som ett stort rum utan väggar?",
+      "Skriv en egen mening om något du skulle vilja hitta i skogen.",
+    ],
+    structure:
+      "Texten följer tidsordning: förberedelse, vandring, aktiviteter i skogen, matsäck och hemväg. Tydlig början, mitt och slut.",
+    languageFeatures:
+      "Korta, enkla meningar. Jag-berättare. Konkreta beskrivningar av saker barnen ser och gör. En liknelse i slutet. Vardagligt språk.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+  {
+    slug: "fantastiska-bin",
+    title: "Fantastiska bin",
+    category: "faktatext",
+    categoryLabel: "Faktatext",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `Bin är små insekter som är mycket viktiga för naturen. Utan bin skulle vi inte ha så många blommor, frukter och grönsaker. Det beror på att bin sprider pollen från blomma till blomma.
+
+Ett bisamhälle kan ha upp till femtiotusen bin. Där finns en drottning, drönare och arbetarbin. Drottningen lägger ägg. Drönarna är hanbin. Arbetarbina gör det mesta jobbet. De samlar nektar, bygger vaxkakor och vaktar kupan.
+
+Bin kan dansa. När ett bi hittar blommor med nektar flyger det tillbaka och dansar för de andra bina. Dansen visar åt vilket håll blommorna finns och hur långt bort de är. Det kallas för bivårdans.
+
+Honung görs av nektar som bina samlar. De tuggar och blandar nektarn tills den blir tjock och söt. En enda burk honung kräver nektar från ungefär två miljoner blommor.
+
+Tyvärr mår många bin dåligt idag. De behöver vilda blommor att äta från. Du kan hjälpa bina genom att plantera blommor i trädgården eller på balkongen.`,
+    analysisQuestions: [
+      "Vad gör arbetarbina i ett bisamhälle? Nämn tre saker.",
+      "Varför är bin viktiga för naturen enligt texten?",
+      "Vad är bivårdans? Förklara med egna ord.",
+      "Vad kan du göra för att hjälpa bin? Kan du komma på fler sätt än det texten nämner?",
+    ],
+    structure:
+      "Texten börjar med varför bin är viktiga, beskriver sedan bisamhället, binas beteende och honung, och avslutas med ett problem och vad man kan göra.",
+    languageFeatures:
+      "Enkla och korta meningar. Sakligt språk med förklaringar av svåra ord. Siffror gör fakta konkreta. Direkt tilltal till läsaren i slutet.",
+    skrivverkstadLink: "/skrivverkstad/faktatext",
+    skrivverkstadLabel: "Skrivverkstad: Faktatext",
+  },
+  {
+    slug: "nytt-klatterpark-oppnar",
+    title: "Ny klätterpark öppnar i Ekdalen",
+    category: "nyhetsartikel",
+    categoryLabel: "Nyhetsartikel",
+    difficulty: "lagstadiet",
+    difficultyLabel: "Lågstadiet",
+    content: `I lördags öppnade en ny klätterpark i Ekdalen. Många barn och vuxna kom för att prova. Klätterparken har rep, nät och hinder högt uppe bland träden.
+
+Borgmästare Anna Lind klippte det röda bandet. "Det är viktigt att barn kan leka utomhus och röra sig", sa hon.
+
+Hugo, åtta år, var en av de första som fick klättra. "Det var lite läskigt i början men jättekul sen", berättade han efteråt. Hans kompis Maja tyckte att nätbanan var bäst.
+
+Klätterparken har tre banor. Den lättaste är för barn från sex år. Den svåraste är för vuxna. Alla som klättrar får hjälm och sele.
+
+Parken är öppen varje dag utom måndag. Det kostar femtio kronor för barn och hundra kronor för vuxna. Under första veckan var alla biljetterna slutsålda.`,
+    analysisQuestions: [
+      "Vilka frågor svarar texten på? Tänk på frågorna vem, vad, var och när.",
+      "Varför tror du att journalisten frågade Hugo och Maja vad de tyckte?",
+      "Hur skiljer sig den här texten från en berättelse?",
+      "Skriv en egen rubrik till nyheten. Vilken rubrik tycker du passar bäst?",
+    ],
+    structure:
+      "Nyhetsartikel med de viktigaste fakta först (vad och var), citat från nyckelpersoner, detaljer om klätterparken och praktisk information sist.",
+    languageFeatures:
+      "Kort och sakligt språk. Citat ger röster åt personerna. Konkreta siffror (ålder, pris). Tredje person-perspektiv. Neutral ton.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+
+  // ─── NYA TEXTER: MELLANSTADIET ───────────────────────────────
+  {
+    slug: "skoluniform-for-eller-emot",
+    title: "Skoluniform — för eller emot?",
+    category: "argumenterande",
+    categoryLabel: "Argumenterande text",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `I många länder bär elever skoluniform varje dag. I Sverige gör vi inte det, men frågan dyker upp ibland. Borde svenska elever ha skoluniform? Jag tycker att det finns goda skäl att testa.
+
+För det första minskar uniformer mobbning om kläder. Alla vet att märkeskläder kan skapa grupperingar. Den som inte har de senaste skorna eller den rätta jackan kan känna sig utanför. Med uniform slipper man den pressen.
+
+För det andra sparar familjer pengar. Att köpa nya trendiga kläder kostar mycket. En enkel uniform som räcker hela terminen är billigare. Det blir rättvisare för alla, oavsett hur mycket pengar ens familj har.
+
+Å andra sidan finns det argument emot. Kläder är ett sätt att uttrycka sig. Många elever tycker att det är viktigt att få välja sina egna kläder. Att tvingas se likadan ut som alla andra kan kännas tråkigt och orättvist.
+
+Det finns också frågan om vem som bestämmer. Ska vuxna bestämma vad barn har på sig? Elever borde ha rätt att vara med och påverka sådana beslut.
+
+Sammanfattningsvis finns det både fördelar och nackdelar. Jag tycker att man åtminstone borde prova under en termin och sedan fråga eleverna vad de tyckte. Då får man veta om det verkligen fungerar — inte bara gissa.`,
+    analysisQuestions: [
+      "Vilka argument för skoluniform tar skribenten upp? Vilka argument emot?",
+      "Hur märker du att skribenten har en egen åsikt? Var i texten syns den tydligast?",
+      "Vad tycker du om förslaget att 'prova under en termin'? Är det ett bra sätt att avsluta texten?",
+      "Skriv ett eget argument för eller emot skoluniform som inte finns i texten.",
+    ],
+    structure:
+      "Inledning med bakgrund och tes. Två argument för, sedan två argument emot. Avslutning med sammanfattning och ett kompromissförslag.",
+    languageFeatures:
+      "Tydliga bindeord: för det första, å andra sidan, sammanfattningsvis. Blandning av sakliga argument och personlig åsikt. Retorisk fråga. Vardagliga exempel som läsaren kan känna igen.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+  {
+    slug: "unga-raddare-av-an",
+    title: "Unga räddare av ån",
+    category: "nyhetsartikel",
+    categoryLabel: "Nyhetsartikel",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `En grupp elever i femman på Björkskolan har startat ett miljöprojekt som fått hela kommunen att reagera. Sedan september har de städat Lillån, som rinner genom centrala Sandvik, och samlat över tvåhundra kilo skräp.
+
+"Vi hittade cyklar, gamla mobiler och massor av plast", berättar Elin Norberg, elva år. "Det var äckligt men också spännande. Man fattade hur mycket skit folk bara slänger."
+
+Projektet startade som en NO-uppgift men växte snabbt. Eleverna kontaktade kommunen och fick låna skräpplockare och handskar. De skapade även ett Instagramkonto där de dokumenterar sina fynd.
+
+Kommunalrådet Per Ekström besökte klassen förra veckan. "Det här är precis det engagemang vi vill se", sa han. "Vi undersöker nu om projektet kan bli ett permanent program för alla skolor i kommunen."
+
+Läraren Maria Holm, som handleder projektet, är stolt men inte förvånad. "Barn bryr sig om naturen när de får chansen att göra skillnad på riktigt", säger hon.
+
+Nästa steg är att plantera vattenväxter längs ån för att förbättra vattenkvaliteten. Eleverna har sökt pengar från Naturvårdsverket för att finansiera planteringen.`,
+    analysisQuestions: [
+      "Vilka källor citeras i artikeln? Varför har journalisten valt just dessa personer?",
+      "Hur är artikeln uppbyggd? I vilken ordning presenteras informationen?",
+      "Vilka fakta och vilka åsikter finns i texten? Ge exempel på båda.",
+      "Tycker du att rubriken passar? Föreslå en alternativ rubrik och förklara ditt val.",
+    ],
+    structure:
+      "Nyhetstriangel: viktigaste informationen först, sedan citat och bakgrund, avslutning med framtidsplaner. Flera röster ger bredd.",
+    languageFeatures:
+      "Neutralt, sakligt språk i brödtexten. Citat ger personlighet och trovärdighet. Siffror och namn gör texten konkret. Tredje person.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+  {
+    slug: "kartong-efter-kartong",
+    title: "Kartong efter kartong",
+    category: "novell",
+    categoryLabel: "Novell / Berättande text",
+    difficulty: "mellanstadiet",
+    difficultyLabel: "Mellanstadiet",
+    content: `Liam räknade kartongerna. Trettiotvå. De stod staplade i hallen som en mur mellan det gamla och det nya. Imorgon skulle de bo i Norrköping. Idag fanns allt han ägde i bruna lådor med svart tuschtext: LIAMS RUM, KLÄDER, BÖCKER, ÖVRIGT.
+
+Mamma sa att det skulle bli bra. Att Norrköping var en fin stad med ett bra ishockeylag. Som om Liam brydde sig om ishockey. Han brydde sig om Felix och Olle. Han brydde sig om Strandskolan och fröken Karin. Han brydde sig om stigen ner till sjön där de byggde kojor varje sommar.
+
+Han gick in i sitt rum. Det var tomt nu. Bara märken på väggarna där posterna hade suttit. Ljusa rektanglar mot den bleka tapeten. Som spöken av saker som inte fanns kvar.
+
+Mobilen surrade. Ett meddelande från Felix: "Vi bygger klart kojan åt dig. Den finns kvar när du kommer tillbaka." Liam svalde. Det brände i halsen.
+
+Han tog den sista kartongen — ÖVRIGT — och öppnade den igen. Längst ner låg ett foto av dem tre vid sjön. Han la det i jackfickan istället. Vissa saker skulle inte packas ner i mörker.
+
+"Liam! Vi åker om tjugo minuter!" ropade mamma nerifrån.
+
+Han tittade ut genom fönstret en sista gång. Gatan låg stilla i novemberljuset. Sedan stängde han dörren.`,
+    analysisQuestions: [
+      "Hur mår Liam? Ge tre exempel från texten som visar hans känslor.",
+      "Vad symboliserar kartongerna i berättelsen? Vad representerar de mer än bara flytten?",
+      "Varför lägger Liam fotot i jackfickan istället för i kartongen? Vad säger det om honom?",
+      "Hur skapar författaren stämning i texten? Peka på minst två stilgrepp.",
+    ],
+    structure:
+      "Berättelsen utspelar sig under en kort tid (kvällen före flytten). Tidspress driver handlingen framåt. Avslutningen är öppen men hoppfull.",
+    languageFeatures:
+      "Korta, känslosamma meningar. Bildspråk (kartongmur, ljusa rektanglar som spöken). Inre monolog blandas med dialog. Symbolik kring ljus och mörker.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+
+  // ─── NYA TEXTER: HÖGSTADIET ──────────────────────────────────
+  {
+    slug: "somn-och-larande",
+    title: "Sömn och lärande — varför hjärnan behöver vila",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `De flesta tonåringar sover för lite. Enligt Folkhälsomyndigheten behöver ungdomar mellan tretton och arton år åtta till tio timmars sömn per natt. Ändå visar undersökningar att många högstadieelever sover betydligt mindre. Frågan är vad detta innebär för deras förmåga att lära sig.
+
+Under sömnen genomgår hjärnan flera stadier. I djupsömnen repareras kroppen och immunförsvaret stärks. Under REM-sömnen, som kännetecknas av snabba ögonrörelser, bearbetar hjärnan dagens intryck och befäster minnen. Forskning vid Lunds universitet har visat att elever som sov minst åtta timmar natten före ett prov presterade i genomsnitt tjugo procent bättre än de som sov sex timmar eller mindre.
+
+Problemet är biologiskt. I puberteten förskjuts den inre klockan så att tonåringar naturligt blir sömniga senare på kvällen. Samtidigt börjar skoldagen tidigt. Resultatet blir en kronisk sömnbrist som påverkar koncentration, humör och inlärning.
+
+Flera länder har experimenterat med att skjuta fram skolstarten. I delar av USA och Danmark har skolor som börjar klockan nio istället för åtta sett förbättringar i elevernas betyg och välmående. Kritiker menar dock att senare skolstart skapar praktiska problem för föräldrar och kollektivtrafik.
+
+Oavsett skolstart finns saker individen kan göra. Att minska skärmtid en timme före sänggåendet, hålla regelbundna sovtider och undvika koffein efter lunch är alla välbelagda metoder. Sömn är inte slöseri med tid — det är en förutsättning för att tiden vi är vakna ska vara produktiv.`,
+    analysisQuestions: [
+      "Vilka orsaker till tonåringars sömnbrist tar texten upp? Skilj mellan biologiska och sociala orsaker.",
+      "Hur använder texten forskning och statistik för att stärka sina påståenden? Ge två exempel.",
+      "Vad innebär det att texten är utredande? Hur skiljer den sig från en argumenterande text?",
+      "Texten ger förslag på lösningar. Vilka riktar sig till samhället och vilka till individen? Diskutera.",
+    ],
+    structure:
+      "Inledning med problemformulering. Förklaring av sömnens biologi. Analys av orsaker. Möjliga lösningar på samhälls- och individnivå. Avslutning som knyter samman.",
+    languageFeatures:
+      "Sakligt, utredande språk. Referenser till forskning och myndigheter. Orsakssamband med ord som 'resultatet blir' och 'innebär'. Balans mellan olika perspektiv. Retorisk avslutning.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "det-jag-inte-berattade",
+    title: "Det jag inte berättade",
+    category: "novell",
+    categoryLabel: "Novell / Berättande text",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Jag ska berätta exakt hur det var. Ingen överdrift, inga utsmyckningar. Bara sanningen. Det är viktigt att du vet det.
+
+Det började med att Nora tappade sin telefon i vattnet. Eller, det var det hon sa. Vi stod på bryggan vid Granviken, hela gänget, och hon lutade sig fram och — plask. "Åh nej", sa hon. "Den gled bara ur handen."
+
+Alla tyckte synd om henne. Emil dök till och med ner och letade, men botten var för djup. Nora grät lite, eller kanske inte grät men såg väldigt ledsen ut. Vi kramade om henne och sa att det inte var hela världen.
+
+Det jag inte berättade var att jag hade sett henne öppna handen. Inte tappa — öppna. Medvetet, som när man släpper något man vill bli av med. Fingrarna sträcktes ut, ett i taget, som kronblad. Och i sekunden innan telefonen lämnade hennes hand tyckte jag att jag såg något i hennes ansikte. Lättnad. Inte sorg.
+
+Men vad vet jag? Kanske spelade ljuset mig ett spratt. Kanske bländade solen. Kanske ville jag se något som inte fanns, för att vardagen annars är så förfärligt vanlig.
+
+Nu i efterhand vet jag inte vad som var sant. Minnet har redan förändrats. Varje gång jag tänker på ögonblicket ser jag nya detaljer — och tappar andra. Var himlen verkligen orange? Stod Emil till höger eller till vänster?
+
+Jag sa att jag skulle berätta sanningen. Men sanningen kanske inte är det jag trodde.`,
+    analysisQuestions: [
+      "Berättaren säger att hen ska berätta sanningen. Gör hen det? Vad tyder på att berättaren kan vara opålitlig?",
+      "Vad kan vara anledningen till att Nora medvetet släppte telefonen, om berättarens tolkning stämmer?",
+      "Hur förändras berättarens säkerhet under textens gång? Följ förändringen steg för steg.",
+      "Vad säger texten om minne och sanning? Diskutera med exempel från ditt eget liv.",
+    ],
+    structure:
+      "Börjar med ett löfte om sanning, berättar händelsen, avslöjar en alternativ tolkning, och ifrågasätter sedan sin egen version. Cirkulär struktur som underminerar sig själv.",
+    languageFeatures:
+      "Första person med direkt tilltal till läsaren. Korta, försäkrande meningar i början som gradvis ersätts av tveksamhet. Bildspråk (kronblad). Retoriska frågor. Opålitlig berättare.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+  {
+    slug: "ai-i-klassrummet",
+    title: "AI i klassrummet — hjälp eller fusk?",
+    category: "nyhetsartikel",
+    categoryLabel: "Nyhetsartikel",
+    difficulty: "hogstadiet",
+    difficultyLabel: "Högstadiet",
+    content: `Allt fler skolor i Sverige ställs inför frågan om hur artificiell intelligens ska hanteras i undervisningen. Sedan AI-verktyg som ChatGPT blev tillgängliga har debatten om teknikens roll i skolan blivit alltmer intensiv.
+
+"Vi kan inte låtsas som att AI inte finns", säger Maria Ekström, rektor på Hedeskolan i Umeå. "Men vi måste hitta ett sätt att använda det som stödjer lärandet istället för att ersätta det."
+
+Hedeskolan är en av flera skolor som infört egna riktlinjer. Eleverna får använda AI som hjälpmedel vid research och idégenerering, men inte för att skriva färdiga texter. Varje inlämning ska åtföljas av en processbeskrivning som visar elevens eget arbete.
+
+Bland eleverna finns delade meningar. "Det är som att ha en jättesmart kompis att bolla idéer med", menar åttondeklassaren Leo Sundqvist. Hans klasskamrat Fatima Hassan ser risker: "Om man alltid har AI som hjälp lär man sig aldrig tänka själv."
+
+Forskare vid Göteborgs universitet studerar just nu hur AI påverkar elevers skrivutveckling. Preliminära resultat tyder på att elever som använder AI som samtalspartner under skrivprocessen utvecklar starkare argumentationsförmåga, medan de som använder AI för att generera färdig text visar svagare utveckling.
+
+Skolverket arbetar med att ta fram nationella rekommendationer. Generaldirektör Peter Fredriksson har betonat att det inte handlar om att förbjuda eller tillåta, utan om att "rusta eleverna för en verklighet där AI är en del av vardagen".`,
+    analysisQuestions: [
+      "Vilka perspektiv på AI i skolan presenteras i artikeln? Sammanfatta minst tre olika ståndpunkter.",
+      "Hur skapar journalisten balans i texten? Vilka källor används och varför?",
+      "Vad innebär Hedeskolans modell? Vilka fördelar och nackdelar kan du se med den?",
+      "Ta ställning: bör AI-verktyg tillåtas i skolan? Använd artikeln som utgångspunkt men lägg till egna argument.",
+    ],
+    structure:
+      "Inledning med kontext. Citat från rektor ger officiellt perspektiv. Konkret exempel på en skolas modell. Elevröster, forskningsresultat och myndighetsperspektiv. Bred nyhetsrapportering.",
+    languageFeatures:
+      "Neutralt, journalistiskt språk. Många citat som ger röst åt olika aktörer. Balans mellan fakta och åsikter. Förklaringar av begrepp. Opinionsmässigt neutral ton.",
+    skrivverkstadLink: "/skrivverkstad/argumenterande-text",
+    skrivverkstadLabel: "Skrivverkstad: Argumenterande text",
+  },
+
+  // ─── NYA TEXTER: GYMNASIET ───────────────────────────────────
+  {
+    slug: "stationen",
+    title: "Stationen",
+    category: "novell",
+    categoryLabel: "Novell / Berättande text",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Tåget skulle gå om fjorton minuter men det spelade ingen roll längre, ingenting spelade egentligen någon roll just nu, tänkte hon medan kaféets espressomaskin väste bakom henne som en gammal katt och lukten av bränd mjölk blandades med parfymen från kvinnan vid fönsterbordet som bläddrade i en tidning utan att läsa den, det syntes på ögonen, de rörde sig inte i det mönster ögon rör sig när de följer text, de bara gled fram och tillbaka som om sidorna var vatten.
+
+Hon rörde i sin kopp fast den var tom. Skeden klirrade mot porslinet. Det var ett ljud som påminde om söndagsmorgnar hemma, men hemma var ett ord som hade bytt innebörd, det var inte längre fyra väggar och en köksdoft utan snarare en känsla hon letade efter i varje nytt rum utan att hitta den.
+
+Fjorton minuter. Tretton nu. Tåget till Malmö och sedan vidare, vidare, som om avståndet kunde lösa det som närheten inte hade klarat av. Hon hade läst någonstans att man inte kan fly från sig själv men det var en kliché och klichéer var till för människor som inte hade provat att fly ordentligt.
+
+Mannen mittemot henne hade somnat med huvudet mot ryggsäcken. Ung, kanske tjugo, med hörlurar som läckte musik — ett svagt dunkande som en hjärtmonitor. Hon undrade vart han var på väg och om han också reste från något eller om han hade lyxen att resa mot.
+
+Högtalaren meddelade att tåget var försenat. Tio minuter. Hon skrattade nästan. Världen vägrade låta henne ens fly i tid.
+
+Hon beställde en till kaffe. Den här gången drack hon den.`,
+    analysisQuestions: [
+      "Texten är skriven som medvetandeström. Vad utmärker stilen? Hur påverkar de långa meningarna läsupplevelsen?",
+      "Vilka ledtrådar ger texten om varför karaktären reser? Vad vet vi — och vad vet vi inte?",
+      "Analysera den sista meningen. Vad signalerar den om karaktärens inre förändring?",
+      "Jämför textens sätt att beskriva tid (fjorton minuter, tretton nu) med karaktärens inre upplevelse av tid. Vad skapar kontrasten?",
+    ],
+    structure:
+      "Enstaka scen på en tågstation. Yttre händelser (väntan, försening) speglar inre tillstånd. Kronologisk men med associativa avvikelser. Cirkulär rörelse: tom kopp — beställer ny kopp.",
+    languageFeatures:
+      "Medvetandeström med långa, flödande meningar. Sinnliga detaljer (ljud, lukt, syn). Bildspråk och metaforer. Inre monolog. Reflektioner om klichéer. Ironisk distans.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
+  {
+    slug: "sprak-och-makt",
+    title: "Språk och makt — vem får tala och vem blir hörd?",
+    category: "utredande",
+    categoryLabel: "Utredande text",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Språk är inte bara ett kommunikationsverktyg. Det är ett maktmedel. Den som behärskar det dominerande språket i ett samhälle har tillgång till arenor som andra stängs ute från. Frågan om vem som får tala — och på vilka villkor — är därför i grunden en fråga om demokrati.
+
+Sociologen Pierre Bourdieu myntade begreppet "språkligt kapital" för att beskriva hur behärskning av ett samhälles prestigespråk ger sociala fördelar. I Sverige innebär det att den som talar rikssvenska med korrekt grammatik och brett ordförråd ofta bedöms som mer kompetent, oavsett vad personen faktiskt säger. Dialekter, sociolekter och flerspråkiga uttryck riskerar att marginaliseras.
+
+Detta syns tydligt i skolans kontext. Elever med svenska som andraspråk möter texter och prov som utgår från en enspråkig norm. Forskning visar att lärare omedvetet bedömer elevers kunskaper lägre när språket avviker från normen, även när innehållet är korrekt. Språklig makt opererar alltså genom att definiera vad som räknas som kunskap.
+
+I offentlig debatt framträder samma mönster. Analyser av riksdagsdebatter visar att talare med minoritetsbakgrund oftare blir avbrutna och att deras inlägg tillskrivs erfarenhet snarare än expertis. Språkvetaren Tommaso Milani har beskrivit detta som "lingvistisk rasism" — en diskriminering som verkar genom språkliga normer snarare än explicit rasistiska uttalanden.
+
+Motstånd kan också ske genom språk. Litteratur på dialekt, flerspråkig poesi och nätaktivism på rinkebysvenska utmanar den språkliga hegemonin. Dessa uttryck skapar nya normer och synliggör att det inte finns ett enda korrekt sätt att tala.
+
+Att granska språkliga maktstrukturer är inte att förkasta grammatik eller nyttjandet av standardspråk. Det handlar om att synliggöra att språkliga val aldrig är neutrala — och att medvetenhet om detta är en förutsättning för ett rättvisare samhälle.`,
+    analysisQuestions: [
+      "Förklara Bourdieus begrepp 'språkligt kapital' med egna ord och ge ett eget exempel.",
+      "Hur argumenterar texten för att språk och makt hänger ihop? Vilka belägg används?",
+      "Texten nämner 'lingvistisk rasism'. Vad innebär begreppet och hur skiljer det sig från öppen rasism?",
+      "Avslutningen skiljer mellan att kritisera maktstrukturer och att förkasta grammatik. Varför gör författaren den distinktionen?",
+    ],
+    structure:
+      "Tes i inledningen. Teoretisk grund (Bourdieu). Tre analysnivåer: skola, offentlig debatt, motstånd. Nuancerad avslutning. Progressionen går från teori till empiri till reflektion.",
+    languageFeatures:
+      "Akademiskt men tillgängligt språk. Facktermer introduceras med förklaring. Referenser till forskare. Logisk argumentation med orsakskedjor. Balanserad avslutning som förebygger missförstånd.",
+    skrivverkstadLink: "/skrivverkstad/utredande-text",
+    skrivverkstadLabel: "Skrivverkstad: Utredande text",
+  },
+  {
+    slug: "det-som-stannar-kvar",
+    title: "Det som stannar kvar",
+    category: "berattande",
+    categoryLabel: "Berättande text",
+    difficulty: "gymnasiet",
+    difficultyLabel: "Gymnasiet",
+    content: `Det finns ett fotografi av mig vid en fontän i en stad jag inte minns. Jag är kanske fyra år, i en röd regnjacka, och jag sträcker ut handen mot vattnet med en min av absolut koncentration. Mamma säger att det är Barcelona. Pappa sa att det var Madrid. De var aldrig överens om detaljerna, bara om att vi var lyckliga.
+
+Jag har inget eget minne av den resan. Det jag har är fotografiet — och berättelserna runt det. Mammas version handlar om en liten tapasrestaurang där jag somnade i en stol. Pappas version handlar om att jag sprang bort på en marknad och att han fick panik i tio sekunder som varade i tio år. Mina minnen är deras minnen, inlånade som böcker man aldrig lämnar tillbaka.
+
+Det fascinerar mig hur identitet byggs av sådant material. Vi tror att vi vet vilka vi är för att vi minns, men det vi minns är redan bearbetat, filtrerat, omberättat. Hjärnforskning visar att varje gång vi plockar fram ett minne rekonstruerar vi det. Vi minns inte händelsen — vi minns den senaste gången vi mindes den.
+
+Så vem var jag vid fontänen? Barnet i den röda jackan existerar bara som bild och som narrativ. Och ändå är det ögonblicket en del av min historia, kanske till och med en del av min personlighet. Jag har alltid älskat vatten. Jag har alltid fastnat för detaljer. Kanske började det vid den fontänen, eller kanske projicerar jag bakåt och skapar sammanhang där det bara fanns slump.
+
+Det är kanske det som gör oss mänskliga: inte att vi minns, utan att vi berättar. Varje människa är en pågående roman, skriven i realtid, med ständiga omskrivningar av de tidiga kapitlen. Vi redigerar oss själva.
+
+Fotografiet ligger i en låda i garderoben nu. Ibland tar jag fram det. Barnet sträcker fortfarande handen mot vattnet. Det är det enda i bilden som aldrig förändras.`,
+    analysisQuestions: [
+      "Hur blandar texten personligt berättande med essäistisk reflektion? Ge exempel på var övergångarna sker.",
+      "Vad menar författaren med att minnen är 'inlånade som böcker man aldrig lämnar tillbaka'?",
+      "Diskutera påståendet att 'vi minns inte händelsen — vi minns den senaste gången vi mindes den'. Hur påverkar det vår syn på identitet?",
+      "Analysera den sista meningen. Hur skapar den en kontrast till textens tema om förändring?",
+    ],
+    structure:
+      "Börjar med ett konkret föremål (fotografiet) som öppnar till reflektion. Pendlar mellan det personliga och det allmänna. Återkommer till fotografiet i slutet. Cirkulär, essäistisk struktur.",
+    languageFeatures:
+      "Blandning av berättande och reflekterande stil. Bildspråk och metaforer (pågående roman, inlånade böcker). Filosofisk ton. Parentetiska inskott. Korta, pregnanta meningar i slutet skapar eftertanke.",
+    skrivverkstadLink: "/skrivverkstad/berattande-text",
+    skrivverkstadLabel: "Skrivverkstad: Berättande text",
+  },
 ];
