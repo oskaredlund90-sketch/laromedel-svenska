@@ -2,11 +2,7 @@
 
 import { QuizCard, MatchCard, TimelineCard } from "@/components/exercise-cards";
 import { ExerciseRunner } from "@/components/exercise-runner";
-import type { LitExercise } from "@/lib/data/litteraturhistoria-ovningar";
-
-// ---------------------------------------------------------------------------
-// Type labels & colors
-// ---------------------------------------------------------------------------
+import type { SprakhistoriaExercise } from "@/lib/data/sprakhistoria-ovningar";
 
 const TYPE_LABELS: Record<string, string> = {
   quiz: "Flerval",
@@ -21,14 +17,10 @@ const TYPE_COLORS: Record<string, string> = {
     "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
 };
 
-// ---------------------------------------------------------------------------
-// Main component
-// ---------------------------------------------------------------------------
-
-export function LitteraturhistoriaOvningar({
+export function SprakhistoriaOvningar({
   exercises,
 }: {
-  exercises: LitExercise[];
+  exercises: SprakhistoriaExercise[];
 }) {
   return (
     <ExerciseRunner

@@ -1,0 +1,405 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import { CheckCircle2, XCircle, GripVertical, ArrowUpDown } from "lucide-react";
+
+// ---------------------------------------------------------------------------
+// Shared types for exercise cards
+// ---------------------------------------------------------------------------
+
+export interface QuizExerciseData {
+  prompt: string;
+  options: string[];
+  correct: number;
+  explanation: string;
+}
+
+export interface MatchExerciseData {
+  instruction: string;
+  pairs: { left: string; right: string }[];
+}
+
+export interface TimelineExerciseData {
+  instruction: string;
+  items: { label: string; year: number }[];
+}
+
+// ---------------------------------------------------------------------------
+// Utility
+// ---------------------------------------------------------------------------
+
+export function shuffle<T>(arr: T[]): T[] {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// ---------------------------------------------------------------------------
+// QuizCard
+// ---------------------------------------------------------------------------
+
+export function QuizCard({
+  exercise,
+  onDone,
+}: {
+  exercise: QuizExerciseData;
+  onDone: (correct: boolean) => void;
+}) {
+  const [selected, setSelected] = useState<number | null>(null);
+  const answered = selected !== null;
+  const isCorrect = selected === exercise.correct;
+
+  function handleSelect(idx: number) {
+    if (answered) return;
+    setSelected(idx);
+    onDone(idx === exercise.correct);
+  }
+
+  return (
+    <div>
+      <p className="mb-4 font-medium text-neutral-900 dark:text-white">
+        {exercise.prompt}
+      </p>
+      <div className="space-y-2">
+        {exercise.options.map((opt, i) => {
+          let style =
+            "cursor-pointer border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 hover:border-neutral-400 dark:hover:border-neutral-500";
+          if (answered) {
+            if (i === exercise.correct)
+              style =
+                "border-emerald-500 bg-emerald-50 dark:bg-emerald-950 dark:border-emerald-600";
+            else if (i === selected)
+              style =
+                "border-red-500 bg-red-50 dark:bg-red-950 dark:border-red-600";
+            else style = "border-neutral-200 dark:border-neutral-700 opacity-60";
+          }
+          return (
+            <button
+              key={i}
+              onClick={() => handleSelect(i)}
+              disabled={answered}
+              className={`w-full rounded-lg p-3 text-left text-sm transition ${style}`}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+      {answered && (
+        <div
+          aria-live="polite"
+          className={`mt-4 rounded-lg p-3 text-sm ${
+            isCorrect
+              ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
+              : "bg-red-50 text-red-800 dark:bg-red-950 dark:text-red-200"
+          }`}
+        >
+          {isCorrect ? (
+            <span className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Rätt!
+            </span>
+          ) : (
+            <span className="flex items-center gap-2">
+              <XCircle className="h-4 w-4" aria-hidden="true" /> Fel.
+            </span>
+          )}
+          <p className="mt-1">{exercise.explanation}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// MatchCard
+// ---------------------------------------------------------------------------
+
+export function MatchCard({
+  exercise,
+  onDone,
+}: {
+  exercise: MatchExerciseData;
+  onDone: (correct: boolean) => void;
+}) {
+  const shuffledRight = useMemo(
+    () => shuffle(exercise.pairs.map((p) => p.right)),
+    [exercise]
+  );
+  const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
+  const [matches, setMatches] = useState<Record<number, number>>({});
+  const [checked, setChecked] = useState(false);
+
+  const allMatched = Object.keys(matches).length === exercise.pairs.length;
+
+  function handleLeftClick(idx: number) {
+    if (checked) return;
+    setSelectedLeft(idx === selectedLeft ? null : idx);
+  }
+
+  function handleRightClick(idx: number) {
+    if (checked || selectedLeft === null) return;
+    setMatches((prev) => ({ ...prev, [selectedLeft]: idx }));
+    setSelectedLeft(null);
+  }
+
+  function checkAnswers() {
+    setChecked(true);
+    const allCorrect = exercise.pairs.every((pair, i) => {
+      return shuffledRight[matches[i]] === pair.right;
+    });
+    onDone(allCorrect);
+  }
+
+  function getLeftStyle(idx: number) {
+    if (checked) {
+      const correct =
+        shuffledRight[matches[idx]] === exercise.pairs[idx].right;
+      return correct
+        ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950 dark:border-emerald-600"
+        : "border-red-500 bg-red-50 dark:bg-red-950 dark:border-red-600";
+    }
+    if (idx === selectedLeft)
+      return "border-blue-500 bg-blue-50 dark:bg-blue-950 dark:border-blue-500 ring-2 ring-blue-300";
+    if (idx in matches)
+      return "border-neutral-400 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-600";
+    return "border-neutral-200 dark:border-neutral-700 hover:border-neutral-400 cursor-pointer";
+  }
+
+  function getRightStyle(idx: number) {
+    const usedBy = Object.entries(matches).find(([, v]) => v === idx);
+    if (checked && usedBy) {
+      const leftIdx = Number(usedBy[0]);
+      const correct =
+        shuffledRight[idx] === exercise.pairs[leftIdx].right;
+      return correct
+        ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950 dark:border-emerald-600"
+        : "border-red-500 bg-red-50 dark:bg-red-950 dark:border-red-600";
+    }
+    if (usedBy)
+      return "border-neutral-400 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-600";
+    if (selectedLeft !== null)
+      return "border-neutral-200 dark:border-neutral-700 hover:border-blue-400 cursor-pointer";
+    return "border-neutral-200 dark:border-neutral-700";
+  }
+
+  return (
+    <div>
+      <p className="mb-4 font-medium text-neutral-900 dark:text-white">
+        {exercise.instruction}
+      </p>
+      <p className="mb-3 text-xs text-neutral-500 dark:text-neutral-400">
+        Klicka på ett begrepp till vänster, sedan på rätt match till höger.
+      </p>
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+          {exercise.pairs.map((pair, i) => (
+            <button
+              key={i}
+              onClick={() => handleLeftClick(i)}
+              disabled={checked}
+              className={`w-full rounded-lg border p-3 text-left text-sm transition ${getLeftStyle(i)}`}
+            >
+              {pair.left}
+              {i in matches && !checked && (
+                <span className="ml-2 text-xs text-neutral-400">
+                  → {shuffledRight[matches[i]]}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+        <div className="space-y-2">
+          {shuffledRight.map((text, i) => (
+            <button
+              key={i}
+              onClick={() => handleRightClick(i)}
+              disabled={checked || selectedLeft === null}
+              className={`w-full rounded-lg border p-3 text-left text-sm transition ${getRightStyle(i)}`}
+            >
+              {text}
+            </button>
+          ))}
+        </div>
+      </div>
+      {allMatched && !checked && (
+        <button
+          onClick={checkAnswers}
+          className="mt-4 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+        >
+          Rätta
+        </button>
+      )}
+      {checked && (
+        <div
+          className="mt-4 rounded-lg bg-neutral-50 p-3 text-sm dark:bg-neutral-900"
+          aria-live="polite"
+        >
+          {exercise.pairs.every(
+            (pair, i) => shuffledRight[matches[i]] === pair.right
+          ) ? (
+            <span className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Alla rätt!
+            </span>
+          ) : (
+            <div>
+              <span className="flex items-center gap-2 text-red-700 dark:text-red-300">
+                <XCircle className="h-4 w-4" aria-hidden="true" /> Inte alla
+                rätt.
+              </span>
+              <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+                Rätt svar:{" "}
+                {exercise.pairs
+                  .map((p) => `${p.left} → ${p.right}`)
+                  .join(", ")}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// TimelineCard
+// ---------------------------------------------------------------------------
+
+export function TimelineCard({
+  exercise,
+  onDone,
+}: {
+  exercise: TimelineExerciseData;
+  onDone: (correct: boolean) => void;
+}) {
+  const shuffledItems = useMemo(() => shuffle(exercise.items), [exercise]);
+  const [order, setOrder] = useState(shuffledItems);
+  const [checked, setChecked] = useState(false);
+
+  function moveUp(idx: number) {
+    if (checked || idx === 0) return;
+    const newOrder = [...order];
+    [newOrder[idx - 1], newOrder[idx]] = [newOrder[idx], newOrder[idx - 1]];
+    setOrder(newOrder);
+  }
+
+  function moveDown(idx: number) {
+    if (checked || idx === order.length - 1) return;
+    const newOrder = [...order];
+    [newOrder[idx], newOrder[idx + 1]] = [newOrder[idx + 1], newOrder[idx]];
+    setOrder(newOrder);
+  }
+
+  function checkAnswer() {
+    setChecked(true);
+    const correct = order.every((item, i) => {
+      if (i === 0) return true;
+      return item.year >= order[i - 1].year;
+    });
+    onDone(correct);
+  }
+
+  const isCorrectOrder = order.every((item, i) => {
+    if (i === 0) return true;
+    return item.year >= order[i - 1].year;
+  });
+
+  return (
+    <div>
+      <p className="mb-4 font-medium text-neutral-900 dark:text-white">
+        {exercise.instruction}
+      </p>
+      <p className="mb-3 text-xs text-neutral-500 dark:text-neutral-400">
+        Flytta med pilarna för att ordna rätt.
+      </p>
+      <div className="space-y-2">
+        {order.map((item, i) => {
+          let style =
+            "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900";
+          if (checked) {
+            const sorted = [...exercise.items].sort((a, b) => a.year - b.year);
+            const correctPos = sorted.findIndex((s) => s.label === item.label);
+            style =
+              correctPos === i
+                ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950 dark:border-emerald-600"
+                : "border-red-500 bg-red-50 dark:bg-red-950 dark:border-red-600";
+          }
+          return (
+            <div
+              key={item.label}
+              className={`flex items-center gap-2 rounded-lg border p-3 transition ${style}`}
+            >
+              <GripVertical className="h-4 w-4 shrink-0 text-neutral-400" />
+              <span className="flex-1 text-sm text-neutral-900 dark:text-white">
+                {item.label}
+              </span>
+              {checked && (
+                <span className="text-xs text-neutral-500">{item.year}</span>
+              )}
+              {!checked && (
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => moveUp(i)}
+                    disabled={i === 0}
+                    aria-label={`Flytta ${item.label} uppåt`}
+                    className="rounded p-1 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-700 disabled:opacity-30 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+                  >
+                    <ArrowUpDown
+                      className="h-3 w-3 rotate-180"
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <button
+                    onClick={() => moveDown(i)}
+                    disabled={i === order.length - 1}
+                    aria-label={`Flytta ${item.label} nedåt`}
+                    className="rounded p-1 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-700 disabled:opacity-30 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+                  >
+                    <ArrowUpDown className="h-3 w-3" aria-hidden="true" />
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {!checked && (
+        <button
+          onClick={checkAnswer}
+          className="mt-4 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+        >
+          Rätta
+        </button>
+      )}
+      {checked && (
+        <div
+          className="mt-4 rounded-lg bg-neutral-50 p-3 text-sm dark:bg-neutral-900"
+          aria-live="polite"
+        >
+          {isCorrectOrder ? (
+            <span className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" /> Rätt
+              ordning!
+            </span>
+          ) : (
+            <div>
+              <span className="flex items-center gap-2 text-red-700 dark:text-red-300">
+                <XCircle className="h-4 w-4" aria-hidden="true" /> Inte rätt
+                ordning.
+              </span>
+              <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+                Rätt ordning:{" "}
+                {[...exercise.items]
+                  .sort((a, b) => a.year - b.year)
+                  .map((i) => `${i.label} (${i.year})`)
+                  .join(" → ")}
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}

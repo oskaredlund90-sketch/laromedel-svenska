@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   Quote,
   Languages,
+  History,
 } from "lucide-react";
 import {
   Card,
@@ -179,6 +180,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs och analysera texter med fördjupande frågor", icon: BookOpenCheck },
         { slug: "textbank", title: "Textbank", description: "Modelltexter i alla genrer med fördjupande analysfrågor", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Svenska litteraturens epoker från medeltid till nutid", icon: Library },
+        { slug: "sprakhistoria", title: "Språkhistoria", description: "Språkets utveckling från runsvenska till nusvenska", icon: History },
         { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord, akademiska ord och stilnivåer", icon: MessageSquareText },
       ],
     },
@@ -229,6 +231,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs, analysera och värdera texter på avancerad nivå", icon: BookOpenCheck },
         { slug: "textbank", title: "Textbank", description: "Kvalificerade exempeltexter med fördjupande analys", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Fördjupning i litteraturhistoria från antiken till samtiden", icon: Library },
+        { slug: "sprakhistoria", title: "Språkhistoria", description: "Fördjupning i språkhistoria med språkexempel och språkpolitik", icon: History },
         { slug: "ordkunskap", title: "Ordkunskap", description: "Akademiskt ordförråd, facktermer och etymologi", icon: MessageSquareText },
       ],
     },
