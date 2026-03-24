@@ -236,6 +236,82 @@ const GENUS: SvaExercise[] = [
     explanation:
       "Bord är ett ett-ord, därför heter det 'ett nytt bord'. Adjektivet får -t när substantivet är ett-ord: en fin stol, ETT finT bord.",
   },
+  {
+    id: "sva-gen-mel-1",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i 'en' eller 'ett'.",
+    sentence: "Vi bor i ____ stort hus.",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Hus är ett ett-ord. Adjektivet får -t i ett-ord: ett storT hus. Jämför: en stor bil.",
+  },
+  {
+    id: "sva-gen-mel-2",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilken regel stämmer om genus i svenska?",
+    options: [
+      "De flesta svenska ord är en-ord.",
+      "De flesta svenska ord är ett-ord.",
+      "Det finns lika många en-ord som ett-ord.",
+    ],
+    correct: 0,
+    explanation:
+      "Ungefär 75 % av alla svenska substantiv är en-ord. Det betyder att om du gissar 'en' har du oftast rätt — men du måste ändå lära dig de vanligaste ett-orden.",
+  },
+  {
+    id: "sva-gen-mel-3",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilket av dessa ord är ett ett-ord?",
+    options: ["brev", "stol", "lampa"],
+    correct: 0,
+    explanation:
+      "Brev är ett ett-ord: ett brev. Stol är en-ord (en stol) och lampa är en-ord (en lampa).",
+  },
+  {
+    id: "sva-gen-mel-4",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i 'en' eller 'ett'.",
+    sentence: "Kan du ge mig ____ glas vatten?",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Glas är ett ett-ord: ett glas. Andra vanliga ett-ord i köket: ett glas, ett fat, ett lock.",
+  },
+  {
+    id: "sva-gen-mel-5",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Ord som slutar på -tion (station, nation, lektion) är oftast …",
+    options: ["en-ord", "ett-ord", "det varierar"],
+    correct: 0,
+    explanation:
+      "Ord som slutar på -tion är nästan alltid en-ord: en station, en nation, en lektion, en information. Det är ett bra mönster att komma ihåg!",
+  },
+  {
+    id: "sva-gen-mel-6",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "mellanstadiet",
+    instruction: "Fyll i 'en' eller 'ett'.",
+    sentence: "Hon fick ____ ny telefon i present.",
+    options: ["en", "ett"],
+    correct: "en",
+    explanation:
+      "Telefon är ett en-ord: en telefon. Adjektivet böjs utan -t i en-ord: en ny telefon. Jämför: ett nyTT hus.",
+  },
   // --- hogstadiet ---
   {
     id: "gen-hog-1",
@@ -261,6 +337,86 @@ const GENUS: SvaExercise[] = [
     explanation:
       "Förslag är ett ett-ord. Många substantiv som slutar på -slag är ett-ord: ett förslag, ett tillslag, ett utslag.",
   },
+  {
+    id: "sva-gen-hog-1",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt artikel.",
+    sentence: "Det var ____ intressant samtal om politik.",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Samtal är ett ett-ord: ett samtal. Ord som slutar på -tal är ofta ett-ord: ett samtal, ett antal, ett förhållningssätt — men en berättelse.",
+  },
+  {
+    id: "sva-gen-hog-2",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Lånord från engelskan (t.ex. mejl, jobb, test) är oftast …",
+    options: [
+      "en-ord — de flesta lånord får genus 'en'",
+      "ett-ord — alla lånord blir automatiskt 'ett'",
+      "det beror helt på ordets längd",
+    ],
+    correct: 0,
+    explanation:
+      "De flesta lånord från engelska blir en-ord i svenska: en mejl, en blogg, en podcast, en trend. Men det finns undantag, till exempel ett jobb, ett test.",
+  },
+  {
+    id: "sva-gen-hog-3",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilket av dessa påståenden stämmer?",
+    options: [
+      "Ord som slutar på -ande/-ende är oftast ett-ord (ett meddelande, ett påstående).",
+      "Ord som slutar på -ande/-ende är oftast en-ord.",
+      "Ord som slutar på -ande/-ende kan aldrig vara ett-ord.",
+    ],
+    correct: 0,
+    explanation:
+      "Substantiv som slutar på -ande/-ende är ett-ord: ett meddelande, ett påstående, ett uttalande, ett erbjudande. Det är ett pålitligt mönster!",
+  },
+  {
+    id: "sva-gen-hog-4",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt artikel.",
+    sentence: "Läraren gav oss ____ bra betyg.",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Betyg är ett ett-ord: ett betyg. Adjektivet 'bra' böjs inte, men med andra adjektiv: ett högt betyg, en hög poäng.",
+  },
+  {
+    id: "sva-gen-hog-5",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilket ord är INTE ett ett-ord?",
+    options: ["problem (en problem)", "beslut (ett beslut)", "samhälle (ett samhälle)"],
+    correct: 0,
+    explanation:
+      "Problem är faktiskt ett ett-ord: ett problem. Alla tre alternativen är ett-ord! Men frågan testar att du kan identifiera felaktig form — 'en problem' är fel, det ska vara 'ett problem'.",
+  },
+  {
+    id: "sva-gen-hog-6",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt artikel.",
+    sentence: "Vi har ____ möte klockan tre.",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Möte är ett ett-ord: ett möte. Ord som slutar på -e och är bildade av verb är ofta ett-ord: ett möte (möta), ett försök (försöka), ett minne (minnas).",
+  },
   // --- gymnasiet ---
   {
     id: "gen-gym-1",
@@ -273,6 +429,86 @@ const GENUS: SvaExercise[] = [
     correct: "ett",
     explanation:
       "Perspektiv är ett ett-ord. I akademiskt språk är det viktigt med rätt genus: ett perspektiv, ett fenomen, ett resultat, ett argument.",
+  },
+  {
+    id: "sva-gen-gym-1",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt artikel.",
+    sentence: "Rapporten bygger på ____ grundligt genomförd analys.",
+    options: ["en", "ett"],
+    correct: "en",
+    explanation:
+      "Analys är ett en-ord: en analys. Ord som slutar på -ys är en-ord: en analys, en syntes. Adjektivet böjs i en-form: en grundlig analys.",
+  },
+  {
+    id: "sva-gen-gym-2",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt artikel.",
+    sentence: "Forskaren lade fram ____ övertygande argument.",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Argument är ett ett-ord: ett argument. I akademisk svenska: ett argument, ett resultat, ett påstående, ett perspektiv — alla är ett-ord.",
+  },
+  {
+    id: "sva-gen-gym-3",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Abstrakta substantiv som slutar på -skap (vänskap, kunskap, vetenskap) är …",
+    options: ["en-ord", "ett-ord", "ibland en, ibland ett"],
+    correct: 0,
+    explanation:
+      "Ord som slutar på -skap är en-ord: en vänskap, en kunskap, en vetenskap, en gemenskap. Det gäller alla ord med denna ändelse.",
+  },
+  {
+    id: "sva-gen-gym-4",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilken genusmönsterregel är korrekt?",
+    options: [
+      "Ord som slutar på -um (museum, centrum, gymnasium) är ett-ord.",
+      "Ord som slutar på -um är alltid en-ord.",
+      "Ord som slutar på -um kan vara antingen en eller ett.",
+    ],
+    correct: 0,
+    explanation:
+      "Ord med latinskt -um-suffix är ett-ord: ett museum, ett centrum, ett gymnasium, ett medium. Det beror på att de kommer från latinska neutrumord.",
+  },
+  {
+    id: "sva-gen-gym-5",
+    type: "fill-in-blank",
+    category: "genus",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt artikel i den akademiska meningen.",
+    sentence: "Studien undersöker ____ komplext fenomen inom sociolingvistik.",
+    options: ["ett", "en"],
+    correct: "ett",
+    explanation:
+      "Fenomen är ett ett-ord (från grekiskan). I akademisk text: ett fenomen, ett dilemma, ett paradigm — många lärda ord från grekiska och latin är ett-ord.",
+  },
+  {
+    id: "sva-gen-gym-6",
+    type: "multiple-choice",
+    category: "genus",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilket påstående om genus och sammansatta ord stämmer?",
+    options: [
+      "Det sista ledet bestämmer genus: en skol-bok (bok = en-ord).",
+      "Det första ledet bestämmer genus alltid.",
+      "Sammansatta ord har alltid samma genus som det längsta ledet.",
+    ],
+    correct: 0,
+    explanation:
+      "I sammansatta substantiv bestämmer det sista ledet genus: en skolbok (bok = en-ord), ett sovrum (rum = ett-ord). Det är en mycket nyttig regel att komma ihåg!",
   },
 ];
 
@@ -343,6 +579,62 @@ const ORDFOLJD: SvaExercise[] = [
     explanation:
       "När meningen börjar med ett tidsuttryck (sedan, igår, idag, imorgon) måste verbet komma på plats 2: Sedan (1) + gick (2) + han (3).",
   },
+  {
+    id: "sva-ord-mel-1",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken mening har rätt ordföljd?",
+    prompt: "Välj den korrekta meningen.",
+    options: [
+      "På sommaren åker vi till landet.",
+      "På sommaren vi åker till landet.",
+      "Vi på sommaren åker till landet.",
+    ],
+    correct: 0,
+    explanation:
+      "V2-regeln gäller igen: På sommaren (1) + åker (2) + vi (3). Verbet måste stå på plats 2, även när meningen börjar med en plats- eller tidsbestämning.",
+  },
+  {
+    id: "sva-ord-mel-2",
+    type: "fill-in-blank",
+    category: "ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt ordföljd i bisatsen.",
+    sentence: "Jag vet att hon ____ simma.",
+    options: ["inte kan", "kan inte"],
+    correct: "inte kan",
+    explanation:
+      "BIFF-regeln: i Bisatser står Inte Före det Finita verbet. Bisatsen börjar med 'att', så 'inte' kommer före 'kan': att hon inte kan simma.",
+  },
+  {
+    id: "sva-ord-mel-3",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken mening har rätt ordföljd?",
+    prompt: "Välj den korrekta meningen.",
+    options: [
+      "Varje dag läser hon en bok.",
+      "Varje dag hon läser en bok.",
+      "Hon varje dag läser en bok.",
+    ],
+    correct: 0,
+    explanation:
+      "V2-regeln: Varje dag (1) + läser (2) + hon (3). Subjektet (hon) flyttar till efter verbet när något annat än subjektet står först. Det kallas inversion.",
+  },
+  {
+    id: "sva-ord-mel-4",
+    type: "fill-in-blank",
+    category: "ordfoljd",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt ordföljd i bisatsen.",
+    sentence: "Vi stannade hemma eftersom det ____ ute.",
+    options: ["inte var varmt", "var inte varmt"],
+    correct: "inte var varmt",
+    explanation:
+      "I bisatser (efter eftersom, att, om, när) gäller BIFF-regeln: 'inte' placeras före verbet. Eftersom det inte var varmt ute.",
+  },
   // --- hogstadiet ---
   {
     id: "ord-hog-1",
@@ -376,6 +668,62 @@ const ORDFOLJD: SvaExercise[] = [
     explanation:
       "I bisatser kommer satsadverb (aldrig, inte, alltid) före alla verb. BIFF-regeln gäller: att hon ALDRIG har varit där. I huvudsats skulle det vara: Hon har aldrig varit där.",
   },
+  {
+    id: "sva-ord-hog-1",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken mening har rätt ordföljd?",
+    prompt: "Välj den korrekta meningen med bisats.",
+    options: [
+      "Om du inte hade ringt, hade jag gått hem.",
+      "Om du hade inte ringt, hade jag gått hem.",
+      "Om du inte hade ringt, jag hade gått hem.",
+    ],
+    correct: 0,
+    explanation:
+      "Två regler: (1) I bisatsen 'om du inte hade ringt' gäller BIFF — 'inte' före verbet. (2) I huvudsatsen gäller V2 — verbet (hade) kommer före subjektet (jag) eftersom bisatsen står först.",
+  },
+  {
+    id: "sva-ord-hog-2",
+    type: "fill-in-blank",
+    category: "ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt ordföljd.",
+    sentence: "Hon berättade att hon ____ boken förra veckan.",
+    options: ["redan hade läst", "hade redan läst"],
+    correct: "redan hade läst",
+    explanation:
+      "I bisatser placeras satsadverbet (redan, aldrig, inte) före det finita verbet. BIFF-regeln: att hon REDAN hade läst. I huvudsats: Hon hade redan läst.",
+  },
+  {
+    id: "sva-ord-hog-3",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Var ska adverbialet placeras?",
+    prompt: "Vilken mening har rätt placering av 'förmodligen'?",
+    options: [
+      "Han har förmodligen glömt sin väska.",
+      "Han förmodligen har glömt sin väska.",
+      "Förmodligen han har glömt sin väska.",
+    ],
+    correct: 0,
+    explanation:
+      "I huvudsatser placeras satsadverb (förmodligen, antagligen, kanske) efter det finita verbet: Han har (finit verb) + förmodligen + glömt sin väska.",
+  },
+  {
+    id: "sva-ord-hog-4",
+    type: "fill-in-blank",
+    category: "ordfoljd",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt ordföljd i bisatsen.",
+    sentence: "Läraren frågade varför eleven ____ sina läxor.",
+    options: ["aldrig gjorde", "gjorde aldrig"],
+    correct: "aldrig gjorde",
+    explanation:
+      "Bisats (inledd av 'varför'): BIFF-regeln gäller, satsadverbet 'aldrig' placeras före verbet 'gjorde'. Jämför huvudsats: Eleven gjorde aldrig sina läxor.",
+  },
   // --- gymnasiet ---
   {
     id: "ord-gym-1",
@@ -392,6 +740,78 @@ const ORDFOLJD: SvaExercise[] = [
     correct: 0,
     explanation:
       "Två regler samverkar: (1) Bisatsen 'eftersom hon inte hade tid' följer BIFF-regeln med 'inte' före verbet. (2) Huvudsatsen som följer har omvänd ordföljd (V2) eftersom bisatsen står först: bestämde (verb) + hon (subjekt).",
+  },
+  {
+    id: "sva-ord-gym-1",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Analysera ordföljden i den akademiska meningen.",
+    prompt: "Vilken mening har korrekt topikalisering (framflyttning)?",
+    options: [
+      "Detta resultat kan dock ifrågasättas med tanke på metodvalet.",
+      "Dock detta resultat kan ifrågasättas med tanke på metodvalet.",
+      "Detta resultat dock kan ifrågasättas med tanke på metodvalet.",
+    ],
+    correct: 0,
+    explanation:
+      "I akademisk svenska placeras konjunktionella adverb (dock, emellertid, dessutom) efter det finita verbet i huvudsatser. 'Kan dock' följer mönstret: finit verb + satsadverb.",
+  },
+  {
+    id: "sva-ord-gym-2",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt ordföljd.",
+    prompt: "Vilken mening är korrekt?",
+    options: [
+      "Med utgångspunkt i dessa data drar författaren slutsatsen att hypotesen bekräftas.",
+      "Med utgångspunkt i dessa data författaren drar slutsatsen att hypotesen bekräftas.",
+      "Författaren med utgångspunkt i dessa data drar slutsatsen att hypotesen bekräftas.",
+    ],
+    correct: 0,
+    explanation:
+      "Topikalisering: en lång bestämning (med utgångspunkt i dessa data) placeras först, följt av verbet (drar) och sedan subjektet (författaren). V2-regeln gäller även i akademisk text.",
+  },
+  {
+    id: "sva-ord-gym-3",
+    type: "fill-in-blank",
+    category: "ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt ordföljd.",
+    sentence: "Forskaren menar att resultaten ____ hypotesen.",
+    options: ["inte stöder", "stöder inte"],
+    correct: "inte stöder",
+    explanation:
+      "Bisats inledd av 'att': BIFF-regeln gäller även i akademisk text. Negationen 'inte' placeras före verbet: att resultaten inte stöder. I huvudsats: Resultaten stöder inte hypotesen.",
+  },
+  {
+    id: "sva-ord-gym-4",
+    type: "multiple-choice",
+    category: "ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Analysera ordföljden.",
+    prompt: "Vilken mening använder korrekt ordföljd med inskjuten bisats?",
+    options: [
+      "Den studie som nyligen publicerades visar att sambandet är starkt.",
+      "Den studie som publicerades nyligen visar att är sambandet starkt.",
+      "Den studie som nyligen publicerades visar att sambandet starkt är.",
+    ],
+    correct: 0,
+    explanation:
+      "Inskjuten relativsats: 'som nyligen publicerades' — adverbet 'nyligen' placeras före verbet i bisatsen. Resten av meningen följer normal ordföljd. I att-satsen gäller också rak ordföljd: att sambandet är starkt.",
+  },
+  {
+    id: "sva-ord-gym-5",
+    type: "fill-in-blank",
+    category: "ordfoljd",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt ordföljd i den formella meningen.",
+    sentence: "Utifrån den genomförda analysen ____ att metoden behöver revideras.",
+    options: ["kan konstateras", "konstateras kan"],
+    correct: "kan konstateras",
+    explanation:
+      "V2-regeln: när en lång bestämning (utifrån den genomförda analysen) inleder meningen, kommer det finita verbet (kan) på plats 2. Passiv konstruktion med 'kan konstateras' är vanlig i akademisk svenska.",
   },
 ];
 
@@ -454,6 +874,58 @@ const VANLIGA_FEL: SvaExercise[] = [
     explanation:
       "Här är 'de' subjekt (de som utför handlingen), därför ska det vara 'de'. Tips: byt ut mot 'vi' — 'Vi lekte på gården' fungerar, alltså 'de'.",
   },
+  {
+    id: "sva-vanl-mel-1",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj 'mig' eller 'jag'.",
+    sentence: "Det var ____ som vann tävlingen.",
+    options: ["jag", "mig"],
+    correct: "jag",
+    explanation:
+      "Efter 'det var' används subjektsformen 'jag'. Det var JAG som vann. Tips: om du kan ersätta med 'han/hon' är det 'jag', om med 'honom/henne' är det 'mig'.",
+  },
+  {
+    id: "sva-vanl-mel-2",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj rätt form.",
+    sentence: "Läraren gav ____ en bok.",
+    options: ["mig", "jag"],
+    correct: "mig",
+    explanation:
+      "Här behövs objektsformen 'mig' (den som tar emot). Läraren gav MIG. Tips: byt ut mot 'honom' — 'Läraren gav honom' fungerar, alltså 'mig'.",
+  },
+  {
+    id: "sva-vanl-mel-3",
+    type: "multiple-choice",
+    category: "vanliga-fel",
+    ageGroup: "mellanstadiet",
+    instruction: "Vilken mening är korrekt?",
+    prompt: "Välj den korrekta meningen.",
+    options: [
+      "Det stora huset ligger vid sjön.",
+      "Den stora huset ligger vid sjön.",
+      "De stora huset ligger vid sjön.",
+    ],
+    correct: 0,
+    explanation:
+      "Hus är ett ett-ord, och i bestämd form med adjektiv används 'det': DET stora huset. En-ord: DEN stora bilen. Plural: DE stora husen. Det kallas dubbel bestämdhet.",
+  },
+  {
+    id: "sva-vanl-mel-4",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "mellanstadiet",
+    instruction: "Välj 'de' eller 'dem'.",
+    sentence: "Kan du hjälpa ____ med läxan?",
+    options: ["dem", "de"],
+    correct: "dem",
+    explanation:
+      "Objektsform: Kan du hjälpa DEM. Tips: byt ut mot 'oss' — 'Kan du hjälpa oss' fungerar, alltså 'dem'.",
+  },
   // --- hogstadiet ---
   {
     id: "vanl-hog-1",
@@ -482,6 +954,58 @@ const VANLIGA_FEL: SvaExercise[] = [
     explanation:
       "När subjektet (Erik) äger något i samma sats använder vi sin/sitt/sina. 'Hans mamma' skulle betyda en annan mans mamma. Det här är ett vanligt fel för andraspråksinlärare.",
   },
+  {
+    id: "sva-vanl-hog-1",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt pronomen.",
+    sentence: "Barnen tog med ____ böcker hem.",
+    options: ["sina", "deras"],
+    correct: "sina",
+    explanation:
+      "Barnen (subjekt) äger böckerna, därför: sina böcker. 'Deras böcker' skulle betyda att böckerna tillhör andra barn. Sin/sitt/sina syftar tillbaka på subjektet i samma sats.",
+  },
+  {
+    id: "sva-vanl-hog-2",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt preposition.",
+    sentence: "Hon är bra ____ matematik.",
+    options: ["på", "i", "med"],
+    correct: "på",
+    explanation:
+      "I svenska säger man 'bra PÅ' ett ämne eller en aktivitet: bra på matte, bra på att simma. Det är ett vanligt fel att använda 'i' (som i engelskans 'good in/at').",
+  },
+  {
+    id: "sva-vanl-hog-3",
+    type: "multiple-choice",
+    category: "vanliga-fel",
+    ageGroup: "hogstadiet",
+    instruction: "Vilken mening har rätt preposition?",
+    prompt: "Välj den korrekta meningen.",
+    options: [
+      "Jag är intresserad av historia.",
+      "Jag är intresserad i historia.",
+      "Jag är intresserad för historia.",
+    ],
+    correct: 0,
+    explanation:
+      "I svenska: intresserad AV (inte 'i' eller 'för'). Vanliga prepositionsuttryck: intresserad av, bra på, rädd för, nöjd med, ledsen över.",
+  },
+  {
+    id: "sva-vanl-hog-4",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "hogstadiet",
+    instruction: "Välj rätt pronomen.",
+    sentence: "Lisa berättade för Maria om ____ resa till Italien.",
+    options: ["sin", "hennes"],
+    correct: "sin",
+    explanation:
+      "Lisa (subjekt) berättar om Lisas egen resa, alltså 'sin resa'. Om vi menar Marias resa skriver vi 'hennes resa'. Reflexiva pronomen syftar alltid tillbaka på subjektet.",
+  },
   // --- gymnasiet ---
   {
     id: "vanl-gym-1",
@@ -498,6 +1022,78 @@ const VANLIGA_FEL: SvaExercise[] = [
     correct: 0,
     explanation:
       "Författaren (subjekt) äger argumenten, därför använder vi 'sina'. I akademisk svenska är korrekt reflexivt pronomen (sin/sitt/sina) särskilt viktigt för tydlighet.",
+  },
+  {
+    id: "sva-vanl-gym-1",
+    type: "multiple-choice",
+    category: "vanliga-fel",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt register i den formella meningen.",
+    prompt: "Vilken formulering passar bäst i en formell uppsats?",
+    options: [
+      "Resultaten visar att det finns ett samband.",
+      "Resultaten visar att det finns nåt samband.",
+      "Det visar sig att det finns typ ett samband.",
+    ],
+    correct: 0,
+    explanation:
+      "I formell och akademisk svenska undviker man talspråk som 'nåt' (något), 'typ' (som utfyllnadsord), 'dom' (de/dem). Använd fullständiga former: något, ett, de/dem.",
+  },
+  {
+    id: "sva-vanl-gym-2",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt böjningsform av lånordet.",
+    sentence: "Hon fick flera ____ från olika företag.",
+    options: ["mejl", "mejlar", "mejls"],
+    correct: "mejl",
+    explanation:
+      "Mejl (från engelskans 'mail') böjs som ett ett-ord utan ändelse i plural: ett mejl, flera mejl. Lånord som slutar på konsonant får ofta ingen pluraländelse. Inte engelska -s!",
+  },
+  {
+    id: "sva-vanl-gym-3",
+    type: "multiple-choice",
+    category: "vanliga-fel",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt alternativ.",
+    prompt: "Vilken böjning av lånordet 'team' är korrekt i svensk plural?",
+    options: [
+      "Vi har flera team på avdelningen.",
+      "Vi har flera teams på avdelningen.",
+      "Vi har flera teamer på avdelningen.",
+    ],
+    correct: 0,
+    explanation:
+      "Många engelska lånord som slutar på konsonant får ingen extra pluraländelse i svenska: ett team, flera team. Undvik engelska plural-s: inte 'teams'. Jämför: ett mail, flera mail.",
+  },
+  {
+    id: "sva-vanl-gym-4",
+    type: "multiple-choice",
+    category: "vanliga-fel",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt register.",
+    prompt: "Vilken formulering är korrekt i formell svenska?",
+    options: [
+      "Studien genomfördes under hösten 2024.",
+      "Studien genomfördes under hösten 2024 liksom.",
+      "Man genomförde studien under hösten 2024 typ.",
+    ],
+    correct: 0,
+    explanation:
+      "I formell svenska undviks talspråksmarkörer som 'liksom', 'typ', 'ba', 'asså'. Passiv form ('genomfördes') är vanligt i akademisk text och undviker det informella 'man'.",
+  },
+  {
+    id: "sva-vanl-gym-5",
+    type: "fill-in-blank",
+    category: "vanliga-fel",
+    ageGroup: "gymnasiet",
+    instruction: "Välj rätt böjning av lånordet.",
+    sentence: "Företaget anlitade en ny ____ för projektet.",
+    options: ["coach", "coacher", "coachs"],
+    correct: "coach",
+    explanation:
+      "I singular obestämd form: en coach. Plural: coacher (med svensk pluraländelse -er, inte engelska -es eller -s). Här frågas dock efter singularformen: en coach.",
   },
 ];
 

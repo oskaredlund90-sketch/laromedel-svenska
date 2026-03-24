@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PenLine, Type, Palette } from "lucide-react";
+import { PenLine, Type, Palette, Pilcrow, ArrowLeftRight, MessageSquareQuote } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
@@ -175,6 +175,45 @@ export default async function SkrivverkstadArskursPage({ params }: Props) {
                 <CardTitle className="text-base">Gestaltning &ndash; lägg till beskrivningar</CardTitle>
                 <CardDescription>
                   Fyll i egna adjektiv, beskrivningar och gestaltningar i texter
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          <Link href={`/${arskurs}/skrivverkstad/styckeindelning`}>
+            <Card className="group h-full transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
+                  <Pilcrow className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+                </div>
+                <CardTitle className="text-base">Styckeindelning</CardTitle>
+                <CardDescription>
+                  Dela in texter i stycken och lär dig när det är dags för ny rad
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          <Link href={`/${arskurs}/skrivverkstad/meningsvariation`}>
+            <Card className="group h-full transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
+                  <ArrowLeftRight className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+                </div>
+                <CardTitle className="text-base">Meningsvariation</CardTitle>
+                <CardDescription>
+                  Omformulera meningar för att skapa bättre flöde och variation i din text
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          <Link href={`/${arskurs}/skrivverkstad/citatteknik`}>
+            <Card className="group h-full transition-all hover:border-neutral-400 hover:shadow-md dark:hover:border-neutral-600">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
+                  <MessageSquareQuote className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+                </div>
+                <CardTitle className="text-base">Citatteknik</CardTitle>
+                <CardDescription>
+                  Öva på att skriva direkt och indirekt tal med rätt citattecken
                 </CardDescription>
               </CardHeader>
             </Card>

@@ -322,6 +322,319 @@ const lagstadietTexts: ReadingText[] = [
       },
     ],
   },
+
+  // -----------------------------------------------------------------------
+  // 6. Djur — "Ugglans natt"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-lag-6",
+    ageGroup: "lagstadiet",
+    title: "Ugglans natt",
+    passage:
+      "Det var natt i skogen och allt var tyst. Alla djuren sov utom ugglan som satt högt upp i en tall. " +
+      "Hon vred på huvudet och lyssnade. Hennes stora ögon kunde se i mörkret nästan lika bra som på dagen. " +
+      "Plötsligt hörde hon ett litet pip nere bland löven. En liten sork sprang över stigen. " +
+      "Ugglan bredde ut sina breda vingar och gled tyst genom luften. Hennes fjädrar var så mjuka att de inte " +
+      "gjorde något ljud alls. Men sorken hörde ändå något och gömde sig snabbt under en rot. " +
+      "Ugglan landade på en gren och väntade tålmodigt. Hon var inte arg. Så är livet i skogen — " +
+      "ibland lyckas man och ibland inte. Efter en stund flög hon vidare. " +
+      "Långt borta hoade en annan uggla. Kanske var det hennes unge som övade sig att jaga för första gången. " +
+      "Ugglan svarade med ett mjukt hoo-hoo och fortsatte sin tysta flygning genom natten.",
+    questions: [
+      {
+        id: "las-lag-6-q1",
+        level: "hitta",
+        prompt: "Varför kunde ugglan flyga utan att göra ljud?",
+        options: [
+          "Hon flög väldigt högt upp",
+          "Hennes fjädrar var så mjuka att de inte gav något ljud",
+          "Hon använde magi",
+          "Det blåste så mycket att ljudet försvann",
+        ],
+        correct: 1,
+        explanation:
+          "Texten säger att ugglans fjädrar var så mjuka att de inte gjorde något ljud alls.",
+      },
+      {
+        id: "las-lag-6-q2",
+        level: "tolka",
+        prompt: "Varför blev inte ugglan arg när sorken gömde sig?",
+        options: [
+          "Hon var inte hungrig",
+          "Hon förstod att det är naturligt att ibland missa i skogen",
+          "Hon var rädd för sorken",
+          "Hon ville bara leka",
+        ],
+        correct: 1,
+        explanation:
+          "Texten säger att \"så är livet i skogen — ibland lyckas man och ibland inte\". Ugglan accepterade det som hände.",
+      },
+      {
+        id: "las-lag-6-q3",
+        level: "reflektera",
+        prompt: "Vad kan vi lära oss av hur ugglan hanterade att sorken kom undan?",
+        options: [
+          "Att man ska ge upp direkt om något inte fungerar",
+          "Att man ska bli arg när det går dåligt",
+          "Att det är okej att misslyckas ibland och försöka igen senare",
+          "Att man aldrig ska jaga djur",
+        ],
+        correct: 2,
+        explanation:
+          "Ugglan blev inte upprörd utan flög vidare och fortsatte. Det visar att det är naturligt att misslyckas ibland och att man kan försöka igen.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 7. Natur — "Första snön"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-lag-7",
+    ageGroup: "lagstadiet",
+    title: "Första snön",
+    passage:
+      "Wilma vaknade tidigt en morgon i november. Något var annorlunda. Det var ljusare ute än vanligt och helt tyst. " +
+      "Hon klättrade ur sängen och drog undan gardinen. Hela trädgården var vit! Snö låg som ett tjockt täcke " +
+      "över gräsmattan, på taket och på pappas bil. " +
+      "\"Mamma! Det har snöat!\" ropade Wilma och sprang nerför trappan. " +
+      "Hon tog på sig overall, vantar och mössa så fort hon kunde. Stövlarna var lite för stora men det spelade ingen roll. " +
+      "Ute knarrade snön under hennes fötter. Hon la sig ner och gjorde en snöängel genom att vifta med armar och ben. " +
+      "Grannens katt satt på trappan och tittade förvånat på den vita marken. Den lyfte försiktigt en tass och " +
+      "satte ner den i snön, men drog snabbt tillbaka den. Wilma skrattade. " +
+      "\"Kom, det är inte farligt!\" sa hon. Men katten vände och gick in igen. " +
+      "Wilma byggde en liten snögubbe med pinnar till armar och en morot till näsa. Det var den bästa morgonen på länge.",
+    questions: [
+      {
+        id: "las-lag-7-q1",
+        level: "hitta",
+        prompt: "Vad använde Wilma som näsa till snögubben?",
+        options: ["En sten", "En pinne", "En morot", "En knappp"],
+        correct: 2,
+        explanation:
+          "I texten står det att Wilma byggde en snögubbe med \"en morot till näsa\".",
+      },
+      {
+        id: "las-lag-7-q2",
+        level: "tolka",
+        prompt: "Varför drog katten tillbaka tassen från snön?",
+        options: [
+          "Katten var allergisk mot snö",
+          "Snön var kall och katten tyckte inte om känslan",
+          "Wilma skrämde katten",
+          "Katten ville leka med snögubben istället",
+        ],
+        correct: 1,
+        explanation:
+          "Katten satte försiktigt ner tassen och drog tillbaka den snabbt. Snö är kallt och ovant för en katt, så den tyckte troligen inte om känslan.",
+      },
+      {
+        id: "las-lag-7-q3",
+        level: "reflektera",
+        prompt: "Varför tror du att Wilma tyckte att det var \"den bästa morgonen på länge\"?",
+        options: [
+          "Hon fick vara hemma från skolan",
+          "Första snön är spännande och hon fick leka ute i något nytt och vackert",
+          "Hon fick en ny katt",
+          "Mamma lagade pannkakor",
+        ],
+        correct: 1,
+        explanation:
+          "Första snön är en speciell händelse. Wilma fick uppleva något nytt och roligt — göra snöänglar och bygga snögubbe. Det gjorde morgonen extra fin.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 8. Vänskap — "Rastvakten"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-lag-8",
+    ageGroup: "lagstadiet",
+    title: "Rastvakten",
+    passage:
+      "I Edvins skola hade de något som hette rastvakt. Varje vecka fick två elever en gul väst och uppdraget att " +
+      "se till att ingen var ensam på rasten. Edvin tyckte att det lät tråkigt. Han ville hellre spela fotboll. " +
+      "Men den här veckan var det hans tur. Han tog på sig västen och gick ut på skolgården. " +
+      "Först såg han ingenting speciellt. Alla verkade ha det bra. Men sedan fick han syn på Nova. " +
+      "Hon satt ensam på en bänk och ritade i marken med en pinne. " +
+      "\"Hej,\" sa Edvin. \"Vill du vara med och göra något?\" " +
+      "Nova skakade på huvudet. \"Jag kan inte reglerna till fotboll,\" sa hon tyst. " +
+      "\"Vi kan göra något annat,\" sa Edvin. \"Jag kan visa en lek som heter 'Havet är stormigt'.\" " +
+      "De började leka, och snart ville fler barn vara med. Snart sprang åtta barn runt och skrattade. " +
+      "Nova skrattade högst av alla. När rasten var slut sa hon: \"Tack, Edvin. Det var den roligaste rasten jag haft.\" " +
+      "Edvin log. Rastvakten var inte alls tråkig. Det var faktiskt det bästa uppdraget han fått.",
+    questions: [
+      {
+        id: "las-lag-8-q1",
+        level: "hitta",
+        prompt: "Vad var rastvaktens uppdrag?",
+        options: [
+          "Att städa skolgården",
+          "Att se till att ingen var ensam på rasten",
+          "Att dela ut mellanmål",
+          "Att bestämma vilka lekar som skulle lekas",
+        ],
+        correct: 1,
+        explanation:
+          "Texten säger att rastvaktens uppdrag var att \"se till att ingen var ensam på rasten\".",
+      },
+      {
+        id: "las-lag-8-q2",
+        level: "tolka",
+        prompt: "Varför ändrade Edvin sin åsikt om rastvakten?",
+        options: [
+          "Han fick slippa lektionerna",
+          "Han upptäckte att det kändes bra att hjälpa någon och göra skillnad",
+          "Han fick en belöning av fröken",
+          "Han tyckte västen var snygg",
+        ],
+        correct: 1,
+        explanation:
+          "Edvin såg hur glad Nova blev och att han kunde göra skillnad. Därför tyckte han att rastvakten var det bästa uppdraget.",
+      },
+      {
+        id: "las-lag-8-q3",
+        level: "reflektera",
+        prompt: "Varför är det viktigt att någon ser till att ingen är ensam på rasten?",
+        options: [
+          "Lärarna vill att alla springer hela tiden",
+          "Alla barn behöver känna sig sedda och välkomna",
+          "Man måste alltid leka i stora grupper",
+          "Det är bara viktigt om det regnar",
+        ],
+        correct: 1,
+        explanation:
+          "Alla barn mår bra av att bli inkluderade. Nova satt ensam men blev glad när Edvin bjöd in henne. Det visar att en liten gest kan göra stor skillnad.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 9. Familj — "Mormors köksträdgård"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-lag-9",
+    ageGroup: "lagstadiet",
+    title: "Mormors köksträdgård",
+    passage:
+      "Varje sommar åkte Liam till mormor på landet. Det bästa var hennes köksträdgård. Där växte morötter, " +
+      "ärtor, jordgubbar och stora solrosor som var högre än Liam. " +
+      "\"Ska vi plocka jordgubbar?\" frågade mormor och gav honom en skål. " +
+      "Liam kröp in bland plantorna. Jordgubbarna var röda och varma av solen. Han stoppade varannan i skålen " +
+      "och varannan i munnen. Mormor låtsades inte se. " +
+      "Efteråt satt de på verandan och åt jordgubbarna med grädde. Mormor berättade att hon hade lärt sig odla " +
+      "av sin mormor när hon var liten. \"Då fanns det inga affärer nära, så man fick odla sin egen mat,\" sa hon. " +
+      "\"Kan jag också lära mig?\" frågade Liam. " +
+      "\"Självklart,\" sa mormor. \"Vi börjar med att så ärtor i morgon. Du får en egen rad.\" " +
+      "Liam somnade den kvällen med jordiga händer och ett stort leende. Han tänkte på sina ärtor " +
+      "och undrade hur lång tid det skulle ta innan de växte upp.",
+    questions: [
+      {
+        id: "las-lag-9-q1",
+        level: "hitta",
+        prompt: "Vad skulle Liam och mormor så nästa dag?",
+        options: ["Morötter", "Jordgubbar", "Ärtor", "Solrosor"],
+        correct: 2,
+        explanation:
+          "Mormor sa att de skulle börja med att \"så ärtor i morgon\" och att Liam fick en egen rad.",
+      },
+      {
+        id: "las-lag-9-q2",
+        level: "tolka",
+        prompt: "Varför låtsades mormor inte se att Liam åt jordgubbar direkt?",
+        options: [
+          "Hon hade dålig syn",
+          "Hon tyckte det var helt okej och ville att han skulle njuta",
+          "Hon var arg men ville inte visa det",
+          "Hon var upptagen med något annat",
+        ],
+        correct: 1,
+        explanation:
+          "Mormor låtsades inte se för att hon tyckte det var gulligt och naturligt att Liam smakade på jordgubbarna. Hon ville att han skulle ha roligt.",
+      },
+      {
+        id: "las-lag-9-q3",
+        level: "reflektera",
+        prompt: "Varför kan det vara viktigt att lära sig saker av äldre personer i familjen?",
+        options: [
+          "Äldre personer vet alltid bäst om allt",
+          "Man slipper gå i skolan om man lär sig hemma",
+          "Äldre har erfarenheter och kunskaper som kan föras vidare till nästa generation",
+          "Det är bara viktigt om man bor på landet",
+        ],
+        correct: 2,
+        explanation:
+          "Mormor lärde sig av sin mormor, och nu lär Liam sig av sin mormor. Kunskaper och traditioner förs vidare genom generationer, och det berikar båda.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 10. Äventyr — "Skatten i sandlådan"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-lag-10",
+    ageGroup: "lagstadiet",
+    title: "Skatten i sandlådan",
+    passage:
+      "Maja hittade en gammal karta i ett av pappas böcker. Den såg ut som en riktig skattkarta med ett kryss och " +
+      "en pil som pekade mot något som liknade en sandlåda. Maja visste direkt — det måste vara sandlådan i deras trädgård! " +
+      "Hon hämtade sin spade och började gräva. Sanden var tung och det tog lång tid. " +
+      "Hennes bror Kasper kom ut. \"Vad gör du?\" frågade han. " +
+      "\"Jag letar efter en skatt!\" sa Maja och visade kartan. " +
+      "Kasper hämtade sin egen spade och hjälpte till. De grävde och grävde. Till slut träffade Majas spade " +
+      "något hårt. Det var en liten metallask. Inuti låg det glaskulor, ett armband och en lapp. " +
+      "På lappen stod det: \"Till den som hittar min skatt. Jag gömde den sommaren 1995. Hälsningar, Emma.\" " +
+      "\"Vem är Emma?\" frågade Kasper. " +
+      "Maja tänkte efter. \"Kanske någon som bodde här innan oss.\" " +
+      "De bestämde sig för att gömma en ny skatt i asken — sina finaste stenar och en egen lapp. " +
+      "Sedan grävde de ner den igen. \"Nu kan någon hitta den om tjugo år,\" sa Kasper och log.",
+    questions: [
+      {
+        id: "las-lag-10-q1",
+        level: "hitta",
+        prompt: "Vad låg i metallasken?",
+        options: [
+          "Pengar och en ring",
+          "Glaskulor, ett armband och en lapp",
+          "En gammal bok och en penna",
+          "Stenar och en karta",
+        ],
+        correct: 1,
+        explanation:
+          "Texten berättar att det i asken låg \"glaskulor, ett armband och en lapp\".",
+      },
+      {
+        id: "las-lag-10-q2",
+        level: "tolka",
+        prompt: "Varför bestämde sig Maja och Kasper för att gömma en ny skatt i asken?",
+        options: [
+          "De ville bli rika",
+          "Mamma bad dem göra det",
+          "De tyckte det var spännande att någon annan kunde hitta den i framtiden",
+          "De ville inte ha glaskulorna",
+        ],
+        correct: 2,
+        explanation:
+          "Barnen tyckte att det var roligt att Emma hade gömt en skatt som de hittade efter många år. De ville ge samma upplevelse till någon annan.",
+      },
+      {
+        id: "las-lag-10-q3",
+        level: "reflektera",
+        prompt: "Vad visar berättelsen om hur saker kan binda samman människor över tid?",
+        options: [
+          "Att man alltid ska gräva i sandlådor",
+          "Att gamla saker är värdelösa",
+          "Att något en person gör kan ge glädje till okända människor långt in i framtiden",
+          "Att man inte ska gömma saker",
+        ],
+        correct: 2,
+        explanation:
+          "Emma gömde skatten 1995 utan att veta vem som skulle hitta den. Maja och Kasper blev glada och inspirerade. Det visar att handlingar kan skapa glädje över tid.",
+      },
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -733,6 +1046,419 @@ const mellanstadietTexts: ReadingText[] = [
         correct: 1,
         explanation:
           "Rävens ord sammanfattar berättelsens budskap: att mod och självkänsla inte kan ges av någon annan. När Tuva aktivt valde sin röst tillbaka visade hon mod — och det gjorde henne starkare på riktigt.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 6. Mysterium — "Det försvunna experimentet"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-mel-6",
+    ageGroup: "mellanstadiet",
+    title: "Det försvunna experimentet",
+    passage:
+      "Klara och hennes grupp hade jobbat i två veckor med sitt NO-experiment. De odlade bönor i tre olika krukor — " +
+      "en med vanlig jord, en med sand och en med lera — för att se vilken som växte bäst. Varje dag mätte de " +
+      "plantornas längd och skrev ner resultaten i ett häfte. " +
+      "Men på måndagsmorgonen var krukorna borta. Bänken vid fönstret var tom. " +
+      "\"Vem har tagit dem?\" frågade Klara förtvivlat. Fröken visste inte heller. " +
+      "Klara bestämde sig för att ta reda på vad som hänt. Hon kollade papperskorgen — där låg jord. " +
+      "Hon frågade vaktmästaren som berättade att han hade sett ljus i klassrummet på söndagskvällen. " +
+      "\"Det är bara lärarna som har nyckel,\" sa han. " +
+      "Klara tänkte efter. Vikarie-läraren Sven hade haft nyckel under helgen för att förbereda sin lektion. " +
+      "Hon hittade honom i matsalen. \"Förlåt,\" sa Sven generat. \"Jag flyttade krukorna till fönsterbrädan " +
+      "i korridoren för att jag behövde bänken. Sedan glömde jag säga till.\" " +
+      "Krukorna stod precis där han sa. Bönorna levde fortfarande. Klara andades ut. " +
+      "\"Nästa gång,\" sa hon till gruppen, \"sätter vi en lapp: Rör ej — pågående experiment.\" " +
+      "De skrattade alla, och experimentet kunde fortsätta.",
+    questions: [
+      {
+        id: "las-mel-6-q1",
+        level: "hitta",
+        prompt: "Vilka tre material odlade gruppen bönorna i?",
+        options: [
+          "Jord, grus och vatten",
+          "Jord, sand och lera",
+          "Sand, lera och kompost",
+          "Jord, bark och sand",
+        ],
+        correct: 1,
+        explanation:
+          "Texten säger att de odlade bönor i tre krukor: en med vanlig jord, en med sand och en med lera.",
+      },
+      {
+        id: "las-mel-6-q2",
+        level: "hitta",
+        prompt: "Vem hade flyttat krukorna?",
+        options: [
+          "Vaktmästaren",
+          "Fröken",
+          "Vikarie-läraren Sven",
+          "En annan elev",
+        ],
+        correct: 2,
+        explanation:
+          "Vikarie-läraren Sven berättade att han hade flyttat krukorna för att han behövde bänken.",
+      },
+      {
+        id: "las-mel-6-q3",
+        level: "tolka",
+        prompt: "Hur löste Klara mysteriet?",
+        options: [
+          "Hon gissade slumpmässigt",
+          "Hon samlade ledtrådar steg för steg — jord i papperskorgen, vaktmästarens observation och vem som hade nyckel",
+          "Sven kom och berättade direkt",
+          "Fröken löste det åt henne",
+        ],
+        correct: 1,
+        explanation:
+          "Klara tänkte logiskt: hon hittade jord i papperskorgen, fick veta att ljus synts under helgen, och kom på att Sven hade haft nyckel. Steg för steg ledde det till svaret.",
+      },
+      {
+        id: "las-mel-6-q4",
+        level: "reflektera",
+        prompt: "Vad kan man lära sig av Klaras sätt att hantera problemet?",
+        options: [
+          "Att man ska bli arg och skylla på alla",
+          "Att det är bäst att ge upp om något går fel",
+          "Att lugnt samla information och tänka logiskt hjälper en att lösa problem",
+          "Att man aldrig ska lita på vuxna",
+        ],
+        correct: 2,
+        explanation:
+          "Istället för att bli ledsen eller arg började Klara leta efter ledtrådar. Hennes metodiska tänkande löste problemet.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 7. Sport — "Målvaktens val"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-mel-7",
+    ageGroup: "mellanstadiet",
+    title: "Målvaktens val",
+    passage:
+      "Amir hade alltid spelat forward i fotbollslaget. Han älskade att göra mål. Men en dag skadade sig lagets " +
+      "målvakt, och tränaren frågade om någon kunde ställa sig i mål. Ingen räckte upp handen. " +
+      "\"Amir, du har bra reflexer. Kan du prova?\" frågade tränaren. " +
+      "Amir ville säga nej. Målvakt var tråkigt, tyckte han. Man stod bara still och väntade. " +
+      "Men laget behövde honom, så han sa ja. " +
+      "De första träningarna var svåra. Bollar flög förbi honom, och han kände sig klumpig i de stora handskarna. " +
+      "Men sakta började han förstå positionen. Han lärde sig läsa spelarnas kroppar — en blick åt vänster " +
+      "betydde ofta att skottet gick åt höger. Han lärde sig ropa instruktioner till försvararna. " +
+      "I första matchen räddade han ett straff. Hela laget jublade och sprang mot honom. " +
+      "\"Du är en naturlig målvakt!\" ropade tränaren. " +
+      "Amir log. Han saknade att göra mål, det kunde han inte neka. Men att rädda ett mål gav en helt annan " +
+      "känsla — som att vara lagets sista hopp och klara det. " +
+      "När den ordinarie målvakten blev frisk frågade tränaren vad Amir ville. " +
+      "\"Kan jag vara målvakt ibland och forward ibland?\" frågade han. " +
+      "Tränaren nickade. \"Perfekt. En spelare som förstår flera positioner är guld värd.\"",
+    questions: [
+      {
+        id: "las-mel-7-q1",
+        level: "hitta",
+        prompt: "Varför behövde laget en ny målvakt?",
+        options: [
+          "Den ordinarie målvakten hade slutat i laget",
+          "Den ordinarie målvakten hade skadat sig",
+          "Tränaren ville byta ut alla positioner",
+          "Amir bad om att få byta position",
+        ],
+        correct: 1,
+        explanation:
+          "Texten berättar att lagets målvakt skadade sig, och tränaren behövde därför en ersättare.",
+      },
+      {
+        id: "las-mel-7-q2",
+        level: "tolka",
+        prompt: "Vad menade tränaren med att \"en spelare som förstår flera positioner är guld värd\"?",
+        options: [
+          "Att Amir skulle få en guldmedalj",
+          "Att det är värdefullt att kunna spela på olika platser eftersom man förstår spelet bättre",
+          "Att målvakter alltid är bättre än forwards",
+          "Att man måste kunna alla positioner för att få vara med i laget",
+        ],
+        correct: 1,
+        explanation:
+          "Tränaren menade att en spelare som har provat olika positioner förstår hela spelet bättre och kan bidra mer till laget.",
+      },
+      {
+        id: "las-mel-7-q3",
+        level: "tolka",
+        prompt: "Hur lärde sig Amir att läsa spelarnas skott?",
+        options: [
+          "Tränaren visade honom en video",
+          "Han observerade att en spelares blick ofta avslöjar åt vilket håll skottet går",
+          "Han gissade varje gång",
+          "De andra spelarna berättade vart de skulle skjuta",
+        ],
+        correct: 1,
+        explanation:
+          "Texten säger att Amir lärde sig läsa spelarnas kroppar — en blick åt vänster betydde ofta att skottet gick åt höger.",
+      },
+      {
+        id: "las-mel-7-q4",
+        level: "reflektera",
+        prompt: "Vad kan berättelsen lära oss om att prova nya saker?",
+        options: [
+          "Man ska aldrig ändra på det man redan kan",
+          "Att prova något nytt kan vara svårt i början men ge oväntad glädje och nya färdigheter",
+          "Man ska alltid göra det tränaren säger utan att tänka själv",
+          "Fotboll är den enda sporten där detta händer",
+        ],
+        correct: 1,
+        explanation:
+          "Amir trodde att målvakt var tråkigt men upptäckte att det gav en helt annan känsla. Genom att våga prova fick han en ny dimension i sitt spelande.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 8. Vetenskap — "Meteoriten i trädgården"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-mel-8",
+    ageGroup: "mellanstadiet",
+    title: "Meteoriten i trädgården",
+    passage:
+      "En morgon hittade Elsa en ovanlig sten i trädgården. Den var mörk, tung och hade en konstig yta som såg " +
+      "smält ut. Hon hade aldrig sett något liknande. " +
+      "\"Pappa, kan det vara en meteorit?\" frågade hon vid frukostbordet. " +
+      "Pappa skrattade. \"Det är nog bara en vanlig sten, Elsa.\" " +
+      "Men Elsa gav sig inte. Hon sökte på nätet och hittade en checklista för meteoriter: de är ofta tunga " +
+      "för sin storlek, har en mörk skorpa som ser bränd ut, och dras till en magnet. " +
+      "Elsa hämtade en kylskåpsmagnet. Den fastnade på stenen. Hennes hjärta bultade. " +
+      "Hon mejlade en bild till en geolog på universitetet. Tre dagar senare kom svaret. " +
+      "\"Din sten är med stor sannolikhet en järnmeteorit,\" skrev geologen. \"Den kan vara flera tusen år gammal " +
+      "och kommer troligen från asteroidbältet mellan Mars och Jupiter. Jag skulle gärna vilja undersöka den närmare.\" " +
+      "Elsa kunde knappt tro det. En sten från rymden — i deras trädgård! " +
+      "Familjen åkte till universitetet och fick se stenen under mikroskop. Den hade ett mönster som kallas " +
+      "Widmanstätten-struktur, som bara finns i meteoriter och tar miljontals år att bildas. " +
+      "\"Du gjorde precis rätt,\" sa geologen till Elsa. \"Du var nyfiken, undersökte saken och sökte hjälp av en expert.\" " +
+      "Elsa bestämde sig den dagen för att hon ville bli forskare när hon blev stor.",
+    questions: [
+      {
+        id: "las-mel-8-q1",
+        level: "hitta",
+        prompt: "Vilka egenskaper hade stenen som tydde på att den var en meteorit?",
+        options: [
+          "Den var lätt, rund och glittrade",
+          "Den var tung, hade en mörk bränd yta och drogs till en magnet",
+          "Den var vit och hade kristaller",
+          "Den var genomskinlig och luktig",
+        ],
+        correct: 1,
+        explanation:
+          "Texten beskriver att meteoriter är tunga, har en mörk bränd skorpa och dras till magneter — alla egenskaper Elsas sten hade.",
+      },
+      {
+        id: "las-mel-8-q2",
+        level: "hitta",
+        prompt: "Varifrån trodde geologen att meteoriten kom?",
+        options: [
+          "Från månen",
+          "Från asteroidbältet mellan Mars och Jupiter",
+          "Från Saturnus ringar",
+          "Från jorden själv",
+        ],
+        correct: 1,
+        explanation:
+          "Geologen skrev att stenen troligen kom från asteroidbältet mellan Mars och Jupiter.",
+      },
+      {
+        id: "las-mel-8-q3",
+        level: "tolka",
+        prompt: "Varför skrattade pappa först när Elsa frågade om meteoriten?",
+        options: [
+          "Han tyckte stenar var roliga",
+          "Han trodde det var osannolikt att en meteorit skulle hamna i deras trädgård",
+          "Han visste redan att det var en meteorit",
+          "Han ville inte att Elsa skulle bli forskare",
+        ],
+        correct: 1,
+        explanation:
+          "Pappa trodde att det var mycket osannolikt att en meteorit skulle hamna just i deras trädgård. Det lät för fantastiskt för att vara sant.",
+      },
+      {
+        id: "las-mel-8-q4",
+        level: "reflektera",
+        prompt: "Vilken egenskap hos Elsa var viktigast för att hon skulle lyckas ta reda på sanningen?",
+        options: [
+          "Att hon var stark och kunde lyfta stenen",
+          "Att hon var envis i sin nyfikenhet och inte gav upp trots att pappa tvivlade",
+          "Att hon hade en magnet hemma",
+          "Att hon bodde nära ett universitet",
+        ],
+        correct: 1,
+        explanation:
+          "Elsas viktigaste egenskap var att hon inte gav sig. Trots att pappa tvivlade fortsatte hon undersöka, söka information och kontakta en expert.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 9. Historia — "Brevet från 1918"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-mel-9",
+    ageGroup: "mellanstadiet",
+    title: "Brevet från 1918",
+    passage:
+      "Under renoveringen av farmors gamla hus hittade Hugo ett brev inuti väggen. Det hade ramlat ner bakom " +
+      "en panel och låg dammigt i ett gulnat kuvert. Brevet var daterat den 5 november 1918. " +
+      "Hugo läste högt för familjen: " +
+      "\"Kära Astrid, kriget är äntligen slut. Jag kommer hem till jul. Jag har längtat varje dag. " +
+      "Spara den sista biten av kaffet — vi ska dricka det tillsammans vid brasan. Din Erik.\" " +
+      "Farmor blev alldeles tyst. \"Erik var min farfar,\" sa hon sakta. \"Han var soldat i första världskriget. " +
+      "Astrid var min farmor. Jag visste att de hade skrivit brev till varandra, men jag har aldrig sett ett.\" " +
+      "Hugo tittade på det tunna papperet. Det var över hundra år gammalt. Bläcket hade bleknat men gick " +
+      "fortfarande att läsa. " +
+      "\"Varför hamnade det i väggen?\" frågade han. " +
+      "Farmor tänkte efter. \"Postgången var opålitlig under kriget. Kanske kom brevet fram först efter att " +
+      "Erik redan var hemma. Och sedan la någon undan det och glömde det.\" " +
+      "Hugo fotograferade brevet försiktigt. Han tänkte att han ville visa det i skolan. " +
+      "\"Historia är inte bara i böcker,\" sa han till sin mamma. \"Det finns i vanliga hus också.\"",
+    questions: [
+      {
+        id: "las-mel-9-q1",
+        level: "hitta",
+        prompt: "När var brevet skrivet?",
+        options: [
+          "5 november 1945",
+          "5 november 1918",
+          "5 december 1918",
+          "5 november 1818",
+        ],
+        correct: 1,
+        explanation:
+          "Texten anger tydligt att brevet var daterat den 5 november 1918.",
+      },
+      {
+        id: "las-mel-9-q2",
+        level: "tolka",
+        prompt: "Varför bad Erik att Astrid skulle spara kaffet?",
+        options: [
+          "Han tyckte inte om kaffe",
+          "Under kriget var mat och dryck svårt att få tag på, så kaffe var värdefullt",
+          "Han ville ge det till farmor",
+          "Han drack aldrig kaffe ensam",
+        ],
+        correct: 1,
+        explanation:
+          "Under första världskriget var det ransonering och brist på varor som kaffe. Att dela den sista biten kaffe var därför något speciellt.",
+      },
+      {
+        id: "las-mel-9-q3",
+        level: "tolka",
+        prompt: "Varför blev farmor alldeles tyst när hon hörde brevet?",
+        options: [
+          "Hon var arg på Hugo",
+          "Hon blev rörd över att höra sina morföräldrars ord efter så lång tid",
+          "Hon var trött",
+          "Hon förstod inte vad brevet handlade om",
+        ],
+        correct: 1,
+        explanation:
+          "Farmor kände igen namnen som sina egna morföräldrar. Att plötsligt höra deras röster genom ett hundra år gammalt brev var gripande.",
+      },
+      {
+        id: "las-mel-9-q4",
+        level: "reflektera",
+        prompt: "Hugo sa att \"historia inte bara finns i böcker\". Vad menade han?",
+        options: [
+          "Att skolböcker är tråkiga",
+          "Att man inte behöver läsa om historia",
+          "Att historia lever kvar i föremål, brev och platser runt omkring oss och känns mer verklig då",
+          "Att hus alltid har brev i väggarna",
+        ],
+        correct: 2,
+        explanation:
+          "Hugo upptäckte att ett riktigt brev från en riktig person gav historien liv. Det blev personligt och verkligt på ett sätt som en lärobok inte alltid kan.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 10. Fantasi — "Biblioteket under trappan"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-mel-10",
+    ageGroup: "mellanstadiet",
+    title: "Biblioteket under trappan",
+    passage:
+      "Leo visste att det gamla stadsbiblioteket hade en källare, men dörren under trappan var alltid låst. " +
+      "En regnig onsdag glömde bibliotekarien att låsa den. Leo såg den stå på glänt och kunde inte motstå. " +
+      "Trappan ner var smal och brant. Luften luktade av gammalt papper och sten. " +
+      "Längst ner fanns ett litet rum med hyllor från golv till tak. Böckerna var gamla — riktigt gamla. " +
+      "Leo drog ut en bok med skinnpärm. Den var skriven för hand, med bläck och vacker stil. " +
+      "\"Äventyr till havs — kapten Johanna Bergs loggbok, 1843\" stod det på första sidan. " +
+      "Leo slog upp en sida i mitten. Kapten Johanna beskrev en storm utanför Azorerna. Vågorna var höga " +
+      "som hus och besättningen bad till alla helgon. Men Johanna skrev lugnt och metodiskt: vindstyrka, " +
+      "kurs, manövrer hon beordrade. " +
+      "\"Vem är du?\" En röst fick Leo att hoppa till. Det var bibliotekarien. " +
+      "\"Förlåt, dörren stod öppen...\" stammade Leo. " +
+      "Bibliotekarien såg vilken bok han höll. Hennes ögon vidgades. \"Den har vi letat efter i åratal! " +
+      "Johanna Berg var en av Sveriges första kvinnliga kaptener. Vi trodde loggboken hade gått förlorad.\" " +
+      "Leo hjälpte bibliotekarien att bära upp böckerna. Loggboken fick en egen monter i entrén. " +
+      "Och på skylten stod det: \"Återfunnen av Leo Sjöberg, 11 år.\"",
+    questions: [
+      {
+        id: "las-mel-10-q1",
+        level: "hitta",
+        prompt: "Vem hade skrivit loggboken som Leo hittade?",
+        options: [
+          "En bibliotekarie från 1900-talet",
+          "Kapten Johanna Berg, år 1843",
+          "Leo Sjöbergs farfar",
+          "En okänd sjöman",
+        ],
+        correct: 1,
+        explanation:
+          "På första sidan stod det \"Äventyr till havs — kapten Johanna Bergs loggbok, 1843\".",
+      },
+      {
+        id: "las-mel-10-q2",
+        level: "tolka",
+        prompt: "Vad berättar Johannas sätt att skriva under stormen om henne som person?",
+        options: [
+          "Att hon inte brydde sig om besättningen",
+          "Att hon var lugn, professionell och modig även i farliga situationer",
+          "Att hon inte förstod hur farlig stormen var",
+          "Att hon bara skrev ner vad andra sa åt henne",
+        ],
+        correct: 1,
+        explanation:
+          "Medan besättningen bad till helgon skrev Johanna lugnt och metodiskt om vind, kurs och manövrer. Det visar att hon var samlad och professionell.",
+      },
+      {
+        id: "las-mel-10-q3",
+        level: "tolka",
+        prompt: "Varför vidgades bibliotekariens ögon när hon såg boken?",
+        options: [
+          "Hon var arg för att Leo var i källaren",
+          "Hon kände igen boken som en viktig historisk skrift som de trott var förlorad",
+          "Hon var rädd för gamla böcker",
+          "Hon hade aldrig sett en bok förut",
+        ],
+        correct: 1,
+        explanation:
+          "Bibliotekarien sa att de hade letat efter loggboken i åratal. Att den plötsligt dök upp var en stor överraskning.",
+      },
+      {
+        id: "las-mel-10-q4",
+        level: "reflektera",
+        prompt: "Varför tror du att biblioteket gav loggboken en egen monter i entrén?",
+        options: [
+          "Boken var väldigt vacker",
+          "De ville straffa Leo för att han gått in i källaren",
+          "Boken berättar en viktig historia om en kvinna som bröt normer, och den förtjänade att synas",
+          "De hade ingen hylla kvar",
+        ],
+        correct: 2,
+        explanation:
+          "Johanna Berg var en av Sveriges första kvinnliga kaptener. Hennes loggbok är historiskt viktig och inspirerande, och förtjänade att visas upp.",
       },
     ],
   },
@@ -1314,6 +2040,501 @@ const hogstadietTexts: ReadingText[] = [
           "November faller som ett tyg, lägger handen på berättarens axel och viskar. Genomgående " +
           "personifikation gör november till en närmast mänsklig figur, vilket skapar intimitet " +
           "och poetisk kraft.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 6. Social realism — "Korridoren"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-hog-6",
+    ageGroup: "hogstadiet",
+    title: "Korridoren",
+    passage:
+      "Klockan 07:52 varje morgon passerade Freja korridoren utanför sjuans skåp. Det var åtta minuter " +
+      "innan lektionen började och korridoren var som tätast. Röster ekade mot kaklet, dörrar slog " +
+      "och luften luktade av tvål och tuggummi. " +
+      "Freja gick alltid fort med blicken rakt fram. Det hade blivit en strategi — om hon inte " +
+      "mötte någons ögon behövde hon inte svara på frågor eller le tillbaka. Det hade fungerat sedan " +
+      "hon bytte skola i höstas. " +
+      "Ingen mobbade henne. Ingen var elak. Det var nästan värre så, tänkte hon ibland. Om någon hade " +
+      "varit direkt otrevlig hade hon åtminstone haft något att peka på, något att berätta för en vuxen. " +
+      "Nu var det bara tystnad. Inte ens hennes bänkgranne Tilda pratade med henne utanför lektionerna. " +
+      "En dag halkade Freja på en vattenplump utanför NO-salen. Böckerna flög ur händerna och " +
+      "pennskrinnet öppnade sig med ett brak. Pennor rullade åt alla håll. " +
+      "Freja satt kvar på golvet. Hon kände tårarna komma men bet ihop. " +
+      "Då satte sig någon ner bredvid henne. Tilda. Hon sa ingenting, bara började plocka upp pennor. " +
+      "En annan kille som Freja inte kände namn på hjälpte också till. " +
+      "\"Tack,\" sa Freja med tjock röst. " +
+      "Tilda log lite. \"Vill du äta lunch med mig och Ronja idag?\" " +
+      "Freja nickade. Det var inte en stor gest. Det var ingen dramatisk vändpunkt ur en film. " +
+      "Men när hon gick in i NO-salen kände hon något hon inte känt på länge: att korridoren " +
+      "kanske inte var lika lång som hon trott.",
+    questions: [
+      {
+        id: "las-hog-6-q1",
+        level: "hitta",
+        prompt: "Vilken strategi använde Freja i korridoren?",
+        options: [
+          "Hon pratade med så många som möjligt",
+          "Hon gick fort och undvek ögonkontakt",
+          "Hon kom alltid sent för att undvika folk",
+          "Hon hade alltid hörlurar i öronen",
+        ],
+        correct: 1,
+        explanation:
+          "Texten beskriver att Freja gick fort med blicken rakt fram och undvek att möta ögon. Det var hennes medvetna strategi.",
+      },
+      {
+        id: "las-hog-6-q2",
+        level: "tolka",
+        prompt: "Vad menar Freja med att det var \"nästan värre\" att ingen var direkt otrevlig?",
+        options: [
+          "Hon ville bli mobbad",
+          "Att bli ignorerad är svårt att sätta ord på och svårt att söka hjälp för",
+          "Hon tyckte att elaka kommentarer var roliga",
+          "Hon ville ha uppmärksamhet till varje pris",
+        ],
+        correct: 1,
+        explanation:
+          "Freja menar att utanförskap utan synlig mobbning är svårt att beskriva för vuxna. Det finns inget konkret att peka på, men ensamheten gör ändå ont.",
+      },
+      {
+        id: "las-hog-6-q3",
+        level: "tolka",
+        prompt: "Varför är det betydelsefullt att Tilda inte sa något utan bara satte sig ner och hjälpte till?",
+        options: [
+          "Tilda kunde inte prata",
+          "Handlingen visade omsorg utan att göra situationen pinsam — ibland säger gester mer än ord",
+          "Tilda var blyg",
+          "Det var en skolregel att man inte fick prata i korridoren",
+        ],
+        correct: 1,
+        explanation:
+          "Tilda visade medkänsla genom handling istället för ord. Det lät Freja behålla sin värdighet och skapade kontakt utan att det blev dramatiskt.",
+      },
+      {
+        id: "las-hog-6-q4",
+        level: "reflektera",
+        prompt: "Vad menar textens sista mening om att \"korridoren kanske inte var lika lång som hon trott\"?",
+        options: [
+          "Korridoren hade blivit fysiskt kortare",
+          "Freja gick snabbare",
+          "Med en möjlig vänskap kändes den dagliga prövningen mindre överväldigande",
+          "Hon hade hittat en genväg",
+        ],
+        correct: 2,
+        explanation:
+          "Korridoren är en metafor för Frejas ensamhet. Tildas gest gav hopp om tillhörighet, vilket fick den dagliga prövningen att kännas mer hanterbar.",
+      },
+      {
+        id: "las-hog-6-q5",
+        level: "reflektera",
+        prompt: "Texten tar upp osynligt utanförskap. Varför kan det vara svårare att upptäcka än mobbing?",
+        options: [
+          "Det syns inte för att det inte finns en tydlig förövare eller händelse att reagera på",
+          "Det drabbar inte lika många",
+          "Lärare bryr sig inte om elever",
+          "Utanförskap är inte lika allvarligt som mobbning",
+        ],
+        correct: 0,
+        explanation:
+          "Osynligt utanförskap saknar dramatiska händelser. Ingen gör något aktivt fel, men den drabbade lider ändå. Därför är det svårt för omgivningen att upptäcka och agera.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 7. Argumenterande — "Skärmfri skola?"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-hog-7",
+    ageGroup: "hogstadiet",
+    title: "Skärmfri skola?",
+    passage:
+      "Elever i årskurs nio debatterar: ska mobiltelefoner förbjudas helt under skoltid? " +
+      "Argumenten haglar i klassrummet. " +
+      "\"Forskning visar att bara vetskapen om att telefonen finns i fickan försämrar koncentrationen,\" " +
+      "säger Li. \"Vi behöver inte titta på den. Den stjäl uppmärksamhet ändå.\" " +
+      "\"Men vi lever i en digital värld,\" invänder Oscar. \"Att förbjuda teknik lär oss inte att hantera den. " +
+      "Det är som att förbjuda socker istället för att lära sig äta balanserat.\" " +
+      "Läraren ber dem granska varandras argument. Li refererar till en studie från University of Texas " +
+      "där elever presterade sämre på minnestester när telefonen låg synlig på bänken jämfört med " +
+      "när den var i ett annat rum. Oscar medger att studien är intressant men påpekar att den mätte " +
+      "korttidsminne i labbmiljö, inte verklig skolprestation över tid. " +
+      "Alma tar en mellanposition. \"Vad om vi har mobilen i skåpet under lektionerna men får använda den " +
+      "på rasterna? Då får hjärnan vila från distraktioner när det behövs men vi lär oss också " +
+      "att själva reglera vår användning.\" " +
+      "Li nickar motvilligt. \"Det är en kompromiss jag kan acceptera. Men vem kontrollerar att alla " +
+      "verkligen lämnar in sin telefon?\" " +
+      "Oscar tillägger: \"Och vad händer med elever som har medicinska appar eller behöver telefonen " +
+      "av tillgänglighetsskäl? Ett totalt förbud exkluderar dem.\" " +
+      "Debatten slutar utan ett definitivt svar, men klassen har övat något som kanske är viktigare " +
+      "än slutsatsen: förmågan att lyssna på motargument, ifrågasätta sina egna ståndpunkter " +
+      "och söka kompromisser.",
+    questions: [
+      {
+        id: "las-hog-7-q1",
+        level: "hitta",
+        prompt: "Vilken studie refererar Li till?",
+        options: [
+          "En svensk studie om social media",
+          "En studie från University of Texas om minnestester och telefoner",
+          "En EU-rapport om skolresultat",
+          "En enkät bland svenska elever",
+        ],
+        correct: 1,
+        explanation:
+          "Li refererar till en studie från University of Texas där elever presterade sämre på minnestester när telefonen var synlig.",
+      },
+      {
+        id: "las-hog-7-q2",
+        level: "tolka",
+        prompt: "Vad menar Oscar med jämförelsen mellan att förbjuda socker och att förbjuda telefoner?",
+        options: [
+          "Att socker och telefoner är lika farliga",
+          "Att förbud inte lär oss självkontroll — det är bättre att lära sig hantera saker ansvarsfullt",
+          "Att skolan borde förbjuda socker också",
+          "Att elever äter för mycket socker",
+        ],
+        correct: 1,
+        explanation:
+          "Oscars analogi handlar om att förbud inte bygger långsiktig kompetens. Precis som med socker är det bättre att lära sig balansera sitt bruk.",
+      },
+      {
+        id: "las-hog-7-q3",
+        level: "tolka",
+        prompt: "Varför är Oscars kritik av studien relevant?",
+        options: [
+          "Den visar att forskning alltid har fel",
+          "Den påminner om att forskningsresultat från labbmiljö inte automatiskt gäller i verkliga klassrum",
+          "Den bevisar att telefoner inte påverkar koncentrationen",
+          "Den visar att Oscar inte gillar forskning",
+        ],
+        correct: 1,
+        explanation:
+          "Oscar poängterar att studien mätte korttidsminne i labb, inte långsiktig skolprestation. Det är en viktig skillnad som påverkar hur man kan använda resultaten.",
+      },
+      {
+        id: "las-hog-7-q4",
+        level: "reflektera",
+        prompt: "Texten slutar med att debatten inte gav ett definitivt svar. Varför framställs det som positivt?",
+        options: [
+          "Läraren ville inte bestämma",
+          "Eleverna gav upp",
+          "Förmågan att lyssna på motargument och söka kompromisser värderas högre än att \"vinna\" debatten",
+          "Frågan var inte viktig",
+        ],
+        correct: 2,
+        explanation:
+          "Texten lyfter fram att processen — att lyssna, ifrågasätta och kompromissa — är viktigare än att nå en slutgiltig sanning. Det är kärnan i demokratiskt samtal.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 8. Populärvetenskap — "Havets tysta katastrof"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-hog-8",
+    ageGroup: "hogstadiet",
+    title: "Havets tysta katastrof",
+    passage:
+      "Varje minut hamnar en lastbilsflak med plast i världens hav. Men det mest alarmerande är inte " +
+      "de synliga plastpåsarna eller petflaskorna. Det är mikroplasten — fragment mindre än fem millimeter " +
+      "som är nästan omöjliga att rensa bort. " +
+      "Mikroplast bildas när större plastföremål bryts ner av solljus, vågor och vind. Men den kommer " +
+      "också från oväntade källor: syntetiska kläder som släpper fibrer vid tvätt, bildäck som nöts mot " +
+      "asfalten och kosmetika som innehåller plastkulor. En enda tvättmaskinscykel kan frigöra " +
+      "hundratusentals fibrer så små att reningsverken inte fångar dem. " +
+      "Konsekvenserna är alarmerande. Djurplankton, havets minsta organismer, förväxlar mikroplast " +
+      "med mat. Plankton äts av småfiskar, småfiskar av större fiskar, och så vidare uppåt i " +
+      "näringskedjan. Forskare vid Göteborgs universitet har hittat mikroplast i svensk torsk, " +
+      "räkor och musslor. Det innebär att vi sannolikt äter plast utan att veta om det. " +
+      "De kemiska aspekterna gör situationen ännu värre. Plastpartiklar binder till sig " +
+      "miljögifter som PCB och DDT. När en fisk äter mikroplast med bundna gifter koncentreras " +
+      "dessa ämnen i fiskens fettvävnad. Ju högre upp i näringskedjan, desto högre koncentration — " +
+      "en process som kallas bioackumulation. " +
+      "Vad kan göras? Forskare arbetar med biologisk nedbrytning genom enzymer som kan bryta ner " +
+      "plast. Tvättfilter för syntetiska kläder testas. Och EU har förbjudit tillsatt mikroplast i " +
+      "kosmetika sedan 2023. Men den plast som redan finns i haven kan ta hundratals år att försvinna. " +
+      "Problemet visar hur sammanlänkade ekosystemen är. En syntetisk fleecetröja i Borlänge kan, " +
+      "via en tvättmaskin och ett reningsverk, bidra till att en torsk i Nordsjön bär på miljögifter " +
+      "som till slut hamnar på en middag i Malmö.",
+    questions: [
+      {
+        id: "las-hog-8-q1",
+        level: "hitta",
+        prompt: "Vilka tre oväntade källor till mikroplast nämns i texten?",
+        options: [
+          "Plastpåsar, petflaskor och förpackningar",
+          "Syntetiska kläder, bildäck och kosmetika",
+          "Fiskebåtar, oljeplattformar och kryssningsfartyg",
+          "Leksaker, sugrör och plastbestick",
+        ],
+        correct: 1,
+        explanation:
+          "Texten nämner tre oväntade källor: syntetiska kläder som släpper fibrer, bildäck som nöts och kosmetika med plastkulor.",
+      },
+      {
+        id: "las-hog-8-q2",
+        level: "tolka",
+        prompt: "Vad innebär bioackumulation i detta sammanhang?",
+        options: [
+          "Att plast sjunker till havsbotten",
+          "Att giftkoncentrationen ökar ju högre upp i näringskedjan organismen befinner sig",
+          "Att biologiska organismer bryter ner plast naturligt",
+          "Att plast sprids med havsströmmar",
+        ],
+        correct: 1,
+        explanation:
+          "Bioackumulation innebär att gifter anrikas uppåt i näringskedjan. Varje steg koncentrerar gifterna ytterligare, från plankton till stor fisk till människa.",
+      },
+      {
+        id: "las-hog-8-q3",
+        level: "tolka",
+        prompt: "Varför kallar texten mikroplast för en \"tyst katastrof\"?",
+        options: [
+          "Plast gör inget ljud",
+          "Mikroplast är osynlig för blotta ögat och svår att upptäcka, men orsakar storskalig skada",
+          "Ingen forskar på ämnet",
+          "Katastrofen påverkar bara hav, inte land",
+        ],
+        correct: 1,
+        explanation:
+          "Ordet \"tyst\" syftar på att mikroplast inte syns och att skadorna sker gradvis. Det är en katastrof som pågår utan att de flesta märker den.",
+      },
+      {
+        id: "las-hog-8-q4",
+        level: "reflektera",
+        prompt: "Texten beskriver kedjan från fleecetröja i Borlänge till middag i Malmö. Varför inkluderas det exemplet?",
+        options: [
+          "För att visa att Borlänge och Malmö har dålig vattenrening",
+          "För att göra det abstrakta problemet konkret och visa hur individens vardag hänger ihop med globala ekosystem",
+          "För att kritisera svenska klädesvanor",
+          "För att visa att det bara är Sverige som har problemet",
+        ],
+        correct: 1,
+        explanation:
+          "Exemplet gör problemet gripbart genom att visa en konkret kedja från vardagshandling till global konsekvens. Det visar att individuella val påverkar hela ekosystem.",
+      },
+      {
+        id: "las-hog-8-q5",
+        level: "reflektera",
+        prompt: "Vilken begränsning hos de tekniska lösningarna framgår av texten?",
+        options: [
+          "De är för dyra",
+          "De fungerar bara i laboratorier",
+          "De kan minska ny plast men inte hantera de enorma mängder som redan finns i haven",
+          "Politikerna vägrar genomföra dem",
+        ],
+        correct: 2,
+        explanation:
+          "Texten nämner att den plast som redan finns kan ta hundratals år att försvinna. Tekniska lösningar och förbud kan minska framtida utsläpp men löser inte det befintliga problemet.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 9. Lyrik — "Innanför orden"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-hog-9",
+    ageGroup: "hogstadiet",
+    title: "Innanför orden",
+    passage:
+      "Det finns ett utrymme innanför orden " +
+      "där meningen bor innan den formulerats. " +
+      "Där är ljuset annorlunda — " +
+      "inte skarpare, men ärligare. " +
+      "Som morgon bakom gardinerna " +
+      "innan rummet bestämt sig för att vakna.\n\n" +
+      "Jag letade länge efter det rätta ordet " +
+      "för vad jag kände den sommaren " +
+      "när du flyttade till en annan stad. " +
+      "Saknad var för stort. " +
+      "Sorg var för tungt. " +
+      "Tomrum passade nästan " +
+      "men det förutsätter att något har fyllts.\n\n" +
+      "Det jag kände var snarare en tystnad " +
+      "i det rum där din röst brukade vara. " +
+      "Inte frånvaro av ljud — " +
+      "utan närvaro av det som inte sägs. " +
+      "Som en paus i musiken " +
+      "som betyder mer än tonerna.\n\n" +
+      "Ibland tror jag att vi uppfann språket " +
+      "inte för att fånga det vi vet " +
+      "utan för att ringa in det vi inte förstår. " +
+      "Orden är staketet runt mysteriet — " +
+      "inte mysteriet självt.\n\n" +
+      "Och kanske är det därför " +
+      "de viktigaste samtalen " +
+      "pågår i mellanrummen, " +
+      "i det som händer mellan meningarna, " +
+      "i blicken som stannar en sekund för länge, " +
+      "i handen som nästan rör vid din.",
+    questions: [
+      {
+        id: "las-hog-9-q1",
+        level: "hitta",
+        prompt: "Vad hände \"den sommaren\" som dikten refererar till?",
+        options: [
+          "Berättaren reste utomlands",
+          "Någon viktig flyttade till en annan stad",
+          "Berättaren slutade skriva",
+          "Det var en ovanligt varm sommar",
+        ],
+        correct: 1,
+        explanation:
+          "Dikten nämner tydligt \"den sommaren när du flyttade till en annan stad\" som den konkreta händelse som utlöser reflektionen.",
+      },
+      {
+        id: "las-hog-9-q2",
+        level: "tolka",
+        prompt: "Varför avvisas orden \"saknad\", \"sorg\" och \"tomrum\" som beskrivningar av känslan?",
+        options: [
+          "Berättaren tycker inte om de orden",
+          "Orden är för stora, tunga eller förutsätter erfarenheter som inte stämmer — känslan kräver mer precision",
+          "Berättaren vill inte visa känslor",
+          "Orden är förbjudna i dikter",
+        ],
+        correct: 1,
+        explanation:
+          "Dikten analyserar varje ord: saknad är \"för stort\", sorg \"för tungt\", tomrum förutsätter att något fyllts. Berättaren söker ett ord som fångar den specifika känslan exakt.",
+      },
+      {
+        id: "las-hog-9-q3",
+        level: "tolka",
+        prompt: "Vad menar metaforen \"orden är staketet runt mysteriet — inte mysteriet självt\"?",
+        options: [
+          "Att ord är meningslösa",
+          "Att språket kan avgränsa och peka mot det vi känner, men aldrig fullt ut fånga det",
+          "Att staket alltid är gjorda av ord",
+          "Att mysterier inte existerar",
+        ],
+        correct: 1,
+        explanation:
+          "Metaforen uttrycker att språket kan omringa och peka mot en känsla eller upplevelse, men att det alltid finns något kvar innanför som orden inte når.",
+      },
+      {
+        id: "las-hog-9-q4",
+        level: "reflektera",
+        prompt: "Dikten hävdar att de viktigaste samtalen pågår \"i mellanrummen\". Håller du med om det?",
+        options: [
+          "Nej, bara det som sägs räknas i ett samtal",
+          "Ja, men bara i dikter — inte i verkligheten",
+          "Ja, kroppsspråk, pauser och blickar kan kommunicera djupare känslor än ord ensamma",
+          "Nej, mellanrum i samtal är alltid pinsamma",
+        ],
+        correct: 2,
+        explanation:
+          "Dikten fångar insikten att mellanmänsklig kommunikation sker på flera plan. Blickar, tystnader och gester kan bära känslor som ord inte räcker till för att uttrycka.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 10. Historisk — "Industrialiseringens barn"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-hog-10",
+    ageGroup: "hogstadiet",
+    title: "Industrialiseringens barn",
+    passage:
+      "År 1870 var Sverige ett av Europas fattigaste länder. Hälften av befolkningen var jordbrukare " +
+      "och missväxt kunde innebära svält. Under de följande femtio åren genomgick landet en förvandling " +
+      "som brukar kallas det stora språnget. " +
+      "Järnvägarna förändrade allt. Innan rälsen drogs fram tog en resa från Stockholm till Göteborg " +
+      "flera dagar med häst och vagn. Med tåget tog det timmar. Plötsligt kunde varor fraktas snabbt " +
+      "och billigt. Sågverk i Norrland kunde sälja timmer till England. Fabriker i Eskilstuna kunde " +
+      "leverera verktyg till hela landet. " +
+      "Men framsteget hade ett pris. Tusentals familjer lämnade landsbygden för att arbeta i fabrikerna. " +
+      "De bodde trångt i nybyggda hyreskasernade arbetskvarter. Barnen arbetade ofta redan vid tio " +
+      "års ålder — i tändsticksfabriker, glasbruk och textilindustri. Arbetet var farligt. " +
+      "Tändsticksfabrikernas fosforånga orsakade käkbensnekros, en sjukdom där käkbenet bokstavligt " +
+      "talat förstördes. " +
+      "Det var inte självklart att situationen skulle förbättras. Förändringen kom underifrån. " +
+      "Arbetare organiserade sig i fackföreningar trots att det länge var förbjudet. " +
+      "Folkrörelserna — nykterhetsrörelsen, frikyrkorörelsen och arbetarrörelsen — byggde " +
+      "studiecirklar och möteslokaler. Människor som aldrig haft en röst i samhället lärde sig " +
+      "att debattera, formulera krav och organisera strejker. " +
+      "År 1900 antog riksdagen den första lagen om minderårigas arbete. Barn under tolv fick inte " +
+      "längre arbeta i fabriker, och arbetsdagen begränsades till sex timmar för barn under fjorton. " +
+      "Lagstiftningen var ofullständig, men den markerade en princip: barndom är inte till för arbete. " +
+      "Det tog ytterligare decennier innan barnarbete försvann helt. Men riktningen var satt. " +
+      "De svenska välfärdsreformer vi ofta tar för givna — skolplikt, sjukvård, arbetsskydd — " +
+      "växte ur en tid då ingenting av detta var givet.",
+    questions: [
+      {
+        id: "las-hog-10-q1",
+        level: "hitta",
+        prompt: "Vilken sjukdom orsakades av fosforånga i tändsticksfabrikerna?",
+        options: [
+          "Tuberkulos",
+          "Käkbensnekros",
+          "Astma",
+          "Kolera",
+        ],
+        correct: 1,
+        explanation:
+          "Texten nämner att tändsticksfabrikernas fosforånga orsakade käkbensnekros, en sjukdom som förstörde käkbenet.",
+      },
+      {
+        id: "las-hog-10-q2",
+        level: "hitta",
+        prompt: "Vad bestämde riksdagen år 1900?",
+        options: [
+          "Att alla barn skulle gå i skola",
+          "Att barn under tolv inte fick arbeta i fabriker",
+          "Att alla fabriker skulle stängas",
+          "Att Sverige skulle bli en republik",
+        ],
+        correct: 1,
+        explanation:
+          "Texten anger att riksdagen 1900 antog en lag som förbjöd barn under tolv att arbeta i fabriker.",
+      },
+      {
+        id: "las-hog-10-q3",
+        level: "tolka",
+        prompt: "Varför var folkrörelsernas studiecirklar viktiga för förändringen?",
+        options: [
+          "De lärde människor att läsa bibeln",
+          "De gav vanliga arbetare redskap att formulera krav, debattera och organisera sig politiskt",
+          "De var ett sätt att underhålla sig efter jobbet",
+          "De finansierade fabriker",
+        ],
+        correct: 1,
+        explanation:
+          "Studiecirklarna gav arbetare kunskaper och färdigheter att delta i samhällsdebatten. De lärde sig formulera krav och organisera kollektiv handling.",
+      },
+      {
+        id: "las-hog-10-q4",
+        level: "reflektera",
+        prompt: "Texten avslutas med att välfärdsreformerna växte ur en tid då ingenting var givet. Vad vill författaren säga med det?",
+        options: [
+          "Att Sverige alltid har varit ett bra land att bo i",
+          "Att rättigheter vi tar för givna idag inte uppstod av sig själva — de vanns genom kamp och förändring",
+          "Att vi borde gå tillbaka till 1800-talet",
+          "Att industrialiseringen bara var negativ",
+        ],
+        correct: 1,
+        explanation:
+          "Författaren vill att läsaren ska förstå att dagens rättigheter har en historia. Skolplikt, arbetsskydd och sjukvård var resultatet av människors kamp, inte självklarheter.",
+      },
+      {
+        id: "las-hog-10-q5",
+        level: "reflektera",
+        prompt: "Hur kan man se industrialiseringen som både positiv och negativ utifrån texten?",
+        options: [
+          "Den var bara positiv — alla fick jobb",
+          "Den var bara negativ — alla blev sjuka",
+          "Den skapade ekonomiskt framsteg och sammankoppling men orsakade också farligt barnarbete, trångboddhet och exploatering",
+          "Den påverkade bara Norrland",
+        ],
+        correct: 2,
+        explanation:
+          "Texten beskriver järnvägar, handel och ekonomisk tillväxt som positiva effekter, men också barnarbete, sjukdom och fattigdom. Det visar att historiska förändringar sällan är entydigt goda eller onda.",
       },
     ],
   },
@@ -1934,6 +3155,558 @@ const gymnasietTexts: ReadingText[] = [
         correct: 2,
         explanation:
           "Den avslutande insikten — att det som gått förlorat lämnar en form som kan vara vackrare än det som fyllde den — uttrycker en estetik av avskalning besläktad med wabi-sabi. Det är varken optimism eller nihilism utan en tredje position: att finna mening och skönhet i själva frånvarons kontur.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 6. Filosofisk — "Det osynliga kontraktet"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-gym-6",
+    ageGroup: "gymnasiet",
+    title: "Det osynliga kontraktet",
+    passage:
+      "Vi föds in i en värld vi aldrig valde. Ingen frågade oss om vi ville ha ett personnummer, " +
+      "ett medborgarskap, en plats i ett samhälle med lagar vi inte varit med om att stifta. " +
+      "Ändå förväntas vi följa reglerna. Betala skatt. Stanna vid rött ljus. Respektera " +
+      "andras egendom. Filosofen Jean-Jacques Rousseau kallade detta det sociala kontraktet: " +
+      "en tyst överenskommelse mellan individ och samhälle, aldrig undertecknad men alltid bindande.\n\n" +
+      "Men kan ett kontrakt vara giltigt om en av parterna aldrig samtyckt? Thomas Hobbes, " +
+      "som verkade under det engelska inbördeskrigets kaos på 1600-talet, hade ett pragmatiskt svar: " +
+      "alternativet är värre. Utan samhällets ordning, menade Hobbes, skulle tillvaron vara " +
+      "\"ensam, fattig, otäck, brutal och kort\". Kontraktet är inte rättvist i strikt mening — " +
+      "men det är rationellt. Vi accepterar begränsningar för att slippa kaos.\n\n" +
+      "Rousseau var inte nöjd med den analysen. För honom handlade kontraktet inte bara om " +
+      "överlevnad utan om frihet. Det goda samhället, argumenterade han, uppstår när medborgarna " +
+      "aktivt deltar i att forma lagarna. Då är lydnad inte underkastelse utan självstyre: " +
+      "jag lyder lagen för att det är min lag, skapad genom en process jag hade del i.\n\n" +
+      "I praktiken vet vi att den ideala bilden sällan stämmer. Många medborgare saknar reellt " +
+      "inflytande. Ungdomar under arton får inte rösta men förväntas följa alla lagar. " +
+      "Marginaliserade grupper kan uppleva att kontraktet skyddar andras intressen men inte deras. " +
+      "Sociologen Charles Mills har hävdat att det sociala kontraktet historiskt sett har varit " +
+      "ett raskontrakt — en överenskommelse mellan privilegierade grupper som exkluderat andra.\n\n" +
+      "Ändå kvarstår grundfrågan: om du inte accepterar kontraktet, vad föreslår du istället? " +
+      "Total individuell frihet leder till den starkares rätt. Total kollektiv kontroll leder till " +
+      "diktatur. Någonstans däremellan måste varje generation finna sin balans — och varje individ " +
+      "avgöra hur mycket av sin frihet hon är villig att överlåta för tryggheten att leva bland andra.\n\n" +
+      "Kanske är det viktigaste inte att kontraktet är perfekt, utan att det aldrig slutar " +
+      "omförhandlas.",
+    questions: [
+      {
+        id: "las-gym-6-q1",
+        level: "hitta",
+        prompt: "Hur beskrev Hobbes tillvaron utan samhällets ordning?",
+        options: [
+          "Fri, naturlig och harmonisk",
+          "Ensam, fattig, otäck, brutal och kort",
+          "Lugn men tråkig",
+          "Kaotisk men kreativ",
+        ],
+        correct: 1,
+        explanation:
+          "Texten citerar Hobbes berömda beskrivning av naturtillståndet som \"ensam, fattig, otäck, brutal och kort\".",
+      },
+      {
+        id: "las-gym-6-q2",
+        level: "tolka",
+        prompt: "Vad är den avgörande skillnaden mellan Hobbes och Rousseaus syn på kontraktet?",
+        options: [
+          "Hobbes trodde på demokrati, Rousseau på monarki",
+          "Hobbes motiverade kontraktet med överlevnad och rädsla för kaos, Rousseau med aktivt deltagande och frihet",
+          "De hade samma syn men levde i olika länder",
+          "Rousseau ville avskaffa alla lagar",
+        ],
+        correct: 1,
+        explanation:
+          "Hobbes ser kontraktet som ett rationellt val för att undvika kaos. Rousseau kräver mer: att kontraktet bygger på aktivt medborgardeltagande och att lydnad är en form av självstyre.",
+      },
+      {
+        id: "las-gym-6-q3",
+        level: "tolka",
+        prompt: "Vad innebär Charles Mills kritik av det sociala kontraktet?",
+        options: [
+          "Att kontrakt inte finns i verkligheten",
+          "Att det historiskt sett har utformats av privilegierade grupper och exkluderat marginaliserade",
+          "Att Rousseau hade helt rätt",
+          "Att skatt borde avskaffas",
+        ],
+        correct: 1,
+        explanation:
+          "Mills menar att det sociala kontraktet inte har varit universellt utan har gynnat vissa grupper medan andra exkluderats — det har fungerat som ett raskontrakt.",
+      },
+      {
+        id: "las-gym-6-q4",
+        level: "reflektera",
+        prompt: "Texten nämner att ungdomar under arton inte får rösta men förväntas följa lagar. Vilken principiell fråga reser det?",
+        options: [
+          "Att ungdomar borde slippa följa lagar",
+          "Att det bryter mot kontraktets grundidé om samtycke — kan man kräva lydnad av någon utan att ge dem inflytande?",
+          "Att rösträtten borde höjas till 21",
+          "Att ungdomar inte förstår politik",
+        ],
+        correct: 1,
+        explanation:
+          "Om kontraktets legitimitet bygger på samtycke och deltagande, uppstår en spänning när en grupp måste följa regler utan att ha fått vara med och forma dem.",
+      },
+      {
+        id: "las-gym-6-q5",
+        level: "reflektera",
+        prompt: "Textens slutsats är att det viktigaste är att kontraktet \"aldrig slutar omförhandlas\". Varför?",
+        options: [
+          "Eftersom lagar bör ändras varje år",
+          "Eftersom ett statiskt kontrakt riskerar att bli orättvist när samhället förändras — ständig omförhandling säkrar att fler inkluderas",
+          "Eftersom filosofer alltid tycker om att diskutera",
+          "Eftersom det sociala kontraktet inte existerar",
+        ],
+        correct: 1,
+        explanation:
+          "Samhällen förändras. Grupper som exkluderades kan kräva inkludering. Nya utmaningar kräver nya svar. Omförhandling är processen genom vilken kontraktet hålls levande och rättvist.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 7. Essä — "Tiden vi inte mäter"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-gym-7",
+    ageGroup: "gymnasiet",
+    title: "Tiden vi inte mäter",
+    passage:
+      "Vi mäter allt numera. Steg per dag, skärmtid per vecka, sovkvalitet i procent. " +
+      "Apparna på telefonen omvandlar tillvaron till datapunkter och erbjuder kurvor, diagram och " +
+      "tröstande notiser: \"Du sov 12 procent bättre i natt.\" Men hur mäter man den där " +
+      "söndagseftermiddagen när ingenting händer och just därför händer allt?\n\n" +
+      "Jag tänker på min morfar, som kunde sitta på altanen i timmar utan att göra annat " +
+      "än att titta på träden. Frågade man vad han gjorde svarade han: \"Jag sitter.\" " +
+      "Inte \"jag vilar\" — det hade förutsatt att han innan hade ansträngt sig och behövde " +
+      "återhämtning. Inte \"jag mediterar\" — det hade gjort sittandet till en metod, ett medel " +
+      "mot stress med mätbara hälsoeffekter. Han satt. Punkten i meningen var viktig.\n\n" +
+      "Det moderna produktivitetsidealet har gjort oss misstänksamma mot punkter. " +
+      "Vi vill att meningar ska fortsätta: jag sitter och lyssnar på en podd, jag sitter och " +
+      "planerar imorgon, jag sitter och reflekterar strategiskt. Tomrummet utan tillägg " +
+      "uppfattas som slöseri. \"Vad har du gjort idag?\" frågar någon, och vi räknar upp " +
+      "handlingar som bevis på att dagen haft mening.\n\n" +
+      "Men den tyske filosofen Josef Pieper argumenterade i sin essä \"Muße und Kult\" från 1948 " +
+      "att verklig ledighet inte är frånvaro av arbete utan en aktiv hållning av mottaglighet. " +
+      "Den som vilar är passiv; den som har muße — ungefär \"kontemplativ ledighet\" — " +
+      "är uppmärksam utan avsikt. Det är skillnaden mellan att sova och att vara vaken " +
+      "utan agenda.\n\n" +
+      "Det paradoxala är att detta tillstånd inte kan instrumentaliseras. I samma ögonblick " +
+      "som du sitter på altanen för att bli mer kreativ eller sänka din kortisolnivå " +
+      "har du redan omvandlat sittandet till ett medel. Du optimerar igen. " +
+      "Den genuina muße uppstår först när du släpper alla mål, inklusive målet att släppa alla mål.\n\n" +
+      "Min morfar förstod detta intuitivt. Han hade inget ord för det — han behövde inget. " +
+      "Kanske var frånvaron av ordet det som möjliggjorde handlingen. I det ögonblick vi " +
+      "namnger, kategoriserar och kvantifierar ett tillstånd börjar vi omärkligt styra det. " +
+      "Den mätta sömnen är inte riktigt samma sömn. Den dokumenterade promenaden " +
+      "är inte riktigt samma promenad.\n\n" +
+      "Söndagseftermiddagen rinner ut. Inga notiser har dykt upp. Ingen data har samlats. " +
+      "Och just i det omätta tomrummet har något hänt som jag aldrig kommer kunna rapportera — " +
+      "men som jag känner i kroppen som en stilla, oförklarlig belåtenhet.",
+    questions: [
+      {
+        id: "las-gym-7-q1",
+        level: "hitta",
+        prompt: "Vilken filosof och vilket verk refererar texten till?",
+        options: [
+          "Immanuel Kant, \"Kritik av det rena förnuftet\"",
+          "Josef Pieper, \"Muße und Kult\" (1948)",
+          "Jean-Paul Sartre, \"Varat och intet\"",
+          "Simone de Beauvoir, \"Det andra könet\"",
+        ],
+        correct: 1,
+        explanation:
+          "Texten refererar till Josef Piepers essä \"Muße und Kult\" från 1948 och hans begrepp om kontemplativ ledighet.",
+      },
+      {
+        id: "las-gym-7-q2",
+        level: "tolka",
+        prompt: "Varför är morfars svar \"Jag sitter\" med punkt viktigt för textens argumentation?",
+        options: [
+          "Det visar att morfar var lat",
+          "Punkten markerar att sittandet är komplett i sig själv — det behöver inget tillägg, inget syfte och ingen rättfärdigande",
+          "Det visar att morfar inte kunde prata",
+          "Det är bara en språklig detalj utan betydelse",
+        ],
+        correct: 1,
+        explanation:
+          "Punkten symboliserar fullständighet. Morfar behövde inte legitimera sitt sittande med ett syfte. Det var inte ett medel utan ett tillstånd i sig.",
+      },
+      {
+        id: "las-gym-7-q3",
+        level: "tolka",
+        prompt: "Vad menar författaren med att muße inte kan instrumentaliseras?",
+        options: [
+          "Att man inte kan använda musikinstrument medan man vilar",
+          "Att i samma ögonblick man gör kontemplativ ledighet till ett medel för något annat förstörs den — den kräver frånvaro av mål",
+          "Att man inte kan mäta tid",
+          "Att filosofi alltid är opraktisk",
+        ],
+        correct: 1,
+        explanation:
+          "Muße kräver frånvaro av avsikt. Om man sitter stilla för att bli mer kreativ har man redan gjort det till produktivitet. Paradoxen är central i texten.",
+      },
+      {
+        id: "las-gym-7-q4",
+        level: "reflektera",
+        prompt: "Författaren skriver att \"den mätta sömnen inte är riktigt samma sömn\". Vilken bredare kulturkritik uttrycker det?",
+        options: [
+          "Att sömnforskning är meningslös",
+          "Att kvantifieringen av tillvaron subtilt förändrar vårt förhållande till upplevelser — medvetenheten om mätningen påverkar det som mäts",
+          "Att man inte borde sova",
+          "Att appar alltid visar fel data",
+        ],
+        correct: 1,
+        explanation:
+          "Kulturkritiken handlar om att kvantifiering inte är neutral. Att observera och mäta en upplevelse förändrar upplevelsen — vi börjar optimera istället för att leva.",
+      },
+      {
+        id: "las-gym-7-q5",
+        level: "reflektera",
+        prompt: "Essän avslutas med en känsla som författaren \"aldrig kommer kunna rapportera\". Varför är det en passande avslutning?",
+        options: [
+          "Författaren har dåligt minne",
+          "Det visar att essän misslyckades",
+          "Det fullbordar tesen: det mest meningsfulla kan vara det som undandrar sig mätning och språk — texten gör själv det den argumenterar för",
+          "Det är bara ett stilistiskt val utan djupare mening",
+        ],
+        correct: 2,
+        explanation:
+          "Avslutningen enacts textens tes. Det som författaren beskriver som mest värdefullt — den stilla belåtenheten — kan inte kvantifieras eller rapporteras. Texten demonstrerar sin egen poäng.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 8. Modernistisk fiktion — "Stationen"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-gym-8",
+    ageGroup: "gymnasiet",
+    title: "Stationen",
+    passage:
+      "Klockan på perrongen hade stannat vid kvart i tre. Ingen verkade ha lagt märke till det " +
+      "förutom henne. De andra väntande tittade på sina telefoner eller stirrade in i den dis " +
+      "som låg över rälsen som om den vore en gardin de väntade på skulle dras undan.\n\n" +
+      "Hon hade kommit hit utan att riktigt veta varför. Inte för att resa — hon hade ingen biljett, " +
+      "inget bagage, ingen destination. Stationer hade alltid dragit henne till sig. Det var platser " +
+      "definierade av rörelse men upplevda i väntan. Alla som stod här var mellan något. " +
+      "Mellan hemma och borta. Mellan det kända och det ännu okända. Ingen var riktigt närvarande " +
+      "på en station; alla var redan mentalt på väg.\n\n" +
+      "Utom hon. Hon var här. I det stillastående ögonblicket.\n\n" +
+      "En kvinna med en röd kappa gick förbi och lämnade en doft av apelsin och regn. " +
+      "En pojke sparkade på en kaffemugg och ljudet studsade mellan väggarna som en vilsen fågel. " +
+      "En man läste tidningen med sådan intensitet att hon undrade om han sökte efter en mening " +
+      "som gått förlorad inte i texten utan i livet.\n\n" +
+      "Hon mindes att hennes mor hade sagt: \"Det farliga är inte att tågen inte kommer. " +
+      "Det farliga är att du slutar vänta.\" Vid den tiden hade hon tolkat det som tålamod. " +
+      "Nu förstod hon att det handlade om hopp — den envishet med vilken vi vänder ansiktet " +
+      "mot det som ännu inte syns.\n\n" +
+      "Disen lättade inte. Klockan stod still. Men någonstans bakom den grå slöjan hördes " +
+      "ett avlägset mullrande som kunde vara ett tåg eller bara vinden som pressade sig " +
+      "genom tunneln med en röst som påminde om något hon en gång känt men inte längre " +
+      "kunde namnge.\n\n" +
+      "Hon satte sig på bänken. Den var kall. Hon tänkte inte resa idag heller. " +
+      "Men att vara här, i mellanrummet, bland alla som var på väg — det räckte. " +
+      "Det var, insåg hon, det närmaste hon kunde komma tillhörighet utan att binda sig " +
+      "vid något. En frihet som smakade salt, som tårar eller hav.",
+    questions: [
+      {
+        id: "las-gym-8-q1",
+        level: "hitta",
+        prompt: "Varför hade huvudpersonen kommit till stationen?",
+        options: [
+          "Hon väntade på ett tåg till en annan stad",
+          "Hon mötte någon som kom med tåget",
+          "Hon hade ingen specifik anledning — hon drogs till stationer utan att veta varför",
+          "Hon arbetade där",
+        ],
+        correct: 2,
+        explanation:
+          "Texten säger att hon kommit utan att riktigt veta varför. Hon hade ingen biljett, inget bagage, ingen destination.",
+      },
+      {
+        id: "las-gym-8-q2",
+        level: "tolka",
+        prompt: "Vad symboliserar den stannande klockan?",
+        options: [
+          "Att stationen har dåligt underhåll",
+          "Att huvudpersonen befinner sig utanför den vanliga tidens flöde — i ett ögonblick av stillhet mitt i rörelse",
+          "Att tåget är försenat",
+          "Att berättelsen utspelar sig i dåtid",
+        ],
+        correct: 1,
+        explanation:
+          "Klockan som stannat speglar huvudpersonens tillstånd: hon är den enda som inte är på väg någonstans. Hon existerar i ett stillastående nu medan alla andra rör sig.",
+      },
+      {
+        id: "las-gym-8-q3",
+        level: "tolka",
+        prompt: "Vad menade moderns ord om att \"det farliga är att du slutar vänta\"?",
+        options: [
+          "Att tåg alltid är försenade",
+          "Att man ska vara tålmodig i kön",
+          "Att sluta vänta innebär att sluta hoppas — att ge upp förväntan på att något ska komma",
+          "Att man aldrig ska ta bussen istället",
+        ],
+        correct: 2,
+        explanation:
+          "Modern talar metaforiskt om hopp. Att vänta är att rikta sig mot framtiden med förväntan. Att sluta vänta är att ge upp tron på att förändring kan ske.",
+      },
+      {
+        id: "las-gym-8-q4",
+        level: "reflektera",
+        prompt: "Berättelsen beskriver stationen som en plats \"definierad av rörelse men upplevd i väntan\". Hur fungerar detta som metafor?",
+        options: [
+          "Det är bara en beskrivning av en tågstation",
+          "Stationen blir en bild för tillvaron — vi är alla i transit mellan det vi var och det vi ska bli, och livet upplevs i mellanrummen",
+          "Det handlar om att tåg rör sig",
+          "Det är en kritik av kollektivtrafiken",
+        ],
+        correct: 1,
+        explanation:
+          "Stationen fungerar som existentiell metafor. Alla befinner sig mellan tillstånd. Livet består till stor del av väntan och mellanrum, inte av ankomster.",
+      },
+      {
+        id: "las-gym-8-q5",
+        level: "reflektera",
+        prompt: "Den avslutande bilden — \"en frihet som smakade salt, som tårar eller hav\" — rymmer en dubbelhet. Vilken?",
+        options: [
+          "Att hav alltid är salt",
+          "Att friheten i att inte binda sig är både befriande (havet som vidd) och smärtsam (tårar som förlust) — den är inte enbart positiv",
+          "Att huvudpersonen gråter av glädje",
+          "Att det är bra att inte binda sig",
+        ],
+        correct: 1,
+        explanation:
+          "Salt associeras till både hav (frihet, vidd) och tårar (sorg, förlust). Friheten att inte binda sig innebär samtidigt ensamhet. Denna dubbelhet sammanfattar hela textens tematik.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 9. Politisk debatt — "Klimatparadoxen"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-gym-9",
+    ageGroup: "gymnasiet",
+    title: "Klimatparadoxen",
+    passage:
+      "Det finns en besynnerlig paradox i den samtida klimatdebatten. Aldrig har vi haft mer kunskap " +
+      "om vad som händer med jordens klimat, och aldrig har klyftan mellan kunskap och handling " +
+      "varit större. FN:s klimatpanel konstaterar med \"mycket hög sannolikhet\" att mänsklig " +
+      "aktivitet driver uppvärmningen. Ändå ökar de globala utsläppen.\n\n" +
+      "Filosofen Clive Hamilton kallar detta \"det postmoderna tillståndet applicerat på " +
+      "naturvetenskapen\": vi behandlar klimatforskning som om den vore en åsikt bland andra, " +
+      "jämförbar med en politisk ståndpunkt. Men termodynamikens lagar bryr sig inte om " +
+      "vår åsikt. Koldioxidmolekylens egenskaper förändras inte av en omröstning.\n\n" +
+      "Varför handlar vi inte? Psykologen Daniel Kahneman, nobelpristagare i ekonomi, " +
+      "pekar på flera kognitiva barriärer. Klimatförändringen är abstrakt, gradvis och global — " +
+      "egenskaper som gör den närmast osynlig för vår evolutionärt anpassade hjärna, " +
+      "som utvecklades för att reagera på omedelbara, konkreta hot som rovdjur och stormar. " +
+      "Dessutom lider vi av hyperbolisk diskontering: vi värderar nutida bekvämlighet " +
+      "oproportionerligt högre än framtida konsekvenser.\n\n" +
+      "Men förklaringen är inte bara psykologisk. Den är strukturell. Statsvetaren Elinor Ostrom, " +
+      "också nobelpristagare, visade att gemensamma resurser — som atmosfären — drabbas av " +
+      "det som kallas allmänningens tragedi: varje aktör tjänar individuellt på att överutnyttja " +
+      "resursen, även om det kollektiva resultatet är katastrofalt. Inget land vill bära " +
+      "omställningskostnaden om andra inte gör det.\n\n" +
+      "Samtidigt finns det röster som varnar för att klimatångest kan bli förlamande. " +
+      "Statsvetaren och aktivisten Mary Robinson hävdar att klimatarbetet behöver en berättelse " +
+      "om rättvisa, inte bara om katastrof. Om omställningen uppfattas som ett hot mot " +
+      "livskvalitet kommer den att motarbetas. Om den istället ramas in som en möjlighet " +
+      "till ett bättre samhälle — renare luft, grönare städer, rättvisare fördelning — " +
+      "ökar sannolikheten för bred uppslutning.\n\n" +
+      "Paradoxen kvarstår dock. Vi vet. Vi handlar inte tillräckligt. Och varje år som går " +
+      "krymper fönstret för gradvis förändring, vilket ökar risken för att de åtgärder som " +
+      "till slut krävs blir drastiska, kostsamma och potentiellt odemokratiska. " +
+      "Den demokratiska utmaningen är således dubbel: att handla snabbt nog för att undvika " +
+      "katastrof, men långsamt nog för att bevara den demokratiska process " +
+      "som ger besluten legitimitet.",
+    questions: [
+      {
+        id: "las-gym-9-q1",
+        level: "hitta",
+        prompt: "Vilka två nobelpristagare refereras i texten?",
+        options: [
+          "Albert Einstein och Marie Curie",
+          "Daniel Kahneman och Elinor Ostrom",
+          "Greta Thunberg och Al Gore",
+          "Paul Crutzen och Mario Molina",
+        ],
+        correct: 1,
+        explanation:
+          "Texten refererar till psykologen Daniel Kahneman (nobelpris i ekonomi) och statsvetaren Elinor Ostrom (också nobelpristagare).",
+      },
+      {
+        id: "las-gym-9-q2",
+        level: "tolka",
+        prompt: "Vad menar texten med att vi behandlar klimatforskning som \"en åsikt bland andra\"?",
+        options: [
+          "Att alla har rätt att tycka vad de vill",
+          "Att naturvetenskapliga fakta felaktigt jämställs med politiska ståndpunkter, som om fysikens lagar vore förhandlingsbara",
+          "Att forskning alltid är osäker",
+          "Att klimatfrågan inte är viktig",
+        ],
+        correct: 1,
+        explanation:
+          "Texten kritiserar tendensen att behandla vetenskapliga slutsatser som åsikter. Koldioxidmolekylers egenskaper förändras inte av omröstning — det är inte en fråga om perspektiv.",
+      },
+      {
+        id: "las-gym-9-q3",
+        level: "tolka",
+        prompt: "Hur bidrar begreppet \"allmänningens tragedi\" till att förklara handlingsförlamningen?",
+        options: [
+          "Det visar att tragedier alltid inträffar",
+          "Det förklarar att varje aktör tjänar på att överutnyttja en gemensam resurs, även om alla förlorar på det kollektivt — ingen vill betala priset ensam",
+          "Det handlar om teatertragedier",
+          "Det visar att demokrati inte fungerar",
+        ],
+        correct: 1,
+        explanation:
+          "Allmänningens tragedi beskriver en strukturell fälla: individuell rationalitet leder till kollektiv katastrof. Inget land vill bära omställningskostnaden om andra inte gör detsamma.",
+      },
+      {
+        id: "las-gym-9-q4",
+        level: "reflektera",
+        prompt: "Mary Robinson argumenterar för att klimatarbetet behöver en berättelse om rättvisa. Varför är narrativets roll central?",
+        options: [
+          "Människor gillar berättelser mer än fakta",
+          "Hur vi ramar in ett problem avgör om människor ser det som hot eller möjlighet — och det påverkar handlingsvilja",
+          "Robinson vill skriva en bok",
+          "Fakta räcker alltid för att motivera handling",
+        ],
+        correct: 1,
+        explanation:
+          "Forskning visar att fakta ensamt sällan driver beteendeförändring. Om omställningen framställs som möjlighet istället för hot ökar den politiska och sociala acceptansen.",
+      },
+      {
+        id: "las-gym-9-q5",
+        level: "reflektera",
+        prompt: "Textens avslutning beskriver en \"dubbel demokratisk utmaning\". Vilken grundläggande spänning handlar det om?",
+        options: [
+          "Att demokrati är ineffektivt och borde avskaffas",
+          "Att det krävs snabb handling men att demokratiska processer tar tid — och att båda aspekterna är nödvändiga",
+          "Att klimatfrågan inte kan lösas",
+          "Att diktaturer är bättre på klimatpolitik",
+        ],
+        correct: 1,
+        explanation:
+          "Spänningen ligger i att klimathotet kräver snabba beslut, men att demokratiska processer kräver tid, debatt och legitimitet. Att offra demokratin för snabbhet kan leda till auktoritära lösningar.",
+      },
+    ],
+  },
+
+  // -----------------------------------------------------------------------
+  // 10. Naturlyrik — "Kärrets språk"
+  // -----------------------------------------------------------------------
+  {
+    id: "las-gym-10",
+    ageGroup: "gymnasiet",
+    title: "Kärrets språk",
+    passage:
+      "De som aldrig gått in i ett kärr tror att det är tyst. " +
+      "Det är det inte. Det har bara ett annat språk.\n\n" +
+      "Först hör du andningen. Marken under fötterna andas — en fuktig, mjuk utandning " +
+      "som stiger genom vitmossan varje gång du sätter ner foten. Torven rör sig under dig " +
+      "som en sömn. Du går inte på fast mark utan på tusentals års samlade växtliv, " +
+      "halvvägs mellan materia och minne.\n\n" +
+      "Sedan vattnet. Det rör sig så långsamt att det knappt syns. Mörkt, brunfärgat av " +
+      "humusämnen, med en yta som reflekterar himlen med den suddiga precision som hör " +
+      "till drömmar. I vattnet lever organismer som var gamla redan innan människan uppfann " +
+      "jordbruk: vitmossorna, som kan lagra tjugo gånger sin egen vikt i vatten och som " +
+      "i sin dödprocess skapar den syrefria miljö som bevarar allt — pollen, frön, " +
+      "ibland hela människokroppar, mumifierade av kärrets kemi.\n\n" +
+      "Det är det som gör kärret till ett arkiv. Där andra ekosystem omsätter, bryter ner " +
+      "och återvinner, bevarar kärret. En pollenanalys från ett svenskt kärr kan berätta " +
+      "vilka träd som stod i skogen för åttatusen år sedan. Den kan visa när människan " +
+      "började odla, när skogen höggs ner, när den växte tillbaka. Kärret minns " +
+      "vad vi har glömt.\n\n" +
+      "Men kärret är också sårbart. Dikade, torrlagda och uppodlade har Sveriges myrar " +
+      "minskat med en fjärdedel sedan 1800-talet. Varje torrlagt kärr släpper lös kol " +
+      "som legat bundet i årtusenden. Det som tog naturen tiotusen år att binda frigörs " +
+      "på ett decennium. Paradoxen skarps: vi förstör det arkiv vi behöver för att förstå " +
+      "vad vi förstör.\n\n" +
+      "Jag stod vid kärrets kant en septembermorgon. Dimman låg så låg att tallarna " +
+      "verkade växa ur inget. En trana ropade — det enda ljud som hördes tydligt, " +
+      "en skarp ton mot mjukheten. Sedan tystnad igen. Men inte frånvaro. " +
+      "Snarare en tystnad som var full. Som ett rum där någon nyss talat " +
+      "och orden fortfarande hänger kvar i luften.\n\n" +
+      "Kärret frågar inte efter vår uppmärksamhet. Det existerar med en tålmodighet " +
+      "som överstiger vår förmåga att förstå tid. Det enda det begär — om vi kan tillåta " +
+      "oss att läsa in en vilja i dess stumma kemi — är att lämnas i fred.",
+    questions: [
+      {
+        id: "las-gym-10-q1",
+        level: "hitta",
+        prompt: "Hur mycket vatten kan vitmossa lagra i förhållande till sin egen vikt?",
+        options: [
+          "Fem gånger",
+          "Tio gånger",
+          "Tjugo gånger",
+          "Femtio gånger",
+        ],
+        correct: 2,
+        explanation:
+          "Texten anger att vitmossor kan lagra tjugo gånger sin egen vikt i vatten.",
+      },
+      {
+        id: "las-gym-10-q2",
+        level: "tolka",
+        prompt: "Vad menar författaren med att kärret är \"ett arkiv\"?",
+        options: [
+          "Att det finns böcker begravda i kärret",
+          "Att kärrets syrefria miljö bevarar biologiskt material — pollen, frön, kroppar — som gör det möjligt att läsa tusentals års historia",
+          "Att kärret är en turistattraktion",
+          "Att man kan besöka kärr på museum",
+        ],
+        correct: 1,
+        explanation:
+          "Till skillnad från andra ekosystem som bryter ner material bevarar kärrets syrefria miljö biologiska spår. Pollenanalyser kan avslöja årtusenden av vegetationshistoria.",
+      },
+      {
+        id: "las-gym-10-q3",
+        level: "tolka",
+        prompt: "Vilken paradox formulerar texten om förstörelsen av myrar?",
+        options: [
+          "Att myrar är fula men nyttiga",
+          "Att vi förstör det arkiv som innehåller kunskapen om vad vi förstör — vi raderar historien vi behöver för att förstå våra misstag",
+          "Att myrar luktar illa men innehåller vacker natur",
+          "Att forskare studerar myrar men aldrig besöker dem",
+        ],
+        correct: 1,
+        explanation:
+          "Paradoxen är att kärret bevarar miljöhistoria som vi behöver för att förstå klimatförändringarna, men att vi förstör kärret genom samma verksamhet som orsakar förändringarna.",
+      },
+      {
+        id: "las-gym-10-q4",
+        level: "reflektera",
+        prompt: "Texten blandar naturvetenskaplig information med lyrisk prosa. Vilken effekt har denna genreblandning?",
+        options: [
+          "Den förvirrar läsaren",
+          "Den gör texten mindre trovärdig",
+          "Den skapar en dubbelhet som talar till både intellekt och känsla — fakta ger tyngd åt det poetiska och det poetiska ger liv åt fakta",
+          "Det är ett misstag av författaren",
+        ],
+        correct: 2,
+        explanation:
+          "Genreblandningen gör att läsaren engageras på flera plan. Vetenskapliga fakta om vitmossa och pollenanalys ger trovärdighet, medan den lyriska prosan skapar emotionell resonans.",
+      },
+      {
+        id: "las-gym-10-q5",
+        level: "reflektera",
+        prompt: "Textens sista mening tillskriver kärret en vilja — \"att lämnas i fred\" — men tar samtidigt avstånd från det genom parentesen \"om vi kan tillåta oss att läsa in en vilja\". Vad uttrycker denna medvetna motsägelse?",
+        options: [
+          "Att författaren inte kan bestämma sig",
+          "Att det är en retorisk strategi: personifikationen skapar empati för kärret men den intellektuella reservationen respekterar naturen som icke-mänsklig — spänningen mellan dessa hållningar är textens etiska kärna",
+          "Att kärret verkligen har en vilja",
+          "Att texten handlar om människor, inte natur",
+        ],
+        correct: 1,
+        explanation:
+          "Författaren använder personifikation medvetet men flaggar samtidigt att det är en projektion. Det skapar en etisk spänning: vi måste värna naturen utan att göra den till en spegel av oss själva.",
       },
     ],
   },
