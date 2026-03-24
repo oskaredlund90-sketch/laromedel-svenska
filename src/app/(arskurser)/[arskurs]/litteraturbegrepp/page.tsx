@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, Lightbulb } from "lucide-react";
+import { BookOpen, Lightbulb, BookText } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
@@ -512,6 +513,25 @@ export default async function LitteraturbegreppPage({ params }: Props) {
           )}
         </Section>
       </div>
+
+      {/* Cross-link to textbank */}
+      <section className="mt-10">
+        <h2 className="mb-4 text-2xl font-semibold text-neutral-900 dark:text-white">
+          Analysera riktiga texter
+        </h2>
+        <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+          Använd begreppen du lärt dig för att analysera texter i textbanken.
+          Varje text har analysfrågor som hjälper dig att identifiera litterära
+          grepp i praktiken.
+        </p>
+        <Link
+          href={`/${arskurs}/textbank`}
+          className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-900 shadow-sm transition hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
+        >
+          <BookText className="h-4 w-4" />
+          Gå till textbanken
+        </Link>
+      </section>
 
       {/* Interactive exercises */}
       {exercises.length > 0 && (

@@ -104,10 +104,77 @@ const lagstadietExercises: TalaLyssnaExercise[] = [
     explanation:
       "Att säga något snällt eller ställa en fråga visar att du har lyssnat och bryr dig. Det kallas att ge respons och gör att den som berättat känner sig glad.",
   },
+  {
+    type: "quiz",
+    id: "tl-lag-q6",
+    prompt: "Varför är det bra att titta på den du pratar med?",
+    options: [
+      "Det är inte viktigt",
+      "Det visar att du lyssnar och bryr dig",
+      "Det är ett straff",
+      "Det gör att du pratar fortare",
+    ],
+    correct: 1,
+    explanation:
+      "Ögonkontakt visar att du är intresserad av vad den andra personen säger. Det hjälper också den som pratar att känna sig trygg.",
+  },
+  {
+    type: "quiz",
+    id: "tl-lag-q7",
+    prompt: "Du ska berätta om ditt husdjur inför klassen. Vad är bäst att börja med?",
+    options: [
+      "Berätta vad husdjuret åt igår",
+      "Säga vad husdjuret heter och vad det är för djur",
+      "Visa ryggen mot klassen",
+      "Viska så tyst du kan",
+    ],
+    correct: 1,
+    explanation:
+      "Det är bra att börja med det viktigaste — vad djuret heter och vad det är. Då vet alla direkt vad du pratar om, och sedan kan du berätta mer detaljer.",
+  },
+  {
+    type: "match",
+    id: "tl-lag-m1",
+    instruction: "Para ihop vad en bra lyssnare gör med rätt beskrivning.",
+    pairs: [
+      { left: "Titta på den som pratar", right: "Visa att du lyssnar" },
+      { left: "Vänta på din tur", right: "Avbryt inte" },
+      { left: "Nicka ibland", right: "Uppmuntra den som pratar" },
+      { left: "Ställ en fråga efteråt", right: "Visa att du förstod" },
+    ],
+  },
+  {
+    type: "quiz",
+    id: "tl-lag-q8",
+    prompt: "Vad gör du om du inte förstår vad din kompis berättar?",
+    options: [
+      "Låtsas att du förstår",
+      "Går därifrån",
+      "Frågar: 'Kan du berätta mer?'",
+      "Pratar om något annat",
+    ],
+    correct: 2,
+    explanation:
+      "Det är helt okej att inte förstå allt! Att fråga visar att du är intresserad och vill förstå. Det brukar göra den andra glad.",
+  },
+  {
+    type: "quiz",
+    id: "tl-lag-q9",
+    prompt: "Vad kan hjälpa dig att komma ihåg vad du ska säga när du berättar inför klassen?",
+    options: [
+      "Läsa innantill från ett papper",
+      "Ha bilder eller saker att visa",
+      "Stå med ryggen mot klassen",
+      "Prata så fort som möjligt",
+    ],
+    correct: 1,
+    explanation:
+      "Bilder och saker hjälper dig att komma ihåg vad du vill berätta. De gör det också roligare för klassen att lyssna!",
+  },
 ];
 
 // ---------------------------------------------------------------------------
-// Data — Mellanstadiet (5 övningar)
+// Data — Mellanstadiet (10 övningar)
 // ---------------------------------------------------------------------------
 
 const mellanstadietExercises: TalaLyssnaExercise[] = [
@@ -180,6 +247,70 @@ const mellanstadietExercises: TalaLyssnaExercise[] = [
     correct: 2,
     explanation:
       "I en bra diskussion lyssnar alla på varandra och turas om att prata. Man visar respekt genom att inte avbryta och genom att vara intresserad av andras tankar.",
+  },
+  {
+    type: "match",
+    id: "tl-mel-m1",
+    instruction: "Para ihop delen av en presentation med vad den ska innehålla.",
+    pairs: [
+      { left: "Inledning", right: "Fånga intresset med en fråga eller historia" },
+      { left: "Huvuddel", right: "Berätta det viktigaste med tydliga exempel" },
+      { left: "Avslutning", right: "Sammanfatta och avsluta med en poäng" },
+      { left: "Stödord", right: "Korta påminnelser om vad du ska säga" },
+    ],
+  },
+  {
+    type: "quiz",
+    id: "tl-mel-q6",
+    prompt: "Din kompis verkar nervös innan hen ska presentera. Vad kan du göra?",
+    options: [
+      "Skratta åt hen",
+      "Säga att det inte spelar någon roll",
+      "Uppmuntra och säga att du tror på hen",
+      "Ignorera det",
+    ],
+    correct: 2,
+    explanation:
+      "Att uppmuntra en nervös kompis hjälper hen att känna sig tryggare. Nervositet är helt vanligt — nästan alla är det innan de pratar inför andra.",
+  },
+  {
+    type: "match",
+    id: "tl-mel-m2",
+    instruction: "Para ihop samtalsregeln med varför den är viktig.",
+    pairs: [
+      { left: "Räck upp handen", right: "Alla får komma till tals i ordning" },
+      { left: "Lyssna klart", right: "Visa respekt för den som pratar" },
+      { left: "Håll dig till ämnet", right: "Diskussionen blir mer fokuserad" },
+      { left: "Bygg vidare på andras idéer", right: "Samtalet blir djupare" },
+    ],
+  },
+  {
+    type: "quiz",
+    id: "tl-mel-q7",
+    prompt: "Vad menas med 'aktivt lyssnande'?",
+    options: [
+      "Att lyssna medan man gör något annat",
+      "Att verkligen fokusera på talaren, nicka och ställa frågor",
+      "Att lyssna på musik",
+      "Att vänta på sin tur att prata utan att lyssna",
+    ],
+    correct: 1,
+    explanation:
+      "Aktivt lyssnande betyder att du verkligen koncentrerar dig på den som pratar. Du visar det genom ögonkontakt, att nicka och att ställa frågor efteråt.",
+  },
+  {
+    type: "quiz",
+    id: "tl-mel-q8",
+    prompt: "Vad är 'två stjärnor och en önskan'?",
+    options: [
+      "En lek på rasten",
+      "En modell för att ge respons: två positiva saker och ett förbättringsförslag",
+      "En betygsskala",
+      "En typ av bokrecension",
+    ],
+    correct: 1,
+    explanation:
+      "Två stjärnor och en önskan är ett sätt att ge respons. Du berättar först två saker som var bra (stjärnor) och sedan en sak som kan bli ännu bättre (önskan).",
   },
 ];
 

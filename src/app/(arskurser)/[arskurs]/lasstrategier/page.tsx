@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Eye, Lightbulb, BookOpen } from "lucide-react";
+import { Eye, Lightbulb, BookOpen, BookOpenCheck } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
@@ -547,6 +548,26 @@ export default async function LasstrategierPage({ params }: Props) {
       {level === "mellanstadiet" && <MellanstadietContent />}
       {level === "hogstadiet" && <HogstadietContent />}
       {level === "gymnasiet" && <GymnasietContent />}
+
+      {/* Cross-link to läsförståelse */}
+      <Section title="Tillämpa strategierna på riktiga texter">
+        <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+          Det bästa sättet att lära sig lässtrategier är att använda dem. Testa
+          strategierna på riktiga texter i vår läsförståelsesektion.
+        </p>
+        <Link
+          href={`/${arskurs}/lasforstaelse`}
+          className="inline-flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm font-medium text-neutral-900 shadow-sm transition hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
+        >
+          <BookOpenCheck className="h-4 w-4" />
+          Gå till läsförståelseövningarna
+        </Link>
+        <Tip>
+          Prova att medvetet använda en strategi i taget medan du läser. Till
+          exempel: läs rubrikerna först och förutsäg vad texten handlar om, eller
+          stanna upp efter varje stycke och sammanfatta med egna ord.
+        </Tip>
+      </Section>
 
       {/* Exercises */}
       {exercises.length > 0 && (

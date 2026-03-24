@@ -225,7 +225,7 @@ const hogstadietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och svara på frågan.",
     textExcerpt:
       "Skogen var en katedral av grönt ljus. Stammarna reste sig som pelare mot det höga lövtaket, och tystnaden vilade tung som en filt över marken.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Vilka litterära grepp används i det här utdraget?",
     options: [
       "Bara liknelser",
@@ -243,7 +243,7 @@ const hogstadietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och svara på frågan.",
     textExcerpt:
       "Jag ville inte gå dit igen. Varje gång jag steg in genom dörren kände jag hur väggarna krympte runt mig, hur luften blev tjockare.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Vilket berättarperspektiv används?",
     options: [
       "Allvetande berättare",
@@ -261,7 +261,7 @@ const hogstadietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och svara på frågan.",
     textExcerpt:
       "Fågeln satt i sin bur och sjöng medan pojken stod vid fönstret och tittade ut mot skogen. Han hade aldrig satt sin fot utanför staketet.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Vad symboliserar fågeln i buren troligen i det här sammanhanget?",
     options: [
       "Glädje och frihet",
@@ -279,7 +279,7 @@ const hogstadietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och svara på frågan.",
     textExcerpt:
       "Du ser ju hur bra allting går, sa pappa med ett leende. Ute regnade det, bilen hade gått sönder och grannens hund hade ätit upp middagen.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Elevtext, åk 8",
     prompt: "Vilket litterärt grepp används i pappans replik?",
     options: [
       "Metafor",
@@ -297,7 +297,7 @@ const hogstadietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och svara på frågan.",
     textExcerpt:
       "Havet låg stilla den morgonen, som en spegel av grått glas. Men under ytan rörde sig strömmarna, osynliga och envisa.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Vilket tema antyds genom beskrivningen av havet?",
     options: [
       "Att naturen är vacker",
@@ -492,7 +492,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "Jag minns. Jag minns hur gatorna luktade efter regn. Jag minns hennes röst i telefonen. Jag minns att jag lovade att komma tillbaka.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Diktexempel",
     prompt: "Vilken stilfigur dominerar i det här utdraget?",
     options: [
       "Metafor",
@@ -510,7 +510,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "Hon stod vid grinden med en kopp kaffe i handen och tittade ut över åkrarna. Erik visste inte att hon redan hade bestämt sig. Han trodde fortfarande att allting kunde bli som förut.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Romanutdrag (bearbetat för undervisning)",
     prompt: "Vilken typ av fokalisering används här?",
     options: [
       "Intern fokalisering genom Eriks medvetande",
@@ -528,7 +528,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "Djuren på gården bestämde att alla var lika. Men snart märkte de att grisarna fick äta vid ett eget bord, sova i mjuka sängar och fatta alla beslut utan att fråga de andra.",
-    textSource: "Pedagogiskt exempel (i stil med Orwell)",
+    textSource: "Fabelutdrag (bearbetat)",
     prompt: "Vilket litterärt grepp dominerar i berättelsen?",
     options: [
       "Liknelse",
@@ -546,7 +546,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "Den nye chefen log mot alla, delade ut löften som karameller och talade om transparens. Det var som att se en Caesargestalt kliva in på kontoret.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Krönika (bearbetat utdrag)",
     prompt: "Vilket litterärt grepp används i den sista meningen?",
     options: [
       "Anafor",
@@ -564,7 +564,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "Han gick längs floden utan att veta vart den ledde. Vattnet var brunt och trött, som han själv. Ibland stannade han och lyssnade på strömmen, som om den hade ett svar att ge.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Hur fungerar floden i det här utdraget?",
     options: [
       "Som en ren landskapsbeskrivning utan djupare mening",
@@ -582,7 +582,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "Sara satt i klassrummet och stirrade ut genom fönstret. Utanför flög en falk i stora cirklar över fältet. Hon undrade hur det skulle vara att bara kunna lyfta och försvinna.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Vilken typ av fokalisering används i utdraget?",
     options: [
       "Extern fokalisering — vi ser bara vad som sker utifrån",
@@ -600,7 +600,7 @@ const gymnasietExercises: LittBegreppExercise[] = [
     instruction: "Läs textutdraget och identifiera det litterära greppet.",
     textExcerpt:
       "De möttes i en trädgård full av äppelträd. Han räckte henne ett äpple och sa att det var det bästa han kunde erbjuda. Hon tog det, bet i det och log — men kände en bitter smak.",
-    textSource: "Pedagogiskt exempel",
+    textSource: "Novellutdrag (bearbetat)",
     prompt: "Vilka litterära grepp samverkar i utdraget?",
     options: [
       "Anafor och metafor",

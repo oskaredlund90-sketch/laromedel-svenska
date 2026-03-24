@@ -47,7 +47,7 @@ export interface NordiskaSprakExerciseSet {
 }
 
 // ---------------------------------------------------------------------------
-// Data — Högstadiet (14 övningar)
+// Data — Högstadiet (20 övningar)
 // ---------------------------------------------------------------------------
 
 const hogstadietExercises: NordiskaSprakExercise[] = [
@@ -286,6 +286,132 @@ const hogstadietExercises: NordiskaSprakExercise[] = [
         correct: 2,
         explanation:
           "'Livet var hardt, men at de alltid hadde det gøy sammen' betyder att livet var hårt men att de alltid hade roligt tillsammans. 'Gøy' är norskt för 'kul/roligt'.",
+      },
+    ],
+  },
+  // --- Additional Quiz about minority languages (2) ---
+  {
+    type: "quiz",
+    id: "ns-hog-q7",
+    prompt: "Vilket av de nationella minoritetsspråken är ett germanskt språk med hebreiska och slaviska inslag?",
+    options: ["Meänkieli", "Romani chib", "Jiddisch", "Samiska"],
+    correct: 2,
+    explanation:
+      "Jiddisch är ett germanskt språk som uppstod bland judar i Centraleuropa under medeltiden. Det har en grund av medelhögtyska men innehåller betydande inslag av hebreiska, arameiska och slaviska språk.",
+  },
+  {
+    type: "quiz",
+    id: "ns-hog-q8",
+    prompt: "Vad är meänkieli och hur förhåller det sig till finska?",
+    options: [
+      "Det är ett helt orelaterat språk",
+      "Det är en varietet av finska som talats i Tornedalen och som erkändes som eget språk år 2000",
+      "Det är det samiska ordet för finska",
+      "Det är en dialekt av romani chib",
+    ],
+    correct: 1,
+    explanation:
+      "Meänkieli ('vårt språk') är en finsk varietet som talats i Tornedalen i hundratals år. Det skiljer sig från riksfinska genom egna ordformer och lånord från svenska. År 2000 erkändes det som ett eget nationellt minoritetsspråk.",
+  },
+  // --- Additional Match exercises (2) ---
+  {
+    type: "match",
+    id: "ns-hog-m5",
+    instruction: "Para ihop minoritetsspråket med den geografiska region där det traditionellt har flest talare.",
+    pairs: [
+      { left: "Samiska", right: "Fjällområden i Norrbotten och Västerbotten" },
+      { left: "Meänkieli", right: "Tornedalen vid finska gränsen" },
+      { left: "Romani chib", right: "Spritt över hela Sverige, ingen specifik region" },
+      { left: "Finska", right: "Tornedalen, Stockholm och Mälardalen" },
+    ],
+  },
+  {
+    type: "match",
+    id: "ns-hog-m6",
+    instruction: "Para ihop det svenska ordet med dess danska och norska motsvarighet.",
+    pairs: [
+      { left: "sjukhus", right: "sygehus (da) / sykehus (no)" },
+      { left: "glass", right: "is (da) / iskrem (no)" },
+      { left: "morgonmål", right: "morgenmad (da) / frokost (no)" },
+      { left: "mysig", right: "hyggelig (da) / koselig (no)" },
+    ],
+  },
+  // --- Additional Reading comprehension (2) ---
+  {
+    type: "reading-comprehension",
+    id: "ns-hog-rc5",
+    instruction: "Läs den norska texten om skolelivet och svara på frågorna.",
+    language: "norska",
+    text: "På skolen vår har vi et prosjekt som heter «Språkvenner». Elevene i tiende klasse hjelper yngre elever med leksene sine. Læreren vår sier at vi lærer best når vi forklarer ting til andre. Hver onsdag møtes vi i biblioteket etter skoletid. Det er gøy å jobbe sammen, og mange av de yngre elevene sier at de forstår fagene bedre nå.",
+    questions: [
+      {
+        prompt: "Vad handlar projektet 'Språkvenner' om?",
+        options: [
+          "Elever lär sig främmande språk",
+          "Äldre elever hjälper yngre elever med läxorna",
+          "Elever skriver brev till vänner i andra länder",
+          "Lärare undervisar extra på kvällarna",
+        ],
+        correct: 1,
+        explanation:
+          "'Elevene i tiende klasse hjelper yngre elever med leksene sine' betyder att elever i tionde klass hjälper yngre elever med sina läxor. 'Leksene' är norskt för 'läxorna'.",
+      },
+      {
+        prompt: "När och var träffas eleverna?",
+        options: [
+          "Varje måndag i klassrummet",
+          "Varje onsdag i biblioteket efter skoltid",
+          "Varje fredag i matsalen",
+          "Varje dag före skolan",
+        ],
+        correct: 1,
+        explanation:
+          "'Hver onsdag møtes vi i biblioteket etter skoletid' betyder 'varje onsdag träffas vi i biblioteket efter skoltid'. 'Etter' är norskt för 'efter'.",
+      },
+      {
+        prompt: "Vad säger läraren om att lära sig saker?",
+        options: [
+          "Att man lär sig bäst genom prov",
+          "Att man lär sig bäst när man förklarar för andra",
+          "Att man bör läsa mer hemma",
+          "Att man lär sig bäst ensam",
+        ],
+        correct: 1,
+        explanation:
+          "'Vi lærer best når vi forklarer ting til andre' betyder 'vi lär oss bäst när vi förklarar saker för andra'. 'Forklarer' är norskt för 'förklarar'.",
+      },
+    ],
+  },
+  {
+    type: "reading-comprehension",
+    id: "ns-hog-rc6",
+    instruction: "Läs den danska texten om naturen och svara på frågorna.",
+    language: "danska",
+    text: "Danmark er et fladt land med mange øer. Den største ø er Sjælland, hvor hovedstaden København ligger. Langs kysten kan man finde smukke sandstrande og klitter. Om foråret blomstrer markerne med gule rapsblomster. Mange danskere holder af at gå ture i naturen og samle svampe om efteråret.",
+    questions: [
+      {
+        prompt: "Hur beskrivs Danmarks landskap i texten?",
+        options: [
+          "Bergigt med djupa dalar",
+          "Platt med många öar",
+          "Skogigt med stora sjöar",
+          "Öken med lite vegetation",
+        ],
+        correct: 1,
+        explanation:
+          "'Et fladt land med mange øer' betyder 'ett platt land med många öar'. 'Fladt' är danska för 'platt' och 'øer' för 'öar'.",
+      },
+      {
+        prompt: "Vad gör många danskar gärna på hösten?",
+        options: [
+          "Badar i havet",
+          "Går på tur i naturen och plockar svamp",
+          "Åker skidor i bergen",
+          "Planterar blommor i trädgården",
+        ],
+        correct: 1,
+        explanation:
+          "'Gå ture i naturen og samle svampe om efteråret' betyder 'gå på tur i naturen och plocka svamp på hösten'. 'Efteråret' är danska för 'hösten'.",
       },
     ],
   },
