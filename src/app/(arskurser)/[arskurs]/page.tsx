@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
+import { Gauge,
   BookOpen,
   GraduationCap,
   Users,
@@ -85,6 +85,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       defaultOpen: true,
       sections: [
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Interaktiva läsförståelseövningar med direkt feedback", icon: BookOpenCheck },
+        { slug: "lastraning", title: "Lästräning", description: "Testa läsförståelse och läshastighet, och följ en läsplan", icon: Gauge },
         { slug: "textbank", title: "Textbank", description: "Korta exempeltexter att läsa och diskutera i klassen", icon: BookText },
         { slug: "lasstrategier", title: "Lässtrategier", description: "Lär dig förutsäga, visualisera och sammanfatta", icon: Eye },
         { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordövningar för åk 1–3", icon: MessageSquareText },
@@ -134,6 +135,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       defaultOpen: true,
       sections: [
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs texter och svara på frågor med direkt feedback", icon: BookOpenCheck },
+        { slug: "lastraning", title: "Lästräning", description: "Testa läsförståelse och läshastighet, och följ en läsplan", icon: Gauge },
         { slug: "textbank", title: "Textbank", description: "Exempeltexter i olika genrer med analysfrågor", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "En första introduktion till svenska författare och epoker", icon: Library },
         { slug: "lasstrategier", title: "Lässtrategier", description: "Fem strategier för bättre läsförståelse", icon: Eye },
@@ -186,6 +188,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       defaultOpen: true,
       sections: [
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs och analysera texter med fördjupande frågor", icon: BookOpenCheck },
+        { slug: "lastraning", title: "Lästräning", description: "Testa läsförståelse och läshastighet, och följ en läsplan", icon: Gauge },
         { slug: "textbank", title: "Textbank", description: "Modelltexter i alla genrer med fördjupande analysfrågor", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Svenska litteraturens epoker från medeltid till nutid", icon: Library },
         { slug: "litteraturbegrepp", title: "Litteraturbegrepp", description: "Metafor, symbol, ironi och andra litterära analysverktyg", icon: BookMarked },
@@ -241,6 +244,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       defaultOpen: true,
       sections: [
         { slug: "lasforstaelse", title: "Läsförståelse", description: "Läs, analysera och värdera texter på avancerad nivå", icon: BookOpenCheck },
+        { slug: "lastraning", title: "Lästräning", description: "Testa läsförståelse och läshastighet, och följ en läsplan", icon: Gauge },
         { slug: "textbank", title: "Textbank", description: "Kvalificerade exempeltexter med fördjupande analys", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "Fördjupning i litteraturhistoria från antiken till samtiden", icon: Library },
         { slug: "litteraturbegrepp", title: "Litteraturbegrepp", description: "Analys med fokalisering, intertextualitet, allegori och avancerade begrepp", icon: BookMarked },
