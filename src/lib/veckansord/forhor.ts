@@ -3,7 +3,7 @@
  * samma vecka alltid ger samma förhör (och samma facit).
  */
 
-import { arskursNamn, grundord, type Arskursord, type Ord, type Vecka } from "./typer";
+import { KATEGORIER, arskursNamn, grundord, type Arskursord, type Kategori, type Ord, type Vecka } from "./typer";
 
 /** Blandar en lista på ett förutsägbart sätt utifrån ett frö. */
 export function blanda<T>(lista: T[], fro: number): T[] {
@@ -54,38 +54,54 @@ export function lucka(o: Ord): { fore: string; svar: string; efter: string } | n
 }
 
 export interface Forhor {
-  /** Koppla ord (A, B, …) till förklaringar (1, 2, …). */
+  /** Koppla ord (A, B, …) till förklaringar (1, 2, …). Veckans temaord. */
   koppla: { ord: string[]; forklaringar: string[]; facit: string[] };
+  /** Lucktext med ämnesorden och några temaord. */
   luckor: { fore: string; efter: string; svar: string }[];
   /** Ord att skriva en egen mening med. */
   egnaMeningar: string[];
+  /** Stavningsord som läraren läser upp (diktamen). */
+  diktamen: string[];
 }
 
 export function skapaForhor(v: Vecka): Forhor {
-  const ordlista = v.ord;
-  const forklaringar = blanda(ordlista, v.nummer);
+  const tema = v.ord.filter((o) => o.kategori === "tema");
+  const amne = v.ord.filter((o) => o.kategori === "amne");
+  const stavning = v.ord.filter((o) => o.kategori === "stavning");
+  const kopplaOrd = tema.length ? tema : v.ord;
+  const forklaringar = blanda(kopplaOrd, v.nummer);
   const bokstav = (i: number) => String.fromCharCode(65 + i);
+  const luckOrd = amne.length ? [...amne, ...blanda(tema, v.nummer + 3).slice(0, 2)] : v.ord;
   return {
     koppla: {
-      ord: ordlista.map((o) => o.ord),
+      ord: kopplaOrd.map((o) => o.ord),
       forklaringar: forklaringar.map((o) => o.forklaring),
       // Facit: för varje förklaring (1, 2 …) vilken bokstav som hör ihop.
-      facit: forklaringar.map((o) => bokstav(ordlista.indexOf(o))),
+      facit: forklaringar.map((o) => bokstav(kopplaOrd.indexOf(o))),
     },
-    luckor: blanda(ordlista, v.nummer + 7)
+    luckor: blanda(luckOrd, v.nummer + 7)
       .map(lucka)
       .filter((x): x is NonNullable<typeof x> => x !== null),
-    egnaMeningar: blanda(ordlista, v.nummer + 13)
-      .slice(0, Math.min(2, ordlista.length))
+    egnaMeningar: blanda(kopplaOrd, v.nummer + 13)
+      .slice(0, Math.min(2, kopplaOrd.length))
       .map((o) => o.ord),
+    diktamen: stavning.map((o) => o.ord),
   };
 }
 
 /** Text att klistra in i Classroom, mejl eller veckobrev. */
 export function classroomText(a: Arskursord, v: Vecka, kalendervecka?: number): string {
   const rubrik = `Veckans ord – ${arskursNamn(a.arskurs)}, ${kalendervecka ? `vecka ${kalendervecka}` : `läsårsvecka ${v.nummer}`} (${v.tema})`;
-  const ord = v.ord.map((o) => `• ${o.ord} (${o.ordklass}) – ${o.forklaring}\n  Exempel: ${o.exempel}`).join("\n\n");
-  return `${rubrik}\n\n${ord}\n\nUppgift: Skriv en egen mening med varje ord. Lycka till!`;
+  const grupper = (Object.keys(KATEGORIER) as Kategori[])
+    .map((k) => {
+      const ord = v.ord.filter((o) => o.kategori === k);
+      if (!ord.length) return "";
+      const rader = ord.map((o) => `• ${o.ord} (${o.ordklass}) – ${o.forklaring}\n  Exempel: ${o.exempel}`).join("\n\n");
+      return `${KATEGORIER[k].namn.toUpperCase()}\n${rader}`;
+    })
+    .filter(Boolean)
+    .join("\n\n");
+  return `${rubrik}\n\n${grupper}\n\nUppgift: Skriv en egen mening med varje ord. Lycka till!`;
 }
 
 function csvCell(s: string): string {
@@ -94,8 +110,9 @@ function csvCell(s: string): string {
 
 /** CSV för kalkylark: vecka, tema, ord, ordklass, förklaring, exempel. */
 export function csv(a: Arskursord, veckor: Vecka[] = a.veckor): string {
-  const rader = [["Läsårsvecka", "Tema", "Ord", "Ordklass", "Förklaring", "Exempel"]];
-  for (const v of veckor) for (const o of v.ord) rader.push([String(v.nummer), v.tema, o.ord, o.ordklass, o.forklaring, o.exempel]);
+  const rader = [["Läsårsvecka", "Tema", "Kategori", "Ord", "Ordklass", "Förklaring", "Exempel"]];
+  for (const v of veckor)
+    for (const o of v.ord) rader.push([String(v.nummer), v.tema, KATEGORIER[o.kategori].namn, o.ord, o.ordklass, o.forklaring, o.exempel]);
   return "﻿" + rader.map((r) => r.map(csvCell).join(",")).join("\n") + "\n";
 }
 

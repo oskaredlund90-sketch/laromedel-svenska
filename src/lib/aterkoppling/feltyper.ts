@@ -34,11 +34,11 @@ const FRAN_HOG: AgeGroup[] = ["hogstadiet", "gymnasiet"];
 const G = {
   ordklasser: { sokvag: "grammatik/ordklasser", titel: "Grammatik: Ordklasser", stadier: ALLA },
   skiljetecken: { sokvag: "grammatik/skiljetecken", titel: "Grammatik: Skiljetecken", stadier: ALLA },
-  meningsbyggnad: { sokvag: "grammatik/meningsbyggnad", titel: "Grammatik: Meningsbyggnad", stadier: FRAN_MEL },
-  stavning: { sokvag: "grammatik/stavning", titel: "Grammatik: Stavning", stadier: FRAN_MEL },
-  ordbildning: { sokvag: "grammatik/ordbildning", titel: "Grammatik: Ordbildning", stadier: FRAN_HOG },
-  textbindning: { sokvag: "grammatik/textbindning", titel: "Grammatik: Textbindning", stadier: FRAN_HOG },
-  stilistik: { sokvag: "grammatik/stilistik", titel: "Grammatik: Stilistik", stadier: ["gymnasiet"] as AgeGroup[] },
+  meningsbyggnad: { sokvag: "grammatik/meningsbyggnad", titel: "Grammatik: Meningsbyggnad", stadier: ALLA },
+  stavning: { sokvag: "grammatik/stavning", titel: "Grammatik: Stavning", stadier: ALLA },
+  ordbildning: { sokvag: "grammatik/ordbildning", titel: "Grammatik: Ordbildning", stadier: FRAN_MEL },
+  textbindning: { sokvag: "grammatik/textbindning", titel: "Grammatik: Textbindning", stadier: FRAN_MEL },
+  stilistik: { sokvag: "grammatik/stilistik", titel: "Grammatik: Stilistik", stadier: FRAN_HOG },
 } satisfies Record<string, Ovningslank>;
 
 const S = {
@@ -113,6 +113,27 @@ export const FELTYPER: Feltyp[] = [
     ovningar: [G.ordklasser],
   },
   {
+    id: "grammatik.verbform",
+    omrade: "sprak",
+    etikett: "Verbform",
+    elevtips: "Efter att står verbet i grundform (att bli). I nutid slutar verbet oftast på -r (gäller, betyder).",
+    ovningar: [G.ordklasser],
+  },
+  {
+    id: "grammatik.kongruens",
+    omrade: "sprak",
+    etikett: "Ord som ska passa ihop",
+    elevtips: "Adjektivet ska passa ihop med det det beskriver: de var tvungna, ett stort hus, det går riktigt bra.",
+    ovningar: [G.ordklasser],
+  },
+  {
+    id: "grammatik.subjekt-verb",
+    omrade: "sprak",
+    etikett: "Subjekt och verb",
+    elevtips: "Varje mening behöver någon som gör något (subjekt) och vad den gör (verb): Vi vill ha …",
+    ovningar: [G.meningsbyggnad],
+  },
+  {
     id: "grammatik.tempus",
     omrade: "sprak",
     etikett: "Tempus (tid)",
@@ -162,6 +183,13 @@ export const FELTYPER: Feltyp[] = [
     etikett: "Upprepningar",
     elevtips: "Om samma ord eller meningsbörjan kommer ofta – variera!",
     ovningar: [S.meningsvariation],
+  },
+  {
+    id: "ordval.perspektiv",
+    omrade: "sprak",
+    etikett: "Samma perspektiv",
+    elevtips: "Bestäm dig för man, du eller jag – och håll fast vid det i hela meningen och helst hela texten.",
+    ovningar: [G.stilistik, S.meningsvariation],
   },
   {
     id: "ordval.stilniva",

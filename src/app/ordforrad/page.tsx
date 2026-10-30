@@ -10,9 +10,10 @@ export const metadata: Metadata = {
 };
 
 /** Ett urval ord per årskurs (fast urval, så att sidan blir liten). */
-function ordbank(perArskurs = 48): Testord[] {
+function ordbank(perArskurs = 80): Testord[] {
   return ARSKURSORD.flatMap((a) => {
-    const alla = a.veckor.flatMap((v) => v.ord);
+    // Stavningsord är vanliga vardagsord och säger lite om ordförrådet.
+    const alla = a.veckor.flatMap((v) => v.ord).filter((o) => o.kategori !== "stavning");
     const steg = Math.max(1, Math.floor(alla.length / perArskurs));
     return alla
       .filter((_, i) => i % steg === 0)
@@ -30,7 +31,7 @@ export default function OrdforradPage() {
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">Ordförrådstest</h1>
         <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
-          Hur många ord kan du? Du får 25 ord ett i taget. Välj den förklaring som stämmer. Svarar du rätt blir orden svårare, svarar du
+          Hur många ord kan du? Du får 50 ord ett i taget. Välj den förklaring som stämmer. Svarar du rätt blir orden svårare, svarar du
           fel blir de lättare. Ingen inloggning – och inget sparas.
         </p>
       </div>

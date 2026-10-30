@@ -8,7 +8,7 @@ import { VeckansOrd } from "@/components/veckans-ord";
 import { ThemeWordBrowser } from "@/components/theme-word-browser";
 import { VocabularyQuiz } from "@/components/vocabulary-quiz";
 import type { AgeGroup } from "@/lib/supabase/types";
-import { getWordsWithFallback, getThemesWithFallback } from "@/lib/supabase/words";
+import { getWordsWithFallback, getAllThemes } from "@/lib/supabase/words";
 
 /* ------------------------------------------------------------------ */
 /*  Helper components                                                  */
@@ -198,7 +198,7 @@ export default async function OrdkunskapPage({ params }: Props) {
   // Fetch words and themes (Supabase-first, local fallback)
   const [allWords, themes] = await Promise.all([
     getWordsWithFallback(level),
-    getThemesWithFallback(level),
+    getAllThemes(level),
   ]);
 
   const tips =

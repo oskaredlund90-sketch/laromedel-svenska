@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Copy, Maximize2, Printer, RotateCcw, X } fro
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { arskursNamn, arskursSlug, type Vecka } from "@/lib/veckansord/typer";
+import { KATEGORIER, arskursNamn, arskursSlug, type Kategori, type Vecka } from "@/lib/veckansord/typer";
 import { blanda, classroomText, skapaForhor } from "@/lib/veckansord/forhor";
 import { skolveckor } from "@/lib/veckansord/lasar";
 import { useLasarsinstallning } from "@/lib/veckansord/installning";
@@ -119,10 +119,32 @@ export function Veckovy({ arskurs, vecka, antalVeckor }: { arskurs: number; veck
   );
 }
 
+/** Veckans ord i kategorier (tema, ämnesord, stavningsord). */
+function grupper(vecka: Vecka) {
+  return (Object.keys(KATEGORIER) as Kategori[])
+    .map((k) => ({ kategori: k, namn: KATEGORIER[k].namn, ord: vecka.ord.filter((o) => o.kategori === k) }))
+    .filter((g) => g.ord.length > 0);
+}
+
 function Ordkort({ vecka }: { vecka: Vecka }) {
   return (
+    <div className="space-y-8">
+      {grupper(vecka).map((g) => (
+        <section key={g.kategori}>
+          <h2 className="mb-3 text-lg font-semibold text-neutral-900 dark:text-white">
+            {g.namn} <span className="text-sm font-normal text-neutral-500">({g.ord.length})</span>
+          </h2>
+          <OrdkortGrupp ord={g.ord} />
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function OrdkortGrupp({ ord }: { ord: Vecka["ord"] }) {
+  return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {vecka.ord.map((o) => (
+      {ord.map((o) => (
         <Card key={o.ord}>
           <CardContent className="space-y-2 p-5">
             <p className="text-xl font-bold text-neutral-900 dark:text-white">{o.ord}</p>
@@ -151,7 +173,7 @@ function Ova({ vecka }: { vecka: Vecka }) {
           <CardContent className="p-5">
             <p className="mb-3 text-neutral-900 dark:text-white">{o.forklaring}</p>
             <div className="flex flex-wrap gap-2">
-              {vecka.ord.map((alt) => {
+              {vecka.ord.filter((alt) => alt.kategori === o.kategori).map((alt) => {
                 const vald = svar[i] === alt.ord;
                 const besvarad = svar[i] !== undefined;
                 return (
@@ -205,6 +227,7 @@ function ForhorVy({ vecka, skrivUt }: { vecka: Vecka; skrivUt: (u: Utskrift) => 
           <li>Koppla ihop orden med rätt förklaring ({f.koppla.ord.length} uppgifter).</li>
           <li>Skriv in rätt ord i meningarna ({f.luckor.length} uppgifter).</li>
           <li>Skriv en egen mening med {f.egnaMeningar.join(" och ")}.</li>
+          {f.diktamen.length > 0 && <li>Diktamen: skriv stavningsorden som läraren läser upp ({f.diktamen.length} ord).</li>}
         </ol>
         <div className="flex gap-2">
           <Button onClick={() => skrivUt("forhor")}>
@@ -214,7 +237,7 @@ function ForhorVy({ vecka, skrivUt }: { vecka: Vecka; skrivUt: (u: Utskrift) => 
             <Printer className="h-4 w-4" /> Med facit
           </Button>
         </div>
-        <p className="text-sm text-neutral-500">Bedömning: 1 poäng per rätt i del 1 och 2. Del 3: 2 poäng per mening om ordet används rätt och meningen visar att eleven förstår ordet.</p>
+        <p className="text-sm text-neutral-500">Bedömning: 1 poäng per rätt i del 1, 2 och 4. Del 3: 2 poäng per mening om ordet används rätt och meningen visar att eleven förstår ordet.</p>
       </CardContent>
     </Card>
   );
@@ -255,15 +278,20 @@ function Tavla({ vecka, rubrik, stang }: { vecka: Vecka; rubrik: string; stang: 
       </button>
       <p className="text-lg text-neutral-500">{rubrik}</p>
       <h1 className="mb-10 text-5xl font-bold">{vecka.tema}</h1>
-      <div className="grid gap-10 lg:grid-cols-2">
-        {vecka.ord.map((o) => (
-          <div key={o.ord}>
-            <p className="text-4xl font-bold sm:text-5xl">{o.ord}</p>
-            <p className="mt-2 text-2xl">{o.forklaring}</p>
-            <p className="mt-2 text-xl italic text-neutral-500">{o.exempel}</p>
+      {grupper(vecka).map((g) => (
+        <section key={g.kategori} className="mb-12">
+          <p className="mb-4 text-lg font-semibold uppercase tracking-wide text-neutral-500">{g.namn}</p>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {g.ord.map((o) => (
+              <div key={o.ord}>
+                <p className="text-4xl font-bold">{o.ord}</p>
+                <p className="mt-2 text-2xl">{o.forklaring}</p>
+                <p className="mt-1 text-xl italic text-neutral-500">{o.exempel}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </section>
+      ))}
     </div>
   );
 }
@@ -317,16 +345,22 @@ function Utskriftsvy({
       {utskrift === "veckoblad" && (
         <>
           {huvud(`Veckans ord: ${vecka.tema}`)}
-          <ul className="mb-5 space-y-2">
-            {vecka.ord.map((o) => (
-              <li key={o.ord}>
-                <b>{o.ord}</b> <span className="text-[9pt]">({o.ordklass})</span> – {o.forklaring}
-                <br />
-                <i>{o.exempel}</i>
-              </li>
-            ))}
-          </ul>
-          {mall(vecka.ord)}
+          {grupper(vecka).map((g) => (
+            <section key={g.kategori} className="mb-3">
+              <h2 className="text-[11pt] font-bold">{g.namn}</h2>
+              <ul className="space-y-1">
+                {g.ord.map((o) => (
+                  <li key={o.ord}>
+                    <b>{o.ord}</b> <span className="text-[9pt]">({o.ordklass})</span> – {o.forklaring} <i>{o.exempel}</i>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+          <div className="break-before-page">
+            {huvud("Mina ord")}
+            {mall(vecka.ord.filter((o) => o.kategori === "tema"))}
+          </div>
         </>
       )}
 
@@ -369,7 +403,19 @@ function Utskriftsvy({
               <p className="mt-6 border-b border-black" />
             </div>
           ))}
-          <p className="mt-6 text-[9pt]">Poäng: ____ / {forhor.koppla.ord.length + forhor.luckor.length + forhor.egnaMeningar.length * 2}</p>
+          {forhor.diktamen.length > 0 && (
+            <>
+              <h2 className="mt-5 font-bold">Del 4. Diktamen. Skriv orden som läraren läser upp.</h2>
+              <ol className="mt-2 grid list-decimal grid-cols-2 gap-x-8 gap-y-4 pl-6">
+                {forhor.diktamen.map((o) => (
+                  <li key={o} className="border-b border-black">&nbsp;</li>
+                ))}
+              </ol>
+            </>
+          )}
+          <p className="mt-6 text-[9pt]">
+            Poäng: ____ / {forhor.koppla.ord.length + forhor.luckor.length + forhor.egnaMeningar.length * 2 + forhor.diktamen.length}
+          </p>
 
           {utskrift === "facit" && (
             <div className="break-before-page">
@@ -382,6 +428,16 @@ function Utskriftsvy({
                   <li key={l.svar + l.fore}>{l.svar}</li>
                 ))}
               </ol>
+              {forhor.diktamen.length > 0 && (
+                <>
+                  <p className="mt-2 font-bold">Del 4 – läs upp i den här ordningen</p>
+                  <ol className="list-decimal pl-6">
+                    {forhor.diktamen.map((o) => (
+                      <li key={o}>{o}</li>
+                    ))}
+                  </ol>
+                </>
+              )}
               <p className="mt-2 font-bold">Del 3</p>
               <p>2 poäng per mening: ordet används rätt och meningen visar att eleven förstår betydelsen. 1 poäng om ordet används men meningen är oklar.</p>
             </div>

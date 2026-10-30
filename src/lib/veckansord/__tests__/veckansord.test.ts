@@ -39,10 +39,10 @@ const VECKA: Vecka = {
   nummer: 3,
   tema: "Känslor",
   ord: [
-    { ord: "en förväntan", ordklass: "substantiv", forklaring: "Det man hoppas ska hända.", exempel: "Det fanns en stor förväntan i klassen." },
-    { ord: "jämföra", ordklass: "verb", forklaring: "Se likheter och skillnader.", exempel: "Vi jämförde två böcker." },
-    { ord: "ta ställning", ordklass: "uttryck", forklaring: "Bestämma vad man tycker.", exempel: "Du måste ta ställning i frågan." },
-    { ord: "nyfiken", ordklass: "adjektiv", forklaring: "Vill veta mer.", exempel: "Hon var nyfiken på lådan." },
+    { ord: "en förväntan", ordklass: "substantiv", forklaring: "Det man hoppas ska hända.", exempel: "Det fanns en stor förväntan i klassen.", kategori: "tema" },
+    { ord: "jämföra", ordklass: "verb", forklaring: "Se likheter och skillnader.", exempel: "Vi jämförde två böcker.", kategori: "amne" },
+    { ord: "ta ställning", ordklass: "uttryck", forklaring: "Bestämma vad man tycker.", exempel: "Du måste ta ställning i frågan.", kategori: "tema" },
+    { ord: "nyfiken", ordklass: "adjektiv", forklaring: "Vill veta mer.", exempel: "Hon var nyfiken på lådan.", kategori: "stavning" },
   ],
 };
 
@@ -56,11 +56,14 @@ describe("förhör", () => {
     const f = skapaForhor(VECKA);
     f.koppla.forklaringar.forEach((fk, i) => {
       const ord = VECKA.ord.find((o) => o.forklaring === fk)!;
-      expect(f.koppla.facit[i]).toBe(String.fromCharCode(65 + VECKA.ord.indexOf(ord)));
+      expect(f.koppla.facit[i]).toBe(String.fromCharCode(65 + f.koppla.ord.indexOf(ord.ord)));
     });
     expect(skapaForhor(VECKA)).toEqual(f);
-    expect(f.luckor).toHaveLength(4);
+    // Koppla: temaorden. Lucktext: ämnesordet + upp till två temaord. Diktamen: stavningsorden.
+    expect(f.koppla.ord).toEqual(["en förväntan", "ta ställning"]);
+    expect(f.luckor).toHaveLength(3);
     expect(f.egnaMeningar).toHaveLength(2);
+    expect(f.diktamen).toEqual(["nyfiken"]);
   });
 
   it("blandar alltid om ordningen", () => {

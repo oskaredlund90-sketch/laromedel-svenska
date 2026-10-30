@@ -7,6 +7,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { type ReactNode } from "react";
 import { GrammatikOvningar, type GrammarTopic } from "@/components/grammatik-ovningar";
+import { AMNEN_PER_STADIUM } from "@/lib/grammatik/amnen";
 
 /* ------------------------------------------------------------------ */
 /*  Helper components                                                  */
@@ -881,27 +882,7 @@ const TOPICS: Record<
 /*  Level-based topic filtering                                        */
 /* ------------------------------------------------------------------ */
 
-const TOPICS_BY_LEVEL: Record<AgeGroup, string[]> = {
-  lagstadiet: ["ordklasser", "skiljetecken"],
-  mellanstadiet: ["ordklasser", "skiljetecken", "meningsbyggnad", "stavning"],
-  hogstadiet: [
-    "ordklasser",
-    "meningsbyggnad",
-    "skiljetecken",
-    "stavning",
-    "ordbildning",
-    "textbindning",
-  ],
-  gymnasiet: [
-    "ordklasser",
-    "meningsbyggnad",
-    "skiljetecken",
-    "stavning",
-    "ordbildning",
-    "textbindning",
-    "stilistik",
-  ],
-};
+const TOPICS_BY_LEVEL = AMNEN_PER_STADIUM as Record<AgeGroup, string[]>;
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */

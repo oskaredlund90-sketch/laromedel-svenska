@@ -116,6 +116,12 @@ export default async function HomePage() {
             Hur kan jag bli bättre på svenska?
           </Link>
           <Link
+            href="/varfor-svenska"
+            className="rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+          >
+            Varför behöver jag bli bättre på svenska?
+          </Link>
+          <Link
             href="/ordforrad"
             className="rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
           >

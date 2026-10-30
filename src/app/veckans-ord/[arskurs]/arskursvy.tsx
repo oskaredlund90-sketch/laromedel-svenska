@@ -120,7 +120,10 @@ export function Arskursvy({ data }: { data: Arskursord }) {
                   <span>{sv ? `v. ${sv.kalendervecka}` : ""}{v.nummer === aktuell ? " · denna vecka" : ""}</span>
                 </div>
                 <p className="font-semibold text-neutral-900 dark:text-white">{v.tema}</p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">{v.ord.map((o) => o.ord).join(" · ")}</p>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  {v.ord.filter((o) => o.kategori === "tema").map((o) => o.ord).join(" · ")}
+                  {v.ord.length > 7 && <span className="text-neutral-400"> + {v.ord.length - v.ord.filter((o) => o.kategori === "tema").length} ord</span>}
+                </p>
               </Link>
             );
           })}

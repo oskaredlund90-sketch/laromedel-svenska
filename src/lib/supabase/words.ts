@@ -1,3 +1,4 @@
+import { ARSKURSORD } from "@/lib/veckansord";
 import { supabase } from "./client";
 import type { AgeGroup, WordRow } from "./types";
 import { VECKANS_ORD, type VeckansOrdEntry } from "@/lib/data/veckans-ord";
@@ -76,24 +77,62 @@ function localEntryToWordRow(entry: VeckansOrdEntry, index: number): WordRow {
   };
 }
 
-/** Get words with Supabase-first, local fallback */
+const ARSKURSER: Record<AgeGroup, number[]> = {
+  lagstadiet: [1, 2, 3],
+  mellanstadiet: [4, 5, 6],
+  hogstadiet: [7, 8, 9],
+  gymnasiet: [10, 11, 12],
+};
+const SVARIGHET = ["enkel", "medel", "avancerad"] as const;
+
+/** Orden från veckans ord (tema- och ämnesord) för ett stadium. */
+function arskursord(ageGroup: AgeGroup): WordRow[] {
+  return ARSKURSER[ageGroup].flatMap((ak, i) => {
+    const a = ARSKURSORD.find((x) => x.arskurs === ak);
+    if (!a) return [];
+    return a.veckor.flatMap((v) =>
+      v.ord
+        .filter((o) => o.kategori !== "stavning")
+        .map((o, j) => ({
+          id: `ak${ak}-${v.nummer}-${j}`,
+          word: o.ord,
+          definition: o.forklaring,
+          word_class: o.ordklass,
+          example: o.exempel,
+          difficulty: SVARIGHET[i],
+          theme: v.tema,
+          age_group: ageGroup,
+          week_number: v.nummer,
+        })),
+    );
+  });
+}
+
+/** Get words: Supabase (or the old local list) plus the words from veckans ord, without duplicates. */
 export async function getWordsWithFallback(
   ageGroup: AgeGroup,
   theme?: string
 ): Promise<WordRow[]> {
+  let bas: WordRow[] = [];
   try {
-    const words = await getWords(ageGroup, theme);
-    if (words.length > 0) return words;
+    bas = await getWords(ageGroup, theme);
   } catch {
     // Supabase unavailable, fall through to local data
   }
-
-  // Fallback to local data
-  let filtered = VECKANS_ORD.filter((w) => w.ageGroup === ageGroup);
-  if (theme) {
-    filtered = filtered.filter((w) => w.theme === theme);
+  if (bas.length === 0) {
+    let filtered = VECKANS_ORD.filter((w) => w.ageGroup === ageGroup);
+    if (theme) filtered = filtered.filter((w) => w.theme === theme);
+    bas = filtered.map(localEntryToWordRow);
   }
-  return filtered.map(localEntryToWordRow);
+
+  const sedda = new Set(bas.map((w) => w.word.replace(/^(en|ett) /, "").toLowerCase()));
+  const extra = arskursord(ageGroup).filter((w) => {
+    const k = w.word.replace(/^(en|ett) /, "").toLowerCase();
+    if (sedda.has(k) || (theme && w.theme !== theme)) return false;
+    sedda.add(k);
+    return true;
+  });
+  return [...bas, ...extra];
 }
 
 /** Get themes with Supabase-first, local fallback */
@@ -113,6 +152,12 @@ export async function getThemesWithFallback(
     .filter((w) => w.ageGroup === ageGroup)
     .forEach((w) => themes.add(w.theme));
   return Array.from(themes).sort();
+}
+
+/** Themes including the themes from veckans ord. */
+export async function getAllThemes(ageGroup: AgeGroup): Promise<string[]> {
+  const bas = await getThemesWithFallback(ageGroup);
+  return Array.from(new Set([...bas, ...arskursord(ageGroup).map((w) => w.theme)])).sort((a, b) => a.localeCompare(b, "sv"));
 }
 
 /** Get word of the week with fallback */

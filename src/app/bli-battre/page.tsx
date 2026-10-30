@@ -11,10 +11,16 @@ export const metadata: Metadata = {
 
 const SIFFROR = [
   {
-    siffra: "31 %",
-    text: "av svenska 15-åringar nådde inte upp till grundläggande läsförståelse i PISA 2025. 2022 var det 24 %.",
-    kalla: "Skolverket, PISA 2025",
-    url: "https://via.tt.se/pressmeddelande/4531809/pisa-2025-fortsatt-nedgang-for-15-aringar-i-sverige-och-andra-lander",
+    siffra: "50 000 – 15 000",
+    text: "En 17-åring som läser mycket kan ungefär 50 000 ord. En 17-åring som nästan aldrig läser kan ungefär 15 000–17 000. Skillnaden är tiotusentals ord.",
+    kalla: "Myrberg & Lundberg (uppskattning)",
+    url: "https://www.bonnierforlagen.se/wp-content/uploads/2020/12/Ho%CC%88gla%CC%88sning_A5_digital.pdf",
+  },
+  {
+    siffra: "8 000 – 9 000",
+    text: "ordfamiljer behöver man kunna för att förstå 98 % av orden i en dagstidning eller en roman – och då förstå texten utan att behöva slå upp ord.",
+    kalla: "Skolverket, Läslyftet (Nation)",
+    url: "https://www.skolverket.se/download/18.645f1c0e17821f1d15c3829/1623222894776/artikel-5-ordforradets-betydelse-2.pdf",
   },
   {
     siffra: "1,8 miljoner",
@@ -22,13 +28,14 @@ const SIFFROR = [
     kalla: "Anderson, Wilson & Fielding (1988)",
     url: "https://core.ac.uk/download/4826438.pdf",
   },
-  {
-    siffra: "Alla ämnen",
-    text: "Barn som läste på fritiden utvecklades mer mellan 10 och 16 års ålder – mest i ordförråd, men också i matematik.",
-    kalla: "Sullivan & Brown, IOE/UCL (2015)",
-    url: "https://discovery.ucl.ac.uk/id/eprint/10021113/",
-  },
 ];
+
+const FORSTA = [
+  { siffra: "6 000–7 000", text: "ordfamiljer räcker ofta för att hänga med i ett vanligt samtal eller en film." },
+  { siffra: "8 000–9 000", text: "behövs för att läsa en tidning eller en roman utan att fastna." },
+  { siffra: "50 000+", text: "ord kan den som läser mycket – och då är det lätt att förstå både nyheter, läroböcker och avtal." },
+];
+
 
 const TIPS = [
   {
@@ -69,6 +76,9 @@ export default function BliBattrePage() {
           Det finns ett knep som slår alla andra: <b>läs</b>. Varje dag. Läsning gör dig bättre på svenska – och på nästan allt annat i
           skolan, eftersom du läser i alla ämnen.
         </p>
+        <Link href="/varfor-svenska" className="mt-3 inline-block font-medium text-sky-700 hover:underline dark:text-sky-400">
+          Varför behöver jag bli bättre på svenska? →
+        </Link>
       </div>
 
       {/* Siffror */}
@@ -90,6 +100,25 @@ export default function BliBattrePage() {
         <p className="mt-4 text-neutral-700 dark:text-neutral-300">
           När du läser mycket lär du dig nya ord utan att tänka på det. Du ser hur meningar byggs och hur ord stavas. Du blir snabbare
           på att förstå texter – i SO, NO, matte och på prov. Det är därför forskare kallar läsning för grunden till allt annat lärande.
+        </p>
+      </section>
+
+      {/* Hur många ord behövs? */}
+      <section className="mb-14">
+        <h2 className="mb-4 text-2xl font-semibold text-neutral-900 dark:text-white">Hur många ord behöver man kunna?</h2>
+        <div className="space-y-3">
+          {FORSTA.map((f, i) => (
+            <div key={f.siffra} className="flex items-center gap-4">
+              <div className="h-3 rounded-full bg-emerald-500" style={{ width: `${[30, 45, 100][i]}%`, maxWidth: "60%" }} />
+              <p className="text-neutral-800 dark:text-neutral-200">
+                <b>{f.siffra}</b> {f.text}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-sm text-neutral-500">
+          En ordfamilj är ett ord med alla sina former, t.ex. läsa, läser, läste, läsare. Siffrorna kommer från forskning om läsning och ordförråd
+          (Nation 2006) och är ungefärliga.
         </p>
       </section>
 

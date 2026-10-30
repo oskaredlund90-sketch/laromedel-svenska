@@ -39,16 +39,21 @@ async function main() {
   // Samma ord i flera årskurser inom samma stadium är inte fel, men bra att veta.
   if (vilken === "alla") {
     const stadium = (a: number) => (a <= 3 ? "låg" : a <= 6 ? "mellan" : a <= 9 ? "hög" : "gy");
-    const sedda = new Map<string, number>();
+    const sedda = new Map<string, { arskurs: number; kategori: string }>();
     for (const a of ALLA) {
       const slug = arskursSlug(a);
       const fil = join(__dirname, "../src/lib/veckansord/data", `${slug}.ts`);
       if (!existsSync(fil)) continue;
       for (const v of tolka(a, (await import(fil)).default).veckor)
         for (const o of v.ord) {
+          // Vanliga stavningsord får återkomma i flera årskurser.
+          if (o.kategori === "stavning") continue;
           const k = `${stadium(a)}:${grundord(o.ord).toLowerCase()}`;
-          if (sedda.has(k)) console.log(`OBS: "${o.ord}" finns i både ${arskursSlug(sedda.get(k)!)} och ${slug}`);
-          else sedda.set(k, a);
+          const forst = sedda.get(k);
+          // Ämnesord får återkomma i flera årskurser (begreppen fördjupas) – temaord ska inte upprepas.
+          if (forst && !(forst.kategori === "amne" && o.kategori === "amne")) {
+            console.log(`OBS: "${o.ord}" finns i både ${arskursSlug(forst.arskurs)} och ${slug}`);
+          } else if (!forst) sedda.set(k, { arskurs: a, kategori: o.kategori });
         }
     }
   }

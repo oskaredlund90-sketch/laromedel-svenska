@@ -43,7 +43,8 @@ describe("alla häften", () => {
 
   for (const h of HAFTEN) {
     it(`${h.id}: minst 100 uppgifter, kända feltyper, inga dubbletter`, () => {
-      expect(h.antalUppgifter).toBeGreaterThanOrEqual(100);
+      if (h.omrade === "Grammatikprov") expect(h.antalUppgifter).toBe(100);
+      else expect(h.antalUppgifter).toBeGreaterThanOrEqual(100);
       for (const f of h.feltyper) expect(hamtaFeltyp(f), f).toBeDefined();
       for (const d of h.delar) {
         const texter = d.uppgifter.map((u) => (u.typ === "ratta" ? u.fel : utskriftsText(u)));

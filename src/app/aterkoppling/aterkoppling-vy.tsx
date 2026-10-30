@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -24,7 +24,9 @@ import {
   delaISegment,
   placeraKommentarer,
   type Aterkoppling,
+  type PlaceradKommentar,
   type Punkt,
+  type Segment,
 } from "@/lib/aterkoppling/typer";
 import {
   OMRADE_ETIKETT,
@@ -124,10 +126,7 @@ function Visning({ data, katalog }: { data: Aterkoppling; katalog: HaftesKatalog
   const profil = useMemo(() => lasbarhetsprofil(data.text, data.arskurs), [data]);
   const synonymer = useMemo(() => allaSynonymer(data.text, data.arskurs, data.synonymer), [data]);
 
-  const valj = (index: number) => {
-    setAktiv(index);
-    document.getElementById(`kommentar-${index}`)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  };
+  const valj = (index: number) => setAktiv(index);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 print:max-w-none print:py-0">
@@ -187,82 +186,15 @@ function Visning({ data, katalog }: { data: Aterkoppling; katalog: HaftesKatalog
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
-          <Card>
-            <CardContent className="p-6 sm:p-8">
-              <p className="whitespace-pre-wrap font-serif text-[17px] leading-8 text-neutral-900 dark:text-neutral-100">
-                {segment.map((s, i) => {
-                  if (!s.kommentar) return <span key={i}>{s.text}</span>;
-                  const k = s.kommentar;
-                  const farg = OMRADE_FARG[fargFor(k.typ)];
-                  return (
-                    // span i stället för button så att markeringen kan radbrytas med texten
-                    <span
-                      key={i}
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => valj(k.index)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          valj(k.index);
-                        }
-                      }}
-                      className={cn(
-                        "cursor-pointer rounded-sm px-0.5 underline decoration-2 underline-offset-4 [box-decoration-break:clone] focus-visible:outline-2",
-                        farg.mark,
-                        aktiv === k.index && "outline-2 outline-neutral-900 dark:outline-white",
-                      )}
-                      aria-label={`Kommentar ${nummer.get(k.index)}: ${k.kommentar}`}
-                    >
-                      {s.text}
-                      <sup className="ml-0.5 font-sans text-[10px] font-bold">{nummer.get(k.index)}</sup>
-                    </span>
-                  );
-                })}
-              </p>
-            </CardContent>
-          </Card>
-
-          <ol className="space-y-3 lg:max-h-[75vh] lg:overflow-y-auto lg:pr-1 print:max-h-none">
-            {placerade.length === 0 && (
-              <li className="text-sm text-neutral-500">Inga kommentarer i texten.</li>
-            )}
-            {placerade.map((k, i) => {
-              const typ = hamtaFeltyp(k.typ);
-              const farg = OMRADE_FARG[fargFor(k.typ)];
-              return (
-                <li key={k.index} id={`kommentar-${k.index}`}>
-                  <button
-                    type="button"
-                    onClick={() => setAktiv(k.index)}
-                    className={cn(
-                      "w-full rounded-lg border bg-white p-4 text-left text-sm transition-colors dark:bg-neutral-900",
-                      aktiv === k.index
-                        ? "border-neutral-900 dark:border-white"
-                        : "border-neutral-200 hover:border-neutral-400 dark:border-neutral-800",
-                    )}
-                  >
-                    <div className="mb-1 flex items-center gap-2">
-                      <span className={cn("flex h-5 w-5 items-center justify-center rounded-full text-[11px] font-bold text-white", farg.prick)}>
-                        {i + 1}
-                      </span>
-                      <span className={cn("text-xs font-medium", farg.text)}>{typ ? typ.etikett : "Bra!"}</span>
-                    </div>
-                    <p className="text-neutral-800 dark:text-neutral-200">{k.kommentar}</p>
-                    {k.forslag && (
-                      <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-                        <span className="line-through decoration-red-400">{k.citat}</span>{" "}
-                        <ArrowRight className="inline h-3.5 w-3.5" />{" "}
-                        <span className="font-medium text-emerald-700 dark:text-emerald-400">{k.forslag}</span>
-                      </p>
-                    )}
-                  </button>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+        <TextMedKommentarer
+          segment={segment}
+          placerade={placerade}
+          nummer={nummer}
+          aktiv={aktiv}
+          valj={valj}
+          stadie={stadie}
+          katalog={katalog}
+        />
       </section>
 
       {synonymer.length > 0 && <Synonymer lista={synonymer} />}
@@ -279,6 +211,199 @@ function Visning({ data, katalog }: { data: Aterkoppling; katalog: HaftesKatalog
         </span>
         <ArrowRight className="h-5 w-5 shrink-0 text-emerald-700" />
       </Link>
+    </div>
+  );
+}
+
+/** Länk till där eleven kan lära sig mer om en feltyp: helst ett häfte, annars en övningssida. */
+function lasMerLank(typ: string | undefined, stadie: ReturnType<typeof stadieForArskurs>, katalog: HaftesKatalog) {
+  const ft = hamtaFeltyp(typ);
+  if (!ft) return null;
+  const hafte = katalog[ft.id]?.[0];
+  if (hafte) return { href: `/ovningshaften/${hafte.id}`, titel: `Öva: ${hafte.titel}` };
+  const o = ft.ovningar[0];
+  return o ? { href: ovningsHref(o, stadie), titel: `Lär dig mer: ${o.titel.replace(/^[^:]+: /, "")}` } : null;
+}
+
+const STOR_SKARM = "(min-width: 1024px)";
+
+/**
+ * Texten med markeringar och kommentarerna bredvid. På stor skärm är
+ * kommentarerna en rullista som följer med sidan: den rullar så att
+ * kommentaren till ordet man läser (eller har klickat på) står i samma höjd
+ * som ordet. På mobil visas kommentarerna under texten.
+ */
+function TextMedKommentarer({
+  segment,
+  placerade,
+  nummer,
+  aktiv,
+  valj,
+  stadie,
+  katalog,
+}: {
+  segment: Segment[];
+  placerade: PlaceradKommentar[];
+  nummer: Map<number, number>;
+  aktiv: number | null;
+  valj: (index: number) => void;
+  stadie: ReturnType<typeof stadieForArskurs>;
+  katalog: HaftesKatalog;
+}) {
+  const listaRef = useRef<HTMLOListElement>(null);
+  const markeringar = useRef(new Map<number, HTMLElement>());
+  const kort = useRef(new Map<number, HTMLElement>());
+  const aktivRef = useRef(aktiv);
+  useEffect(() => {
+    aktivRef.current = aktiv;
+  }, [aktiv]);
+
+  /** Rullar listan så att kommentarens kort står i höjd med sitt ord. */
+  const synka = useCallback((index: number, beteende: ScrollBehavior) => {
+    const lista = listaRef.current;
+    const ord = markeringar.current.get(index);
+    const k = kort.current.get(index);
+    if (!lista || !ord || !k || !window.matchMedia(STOR_SKARM).matches) return;
+    const onskat = ord.getBoundingClientRect().top - lista.getBoundingClientRect().top - 8;
+    lista.scrollTo({ top: k.offsetTop - onskat, behavior: beteende });
+  }, []);
+
+  // När eleven scrollar sidan följer kommentarerna med texten.
+  useEffect(() => {
+    let ram = 0;
+    const vidScroll = () => {
+      cancelAnimationFrame(ram);
+      ram = requestAnimationFrame(() => {
+        const lista = listaRef.current;
+        if (!lista || !window.matchMedia(STOR_SKARM).matches) return;
+        const ovanKant = lista.getBoundingClientRect().top;
+        const a = aktivRef.current;
+        const aktivtOrd = a !== null ? markeringar.current.get(a)?.getBoundingClientRect() : undefined;
+        if (a !== null && aktivtOrd && aktivtOrd.top >= ovanKant && aktivtOrd.bottom <= window.innerHeight) {
+          synka(a, "auto");
+          return;
+        }
+        const forsta = placerade.find((k) => (markeringar.current.get(k.index)?.getBoundingClientRect().top ?? -1) >= ovanKant);
+        if (forsta) synka(forsta.index, "auto");
+      });
+    };
+    window.addEventListener("scroll", vidScroll, { passive: true });
+    vidScroll();
+    return () => {
+      window.removeEventListener("scroll", vidScroll);
+      cancelAnimationFrame(ram);
+    };
+  }, [placerade, synka]);
+
+  const valjOrd = (index: number) => {
+    valj(index);
+    if (window.matchMedia(STOR_SKARM).matches) synka(index, "smooth");
+    else document.getElementById(`kommentar-${index}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+  const valjKort = (index: number) => {
+    valj(index);
+    markeringar.current.get(index)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  return (
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <Card>
+        <CardContent className="p-6 sm:p-8">
+          <div className="whitespace-pre-wrap font-serif text-[17px] leading-8 text-neutral-900 dark:text-neutral-100">
+            {segment.map((s, i) => {
+              if (!s.kommentar) return <span key={i}>{s.text}</span>;
+              const k = s.kommentar;
+              const farg = OMRADE_FARG[fargFor(k.typ)];
+              return (
+                // span i stället för button så att markeringen kan radbrytas med texten
+                <span
+                  key={i}
+                  ref={(el) => {
+                    if (el) markeringar.current.set(k.index, el);
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => valjOrd(k.index)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      valjOrd(k.index);
+                    }
+                  }}
+                  className={cn(
+                    "cursor-pointer rounded-sm px-0.5 underline decoration-2 underline-offset-4 [box-decoration-break:clone] focus-visible:outline-2",
+                    farg.mark,
+                    aktiv === k.index && "outline-2 outline-neutral-900 dark:outline-white",
+                  )}
+                  aria-label={`Kommentar ${nummer.get(k.index)}: ${k.kommentar}`}
+                >
+                  {s.text}
+                  <sup className="ml-0.5 font-sans text-[10px] font-bold">{nummer.get(k.index)}</sup>
+                </span>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+
+      <ol
+        ref={listaRef}
+        className="relative space-y-3 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1 lg:pb-[60vh] print:static print:max-h-none print:overflow-visible print:pb-0"
+      >
+        {placerade.length === 0 && <li className="text-sm text-neutral-500">Inga kommentarer i texten.</li>}
+        {placerade.map((k, i) => {
+          const typ = hamtaFeltyp(k.typ);
+          const farg = OMRADE_FARG[fargFor(k.typ)];
+          const lank = lasMerLank(k.typ, stadie, katalog);
+          return (
+            <li
+              key={k.index}
+              id={`kommentar-${k.index}`}
+              ref={(el) => {
+                if (el) kort.current.set(k.index, el);
+              }}
+            >
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => valjKort(k.index)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") valjKort(k.index);
+                }}
+                className={cn(
+                  "w-full cursor-pointer rounded-lg border bg-white p-4 text-left text-sm transition-colors dark:bg-neutral-900",
+                  aktiv === k.index
+                    ? "border-neutral-900 shadow-md dark:border-white"
+                    : "border-neutral-200 hover:border-neutral-400 dark:border-neutral-800",
+                )}
+              >
+                <div className="mb-1 flex items-center gap-2">
+                  <span className={cn("flex h-5 w-5 items-center justify-center rounded-full text-[11px] font-bold text-white", farg.prick)}>
+                    {i + 1}
+                  </span>
+                  <span className={cn("text-xs font-medium", farg.text)}>{typ ? typ.etikett : "Bra!"}</span>
+                </div>
+                <p className="text-neutral-800 dark:text-neutral-200">{k.kommentar}</p>
+                {k.forslag && (
+                  <p className="mt-2 text-neutral-600 dark:text-neutral-400">
+                    <span className="line-through decoration-red-400">{k.citat}</span> <ArrowRight className="inline h-3.5 w-3.5" />{" "}
+                    <span className="font-medium text-emerald-700 dark:text-emerald-400">{k.forslag}</span>
+                  </p>
+                )}
+                {lank && (
+                  <Link
+                    href={lank.href}
+                    onClick={(e) => e.stopPropagation()}
+                    className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-sky-700 hover:underline print:hidden dark:text-sky-400"
+                  >
+                    <BookOpen className="h-3.5 w-3.5" /> {lank.titel}
+                  </Link>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
     </div>
   );
 }

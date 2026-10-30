@@ -8,6 +8,10 @@
  *   nyfiken | adjektiv | Vill gärna veta och lära sig mer. | Hon var nyfiken på den nya skolan.
  *
  * Substantiv skrivs med en/ett framför. Exempelmeningen ska innehålla ordet.
+ *
+ * En femte kolumn anger kategori: tema (standard om den saknas), amne (ord
+ * som behövs i skolans ämnen) eller stavning (vanliga ord som ofta stavas fel).
+ * Varje vecka har 7 temaord, 4 ämnesord och 4 stavningsord = 15 ord.
  */
 
 export const ANTAL_VECKOR = 36;
@@ -31,11 +35,20 @@ export const ORDKLASSER = [
 
 export type Ordklass = (typeof ORDKLASSER)[number];
 
+export type Kategori = "tema" | "amne" | "stavning";
+
+export const KATEGORIER: Record<Kategori, { namn: string; antal: number }> = {
+  tema: { namn: "Veckans tema", antal: 7 },
+  amne: { namn: "Ord i skolans ämnen", antal: 4 },
+  stavning: { namn: "Stavningsord", antal: 4 },
+};
+
 export interface Ord {
   ord: string;
   ordklass: Ordklass;
   forklaring: string;
   exempel: string;
+  kategori: Kategori;
 }
 
 export interface Vecka {
@@ -50,11 +63,9 @@ export interface Arskursord {
   veckor: Vecka[];
 }
 
-/** Antal ord per vecka för en årskurs. */
-export function ordPerVecka(arskurs: number): number {
-  if (arskurs <= 2) return 3;
-  if (arskurs <= 6) return 4;
-  return 5;
+/** Antal ord per vecka (alla årskurser). */
+export function ordPerVecka(): number {
+  return Object.values(KATEGORIER).reduce((n, k) => n + k.antal, 0);
 }
 
 export function arskursNamn(arskurs: number): string {
@@ -83,11 +94,11 @@ export function tolka(arskurs: number, text: string): Arskursord {
     }
     if (rad.startsWith("#")) continue;
     const delar = rad.split("|").map((s) => s.trim());
-    if (delar.length !== 4) throw new Error(`Åk ${arskurs}: raden ska ha fyra delar: ${rad}`);
+    if (delar.length !== 4 && delar.length !== 5) throw new Error(`Åk ${arskurs}: raden ska ha fyra eller fem delar: ${rad}`);
     const v = veckor[veckor.length - 1];
     if (!v) throw new Error(`Åk ${arskurs}: ord före första veckan: ${rad}`);
-    const [ord, ordklass, forklaring, exempel] = delar;
-    v.ord.push({ ord, ordklass: ordklass as Ordklass, forklaring, exempel });
+    const [ord, ordklass, forklaring, exempel, kategori = "tema"] = delar;
+    v.ord.push({ ord, ordklass: ordklass as Ordklass, forklaring, exempel, kategori: kategori as Kategori });
   }
   return { arskurs, veckor };
 }
@@ -100,16 +111,21 @@ export function grundord(ord: string): string {
 /** Kontrollerar en årskurs. Returnerar en lista med problem (tom = ok). */
 export function kontrollera(a: Arskursord): string[] {
   const fel: string[] = [];
-  const n = ordPerVecka(a.arskurs);
+  const n = ordPerVecka();
   if (a.veckor.length !== ANTAL_VECKOR) fel.push(`${a.veckor.length} veckor i stället för ${ANTAL_VECKOR}`);
   const sedda = new Map<string, number>();
   a.veckor.forEach((v, i) => {
     if (v.nummer !== i + 1) fel.push(`vecka ${i + 1} har nummer ${v.nummer}`);
     if (v.ord.length !== n) fel.push(`vecka ${v.nummer}: ${v.ord.length} ord i stället för ${n}`);
+    for (const [k, info] of Object.entries(KATEGORIER)) {
+      const antal = v.ord.filter((o) => o.kategori === k).length;
+      if (antal !== info.antal) fel.push(`vecka ${v.nummer}: ${antal} ord av kategorin ${k} i stället för ${info.antal}`);
+    }
     for (const o of v.ord) {
       const g = grundord(o.ord).toLowerCase();
       if (sedda.has(g)) fel.push(`"${o.ord}" finns i både vecka ${sedda.get(g)} och ${v.nummer}`);
       sedda.set(g, v.nummer);
+      if (!(o.kategori in KATEGORIER)) fel.push(`"${o.ord}": okänd kategori "${o.kategori}"`);
       if (!ORDKLASSER.includes(o.ordklass)) fel.push(`"${o.ord}": okänd ordklass "${o.ordklass}"`);
       if (o.ordklass === "substantiv" && !/^(en|ett) /.test(o.ord)) fel.push(`"${o.ord}": substantiv ska ha en/ett`);
       if (!o.forklaring || !o.exempel) fel.push(`"${o.ord}": saknar förklaring eller exempel`);

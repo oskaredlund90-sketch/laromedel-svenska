@@ -160,8 +160,9 @@ td:last-child{text-align:right}
 ${saknas.length ? `<section class="kort varning"><b>Obs!</b> ${saknas.length} kommentar(er) kunde inte placeras i texten och visas inte för eleven: ${saknas.map((s) => `”${esc(s)}”`).join(", ")}</section>` : ""}
 <section class="grid">
   <div class="kort"><h2>Elevlänk</h2><div class="kopiera"><input id="lank" readonly value="${esc(lank)}"><button onclick="kopiera('lank',this)">Kopiera</button></div>
-  <p class="dim" style="font-size:13px">Allt ligger i länken – inget sparas. <a href="${esc(lank)}" target="_blank">Öppna som eleven ser den</a></p></div>
-  <div class="kort"><h2>Unikum</h2><div class="kopiera"><textarea id="unikum">${esc(u.unikum)}</textarea><button onclick="kopiera('unikum',this)">Kopiera</button></div></div>
+  <p class="dim" style="font-size:13px">Allt ligger i länken – inget sparas. <a href="${esc(lank)}" target="_blank">Öppna som eleven ser den</a> · <a href="${esc(lank.replace("/aterkoppling#", "/aterkoppling/redigera#"))}" target="_blank">Redigera kommentarerna</a></p></div>
+  <div class="kort"><h2>Unikum</h2><div class="kopiera"><textarea id="unikum">${esc(u.unikum)}</textarea><button onclick="kopieraUnikum(this)">Kopiera</button></div>
+  <p class="dim" style="font-size:13px">Kopieras med Innehåll, Struktur och Språk i fetstil.</p></div>
 </section>
 <section class="grid">
   <div class="kort"><h2>Det här fungerar bra</h2><ul>${punkter(a.bra)}</ul></div>
@@ -183,6 +184,18 @@ ${saknas.length ? `<section class="kort varning"><b>Obs!</b> ${saknas.length} ko
 </section>
 </main>
 ${KOPIERA_JS}
+<script>
+// Kopierar Unikum-texten både som vanlig text och som formaterad text (rubrikerna i fetstil).
+function kopieraUnikum(b){
+  const text=document.getElementById('unikum').value;
+  const rubriker=['Innehåll','Struktur','Språk'];
+  const e=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const html=text.split('\n').map(r=>rubriker.includes(r.trim())?'<b>'+e(r)+'</b>':e(r)).join('<br>');
+  const klar=()=>{const t=b.textContent;b.textContent='Kopierat!';setTimeout(()=>b.textContent=t,1500)};
+  if(window.ClipboardItem){navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]).then(klar)}
+  else navigator.clipboard.writeText(text).then(klar);
+}
+</script>
 </body></html>`;
 }
 

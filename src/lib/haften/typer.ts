@@ -69,7 +69,13 @@ export interface HafteKalla {
   delar: DelKalla[];
 }
 
-export type Omradesnamn = "Utrum och neutrum" | "Stavning" | "Grammatik" | "Skiljetecken" | "Meningsbyggnad";
+export type Omradesnamn =
+  | "Utrum och neutrum"
+  | "Stavning"
+  | "Grammatik"
+  | "Skiljetecken"
+  | "Meningsbyggnad"
+  | "Grammatikprov";
 
 export interface Del extends Omit<DelKalla, "rader"> {
   uppgifter: Uppgift[];

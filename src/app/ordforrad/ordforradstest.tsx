@@ -138,7 +138,7 @@ function Resultatvy({ svar, igen }: { svar: Svar[]; igen: () => void }) {
           <p className="text-sm text-neutral-500">Ditt ordförråd motsvarar ungefär</p>
           <p className="text-4xl font-bold text-neutral-900 dark:text-white">{nivaText(r.niva)}</p>
           <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-            {r.ratt} av {r.totalt} rätt. Resultatet är en uppskattning utifrån 25 ord – gör testet igen någon gång för att se din utveckling.
+            {r.ratt} av {r.totalt} rätt. Resultatet är en uppskattning utifrån 50 ord – gör testet igen någon gång för att se din utveckling.
           </p>
           <div className="mt-4 flex gap-1" aria-hidden>
             {Array.from({ length: 12 }, (_, i) => (

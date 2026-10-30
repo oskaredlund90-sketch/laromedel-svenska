@@ -25,7 +25,7 @@ export interface Svar {
   val: number;
 }
 
-export const ANTAL_FRAGOR = 25;
+export const ANTAL_FRAGOR = 50;
 export const MIN_NIVA = 1;
 export const MAX_NIVA = 12;
 
@@ -50,6 +50,7 @@ export function skapaFraga(bank: Testord[], niva: number, anvanda: Set<string>, 
   const kandidater = bank.filter((o) => o.niva === niva && !anvanda.has(o.ord));
   if (!kandidater.length) return null;
   const ord = kandidater[Math.floor(slump() * kandidater.length)];
+  // Felaktiga alternativ från samma nivå och helst samma ordklass, så att de inte går att utesluta direkt.
   const nara = bank.filter((o) => o.ord !== ord.ord && Math.abs(o.niva - niva) <= 1 && o.forklaring !== ord.forklaring);
   const sammaKlass = nara.filter((o) => o.ordklass === ord.ordklass);
   const pool = sammaKlass.length >= 3 ? sammaKlass : nara;
