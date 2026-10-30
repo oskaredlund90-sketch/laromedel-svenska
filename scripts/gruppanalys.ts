@@ -20,7 +20,7 @@ import { BAS_CSS, BAS_URL, KOPIERA_JS, esc } from "./html";
 import { haftenForFeltyp } from "../src/lib/haften";
 
 /** Claudes sammanfattning för gruppen. */
-interface Grupp {
+export interface Grupp {
   grupp?: string;
   uppgift?: string;
   omraden?: { omrade: Omrade; fungerarBra: string; nastaSteg: string; typ?: string }[];
@@ -34,7 +34,7 @@ function fel(msg: string): never {
   process.exit(1);
 }
 
-function lasAnalyser(mapp: string): TextAnalys[] {
+export function lasAnalyser(mapp: string): TextAnalys[] {
   const dir = join(mapp, "analys");
   if (!existsSync(dir)) fel(`Hittar inte ${dir}. Lägg en JSON-fil per text där.`);
   const filer = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
@@ -168,37 +168,45 @@ ${ref ? `Spann för årskursen: ${ref.meningslangd.min}–${ref.meningslangd.max
 </main>${KOPIERA_JS}</body></html>`;
 }
 
-const arg = process.argv.slice(2);
-const mapp = arg.find((a) => !a.startsWith("--") && !/^\d+$/.test(a));
-const minIndex = arg.indexOf("--min");
-const min = minIndex >= 0 ? Number(arg[minIndex + 1]) : 3;
-if (!mapp || !min) fel("Användning: gruppanalys <gruppmapp> [--min 3]");
+/** Läser gruppmappen, skriver gruppanalys.html och returnerar sammanställningen. */
+export function korGruppanalys(mapp: string, min = 3) {
+  const analyser = lasAnalyser(mapp);
+  const gruppFil = join(mapp, "grupp.json");
+  const grupp: Grupp = existsSync(gruppFil) ? JSON.parse(readFileSync(gruppFil, "utf8")) : {};
+  const s = sammanstall(analyser, min);
+  const ut = join(mapp, "gruppanalys.html");
+  writeFileSync(ut, rapport(s, analyser, grupp, min));
+  return { analyser, grupp, s, ut, harSammanfattning: existsSync(gruppFil) };
+}
 
-const analyser = lasAnalyser(mapp);
-const gruppFil = join(mapp, "grupp.json");
-const grupp: Grupp = existsSync(gruppFil) ? JSON.parse(readFileSync(gruppFil, "utf8")) : {};
-const s = sammanstall(analyser, min);
-const ut = join(mapp, "gruppanalys.html");
-writeFileSync(ut, rapport(s, analyser, grupp, min));
+// Körs bara som kommando, inte när klassrespons importerar filen.
+if (require.main === module) {
+  const arg = process.argv.slice(2);
+  const mapp = arg.find((a) => !a.startsWith("--") && !/^\d+$/.test(a));
+  const minIndex = arg.indexOf("--min");
+  const min = minIndex >= 0 ? Number(arg[minIndex + 1]) : 3;
+  if (!mapp || !min) fel("Användning: gruppanalys <gruppmapp> [--min 3]");
 
-const kandaTyper = [...analyser.flatMap((a) => a.fel.map((f) => f.typ)), ...analyser.flatMap((a) => a.nasta.map((n) => n.typ))];
-console.log(
-  JSON.stringify(
-    {
-      rapport: ut,
-      harSammanfattning: existsSync(gruppFil),
-      antalTexter: s.antalTexter,
-      arskurs: s.arskurs,
-      vanligaStavfel: s.vanligaStavfel.map((f) => ({ ratt: f.ratt, varianter: f.varianter.map((v) => v.fel), texter: f.elever.length })),
-      vanligaSprakfel: s.vanligaSprakfel.map((f) => ({ ratt: f.ratt, typ: f.typ, texter: f.elever.length })),
-      feltyper: s.feltyper.map((r) => ({ typ: r.typ, texter: r.antalTexter, forekomster: r.forekomster })),
-      nastaPerTyp: s.nastaPerTyp,
-      styrkorPerOmrade: s.styrkorPerOmrade,
-      median: s.median,
-      langaMeningar: s.profiler.filter((p) => p.profil.langaMeningar > 0).map((p) => p.elev),
-      okandaFeltyper: [...new Set(kandaTyper.filter((t): t is string => !!t && !hamtaFeltyp(t)))],
-    },
-    null,
-    2,
-  ),
-);
+  const { analyser, s, ut, harSammanfattning } = korGruppanalys(mapp, min);
+  const kandaTyper = [...analyser.flatMap((a) => a.fel.map((f) => f.typ)), ...analyser.flatMap((a) => a.nasta.map((n) => n.typ))];
+  console.log(
+    JSON.stringify(
+      {
+        rapport: ut,
+        harSammanfattning,
+        antalTexter: s.antalTexter,
+        arskurs: s.arskurs,
+        vanligaStavfel: s.vanligaStavfel.map((f) => ({ ratt: f.ratt, varianter: f.varianter.map((v) => v.fel), texter: f.elever.length })),
+        vanligaSprakfel: s.vanligaSprakfel.map((f) => ({ ratt: f.ratt, typ: f.typ, texter: f.elever.length })),
+        feltyper: s.feltyper.map((r) => ({ typ: r.typ, texter: r.antalTexter, forekomster: r.forekomster })),
+        nastaPerTyp: s.nastaPerTyp,
+        styrkorPerOmrade: s.styrkorPerOmrade,
+        median: s.median,
+        langaMeningar: s.profiler.filter((p) => p.profil.langaMeningar > 0).map((p) => p.elev),
+        okandaFeltyper: [...new Set(kandaTyper.filter((t): t is string => !!t && !hamtaFeltyp(t)))],
+      },
+      null,
+      2,
+    ),
+  );
+}

@@ -22,7 +22,7 @@ import { allaSynonymer } from "../src/lib/aterkoppling/synonymer";
 import { haftenForFeltyp } from "../src/lib/haften";
 
 /** Det Claude skriver: återkopplingen till eleven + det som bara läraren ser. */
-interface Underlag {
+export interface Underlag {
   /** Elevens alias/initialer – hamnar bara i lärarrapporten. */
   elev?: string;
   aterkoppling: Aterkoppling;
@@ -37,16 +37,22 @@ function fel(msg: string): never {
   process.exit(1);
 }
 
-async function bygg(fil: string) {
-  let underlag: Underlag;
-  try {
-    underlag = JSON.parse(readFileSync(fil, "utf8"));
-  } catch (e) {
-    fel(`Kunde inte läsa ${fil}: ${(e as Error).message}`);
-  }
+export interface Byggresultat {
+  underlag: Underlag;
+  rapport: string;
+  lank: string;
+  profil: LasbarhetsProfil;
+  kommentarerPlacerade: number;
+  kommentarerSomInteHittades: string[];
+  okandaFeltyper: string[];
+}
+
+/** Kontrollerar en återkopplingsfil, bygger elevlänken och skriver lärarrapporten. Kastar vid fel. */
+export async function byggUnderlag(fil: string): Promise<Byggresultat> {
+  const underlag: Underlag = JSON.parse(readFileSync(fil, "utf8"));
   const a = underlag.aterkoppling;
-  if (!arAterkoppling(a)) fel("'aterkoppling' saknar v: 1, arskurs, text, kommentarer, bra eller nasta.");
-  if (typeof underlag.unikum !== "string") fel("'unikum' saknas.");
+  if (!arAterkoppling(a)) throw new Error("'aterkoppling' saknar v: 1, arskurs, text, kommentarer, bra eller nasta.");
+  if (typeof underlag.unikum !== "string") throw new Error("'unikum' saknas.");
 
   const { placerade, saknas } = placeraKommentarer(a.text, a.kommentarer);
   const okandaTyper = [...a.kommentarer, ...a.nasta]
@@ -60,16 +66,34 @@ async function bygg(fil: string) {
   const rapport = join(dirname(fil), basename(fil, ".json") + ".html");
   writeFileSync(rapport, rapportHtml(underlag, lank, profil, placerade.length, saknas.map((k) => k.citat)));
 
+  return {
+    underlag,
+    rapport,
+    lank,
+    profil,
+    kommentarerPlacerade: placerade.length,
+    kommentarerSomInteHittades: saknas.map((k) => k.citat),
+    okandaFeltyper: [...new Set(okandaTyper)],
+  };
+}
+
+async function bygg(fil: string) {
+  let r: Byggresultat;
+  try {
+    r = await byggUnderlag(fil);
+  } catch (e) {
+    fel(`${fil}: ${(e as Error).message}`);
+  }
   console.log(
     JSON.stringify(
       {
-        rapport,
-        lank,
-        lankLangd: lank.length,
-        kommentarerPlacerade: placerade.length,
-        kommentarerSomInteHittades: saknas.map((k) => k.citat),
-        okandaFeltyper: [...new Set(okandaTyper)],
-        lix: profil.lix,
+        rapport: r.rapport,
+        lank: r.lank,
+        lankLangd: r.lank.length,
+        kommentarerPlacerade: r.kommentarerPlacerade,
+        kommentarerSomInteHittades: r.kommentarerSomInteHittades,
+        okandaFeltyper: r.okandaFeltyper,
+        lix: r.profil.lix,
       },
       null,
       2,
@@ -162,8 +186,11 @@ ${KOPIERA_JS}
 </body></html>`;
 }
 
-const [kommando, ...arg] = process.argv.slice(2);
-if (kommando === "bygg" && arg[0]) void bygg(arg[0]);
-else if (kommando === "profil" && arg[0] && arg[1]) profilKommando(arg[0], arg[1]);
-else if (kommando === "feltyper") console.log(FELTYPER.map((f) => `${f.id}\t${f.omrade}\t${f.etikett}`).join("\n"));
-else fel("Användning: aterkoppling profil <textfil> <årskurs> | bygg <fil.json> | feltyper");
+// Körs bara som kommando, inte när klassrespons importerar filen.
+if (require.main === module) {
+  const [kommando, ...arg] = process.argv.slice(2);
+  if (kommando === "bygg" && arg[0]) void bygg(arg[0]);
+  else if (kommando === "profil" && arg[0] && arg[1]) profilKommando(arg[0], arg[1]);
+  else if (kommando === "feltyper") console.log(FELTYPER.map((f) => `${f.id}\t${f.omrade}\t${f.etikett}`).join("\n"));
+  else fel("Användning: aterkoppling profil <textfil> <årskurs> | bygg <fil.json> | feltyper");
+}

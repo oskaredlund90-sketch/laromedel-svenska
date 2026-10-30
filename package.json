@@ -9,7 +9,8 @@
     "lint": "eslint",
     "aterkoppling": "tsx scripts/aterkoppling.ts",
     "test": "vitest run",
-    "gruppanalys": "tsx scripts/gruppanalys.ts"
+    "gruppanalys": "tsx scripts/gruppanalys.ts",
+    "klassrespons": "tsx scripts/klassrespons.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
