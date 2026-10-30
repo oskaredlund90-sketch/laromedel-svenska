@@ -21,9 +21,14 @@ export function hamtaHafte(id: string): Hafte | undefined {
   return HAFTEN.find((h) => h.id === id);
 }
 
-/** Häften som tränar en viss feltyp, lättast först. */
+/**
+ * Häften som tränar en viss feltyp, lättast först. Häften där feltypen är
+ * huvudsaken (först i listan) går före; övriga visas bara om inga sådana finns.
+ */
 export function haftenForFeltyp(feltyp: string): Hafte[] {
-  return HAFTEN.filter((h) => h.feltyper.includes(feltyp)).sort((a, b) => a.steg - b.steg);
+  const huvud = HAFTEN.filter((h) => h.feltyper[0] === feltyp);
+  const traffar = huvud.length ? huvud : HAFTEN.filter((h) => h.feltyper.includes(feltyp));
+  return traffar.sort((a, b) => a.steg - b.steg);
 }
 
 export interface HaftesInfo {
@@ -37,8 +42,7 @@ export type HaftesKatalog = Record<string, HaftesInfo[]>;
 
 export function haftesKatalog(): HaftesKatalog {
   const k: HaftesKatalog = {};
-  for (const h of [...HAFTEN].sort((a, b) => a.steg - b.steg)) {
-    for (const f of h.feltyper) (k[f] ??= []).push({ id: h.id, titel: h.titel, steg: h.steg });
-  }
+  const typer = new Set(HAFTEN.flatMap((h) => h.feltyper));
+  for (const f of typer) k[f] = haftenForFeltyp(f).map((h) => ({ id: h.id, titel: h.titel, steg: h.steg }));
   return k;
 }
