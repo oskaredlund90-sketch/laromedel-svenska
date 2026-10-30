@@ -346,7 +346,7 @@ function Profil({ profil }: { profil: LasbarhetsProfil }) {
           <CardContent className="space-y-5 p-6">
             <p className="font-medium text-neutral-900 dark:text-white">Ordförråd</p>
             <Matare etikett="Långa ord" varde={profil.langaOrdProcent} enhet="%" spann={r.langaOrd} max={45} />
-            <Matare etikett="Ordvariation (OVIX)" varde={profil.ovix} spann={r.ovix} max={100} />
+            {profil.ovix !== null && <Matare etikett="Ordvariation (OVIX)" varde={profil.ovix} spann={r.ovix} max={100} />}
             <p className="text-sm text-neutral-700 dark:text-neutral-300">{tolkning.ordforrad}</p>
           </CardContent>
         </Card>

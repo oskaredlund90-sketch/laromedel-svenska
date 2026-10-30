@@ -17,8 +17,7 @@ import { lasbarhetsprofil, tolkaProfil, type LasbarhetsProfil } from "../src/lib
 import { FELTYPER, OMRADE_ETIKETT, hamtaFeltyp } from "../src/lib/aterkoppling/feltyper";
 import { arAterkoppling, delaISegment, placeraKommentarer, type Aterkoppling } from "../src/lib/aterkoppling/typer";
 import { packa } from "../src/lib/aterkoppling/kodning";
-
-const BAS = (process.env.AT_BASE_URL ?? "https://laromedel-svenska.vercel.app").replace(/\/$/, "");
+import { BAS_CSS, BAS_URL as BAS, KOPIERA_JS, esc } from "./html";
 
 /** Det Claude skriver: återkopplingen till eleven + det som bara läraren ser. */
 interface Underlag {
@@ -34,10 +33,6 @@ interface Underlag {
 function fel(msg: string): never {
   console.error(`Fel: ${msg}`);
   process.exit(1);
-}
-
-function esc(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 }
 
 async function bygg(fil: string) {
@@ -115,19 +110,11 @@ function rapportHtml(u: Underlag, lank: string, p: LasbarhetsProfil, antalPlacer
 <html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Återkoppling – ${esc(u.elev ?? a.titel ?? "elevtext")}</title>
 <style>
-:root{--bg:#fafaf9;--kort:#fff;--text:#1c1917;--dim:#57534e;--linje:#e7e5e4;--accent:#047857}
-@media (prefers-color-scheme:dark){:root{--bg:#0c0a09;--kort:#1c1917;--text:#f5f5f4;--dim:#a8a29e;--linje:#292524;--accent:#34d399}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,sans-serif}
-main{max-width:1100px;margin:0 auto;padding:32px 16px 64px}h1{font-size:26px;margin:0 0 4px}h2{font-size:17px;margin:0 0 10px}
-.dim{color:var(--dim)}.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.kort{background:var(--kort);border:1px solid var(--linje);border-radius:12px;padding:18px 20px}
-.kopiera{display:flex;gap:8px;align-items:flex-start}.kopiera textarea,.kopiera input{flex:1;font:inherit;padding:8px 10px;border:1px solid var(--linje);border-radius:8px;background:var(--bg);color:var(--text)}
-textarea{min-height:190px;resize:vertical}button{font:inherit;font-weight:600;padding:8px 14px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+${BAS_CSS}
 .text{font:17px/1.9 Georgia,serif;white-space:pre-wrap}mark{border-radius:3px;padding:0 2px;color:inherit}
 mark.sprak{background:#fde68a80}mark.struktur{background:#bae6fd80}mark.innehall{background:#ddd6fe80}mark.bra{background:#a7f3d080}sup{font:700 10px system-ui;margin-left:1px}
-ol,ul{padding-left:18px;margin:0}li{margin:6px 0}.typ{font-size:12px;font-weight:600;color:var(--dim)}.forslag{color:var(--accent);font-weight:600}
-.varning{border-color:#f59e0b}table{border-collapse:collapse;width:100%}td{padding:4px 0;border-bottom:1px solid var(--linje)}td:last-child{text-align:right}
-section{margin-top:16px}
+.typ{font-size:12px;font-weight:600;color:var(--dim)}.forslag{color:var(--accent);font-weight:600}
+td:last-child{text-align:right}
 </style></head><body><main>
 <p class="dim">${esc(u.elev ?? "Elev")} · ${a.arskurs >= 10 ? `Gymnasiet år ${a.arskurs - 9}` : `Årskurs ${a.arskurs}`}${a.uppgift ? ` · ${esc(a.uppgift)}` : ""}</p>
 <h1>${esc(a.titel ?? "Återkoppling")}</h1>
@@ -149,13 +136,13 @@ ${saknas.length ? `<section class="kort varning"><b>Obs!</b> ${saknas.length} ko
     <tr><td>LIX</td><td>${p.lix} <span class="dim">(spann ${p.referens.lix.min}–${p.referens.lix.max})</span></td></tr>
     <tr><td>Ord per mening</td><td>${p.meningslangd} <span class="dim">${bed(p.bedomning.meningslangd)}</span></td></tr>
     <tr><td>Långa ord</td><td>${p.langaOrdProcent} % <span class="dim">${bed(p.bedomning.langaOrd)}</span></td></tr>
-    <tr><td>OVIX</td><td>${p.ovix} <span class="dim">${bed(p.bedomning.ovix)}</span></td></tr>
+    <tr><td>OVIX</td><td>${p.ovix === null ? "– <span class=\"dim\">(för kort text)</span>" : `${p.ovix} <span class="dim">${bed(p.bedomning.ovix)}</span>`}</td></tr>
     <tr><td>Längsta mening</td><td>${p.langstaMening} ord${p.langaMeningar ? ` <span class="dim">(${p.langaMeningar} st > 30)</span>` : ""}</td></tr>
   </table><p class="dim" style="font-size:13px">${esc(t.ordforrad)} ${esc(t.meningar)}</p></div>
   ${u.lararanteckning ? `<div class="kort"><h2>Lärarens anteckning</h2><p style="white-space:pre-line">${esc(u.lararanteckning)}</p></div>` : ""}
 </section>
 </main>
-<script>function kopiera(id,b){const el=document.getElementById(id);navigator.clipboard.writeText(el.value).then(()=>{const t=b.textContent;b.textContent='Kopierat!';setTimeout(()=>b.textContent=t,1500)})}</script>
+${KOPIERA_JS}
 </body></html>`;
 }
 

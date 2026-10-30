@@ -31,7 +31,8 @@ export interface LasbarhetsProfil {
   lix: number;
   meningslangd: number;
   langaOrdProcent: number;
-  ovix: number;
+  /** null när texten är för kort (< MIN_ORD_OVIX ord) för att måttet ska vara pålitligt. */
+  ovix: number | null;
   langstaMening: number;
   langaMeningar: number;
   referens: Referens;
@@ -74,6 +75,9 @@ export function referensFor(arskurs: number): Referens {
   const ak = Math.min(12, Math.max(1, Math.round(arskurs)));
   return REFERENS[ak];
 }
+
+/** OVIX är opålitligt för korta texter. */
+export const MIN_ORD_OVIX = 50;
 
 /** Meningar som är längre än så här markeras som möjliga "rinnande" meningar. */
 export const LANG_MENING = 30;
@@ -118,11 +122,9 @@ export function lasbarhetsprofil(text: string, arskurs: number): LasbarhetsProfi
 
   const typer = new Set(ord.map((o) => o.toLowerCase())).size;
   // OVIX (ordvariationsindex). Odefinierat när alla ord är unika.
-  let ovix = 0;
-  if (antalOrd > 1 && typer < antalOrd) {
-    ovix = Math.log(antalOrd) / Math.log(2 - Math.log(typer) / Math.log(antalOrd));
-  } else if (antalOrd > 1) {
-    ovix = 100;
+  let ovix: number | null = null;
+  if (antalOrd >= MIN_ORD_OVIX) {
+    ovix = typer < antalOrd ? Math.log(antalOrd) / Math.log(2 - Math.log(typer) / Math.log(antalOrd)) : 100;
   }
 
   const langder = meningar.map((m) => delaIOrd(m).length);
@@ -134,14 +136,14 @@ export function lasbarhetsprofil(text: string, arskurs: number): LasbarhetsProfi
     lix: avrunda(meningslangd + langaOrdProcent, 0),
     meningslangd: avrunda(meningslangd),
     langaOrdProcent: avrunda(langaOrdProcent),
-    ovix: avrunda(ovix, 0),
+    ovix: ovix === null ? null : avrunda(ovix, 0),
     langstaMening: Math.max(0, ...langder),
     langaMeningar: langder.filter((l) => l > LANG_MENING).length,
     referens,
     bedomning: {
       meningslangd: bedom(meningslangd, referens.meningslangd),
       langaOrd: bedom(langaOrdProcent, referens.langaOrd),
-      ovix: bedom(ovix, referens.ovix),
+      ovix: ovix === null ? "inom" : bedom(ovix, referens.ovix),
     },
   };
 }
