@@ -47,6 +47,9 @@ export default async function LastraningPage({ params }: Props) {
         <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
           Ta reda på vad du är bra på och vad du kan träna mer på. Ingen inloggning – och inget du gör sparas.
         </p>
+        <Link href="/bli-battre" className="mt-2 inline-block text-sm font-medium text-emerald-700 hover:underline dark:text-emerald-400">
+          Varför är läsning så viktigt? →
+        </Link>
       </div>
 
       <LastraningClient stadie={arskurs as AgeGroup} />

@@ -268,6 +268,17 @@ function Visning({ data, katalog }: { data: Aterkoppling; katalog: HaftesKatalog
       {synonymer.length > 0 && <Synonymer lista={synonymer} />}
 
       <Profil profil={profil} />
+
+      <Link
+        href="/bli-battre"
+        className="mt-10 flex items-center justify-between gap-4 rounded-xl border border-emerald-300 bg-emerald-50 p-5 transition-colors hover:bg-emerald-100 print:hidden dark:border-emerald-800 dark:bg-emerald-950/40"
+      >
+        <span>
+          <span className="block font-semibold text-neutral-900 dark:text-white">Hur kan jag bli bättre på svenska?</span>
+          <span className="text-sm text-neutral-700 dark:text-neutral-300">Det viktigaste du kan göra – och hur du kommer igång.</span>
+        </span>
+        <ArrowRight className="h-5 w-5 shrink-0 text-emerald-700" />
+      </Link>
     </div>
   );
 }

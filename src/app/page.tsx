@@ -108,6 +108,20 @@ export default async function HomePage() {
         <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-500 animate-fade-in-up delay-300">
           V&auml;lj ditt stadie nedan f&ouml;r att b&ouml;rja.
         </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-3 animate-fade-in-up delay-400">
+          <Link
+            href="/bli-battre"
+            className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
+          >
+            Hur kan jag bli bättre på svenska?
+          </Link>
+          <Link
+            href="/ordforrad"
+            className="rounded-full border border-neutral-300 px-5 py-2.5 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+          >
+            Testa ditt ordförråd
+          </Link>
+        </div>
       </section>
 
       {/* Section divider */}

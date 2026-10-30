@@ -14,6 +14,7 @@ const AGE_GROUPS = [
   { href: "/hogstadiet", label: "Högstadiet", short: "Åk 7–9" },
   { href: "/gymnasiet", label: "Gymnasiet", short: "Gym" },
   { href: "/ovningshaften", label: "Övningshäften", short: "Häften" },
+  { href: "/veckans-ord", label: "Veckans ord", short: "Ord" },
 ];
 
 export function Header() {
