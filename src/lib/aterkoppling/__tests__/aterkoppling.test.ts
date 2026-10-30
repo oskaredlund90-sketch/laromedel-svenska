@@ -3,6 +3,7 @@ import { lasbarhetsprofil, delaIMeningar } from "../lasbarhet";
 import { FELTYPER, ovningsHref, stadieForArskurs } from "../feltyper";
 import { placeraKommentarer, delaISegment, type Aterkoppling } from "../typer";
 import { packa, packaUpp } from "../kodning";
+import { allaSynonymer, synonymForslag } from "../synonymer";
 
 describe("lasbarhetsprofil", () => {
   it("räknar LIX som meningslängd + andel långa ord", () => {
@@ -68,5 +69,20 @@ describe("kodning", () => {
     const kod = await packa(a);
     expect(kod).toMatch(/^1\.[A-Za-z0-9_-]+$/);
     expect(await packaUpp("#" + kod)).toEqual(a);
+  });
+});
+
+describe("synonymer", () => {
+  const text = "Det var bra. Maten var bra och filmen var bra. Han sa hej. Hon sa nej. Jag sa ok. Det var jättekul och jättebra.";
+  it("hittar överanvända ord med förslag efter ålder", () => {
+    const s = synonymForslag(text, 4);
+    expect(s.map((x) => x.ord)).toEqual(expect.arrayContaining(["bra", "sa", "jätte-"]));
+    expect(s.find((x) => x.ord === "bra")!.antal).toBe(3);
+    expect(synonymForslag(text, 8).find((x) => x.ord === "sa")!.forslag).toContain("utbrast");
+  });
+  it("visar lärarens egna förslag först", () => {
+    const s = allaSynonymer(text, 4, [{ ord: "bra", forslag: ["toppen"] }]);
+    expect(s[0]).toEqual({ ord: "bra", antal: 3, forslag: ["toppen"] });
+    expect(s.filter((x) => x.ord === "bra")).toHaveLength(1);
   });
 });

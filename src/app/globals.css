@@ -84,3 +84,8 @@ body {
     color: black;
   }
 }
+
+/* Utskrift (meny och sidfot döljs med print:hidden) */
+@media print {
+  @page { margin: 16mm; }
+}

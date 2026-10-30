@@ -18,6 +18,8 @@ import { FELTYPER, OMRADE_ETIKETT, hamtaFeltyp } from "../src/lib/aterkoppling/f
 import { arAterkoppling, delaISegment, placeraKommentarer, type Aterkoppling } from "../src/lib/aterkoppling/typer";
 import { packa } from "../src/lib/aterkoppling/kodning";
 import { BAS_CSS, BAS_URL as BAS, KOPIERA_JS, esc } from "./html";
+import { allaSynonymer } from "../src/lib/aterkoppling/synonymer";
+import { haftenForFeltyp } from "../src/lib/haften";
 
 /** Det Claude skriver: återkopplingen till eleven + det som bara läraren ser. */
 interface Underlag {
@@ -75,6 +77,16 @@ async function bygg(fil: string) {
   );
 }
 
+/** Länkar till övningshäften för en feltyp – att skicka eller skriva ut. */
+function haftesLankar(typ: string | undefined): string {
+  if (!typ) return "";
+  const h = haftenForFeltyp(typ);
+  if (!h.length) return "";
+  return `<br>${h
+    .map((x) => `<a class="tagg" href="${esc(`${BAS}/ovningshaften/${x.id}`)}" target="_blank">Häfte: ${esc(x.titel)} (steg ${x.steg})</a>`)
+    .join("")}`;
+}
+
 function profilKommando(fil: string, ak: string) {
   const arskurs = Number(ak);
   if (!arskurs) fel("Ange årskurs som siffra (1–9, gymnasiet 10–12).");
@@ -102,7 +114,10 @@ function rapportHtml(u: Underlag, lank: string, p: LasbarhetsProfil, antalPlacer
     )
     .join("");
   const punkter = (ps: Aterkoppling["bra"]) =>
-    ps.map((x) => `<li><b>${OMRADE_ETIKETT[x.omrade]}:</b> ${esc(x.text)}</li>`).join("");
+    ps.map((x) => `<li><b>${OMRADE_ETIKETT[x.omrade]}:</b> ${esc(x.text)}${haftesLankar(x.typ)}</li>`).join("");
+  const synonymer = allaSynonymer(a.text, a.arskurs, a.synonymer)
+    .map((x) => `<li><b>${esc(x.ord)}</b>${x.antal ? ` <span class="dim">(${x.antal} ggr)</span>` : ""}: ${esc(x.forslag.join(", "))}</li>`)
+    .join("");
   const bed = (b: string) => ({ under: "under spannet", inom: "inom spannet", over: "över spannet" })[b];
   const t = tolkaProfil(p);
 
@@ -127,6 +142,7 @@ ${saknas.length ? `<section class="kort varning"><b>Obs!</b> ${saknas.length} ko
 <section class="grid">
   <div class="kort"><h2>Det här fungerar bra</h2><ul>${punkter(a.bra)}</ul></div>
   <div class="kort"><h2>Nästa steg</h2><ul>${punkter(a.nasta)}</ul></div>
+  ${synonymer ? `<div class="kort"><h2>Variera orden</h2><ul>${synonymer}</ul></div>` : ""}
 </section>
 <section class="grid">
   <div class="kort" style="grid-column:1/-1"><h2>Texten (${antalPlacerade} kommentarer)</h2><div class="text">${text}</div></div>

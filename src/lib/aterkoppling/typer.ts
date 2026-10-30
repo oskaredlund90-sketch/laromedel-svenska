@@ -36,6 +36,8 @@ export interface Aterkoppling {
   kommentarer: TextKommentar[];
   bra: Punkt[];
   nasta: Punkt[];
+  /** Egna synonymförslag för ord eleven överanvänder (utöver de uträknade). */
+  synonymer?: { ord: string; forslag: string[] }[];
   /** Kort helhetskommentar/hälsning till eleven. */
   helhet?: string;
   larare?: string;

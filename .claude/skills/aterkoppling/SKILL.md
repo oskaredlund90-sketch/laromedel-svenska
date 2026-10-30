@@ -52,6 +52,10 @@ Läs som en erfaren svensklärare för den årskursen. Utgå från vad som är r
 - Åk 7–9 och gymnasiet: ämnesbegrepp är ok (t.ex. "sambandsord", "gestaltning", "tes").
 - Skriv alltid i du-form till eleven.
 
+**Synonymer (`synonymer`, valfritt)** – sajten räknar själv ut vanliga överanvända ord (bra, sa, gick, kul, jätte-, sen …) och visar synonymer. Lägg bara till egna förslag för ord som eleven upprepar och som inte finns i den listan, eller när texten behöver mer träffsäkra förslag: `[{ "ord": "promenerade", "forslag": ["vandrade", "strosade"] }]`. Egna förslag visas först.
+
+**Övningshäften** – varje `typ` i `nasta` länkas automatiskt till övningssidor och till övningshäften (minst 100 uppgifter, kan skrivas ut med facit) på `/ovningshaften`. Välj därför alltid en `typ` för nästa steg.
+
 **Unikum (`unikum`)** – bara text, inga markdown-tecken. Format:
 
 ```
@@ -82,6 +86,7 @@ Använd bara dessa id:n för `typ`:
 | stavning.stor-bokstav | språk | stor/liten bokstav |
 | stavning.ovrigt | språk | annan stavning |
 | grammatik.de-dem | språk | de/dem/dom |
+| grammatik.genus | språk | en/ett, bestämd form, adjektiv efter en/ett, den/det |
 | grammatik.bojning | språk | verb-, adjektiv-, substantivböjning, kongruens |
 | grammatik.tempus | språk | växlar tid |
 | grammatik.ordfoljd | språk | V2-regeln, BIFF, inversion |

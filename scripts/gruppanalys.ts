@@ -17,6 +17,7 @@ import { franAterkoppling, sammanstall, type Sammanstallning, type TextAnalys, t
 import { OMRADE_ETIKETT, hamtaFeltyp, ovningsHref, stadieForArskurs, type Omrade } from "../src/lib/aterkoppling/feltyper";
 import type { AgeGroup } from "../src/lib/supabase/types";
 import { BAS_CSS, BAS_URL, KOPIERA_JS, esc } from "./html";
+import { haftenForFeltyp } from "../src/lib/haften";
 
 /** Claudes sammanfattning för gruppen. */
 interface Grupp {
@@ -54,9 +55,13 @@ function lasAnalyser(mapp: string): TextAnalys[] {
 function ovningar(typ: string | undefined, stadie: AgeGroup): string {
   const ft = hamtaFeltyp(typ);
   if (!ft) return "";
-  return ft.ovningar
-    .map((o) => `<a class="tagg" href="${esc(BAS_URL + ovningsHref(o, stadie))}" target="_blank">${esc(o.titel)}</a>`)
-    .join("");
+  const sidor = ft.ovningar.map(
+    (o) => `<a class="tagg" href="${esc(BAS_URL + ovningsHref(o, stadie))}" target="_blank">${esc(o.titel)}</a>`,
+  );
+  const haften = haftenForFeltyp(ft.id).map(
+    (h) => `<a class="tagg" href="${esc(`${BAS_URL}/ovningshaften/${h.id}`)}" target="_blank">Häfte: ${esc(h.titel)}</a>`,
+  );
+  return [...haften, ...sidor].join("");
 }
 
 function felTabell(lista: VanligtFel[], tom: string): string {

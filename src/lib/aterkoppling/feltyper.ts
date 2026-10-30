@@ -99,6 +99,13 @@ export const FELTYPER: Feltyp[] = [
     ovningar: [G.ordklasser],
   },
   {
+    id: "grammatik.genus",
+    omrade: "sprak",
+    etikett: "En eller ett (utrum/neutrum)",
+    elevtips: "Säg ordet i bestämd form: bilen → en bil, huset → ett hus. Kolla att adjektivet passar: ett stort hus.",
+    ovningar: [G.ordklasser],
+  },
+  {
     id: "grammatik.bojning",
     omrade: "sprak",
     etikett: "Böjning av ord",

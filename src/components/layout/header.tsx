@@ -13,6 +13,7 @@ const AGE_GROUPS = [
   { href: "/mellanstadiet", label: "Mellanstadiet", short: "Åk 4–6" },
   { href: "/hogstadiet", label: "Högstadiet", short: "Åk 7–9" },
   { href: "/gymnasiet", label: "Gymnasiet", short: "Gym" },
+  { href: "/ovningshaften", label: "Övningshäften", short: "Häften" },
 ];
 
 export function Header() {
@@ -38,7 +39,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm transition-shadow duration-200 dark:bg-neutral-950/80",
+        "sticky top-0 z-50 w-full border-b bg-white/80 print:hidden backdrop-blur-sm transition-shadow duration-200 dark:bg-neutral-950/80",
         scrolled
           ? "border-neutral-200 shadow-sm dark:border-neutral-800"
           : "border-transparent dark:border-transparent"

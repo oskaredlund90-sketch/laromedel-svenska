@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { haftesKatalog } from "@/lib/haften";
 import { AterkopplingVy } from "./aterkoppling-vy";
 
 export const metadata: Metadata = {
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function AterkopplingPage() {
-  return <AterkopplingVy />;
+  return <AterkopplingVy katalog={haftesKatalog()} />;
 }

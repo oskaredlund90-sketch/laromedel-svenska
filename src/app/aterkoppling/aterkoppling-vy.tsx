@@ -8,14 +8,18 @@ import {
   CheckCircle2,
   Dumbbell,
   Lock,
+  NotebookPen,
   MessageSquareText,
   Printer,
+  Replace,
   Sprout,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { packaUpp } from "@/lib/aterkoppling/kodning";
+import type { HaftesKatalog } from "@/lib/haften";
+import { allaSynonymer, type SynonymForslag } from "@/lib/aterkoppling/synonymer";
 import {
   delaISegment,
   placeraKommentarer,
@@ -73,7 +77,7 @@ function arskursEtikett(ak: number) {
   return ak >= 10 ? `Gymnasiet år ${ak - 9}` : `Årskurs ${ak}`;
 }
 
-export function AterkopplingVy() {
+export function AterkopplingVy({ katalog }: { katalog: HaftesKatalog }) {
   const [status, setStatus] = useState<Status>({ lage: "laddar" });
 
   useEffect(() => {
@@ -108,16 +112,17 @@ export function AterkopplingVy() {
       </div>
     );
   }
-  return <Visning data={status.data} />;
+  return <Visning data={status.data} katalog={katalog} />;
 }
 
-function Visning({ data }: { data: Aterkoppling }) {
+function Visning({ data, katalog }: { data: Aterkoppling; katalog: HaftesKatalog }) {
   const [aktiv, setAktiv] = useState<number | null>(null);
   const stadie = stadieForArskurs(data.arskurs);
   const { placerade } = useMemo(() => placeraKommentarer(data.text, data.kommentarer), [data]);
   const segment = useMemo(() => delaISegment(data.text, placerade), [data.text, placerade]);
   const nummer = useMemo(() => new Map(placerade.map((k, i) => [k.index, i + 1])), [placerade]);
   const profil = useMemo(() => lasbarhetsprofil(data.text, data.arskurs), [data]);
+  const synonymer = useMemo(() => allaSynonymer(data.text, data.arskurs, data.synonymer), [data]);
 
   const valj = (index: number) => {
     setAktiv(index);
@@ -161,7 +166,7 @@ function Visning({ data }: { data: Aterkoppling }) {
           ikon={<CheckCircle2 className="h-5 w-5 text-emerald-600" />}
           punkter={data.bra}
         />
-        <NastaSteg punkter={data.nasta} stadie={stadie} />
+        <NastaSteg punkter={data.nasta} stadie={stadie} katalog={katalog} />
       </div>
 
       {/* Text med kommentarer */}
@@ -260,6 +265,8 @@ function Visning({ data }: { data: Aterkoppling }) {
         </div>
       </section>
 
+      {synonymer.length > 0 && <Synonymer lista={synonymer} />}
+
       <Profil profil={profil} />
     </div>
   );
@@ -287,7 +294,15 @@ function PunktLista({ titel, ikon, punkter }: { titel: string; ikon: React.React
   );
 }
 
-function NastaSteg({ punkter, stadie }: { punkter: Punkt[]; stadie: ReturnType<typeof stadieForArskurs> }) {
+function NastaSteg({
+  punkter,
+  stadie,
+  katalog,
+}: {
+  punkter: Punkt[];
+  stadie: ReturnType<typeof stadieForArskurs>;
+  katalog: HaftesKatalog;
+}) {
   return (
     <Card className="border-neutral-300 dark:border-neutral-700">
       <CardHeader className="pb-3">
@@ -320,6 +335,15 @@ function NastaSteg({ punkter, stadie }: { punkter: Punkt[]; stadie: ReturnType<t
                         <Dumbbell className="h-3.5 w-3.5" /> {o.titel}
                       </Link>
                     ))}
+                    {(katalog[typ.id] ?? []).map((h) => (
+                      <Link
+                        key={h.id}
+                        href={`/ovningshaften/${h.id}`}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-900 transition-colors hover:bg-emerald-100 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200"
+                      >
+                        <NotebookPen className="h-3.5 w-3.5" /> Häfte: {h.titel}
+                      </Link>
+                    ))}
                   </div>
                 </>
               )}
@@ -328,6 +352,39 @@ function NastaSteg({ punkter, stadie }: { punkter: Punkt[]; stadie: ReturnType<t
         })}
       </CardContent>
     </Card>
+  );
+}
+
+function Synonymer({ lista }: { lista: SynonymForslag[] }) {
+  return (
+    <section className="mb-10 break-inside-avoid">
+      <h2 className="mb-1 flex items-center gap-2 text-xl font-semibold text-neutral-900 dark:text-white">
+        <Replace className="h-5 w-5" /> Variera dina ord
+      </h2>
+      <p className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+        De här orden använder du ofta. Pröva att byta ut några av dem mot ett annat ord.
+      </p>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {lista.map((s) => (
+          <Card key={s.ord}>
+            <CardContent className="space-y-2 p-5">
+              <p className="font-semibold text-neutral-900 dark:text-white">
+                {s.ord}
+                {s.antal > 0 && <span className="ml-2 text-sm font-normal text-neutral-500">{s.antal} gånger</span>}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {s.forslag.map((f) => (
+                  <span key={f} className="rounded-full bg-sky-50 px-2.5 py-0.5 text-sm text-sky-900 dark:bg-sky-950/50 dark:text-sky-200">
+                    {f}
+                  </span>
+                ))}
+              </div>
+              {s.tips && <p className="text-sm text-neutral-600 dark:text-neutral-400">{s.tips}</p>}
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
   );
 }
 
