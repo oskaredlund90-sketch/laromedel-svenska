@@ -1,0 +1,245 @@
+/**
+ * Lärarskript för /lasprov – läsförståelse med öppna frågor som rättas mot facit.
+ * Facit ligger bara lokalt: lararrum/lasforstaelse/facit/steg*.json
+ * (skapas från förlagets PDF med kommandot `facit`).
+ *
+ *   npm run lasprov -- facit                 Tolka facit-PDF:erna (steg1–3) till JSON
+ *   npm run lasprov -- texter                Lista alla texter med id
+ *   npm run lasprov -- fragor <textId>       Frågor + facit för en text (för rättningen)
+ *   npm run lasprov -- mall <textId>         Svarsmall för eleverna (HTML → Google Dokument)
+ *   npm run lasprov -- bygg <gruppmapp>      Elevlänkar, rapporter, gruppöversikt, Drive-filer
+ *
+ * Gruppmappen: lararrum/lasprov/<grupp>/ med elevernas svar i svar/ och
+ * Claudes rättningar i rattning/<alias>.json.
+ */
+
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { basename, join } from "node:path";
+import { LASFORMAGOR, LASRESULTAT_PREFIX, nivaFor, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
+import { packaJson } from "../src/lib/aterkoppling/kodning";
+import { BAS_CSS, BAS_URL, KOPIERA_JS, esc } from "./html";
+
+const FACIT = "lararrum/lasforstaelse/facit";
+
+function fel(msg: string): never {
+  console.error(`Fel: ${msg}`);
+  process.exit(1);
+}
+
+function allaTexter(): Lastext[] {
+  const filer = existsSync(FACIT) ? readdirSync(FACIT).filter((f) => /^steg\d\.json$/.test(f)).sort() : [];
+  if (!filer.length) fel(`Inget facit i ${FACIT}. Kör först: npm run lasprov -- facit`);
+  return filer.flatMap((f) => JSON.parse(readFileSync(join(FACIT, f), "utf8")) as Lastext[]);
+}
+
+function hamtaText(id: string): Lastext {
+  return allaTexter().find((t) => t.id === id) ?? fel(`Okänd text: ${id}. Se npm run lasprov -- texter`);
+}
+
+function facit() {
+  for (const pdf of readdirSync(FACIT).filter((f) => /^steg\d-facit\.pdf$/.test(f))) {
+    const steg = pdf.replace("-facit.pdf", "");
+    const txt = join(FACIT, `${steg}.txt`);
+    execFileSync("pdftotext", ["-layout", join(FACIT, pdf), txt]);
+    const texter = tolkaFacit(readFileSync(txt, "utf8"), steg);
+    writeFileSync(join(FACIT, `${steg}.json`), JSON.stringify(texter, null, 2));
+    console.log(`${steg}: ${texter.length} texter, ${texter.reduce((n, t) => n + t.fragor.length, 0)} frågor`);
+  }
+}
+
+function mall(id: string) {
+  const t = hamtaText(id);
+  const dir = "lararrum/lasforstaelse/mallar";
+  mkdirSync(dir, { recursive: true });
+  const fil = join(dir, `${id}.html`);
+  writeFileSync(
+    fil,
+    `<html><head><meta charset="utf-8"></head><body>
+<h1>${esc(t.titel)}</h1>
+<p>Namn: ______________________ &nbsp; Klass: ________</p>
+<p><i>Svara under varje fråga. Skriv hela meningar och använd texten när du svarar.</i></p>
+${t.fragor.map((f) => `<p><b>${f.nr}. ${esc(f.fraga)}</b> (${f.maxpoang} p)</p><p>Svar: </p><p>&nbsp;</p>`).join("\n")}
+</body></html>`,
+  );
+  console.log(JSON.stringify({ mall: fil, titel: t.titel, fragor: t.fragor.length, maxpoang: t.fragor.reduce((n, f) => n + f.maxpoang, 0) }, null, 2));
+}
+
+/** Det Claude skriver per elev. Förmåga, maxpoäng och frågetext fylls i från facit. */
+interface Underlag {
+  elev: string;
+  textId: string;
+  arskurs?: number;
+  svar: { nr: number; poang: number; kommentar?: string }[];
+  helhet?: string;
+  larare?: string;
+  unikum?: string;
+  lararanteckning?: string;
+}
+
+interface Bygge {
+  u: Underlag;
+  r: Rattning;
+  lank: string;
+  summa: ReturnType<typeof summera>;
+  rapport: string;
+}
+
+async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
+  const u: Underlag = JSON.parse(readFileSync(fil, "utf8"));
+  const t = allaTexter().find((x) => x.id === u.textId);
+  if (!t) {
+    problem.push(`${basename(fil)}: okänd text ${u.textId}`);
+    return null;
+  }
+  const saknas = t.fragor.filter((f) => !u.svar.some((s) => s.nr === f.nr)).map((f) => f.nr);
+  if (saknas.length) problem.push(`${basename(fil)}: saknar fråga ${saknas.join(", ")}`);
+  const r: Rattning = {
+    v: 1,
+    titel: t.titel,
+    steg: t.steg,
+    arskurs: u.arskurs,
+    helhet: u.helhet,
+    larare: u.larare,
+    svar: t.fragor.map((f) => {
+      const s = u.svar.find((x) => x.nr === f.nr);
+      const poang = Math.min(f.maxpoang, Math.max(0, s?.poang ?? 0));
+      if (s && s.poang > f.maxpoang) problem.push(`${basename(fil)}: fråga ${f.nr} har ${s.poang} p men max är ${f.maxpoang}`);
+      return { nr: f.nr, formaga: f.formaga, fraga: f.fraga, poang, maxpoang: f.maxpoang, kommentar: s?.kommentar };
+    }),
+  };
+  const lank = `${BAS_URL}/lasresultat#${await packaJson(r, LASRESULTAT_PREFIX)}`;
+  const summa = summera(r);
+  const rapport = fil.replace(/\.json$/, ".html");
+  writeFileSync(rapport, elevRapport(u, r, lank, summa));
+  return { u, r, lank, summa, rapport };
+}
+
+function procent(a: number): string {
+  return `${Math.round(a * 100)} %`;
+}
+
+function elevRapport(u: Underlag, r: Rattning, lank: string, s: ReturnType<typeof summera>): string {
+  return `<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Läsprov – ${esc(u.elev)}</title><style>${BAS_CSS}</style></head><body><main>
+<p class="dim">${esc(u.elev)} · ${esc(r.titel)}</p><h1>${s.totalt} av ${s.max} poäng</h1>
+<section class="grid">
+  <div class="kort"><h2>Elevlänk</h2><div class="kopiera"><input id="lank" readonly value="${esc(lank)}"><button onclick="kopiera('lank',this)">Kopiera</button></div>
+  <p class="dim" style="font-size:13px"><a href="${esc(lank)}" target="_blank">Öppna som eleven ser den</a></p></div>
+  ${u.unikum ? `<div class="kort"><h2>Unikum</h2><div class="kopiera"><textarea id="unikum">${esc(u.unikum)}</textarea><button onclick="kopiera('unikum',this)">Kopiera</button></div></div>` : ""}
+</section>
+<section class="kort"><h2>Per förmåga</h2><table>${s.perFormaga
+    .map((f) => `<tr><td>${LASFORMAGOR[f.formaga].namn}</td><td>${f.poang}/${f.maxpoang}</td><td>${procent(f.andel)}</td></tr>`)
+    .join("")}</table></section>
+<section class="kort"><h2>Fråga för fråga</h2><table>${r.svar
+    .map((x) => `<tr><td>${x.nr}. ${esc(x.fraga ?? "")}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`)
+    .join("")}</table></section>
+${u.lararanteckning ? `<section class="kort"><h2>Lärarens anteckning</h2><p style="white-space:pre-line">${esc(u.lararanteckning)}</p></section>` : ""}
+</main>${KOPIERA_JS}</body></html>`;
+}
+
+function gruppRapport(grupp: string, b: Bygge[]): string {
+  const formagor = (Object.keys(LASFORMAGOR) as Lasformaga[]).filter((f) => b.some((x) => x.summa.perFormaga.some((p) => p.formaga === f)));
+  const andel = (x: Bygge, f: Lasformaga) => x.summa.perFormaga.find((p) => p.formaga === f)?.andel;
+  const farg = (a?: number) => (a === undefined ? "" : { trana: "#fde68a", pagang: "#bae6fd", saker: "#a7f3d0" }[nivaFor(a)]);
+  // Frågor där gruppen tappade mest poäng
+  const perFraga = new Map<number, { fraga: string; formaga: Lasformaga; tappat: number; max: number }>();
+  for (const x of b)
+    for (const s of x.r.svar) {
+      const p = perFraga.get(s.nr) ?? { fraga: s.fraga ?? "", formaga: s.formaga, tappat: 0, max: 0 };
+      p.tappat += s.maxpoang - s.poang;
+      p.max += s.maxpoang;
+      perFraga.set(s.nr, p);
+    }
+  const svarast = [...perFraga.entries()].sort((a, c) => c[1].tappat / c[1].max - a[1].tappat / a[1].max).slice(0, 5);
+  const gruppAndel = (f: Lasformaga) => {
+    const v = b.map((x) => andel(x, f)).filter((a): a is number => a !== undefined);
+    return v.reduce((n, a) => n + a, 0) / Math.max(1, v.length);
+  };
+  const svagastForGrupp = [...formagor].sort((a, c) => gruppAndel(a) - gruppAndel(c))[0];
+
+  return `<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Läsprov – ${esc(grupp)}</title><style>${BAS_CSS}</style></head><body><main>
+<p class="dim">${esc(b[0]?.r.titel ?? "")} · ${b.length} elever</p><h1>Läsprov – ${esc(grupp)}</h1>
+<section class="kort"><h2>Gruppen per förmåga</h2><table><tr><th>Förmåga</th><th>Snitt</th></tr>${formagor
+    .map((f) => `<tr><td>${LASFORMAGOR[f].namn}</td><td style="background:${farg(gruppAndel(f))}">${procent(gruppAndel(f))}</td></tr>`)
+    .join("")}</table>
+${svagastForGrupp ? `<p><b>Mest att träna för gruppen:</b> ${LASFORMAGOR[svagastForGrupp].namn}.</p><ul>${LASFORMAGOR[svagastForGrupp].tips.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}</section>
+<section class="kort"><h2>Elever</h2><div style="overflow-x:auto"><table><tr><th>Elev</th><th>Poäng</th>${formagor
+    .map((f) => `<th>${f}</th>`)
+    .join("")}<th></th></tr>${b
+    .map(
+      (x) =>
+        `<tr><td>${esc(x.u.elev)}</td><td>${x.summa.totalt}/${x.summa.max}</td>${formagor
+          .map((f) => `<td style="background:${farg(andel(x, f))}">${andel(x, f) === undefined ? "" : procent(andel(x, f)!)}</td>`)
+          .join("")}<td><a href="${esc(basename(x.rapport))}">Rapport</a> · <a href="${esc(x.lank)}" target="_blank">Elevlänk</a></td></tr>`,
+    )
+    .join("")}</table></div><p class="dim">H = hitta, D = dra slutsatser, S = sammanföra och tolka, G = granska och värdera. Gult = behöver träna, blått = på god väg, grönt = säker.</p></section>
+<section class="kort"><h2>Frågor där gruppen tappade mest</h2><ol>${svarast
+    .map(([nr, p]) => `<li><b>${nr}. ${esc(p.fraga)}</b> <span class="dim">(${p.formaga}, ${procent(1 - p.tappat / p.max)} av poängen)</span></li>`)
+    .join("")}</ol><p class="dim">Bra att gå igenom tillsammans.</p></section>
+</main></body></html>`;
+}
+
+function csvCell(s: string | number): string {
+  const t = String(s);
+  return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t;
+}
+
+async function bygg(mapp: string) {
+  const dir = join(mapp, "rattning");
+  if (!existsSync(dir)) fel(`Hittar inte ${dir}.`);
+  const problem: string[] = [];
+  const byggen = (await Promise.all(readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => byggElev(join(dir, f), problem)))).filter(
+    (x): x is Bygge => x !== null,
+  );
+  const grupp = basename(mapp);
+  const oversikt = join(mapp, "oversikt.html");
+  writeFileSync(oversikt, gruppRapport(grupp, byggen));
+
+  const formagor: Lasformaga[] = ["H", "D", "S", "G"];
+  const rader = [["Elev", "Text", "Poäng", "Max", ...formagor.map((f) => LASFORMAGOR[f].kort), "Elevlänk", "Unikum"]];
+  for (const x of byggen)
+    rader.push([
+      x.u.elev,
+      x.r.titel,
+      String(x.summa.totalt),
+      String(x.summa.max),
+      ...formagor.map((f) => {
+        const p = x.summa.perFormaga.find((q) => q.formaga === f);
+        return p ? procent(p.andel) : "";
+      }),
+      x.lank,
+      x.u.unikum ?? "",
+    ]);
+  mkdirSync(join(mapp, "drive"), { recursive: true });
+  writeFileSync(join(mapp, "drive", "oversikt.csv"), rader.map((r) => r.map(csvCell).join(",")).join("\n") + "\n");
+
+  console.log(
+    JSON.stringify(
+      {
+        byggda: byggen.length,
+        problem,
+        oversikt,
+        drive: join(mapp, "drive", "oversikt.csv"),
+        elever: byggen.map((x) => ({ elev: x.u.elev, poang: `${x.summa.totalt}/${x.summa.max}`, formagor: Object.fromEntries(x.summa.perFormaga.map((p) => [p.formaga, procent(p.andel)])) })),
+      },
+      null,
+      2,
+    ),
+  );
+}
+
+const [kommando, arg] = process.argv.slice(2);
+if (kommando === "facit") facit();
+else if (kommando === "texter")
+  console.log(
+    allaTexter()
+      .filter((t) => !arg || t.steg === arg)
+      .map((t) => `${t.id}\t${t.titel}\t${t.fragor.length} frågor\t${t.fragor.reduce((n, f) => n + f.maxpoang, 0)} p`)
+      .join("\n"),
+  );
+else if (kommando === "fragor" && arg) console.log(JSON.stringify(hamtaText(arg), null, 2));
+else if (kommando === "mall" && arg) mall(arg);
+else if (kommando === "bygg" && arg) void bygg(arg);
+else fel("Användning: lasprov facit | texter [steg] | fragor <textId> | mall <textId> | bygg <gruppmapp>");

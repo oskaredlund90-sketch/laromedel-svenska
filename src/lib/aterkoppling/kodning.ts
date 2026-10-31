@@ -24,16 +24,25 @@ function franBase64url(s: string): Uint8Array {
   return Uint8Array.from(bin, (c) => c.charCodeAt(0));
 }
 
+/** Packar valfri JSON-data med ett prefix som anger formatet. */
+export async function packaJson(data: unknown, prefix: string): Promise<string> {
+  const json = new TextEncoder().encode(JSON.stringify(data));
+  return prefix + tillBase64url(await kor(json, new CompressionStream("deflate-raw")));
+}
+
+export async function packaUppJson(kod: string, prefix: string): Promise<unknown> {
+  const ren = kod.replace(/^#/, "").trim();
+  if (!ren.startsWith(prefix)) throw new Error("Okänt länkformat");
+  const bytes = await kor(franBase64url(ren.slice(prefix.length)), new DecompressionStream("deflate-raw"));
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+
 export async function packa(a: Aterkoppling): Promise<string> {
-  const json = new TextEncoder().encode(JSON.stringify(a));
-  return PREFIX + tillBase64url(await kor(json, new CompressionStream("deflate-raw")));
+  return packaJson(a, PREFIX);
 }
 
 export async function packaUpp(kod: string): Promise<Aterkoppling> {
-  const ren = kod.replace(/^#/, "").trim();
-  if (!ren.startsWith(PREFIX)) throw new Error("Okänt länkformat");
-  const bytes = await kor(franBase64url(ren.slice(PREFIX.length)), new DecompressionStream("deflate-raw"));
-  const data: unknown = JSON.parse(new TextDecoder().decode(bytes));
+  const data = await packaUppJson(kod, PREFIX);
   if (!arAterkoppling(data)) throw new Error("Länken innehåller ingen giltig återkoppling");
   return data;
 }

@@ -11,7 +11,8 @@
     "test": "vitest run",
     "gruppanalys": "tsx scripts/gruppanalys.ts",
     "klassrespons": "tsx scripts/klassrespons.ts",
-    "veckansord": "tsx scripts/veckansord.ts"
+    "veckansord": "tsx scripts/veckansord.ts",
+    "lasprov": "tsx scripts/lasprov.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
