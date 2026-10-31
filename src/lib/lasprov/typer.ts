@@ -141,7 +141,8 @@ export interface Rattning {
   steg?: string;
   /** Årskurs 1–9, gymnasiet 10–12 – styr länkarna till träning. */
   arskurs?: number;
-  svar: { nr: number; formaga: Lasformaga; fraga?: string; poang: number; maxpoang: number; kommentar?: string }[];
+  /** Text = titeln på texten när provet har flera texter. */
+  svar: { text?: string; nr: number; formaga: Lasformaga; fraga?: string; poang: number; maxpoang: number; kommentar?: string }[];
   helhet?: string;
   larare?: string;
 }

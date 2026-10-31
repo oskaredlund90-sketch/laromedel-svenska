@@ -48,6 +48,17 @@ Erbjud läraren att ladda upp mallen som ett Google Dokument i Drive (Drive-verk
 }
 ```
 
+**Flera texter per elev** (t.ex. en DigiExam-export där eleven svarat på texterna i tur och ordning): använd `texter` i stället för `textId`/`svar`, och `prov` som namn:
+
+```json
+{ "elev": "NE", "prov": "Läsförståelse Steg 1", "arskurs": 7,
+  "texter": [ { "textId": "steg1-01", "svar": [ … ] }, { "textId": "steg1-02", "svar": [ … ] } ], … }
+```
+
+Så känner du igen texterna i en export: numreringen börjar om på 1 när en ny text börjar, i samma ordning som i häftet (se `texter`). Kontrollera mot frågorna – svaren ska passa ihop med frågan med samma nummer. Har en elev svarat på en fråga under fel nummer: ge poäng där svaret hör hemma om det är tydligt, och nämn det i lärarens anteckning.
+
+**Frågor eleven inte hann till** (efter elevens sista svar i en text) tas automatiskt bort och räknas inte. Ta bara med de frågor eleven faktiskt har kommit till; en hoppad fråga mitt i ger 0 ("Inget svar").
+
 Regler för rättningen:
 - **Följ facit.** Ge poäng enligt facits nivåer. Exempelsvar är exempel – godta andra svar som uppfyller samma krav. Var konsekvent mellan eleverna.
 - Stavning och språk ger inte poängavdrag i läsförståelse, så länge svaret går att förstå.

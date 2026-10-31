@@ -66,11 +66,21 @@ ${t.fragor.map((f) => `<p><b>${f.nr}. ${esc(f.fraga)}</b> (${f.maxpoang} p)</p><
 }
 
 /** Det Claude skriver per elev. Förmåga, maxpoäng och frågetext fylls i från facit. */
+interface TextSvar {
+  textId: string;
+  svar: { nr: number; poang: number; kommentar?: string }[];
+}
+
 interface Underlag {
   elev: string;
-  textId: string;
+  /** Provets namn när eleven svarat på flera texter, t.ex. "Läsförståelse Steg 1". */
+  prov?: string;
+  /** En text … */
+  textId?: string;
+  svar?: TextSvar["svar"];
+  /** … eller flera texter i ordning. */
+  texter?: TextSvar[];
   arskurs?: number;
-  svar: { nr: number; poang: number; kommentar?: string }[];
   helhet?: string;
   larare?: string;
   unikum?: string;
@@ -83,46 +93,74 @@ interface Bygge {
   lank: string;
   summa: ReturnType<typeof summera>;
   rapport: string;
+  /** Frågor eleven inte hann till (räknas inte). */
+  ejNadda: number;
 }
 
 async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
   const u: Underlag = JSON.parse(readFileSync(fil, "utf8"));
-  const t = allaTexter().find((x) => x.id === u.textId);
-  if (!t) {
-    problem.push(`${basename(fil)}: okänd text ${u.textId}`);
+  const delar: TextSvar[] = u.texter ?? (u.textId && u.svar ? [{ textId: u.textId, svar: u.svar }] : []);
+  if (!delar.length) {
+    problem.push(`${basename(fil)}: saknar textId/svar eller texter`);
     return null;
   }
-  const saknas = t.fragor.filter((f) => !u.svar.some((s) => s.nr === f.nr)).map((f) => f.nr);
-  if (saknas.length) problem.push(`${basename(fil)}: saknar fråga ${saknas.join(", ")}`);
+  const flera = delar.length > 1;
+  const svar: Rattning["svar"] = [];
+  let ejNadda = 0;
+  let steg: string | undefined;
+  for (const d of delar) {
+    const t = allaTexter().find((x) => x.id === d.textId);
+    if (!t) {
+      problem.push(`${basename(fil)}: okänd text ${d.textId}`);
+      continue;
+    }
+    steg = t.steg;
+    // Frågor efter den sista eleven svarat på har eleven inte hunnit till – de räknas inte.
+    const sista = Math.max(0, ...d.svar.map((x) => x.nr));
+    for (const f of t.fragor) {
+      if (f.nr > sista) {
+        ejNadda++;
+        continue;
+      }
+      const s = d.svar.find((x) => x.nr === f.nr);
+      if (s && s.poang > f.maxpoang) problem.push(`${basename(fil)}: ${t.titel} fråga ${f.nr} har ${s.poang} p men max är ${f.maxpoang}`);
+      svar.push({
+        text: flera ? t.titel : undefined,
+        nr: f.nr,
+        formaga: f.formaga,
+        fraga: f.fraga,
+        poang: Math.min(f.maxpoang, Math.max(0, s?.poang ?? 0)),
+        maxpoang: f.maxpoang,
+        kommentar: s ? s.kommentar : "Inget svar.",
+      });
+    }
+  }
+  const forstaTitel = allaTexter().find((x) => x.id === delar[0].textId)?.titel ?? "";
   const r: Rattning = {
     v: 1,
-    titel: t.titel,
-    steg: t.steg,
+    titel: u.prov ?? (flera ? `Läsförståelse – ${delar.length} texter` : forstaTitel),
+    steg,
     arskurs: u.arskurs,
     helhet: u.helhet,
     larare: u.larare,
-    svar: t.fragor.map((f) => {
-      const s = u.svar.find((x) => x.nr === f.nr);
-      const poang = Math.min(f.maxpoang, Math.max(0, s?.poang ?? 0));
-      if (s && s.poang > f.maxpoang) problem.push(`${basename(fil)}: fråga ${f.nr} har ${s.poang} p men max är ${f.maxpoang}`);
-      return { nr: f.nr, formaga: f.formaga, fraga: f.fraga, poang, maxpoang: f.maxpoang, kommentar: s?.kommentar };
-    }),
+    svar,
   };
   const lank = `${BAS_URL}/lasresultat#${await packaJson(r, LASRESULTAT_PREFIX)}`;
   const summa = summera(r);
   const rapport = fil.replace(/\.json$/, ".html");
-  writeFileSync(rapport, elevRapport(u, r, lank, summa));
-  return { u, r, lank, summa, rapport };
+  writeFileSync(rapport, elevRapport(u, r, lank, summa, ejNadda));
+  return { u, r, lank, summa, rapport, ejNadda };
 }
 
 function procent(a: number): string {
   return `${Math.round(a * 100)} %`;
 }
 
-function elevRapport(u: Underlag, r: Rattning, lank: string, s: ReturnType<typeof summera>): string {
+function elevRapport(u: Underlag, r: Rattning, lank: string, s: ReturnType<typeof summera>, ejNadda: number): string {
   return `<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Läsprov – ${esc(u.elev)}</title><style>${BAS_CSS}</style></head><body><main>
 <p class="dim">${esc(u.elev)} · ${esc(r.titel)}</p><h1>${s.totalt} av ${s.max} poäng</h1>
+${ejNadda ? `<p class="dim">${ejNadda} frågor i slutet hann eleven inte till – de räknas inte.</p>` : ""}
 <section class="grid">
   <div class="kort"><h2>Elevlänk</h2><div class="kopiera"><input id="lank" readonly value="${esc(lank)}"><button onclick="kopiera('lank',this)">Kopiera</button></div>
   <p class="dim" style="font-size:13px"><a href="${esc(lank)}" target="_blank">Öppna som eleven ser den</a></p></div>
@@ -132,7 +170,10 @@ function elevRapport(u: Underlag, r: Rattning, lank: string, s: ReturnType<typeo
     .map((f) => `<tr><td>${LASFORMAGOR[f.formaga].namn}</td><td>${f.poang}/${f.maxpoang}</td><td>${procent(f.andel)}</td></tr>`)
     .join("")}</table></section>
 <section class="kort"><h2>Fråga för fråga</h2><table>${r.svar
-    .map((x) => `<tr><td>${x.nr}. ${esc(x.fraga ?? "")}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`)
+    .map(
+      (x, i, alla) =>
+        `${x.text && x.text !== alla[i - 1]?.text ? `<tr><th colspan="3">${esc(x.text)}</th></tr>` : ""}<tr><td>${x.nr}. ${esc(x.fraga ?? "")}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`,
+    )
     .join("")}</table></section>
 ${u.lararanteckning ? `<section class="kort"><h2>Lärarens anteckning</h2><p style="white-space:pre-line">${esc(u.lararanteckning)}</p></section>` : ""}
 </main>${KOPIERA_JS}</body></html>`;
@@ -143,15 +184,22 @@ function gruppRapport(grupp: string, b: Bygge[]): string {
   const andel = (x: Bygge, f: Lasformaga) => x.summa.perFormaga.find((p) => p.formaga === f)?.andel;
   const farg = (a?: number) => (a === undefined ? "" : { trana: "#fde68a", pagang: "#bae6fd", saker: "#a7f3d0" }[nivaFor(a)]);
   // Frågor där gruppen tappade mest poäng
-  const perFraga = new Map<number, { fraga: string; formaga: Lasformaga; tappat: number; max: number }>();
+  const perFraga = new Map<string, { fraga: string; formaga: Lasformaga; tappat: number; max: number }>();
   for (const x of b)
     for (const s of x.r.svar) {
-      const p = perFraga.get(s.nr) ?? { fraga: s.fraga ?? "", formaga: s.formaga, tappat: 0, max: 0 };
+      const nyckel = `${s.text ? `${s.text}, fråga ` : ""}${s.nr}`;
+      const p = perFraga.get(nyckel) ?? { fraga: s.fraga ?? "", formaga: s.formaga, tappat: 0, max: 0 };
       p.tappat += s.maxpoang - s.poang;
       p.max += s.maxpoang;
-      perFraga.set(s.nr, p);
+      perFraga.set(nyckel, p);
     }
-  const svarast = [...perFraga.entries()].sort((a, c) => c[1].tappat / c[1].max - a[1].tappat / a[1].max).slice(0, 5);
+  // Bara frågor som minst två elever har svarat på, så att en enskild elevs miss inte toppar listan.
+  const antalSvar = (nyckel: string) =>
+    b.filter((x) => x.r.svar.some((s) => `${s.text ? `${s.text}, fråga ` : ""}${s.nr}` === nyckel)).length;
+  const svarast = [...perFraga.entries()]
+    .filter(([k]) => b.length < 2 || antalSvar(k) >= 2)
+    .sort((a, c) => c[1].tappat / c[1].max - a[1].tappat / a[1].max)
+    .slice(0, 6);
   const gruppAndel = (f: Lasformaga) => {
     const v = b.map((x) => andel(x, f)).filter((a): a is number => a !== undefined);
     return v.reduce((n, a) => n + a, 0) / Math.max(1, v.length);
@@ -176,7 +224,7 @@ ${svagastForGrupp ? `<p><b>Mest att träna för gruppen:</b> ${LASFORMAGOR[svaga
     )
     .join("")}</table></div><p class="dim">H = hitta, D = dra slutsatser, S = sammanföra och tolka, G = granska och värdera. Gult = behöver träna, blått = på god väg, grönt = säker.</p></section>
 <section class="kort"><h2>Frågor där gruppen tappade mest</h2><ol>${svarast
-    .map(([nr, p]) => `<li><b>${nr}. ${esc(p.fraga)}</b> <span class="dim">(${p.formaga}, ${procent(1 - p.tappat / p.max)} av poängen)</span></li>`)
+    .map(([nr, p]) => `<li><b>${esc(nr)}. ${esc(p.fraga)}</b> <span class="dim">(${p.formaga}, ${procent(1 - p.tappat / p.max)} av poängen)</span></li>`)
     .join("")}</ol><p class="dim">Bra att gå igenom tillsammans.</p></section>
 </main></body></html>`;
 }

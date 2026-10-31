@@ -105,10 +105,13 @@ export function Lasresultat() {
 
       <h2 className="mt-10 mb-4 text-xl font-semibold text-neutral-900 dark:text-white">Fråga för fråga</h2>
       <ol className="space-y-3">
-        {data.svar.map((s) => {
+        {data.svar.map((s, i) => {
           const fullt = s.poang >= s.maxpoang;
+          const nyText = s.text && s.text !== data.svar[i - 1]?.text;
           return (
-            <li key={s.nr} className="rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
+            <li key={`${s.text ?? ""}-${s.nr}`} className="text-sm">
+              {nyText && <h3 className="mt-6 mb-2 text-base font-semibold text-neutral-900 dark:text-white">{s.text}</h3>}
+              <div className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
               <div className="mb-1 flex items-start justify-between gap-3">
                 <p className="flex items-start gap-2 font-medium text-neutral-900 dark:text-white">
                   {fullt ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" /> : <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />}
@@ -121,6 +124,7 @@ export function Lasresultat() {
                 </span>
               </div>
               {s.kommentar && <p className="pl-6 text-neutral-700 dark:text-neutral-300">{s.kommentar}</p>}
+              </div>
             </li>
           );
         })}
