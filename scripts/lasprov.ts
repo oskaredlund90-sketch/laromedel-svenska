@@ -20,6 +20,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { basename, dirname, join } from "node:path";
 import { LASFORMAGOR, LASRESULTAT_PREFIX, nivaFor, perText, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
 import { packaJson } from "../src/lib/aterkoppling/kodning";
+import { LARARTIPS, UTHALLIGHETSTIPS } from "../src/lib/lasprov/larartips";
 import { BAS_CSS, BAS_URL, KOPIERA_JS, esc } from "./html";
 
 const FACIT = "lararrum/lasforstaelse/facit";
@@ -215,13 +216,36 @@ function gruppRapport(grupp: string, b: Bygge[]): string {
   };
   const svagastForGrupp = [...formagor].sort((a, c) => gruppAndel(a) - gruppAndel(c))[0];
 
+  // Lärartips: svagaste förmågan först, med vilka elever som behöver den mest.
+  const lararTips = () => {
+    const ordning = [...formagor].filter((f) => nivaFor(gruppAndel(f)) !== "saker").sort((a, c) => gruppAndel(a) - gruppAndel(c));
+    const hannInte = b.filter((x) => x.ejNadda > 0);
+    const block = ordning.map((f, i) => {
+      const t = LARARTIPS[f];
+      const behover = b.filter((x) => (andel(x, f) ?? 1) < 0.5).map((x) => esc(x.u.elev));
+      return `<details${i === 0 ? " open" : ""}><summary><b>${LASFORMAGOR[f].namn}</b> – gruppen ${procent(gruppAndel(f))}</summary>
+<p>${esc(t.mal)}</p>${behover.length ? `<p><b>Behöver mest:</b> ${behover.join(", ")}</p>` : ""}
+<ol>${t.upplagg.map((u) => `<li><b>${esc(u.namn)}.</b> ${esc(u.gor)}</li>`).join("")}</ol>
+<p><b>Snabbstart nästa lektion:</b> ${esc(t.snabbstart)}</p>
+<p><b>Elevernas egna tips:</b> ${LASFORMAGOR[f].tips.map(esc).join(" ")}</p>
+<p>Genomgång och övning för eleverna: <a href="${BAS_URL}/lasformagor/${f.toLowerCase()}" target="_blank">${BAS_URL.replace(/^https?:\/\//, "")}/lasformagor/${f.toLowerCase()}</a></p></details>`;
+    });
+    if (hannInte.length)
+      block.push(`<details${ordning.length ? "" : " open"}><summary><b>Läsuthållighet och tempo</b> – ${hannInte.length} av ${b.length} hann inte klart</summary>
+<p>${hannInte.map((x) => `${esc(x.u.elev)} (${x.ejNadda} frågor)`).join(", ")}</p><ul>${UTHALLIGHETSTIPS.map((u) => `<li>${esc(u)}</li>`).join("")}</ul></details>`);
+    if (!block.length) return "";
+    return `<section class="kort"><h2>Så kan du träna med gruppen</h2>${block.join("")}
+<p class="dim">Tips: gå igenom frågorna nedan där gruppen tappade mest och modellera ett starkt svar tillsammans.</p></section>`;
+  };
+
   return `<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Läsprov – ${esc(grupp)}</title><style>${BAS_CSS}</style></head><body><main>
 <p class="dim">${esc(b[0]?.r.titel ?? "")} · ${b.length} elever</p><h1>Läsprov – ${esc(grupp)}</h1>
 <section class="kort"><h2>Gruppen per förmåga</h2><table><tr><th>Förmåga</th><th>Snitt</th></tr>${formagor
     .map((f) => `<tr><td>${LASFORMAGOR[f].namn}</td><td style="background:${farg(gruppAndel(f))}">${procent(gruppAndel(f))}</td></tr>`)
     .join("")}</table>
-${svagastForGrupp ? `<p><b>Mest att träna för gruppen:</b> ${LASFORMAGOR[svagastForGrupp].namn}.</p><ul>${LASFORMAGOR[svagastForGrupp].tips.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}</section>
+${svagastForGrupp ? `<p><b>Mest att träna för gruppen:</b> ${LASFORMAGOR[svagastForGrupp].namn}.</p>` : ""}</section>
+${lararTips()}
 <section class="kort"><h2>Elever</h2><div style="overflow-x:auto"><table><tr><th>Elev</th><th>Poäng</th>${formagor
     .map((f) => `<th>${f}</th>`)
     .join("")}<th></th></tr>${b
