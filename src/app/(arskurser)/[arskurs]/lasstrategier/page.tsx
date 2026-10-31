@@ -577,6 +577,16 @@ export default async function LasstrategierPage({ params }: Props) {
               Testa dina kunskaper om lässtrategier med dessa övningar. Välj rätt
               svar och lär dig av förklaringarna.
             </p>
+      <Link
+        href="/lasformagor"
+        className="mb-8 flex items-center justify-between gap-4 rounded-xl border border-sky-300 bg-sky-50 p-5 transition-colors hover:bg-sky-100 dark:border-sky-800 dark:bg-sky-950/40"
+      >
+        <span>
+          <span className="block font-semibold text-neutral-900 dark:text-white">Träna de fyra läsförmågorna</span>
+          <span className="text-sm text-neutral-700 dark:text-neutral-300">Hitta, dra slutsatser, tolka och granska – steg för steg med övningar.</span>
+        </span>
+        <span aria-hidden>→</span>
+      </Link>
             <LasstrategierOvningar exercises={exercises} />
           </Section>
         </div>

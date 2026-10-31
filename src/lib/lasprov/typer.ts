@@ -11,10 +11,11 @@
 
 export type Lasformaga = "H" | "D" | "S" | "G";
 
-export const LASFORMAGOR: Record<Lasformaga, { namn: string; kort: string; tips: string[] }> = {
+export const LASFORMAGOR: Record<Lasformaga, { namn: string; kort: string; verb: string; tips: string[] }> = {
   H: {
     namn: "Hitta efterfrågad information",
     kort: "Hitta",
+    verb: "hitta information",
     tips: [
       "Läs frågan först och leta efter ett nyckelord. Sök sedan efter ordet i texten.",
       "Svara inte på minnet – hitta meningen där svaret står och läs den igen.",
@@ -24,6 +25,7 @@ export const LASFORMAGOR: Record<Lasformaga, { namn: string; kort: string; tips:
   D: {
     namn: "Dra enkla slutsatser",
     kort: "Slutsatser",
+    verb: "dra slutsatser",
     tips: [
       "Fråga dig: vad betyder det här för personen? Varför gör hen så?",
       "Kombinera två saker som står i texten till en slutsats: det står att …, alltså …",
@@ -33,6 +35,7 @@ export const LASFORMAGOR: Record<Lasformaga, { namn: string; kort: string; tips:
   S: {
     namn: "Sammanföra och tolka",
     kort: "Tolka",
+    verb: "tolka och sammanföra",
     tips: [
       "Använd orden ”jag tror att … eftersom det står att …” – svara och motivera med texten.",
       "Koppla ihop information från olika delar av texten (och bilder) till en helhet.",
@@ -42,6 +45,7 @@ export const LASFORMAGOR: Record<Lasformaga, { namn: string; kort: string; tips:
   G: {
     namn: "Granska och värdera",
     kort: "Granska",
+    verb: "granska och värdera",
     tips: [
       "Fråga dig vad texten vill säga och vilken sorts text det är (berättande, faktatext, argumenterande).",
       "Lägg märke till hur texten är skriven: ordval, bilder, rubriker och syfte.",
@@ -142,7 +146,17 @@ export interface Rattning {
   /** Årskurs 1–9, gymnasiet 10–12 – styr länkarna till träning. */
   arskurs?: number;
   /** Text = titeln på texten när provet har flera texter. */
-  svar: { text?: string; nr: number; formaga: Lasformaga; fraga?: string; poang: number; maxpoang: number; kommentar?: string }[];
+  svar: {
+    text?: string;
+    nr: number;
+    formaga: Lasformaga;
+    fraga?: string;
+    /** Elevens eget svar. */
+    elevsvar?: string;
+    poang: number;
+    maxpoang: number;
+    kommentar?: string;
+  }[];
   helhet?: string;
   larare?: string;
 }
@@ -183,4 +197,17 @@ export function nivaFor(andel: number): Niva {
   if (andel >= 0.8) return "saker";
   if (andel >= 0.5) return "pagang";
   return "trana";
+}
+
+/** Poäng per text (i den ordning texterna kommer). */
+export function perText(r: Rattning): { titel: string; poang: number; maxpoang: number }[] {
+  const ut: { titel: string; poang: number; maxpoang: number }[] = [];
+  for (const s of r.svar) {
+    const titel = s.text ?? r.titel;
+    let t = ut.find((x) => x.titel === titel);
+    if (!t) ut.push((t = { titel, poang: 0, maxpoang: 0 }));
+    t.poang += s.poang;
+    t.maxpoang += s.maxpoang;
+  }
+  return ut;
 }

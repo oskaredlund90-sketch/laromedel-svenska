@@ -13,6 +13,7 @@ import {
   LASRESULTAT_PREFIX,
   arRattning,
   nivaFor,
+  perText,
   summera,
   type Niva,
   type Rattning,
@@ -29,9 +30,14 @@ export function Lasresultat() {
   const [fel, setFel] = useState(false);
 
   useEffect(() => {
-    packaUppJson(window.location.hash, LASRESULTAT_PREFIX)
-      .then((d) => (arRattning(d) ? setData(d) : setFel(true)))
-      .catch(() => setFel(true));
+    const las = () =>
+      packaUppJson(window.location.hash, LASRESULTAT_PREFIX)
+        .then((d) => (arRattning(d) ? (setData(d), setFel(false)) : setFel(true)))
+        .catch(() => setFel(true));
+    las();
+    // En ny länk i samma flik byter bara hashen – läs om resultatet då.
+    window.addEventListener("hashchange", las);
+    return () => window.removeEventListener("hashchange", las);
   }, []);
 
   if (fel) return <div className="mx-auto max-w-2xl px-4 py-16 text-neutral-600">Länken kunde inte läsas. Be din lärare skicka den igen.</div>;
@@ -95,6 +101,12 @@ export function Lasresultat() {
                         <li key={t}>{t}</li>
                       ))}
                     </ul>
+                    <Link
+                      href={`/lasformagor/${f.formaga.toLowerCase()}`}
+                      className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:underline print:hidden dark:text-sky-400"
+                    >
+                      Träna på att {info.verb} <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
                 )}
               </CardContent>
@@ -103,32 +115,59 @@ export function Lasresultat() {
         })}
       </div>
 
-      <h2 className="mt-10 mb-4 text-xl font-semibold text-neutral-900 dark:text-white">Fråga för fråga</h2>
-      <ol className="space-y-3">
-        {data.svar.map((s, i) => {
-          const fullt = s.poang >= s.maxpoang;
-          const nyText = s.text && s.text !== data.svar[i - 1]?.text;
+      <h2 className="mt-12 mb-4 text-xl font-semibold text-neutral-900 dark:text-white">Text för text</h2>
+      <div className="space-y-8">
+        {perText(data).map((t) => {
+          const svar = data.svar.filter((s) => (s.text ?? data.titel) === t.titel);
+          const niva = nivaFor(t.poang / t.maxpoang);
           return (
-            <li key={`${s.text ?? ""}-${s.nr}`} className="text-sm">
-              {nyText && <h3 className="mt-6 mb-2 text-base font-semibold text-neutral-900 dark:text-white">{s.text}</h3>}
-              <div className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
-              <div className="mb-1 flex items-start justify-between gap-3">
-                <p className="flex items-start gap-2 font-medium text-neutral-900 dark:text-white">
-                  {fullt ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" /> : <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />}
-                  <span>
-                    {s.nr}. {s.fraga ?? ""}
+            <Card key={t.titel} className="overflow-hidden">
+              <div className="border-b border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-800 dark:bg-neutral-800/50">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">{t.titel}</h3>
+                  <span className="font-semibold tabular-nums text-neutral-900 dark:text-white">
+                    {t.poang}/{t.maxpoang} p
                   </span>
-                </p>
-                <span className="shrink-0 tabular-nums text-neutral-600 dark:text-neutral-400">
-                  {s.poang}/{s.maxpoang} p · {LASFORMAGOR[s.formaga].kort}
-                </span>
+                </div>
+                <div className="mt-2 h-2 rounded-full bg-neutral-200 dark:bg-neutral-700">
+                  <div className={cn("h-full rounded-full", NIVA[niva].stapel)} style={{ width: `${Math.round((t.poang / t.maxpoang) * 100)}%` }} />
+                </div>
               </div>
-              {s.kommentar && <p className="pl-6 text-neutral-700 dark:text-neutral-300">{s.kommentar}</p>}
-              </div>
-            </li>
+              <ol className="divide-y divide-neutral-100 dark:divide-neutral-800">
+                {svar.map((s) => {
+                  const fullt = s.poang >= s.maxpoang;
+                  return (
+                    <li key={s.nr} className="px-6 py-4 text-sm">
+                      <div className="mb-1 flex items-start justify-between gap-3">
+                        <p className="flex items-start gap-2 font-medium text-neutral-900 dark:text-white">
+                          {fullt ? (
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                          ) : (
+                            <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                          )}
+                          <span>
+                            {s.nr}. {s.fraga ?? ""}
+                          </span>
+                        </p>
+                        <span className="shrink-0 tabular-nums text-neutral-600 dark:text-neutral-400">
+                          {s.poang}/{s.maxpoang} p · {LASFORMAGOR[s.formaga].kort}
+                        </span>
+                      </div>
+                      {s.elevsvar && (
+                        <p className="mt-1 ml-6 rounded-md bg-neutral-50 px-3 py-2 text-neutral-700 dark:bg-neutral-800/60 dark:text-neutral-300">
+                          <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Ditt svar </span>
+                          {s.elevsvar}
+                        </p>
+                      )}
+                      {s.kommentar && <p className="mt-2 ml-6 text-neutral-800 dark:text-neutral-200">{s.kommentar}</p>}
+                    </li>
+                  );
+                })}
+              </ol>
+            </Card>
           );
         })}
-      </ol>
+      </div>
 
       <Card className="mt-10 print:hidden">
         <CardContent className="space-y-3 p-6">

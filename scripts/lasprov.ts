@@ -7,6 +7,8 @@
  *   npm run lasprov -- texter                Lista alla texter med id
  *   npm run lasprov -- fragor <textId>       Frågor + facit för en text (för rättningen)
  *   npm run lasprov -- mall <textId>         Svarsmall för eleverna (HTML → Google Dokument)
+ *   npm run lasprov -- digiexam <pdf> <gruppmapp> [starttext]
+ *                                            Dela upp en DigiExam-export per elev och text
  *   npm run lasprov -- bygg <gruppmapp>      Elevlänkar, rapporter, gruppöversikt, Drive-filer
  *
  * Gruppmappen: lararrum/lasprov/<grupp>/ med elevernas svar i svar/ och
@@ -15,8 +17,8 @@
 
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { basename, join } from "node:path";
-import { LASFORMAGOR, LASRESULTAT_PREFIX, nivaFor, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
+import { basename, dirname, join } from "node:path";
+import { LASFORMAGOR, LASRESULTAT_PREFIX, nivaFor, perText, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
 import { packaJson } from "../src/lib/aterkoppling/kodning";
 import { BAS_CSS, BAS_URL, KOPIERA_JS, esc } from "./html";
 
@@ -106,6 +108,11 @@ async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
   }
   const flera = delar.length > 1;
   const svar: Rattning["svar"] = [];
+  // Elevens egna svar (från `lasprov digiexam`), om de finns.
+  const svarsfil = join(dirname(dirname(fil)), "svar", `${u.elev}.json`);
+  const elevsvar: { texter: { textId: string; svar: Record<string, string> }[] } | null = existsSync(svarsfil)
+    ? JSON.parse(readFileSync(svarsfil, "utf8"))
+    : null;
   let ejNadda = 0;
   let steg: string | undefined;
   for (const d of delar) {
@@ -115,13 +122,11 @@ async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
       continue;
     }
     steg = t.steg;
-    // Frågor efter den sista eleven svarat på har eleven inte hunnit till – de räknas inte.
+    // Maxpoängen gäller hela texten. Frågor efter elevens sista svar har eleven inte hunnit till.
     const sista = Math.max(0, ...d.svar.map((x) => x.nr));
+    const egna = elevsvar?.texter.find((x) => x.textId === d.textId)?.svar ?? {};
     for (const f of t.fragor) {
-      if (f.nr > sista) {
-        ejNadda++;
-        continue;
-      }
+      if (f.nr > sista) ejNadda++;
       const s = d.svar.find((x) => x.nr === f.nr);
       if (s && s.poang > f.maxpoang) problem.push(`${basename(fil)}: ${t.titel} fråga ${f.nr} har ${s.poang} p men max är ${f.maxpoang}`);
       svar.push({
@@ -129,9 +134,10 @@ async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
         nr: f.nr,
         formaga: f.formaga,
         fraga: f.fraga,
+        elevsvar: egna[f.nr] || undefined,
         poang: Math.min(f.maxpoang, Math.max(0, s?.poang ?? 0)),
         maxpoang: f.maxpoang,
-        kommentar: s ? s.kommentar : "Inget svar.",
+        kommentar: s ? s.kommentar : f.nr > sista ? "Hann inte." : "Inget svar.",
       });
     }
   }
@@ -160,7 +166,10 @@ function elevRapport(u: Underlag, r: Rattning, lank: string, s: ReturnType<typeo
   return `<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Läsprov – ${esc(u.elev)}</title><style>${BAS_CSS}</style></head><body><main>
 <p class="dim">${esc(u.elev)} · ${esc(r.titel)}</p><h1>${s.totalt} av ${s.max} poäng</h1>
-${ejNadda ? `<p class="dim">${ejNadda} frågor i slutet hann eleven inte till – de räknas inte.</p>` : ""}
+${ejNadda ? `<p class="dim">${ejNadda} frågor i slutet hann eleven inte till (0 poäng).</p>` : ""}
+<section class="kort"><h2>Per text</h2><table>${perText(r)
+    .map((t) => `<tr><td>${esc(t.titel)}</td><td>${t.poang}/${t.maxpoang}</td><td>${procent(t.poang / t.maxpoang)}</td></tr>`)
+    .join("")}</table></section>
 <section class="grid">
   <div class="kort"><h2>Elevlänk</h2><div class="kopiera"><input id="lank" readonly value="${esc(lank)}"><button onclick="kopiera('lank',this)">Kopiera</button></div>
   <p class="dim" style="font-size:13px"><a href="${esc(lank)}" target="_blank">Öppna som eleven ser den</a></p></div>
@@ -172,7 +181,7 @@ ${ejNadda ? `<p class="dim">${ejNadda} frågor i slutet hann eleven inte till �
 <section class="kort"><h2>Fråga för fråga</h2><table>${r.svar
     .map(
       (x, i, alla) =>
-        `${x.text && x.text !== alla[i - 1]?.text ? `<tr><th colspan="3">${esc(x.text)}</th></tr>` : ""}<tr><td>${x.nr}. ${esc(x.fraga ?? "")}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`,
+        `${x.text && x.text !== alla[i - 1]?.text ? `<tr><th colspan="3" style="padding-top:18px;font-size:15px;color:inherit">${esc(x.text)}</th></tr>` : ""}<tr><td><b>${x.nr}. ${esc(x.fraga ?? "")}</b>${x.elevsvar ? `<br><i>Elevens svar:</i> ${esc(x.elevsvar)}` : ""}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`,
     )
     .join("")}</table></section>
 ${u.lararanteckning ? `<section class="kort"><h2>Lärarens anteckning</h2><p style="white-space:pre-line">${esc(u.lararanteckning)}</p></section>` : ""}
@@ -220,7 +229,7 @@ ${svagastForGrupp ? `<p><b>Mest att träna för gruppen:</b> ${LASFORMAGOR[svaga
       (x) =>
         `<tr><td>${esc(x.u.elev)}</td><td>${x.summa.totalt}/${x.summa.max}</td>${formagor
           .map((f) => `<td style="background:${farg(andel(x, f))}">${andel(x, f) === undefined ? "" : procent(andel(x, f)!)}</td>`)
-          .join("")}<td><a href="${esc(basename(x.rapport))}">Rapport</a> · <a href="${esc(x.lank)}" target="_blank">Elevlänk</a></td></tr>`,
+          .join("")}<td><a href="rattning/${esc(basename(x.rapport))}">Rapport</a> · <a href="${esc(x.lank)}" target="_blank">Elevlänk</a></td></tr>`,
     )
     .join("")}</table></div><p class="dim">H = hitta, D = dra slutsatser, S = sammanföra och tolka, G = granska och värdera. Gult = behöver träna, blått = på god väg, grönt = säker.</p></section>
 <section class="kort"><h2>Frågor där gruppen tappade mest</h2><ol>${svarast
@@ -278,7 +287,69 @@ async function bygg(mapp: string) {
   );
 }
 
-const [kommando, arg] = process.argv.slice(2);
+/**
+ * Delar upp en DigiExam-export (PDF) per elev och per text. Elevens namn
+ * ersätts med initialer. Numreringen som börjar om på 1 = ny text, i den
+ * ordning texterna har i häftet (från startText och framåt).
+ * Skriver <gruppmapp>/svar/<alias>.json: { elev, texter: [{ textId, svar: { nr: text } }] }.
+ */
+function digiexam(pdf: string, mapp: string, startText: string) {
+  const txt = execFileSync("pdftotext", ["-layout", pdf, "-"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+  const alla = allaTexter();
+  const start = alla.findIndex((t) => t.id === startText);
+  if (start < 0) fel(`Okänd starttext: ${startText}`);
+  const elever: { elev: string; texter: { textId: string; svar: Record<number, string> }[] }[] = [];
+  let aktuell: (typeof elever)[number] | null = null;
+  let iSvar = false;
+  let senasteNr = 0;
+  let senaste: { svar: Record<number, string> } | null = null;
+  let nr = 0;
+  for (const rad of txt.split("\n")) {
+    const namn = rad.match(/^\s*Fråga\s+1\s{2,}(.+?)\s*$/);
+    if (namn) {
+      const initialer = namn[1].trim().split(/\s+/).map((d) => d[0]?.toUpperCase() ?? "").join("");
+      aktuell = { elev: initialer, texter: [] };
+      elever.push(aktuell);
+      iSvar = false;
+      senasteNr = 0;
+      senaste = null;
+      continue;
+    }
+    if (!aktuell) continue;
+    if (/^\s*Svar\s*$/.test(rad)) {
+      iSvar = true;
+      continue;
+    }
+    if (!iSvar || /Frågan är ej rättad/.test(rad)) continue;
+    const m = rad.match(/^\s{0,8}(\d{1,2})\s*[.:]?\s*(?:Svar\s*[:.]\s*)?(.*)$/);
+    if (m && Number(m[1]) >= 1 && Number(m[1]) <= 40 && (Number(m[1]) === senasteNr + 1 || Number(m[1]) === 1)) {
+      nr = Number(m[1]);
+      if (nr === 1 || !senaste) {
+        const t = alla[start + aktuell.texter.length];
+        if (!t) break;
+        senaste = { svar: {} };
+        aktuell.texter.push({ textId: t.id, svar: senaste.svar });
+      }
+      senaste.svar[nr] = m[2].trim();
+      senasteNr = nr;
+      continue;
+    }
+    // Rubriker som "Saken är inte biff frågor:" och tomma rader hoppas över.
+    const t = rad.trim();
+    if (!t || /frågor\s*:?$/i.test(t) || !senaste) continue;
+    senaste.svar[nr] = `${senaste.svar[nr] ?? ""} ${t}`.trim();
+  }
+  const dir = join(mapp, "svar");
+  mkdirSync(dir, { recursive: true });
+  for (const e of elever) {
+    // Tomma svar i slutet av en text (t.ex. "8." "9.") tas bort.
+    for (const t of e.texter) for (const [k, v] of Object.entries(t.svar)) if (!v) delete t.svar[Number(k)];
+    writeFileSync(join(dir, `${e.elev}.json`), JSON.stringify(e, null, 2));
+  }
+  console.log(JSON.stringify(elever.map((e) => ({ elev: e.elev, texter: e.texter.map((t) => `${t.textId}: ${Object.keys(t.svar).length} svar`) })), null, 2));
+}
+
+const [kommando, arg, arg2, arg3] = process.argv.slice(2);
 if (kommando === "facit") facit();
 else if (kommando === "texter")
   console.log(
@@ -290,4 +361,5 @@ else if (kommando === "texter")
 else if (kommando === "fragor" && arg) console.log(JSON.stringify(hamtaText(arg), null, 2));
 else if (kommando === "mall" && arg) mall(arg);
 else if (kommando === "bygg" && arg) void bygg(arg);
-else fel("Användning: lasprov facit | texter [steg] | fragor <textId> | mall <textId> | bygg <gruppmapp>");
+else if (kommando === "digiexam" && arg && arg2) digiexam(arg, arg2, arg3 ?? "steg1-01");
+else fel("Användning: lasprov facit | texter [steg] | fragor <textId> | mall <textId> | digiexam <pdf> <gruppmapp> [starttext] | bygg <gruppmapp>");

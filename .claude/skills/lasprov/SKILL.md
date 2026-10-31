@@ -26,7 +26,9 @@ Erbjud läraren att ladda upp mallen som ett Google Dokument i Drive (Drive-verk
 
 ## Efter provet: rätta
 
-1. **Underlag.** Gruppmapp `lararrum/lasprov/<grupp>/` med elevernas svar i `svar/` – en fil per elev (Google Dokument nedladdade som docx/pdf, DigiExam-export eller text). Filnamnet eller initialer = elevens alias. Aldrig fullständiga namn i filer eller chatten. Fråga efter årskurs om den saknas.
+1. **Underlag.** Gruppmapp `lararrum/lasprov/<grupp>/` med elevernas svar i `svar/`.
+   - **DigiExam-export (PDF med alla elever):** kör `npm run -s lasprov -- digiexam <pdf> lararrum/lasprov/<grupp> <första textId>`. Den delar upp svaren per elev (initialer) och per text och skriver `svar/<alias>.json`. Rätta utifrån de filerna – elevernas svar visas sedan automatiskt i rapporten och elevlänken.
+   - Annars: en fil per elev (Google Dokument nedladdade som docx/pdf, DigiExam-export eller text). Filnamnet eller initialer = elevens alias. Aldrig fullständiga namn i filer eller chatten. Fråga efter årskurs om den saknas.
 
 2. **Hämta facit** för texten: `npm run -s lasprov -- fragor <textId>`. Läs varje frågas `facit` noggrant – den anger poängnivåer (t.ex. "4p om både … och …, 2p om antingen …") och exempelsvar.
 
@@ -57,10 +59,12 @@ Erbjud läraren att ladda upp mallen som ett Google Dokument i Drive (Drive-verk
 
 Så känner du igen texterna i en export: numreringen börjar om på 1 när en ny text börjar, i samma ordning som i häftet (se `texter`). Kontrollera mot frågorna – svaren ska passa ihop med frågan med samma nummer. Har en elev svarat på en fråga under fel nummer: ge poäng där svaret hör hemma om det är tydligt, och nämn det i lärarens anteckning.
 
-**Frågor eleven inte hann till** (efter elevens sista svar i en text) tas automatiskt bort och räknas inte. Ta bara med de frågor eleven faktiskt har kommit till; en hoppad fråga mitt i ger 0 ("Inget svar").
+**Maxpoäng** = alla frågor i de texter eleven har påbörjat. Frågor efter elevens sista svar i en text blir 0 med kommentaren "Hann inte". Ta bara med de frågor eleven har svarat på i `svar`; en hoppad fråga mitt i blir 0 ("Inget svar").
 
 Regler för rättningen:
 - **Följ facit.** Ge poäng enligt facits nivåer. Exempelsvar är exempel – godta andra svar som uppfyller samma krav. Var konsekvent mellan eleverna.
+- **Granska varje exempel – räkna inte bara.** När frågan ber om t.ex. fyra exempel: kontrollera att varje exempel är korrekt, faktiskt står i (eller stöds av) texten och svarar på frågan. Felaktiga eller påhittade exempel räknas inte. Skriv i kommentaren vilket exempel som inte godkändes och varför.
+- **Flervalsfrågor:** jämför bokstaven/alternativet med facit. Bara rätt alternativ ger poäng.
 - Stavning och språk ger inte poängavdrag i läsförståelse, så länge svaret går att förstå.
 - Svar som saknas = 0 poäng med kommentaren "Inget svar".
 - **Kommentaren** (1–2 meningar, till eleven, i du-form): vid full poäng kort bekräftelse; annars vad som saknades och ett tips (t.ex. "Frågan ber om tre exempel – du har två").

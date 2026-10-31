@@ -239,6 +239,9 @@ function Resultat({
             <Link href={`/${stadie}/lasstrategier`} className="rounded-full border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800">
               Lässtrategier
             </Link>
+            <Link href="/lasformagor" className="rounded-full border border-sky-300 bg-sky-50 px-3 py-1.5 text-sm hover:bg-sky-100 dark:border-sky-800 dark:bg-sky-950/40">
+              Träna läsförmågorna steg för steg
+            </Link>
             <button onClick={tillPlan} className="rounded-full border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800">
               Läsplan i 6 veckor
             </button>
