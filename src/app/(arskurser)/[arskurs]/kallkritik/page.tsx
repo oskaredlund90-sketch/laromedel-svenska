@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { KallkritikInfografik } from "@/components/infografik/sprak-kallor";
 import { ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
@@ -61,6 +62,8 @@ export default async function KallkritikPage({ params }: Props) {
           {LEVEL_DESCRIPTIONS[level]}
         </p>
       </div>
+
+      <KallkritikInfografik stadie={level} />
 
       <KallkritikOvningar exercises={exercises} ageGroup={level} />
     </div>

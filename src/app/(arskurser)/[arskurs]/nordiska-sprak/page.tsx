@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { NordiskaInfografik } from "@/components/infografik/sprak-kallor";
 import { Globe, Lightbulb, Users } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -183,6 +184,8 @@ export default async function NordiskaSprakPage({ params }: Props) {
       {/* ============================================================= */}
       {/*  NORDISKA SPRÅKFAMILJEN                                        */}
       {/* ============================================================= */}
+
+      <NordiskaInfografik />
 
       <Section title="Den nordiska språkfamiljen">
         <div className="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">

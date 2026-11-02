@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { RetorikInfografik } from "@/components/infografik/litteratur-retorik";
 import { Megaphone } from "lucide-react";
 import type { Metadata } from "next";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
@@ -59,6 +60,8 @@ export default async function RetorikPage({ params }: Props) {
           {LEVEL_DESCRIPTIONS[level]}
         </p>
       </div>
+
+      <RetorikInfografik stadie={level} />
 
       <RetorikOvningar ageGroup={level} />
     </div>

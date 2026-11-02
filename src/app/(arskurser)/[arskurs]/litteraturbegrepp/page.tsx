@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LitteraturbegreppInfografik } from "@/components/infografik/litteratur-retorik";
 import { notFound } from "next/navigation";
 import { BookOpen, Lightbulb, BookText } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -282,6 +283,8 @@ export default async function LitteraturbegreppPage({ params }: Props) {
       </div>
 
       {/* Quick nav */}
+      <LitteraturbegreppInfografik stadie={level} />
+
       <Section title="Begrepp">
         <div className="mb-8 flex flex-wrap gap-2">
           {concepts.map((c) => (

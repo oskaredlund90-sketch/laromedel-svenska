@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { SprakhistoriaInfografik } from "@/components/infografik/sprak-kallor";
 import { Lightbulb, Clock, Languages } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -591,6 +592,8 @@ export default async function SprakhistoriaPage({ params }: Props) {
           {LEVEL_DESCRIPTIONS[level]}
         </p>
       </div>
+
+      <SprakhistoriaInfografik />
 
       {/* Timeline overview */}
       <Section title="Tidslinje">
