@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { SvaInfografik } from "@/components/infografik/tala-ord-sva";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -484,6 +485,8 @@ export default async function SvaPage({ params }: Props) {
           )}
         </ul>
       </nav>
+
+      <SvaInfografik stadie={age} />
 
       {/* ---- Main content sections ---- */}
       <div className="space-y-16">

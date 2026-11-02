@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LasstrategierInfografik } from "@/components/infografik/skriva-lasa";
 import { notFound } from "next/navigation";
 import { Eye, Lightbulb, BookOpen, BookOpenCheck } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -542,6 +543,8 @@ export default async function LasstrategierPage({ params }: Props) {
           {LEVEL_DESCRIPTIONS[level]}
         </p>
       </div>
+
+      <LasstrategierInfografik stadie={level} />
 
       {/* Age-group-specific content */}
       {level === "lagstadiet" && <LagstadietContent />}

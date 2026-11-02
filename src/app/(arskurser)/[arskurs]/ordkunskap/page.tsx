@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { OrdkunskapInfografik } from "@/components/infografik/tala-ord-sva";
 import { BookA, Lightbulb } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import type { Metadata } from "next";
@@ -224,6 +225,8 @@ export default async function OrdkunskapPage({ params }: Props) {
           {LEVEL_DESCRIPTIONS[level]}
         </p>
       </div>
+
+      <OrdkunskapInfografik stadie={level} />
 
       {/* Veckans ord */}
       <Section title="Veckans ord">

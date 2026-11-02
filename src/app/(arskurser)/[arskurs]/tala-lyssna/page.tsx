@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { TalaLyssnaInfografik } from "@/components/infografik/tala-ord-sva";
 import {
   Lightbulb,
   MessageCircle,
@@ -1238,6 +1239,8 @@ export default async function TalaLyssnaPage({ params }: Props) {
       </div>
 
       {/* Level-specific guide content */}
+      <TalaLyssnaInfografik stadie={level} />
+
       {level === "lagstadiet" && <LagstadietContent />}
       {level === "mellanstadiet" && <MellanstadietContent />}
       {level === "hogstadiet" && <HogstadietContent />}

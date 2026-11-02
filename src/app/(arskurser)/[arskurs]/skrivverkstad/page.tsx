@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SkrivverkstadInfografik } from "@/components/infografik/skriva-lasa";
+import type { AgeGroup } from "@/lib/supabase/types";
 import { PenLine, Type, Palette, Pilcrow, ArrowLeftRight, MessageSquareQuote } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -116,6 +118,8 @@ export default async function SkrivverkstadArskursPage({ params }: Props) {
           <strong>{group.label.toLowerCase()}</strong> ({group.description}).
         </p>
       </div>
+
+      <SkrivverkstadInfografik stadie={arskurs as AgeGroup} />
 
       {templates.length === 0 ? (
         <p className="text-neutral-500 dark:text-neutral-400">
