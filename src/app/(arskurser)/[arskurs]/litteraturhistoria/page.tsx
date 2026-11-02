@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { LitteraturhistoriaInfografik } from "@/components/infografik/litteraturhistoria";
 import { BookOpen, Lightbulb, Clock } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -627,6 +628,8 @@ export default async function LitteraturhistoriaPage({ params }: Props) {
           {LEVEL_DESCRIPTIONS[level]}
         </p>
       </div>
+
+      <LitteraturhistoriaInfografik stadie={level} />
 
       {/* ---- Lagstadiet ---- */}
       {level === "lagstadiet" && (

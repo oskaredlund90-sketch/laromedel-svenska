@@ -8,6 +8,7 @@ import type { AgeGroup } from "@/lib/supabase/types";
 import { type ReactNode } from "react";
 import { GrammatikOvningar, type GrammarTopic } from "@/components/grammatik-ovningar";
 import { AMNEN_PER_STADIUM } from "@/lib/grammatik/amnen";
+import { GrammatikInfografik } from "@/components/infografik/grammatik";
 
 /* ------------------------------------------------------------------ */
 /*  Helper components                                                  */
@@ -961,6 +962,8 @@ export default async function GrammatikTopicPage({ params }: Props) {
           {t.description}
         </p>
       </div>
+
+      <GrammatikInfografik topic={topic} stadie={arskurs as AgeGroup} />
 
       {/* Content */}
       <Content />
