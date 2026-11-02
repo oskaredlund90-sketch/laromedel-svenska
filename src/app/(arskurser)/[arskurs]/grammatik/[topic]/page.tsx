@@ -107,8 +107,8 @@ function OrdklasserContent() {
     {
       name: "Konjunktion",
       def: "Ord som binder samman ord, fraser eller satser.",
-      examples: "och, men, eller, för, att, eftersom, om",
-      tip: "Samordnande konjunktioner (och, men, eller) binder likvärdiga led. Underordnande konjunktioner (att, eftersom, om) inleder bisatser.",
+      examples: "och, men, eller, utan, för, så",
+      tip: "Konjunktioner (och, men, eller, utan, för) binder ihop likvärdiga led: katt och hund, kort men bra. Ord som inleder bisatser (att, eftersom, om) är subjunktioner.",
     },
     {
       name: "Interjektion",
@@ -117,10 +117,10 @@ function OrdklasserContent() {
       tip: "Interjektioner följs ofta av utropstecken och kan bilda egna meningar: Oj! Hej! Aj!",
     },
     {
-      name: "Artikel",
-      def: "Ord som bestämmer substantivets form (bestämd eller obestämd).",
-      examples: "en, ett, den, det, de",
-      tip: "Svenska har både fristående artiklar (en bok) och slutartiklar (boken). Slutartiklarna räknas till substantivets böjning.",
+      name: "Subjunktion",
+      def: "Ord som inleder en bisats.",
+      examples: "att, eftersom, när, om, medan, innan, fast",
+      tip: "Subjunktionen är bisatsens dörr: Jag stannar hemma eftersom det regnar. Konjunktioner (och, men, eller) binder i stället ihop två likvärdiga delar.",
     },
     {
       name: "Räkneord",
@@ -135,7 +135,8 @@ function OrdklasserContent() {
       <p className="mb-6 text-neutral-600 dark:text-neutral-400">
         I svenskan finns det tio ordklasser. Att kunna identifiera ordklasser
         hjälper dig att förstå hur språket är uppbyggt och gör det lättare att
-        skriva korrekt.
+        skriva korrekt. Artiklarna en, ett, den, det och de räknas här till
+        pronomenen.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -154,8 +155,8 @@ function OrdklasserContent() {
         </p>
         <Ex>Den lilla katten sov lugnt på den mjuka soffan igår.</Ex>
         <Tip>
-          <strong>Lösning:</strong> Den (artikel) lilla (adjektiv) katten (substantiv)
-          sov (verb) lugnt (adverb) på (preposition) den (artikel) mjuka (adjektiv)
+          <strong>Lösning:</strong> Den (pronomen) lilla (adjektiv) katten (substantiv)
+          sov (verb) lugnt (adverb) på (preposition) den (pronomen) mjuka (adjektiv)
           soffan (substantiv) igår (adverb).
         </Tip>
       </Section>

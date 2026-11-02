@@ -112,7 +112,7 @@ export function OrdklasserInfografik({ stadie }: { stadie: AgeGroup }) {
       {!enkel && (
         <p className="mt-4 text-sm text-neutral-500">
           Samma ord kan byta ordklass: <i>Jag åker <b>till</b> stan</i> (preposition) – <i>Jag vill ha en kaka <b>till</b></i> (adverb). Testa alltid ordet i
-          just den meningen. Artiklarna <i>en, ett, den, det, de</i> räknas ibland som en egen ordklass.
+          just den meningen. Artiklarna <i>en, ett, den, det, de</i> räknas till pronomenen.
         </p>
       )}
     </Infografik>
