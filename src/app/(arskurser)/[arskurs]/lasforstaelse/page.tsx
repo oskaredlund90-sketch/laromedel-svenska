@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { AgeGroup } from "@/lib/supabase/types";
 import LasforstaelseOvningar from "@/components/lasforstaelse-ovningar";
+import { LasforstaelseInfografik } from "@/components/infografik/lasa-ordsprak";
 
 const VALID = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -57,6 +58,8 @@ export default async function LasforstaelsePage({ params }: Props) {
           tolka budskap och reflektera kring det du läst.
         </p>
       </div>
+
+      <LasforstaelseInfografik stadie={arskurs as AgeGroup} />
 
       <LasforstaelseOvningar ageGroup={arskurs as AgeGroup} />
     </div>

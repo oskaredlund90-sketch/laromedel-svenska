@@ -5,6 +5,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { getOrdsprakExercises } from "@/lib/data/ordsprak-ovningar";
 import { OrdsprakOvningar } from "@/components/ordsprak-ovningar";
+import { OrdsprakInfografik } from "@/components/infografik/lasa-ordsprak";
 
 /* ------------------------------------------------------------------ */
 /*  Validation                                                         */
@@ -92,6 +93,8 @@ export default async function OrdsprakPage({ params }: Props) {
           bättre på att förstå och använda svenska.
         </p>
       </div>
+
+      <OrdsprakInfografik stadie={level} />
 
       {/* Exercises */}
       {exercises.length > 0 && (
