@@ -15,6 +15,7 @@ import {
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import AiOvningar from "@/components/ai-ovningar";
 import type { AgeGroup } from "@/lib/supabase/types";
+import { AiInfografik } from "@/components/infografik/prov-ai";
 
 interface Props {
   params: Promise<{ arskurs: string }>;
@@ -339,6 +340,8 @@ export default async function AiISvenskanPage({ params }: Props) {
           <p className="text-neutral-700 dark:text-neutral-300">{content.whatIsAi}</p>
         </div>
       </section>
+
+      <AiInfografik stadie={arskurs as AgeGroup} />
 
       {/* Bra vs dåliga promptar */}
       <section className="mb-10">

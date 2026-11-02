@@ -19,6 +19,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import type { AgeGroup } from "@/lib/supabase/types";
+import { NationellaProvInfografik } from "@/components/infografik/prov-ai";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -175,6 +176,8 @@ export default async function NationellaProvArskursPage({ params }: Props) {
           </p>
         </div>
       </section>
+
+      <NationellaProvInfografik stadie={arskurs as AgeGroup} />
 
       {/* Level-specific content */}
       {arskurs === "lagstadiet" && <Lagstadiet arskurs="lagstadiet" />}
