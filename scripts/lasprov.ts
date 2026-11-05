@@ -10,6 +10,8 @@
  *   npm run lasprov -- digiexam <pdf> <gruppmapp> [starttext]
  *                                            Dela upp en DigiExam-export per elev och text
  *   npm run lasprov -- bygg <gruppmapp>      Elevlänkar, rapporter, gruppöversikt, Drive-filer
+ *   npm run lasprov -- alternativ [steg]     Flervalsfrågornas alternativ → lararrum/lasforstaelse/alternativ.json
+ *                                            (fyll i de som saknas från häftet)
  *
  * Gruppmappen: lararrum/lasprov/<grupp>/ med elevernas svar i svar/ och
  * Claudes rättningar i rattning/<alias>.json.
@@ -103,22 +105,62 @@ interface Bygge {
 
 type Elevsvar = { texter: { textId: string; svar: Record<string, string> }[] };
 
-/** Flervalsfrågornas alternativ (bokstav → text) per "textId:nr", ur facit och hela gruppens svar. */
-function gruppensAlternativ(mapp: string): Map<string, Record<string, string>> {
-  const dir = join(mapp, "svar");
-  const alla: Elevsvar[] = existsSync(dir)
-    ? readdirSync(dir)
-        .filter((f) => f.endsWith(".json"))
-        .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+const ALTERNATIVFIL = join("lararrum", "lasforstaelse", "alternativ.json");
+type Alternativfil = Record<string, Record<string, string>>;
+
+/**
+ * Flervalsfrågornas alternativ (bokstav → text) per "textId:nr". Hämtas ur facit,
+ * alla gruppers elevsvar och lärarens egen fil (lararrum/lasforstaelse/alternativ.json),
+ * där alternativ som ingen elev skrivit ut kan fyllas i från häftet. Filen vinner.
+ */
+function kandaAlternativ(): Map<string, Record<string, string>> {
+  const rot = join("lararrum", "lasprov");
+  const alla: Elevsvar[] = existsSync(rot)
+    ? readdirSync(rot).flatMap((g) => {
+        const dir = join(rot, g, "svar");
+        return existsSync(dir)
+          ? readdirSync(dir)
+              .filter((f) => f.endsWith(".json"))
+              .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")) as Elevsvar)
+          : [];
+      })
     : [];
+  const egna: Alternativfil = existsSync(ALTERNATIVFIL) ? JSON.parse(readFileSync(ALTERNATIVFIL, "utf8")) : {};
   const ut = new Map<string, Record<string, string>>();
   for (const t of allaTexter())
     for (const f of t.fragor) {
       if (!rattAlternativ(f.facit)) continue;
+      const nyckel = `${t.id}:${f.nr}`;
       const svar = alla.flatMap((e) => e.texter.filter((x) => x.textId === t.id).map((x) => x.svar[f.nr])).filter(Boolean);
-      ut.set(`${t.id}:${f.nr}`, samlaAlternativ(f.facit, svar));
+      const alt = samlaAlternativ(f.facit, svar);
+      for (const [b, text] of Object.entries(egna[nyckel] ?? {})) if (/^[A-F]$/.test(b) && text.trim()) alt[b] = text.trim();
+      ut.set(nyckel, alt);
     }
   return ut;
+}
+
+/**
+ * Skriver lararrum/lasforstaelse/alternativ.json med alla flervalsfrågor och de
+ * alternativ som är kända. Tomma rader fyller läraren i från häftet. Ifyllt behålls.
+ */
+function alternativ(steg?: string) {
+  const kanda = kandaAlternativ();
+  const fil: Alternativfil = existsSync(ALTERNATIVFIL) ? JSON.parse(readFileSync(ALTERNATIVFIL, "utf8")) : {};
+  const saknas: string[] = [];
+  for (const t of allaTexter().filter((x) => !steg || x.steg === steg))
+    for (const f of t.fragor) {
+      const nyckel = `${t.id}:${f.nr}`;
+      if (!kanda.has(nyckel)) continue;
+      const alt = kanda.get(nyckel)!;
+      const rad: Record<string, string> = { fraga: `${t.titel} ${f.nr}. ${f.fraga}` };
+      for (const b of ["A", "B", "C", "D"]) rad[b] = fil[nyckel]?.[b]?.trim() || alt[b] || "";
+      fil[nyckel] = rad;
+      const tomma = ["A", "B", "C", "D"].filter((b) => !rad[b]);
+      if (tomma.length) saknas.push(`${nyckel} saknar ${tomma.join(", ")}`);
+    }
+  mkdirSync(dirname(ALTERNATIVFIL), { recursive: true });
+  writeFileSync(ALTERNATIVFIL, JSON.stringify(fil, null, 2));
+  console.log(JSON.stringify({ fil: ALTERNATIVFIL, fragor: Object.keys(fil).length, saknas }, null, 2));
 }
 
 async function byggElev(fil: string, problem: string[], alternativ: Map<string, Record<string, string>>): Promise<Bygge | null> {
@@ -298,7 +340,7 @@ async function bygg(mapp: string) {
   const dir = join(mapp, "rattning");
   if (!existsSync(dir)) fel(`Hittar inte ${dir}.`);
   const problem: string[] = [];
-  const alternativ = gruppensAlternativ(mapp);
+  const alternativ = kandaAlternativ();
   const byggen = (await Promise.all(readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => byggElev(join(dir, f), problem, alternativ)))).filter(
     (x): x is Bygge => x !== null,
   );
@@ -439,5 +481,6 @@ else if (kommando === "texter")
 else if (kommando === "fragor" && arg) console.log(JSON.stringify(hamtaText(arg), null, 2));
 else if (kommando === "mall" && arg) mall(arg);
 else if (kommando === "bygg" && arg) void bygg(arg);
+else if (kommando === "alternativ") alternativ(arg);
 else if (kommando === "digiexam" && arg && arg2) digiexam(arg, arg2, arg3 ?? "steg1-01");
-else fel("Användning: lasprov facit | texter [steg] | fragor <textId> | mall <textId> | digiexam <pdf> <gruppmapp> [starttext] | bygg <gruppmapp>");
+else fel("Användning: lasprov facit | texter [steg] | fragor <textId> | mall <textId> | digiexam <pdf> <gruppmapp> [starttext] | bygg <gruppmapp> | alternativ [steg]");

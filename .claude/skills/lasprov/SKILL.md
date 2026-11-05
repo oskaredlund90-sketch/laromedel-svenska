@@ -81,6 +81,8 @@ npm run -s lasprov -- bygg lararrum/lasprov/<grupp>
 
 `problem` ska vara tomt (saknade frågor eller för höga poäng). Öppna `oversikt.html` för läraren (`open …`).
 
+**Flervalsfrågor:** elevlänken visar elevens val med text ("B – egenkär") och rätt svar. Facit har bara det rätta alternativet – övriga hämtas ur alla gruppers elevsvar och ur `lararrum/lasforstaelse/alternativ.json`. Kör `npm run -s lasprov -- alternativ steg1` för att uppdatera filen och se vilka alternativ som saknar text, och be läraren fylla i dem från häftet (bara de som elever faktiskt valt behövs). Bygg sedan om.
+
 5. **Drive** (om läraren vill): ladda upp `drive/oversikt.csv` som kalkylark "Läsprov – <titel>" i mappen `Återkoppling/<grupp> – Läsprov – <datum>` (som i /klassrespons).
 
 ## Svara läraren
