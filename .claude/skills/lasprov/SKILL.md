@@ -35,6 +35,7 @@ Erbjud läraren att ladda upp mallen som ett Google Dokument i Drive (Drive-verk
    - Läs varje frågas `facit` noggrant – den anger poängnivåer (t.ex. "4p om både … och …, 2p om antingen …") och exempelsvar.
    - **Saknas texten** (`textSaknas`): skriv av den först till `lararrum/lasforstaelse/texter/<textId>.md` ur elevhäftet (inskannad PDF, t.ex. `~/Downloads/Läsförståelse - Steg 1  - Ny version.pdf` – läs sidorna som bilder med Read och `pages`). Samma format som de befintliga filerna: Text ordagrant, Bilder (vad som syns + all text i pratbubblor ruta för ruta), Faktarutor, Ordlista. Fråga läraren efter häftet om det inte hittas. Rätta aldrig utan texten.
    - Skriv aldrig "kunde inte kontrollera mot texten" – kontrollera.
+   - **Säger facit något annat än texten** (t.ex. 25 minuter i facit men "ca 20 minuter" i häftet): godkänn det som står i texten, berätta det för läraren och skriv en "Obs (lärarens anteckning)" på frågan i `lararrum/lasforstaelse/facit/steg*.json`. Kör inte `lasprov facit` igen i onödan – det skriver över anteckningarna.
 
 3. **Rätta varje elev** och skriv `lararrum/lasprov/<grupp>/rattning/<alias>.json`:
 
