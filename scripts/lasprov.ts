@@ -328,11 +328,26 @@ function digiexam(pdf: string, mapp: string, startText: string) {
   let senasteNr = 0;
   let senaste: { svar: Record<number, string> } | null = null;
   let nr = 0;
-  for (const rad of txt.split("\n")) {
-    const namn = rad.match(/^\s*Fråga\s+1\s{2,}(.+?)\s*$/);
-    if (namn) {
-      const initialer = namn[1].trim().split(/\s+/).map((d) => d[0]?.toUpperCase() ?? "").join("");
+  let forstaUtanNr = "";
+  const rader = txt.split("\n");
+  const anvanda = new Map<string, number>();
+  for (const [i, rad] of rader.entries()) {
+    // Ny elev: rubriken "… ord, ingen begränsning - Max poäng". Namnet står
+    // längst till höger på någon av raderna strax ovanför (ibland ihopblandat
+    // med instruktionstexten "Skriv dina svar här likt detta:").
+    if (/-\s*Max poäng\s*:/.test(rad)) {
+      const namn = rader
+        .slice(Math.max(0, i - 4), i)
+        .map((r) => r.match(/\S\s{2,}([^\s:()]+(?:\s[^\s:()]+)+)\s*$/)?.[1])
+        .filter((n): n is string => !!n && !/svar|likt|detta|Fråga/i.test(n))
+        .pop();
+      let initialer = (namn ?? "Elev").trim().split(/\s+/).map((d) => d[0]?.toUpperCase() ?? "").join("");
+      // Samma initialer två gånger → HP, HP2 …
+      const n = (anvanda.get(initialer) ?? 0) + 1;
+      anvanda.set(initialer, n);
+      if (n > 1) initialer += n;
       aktuell = { elev: initialer, texter: [] };
+      forstaUtanNr = "";
       elever.push(aktuell);
       iSvar = false;
       senasteNr = 0;
@@ -345,22 +360,33 @@ function digiexam(pdf: string, mapp: string, startText: string) {
       continue;
     }
     if (!iSvar || /Frågan är ej rättad/.test(rad)) continue;
-    const m = rad.match(/^\s{0,8}(\d{1,2})\s*[.:]?\s*(?:Svar\s*[:.]\s*)?(.*)$/);
-    if (m && Number(m[1]) >= 1 && Number(m[1]) <= 40 && (Number(m[1]) === senasteNr + 1 || Number(m[1]) === 1)) {
+    // Nästa elevs rubrik ("Fråga 1      Namn", instruktionsrader) är inget svar.
+    if (/^\s*Fråga\s*\d+\s{2,}\S|svar här likt detta|^\s*Frågadina|Skriv\s+dina|ingen\s+begränsning|svar\s+begränsning/.test(rad)) continue;
+    const m = rad.match(/^\s{0,8}(?:Fråga\s*)?(\d{1,2})\s*[.:]?\s*(?:Svar\s*[:.]\s*)?(.*)$/);
+    // Första svaret saknar ibland siffra ("Narcissus mor var …" följt av "2. …").
+    const forsta = !senaste && m && Number(m[1]) === 2 && forstaUtanNr;
+    if (m && Number(m[1]) >= 1 && Number(m[1]) <= 40 && (Number(m[1]) === senasteNr + 1 || Number(m[1]) === 1 || forsta)) {
       nr = Number(m[1]);
       if (nr === 1 || !senaste) {
         const t = alla[start + aktuell.texter.length];
         if (!t) break;
         senaste = { svar: {} };
         aktuell.texter.push({ textId: t.id, svar: senaste.svar });
+        if (forsta) senaste.svar[1] = forstaUtanNr;
       }
+      forstaUtanNr = "";
       senaste.svar[nr] = m[2].trim();
       senasteNr = nr;
       continue;
     }
     // Rubriker som "Saken är inte biff frågor:" och tomma rader hoppas över.
     const t = rad.trim();
-    if (!t || /frågor\s*:?$/i.test(t) || !senaste) continue;
+    if (!t || /frågor\s*:?$/i.test(t)) continue;
+    if (!senaste) {
+      // Rubriken med textens titel hoppas över, resten kan vara ett onumrerat första svar.
+      if (!alla.some((x) => x.titel.toLowerCase() === t.toLowerCase())) forstaUtanNr = `${forstaUtanNr} ${t}`.trim();
+      continue;
+    }
     senaste.svar[nr] = `${senaste.svar[nr] ?? ""} ${t}`.trim();
   }
   const dir = join(mapp, "svar");
