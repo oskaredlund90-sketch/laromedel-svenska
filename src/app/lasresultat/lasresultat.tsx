@@ -153,10 +153,16 @@ export function Lasresultat() {
                           {s.poang}/{s.maxpoang} p · {LASFORMAGOR[s.formaga].kort}
                         </span>
                       </div>
-                      {s.elevsvar && (
+                      {(s.val ?? s.elevsvar) && (
                         <p className="mt-1 ml-6 rounded-md bg-neutral-50 px-3 py-2 text-neutral-700 dark:bg-neutral-800/60 dark:text-neutral-300">
                           <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Ditt svar </span>
-                          {s.elevsvar}
+                          {s.val ?? s.elevsvar}
+                        </p>
+                      )}
+                      {s.ratt && !fullt && (
+                        <p className="mt-1 ml-6 rounded-md bg-emerald-50 px-3 py-2 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200">
+                          <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">Rätt svar </span>
+                          {s.ratt}
                         </p>
                       )}
                       {s.kommentar && <p className="mt-2 ml-6 text-neutral-800 dark:text-neutral-200">{s.kommentar}</p>}

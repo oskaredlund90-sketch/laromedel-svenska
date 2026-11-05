@@ -21,6 +21,7 @@ import { basename, dirname, join } from "node:path";
 import { LASFORMAGOR, LASRESULTAT_PREFIX, nivaFor, perText, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
 import { packaJson } from "../src/lib/aterkoppling/kodning";
 import { LARARTIPS, UTHALLIGHETSTIPS } from "../src/lib/lasprov/larartips";
+import { rattAlternativ, samlaAlternativ, valdBokstav, visaAlternativ } from "../src/lib/lasprov/flerval";
 import { BAS_CSS, BAS_URL, KOPIERA_JS, esc } from "./html";
 
 const FACIT = "lararrum/lasforstaelse/facit";
@@ -100,7 +101,27 @@ interface Bygge {
   ejNadda: number;
 }
 
-async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
+type Elevsvar = { texter: { textId: string; svar: Record<string, string> }[] };
+
+/** Flervalsfrågornas alternativ (bokstav → text) per "textId:nr", ur facit och hela gruppens svar. */
+function gruppensAlternativ(mapp: string): Map<string, Record<string, string>> {
+  const dir = join(mapp, "svar");
+  const alla: Elevsvar[] = existsSync(dir)
+    ? readdirSync(dir)
+        .filter((f) => f.endsWith(".json"))
+        .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+    : [];
+  const ut = new Map<string, Record<string, string>>();
+  for (const t of allaTexter())
+    for (const f of t.fragor) {
+      if (!rattAlternativ(f.facit)) continue;
+      const svar = alla.flatMap((e) => e.texter.filter((x) => x.textId === t.id).map((x) => x.svar[f.nr])).filter(Boolean);
+      ut.set(`${t.id}:${f.nr}`, samlaAlternativ(f.facit, svar));
+    }
+  return ut;
+}
+
+async function byggElev(fil: string, problem: string[], alternativ: Map<string, Record<string, string>>): Promise<Bygge | null> {
   const u: Underlag = JSON.parse(readFileSync(fil, "utf8"));
   const delar: TextSvar[] = u.texter ?? (u.textId && u.svar ? [{ textId: u.textId, svar: u.svar }] : []);
   if (!delar.length) {
@@ -111,7 +132,7 @@ async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
   const svar: Rattning["svar"] = [];
   // Elevens egna svar (från `lasprov digiexam`), om de finns.
   const svarsfil = join(dirname(dirname(fil)), "svar", `${u.elev}.json`);
-  const elevsvar: { texter: { textId: string; svar: Record<string, string> }[] } | null = existsSync(svarsfil)
+  const elevsvar: Elevsvar | null = existsSync(svarsfil)
     ? JSON.parse(readFileSync(svarsfil, "utf8"))
     : null;
   let ejNadda = 0;
@@ -130,12 +151,18 @@ async function byggElev(fil: string, problem: string[]): Promise<Bygge | null> {
       if (f.nr > sista) ejNadda++;
       const s = d.svar.find((x) => x.nr === f.nr);
       if (s && s.poang > f.maxpoang) problem.push(`${basename(fil)}: ${t.titel} fråga ${f.nr} har ${s.poang} p men max är ${f.maxpoang}`);
+      // Flerval: visa vad bokstaven står för och vilket alternativ som var rätt.
+      const ratt = rattAlternativ(f.facit);
+      const alt = alternativ.get(`${t.id}:${f.nr}`) ?? {};
+      const valt = ratt && egna[f.nr] ? valdBokstav(egna[f.nr], alt) : null;
       svar.push({
         text: flera ? t.titel : undefined,
         nr: f.nr,
         formaga: f.formaga,
         fraga: f.fraga,
-        elevsvar: egna[f.nr] || undefined,
+        elevsvar: valt ? undefined : egna[f.nr] || undefined,
+        val: valt ? visaAlternativ(valt, alt) : undefined,
+        ratt: ratt ? visaAlternativ(ratt.bokstav, alt) : undefined,
         poang: Math.min(f.maxpoang, Math.max(0, s?.poang ?? 0)),
         maxpoang: f.maxpoang,
         kommentar: s ? s.kommentar : f.nr > sista ? "Hann inte." : "Inget svar.",
@@ -182,7 +209,7 @@ ${ejNadda ? `<p class="dim">${ejNadda} frågor i slutet hann eleven inte till (0
 <section class="kort"><h2>Fråga för fråga</h2><table>${r.svar
     .map(
       (x, i, alla) =>
-        `${x.text && x.text !== alla[i - 1]?.text ? `<tr><th colspan="3" style="padding-top:18px;font-size:15px;color:inherit">${esc(x.text)}</th></tr>` : ""}<tr><td><b>${x.nr}. ${esc(x.fraga ?? "")}</b>${x.elevsvar ? `<br><i>Elevens svar:</i> ${esc(x.elevsvar)}` : ""}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`,
+        `${x.text && x.text !== alla[i - 1]?.text ? `<tr><th colspan="3" style="padding-top:18px;font-size:15px;color:inherit">${esc(x.text)}</th></tr>` : ""}<tr><td><b>${x.nr}. ${esc(x.fraga ?? "")}</b>${x.val ? `<br><i>Elevens svar:</i> ${esc(x.val)}` : x.elevsvar ? `<br><i>Elevens svar:</i> ${esc(x.elevsvar)}` : ""}${x.ratt && x.poang < x.maxpoang ? `<br><i>Rätt svar:</i> ${esc(x.ratt)}` : ""}<br><span class="dim">${esc(x.kommentar ?? "")}</span></td><td>${x.formaga}</td><td>${x.poang}/${x.maxpoang}</td></tr>`,
     )
     .join("")}</table></section>
 ${u.lararanteckning ? `<section class="kort"><h2>Lärarens anteckning</h2><p style="white-space:pre-line">${esc(u.lararanteckning)}</p></section>` : ""}
@@ -271,7 +298,8 @@ async function bygg(mapp: string) {
   const dir = join(mapp, "rattning");
   if (!existsSync(dir)) fel(`Hittar inte ${dir}.`);
   const problem: string[] = [];
-  const byggen = (await Promise.all(readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => byggElev(join(dir, f), problem)))).filter(
+  const alternativ = gruppensAlternativ(mapp);
+  const byggen = (await Promise.all(readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => byggElev(join(dir, f), problem, alternativ)))).filter(
     (x): x is Bygge => x !== null,
   );
   const grupp = basename(mapp);

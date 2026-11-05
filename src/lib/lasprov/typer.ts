@@ -153,6 +153,9 @@ export interface Rattning {
     fraga?: string;
     /** Elevens eget svar. */
     elevsvar?: string;
+    /** Flervalsfrågor: elevens val och rätt alternativ, t.ex. "B – egenkär". */
+    val?: string;
+    ratt?: string;
     poang: number;
     maxpoang: number;
     kommentar?: string;
