@@ -86,6 +86,8 @@ npm run -s lasprov -- bygg lararrum/lasprov/<grupp>
 
 `problem` ska vara tomt (saknade frågor eller för höga poäng). Öppna `oversikt.html` för läraren (`open …`).
 
+Elevlänken hålls kort (`forElevlank` i `src/lib/lasprov/typer.ts`): frågor med full poäng och obesvarade frågor visas bara som nummer, och elevens egna fritextsvar följer inte med. Frågetext, kommentar och flervalsalternativ finns kvar där eleven tappade poäng. Lärarens rapport visar fortfarande allt. Skriv därför kommentarer så att de går att förstå utan elevens svar bredvid ("Du har med X – men Y står inte i texten").
+
 **Flervalsfrågor:** elevlänken visar elevens val med text ("B – egenkär") och rätt svar. Facit har bara det rätta alternativet – övriga hämtas ur alla gruppers elevsvar och ur `lararrum/lasforstaelse/alternativ.json`. Kör `npm run -s lasprov -- alternativ steg1` för att uppdatera filen och se vilka alternativ som saknar text. Fyll i dem själv från elevhäftet (t.ex. `~/Downloads/Läsförståelse - Steg 1  - Ny version.pdf` – inskannat, så läs uppgiftssidorna som bilder med Read och `pages`; uppgifterna står efter varje text). Text 1–6 i Steg 1 är redan ifyllda. Fråga läraren om häftet inte hittas. Bygg sedan om.
 
 5. **Drive** (om läraren vill): ladda upp `drive/oversikt.csv` som kalkylark "Läsprov – <titel>" i mappen `Återkoppling/<grupp> – Läsprov – <datum>` (som i /klassrespons).

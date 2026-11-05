@@ -11,8 +11,10 @@ import { stadieForArskurs } from "@/lib/aterkoppling/feltyper";
 import {
   LASFORMAGOR,
   LASRESULTAT_PREFIX,
+  arObesvarad,
   arRattning,
   nivaFor,
+  nummerspann,
   perText,
   summera,
   type Niva,
@@ -154,18 +156,36 @@ export function Lasresultat() {
                   <div className={cn("h-full rounded-full", NIVA[niva].stapel)} style={{ width: `${Math.round((t.poang / t.maxpoang) * 100)}%` }} />
                 </div>
               </div>
+              {(() => {
+                const fullt = svar.filter((s) => s.poang >= s.maxpoang).map((s) => s.nr);
+                const inget = svar.filter((s) => s.poang < s.maxpoang && /^Inget svar/.test(s.kommentar ?? "")).map((s) => s.nr);
+                const hann = svar.filter((s) => s.poang < s.maxpoang && /^Hann inte/.test(s.kommentar ?? "")).map((s) => s.nr);
+                const rader = [
+                  { nr: fullt, namn: "Full poäng på fråga", ikon: <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" /> },
+                  { nr: inget, namn: "Inget svar på fråga", ikon: <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" /> },
+                  { nr: hann, namn: "Hann inte till fråga", ikon: <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-neutral-400" /> },
+                ].filter((r) => r.nr.length);
+                return rader.length ? (
+                  <ul className="space-y-1 border-b border-neutral-100 px-6 py-4 text-sm dark:border-neutral-800">
+                    {rader.map((r) => (
+                      <li key={r.namn} className="flex items-start gap-2 text-neutral-800 dark:text-neutral-200">
+                        {r.ikon}
+                        <span>
+                          {r.namn} <span className="font-semibold tabular-nums">{nummerspann(r.nr)}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null;
+              })()}
               <ol className="divide-y divide-neutral-100 dark:divide-neutral-800">
-                {svar.map((s) => {
-                  const fullt = s.poang >= s.maxpoang;
-                  return (
+                {svar
+                  .filter((s) => s.poang < s.maxpoang && !arObesvarad(s.kommentar))
+                  .map((s) => (
                     <li key={s.nr} className="px-6 py-4 text-sm">
                       <div className="mb-1 flex items-start justify-between gap-3">
                         <p className="flex items-start gap-2 font-medium text-neutral-900 dark:text-white">
-                          {fullt ? (
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                          ) : (
-                            <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-                          )}
+                          <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                           <span>
                             {s.nr}. {s.fraga ?? ""}
                           </span>
@@ -181,10 +201,9 @@ export function Lasresultat() {
                         </p>
                       )}
                       {s.kommentar && <p className="mt-2 ml-6 text-neutral-800 dark:text-neutral-200">{s.kommentar}</p>}
-                      {s.ratt && !fullt && <RattSvar ratt={s.ratt} />}
+                      {s.ratt && <RattSvar ratt={s.ratt} />}
                     </li>
-                  );
-                })}
+                  ))}
               </ol>
             </Card>
           );

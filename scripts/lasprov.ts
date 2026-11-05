@@ -20,7 +20,7 @@
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
-import { LASFORMAGOR, LASRESULTAT_PREFIX, nivaFor, perText, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
+import { LASFORMAGOR, LASRESULTAT_PREFIX, forElevlank, nivaFor, perText, summera, tolkaFacit, type Lasformaga, type Lastext, type Rattning } from "../src/lib/lasprov/typer";
 import { packaJson } from "../src/lib/aterkoppling/kodning";
 import { LARARTIPS, UTHALLIGHETSTIPS } from "../src/lib/lasprov/larartips";
 import { rattAlternativ, samlaAlternativ, valdBokstav, visaAlternativ } from "../src/lib/lasprov/flerval";
@@ -232,7 +232,7 @@ async function byggElev(fil: string, problem: string[], alternativ: Map<string, 
     larare: u.larare,
     svar,
   };
-  const lank = `${BAS_URL}/lasresultat#${await packaJson(r, LASRESULTAT_PREFIX)}`;
+  const lank = `${BAS_URL}/lasresultat#${await packaJson(forElevlank(r), LASRESULTAT_PREFIX)}`;
   const summa = summera(r);
   const rapport = fil.replace(/\.json$/, ".html");
   writeFileSync(rapport, elevRapport(u, r, lank, summa, ejNadda));

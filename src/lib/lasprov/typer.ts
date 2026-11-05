@@ -166,9 +166,46 @@ export interface Rattning {
 
 export const LASRESULTAT_PREFIX = "L1.";
 
+/** "Hann inte." / "Inget svar." – frågor eleven inte svarade på. */
+export const arObesvarad = (kommentar?: string) => /^(Hann inte|Inget svar)\b/.test(kommentar ?? "");
+
+/**
+ * Det som ska med i elevlänken. Allt ligger i länken (inget sparas på sajten),
+ * så den hålls kort: frågor med full poäng och frågor eleven inte svarade på
+ * visas bara som nummer, och elevens egna fritextsvar tas bort – eleven har
+ * dem redan. Kvar blir frågan, kommentaren och flervalsalternativen där eleven
+ * tappade poäng.
+ */
+export function forElevlank(r: Rattning): Rattning {
+  return {
+    ...r,
+    elev: undefined,
+    svar: r.svar.map(({ text, nr, formaga, fraga, val, ratt, poang, maxpoang, kommentar }) =>
+      poang >= maxpoang
+        ? { text, nr, formaga, poang, maxpoang }
+        : arObesvarad(kommentar)
+          ? { text, nr, formaga, poang, maxpoang, kommentar }
+          : { text, nr, formaga, fraga, val, ratt, poang, maxpoang, kommentar },
+    ),
+  };
+}
+
 export function arRattning(x: unknown): x is Rattning {
   const r = x as Partial<Rattning>;
   return !!r && r.v === 1 && typeof r.titel === "string" && Array.isArray(r.svar);
+}
+
+/** [1, 2, 3, 5, 7, 8] → "1–3, 5, 7–8" */
+export function nummerspann(nr: number[]): string {
+  const ut: string[] = [];
+  const sorterade = [...nr].sort((a, b) => a - b);
+  for (let i = 0; i < sorterade.length; i++) {
+    let j = i;
+    while (j + 1 < sorterade.length && sorterade[j + 1] === sorterade[j] + 1) j++;
+    ut.push(j - i >= 2 ? `${sorterade[i]}–${sorterade[j]}` : sorterade.slice(i, j + 1).join(", "));
+    i = j;
+  }
+  return ut.join(", ");
 }
 
 export interface FormagaResultat {
