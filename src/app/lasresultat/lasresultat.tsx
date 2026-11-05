@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, CheckCircle2, CircleDashed, Lightbulb, Lock, Printer } from "lucide-react";
+import { ArrowRight, BookOpenCheck, CheckCircle2, CircleDashed, Eye, Lightbulb, Lock, Printer } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -24,6 +24,27 @@ const NIVA: Record<Niva, { namn: string; stapel: string; bricka: string }> = {
   pagang: { namn: "På god väg", stapel: "bg-sky-500", bricka: "bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300" },
   saker: { namn: "Säker", stapel: "bg-emerald-500", bricka: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300" },
 };
+
+/** Rätt svar på en flervalsfråga, gömt tills eleven själv väljer att se det. */
+function RattSvar({ ratt }: { ratt: string }) {
+  const [visa, setVisa] = useState(false);
+  if (!visa)
+    return (
+      <button
+        type="button"
+        onClick={() => setVisa(true)}
+        className="mt-2 ml-6 flex w-fit items-center gap-1.5 rounded-full border border-emerald-300 px-3 py-1 text-xs font-semibold text-emerald-800 transition-colors hover:bg-emerald-50 print:hidden dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/40"
+      >
+        <Eye className="h-3.5 w-3.5" /> Visa rätt svar
+      </button>
+    );
+  return (
+    <p className="mt-2 ml-6 rounded-md bg-emerald-50 px-3 py-2 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200">
+      <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">Rätt svar </span>
+      {ratt}
+    </p>
+  );
+}
 
 export function Lasresultat() {
   const [data, setData] = useState<Rattning | null>(null);
@@ -159,13 +180,8 @@ export function Lasresultat() {
                           {s.val ?? s.elevsvar}
                         </p>
                       )}
-                      {s.ratt && !fullt && (
-                        <p className="mt-1 ml-6 rounded-md bg-emerald-50 px-3 py-2 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200">
-                          <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">Rätt svar </span>
-                          {s.ratt}
-                        </p>
-                      )}
                       {s.kommentar && <p className="mt-2 ml-6 text-neutral-800 dark:text-neutral-200">{s.kommentar}</p>}
+                      {s.ratt && !fullt && <RattSvar ratt={s.ratt} />}
                     </li>
                   );
                 })}
