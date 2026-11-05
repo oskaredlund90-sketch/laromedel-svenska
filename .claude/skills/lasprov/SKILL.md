@@ -64,6 +64,7 @@ Så känner du igen texterna i en export: numreringen börjar om på 1 när en n
 Regler för rättningen:
 - **Följ facit.** Ge poäng enligt facits nivåer. Exempelsvar är exempel – godta andra svar som uppfyller samma krav. Var konsekvent mellan eleverna.
 - **Granska varje exempel – räkna inte bara.** När frågan ber om t.ex. fyra exempel: kontrollera att varje exempel är korrekt, faktiskt står i (eller stöds av) texten och svarar på frågan. Felaktiga eller påhittade exempel räknas inte. Skriv i kommentaren vilket exempel som inte godkändes och varför.
+- **Räkna exempel, inte meningar.** Elever skriver ofta flera exempel i en och samma mening, bundna med *och, samt, men, eller, dessutom* eller komma ("Juicen innehåller mycket socker och grönsallad är inte särskilt nyttigt" = två exempel). Dela först upp svaret i påståenden och pröva varje påstående för sig. Ett exempel som är korrekt men formulerat kort eller inbakat i en annan mening räknas fullt ut. Ge bara delpoäng för "för få exempel" när du kan peka ut vilket exempel som saknas eller underkänns – och skriv i kommentaren vilka exempel du godkände ("Du har med X – men Y står inte i texten"), så att eleven ser att båda lästes.
 - **Flervalsfrågor:** jämför bokstaven/alternativet med facit. Bara rätt alternativ ger poäng.
 - Stavning och språk ger inte poängavdrag i läsförståelse, så länge svaret går att förstå.
 - Svar som saknas = 0 poäng med kommentaren "Inget svar".
