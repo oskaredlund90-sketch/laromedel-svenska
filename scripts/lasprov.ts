@@ -5,7 +5,7 @@
  *
  *   npm run lasprov -- facit                 Tolka facit-PDF:erna (steg1–3) till JSON
  *   npm run lasprov -- texter                Lista alla texter med id
- *   npm run lasprov -- fragor <textId>       Frågor + facit för en text (för rättningen)
+ *   npm run lasprov -- fragor <textId>       Hela texten + frågor + facit (för rättningen)
  *   npm run lasprov -- mall <textId>         Svarsmall för eleverna (HTML → Google Dokument)
  *   npm run lasprov -- digiexam <pdf> <gruppmapp> [starttext]
  *                                            Dela upp en DigiExam-export per elev och text
@@ -41,6 +41,17 @@ function allaTexter(): Lastext[] {
 
 function hamtaText(id: string): Lastext {
   return allaTexter().find((t) => t.id === id) ?? fel(`Okänd text: ${id}. Se npm run lasprov -- texter`);
+}
+
+/** Hela texten (avskriven ur elevhäftet) – rättningen ska utgå från den tillsammans med facit. */
+const TEXTER = join("lararrum", "lasforstaelse", "texter");
+
+function fragorMedText(id: string) {
+  const t = hamtaText(id);
+  const fil = join(TEXTER, `${id}.md`);
+  return existsSync(fil)
+    ? { ...t, text: readFileSync(fil, "utf8") }
+    : { ...t, textSaknas: `Texten finns inte i ${fil}. Skriv av den ur elevhäftet innan du rättar (se /lasprov).` };
 }
 
 function facit() {
@@ -478,7 +489,7 @@ else if (kommando === "texter")
       .map((t) => `${t.id}\t${t.titel}\t${t.fragor.length} frågor\t${t.fragor.reduce((n, f) => n + f.maxpoang, 0)} p`)
       .join("\n"),
   );
-else if (kommando === "fragor" && arg) console.log(JSON.stringify(hamtaText(arg), null, 2));
+else if (kommando === "fragor" && arg) console.log(JSON.stringify(fragorMedText(arg), null, 2));
 else if (kommando === "mall" && arg) mall(arg);
 else if (kommando === "bygg" && arg) void bygg(arg);
 else if (kommando === "alternativ") alternativ(arg);

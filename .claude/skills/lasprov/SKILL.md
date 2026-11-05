@@ -6,7 +6,7 @@ argument-hint: "[gruppmapp i lararrum/lasprov] [textId]"
 
 # Läsprov – rätta öppna frågor mot facit
 
-Texterna och facit är förlagets material. De ligger **bara lokalt** i `lararrum/lasforstaelse/` och får aldrig publiceras, laddas upp på sajten eller committas. Eleverna läser texten på papper (eller i förlagets material) och skriver sina svar digitalt.
+Texterna och facit är förlagets material. De ligger **bara lokalt** i `lararrum/lasforstaelse/` (facit i `facit/`, texterna avskrivna ur elevhäftet i `texter/`) och får aldrig publiceras, laddas upp på sajten eller committas. Eleverna läser texten på papper (eller i förlagets material) och skriver sina svar digitalt.
 
 Resultatet:
 - **varje elev**: poäng per fråga med en kort kommentar, resultat per läsförmåga och en elevlänk (`/lasresultat#…`) med tips och träning för de förmågor som behöver tränas,
@@ -30,7 +30,11 @@ Erbjud läraren att ladda upp mallen som ett Google Dokument i Drive (Drive-verk
    - **DigiExam-export (PDF med alla elever):** kör `npm run -s lasprov -- digiexam <pdf> lararrum/lasprov/<grupp> <första textId>`. Den delar upp svaren per elev (initialer) och per text och skriver `svar/<alias>.json`. Rätta utifrån de filerna – elevernas svar visas sedan automatiskt i rapporten och elevlänken.
    - Annars: en fil per elev (Google Dokument nedladdade som docx/pdf, DigiExam-export eller text). Filnamnet eller initialer = elevens alias. Aldrig fullständiga namn i filer eller chatten. Fråga efter årskurs om den saknas.
 
-2. **Hämta facit** för texten: `npm run -s lasprov -- fragor <textId>`. Läs varje frågas `facit` noggrant – den anger poängnivåer (t.ex. "4p om både … och …, 2p om antingen …") och exempelsvar.
+2. **Läs hela texten och facit.** `npm run -s lasprov -- fragor <textId>` ger `text` (hela texten med pratbubblor, bildbeskrivningar, faktarutor och ordlista) och frågorna med `facit`.
+   - **Läs hela texten först, innan du rättar en enda fråga.** Facit visar bara exempelsvar – ett elevsvar kan vara rätt fast det inte står i facit, och bara texten avgör det (t.ex. att dottern kritiserar juicen längre fram i serien). Pröva varje svar mot texten: står det där, eller stöds det av den?
+   - Läs varje frågas `facit` noggrant – den anger poängnivåer (t.ex. "4p om både … och …, 2p om antingen …") och exempelsvar.
+   - **Saknas texten** (`textSaknas`): skriv av den först till `lararrum/lasforstaelse/texter/<textId>.md` ur elevhäftet (inskannad PDF, t.ex. `~/Downloads/Läsförståelse - Steg 1  - Ny version.pdf` – läs sidorna som bilder med Read och `pages`). Samma format som de befintliga filerna: Text ordagrant, Bilder (vad som syns + all text i pratbubblor ruta för ruta), Faktarutor, Ordlista. Fråga läraren efter häftet om det inte hittas. Rätta aldrig utan texten.
+   - Skriv aldrig "kunde inte kontrollera mot texten" – kontrollera.
 
 3. **Rätta varje elev** och skriv `lararrum/lasprov/<grupp>/rattning/<alias>.json`:
 
