@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BookA, BookOpen, ChevronRight, Dumbbell, NotebookPen, Printer } from "lucide-react";
+import { BookA, BookOpen, ChevronRight, ClipboardCheck, Dumbbell, NotebookPen, Printer } from "lucide-react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { GrammatikOvningar, type GrammarTopic } from "@/components/grammatik-ovningar";
 import { AMNEN_PER_STADIUM, PROGRESSION, type GrammatikAmne } from "@/lib/grammatik/amnen";
-import { haftenForKapitel } from "@/lib/grammatik/bok";
+import { haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
 import { GrammatikInfografik } from "@/components/infografik/grammatik";
 import { KAPITEL } from "@/components/grammatik/kapitel";
 
@@ -55,6 +55,7 @@ export default async function GrammatikTopicPage({ params }: Props) {
 
   const Content = t.content;
   const haften = haftenForKapitel(topic as GrammatikAmne, arskurs as AgeGroup);
+  const kapprov = kapitelprovFor(topic as GrammatikAmne, arskurs as AgeGroup);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
@@ -160,6 +161,27 @@ export default async function GrammatikTopicPage({ params }: Props) {
               </Link>
             ))}
           </div>
+        </div>
+      )}
+
+      {kapprov && (
+        <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+          <div className="mb-2 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 dark:bg-emerald-950/40">
+              <ClipboardCheck className="h-5 w-5 text-emerald-700 dark:text-emerald-400" />
+            </div>
+            <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">Kapitelprov</h2>
+          </div>
+          <p className="mb-5 text-neutral-600 dark:text-neutral-400">
+            20 uppgifter som inte finns bland övningarna – ett kvitto på vad du har lärt dig i kapitlet. Gör provet här och få det rättat direkt,
+            eller skriv ut det med facit.
+          </p>
+          <Link
+            href={`/ovningshaften/${kapprov.id}`}
+            className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
+          >
+            <ClipboardCheck className="h-4 w-4" /> {kapprov.titel}
+          </Link>
         </div>
       )}
     </div>

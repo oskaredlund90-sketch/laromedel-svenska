@@ -11,6 +11,8 @@ import { PROV_HOG_GY } from "./data/prov-hog-gy";
 import { GRAMMATIK_UTBYGGD } from "./data/grammatik-utbyggd";
 import { HAFTEN_LAG_HOG } from "./data/stadier-lag-hog";
 import { HAFTEN_GY } from "./data/stadier-gy";
+import { KAPITELPROV_LAG_MEL } from "./data/kapitelprov-lag-mel";
+import { KAPITELPROV_HOG_GY } from "./data/kapitelprov-hog-gy";
 
 const KALLOR: HafteKalla[] = [
   ...STAVNING_HAFTEN,
@@ -25,12 +27,15 @@ const KALLOR: HafteKalla[] = [
   ...GRAMMATIK_UTBYGGD,
   ...HAFTEN_LAG_HOG,
   ...HAFTEN_GY,
+  ...KAPITELPROV_LAG_MEL,
+  ...KAPITELPROV_HOG_GY,
 ];
 
 export const HAFTEN: Hafte[] = KALLOR.map(byggHafte);
 
 export const OMRADEN: Omradesnamn[] = [
   "Grammatikprov",
+  "Kapitelprov",
   "Stavning",
   "Skiljetecken",
   "Grammatik",
@@ -54,7 +59,7 @@ export function hamtaHafte(id: string): Hafte | undefined {
  */
 export function haftenForFeltyp(feltyp: string): Hafte[] {
   // Prov är inte övningar – de föreslås aldrig som nästa steg.
-  const ovningar = HAFTEN.filter((h) => h.omrade !== "Grammatikprov");
+  const ovningar = HAFTEN.filter((h) => h.omrade !== "Grammatikprov" && h.omrade !== "Kapitelprov");
   const huvud = ovningar.filter((h) => h.feltyper[0] === feltyp);
   const traffar = huvud.length ? huvud : ovningar.filter((h) => h.feltyper.includes(feltyp));
   return traffar.sort((a, b) => a.steg - b.steg);

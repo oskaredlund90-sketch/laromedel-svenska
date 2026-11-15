@@ -63,9 +63,14 @@ export function haftenForKapitel(amne: GrammatikAmne, stadie: AgeGroup): Hafte[]
 
 const ORDNING: AgeGroup[] = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
 
-/** Stadierna där ett häfte ingår i grammatikboken. Slutproven hör till sitt eget stadium. */
+/** Kapitelprovet (20 poäng) för ett kapitel på ett stadium. */
+export function kapitelprovFor(amne: GrammatikAmne, stadie: AgeGroup): Hafte | undefined {
+  return hamtaHafte(`kapitelprov-${stadie}-${amne}`);
+}
+
+/** Stadierna där ett häfte ingår i grammatikboken. Prov hör till sitt eget stadium. */
 export function stadierForHafte(id: string): AgeGroup[] {
-  const prov = ORDNING.find((s) => id === `prov-${s}`);
+  const prov = ORDNING.find((s) => id === `prov-${s}` || id.startsWith(`kapitelprov-${s}-`));
   if (prov) return [prov];
   return ORDNING.filter((s) => Object.values(HAFTEN_PER_KAPITEL[s]).some((ids) => ids?.includes(id)));
 }

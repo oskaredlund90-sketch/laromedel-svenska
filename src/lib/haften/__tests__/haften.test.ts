@@ -44,6 +44,7 @@ describe("alla häften", () => {
   for (const h of HAFTEN) {
     it(`${h.id}: minst 100 uppgifter, kända feltyper, inga dubbletter`, () => {
       if (h.omrade === "Grammatikprov") expect(h.antalUppgifter).toBe(100);
+      else if (h.omrade === "Kapitelprov") expect(h.antalUppgifter).toBe(20);
       else expect(h.antalUppgifter).toBeGreaterThanOrEqual(100);
       for (const f of h.feltyper) expect(hamtaFeltyp(f), f).toBeDefined();
       for (const d of h.delar) {

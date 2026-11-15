@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { AMNEN_PER_STADIUM } from "../amnen";
-import { HAFTEN_PER_KAPITEL, haftenForKapitel } from "../bok";
+import { HAFTEN_PER_KAPITEL, haftenForKapitel, kapitelprovFor } from "../bok";
 import { getExercisesForTopic } from "@/lib/data/grammatik-ovningar";
 import { hamtaHafte } from "@/lib/haften";
 import type { AgeGroup } from "@/lib/supabase/types";
@@ -13,6 +13,8 @@ describe("grammatikboken", () => {
         const haften = haftenForKapitel(k as never, stadie);
         const minst = stadie === "lagstadiet" ? 1 : 2;
         expect(haften.length, `${stadie}/${k}: häften`).toBeGreaterThanOrEqual(minst);
+        const prov = kapitelprovFor(k as never, stadie);
+        expect(prov?.antalUppgifter, `${stadie}/${k}: kapitelprov`).toBe(20);
       }
     });
   }

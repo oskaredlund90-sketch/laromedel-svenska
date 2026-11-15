@@ -6,7 +6,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { cn } from "@/lib/utils";
 import { AMNEN, AMNEN_PER_STADIUM, MAL_PER_STADIUM, PROGRESSION, ALLA_AMNEN, type GrammatikAmne } from "@/lib/grammatik/amnen";
-import { haftenForKapitel } from "@/lib/grammatik/bok";
+import { haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
 import { getExercisesForTopic } from "@/lib/data/grammatik-ovningar";
 import { hamtaHafte } from "@/lib/haften";
 import { KAPITEL } from "@/components/grammatik/kapitel";
@@ -115,7 +115,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
           <SkrivUtKnapp text={valt ? "Skriv ut kapitlet" : "Skriv ut boken"} />
           <p className="text-sm text-neutral-500">
             {larare
-              ? "Lärarboken har facit efter varje kapitel" + (valt ? "." : " och slutprovet med facit sist.")
+              ? "Lärarboken har facit och ett kapitelprov (20 p) efter varje kapitel" + (valt ? "." : " och slutprovet med facit sist.")
               : "Elevboken har inga facit. Varje kapitel har en QR-kod till sajten."}
           </p>
         </div>
@@ -161,6 +161,12 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                     </span>
                   </li>
                 ))}
+                {larare && (
+                  <li className="flex gap-4 border-b border-dotted border-neutral-300 pb-2 dark:border-neutral-700">
+                    <span className="w-8 font-bold">✓</span>
+                    <span className="font-semibold text-neutral-900 dark:text-white">Kapitelprov med facit efter varje kapitel</span>
+                  </li>
+                )}
                 {larare && (
                   <li className="flex gap-4 border-b border-dotted border-neutral-300 pb-2 dark:border-neutral-700">
                     <span className="w-8 font-bold">✓</span>
@@ -221,6 +227,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
             const Genomgang = KAPITEL[a].content;
             const ovningar = getExercisesForTopic(a, stadie);
             const haften = medHaften ? haftenForKapitel(a, stadie) : [];
+            const kapprov = larare ? kapitelprovFor(a, stadie) : undefined;
             return (
               <article key={a} className="break-before-page border-t-4 border-neutral-900 pt-8 pb-12 dark:border-white print:border-t-0 print:pt-0">
                 <div className="mb-8 flex flex-wrap items-start justify-between gap-6">
@@ -249,6 +256,13 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                   <section className="mt-8 break-before-page rounded-lg border border-neutral-300 p-5 dark:border-neutral-700 print:rounded-none print:border-0 print:p-0">
                     <h3 className="mb-3 text-xl font-bold">Facit – kapitel {nr}: {AMNEN[a].titel}</h3>
                     <OvningarFacit ovningar={ovningar} />
+                  </section>
+                )}
+
+                {kapprov && (
+                  <section className="mt-10 break-before-page">
+                    <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-neutral-500">Kapitelprov · lärarmaterial</p>
+                    <HaftePapper hafte={kapprov} medFacit synlig />
                   </section>
                 )}
 

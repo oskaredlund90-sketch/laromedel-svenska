@@ -16,7 +16,10 @@ export function HaftePapper({ hafte, medFacit, synlig = false }: { hafte: Hafte;
           <h1 className="text-[18pt] font-bold">{hafte.titel}</h1>
           <p>{hafte.underrubrik}</p>
         </div>
-        <p className="self-end text-[10pt]">Namn: ______________________</p>
+        <div className="self-end text-right text-[10pt]">
+          <p>Namn: ______________________</p>
+          {/prov$/i.test(hafte.omrade) && <p className="mt-2">Poäng: ______ / {hafte.antalUppgifter}</p>}
+        </div>
       </div>
       <div className="mb-4 border border-current p-3">
         <p className="font-semibold">Kom ihåg</p>
@@ -56,7 +59,7 @@ export function HaftePapper({ hafte, medFacit, synlig = false }: { hafte: Hafte;
           {hafte.delar.map((d) => (
             <section key={d.rubrik} className="mb-3">
               <h2 className="font-bold">{d.rubrik}</h2>
-              <ol className="columns-3 gap-6 pl-6 text-[9pt]">
+              <ol className="list-decimal columns-3 gap-6 pl-6 text-[9pt]">
                 {d.uppgifter.map((u) => (
                   <li key={u.id} className="break-inside-avoid">
                     {facitText(u)}
