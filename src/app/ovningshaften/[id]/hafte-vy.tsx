@@ -6,11 +6,10 @@ import { BookOpen, Check, ChevronLeft, Printer, RotateCcw, X } from "lucide-reac
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { HaftePapper } from "@/components/haften/hafte-papper";
 import {
   arRatt,
   arRattMening,
-  facitText,
-  utskriftsText,
   visaAlternativ,
   type Del,
   type Hafte,
@@ -71,7 +70,7 @@ export function HafteVy({ hafte }: { hafte: Hafte }) {
       </div>
 
       {/* ---------- Utskrift ---------- */}
-      <Utskrift hafte={hafte} medFacit={medFacit} />
+      <HaftePapper hafte={hafte} medFacit={medFacit} />
     </div>
   );
 }
@@ -266,68 +265,3 @@ function RattaRad({
   );
 }
 
-function Utskrift({ hafte, medFacit }: { hafte: Hafte; medFacit: boolean }) {
-  return (
-    <div className="hidden text-[11pt] leading-relaxed text-black print:block">
-      <div className="mb-4 flex justify-between border-b border-black pb-2">
-        <div>
-          <p className="text-[9pt]">
-            {hafte.omrade} · Steg {hafte.steg} · {hafte.antalUppgifter} uppgifter
-          </p>
-          <h1 className="text-[18pt] font-bold">{hafte.titel}</h1>
-          <p>{hafte.underrubrik}</p>
-        </div>
-        <p className="self-end text-[10pt]">Namn: ______________________</p>
-      </div>
-      <div className="mb-4 border border-black p-3">
-        <p className="font-semibold">Kom ihåg</p>
-        <ul className="list-disc pl-5">
-          {hafte.regel.map((r) => (
-            <li key={r}>{r}</li>
-          ))}
-        </ul>
-      </div>
-      {hafte.delar.map((d) => (
-        <section key={d.rubrik} className="mb-4">
-          <h2 className="mt-2 text-[13pt] font-bold">{d.rubrik}</h2>
-          <p className="mb-2 italic">{d.instruktion}</p>
-          <ol className={cn("list-decimal pl-6", d.typ !== "ratta" && "columns-2 gap-8")}>
-            {d.uppgifter.map((u) => (
-              <li key={u.id} className="mb-1 break-inside-avoid">
-                {u.typ === "ratta" ? (
-                  <>
-                    {u.fel}
-                    <br />
-                    <span className="mt-2 block border-b border-dotted border-black">&nbsp;</span>
-                  </>
-                ) : (
-                  <>
-                    {utskriftsText(u)}
-                    {u.ledtrad && ` (${u.ledtrad})`}
-                  </>
-                )}
-              </li>
-            ))}
-          </ol>
-        </section>
-      ))}
-      {medFacit && (
-        <div className="break-before-page">
-          <h1 className="mb-2 text-[16pt] font-bold">Facit – {hafte.titel}</h1>
-          {hafte.delar.map((d) => (
-            <section key={d.rubrik} className="mb-3">
-              <h2 className="font-bold">{d.rubrik}</h2>
-              <ol className="columns-3 gap-6 pl-6 text-[9pt]">
-                {d.uppgifter.map((u) => (
-                  <li key={u.id} className="break-inside-avoid">
-                    {facitText(u)}
-                  </li>
-                ))}
-              </ol>
-            </section>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}

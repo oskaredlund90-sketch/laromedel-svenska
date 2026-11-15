@@ -89,3 +89,29 @@ body {
 @media print {
   @page { margin: 16mm; }
 }
+
+/* Grammatikboken: alltid svart på vitt vid utskrift, även i mörkt läge. */
+@media print {
+  .bok,
+  .bok * {
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .bok svg rect[fill="#ffffff"] {
+    fill: #fff !important;
+  }
+}
+@media print {
+  .bok .rounded-xl,
+  .bok .rounded-lg,
+  .bok table tr,
+  .bok h2,
+  .bok h3 {
+    break-inside: avoid;
+  }
+  .bok h2,
+  .bok h3 {
+    break-after: avoid;
+  }
+}

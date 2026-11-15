@@ -33,7 +33,7 @@ function papper(instruktion: string): string {
 const STANDARD = new Set(["Välj rätt svar.", "Välj det ord som passar bäst.", "Ett ord eller en del av meningen är fel. Välj det som är rätt."]);
 
 const bokstav = (i: number) => String.fromCharCode(65 + i);
-const LINJE = "border-b border-dotted border-neutral-500";
+const LINJE = "border-b border-dotted border-current";
 
 function Uppgift({ e }: { e: GrammarExercise }) {
   switch (e.type) {
@@ -54,7 +54,7 @@ function Uppgift({ e }: { e: GrammarExercise }) {
       return (
         <>
           <p>{e.sentence.replace("____", "______________")}</p>
-          <p className="text-[9.5pt] text-neutral-700">({e.options.join(" / ")})</p>
+          <p className="text-[9.5pt] opacity-75">({e.options.join(" / ")})</p>
         </>
       );
     case "error-correction": {
@@ -79,7 +79,7 @@ function Uppgift({ e }: { e: GrammarExercise }) {
             <thead>
               <tr>
                 {e.categories.map((k) => (
-                  <th key={k} className="border border-neutral-500 px-2 py-1 text-left">
+                  <th key={k} className="border border-current px-2 py-1 text-left">
                     {k}
                   </th>
                 ))}
@@ -89,7 +89,7 @@ function Uppgift({ e }: { e: GrammarExercise }) {
               {Array.from({ length: Math.max(2, Math.ceil(e.items.length / e.categories.length) + 1) }).map((_, r) => (
                 <tr key={r}>
                   {e.categories.map((k) => (
-                    <td key={k} className="h-7 border border-neutral-500" />
+                    <td key={k} className="h-7 border border-current" />
                   ))}
                 </tr>
               ))}
@@ -103,12 +103,12 @@ function Uppgift({ e }: { e: GrammarExercise }) {
           <div className="flex flex-wrap gap-x-3 gap-y-2">
             {e.parts.map((p) => (
               <span key={p.text} className="inline-flex flex-col items-center">
-                <span className="rounded border border-neutral-500 px-1.5">{p.text}</span>
+                <span className="rounded border border-current px-1.5">{p.text}</span>
                 <span className={`mt-4 w-24 ${LINJE}`} />
               </span>
             ))}
           </div>
-          <p className="mt-1 text-[9pt] text-neutral-700">Välj bland: {e.roleOptions.join(", ")}</p>
+          <p className="mt-1 text-[9pt] opacity-75">Välj bland: {e.roleOptions.join(", ")}</p>
         </>
       );
     case "markera":
@@ -128,13 +128,13 @@ function Uppgift({ e }: { e: GrammarExercise }) {
         <>
           <div className={e.meningar ? "space-y-1" : "flex flex-wrap gap-2"}>
             {delar.map((d, i) => (
-              <span key={i} className={e.meningar ? "block" : "rounded border border-neutral-500 px-1.5"}>
+              <span key={i} className={e.meningar ? "block" : "rounded border border-current px-1.5"}>
                 {e.meningar ? `☐ ${d}` : d}
               </span>
             ))}
           </div>
           {e.meningar ? (
-            <p className="mt-1 text-[9pt] text-neutral-700">Skriv 1, 2, 3 … i rutorna.</p>
+            <p className="mt-1 text-[9pt] opacity-75">Skriv 1, 2, 3 … i rutorna.</p>
           ) : (
             <p className={`mt-5 ${LINJE}`} />
           )}
@@ -169,11 +169,56 @@ function facit(e: GrammarExercise): string {
   }
 }
 
-export function GrammatikUtskrift({ titel, stadium, ovningar }: { titel: string; stadium: string; ovningar: GrammarExercise[] }) {
-  const [medFacit, setMedFacit] = useState(true);
+function numrera(ovningar: GrammarExercise[]) {
   const typer = (Object.keys(RUBRIK) as GrammarExercise["type"][]).filter((t) => ovningar.some((e) => e.type === t));
   let nr = 0;
-  const numrerade = typer.map((t) => ({ typ: t, lista: ovningar.filter((e) => e.type === t).map((e) => ({ e, nr: ++nr })) }));
+  return typer.map((t) => ({ typ: t, lista: ovningar.filter((e) => e.type === t).map((e) => ({ e, nr: ++nr })) }));
+}
+
+/** Övningarna som uppgifter på papper, uppdelade i delar per övningstyp. */
+export function OvningarPapper({ ovningar, rubrik = "h2" }: { ovningar: GrammarExercise[]; rubrik?: "h2" | "h3" }) {
+  const R = rubrik;
+  return (
+    <>
+      {numrera(ovningar).map(({ typ, lista }, di) => (
+        <section key={typ} className="mb-5">
+          <R className="mb-2 text-[13pt] font-bold">
+            Del {bokstav(di)} – {RUBRIK[typ]}
+          </R>
+          <ol className="space-y-2.5">
+            {lista.map(({ e, nr }) => (
+              <li key={e.id} className="flex break-inside-avoid gap-2">
+                <span className="w-7 shrink-0 text-right font-bold">{nr}.</span>
+                <div className="min-w-0 flex-1">
+                  {!STANDARD.has(e.instruction) && <p className="text-[10pt] italic">{papper(e.instruction)}</p>}
+                  <Uppgift e={e} />
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </>
+  );
+}
+
+/** Facit till OvningarPapper, med samma numrering. */
+export function OvningarFacit({ ovningar }: { ovningar: GrammarExercise[] }) {
+  return (
+    <ol className="space-y-1 text-[10pt]">
+      {numrera(ovningar).flatMap(({ lista }) =>
+        lista.map(({ e, nr }) => (
+          <li key={e.id}>
+            <strong>{nr}.</strong> {facit(e)}
+          </li>
+        )),
+      )}
+    </ol>
+  );
+}
+
+export function GrammatikUtskrift({ titel, stadium, ovningar }: { titel: string; stadium: string; ovningar: GrammarExercise[] }) {
+  const [medFacit, setMedFacit] = useState(true);
 
   return (
     <div>
@@ -195,40 +240,11 @@ export function GrammatikUtskrift({ titel, stadium, ovningar }: { titel: string;
           </div>
           <p className="self-end text-[10pt]">Namn: ______________________</p>
         </div>
-
-        {numrerade.map(({ typ, lista }, di) => (
-          <section key={typ} className="mb-5">
-            <h2 className="mb-2 text-[13pt] font-bold">
-              Del {bokstav(di)} – {RUBRIK[typ]}
-            </h2>
-            <ol className="space-y-3">
-              {lista.map(({ e, nr }) => (
-                <li key={e.id} className="break-inside-avoid">
-                  <p className="text-[10pt] italic">
-                    <span className="mr-1 font-bold not-italic">{nr}.</span>
-                    {STANDARD.has(e.instruction) ? "" : papper(e.instruction)}
-                  </p>
-                  <div className="pl-5">
-                    <Uppgift e={e} />
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        ))}
-
+        <OvningarPapper ovningar={ovningar} />
         {medFacit && (
           <section className="mt-10 break-before-page border-t-2 border-black pt-4 print:mt-0 print:border-0 print:pt-0">
             <h2 className="mb-3 text-[14pt] font-bold">Facit – {titel}</h2>
-            <ol className="space-y-1 text-[10pt]">
-              {numrerade.flatMap(({ lista }) =>
-                lista.map(({ e, nr }) => (
-                  <li key={e.id}>
-                    <strong>{nr}.</strong> {facit(e)}
-                  </li>
-                )),
-              )}
-            </ol>
+            <OvningarFacit ovningar={ovningar} />
           </section>
         )}
       </div>

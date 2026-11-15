@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, ClipboardCheck, NotebookPen, Target } from "lucide-react";
+import { ArrowRight, BookOpen, ClipboardCheck, GraduationCap, NotebookPen, Printer, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
-import { AMNEN, AMNEN_PER_STADIUM, MAL_PER_STADIUM } from "@/lib/grammatik/amnen";
+import { AMNEN, AMNEN_PER_STADIUM, MAL_PER_STADIUM, PROGRESSION } from "@/lib/grammatik/amnen";
 
 interface Props {
   params: Promise<{ arskurs: string }>;
@@ -32,10 +32,37 @@ export default async function GrammatikPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
       <div className="mb-8">
+        <p className="text-sm font-semibold uppercase tracking-widest text-neutral-500">Grammatikboken</p>
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">Grammatik – {group.label}</h1>
         <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-          Följ stegen i ordning. Varje steg har en genomgång och övningar. Avsluta med grammatikprovet för att se vad du kan.
+          En lärobok och övningsbok i ett. Följ kapitlen i ordning – varje kapitel har en genomgång, övningar som rättas direkt och
+          övningshäften. Allt går också att skriva ut.
         </p>
+      </div>
+
+      <div className="mb-10 grid gap-3 sm:grid-cols-2">
+        <Link
+          href={`/${arskurs}/grammatik/bok`}
+          className="group flex items-center gap-4 rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+        >
+          <BookOpen className="h-8 w-8 shrink-0 text-sky-600" />
+          <span>
+            <span className="block font-semibold text-neutral-900 dark:text-white">Hela boken – elevbok</span>
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">Läs eller skriv ut alla kapitel med övningar</span>
+          </span>
+          <Printer className="ml-auto h-5 w-5 text-neutral-400" />
+        </Link>
+        <Link
+          href={`/${arskurs}/grammatik/bok?version=larare`}
+          className="group flex items-center gap-4 rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+        >
+          <GraduationCap className="h-8 w-8 shrink-0 text-emerald-600" />
+          <span>
+            <span className="block font-semibold text-neutral-900 dark:text-white">Lärarbok</span>
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">Med progression, facit och slutprov</span>
+          </span>
+          <Printer className="ml-auto h-5 w-5 text-neutral-400" />
+        </Link>
       </div>
 
       <Card className="mb-10 border-sky-200 bg-sky-50 dark:border-sky-900 dark:bg-sky-950/30">
@@ -63,8 +90,9 @@ export default async function GrammatikPage({ params }: Props) {
               <Card className="transition-shadow group-hover:shadow-md">
                 <CardContent className="flex items-center justify-between gap-4 p-5">
                   <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Kapitel {i + 1}</p>
                     <p className="text-lg font-semibold text-neutral-900 dark:text-white">{AMNEN[slug].titel}</p>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">{AMNEN[slug].beskrivning}</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400">{PROGRESSION[slug][stadie] ?? AMNEN[slug].beskrivning}</p>
                   </div>
                   <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-transform group-hover:translate-x-1" />
                 </CardContent>

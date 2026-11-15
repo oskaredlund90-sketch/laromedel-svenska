@@ -92,3 +92,70 @@ export const HAFTEN_PER_AMNE: Record<GrammatikAmne, string[]> = {
   textbindning: ["textbindning-", "meningsbyggnad-1-sambandsord"],
   stilistik: ["meningsbyggnad-4-perspektiv"],
 };
+
+/**
+ * Progressionen: vad eleven lär sig om varje ämne på varje stadium. Varje
+ * stadium bygger vidare på det förra. Saknas stadiet tas ämnet inte upp där.
+ */
+export const PROGRESSION: Record<GrammatikAmne, Partial<Record<AgeGroup, string>>> = {
+  ordklasser: {
+    lagstadiet: "Substantiv, verb och adjektiv. Ental och flertal, nutid och dåtid.",
+    mellanstadiet: "De vanligaste ordklasserna – även pronomen och prepositioner – och hur de böjs.",
+    hogstadiet: "Alla tio ordklasser, även konjunktioner, subjunktioner och interjektioner.",
+    gymnasiet: "Ordklasser i analys: particip, verbformer, och ordklassernas funktion i texten.",
+  },
+  morfem: {
+    lagstadiet: "Sammansatta ord och ändelser som -ar, -en och -te.",
+    mellanstadiet: "Rot, prefix och suffix. Stava med hjälp av roten (glad – glatt).",
+    hogstadiet: "Rotmorfem, böjnings- och avledningsmorfem, sammansättning – morfologisk medvetenhet som stöd för stavning.",
+    gymnasiet: "Fria och bundna morfem, allomorfer och grekiska och latinska byggstenar i fackspråk.",
+  },
+  satsdelar: {
+    lagstadiet: "Vem gör något (subjekt) och vad som händer (predikat).",
+    mellanstadiet: "Subjekt, predikat, objekt och adverbial.",
+    hogstadiet: "Även indirekt objekt, predikativ och satsadverbial.",
+    gymnasiet: "Fullständig satsanalys: agent, formellt och egentligt subjekt, bisatser som satsdelar.",
+  },
+  meningsbyggnad: {
+    lagstadiet: "Hela meningar med stor bokstav och skiljetecken. Påstående, fråga och utrop.",
+    mellanstadiet: "Huvudsats och bisats, verbet på plats två, variera meningsbörjan.",
+    hogstadiet: "BIFF, inversion, satsradning och meningsbyggnad för olika syften.",
+    gymnasiet: "Slutfokus, utbrytning, passiv, nominal- och verbalstil.",
+  },
+  samband: {
+    lagstadiet: "Eftersom (varför), så och därför (vad som händer sedan), om (villkor).",
+    mellanstadiet: "Orsak, följd och villkor – och om orsaken ska stå först eller sist.",
+    hogstadiet: "Fyra sätt att uttrycka samband: bisats, sambandsord, på grund av, verb. Medgivande.",
+    gymnasiet: "Exakta orsakssamband, samband vs orsak, formella markörer och kontrafaktiska villkor.",
+  },
+  skiljetecken: {
+    lagstadiet: "Punkt, frågetecken och utropstecken.",
+    mellanstadiet: "Komma vid uppräkning och dialog med talstreck eller citattecken.",
+    hogstadiet: "Komma, kolon, semikolon och tankstreck.",
+    gymnasiet: "Skrivregler för citat, siffror, förkortningar och källhänvisningar.",
+  },
+  stavning: {
+    lagstadiet: "Dubbelteckning, ljud som stavas olika och stor bokstav.",
+    mellanstadiet: "Sj- och tj-ljud, särskrivning och vanliga svåra ord.",
+    hogstadiet: "Dubbelteckning av m och n, versaler och gemener, stavning med hjälp av morfem.",
+    gymnasiet: "Språkriktighet: lånord, försvenskningar och skrivregler.",
+  },
+  ordbildning: {
+    mellanstadiet: "Sammansättning, foge-s och avledning.",
+    hogstadiet: "Avledning, förkortningar och lånord.",
+    gymnasiet: "Ordbildning i fackspråk, nyord och lånordens väg in i svenskan.",
+  },
+  textbindning: {
+    lagstadiet: "Först, sedan, till slut. Han, hon och den i stället för upprepning. Ny rad när något nytt händer.",
+    mellanstadiet: "Sambandsord, ord som syftar tillbaka och styckeindelning.",
+    hogstadiet: "Sambandsmarkörer, referensbindning, tematisk bindning och kärnmeningar.",
+    gymnasiet: "Tema och rema, sammanfattande referenser, metatext och röd tråd.",
+  },
+  stilistik: {
+    hogstadiet: "Stilnivå, ton och vanliga stilfigurer.",
+    gymnasiet: "Stilistiska val i olika genrer och retoriska stilfigurer.",
+  },
+};
+
+/** Alla ämnen i bokens ordning (oavsett stadium). */
+export const ALLA_AMNEN: GrammatikAmne[] = ["ordklasser", "morfem", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "stavning", "ordbildning", "textbindning", "stilistik"];
