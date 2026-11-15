@@ -8,6 +8,7 @@ import { EXTRA_GRAMMATIK } from "./data/extra-grammatik";
 import { EXTRA_STAVNING } from "./data/extra-stavning";
 import { PROV_LAG_MEL } from "./data/prov-lag-mel";
 import { PROV_HOG_GY } from "./data/prov-hog-gy";
+import { GRAMMATIK_UTBYGGD } from "./data/grammatik-utbyggd";
 
 const KALLOR: HafteKalla[] = [
   ...STAVNING_HAFTEN,
@@ -19,11 +20,23 @@ const KALLOR: HafteKalla[] = [
   ...EXTRA_STAVNING,
   ...PROV_LAG_MEL,
   ...PROV_HOG_GY,
+  ...GRAMMATIK_UTBYGGD,
 ];
 
 export const HAFTEN: Hafte[] = KALLOR.map(byggHafte);
 
-export const OMRADEN: Omradesnamn[] = ["Grammatikprov", "Stavning", "Skiljetecken", "Grammatik", "Utrum och neutrum", "Meningsbyggnad"];
+export const OMRADEN: Omradesnamn[] = [
+  "Grammatikprov",
+  "Stavning",
+  "Skiljetecken",
+  "Grammatik",
+  "Satsdelar",
+  "Ordets byggstenar",
+  "Samband",
+  "Textbindning",
+  "Utrum och neutrum",
+  "Meningsbyggnad",
+];
 
 export function hamtaHafte(id: string): Hafte | undefined {
   return HAFTEN.find((h) => h.id === id);

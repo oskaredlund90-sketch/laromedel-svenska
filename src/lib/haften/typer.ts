@@ -75,6 +75,10 @@ export type Omradesnamn =
   | "Grammatik"
   | "Skiljetecken"
   | "Meningsbyggnad"
+  | "Satsdelar"
+  | "Samband"
+  | "Ordets byggstenar"
+  | "Textbindning"
   | "Grammatikprov";
 
 export interface Del extends Omit<DelKalla, "rader"> {

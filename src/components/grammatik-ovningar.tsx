@@ -21,7 +21,12 @@ import {
   type ErrorCorrectionExercise,
   type CategorizationExercise,
   type SentenceAnalysisExercise,
+  type MarkeraExercise,
+  type DelaExercise,
+  type OrdnaExercise,
 } from "@/lib/data/grammatik-ovningar";
+import { DelaRenderer, MarkeraRenderer, OrdnaRenderer } from "@/components/grammatik/nya-ovningstyper";
+import type { GrammatikAmne } from "@/lib/grammatik/amnen";
 import { recordQuizResult, recordActivity } from "@/lib/progress";
 import type { AgeGroup } from "@/lib/supabase/types";
 
@@ -29,14 +34,7 @@ import type { AgeGroup } from "@/lib/supabase/types";
 /*  Types                                                                      */
 /* -------------------------------------------------------------------------- */
 
-export type GrammarTopic =
-  | "ordklasser"
-  | "meningsbyggnad"
-  | "skiljetecken"
-  | "stavning"
-  | "ordbildning"
-  | "textbindning"
-  | "stilistik";
+export type GrammarTopic = GrammatikAmne;
 
 interface GrammatikOvningarProps {
   topic: GrammarTopic;
@@ -53,9 +51,12 @@ const TAB_LABELS: Record<string, string> = {
   all: "Alla",
   "multiple-choice": "Flerval",
   "fill-in-blank": "Lucktext",
-  "error-correction": "Rättstavning",
+  "error-correction": "Rätta",
   categorization: "Kategorisering",
   "sentence-analysis": "Satsanalys",
+  markera: "Markera",
+  dela: "Dela ord",
+  ordna: "Ordna",
 };
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -992,6 +993,34 @@ export function GrammatikOvningar({ topic, ageGroup }: GrammatikOvningarProps) {
           <SentenceAnalysisRenderer
             key={`sa-${currentIndex}`}
             exercise={currentExercise as SentenceAnalysisExercise}
+            answered={answered}
+            isCorrect={isCorrect}
+            onAnswer={handleAnswer}
+          />
+        )}
+
+        {currentExercise.type === "markera" && (
+          <MarkeraRenderer
+            key={`mark-${currentExercise.id}`}
+            exercise={currentExercise as MarkeraExercise}
+            answered={answered}
+            isCorrect={isCorrect}
+            onAnswer={handleAnswer}
+          />
+        )}
+        {currentExercise.type === "dela" && (
+          <DelaRenderer
+            key={`dela-${currentExercise.id}`}
+            exercise={currentExercise as DelaExercise}
+            answered={answered}
+            isCorrect={isCorrect}
+            onAnswer={handleAnswer}
+          />
+        )}
+        {currentExercise.type === "ordna" && (
+          <OrdnaRenderer
+            key={`ordna-${currentExercise.id}`}
+            exercise={currentExercise as OrdnaExercise}
             answered={answered}
             isCorrect={isCorrect}
             onAnswer={handleAnswer}

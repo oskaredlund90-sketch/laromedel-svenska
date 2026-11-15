@@ -1,66 +1,20 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BookA, Lightbulb, AlertTriangle, ChevronRight, Dumbbell } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { BookA, ChevronRight, Dumbbell, NotebookPen, Printer } from "lucide-react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { type ReactNode } from "react";
 import { GrammatikOvningar, type GrammarTopic } from "@/components/grammatik-ovningar";
-import { AMNEN_PER_STADIUM } from "@/lib/grammatik/amnen";
+import { AMNEN_PER_STADIUM, HAFTEN_PER_AMNE, type GrammatikAmne } from "@/lib/grammatik/amnen";
+import { HAFTEN } from "@/lib/haften";
 import { GrammatikInfografik } from "@/components/infografik/grammatik";
-
-/* ------------------------------------------------------------------ */
-/*  Helper components                                                  */
-/* ------------------------------------------------------------------ */
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <section className="mb-10">
-      <h2 className="mb-4 text-2xl font-semibold text-neutral-900 dark:text-white">
-        {title}
-      </h2>
-      {children}
-    </section>
-  );
-}
-
-function ExampleCard({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <Card className="mb-4">
-      <CardHeader>
-        <CardTitle className="text-base">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-    </Card>
-  );
-}
-
-function Tip({ children }: { children: ReactNode }) {
-  return (
-    <div className="my-4 flex gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-800 dark:bg-neutral-900">
-      <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
-      <div className="text-sm text-neutral-700 dark:text-neutral-300">{children}</div>
-    </div>
-  );
-}
-
-function Warning({ children }: { children: ReactNode }) {
-  return (
-    <div className="my-4 flex gap-3 rounded-lg border border-red-200 bg-red-50 p-4 dark:border-red-900 dark:bg-red-950">
-      <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />
-      <div className="text-sm text-neutral-700 dark:text-neutral-300">{children}</div>
-    </div>
-  );
-}
-
-function Ex({ children }: { children: ReactNode }) {
-  return (
-    <p className="my-1 rounded bg-neutral-100 px-3 py-1.5 font-mono text-sm dark:bg-neutral-800">
-      {children}
-    </p>
-  );
-}
+import { ExampleCard, Ex, Section, Tip, Vidare, Warning } from "@/components/grammatik/delar";
+import { SatsdelarGenomgang } from "@/components/grammatik/genomgang-satsdelar";
+import { SambandGenomgang } from "@/components/grammatik/genomgang-samband";
+import { MorfemGenomgang } from "@/components/grammatik/genomgang-morfem";
+import { TextbindningGenomgang } from "@/components/grammatik/genomgang-textbindning";
+import { VariationGenomgang } from "@/components/grammatik/genomgang-variation";
 
 /* ------------------------------------------------------------------ */
 /*  Topic content                                                      */
@@ -164,7 +118,7 @@ function OrdklasserContent() {
   );
 }
 
-function MeningsbyggnadContent() {
+function MeningsbyggnadContent({ stadie }: { stadie: AgeGroup }) {
   return (
     <>
       <p className="mb-6 text-neutral-600 dark:text-neutral-400">
@@ -234,35 +188,12 @@ function MeningsbyggnadContent() {
 
       <Section title="Satsdelar">
         <p className="mb-3 text-neutral-600 dark:text-neutral-400">
-          När du analyserar en mening identifierar du satsdelarna. Här är de vanligaste:
+          Subjekt, predikat, objekt och adverbial – och alla andra satsdelar – har ett eget avsnitt med genomgång och övningar.
         </p>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <ExampleCard title="Subjekt (S)">
-            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Den eller det som utför handlingen. Svarar på frågan: Vem/Vad + verbet?
-            </p>
-            <Ex><strong>Katten</strong> sover. (Vem sover? Katten.)</Ex>
-          </ExampleCard>
-          <ExampleCard title="Predikat (V)">
-            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Verbet i satsen - det som händer.
-            </p>
-            <Ex>Katten <strong>sover</strong>.</Ex>
-          </ExampleCard>
-          <ExampleCard title="Objekt (O)">
-            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Den eller det som handlingen riktas mot. Svarar på: Vem/Vad + verbet + subjektet?
-            </p>
-            <Ex>Jag läser <strong>boken</strong>.</Ex>
-          </ExampleCard>
-          <ExampleCard title="Adverbial (A)">
-            <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-              Bestämning som anger tid, plats, sätt etc.
-            </p>
-            <Ex>Jag läser boken <strong>på kvällen</strong>.</Ex>
-          </ExampleCard>
-        </div>
+        <Vidare href={`/${stadie}/grammatik/satsdelar`}>Till Satsdelar</Vidare>
       </Section>
+
+      <VariationGenomgang stadie={stadie} />
     </>
   );
 }
@@ -634,113 +565,6 @@ function OrdbildningContent() {
   );
 }
 
-function TextbindningContent() {
-  return (
-    <>
-      <p className="mb-6 text-neutral-600 dark:text-neutral-400">
-        Textbindning handlar om hur meningar och stycken hänger ihop. God
-        textbindning gör texten flytande och lätt att följa. Dålig textbindning
-        gör texten hackig och svår att förstå.
-      </p>
-
-      <Section title="Sambandsord (konnektiver)">
-        <p className="mb-3 text-neutral-600 dark:text-neutral-400">
-          Sambandsord visar förhållandet mellan satser och meningar.
-          De delas in i grupper efter funktion:
-        </p>
-
-        <ExampleCard title="Additiva sambandsord (lägger till)">
-          <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Visar att information läggs till.
-          </p>
-          <Ex>och, dessutom, även, också, vidare, likaså, ytterligare</Ex>
-          <Ex>Han spelar gitarr. Dessutom sjunger han i en kör.</Ex>
-        </ExampleCard>
-
-        <ExampleCard title="Adversativa sambandsord (motsätter)">
-          <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Visar kontrast eller motsättning.
-          </p>
-          <Ex>men, dock, däremot, å andra sidan, trots det, emellertid, ändå</Ex>
-          <Ex>Solen sken. Trots det var det kallt ute.</Ex>
-        </ExampleCard>
-
-        <ExampleCard title="Kausala sambandsord (orsak och verkan)">
-          <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Visar orsak, anledning eller följd.
-          </p>
-          <Ex>eftersom, därför, alltså, följaktligen, på grund av, till följd av</Ex>
-          <Ex>Hon missade bussen. Därför kom hon sent till skolan.</Ex>
-        </ExampleCard>
-
-        <ExampleCard title="Temporala sambandsord (tid)">
-          <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Visar tidssamband och ordningsföljd.
-          </p>
-          <Ex>sedan, därefter, först, slutligen, medan, till slut, samtidigt</Ex>
-          <Ex>Först åt vi frukost. Därefter gick vi till skolan.</Ex>
-        </ExampleCard>
-      </Section>
-
-      <Section title="Referensbindning">
-        <ExampleCard title="Att syfta tillbaka">
-          <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Referensbindning innebär att man syftar tillbaka på något som
-            redan nämnts, med hjälp av pronomen, synonymer eller överordnade begrepp.
-          </p>
-          <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Pronomen:</strong></p>
-            <Ex>Lisa gick till skolan. Hon var glad.</Ex>
-            <p><strong>Synonymer:</strong></p>
-            <Ex>Bilen stannade. Fordonet hade fått motorstopp.</Ex>
-            <p><strong>Överordnat begrepp:</strong></p>
-            <Ex>Rosor och tulpaner fyllde trädgården. Blommorna doftade underbart.</Ex>
-          </div>
-          <Warning>
-            Vanligt fel: Oklara syftningar med pronomen.
-            &quot;Lisa träffade Sara. Hon var glad.&quot; - Vem var glad? Lisa eller Sara?
-            Var tydlig med vem pronomen syftar på.
-          </Warning>
-        </ExampleCard>
-      </Section>
-
-      <Section title="Tematisk bindning">
-        <ExampleCard title="Tema och rema">
-          <p className="mb-3 text-sm text-neutral-600 dark:text-neutral-400">
-            Varje mening har ett tema (känd information, det man talar om) och
-            ett rema (ny information, det man säger om temat). God textbindning
-            bygger på att koppla nytt till redan känt.
-          </p>
-          <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <p><strong>Konstant tema (samma ämne):</strong></p>
-            <Ex>Katten satt på mattan. Katten tvättade sig. Katten somnade.</Ex>
-            <p><strong>Lineär progression (rema blir tema):</strong></p>
-            <Ex>Vi besökte en stad. Staden hade ett vackert torg. Torget var fullt av människor.</Ex>
-          </div>
-          <Tip>
-            Blanda gärna olika typer av bindning i din text. Konstant tema
-            kan bli enformigt, medan lineär progression driver texten framåt
-            och skapar sammanhang.
-          </Tip>
-        </ExampleCard>
-      </Section>
-
-      <Section title="Praktiska tips">
-        <ExampleCard title="Checklista för textbindning">
-          <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-            <li>- Använd sambandsord för att visa hur meningar hänger ihop.</li>
-            <li>- Variera mellan olika typer av sambandsord.</li>
-            <li>- Syfta tillbaka med pronomen, synonymer och överordnade begrepp.</li>
-            <li>- Placera känd information först i meningen och ny information sist.</li>
-            <li>- Läs texten högt - flyter den bra eller hackar det?</li>
-            <li>- Be någon annan läsa - förstår de sambanden?</li>
-          </ul>
-        </ExampleCard>
-      </Section>
-    </>
-  );
-}
-
 function StilistikContent() {
   return (
     <>
@@ -841,8 +665,23 @@ function StilistikContent() {
 
 const TOPICS: Record<
   string,
-  { title: string; description: string; content: () => ReactNode }
+  { title: string; description: string; content: (p: { stadie: AgeGroup }) => ReactNode }
 > = {
+  morfem: {
+    title: "Ordets byggstenar",
+    description: "Rot, ändelser, prefix, suffix och sammansatta ord",
+    content: MorfemGenomgang,
+  },
+  satsdelar: {
+    title: "Satsdelar",
+    description: "Subjekt, predikat, objekt, adverbial och fler satsdelar",
+    content: SatsdelarGenomgang,
+  },
+  samband: {
+    title: "Orsak, följd och villkor",
+    description: "Hur du uttrycker varför något händer, vad det leder till och vad som måste gälla",
+    content: SambandGenomgang,
+  },
   ordklasser: {
     title: "Ordklasser",
     description: "De tio ordklasserna i svenskan",
@@ -850,7 +689,7 @@ const TOPICS: Record<
   },
   meningsbyggnad: {
     title: "Meningsbyggnad",
-    description: "Huvudsats, bisats och BIFF-regeln",
+    description: "Huvudsats, bisats, ordföljd, BIFF-regeln och variation",
     content: MeningsbyggnadContent,
   },
   skiljetecken: {
@@ -870,8 +709,8 @@ const TOPICS: Record<
   },
   textbindning: {
     title: "Textbindning",
-    description: "Sambandsord och textuell sammanhållning",
-    content: TextbindningContent,
+    description: "Sambandsmarkörer, referensbindning, tematisk bindning och stycken",
+    content: TextbindningGenomgang,
   },
   stilistik: {
     title: "Stilistik",
@@ -924,6 +763,9 @@ export default async function GrammatikTopicPage({ params }: Props) {
   }
 
   const Content = t.content;
+  const haften = HAFTEN.filter((h) =>
+    (HAFTEN_PER_AMNE[topic as GrammatikAmne] ?? []).some((p) => h.id === p || h.id.startsWith(p)),
+  ).sort((a, b) => a.steg - b.steg);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
@@ -967,7 +809,7 @@ export default async function GrammatikTopicPage({ params }: Props) {
       <GrammatikInfografik topic={topic} stadie={arskurs as AgeGroup} />
 
       {/* Content */}
-      <Content />
+      <Content stadie={arskurs as AgeGroup} />
 
       {/* Interactive exercises */}
       <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
@@ -978,9 +820,44 @@ export default async function GrammatikTopicPage({ params }: Props) {
           <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">
             Övningar
           </h2>
+          <Link
+            href={`/${arskurs}/grammatik/${topic}/utskrift`}
+            className="ml-auto inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+          >
+            <Printer className="h-4 w-4" /> Skriv ut med facit
+          </Link>
         </div>
         <GrammatikOvningar topic={topic as GrammarTopic} ageGroup={arskurs as AgeGroup} />
       </div>
+
+      {haften.length > 0 && (
+        <div className="mt-12 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+          <div className="mb-2 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800">
+              <NotebookPen className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
+            </div>
+            <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">Övningshäften</h2>
+          </div>
+          <p className="mb-5 text-neutral-600 dark:text-neutral-400">
+            Fler uppgifter att göra här på sajten – eller skriva ut med facit.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {haften.map((h) => (
+              <Link
+                key={h.id}
+                href={`/ovningshaften/${h.id}`}
+                className="rounded-xl border border-neutral-200 p-4 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+              >
+                <p className="font-semibold text-neutral-900 dark:text-white">{h.titel}</p>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">{h.underrubrik}</p>
+                <p className="mt-1 text-xs text-neutral-500">
+                  Steg {h.steg} · {h.antalUppgifter} uppgifter
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

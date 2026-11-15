@@ -36,8 +36,11 @@ const G = {
   skiljetecken: { sokvag: "grammatik/skiljetecken", titel: "Grammatik: Skiljetecken", stadier: ALLA },
   meningsbyggnad: { sokvag: "grammatik/meningsbyggnad", titel: "Grammatik: Meningsbyggnad", stadier: ALLA },
   stavning: { sokvag: "grammatik/stavning", titel: "Grammatik: Stavning", stadier: ALLA },
+  morfem: { sokvag: "grammatik/morfem", titel: "Grammatik: Ordets byggstenar", stadier: ALLA },
+  satsdelar: { sokvag: "grammatik/satsdelar", titel: "Grammatik: Satsdelar", stadier: ALLA },
+  samband: { sokvag: "grammatik/samband", titel: "Grammatik: Orsak, följd och villkor", stadier: ALLA },
   ordbildning: { sokvag: "grammatik/ordbildning", titel: "Grammatik: Ordbildning", stadier: FRAN_MEL },
-  textbindning: { sokvag: "grammatik/textbindning", titel: "Grammatik: Textbindning", stadier: FRAN_MEL },
+  textbindning: { sokvag: "grammatik/textbindning", titel: "Grammatik: Textbindning", stadier: ALLA },
   stilistik: { sokvag: "grammatik/stilistik", titel: "Grammatik: Stilistik", stadier: FRAN_HOG },
 } satisfies Record<string, Ovningslank>;
 
@@ -60,7 +63,7 @@ export const FELTYPER: Feltyp[] = [
     omrade: "sprak",
     etikett: "Dubbelteckning",
     elevtips: "Kort vokal följs oftast av dubbel konsonant: glass, komma, hoppa.",
-    ovningar: [G.stavning],
+    ovningar: [G.stavning, G.morfem],
   },
   {
     id: "stavning.ljud",
@@ -74,7 +77,7 @@ export const FELTYPER: Feltyp[] = [
     omrade: "sprak",
     etikett: "Särskrivning",
     elevtips: "Sammansatta ord skrivs ihop: fotbollsmatch, inte fotbolls match.",
-    ovningar: [G.ordbildning, G.stavning],
+    ovningar: [G.morfem, G.ordbildning, G.stavning],
   },
   {
     id: "stavning.stor-bokstav",
@@ -131,7 +134,7 @@ export const FELTYPER: Feltyp[] = [
     omrade: "sprak",
     etikett: "Subjekt och verb",
     elevtips: "Varje mening behöver någon som gör något (subjekt) och vad den gör (verb): Vi vill ha …",
-    ovningar: [G.meningsbyggnad],
+    ovningar: [G.satsdelar, G.meningsbyggnad],
   },
   {
     id: "grammatik.tempus",
@@ -211,14 +214,14 @@ export const FELTYPER: Feltyp[] = [
     omrade: "struktur",
     etikett: "Sambandsord",
     elevtips: "Bind ihop texten med ord som först, sedan, därför, men och till slut.",
-    ovningar: [G.textbindning, S.meningsvariation],
+    ovningar: [G.textbindning, G.samband, S.meningsvariation],
   },
   {
     id: "struktur.meningsvariation",
     omrade: "struktur",
     etikett: "Variation i meningar",
     elevtips: "Blanda korta och långa meningar och börja dem på olika sätt.",
-    ovningar: [S.meningsvariation],
+    ovningar: [S.meningsvariation, G.meningsbyggnad],
   },
   {
     id: "struktur.inledning-avslutning",

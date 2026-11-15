@@ -1,4 +1,5 @@
 import type { AgeGroup } from "@/lib/supabase/types";
+import { NYA_OVNINGAR } from "@/lib/grammatik/ovningar";
 
 // ---------------------------------------------------------------------------
 // Types (discriminated union)
@@ -9,7 +10,10 @@ export type GrammarExerciseType =
   | "fill-in-blank"
   | "error-correction"
   | "categorization"
-  | "sentence-analysis";
+  | "sentence-analysis"
+  | "markera"
+  | "dela"
+  | "ordna";
 
 export interface GrammarExerciseBase {
   id: string;
@@ -58,12 +62,41 @@ export interface SentenceAnalysisExercise extends GrammarExerciseBase {
   roleOptions: string[];
 }
 
+/** Klicka på orden som efterfrågas. Rätt ord står inom [hakparentes] i texten. */
+export interface MarkeraExercise extends GrammarExerciseBase {
+  type: "markera";
+  text: string;
+  explanation?: string;
+}
+
+/** Dela ett ord i morfem. Rätt delning anges med | i ordet, t.ex. "o|vän|lig". */
+export interface DelaExercise extends GrammarExerciseBase {
+  type: "dela";
+  word: string;
+  explanation?: string;
+}
+
+/** Sätt delarna i rätt ordning. `parts` är rätt ordning; `alternatives` är andra godkända ordningar. */
+export interface OrdnaExercise extends GrammarExerciseBase {
+  type: "ordna";
+  parts: string[];
+  alternatives?: string[][];
+  /** Skiljetecken efter sista delen, t.ex. "." */
+  end?: string;
+  /** Hela meningar som ska bli en text – visas som en lista i stället för en rad. */
+  meningar?: boolean;
+  explanation?: string;
+}
+
 export type GrammarExercise =
   | MultipleChoiceExercise
   | FillInBlankExercise
   | ErrorCorrectionExercise
   | CategorizationExercise
-  | SentenceAnalysisExercise;
+  | SentenceAnalysisExercise
+  | MarkeraExercise
+  | DelaExercise
+  | OrdnaExercise;
 
 // ---------------------------------------------------------------------------
 // Helper
@@ -73,7 +106,7 @@ export function getExercisesForTopic(
   topic: string,
   ageGroup: AgeGroup,
 ): GrammarExercise[] {
-  return GRAMMAR_EXERCISES.filter(
+  return [...GRAMMAR_EXERCISES, ...NYA_OVNINGAR].filter(
     (e) => e.topic === topic && e.ageGroup === ageGroup,
   );
 }
@@ -781,10 +814,10 @@ const meningsbyggnadHogstadietSA: SentenceAnalysisExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "hogstadiet",
     instruction: "Markera satsdelarna i meningen.",
-    sentence: "Igår kotte eleverna en ny dikt i klassrummet.",
+    sentence: "Igår skrev eleverna en ny dikt i klassrummet.",
     parts: [
       { text: "Igår", role: "Adverbial" },
-      { text: "kotte", role: "Predikat" },
+      { text: "skrev", role: "Predikat" },
       { text: "eleverna", role: "Subjekt" },
       { text: "en ny dikt", role: "Objekt" },
       { text: "i klassrummet", role: "Adverbial" },
