@@ -5,7 +5,7 @@ import { BookA, BookOpen, ChevronRight, Dumbbell, NotebookPen, Printer } from "l
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { GrammatikOvningar, type GrammarTopic } from "@/components/grammatik-ovningar";
-import { AMNEN_PER_STADIUM, type GrammatikAmne } from "@/lib/grammatik/amnen";
+import { AMNEN_PER_STADIUM, PROGRESSION, type GrammatikAmne } from "@/lib/grammatik/amnen";
 import { haftenForKapitel } from "@/lib/grammatik/bok";
 import { GrammatikInfografik } from "@/components/infografik/grammatik";
 import { KAPITEL } from "@/components/grammatik/kapitel";
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!group || !t) return {};
   return {
     title: `${t.title} - Grammatik - ${group.label}`,
-    description: `${t.description}. Anpassat för ${group.label.toLowerCase()}.`,
+    description: `${PROGRESSION[topic as GrammatikAmne]?.[arskurs as AgeGroup] ?? t.description} Grammatik för ${group.label.toLowerCase()}.`,
   };
 }
 
@@ -91,7 +91,7 @@ export default async function GrammatikTopicPage({ params }: Props) {
           {t.title}
         </h1>
         <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-          {t.description}
+          {PROGRESSION[topic as GrammatikAmne]?.[arskurs as AgeGroup] ?? t.description}
         </p>
       </div>
 

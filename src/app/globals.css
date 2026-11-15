@@ -115,3 +115,8 @@ body {
     break-after: avoid;
   }
 }
+@media print {
+  .bok .grid {
+    break-inside: avoid;
+  }
+}

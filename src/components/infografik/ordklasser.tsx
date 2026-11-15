@@ -103,7 +103,7 @@ export function OrdklasserInfografik({ stadie }: { stadie: AgeGroup }) {
         </div>
       )}
 
-      <div className="mt-8 rounded-xl border border-neutral-200 bg-white p-4 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900">
+      <div className="mt-8 rounded-xl border print:hidden border-neutral-200 bg-white p-4 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900">
         <p className="mb-1 font-semibold text-neutral-900 dark:text-white">Ordklassdetektiven</p>
         <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">Klicka på ett ord för att se vilken ordklass det är – eller visa alla färger på en gång.</p>
         <Ordklassdetektiv mening={mening} ordklasser={ORDKLASSER} />
