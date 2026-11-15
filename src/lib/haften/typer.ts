@@ -79,6 +79,8 @@ export type Omradesnamn =
   | "Samband"
   | "Ordets byggstenar"
   | "Textbindning"
+  | "Ordbildning"
+  | "Stilistik"
   | "Grammatikprov";
 
 export interface Del extends Omit<DelKalla, "rader"> {

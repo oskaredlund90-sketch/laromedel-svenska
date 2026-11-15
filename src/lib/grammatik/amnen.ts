@@ -79,20 +79,6 @@ export function finnsPaStadium(amne: string, stadie: AgeGroup): boolean {
   return (AMNEN_PER_STADIUM[stadie] as string[]).includes(amne);
 }
 
-/** Övningshäften (id eller id-prefix i src/lib/haften) som hör till varje ämne. */
-export const HAFTEN_PER_AMNE: Record<GrammatikAmne, string[]> = {
-  ordklasser: ["grammatik-", "genus-"],
-  morfem: ["morfem-", "stavning-5-sarskrivning"],
-  satsdelar: ["satsdelar-", "meningsbyggnad-3-subjekt-verb"],
-  meningsbyggnad: ["meningsbyggnad-", "grammatik-3-ordfoljd"],
-  samband: ["samband-", "meningsbyggnad-1-sambandsord"],
-  skiljetecken: ["skiljetecken-"],
-  stavning: ["stavning-", "morfem-3-rot-och-stavning"],
-  ordbildning: ["morfem-2-prefix-suffix", "stavning-5-sarskrivning"],
-  textbindning: ["textbindning-", "meningsbyggnad-1-sambandsord"],
-  stilistik: ["meningsbyggnad-4-perspektiv"],
-};
-
 /**
  * Progressionen: vad eleven lär sig om varje ämne på varje stadium. Varje
  * stadium bygger vidare på det förra. Saknas stadiet tas ämnet inte upp där.

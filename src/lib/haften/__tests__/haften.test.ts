@@ -59,9 +59,13 @@ describe("alla häften", () => {
 describe("haftenForFeltyp", () => {
   it("visar häften där feltypen är huvudsaken", async () => {
     const { haftenForFeltyp } = await import("../index");
-    expect(haftenForFeltyp("grammatik.bojning").map((h) => h.id)).toEqual(["grammatik-2-starka-verb"]);
+    expect(haftenForFeltyp("grammatik.bojning").map((h) => h.id)).toEqual([
+      "ordklasser-1-substantiv-verb-adjektiv",
+      "grammatik-2-starka-verb",
+      "ordklasser-2-alla-tio",
+    ]);
     expect(haftenForFeltyp("grammatik.genus").length).toBe(4);
     // Faller tillbaka på häften där feltypen bara finns med
-    expect(haftenForFeltyp("grammatik.tempus").map((h) => h.id)).toEqual(["grammatik-2-starka-verb"]);
+    expect(haftenForFeltyp("grammatik.tempus").map((h) => h.id)).toEqual(["grammatik-2-starka-verb", "ordklasser-2-alla-tio"]);
   });
 });

@@ -9,6 +9,8 @@ import { EXTRA_STAVNING } from "./data/extra-stavning";
 import { PROV_LAG_MEL } from "./data/prov-lag-mel";
 import { PROV_HOG_GY } from "./data/prov-hog-gy";
 import { GRAMMATIK_UTBYGGD } from "./data/grammatik-utbyggd";
+import { HAFTEN_LAG_HOG } from "./data/stadier-lag-hog";
+import { HAFTEN_GY } from "./data/stadier-gy";
 
 const KALLOR: HafteKalla[] = [
   ...STAVNING_HAFTEN,
@@ -21,6 +23,8 @@ const KALLOR: HafteKalla[] = [
   ...PROV_LAG_MEL,
   ...PROV_HOG_GY,
   ...GRAMMATIK_UTBYGGD,
+  ...HAFTEN_LAG_HOG,
+  ...HAFTEN_GY,
 ];
 
 export const HAFTEN: Hafte[] = KALLOR.map(byggHafte);
@@ -34,6 +38,8 @@ export const OMRADEN: Omradesnamn[] = [
   "Ordets byggstenar",
   "Samband",
   "Textbindning",
+  "Ordbildning",
+  "Stilistik",
   "Utrum och neutrum",
   "Meningsbyggnad",
 ];

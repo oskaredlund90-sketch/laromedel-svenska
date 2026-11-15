@@ -8,7 +8,7 @@ const stor = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 /* -------------------------------- Satsdelar -------------------------------- */
 
-type Roll = "S" | "P" | "O" | "A" | "IO" | "PV";
+type Roll = "S" | "P" | "O" | "A" | "IO" | "PV" | "AG" | "FS" | "ES";
 const ROLLNAMN: Record<Roll, string> = {
   S: "subjekt",
   P: "predikat",
@@ -16,6 +16,9 @@ const ROLLNAMN: Record<Roll, string> = {
   A: "adverbial",
   IO: "indirekt objekt",
   PV: "predikativ",
+  AG: "agent",
+  FS: "formellt subjekt",
+  ES: "egentligt subjekt",
 };
 
 /** "[S:Katten] [P:sover] [A:i soffan]." → delar med roller. */
@@ -23,7 +26,7 @@ function tolka(mening: string): { text: string; delar: { roll: Roll; text: strin
   const delar: { roll: Roll; text: string; start: number }[] = [];
   let text = "";
   let pos = 0;
-  for (const m of mening.matchAll(/\[(S|P|O|A|IO|PV):([^\]]+)\]/g)) {
+  for (const m of mening.matchAll(/\[(S|P|O|A|IO|PV|AG|FS|ES):([^\]]+)\]/g)) {
     text += mening.slice(pos, m.index);
     delar.push({ roll: m[1] as Roll, text: m[2], start: text.length });
     text += m[2];
@@ -150,6 +153,34 @@ export const HOG_MENINGAR = [
   "[S:Sjuksköterskan] [P:gav] [IO:patienten] [O:medicin].",
   "[S:Hon] [P:blev] [PV:förvånad] [A:i går].",
   "[S:Läraren] [P:lämnade] [IO:klassen] [O:proven] [A:på fredagen].",
+];
+
+export const GY_MENINGAR = [
+  "[FS:Det] [P:sitter] [ES:en fågel] [A:på taket].",
+  "[S:Boken] [P:skrevs] [AG:av Selma Lagerlöf].",
+  "[FS:Det] [P:är] [PV:viktigt] [ES:att sova ordentligt].",
+  "[S:Beslutet] [P:fattades] [AG:av styrelsen] [A:i går].",
+  "[S:Hon] [P:erbjöd] [IO:de nyanlända] [O:hjälp].",
+  "[FS:Det] [P:kom] [ES:många besökare] [A:till utställningen].",
+  "[S:Vägen] [P:stängdes] [AG:av polisen] [A:efter olyckan].",
+  "[FS:Det] [P:blev] [PV:tyst] [A:i salen].",
+  "[S:Regeringen] [P:gav] [IO:myndigheten] [O:ett nytt uppdrag].",
+  "[S:Tavlan] [P:målades] [AG:av en okänd konstnär].",
+  "[FS:Det] [P:står] [ES:en cykel] [A:utanför dörren].",
+  "[FS:Det] [P:är] [PV:svårt] [ES:att lära sig ett nytt språk].",
+  "[S:Förslaget] [P:har granskats] [AG:av tre experter].",
+  "[A:I natt] [P:inträffade] [S:en olycka].",
+  "[FS:Det] [P:finns] [ES:flera skäl] [A:till oro].",
+  "[S:Rapporten] [P:publicerades] [AG:av myndigheten] [A:i våras].",
+  "[S:Resultatet] [P:var] [PV:oväntat].",
+  "[FS:Det] [P:saknas] [ES:pengar] [A:i budgeten].",
+  "[S:Hon] [P:valdes] [PV:till ordförande] [AG:av medlemmarna].",
+  "[S:Läraren] [P:lämnade] [IO:eleverna] [O:sina omdömen] [A:i fredags].",
+  "[FS:Det] [P:var] [PV:roligt] [ES:att träffa dig].",
+  "[S:Huset] [P:byggdes] [AG:av hans farfar] [A:på 1920-talet].",
+  "[FS:Det] [P:hördes] [ES:ett skrik] [A:från källaren].",
+  "[S:Studien] [P:visar] [O:ett tydligt samband].",
+  "[S:Romanen] [P:har översatts] [A:till fyrtio språk].",
 ];
 
 /* ----------------------------- Orsak och följd ----------------------------- */
