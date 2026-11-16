@@ -18,9 +18,9 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
           <ExampleCard title="Substantiv – saker och namn">
             <P>Människor, djur, saker, platser{minst(s, "mellanstadiet") ? " och känslor" : ""}.</P>
             <Ex>hund, bok, Lisa, skola{minst(s, "mellanstadiet") ? ", glädje" : ""}</Ex>
-            <Tip>Testa: kan du säga <strong>en</strong> eller <strong>ett</strong> framför? En hund, ett hus.</Tip>
+            <Tip>Testa: kan du säga <strong>en</strong> eller <strong>ett</strong> framför? En hund, ett hus. Namn som Lisa och Malmö är också substantiv, fast testet inte fungerar på dem.</Tip>
           </ExampleCard>
-          <ExampleCard title="Verb – det man gör">
+          <ExampleCard title="Verb – det man gör eller det som händer">
             <P>Ord för det som händer eller det man gör.</P>
             <Ex>springa, läsa, sova, är</Ex>
             <Tip>Testa: kan du säga <strong>jag</strong> framför? Jag springer, jag läser.</Tip>
@@ -28,7 +28,7 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
           <ExampleCard title="Adjektiv – beskriver">
             <P>Ord som berättar hur något är.</P>
             <Ex>stor, glad, röd, snabb</Ex>
-            <Tip>Testa: passar ordet i <strong>en ___ sak</strong>? En stor sak, en röd sak.</Tip>
+            <Tip>Testa: passar ordet i <strong>en ___ katt</strong>? En stor katt, en glad katt.</Tip>
           </ExampleCard>
         </div>
       </Section>
@@ -88,9 +88,9 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
               ["Preposition", "visar läge och förhållande", "i, på, under, bakom, till, från, med"],
               ["Adverb", "berättar hur, var, när eller hur mycket", "snabbt, här, i dag, mycket, inte"],
               ["Räkneord", "antal eller ordning", "tre, tjugo, första, tredje"],
+              ["Konjunktion", "binder ihop likvärdiga led", "och, men, eller, för, så"],
               ...(minst(s, "hogstadiet")
                 ? [
-                    ["Konjunktion", "binder ihop likvärdiga led", "och, men, eller, för, så"],
                     ["Subjunktion", "inleder en bisats", "att, eftersom, när, om, medan, fast"],
                     ["Interjektion", "utrop och ljud", "aj, oj, hej, hurra, pang"],
                   ]
@@ -108,7 +108,7 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
             byta mot <em>vi</em> och <em>oss</em>: vi spelar → de spelar, jag ser oss → jag ser dem. Skriv inte <em>dom</em> i en text.
           </Tip>
           {s === "mellanstadiet" && (
-            <P>På högstadiet lär du dig de tre sista ordklasserna: konjunktioner, subjunktioner och interjektioner.</P>
+            <P>På högstadiet lär du dig de två sista ordklasserna: subjunktioner och interjektioner.</P>
           )}
         </Section>
       )}
@@ -262,9 +262,9 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
       <Minneslista
         punkter={
           s === "lagstadiet"
-            ? ["Substantiv: en hund, ett hus.", "Verb: jag springer.", "Adjektiv: en stor sak."]
+            ? ["Substantiv: en hund, ett hus.", "Verb: jag springer.", "Adjektiv: en stor katt."]
             : [
-                "Substantiv: en/ett framför. Verb: jag framför. Adjektiv: en ___ sak.",
+                "Substantiv: en/ett framför. Verb: jag framför. Adjektiv: en ___ katt.",
                 "Adjektivet böjs efter substantivet: en röd bil, ett rött hus.",
                 "Kongruens: huset är stort, bilarna är stora.",
                 ...(minst(s, "hogstadiet")

@@ -15,15 +15,15 @@ export function SambandGenomgang({ stadie }: { stadie: AgeGroup }) {
         <div className="grid gap-4 sm:grid-cols-3">
           <ExampleCard title="Orsak – varför?">
             <Ex>Vi stannade inne eftersom det regnade.</Ex>
-            <P>eftersom, för att{minst(s, "mellanstadiet") ? ", på grund av, då" : ""}</P>
+            <P>eftersom, för att, på grund av{minst(s, "mellanstadiet") ? ", då" : ""}</P>
           </ExampleCard>
-          <ExampleCard title={s === "lagstadiet" ? "Följd – vad händer sedan?" : "Följd – vad leder det till?"}>
+          <ExampleCard title={s === "lagstadiet" ? "Följd – vad blir det av det?" : "Följd – vad leder det till?"}>
             <Ex>Det regnade, så vi stannade inne.</Ex>
             <P>så, därför{minst(s, "mellanstadiet") ? ", alltså, vilket gjorde att" : ""}</P>
           </ExampleCard>
           <ExampleCard title="Villkor – vad måste gälla?">
             <Ex>Om det regnar, stannar vi inne.</Ex>
-            <P>om{minst(s, "mellanstadiet") ? ", ifall" : ""}{minst(s, "hogstadiet") ? ", förutsatt att, såvida inte, annars" : ""}</P>
+            <P>om, ifall{minst(s, "hogstadiet") ? ", förutsatt att, såvida inte, annars" : ""}</P>
           </ExampleCard>
         </div>
         <Tip>

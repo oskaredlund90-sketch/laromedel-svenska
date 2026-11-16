@@ -21,7 +21,7 @@ lag.m("Klicka på ordet som visar ett villkor.", "[Om] solen skiner, går vi til
 lag.m("Klicka på ordet som visar följden.", "Bussen var sen, [så] vi gick i stället.");
 lag.o("Bygg en mening som berättar varför.", ["jag", "äter", "eftersom", "jag", "är", "hungrig"], { end: "." });
 lag.o("Bygg en mening med ett villkor.", ["om", "det", "snöar", "bygger", "vi", "en snögubbe"], { end: "." });
-lag.o("Bygg en mening som visar följden.", ["det", "var", "varmt", "så", "vi", "badade"], { end: "." });
+lag.o("Bygg en mening som visar följden.", ["det", "var", "varmt,", "så", "vi", "badade"], { end: "." });
 
 /* ------------------------------- Mellanstadiet ------------------------------ */
 const mel = bygg("samband", "mellanstadiet");

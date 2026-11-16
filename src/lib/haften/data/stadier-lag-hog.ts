@@ -343,7 +343,7 @@ export const HAFTEN_LAG_HOG: HafteKalla[] = [
     regel: [
       "Substantiv – saker, djur och namn. Testa: en eller ett framför? En hund.",
       "Verb – det man gör. Testa: jag framför? Jag springer.",
-      "Adjektiv – beskriver. Testa: en ___ sak? En glad sak.",
+      "Adjektiv – beskriver. Testa: en ___ katt? En glad katt.",
     ],
     delar: [
       { rubrik: "Del A", instruktion: "Vilken ordklass är ordet?", typ: "val", rader: rader(ORD_LAG.map(([o, k]) => `${o} {${["substantiv", "verb", "adjektiv"].map((x) => (x === k ? "*" : "") + x).join("|")}}`)) },

@@ -44,7 +44,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
       ["forklara", "Varför ska det vara frågetecken efter ”Vill du leka”?", null, "Det är en fråga. Den som läser ska svara. Därför sätter man frågetecken.", ["Jag skriver att det är en fråga"]],
     ],
     textbindning: [
-      ["skriv-om", "Byt ut namnet så att det inte upprepas. Använd han eller hon.", "Sam har en hund. Sam går ut med hunden. Sam gillar hunden.", "Sam har en hund. Han går ut med den varje dag. Han gillar den.", ["Jag har bytt Sam mot han", "Namnet står bara en gång"]],
+      ["skriv-om", "Byt ut namnet och ordet hunden så att de inte upprepas. Använd han och den.", "Sam har en hund. Sam går ut med hunden. Sam gillar hunden.", "Sam har en hund. Han går ut med den. Han gillar den.", ["Jag har bytt Sam mot han", "Jag har bytt hunden mot den", "Sam och hunden står bara en gång var"]],
       ["fortsatt", "Skriv fortsättningen. Använd först, sedan och till sist.", "Så här bakar du en kaka:", "Först blandar du mjöl och socker. Sedan häller du i ägg och mjölk. Till sist gräddar du kakan i ugnen.", ["Jag använder först, sedan och till sist", "Det står i rätt ordning"]],
     ],
   },

@@ -24,7 +24,7 @@ const tbMel = bygg("textbindning", "mellanstadiet");
 tbMel.m("Klicka på alla ord som syftar på Leo.", "Leo hade glömt sin nyckel. [Han] ringde på dörren, men ingen öppnade. Då satte [pojken] sig på trappan och väntade.");
 tbMel.m("Klicka på alla ord som syftar på hunden.", "Vi fick en valp i julklapp. [Den] var svart och vit. [Valpen] somnade direkt i min famn. Vi döpte [honom] till Sigge.");
 tbMel.m("Klicka på alla sambandsord.", "Det regnade hela dagen. [Därför] stannade vi inne. Vi spelade spel, [men] det blev tråkigt. [Till slut] slutade det regna.");
-tbMel.m("Klicka på ordet som syftar tillbaka på ”äpplen, päron och bananer”.", "Vi köpte äpplen, päron och bananer. All [frukten] åt vi upp samma dag.");
+tbMel.m("Klicka på ordet som syftar tillbaka på ”äpplen, päron och bananer”.", "Vi köpte äpplen, päron och bananer. [Frukten] åt vi upp samma dag.");
 tbMel.v("Vad är referensbindning?", ["*att syfta tillbaka på något man redan har skrivit om", "att använda så många sambandsord som möjligt", "att skriva en referenslista"], "Hon, den, pojken, frukten – ord som pekar tillbaka binder ihop texten.");
 tbMel.v("Vilken text har bäst referensbindning?", ["Lisa gick till Lisas skola. Lisa var glad.", "*Lisa gick till sin skola. Hon var glad.", "Lisa gick. Glad var det."], "Hon och sin syftar tillbaka – texten blir mindre upprepande.");
 tbMel.v("Varför är detta otydligt: ”Sara träffade Moa. Hon var arg.”?", ["*Man vet inte vem hon syftar på.", "Det saknas ett sambandsord.", "Det är inget fel."], "Skriv hellre Moa var arg eller Sara var arg.");
@@ -140,15 +140,15 @@ mbGy.r("Förslaget avslogs{, styrelsen| eftersom styrelsen} ansåg det för dyrt
 /* ================================= Ordklasser =============================== */
 
 const okLag = bygg("ordklasser", "lagstadiet");
-okLag.m("Klicka på alla substantiv – saker, djur och människor.", "[Hunden] tuggar på en [pinne] i [parken].");
+okLag.m("Klicka på alla substantiv – saker, djur, människor och platser.", "[Hunden] tuggar på en [pinne] i [parken].");
 okLag.m("Klicka på alla verb – det man gör.", "Vi [springer], [hoppar] och [skrattar].");
 okLag.m("Klicka på alla adjektiv – ord som beskriver.", "Jag har en [stor] och [mjuk] nalle.");
 okLag.m("Klicka på alla substantiv.", "[Mamma] köpte [äpplen] och [bröd].");
 
 const okMel = bygg("ordklasser", "mellanstadiet");
 okMel.m("Klicka på alla verb.", "Elsa [vaknade] tidigt. Hon [åt] frukost och [cyklade] sedan till skolan.");
-okMel.m("Klicka på alla adjektiv.", "Det var en [kall] och [mörk] kväll. Den [gamla] stugan låg tyst.");
-okMel.m("Klicka på alla pronomen.", "[Vi] träffade Sara. [Hon] gav [oss] en karta.");
+okMel.m("Klicka på alla adjektiv.", "Det var en [kall] och [mörk] kväll. Den [gamla] stugan var [tom].");
+okMel.m("Klicka på alla pronomen.", "[Vi] träffade Sara. [Hon] gav [oss] kartan.");
 okMel.m("Klicka på alla prepositioner.", "Katten hoppade [från] stolen och sprang [under] bordet.");
 okMel.m("Klicka på alla substantiv.", "På [lördagen] åkte [familjen] till [stranden] med en [korg].");
 
@@ -178,7 +178,7 @@ stLag.l("Hunden ____ efter bollen.", ["*springer", "sprigner", "springgerr"], "S
 stLag.v("Vilket ord är rätt stavat?", ["*sjö", "schö", "sjjö"], "Sj-ljudet stavas oftast sj: sjö, sju, sjunga.");
 stLag.v("Vilket ord är rätt stavat?", ["tjugge", "*tjugo", "kjugo"], "Tjugo – tj-ljudet.");
 stLag.v("Vilket ord har kort vokal och dubbelteckning?", ["*hoppa", "hopa", "sola"], "Kort o → pp: hoppa.");
-stLag.m("Klicka på orden som har dubbelteckning (två likadana bokstäver).", "Vi [hoppade] i [vattnet] och åt [glass].");
+stLag.m("Klicka på orden som har dubbelteckning (två likadana konsonanter efter en kort vokal).", "Vi [hoppade] i [vattnet] och åt [glass].");
 
 export const TILLAGG = [
   ...tbLag.ovningar, ...tbMel.ovningar, ...tbHog.ovningar, ...tbGy.ovningar,

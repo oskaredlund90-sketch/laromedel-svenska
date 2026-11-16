@@ -25,7 +25,7 @@ lag.v("Vad betyder ett ”äppelträd”?", ["*ett träd med äpplen", "ett äpp
 lag.v("Hur skriver man rätt?", ["*fotboll", "fot boll", "fot-boll"], "Sammansatta ord skrivs ihop: fotboll.");
 lag.v("Hur skriver man rätt?", ["glass bil", "*glassbil", "glas bil"], "Glass + bil = glassbil, ett ord.");
 lag.v("Vilken ändelse visar att det är FLERA?", ["*bil-ar", "bil-en", "bil"], "-ar betyder flera: bilar.");
-lag.v("Vilket ord har hänt (dåtid)?", ["springer", "*sprang", "springa"], "Sprang har redan hänt.");
+lag.v("Vilket ord har hänt (dåtid)?", ["leker", "*lekte", "leka"], "Lekte har redan hänt. Ändelsen -te visar dåtid.");
 lag.v("Om du kan stava ”hopp”, hur stavar du då ”hoppar”?", ["*hoppar", "hopar", "hhoppar"], "Ordet hopp finns kvar i hoppar – stava ordet först, lägg sedan till ändelsen.");
 lag.k("Är ordet ett sammansatt ord eller inte?", { "Sammansatt ord": ["sandlåda", "fotboll", "snögubbe", "pannkaka"], "Inte sammansatt": ["katt", "glad", "springa", "blomma"] });
 lag.m("Klicka på de sammansatta orden.", "Vi åt [pannkakor] och spelade [fotboll] i [trädgården].");

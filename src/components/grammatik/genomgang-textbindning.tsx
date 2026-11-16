@@ -29,7 +29,7 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
           {s === "lagstadiet" ? (
             <>
               <Ex>Först vaknade jag. Sedan åt jag frukost. Till slut gick jag till skolan.</Ex>
-              <P>Andra bra ord: efter det, på kvällen, nästa dag, men, därför.</P>
+              <P>Andra bra ord: efter det, till sist, på kvällen, nästa dag, men, därför. Sen är ett kortare sätt att säga sedan.</P>
             </>
           ) : (
             <Tabell
@@ -55,10 +55,16 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
         </ExampleCard>
       </Section>
 
-      <Section title={s === "lagstadiet" ? "Han, hon, den – ord som pekar tillbaka" : "Referensbindning"}>
+      <Section title={s === "lagstadiet" ? "Han, hon, den, det, de – ord som pekar tillbaka" : "Referensbindning"}>
         <ExampleCard title="Syfta tillbaka i stället för att upprepa">
           <Ex>Elsa har en hund. Elsa går ut med hunden. Elsa tycker om hunden.</Ex>
           <Ex>Elsa har en hund. Hon går ut med den varje dag. Hon tycker om den.</Ex>
+          {s === "lagstadiet" && (
+            <P>
+              Han = en pojke eller man. Hon = en flicka eller kvinna. Den = en sak eller ett djur (en katt – den). Det = ett ord med ett (ett
+              hus – det). De = flera. Vi = jag och någon mer.
+            </P>
+          )}
           {minst(s, "mellanstadiet") && (
             <P>
               Du kan syfta tillbaka med pronomen (hon, den, de), med en synonym (hunden → valpen) eller med ett ord för hela gruppen (äpplen och

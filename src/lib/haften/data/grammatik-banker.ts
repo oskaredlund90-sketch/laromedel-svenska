@@ -108,7 +108,7 @@ export const ENKLA_MENINGAR_2 = [
   "[S:Min kompis] [P:bor] i Luleå.",
   "Efter maten [P:diskar] [S:pappa].",
   "[S:Grodan] [P:hoppar] i dammen.",
-  "[S:Läraren] [P:delar] ut böckerna.",
+  "[S:Läraren] [P:hämtar] böckerna.",
   "[S:Solen] [P:lyser] över sjön.",
   "[S:Vi] [P:väntar] på bussen.",
   "I helgen [P:tävlar] [S:Omar] i simning.",

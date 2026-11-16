@@ -4145,7 +4145,7 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     type: "sentence-analysis",
     topic: "meningsbyggnad",
     ageGroup: "lagstadiet",
-    instruction: "Hitta subjektet, predikatet och objektet.",
+    instruction: "Hitta subjektet och predikatet.",
     sentence: "Hunden äter maten.",
     parts: [
       { text: "Hunden", role: "Subjekt" },

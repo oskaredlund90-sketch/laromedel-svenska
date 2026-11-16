@@ -488,7 +488,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                 )}
               </div>
               <p className="text-[9.5pt] text-neutral-500">
-                Facit finns bara i lärarboken. Sajten har ingen inloggning, så en elev som letar kan hitta lärarboken där.
+                Tänk på att sajten är öppen utan inloggning – lärarboken med facit och prov går att nå där.
               </p>
             </div>
 

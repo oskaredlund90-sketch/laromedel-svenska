@@ -46,7 +46,7 @@ export function StavningGenomgang({ stadie }: { stadie: AgeGroup }) {
           <ExampleCard title="Tje-ljudet">
             <Ex>tj: tjugo, tjej</Ex>
             <Ex>k före e, i, y, ä, ö: kyrka, kind, kär</Ex>
-            <Ex>kj: kjol, kjortel{minst(s, "mellanstadiet") ? " · ch: check" : ""}</Ex>
+            <Ex>kj: kjol, kjolar{minst(s, "mellanstadiet") ? " · ch: check" : ""}</Ex>
           </ExampleCard>
           {minst(s, "mellanstadiet") && (
             <ExampleCard title="J-ljudet">

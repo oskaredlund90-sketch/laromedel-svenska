@@ -73,7 +73,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           I går snöade det. Predikat: {snöade}
           Mormor bakar bullar. Predikat: {bakar}
           Bussen kom för sent. Predikat: {kom}
-          Jag tycker om äpplen. Predikat: {tycker}
+          Jag äter äpplen. Predikat: {äter}
           Barnen sprang ut på rasten. Predikat: {sprang}
           Katten jagar en mus. Predikat: {jagar}
           Pappa sover på soffan. Predikat: {sover}
@@ -271,7 +271,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
     feltyper: ["struktur.textbindning"],
     regel: [
       "Orsak – varför? eftersom, för att: Vi stannade inne EFTERSOM det regnade.",
-      "Följd – vad händer sedan? så, därför: Det regnade, SÅ vi stannade inne.",
+      "Följd – vad blir det av det? så, därför: Det regnade, SÅ vi stannade inne.",
       "Villkor – vad måste hända först? om: OM det regnar, stannar vi inne.",
     ],
     delar: [
