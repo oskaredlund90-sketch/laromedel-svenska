@@ -21,6 +21,7 @@ import { HafteFacit, HafteUppgifter } from "@/components/haften/hafte-papper";
 import { QrKod } from "@/components/grammatik/qr-kod";
 import { GrammatikInfografik } from "@/components/infografik/grammatik";
 import { SkrivUtKnapp } from "@/components/grammatik/skriv-ut-knapp";
+import { minst } from "@/components/grammatik/delar";
 import { LaddaNerPdf } from "@/components/grammatik/ladda-ner-pdf";
 
 interface Props {
@@ -457,9 +458,10 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                 <div>
                   <p className="font-semibold">Elever med svenska som andraspråk</p>
                   <p>
-                    Lägg extra tid på det som skiljer sig mellan språk: verbet på plats två och BIFF (Meningsbyggnad), kongruens och en/ett, sin
-                    eller hans/hennes samt partikelverb (Ordklasser). Låt eleverna jämföra med sitt modersmål och säga meningarna högt – ordföljd
-                    sitter i örat.
+                    {minst(stadie, "hogstadiet")
+                      ? "Lägg extra tid på det som skiljer sig mellan språk: verbet på plats två och BIFF (Meningsbyggnad), kongruens och en/ett, sin eller hans/hennes samt partikelverb (Ordklasser). "
+                      : "Lägg extra tid på det som skiljer sig mellan språk: verbet på plats två (Meningsbyggnad), en/ett och att adjektivet passar ihop med substantivet (Ordklasser). "}
+                    Låt eleverna jämföra med sitt modersmål och säga meningarna högt – ordföljd sitter i örat.
                   </p>
                 </div>
                 <div>

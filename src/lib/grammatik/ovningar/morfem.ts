@@ -38,11 +38,11 @@ mel.d("vän|skap", "vän (rot) + -skap (suffix) som gör ordet till ett substant
 mel.d("glad|het", "glad (rot) + -het (suffix): gladhet.");
 mel.d("läs|bar", "läs (rot) + -bar (suffix): som går att läsa.");
 mel.d("lär|are", "lär (rot) + -are (suffix): en person som lär ut.");
-mel.d("miss|lyck|as", "miss- (prefix) + lyck (rot) + -as (ändelse).");
+mel.d("miss|nöjd", "miss- (prefix) + nöjd (rot): inte nöjd.");
 mel.d("fot|boll|s|plan", "fot + boll + s (foge-s) + plan.");
 mel.d("hund|ar|na", "hund (rot) + -ar (flera) + -na (bestämd form).");
 mel.d("spring|er", "spring (rot) + -er (nutid).");
-mel.d("o|rätt|vis", "o- (prefix) + rätt (rot) + -vis (suffix).");
+mel.d("o|tyd|lig", "o- (prefix) + tyd (rot, som i tyda) + -lig (suffix): svår att tyda.");
 mel.d("barn|dom", "barn (rot) + -dom (suffix): tiden när man är barn.");
 mel.v("Vad kallas ordets kärna – den del som bär betydelsen?", ["prefix", "*rotmorfem (rot)", "suffix"], "I o-vän-lig är vän roten.");
 mel.v("Vad är ett prefix?", ["*en del som sätts före roten, t.ex. o- i olycklig", "en ändelse sist i ordet", "ett helt ord"], "Pre = före. O-, miss-, för- och be- är vanliga prefix.");

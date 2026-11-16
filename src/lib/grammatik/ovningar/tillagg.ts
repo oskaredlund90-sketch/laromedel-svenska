@@ -21,8 +21,8 @@ tbLag.o("Sätt meningarna i rätt ordning.", ["Först tog vi fram mjöl, mjölk 
 tbLag.o("Sätt meningarna i rätt ordning.", ["Det var en gång en liten mus.", "Musen var mycket hungrig.", "Därför letade den efter ost i köket."], { meningar: true });
 
 const tbMel = bygg("textbindning", "mellanstadiet");
-tbMel.m("Klicka på alla ord som syftar på Leo.", "Leo hade glömt sin nyckel. [Han] ringde på dörren, men ingen öppnade. Då satte [pojken] sig på trappan och väntade.");
-tbMel.m("Klicka på alla ord som syftar på hunden.", "Vi fick en valp i julklapp. [Den] var svart och vit. [Valpen] somnade direkt i min famn. Vi döpte [honom] till Sigge.");
+tbMel.m("Klicka på alla ord som syftar på Leo.", "Leo hade glömt nyckeln hemma. [Han] ringde på dörren, men ingen öppnade. Då satte [pojken] ner väskan och väntade.");
+tbMel.m("Klicka på alla ord som syftar på hunden.", "Vi fick en valp i julklapp. [Den] var svart och vit. [Valpen] somnade direkt i min famn. Nu heter [den] Sigge.");
 tbMel.m("Klicka på alla sambandsord.", "Det regnade hela dagen. [Därför] stannade vi inne. Vi spelade spel, [men] det blev tråkigt. [Till slut] slutade det regna.");
 tbMel.m("Klicka på ordet som syftar tillbaka på ”äpplen, päron och bananer”.", "Vi köpte äpplen, päron och bananer. [Frukten] åt vi upp samma dag.");
 tbMel.v("Vad är referensbindning?", ["*att syfta tillbaka på något man redan har skrivit om", "att använda så många sambandsord som möjligt", "att skriva en referenslista"], "Hon, den, pojken, frukten – ord som pekar tillbaka binder ihop texten.");

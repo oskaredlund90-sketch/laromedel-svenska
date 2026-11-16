@@ -20,7 +20,7 @@ okMel.l("Ett ____ barn satt på bänken.", ["*litet", "liten", "lilla"], "Ett ba
 okMel.v("Vilken mening är rätt?", ["Rummet var mörk.", "*Rummet var mörkt.", "Rummet var mörka."], "Ett rum – mörkt.");
 
 const sdMel = bygg("satsdelar", "mellanstadiet", "k");
-sdMel.v("Vilket ord är huvudordet i ”den gamla cykeln i förrådet”?", ["gamla", "*cykeln", "förrådet"], "Det är cykeln det handlar om. De andra orden beskriver den.");
+sdMel.v("Vad handlar ”den gamla cykeln i förrådet” om – vilket ord är viktigast?", ["gamla", "*cykeln", "förrådet"], "Det är cykeln det handlar om. De andra orden beskriver den.");
 
 /* -------------------------------- Högstadiet -------------------------------- */
 const okHog = bygg("ordklasser", "hogstadiet", "k");

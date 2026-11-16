@@ -105,7 +105,7 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
           )}
           <Tip>
             <strong>De eller dem?</strong> De gör något: <em>De spelar fotboll.</em> Dem händer det något med: <em>Jag ser dem.</em> Testa att
-            byta mot <em>vi</em> och <em>oss</em>: vi spelar → de spelar, jag ser oss → jag ser dem. Skriv inte <em>dom</em> i en text.
+            byta mot <em>vi</em> och <em>oss</em>: vi spelar → de spelar, jag ser oss → jag ser dem. Skriv inte <em>dom</em> i en text. Före ett adjektiv eller <em>flesta</em> blir det alltid de: <em>de nya filmerna, de flesta</em>.
           </Tip>
           {s === "mellanstadiet" && (
             <P>På högstadiet lär du dig de två sista ordklasserna: subjunktioner och interjektioner.</P>
@@ -113,7 +113,7 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
         </Section>
       )}
 
-      {minst(s, "hogstadiet") && (
+      {minst(s, "mellanstadiet") && (
         <Section title="Verbens former och tempus">
           <Tabell
             rubriker={["Form", "Exempel", "Används till"]}

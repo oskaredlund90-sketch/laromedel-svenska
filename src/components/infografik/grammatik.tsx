@@ -130,7 +130,7 @@ const TECKEN: { tecken: string; namn: string; nar: string; ex: string; farg: Far
   { tecken: ".", namn: "Punkt", nar: "När meningen är slut.", ex: "Vi åker hem.", farg: "bla", fran: "lagstadiet" },
   { tecken: "?", namn: "Frågetecken", nar: "Efter en fråga.", ex: "Ska vi åka hem?", farg: "gron", fran: "lagstadiet" },
   { tecken: "!", namn: "Utropstecken", nar: "Efter utrop och uppmaningar.", ex: "Kom hit!", farg: "rod", fran: "lagstadiet" },
-  { tecken: ",", namn: "Kommatecken", nar: "Vid uppräkning och före men. Ger en paus.", ex: "Jag köpte mjölk, bröd och ost.", farg: "gul", fran: "mellanstadiet" },
+  { tecken: ",", namn: "Kommatecken", nar: "Visar gränser i meningen – vid uppräkning och före men.", ex: "Jag köpte mjölk, bröd och ost.", farg: "gul", fran: "mellanstadiet" },
   { tecken: "– ”", namn: "Talstreck och citattecken", nar: "När någon pratar i en text.", ex: "– Hej, sa Ali.  ”Hej”, sa Ali.", farg: "lila", fran: "mellanstadiet" },
   { tecken: ":", namn: "Kolon", nar: "Före en uppräkning, förklaring eller ett citat.", ex: "Ta med följande: matsäck, vatten och mössa.", farg: "turkos", fran: "mellanstadiet" },
   { tecken: ";", namn: "Semikolon", nar: "Mellan två meningar som hör ihop.", ex: "Det regnade; matchen ställdes in.", farg: "indigo", fran: "hogstadiet" },

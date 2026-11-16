@@ -311,7 +311,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
           Vilken del är en bisats? När skolan slutar går vi hem. {*När skolan slutar|går vi hem}
           Vilken del är en bisats? Hon sa att hon var trött. {Hon sa|*att hon var trött}
           Vilken del är en huvudsats? Om det snöar åker vi pulka. {Om det snöar|*åker vi pulka}
-          Vilken del är en huvudsats? Jag vet inte var nyckeln är. {*Jag vet inte|var nyckeln är}
+          Vilken del är en huvudsats? Vi stannade inne eftersom det snöade. {*Vi stannade inne|eftersom det snöade}
           Vilket ord inleder bisatsen? Vi åt glass fast det var kallt. {Vi|åt|*fast|kallt}
           Vilket ord inleder bisatsen? Hunden skällde när brevbäraren kom. {Hunden|skällde|*när|kom}
           Kan "eftersom jag var hungrig" stå ensam som en mening? {ja|*nej}
@@ -369,7 +369,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
         rader: `
           Jag borstar tänderna med en tand borste. => Jag borstar tänderna med en tandborste.
           Vi åt potatis mos till middag. => Vi åt potatismos till middag.
-          Min lill bror är fem år. => Min lillebror är fem år. || Min lillbror är fem år.
+          Mina bad byxor är blöta. => Mina badbyxor är blöta.
           Han har en ny dator skärm. => Han har en ny datorskärm.
           Vi badade i sim hallen. => Vi badade i simhallen.
           Ta på dig regn kläderna! => Ta på dig regnkläderna!

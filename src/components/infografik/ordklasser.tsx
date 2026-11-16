@@ -93,7 +93,7 @@ export function OrdklasserInfografik({ stadie }: { stadie: AgeGroup }) {
           </div>
           <div>
             <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-600 dark:text-neutral-400">Oböjliga ord – ändrar sällan form</p>
-            <p className="mb-3 text-sm text-neutral-500">på, och, eftersom, oj – några adverb kan ändå jämföras: ofta – oftare</p>
+            <p className="mb-3 text-sm text-neutral-500">på, och, inte, här – några adverb kan ändå jämföras: ofta – oftare</p>
             <div className="grid gap-3">
               {obojliga.map((k) => (
                 <Kort key={k} k={k} />

@@ -831,7 +831,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           efter en stund {tillägg|motsats|*tid|följd}
           således {tillägg|motsats|tid|*följd}
           dels … dels {*tillägg|motsats|tid|följd}
-          i stället {tillägg|*motsats|tid|följd}
+          tvärtom {tillägg|*motsats|tid|följd}
           nästa dag {tillägg|motsats|*tid|följd}
           på så sätt {tillägg|motsats|tid|*följd}
         `,

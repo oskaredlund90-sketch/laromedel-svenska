@@ -59,7 +59,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
     morfem: [
       ["forklara", "Vad betyder ordet ”omålad”? Dela ordet och förklara hur du kan lista ut betydelsen.", null, "o + mål + ad. Roten är mål (måla). O- betyder inte. Omålad betyder alltså att något inte är målat.", ["Jag delar ordet", "Jag förklarar vad o- betyder"]],
       ["jamfor", "Vilket ord är stavat rätt – ”kännd” eller ”känd”? Motivera med roten.", null, "Känd. Det kommer av känna, men före en annan konsonant blir det bara ett n: känd, kände.", ["Jag väljer känd", "Jag förklarar med roten känna"]],
-      ["bygg-ut", "Gör så många nya ord som du kan av roten ”lek” med prefix, suffix och sammansättning. Skriv en mening med två av dem.", null, "lekfull, lekande, lekplats, lekte, leksak. Vi hittade en leksak på lekplatsen.", ["Minst fyra ord", "En mening med två av orden"]],
+      ["bygg-ut", "Gör så många nya ord som du kan av roten ”lek” med prefix, suffix och sammansättning. Skriv en mening med två av dem.", null, "lekfull, lekplats, leksak, lekkamrat, lekstuga. Vi hittade en leksak på lekplatsen.", ["Minst fyra ord", "En mening med två av orden"]],
     ],
     ordbildning: [
       ["forklara", "Förklara skillnaden mellan ”en brunhårig sjuksköterska” och ”en brun hårig sjuk sköterska”.", null, "Skrivet ihop är det en sjuksköterska med brunt hår. Isär blir det en sköterska som är brun, hårig och sjuk. Särskrivning kan ändra betydelsen.", ["Jag förklarar båda betydelserna", "Jag skriver att det heter särskrivning"]],
@@ -81,7 +81,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
       ["fortsatt", "Skriv tre meningar till där minst en mening har en bisats (med när, eftersom eller att).", "Det var mörkt i stugan.", "Ingen sa något. När jag tände ficklampan såg jag en skugga. Jag visste att något var fel.", ["Tre meningar", "Minst en bisats"]],
     ],
     samband: [
-      ["bygg-ut", "Skriv tre meningar: en med orsak (eftersom), en med följd (därför) och en med villkor (om).", "Använd orden: regn – paraply – utflykten ställs in", "Hon tog med paraply eftersom det regnade. Det regnade hela dagen. Därför ställdes utflykten in. Om det regnar i morgon också stannar vi inne.", ["En mening med eftersom", "En med därför", "En med om"]],
+      ["bygg-ut", "Skriv tre meningar: en med orsak (eftersom), en med följd (därför) och en med villkor (om).", "Använd orden: regn – paraply – utflykten ställs in", "Hon tog med paraply eftersom det regnade. Det blev storm, och därför ställdes utflykten in. Om det regnar i morgon också, stannar vi inne.", ["En mening med eftersom", "En med därför", "En med om"]],
       ["forklara", "Vad är fel i meningen? Förklara och skriv den rätt.", "Vi stannade inne därför det regnade.", "Därför pekar fram mot följden. Här kommer orsaken efter, så det ska vara eftersom: Vi stannade inne eftersom det regnade.", ["Jag förklarar skillnaden mellan därför och eftersom", "Jag skriver meningen rätt"]],
       ["fortsatt", "Skriv tre meningar som förklarar varför man ska borsta tänderna. Använd minst två olika sambandsord.", null, "Man ska borsta tänderna eftersom det finns bakterier i munnen. Bakterierna gör hål i tänderna. Därför ska man borsta både morgon och kväll.", ["Tre meningar", "Minst två olika sambandsord"]],
     ],

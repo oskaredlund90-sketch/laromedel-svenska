@@ -62,7 +62,7 @@ export function MorfemGenomgang({ stadie }: { stadie: AgeGroup }) {
                 rader={[
                   ["o-", "inte", "olycklig, omöjlig"],
                   ["miss-", "fel", "missförstå, misslyckas"],
-                  ["be-", "göra till", "beskriva, befria"],
+                  ["be-", "göra till", "befria, berika"],
                   ["för-", "mer/förändring", "förstora, förklara"],
                   ...(minst(s, "hogstadiet") ? [["åter-", "igen", "återvinna, återfå"], ["an-", "riktning mot", "ankomma, angripa"], ["er-", "göra till, nå fram till", "erkänna, ersätta, erövra"]] : []),
                 ]}

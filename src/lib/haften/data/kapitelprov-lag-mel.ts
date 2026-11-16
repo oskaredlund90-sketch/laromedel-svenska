@@ -444,7 +444,7 @@ export const KAPITELPROV_LAG_MEL = [
         EFTERSOM JAG VAR TRÖTT somnade jag tidigt. {huvudsats|*bisats}
         Eftersom jag var trött SOMNADE JAG TIDIGT. {*huvudsats|bisats}
         Jag vet ATT DU GILLAR HUNDAR. {huvudsats|*bisats}
-        BOKEN är spännande. {*huvudsats|bisats}
+        BOKEN ÄR SPÄNNANDE. {*huvudsats|bisats}
       `,
     },
     {
@@ -478,7 +478,7 @@ export const KAPITELPROV_LAG_MEL = [
       `,
     },
     {
-      i: "Visar meningen orsak, följd eller villkor?",
+      i: "Vilket samband visar sambandsordet i meningen – orsak, följd eller villkor?",
       t: "val",
       r: `
         Vi åkte hem eftersom det började regna. {*orsak|följd|villkor}

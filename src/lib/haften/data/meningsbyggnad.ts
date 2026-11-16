@@ -94,7 +94,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Hon hade inte pluggat. {*Ändå|Därför|Dessutom} klarade hon provet.
           Jag tycker om hundar. Katter, {*däremot|därför|alltså}, är jag rädd för.
           Det är viktigt att röra på sig. {*Därför|Däremot|Ändå} borde vi ha mer idrott.
-          Vi missade bussen. {*Följaktligen|Däremot|Dessutom} kom vi försent.
+          Vi missade bussen. {*Följaktligen|Däremot|Dessutom} kom vi för sent.
           {*Sammanfattningsvis|Däremot|Ändå} anser jag att läxor behövs.
           Vi tappade bort kartan. {*Därför|Dessutom|Däremot} gick vi vilse.
           Jag har en cykel. {*Dessutom|Därför|Ändå} har jag en sparkcykel.

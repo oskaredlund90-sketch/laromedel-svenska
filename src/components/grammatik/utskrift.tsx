@@ -182,7 +182,7 @@ function facit(e: GrammarExercise): string {
       if (e.meningar) return e.parts.map((p, i) => `${i + 1}. ${p}`).join(" ");
       return e.parts.join(" ").replace(/^./, (c) => c.toUpperCase()) + (e.end ?? "");
     case "resonera":
-      return `${e.exempelsvar} (Bedöm: ${e.checklista.join("; ")})`;
+      return `${e.exempelsvar.replace(/\n/g, " / ")} (Bedöm: ${e.checklista.join("; ")})`;
   }
 }
 

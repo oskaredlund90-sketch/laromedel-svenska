@@ -28,7 +28,7 @@ export function MeningsbyggnadGenomgang({ stadie }: { stadie: AgeGroup }) {
 
       {minst(s, "mellanstadiet") && (
         <Section title="Huvudsats – verbet på plats två">
-          <P>En huvudsats kan stå ensam. Verbet står alltid på plats två – oavsett vad som står först.</P>
+          <P>En huvudsats kan stå ensam. I en påståendesats står verbet alltid på plats två – oavsett vad som står först. I frågor utan frågeord och i uppmaningar står verbet först: <em>Kommer du? Stäng dörren!</em></P>
           <Tabell
             rubriker={["Plats 1", "Plats 2 – verb", "Subjekt", "Resten"]}
             rader={[

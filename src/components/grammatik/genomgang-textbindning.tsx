@@ -38,7 +38,8 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
                 [minst(s, "hogstadiet") ? "Tid (temporala)" : "Tid", "först, sedan, därefter, samtidigt, till slut"],
                 [minst(s, "hogstadiet") ? "Tillägg (additiva)" : "Tillägg", "och, dessutom, även, vidare"],
                 [minst(s, "hogstadiet") ? "Motsats (adversativa)" : "Motsats", "men, däremot, ändå, å andra sidan"],
-                [minst(s, "hogstadiet") ? "Orsak och följd (kausala)" : "Orsak och följd", "eftersom, därför, alltså, följaktligen"],
+                [minst(s, "hogstadiet") ? "Orsak (kausala)" : "Orsak", "eftersom, därför att, på grund av"],
+                [minst(s, "hogstadiet") ? "Följd (kausala)" : "Följd", "därför, alltså, följaktligen"],
                 ...(minst(s, "hogstadiet") ? [["Exempel och sammanfattning", "till exempel, sammanfattningsvis, kort sagt"]] : []),
                 ...(minst(s, "gymnasiet") ? [["Textens uppbyggnad (metatext)", "inledningsvis, i det följande, avslutningsvis"]] : []),
               ]}
@@ -59,6 +60,9 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
         <ExampleCard title="Syfta tillbaka i stället för att upprepa">
           <Ex>Elsa har en hund. Elsa går ut med hunden. Elsa tycker om hunden.</Ex>
           <Ex>Elsa har en hund. Hon går ut med den varje dag. Hon tycker om den.</Ex>
+          {minst(s, "mellanstadiet") && (
+            <P>Om djur skriver man oftast den eller det. Har djuret ett namn, till exempel en hund som heter Bella, går det också bra med han eller hon.</P>
+          )}
           {s === "lagstadiet" && (
             <P>
               Han = en pojke eller man. Hon = en flicka eller kvinna. Den = en sak eller ett djur (en katt – den). Det = ett ord med ett (ett
@@ -67,7 +71,7 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
           )}
           {minst(s, "mellanstadiet") && (
             <P>
-              Du kan syfta tillbaka med pronomen (hon, den, de), med en synonym (hunden → valpen) eller med ett ord för hela gruppen (äpplen och
+              Du kan syfta tillbaka med pronomen (hon, den, de), med ett annat ord för samma sak (hunden → djuret, Leo → pojken) eller med ett ord för hela gruppen (äpplen och
               päron → frukten).
             </P>
           )}

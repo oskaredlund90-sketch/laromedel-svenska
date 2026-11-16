@@ -31,7 +31,7 @@ export function OrdbildningGenomgang({ stadie }: { stadie: AgeGroup }) {
                     ["-a-, -u-, -o-", "barnavård, gatubelysning, kyrkogård"],
                     ["Förleden kortas", "skola + gård = skolgård, gata + sten = gatsten"],
                   ]
-                : [["Förleden kortas", "skola + gård = skolgård"]]),
+                : [["Förleden kortas", "skola + gård = skolgård, arbete + dag = arbetsdag"]]),
             ]}
           />
           <Tip>Lyssna – hörs ett s mellan leden, skriv det: arbet<strong>s</strong>plats.</Tip>
@@ -48,7 +48,8 @@ export function OrdbildningGenomgang({ stadie }: { stadie: AgeGroup }) {
         <Tabell
           rubriker={["Typ", "Exempel"]}
           rader={[
-            ["Med punkt", "t.ex. (till exempel), bl.a. (bland annat), m.m. (med mera), s.k. (så kallad)"],
+            ["Med punkt", "t.ex. (till exempel), bl.a. (bland annat), m.m. (med mera), osv. (och så vidare), kl. (klockan), s.k. (så kallad)"],
+            ["Utan punkt", "ca (cirka)"],
             ["Initialord som läses bokstav för bokstav – utan punkt", "SVT, FN, EU, tv"],
             ...(minst(s, "hogstadiet")
               ? [

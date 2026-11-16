@@ -15,7 +15,7 @@ export function SambandGenomgang({ stadie }: { stadie: AgeGroup }) {
         <div className="grid gap-4 sm:grid-cols-3">
           <ExampleCard title="Orsak – varför?">
             <Ex>Vi stannade inne eftersom det regnade.</Ex>
-            <P>eftersom, för att, på grund av{minst(s, "mellanstadiet") ? ", då" : ""}</P>
+            <P>eftersom, på grund av{minst(s, "mellanstadiet") ? ", därför att, då" : ""}</P>
           </ExampleCard>
           <ExampleCard title={s === "lagstadiet" ? "Följd – vad blir det av det?" : "Följd – vad leder det till?"}>
             <Ex>Det regnade, så vi stannade inne.</Ex>
@@ -129,7 +129,7 @@ export function SambandGenomgang({ stadie }: { stadie: AgeGroup }) {
           s === "lagstadiet"
             ? ["Eftersom = varför.", "Så och därför = vad som händer sedan.", "Om = något måste hända först."]
             : [
-                "Orsak: eftersom, för att, på grund av.",
+                "Orsak: eftersom, därför att, på grund av.",
                 "Följd: så, därför, vilket ledde till att.",
                 "Villkor: om, ifall" + (minst(s, "hogstadiet") ? ", förutsatt att, annars." : "."),
                 "Det som står sist i meningen betonas mest.",
