@@ -305,7 +305,7 @@ const ordklasserMellanstadietMC: MultipleChoiceExercise[] = [
     topic: "ordklasser",
     ageGroup: "mellanstadiet",
     instruction: "Vilken ordklass tillhör det markerade ordet?",
-    prompt: "Vi *aldrig* glömmer den dagen.",
+    prompt: "Vi glömmer *aldrig* den dagen.",
     options: ["Verb", "Adjektiv", "Adverb", "Substantiv"],
     correct: 2,
     explanation:

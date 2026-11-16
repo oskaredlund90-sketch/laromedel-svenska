@@ -329,7 +329,7 @@ export const KAPITELPROV_LAG_MEL = [
       `,
     },
     {
-      i: "Skriv verbet i har-form.",
+      i: "Skriv verbet i har-form (supinum) – formen som står efter har.",
       t: "skriv",
       r: `
         Jag har {läst} boken. (läsa)

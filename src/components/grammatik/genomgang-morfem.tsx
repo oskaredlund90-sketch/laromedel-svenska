@@ -44,7 +44,7 @@ export function MorfemGenomgang({ stadie }: { stadie: AgeGroup }) {
               rubriker={["Ordklass", "Böjning", "Exempel"]}
               rader={[
                 ["Substantiv", "plural, bestämd form, genitiv", "hund-ar-na-s"],
-                ["Verb", "presens, preteritum, supinum", "hopp-ar, hopp-ade, hopp-at"],
+                ["Verb", "presens, preteritum, supinum (har-form)", "hopp-ar, hopp-ade, (har) hopp-at"],
                 ["Adjektiv", "neutrum, plural, komparation", "stor-t, stor-a, stör-re, stör-st"],
               ]}
             />
@@ -78,7 +78,8 @@ export function MorfemGenomgang({ stadie }: { stadie: AgeGroup }) {
                   ["-skap", "substantiv", "vänskap, kunskap"],
                   ["-are", "person", "läsare, bagare"],
                   ["-bar", "adjektiv: går att", "läsbar, ätbar"],
-                  ...(minst(s, "hogstadiet") ? [["-ning/-ing", "substantiv av verb", "beskrivning, förklaring"]] : []),
+                  ["-ning", "substantiv av verb", "tävling, lösning, beskrivning"],
+                  ["-dom", "substantiv", "barndom, ungdom, sjukdom"],
                 ]}
               />
             </ExampleCard>

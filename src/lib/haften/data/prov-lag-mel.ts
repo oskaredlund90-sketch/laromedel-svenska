@@ -256,15 +256,15 @@ export const PROV_LAG_MEL: HafteKalla[] = [
         rader: `
           I går {skrev} jag en dikt. (skriva, preteritum)
           Just nu {läser} hon en tidning. (läsa, presens)
-          Jag har {ätit} lunch redan. (äta, perfekt – skriv formen efter har)
+          Jag har {ätit} lunch redan. (äta, perfekt – skriv har-formen (supinum))
           Jag {ska resa/kommer att resa} till Spanien i sommar. (resa, futurum)
           Förra veckan {sprang} vi fem kilometer. (springa, preteritum)
           Varje morgon {dricker} pappa kaffe. (dricka, presens)
-          Hon har {skrivit} tre böcker. (skriva, perfekt – skriv formen efter har)
+          Hon har {skrivit} tre böcker. (skriva, perfekt – skriv har-formen (supinum))
           I fredags {gick} vi på bio. (gå, preteritum)
-          Har du {sett} min mobil? (se, perfekt – skriv formen efter har)
+          Har du {sett} min mobil? (se, perfekt – skriv har-formen (supinum))
           Förra natten {sov} hunden i min säng. (sova, preteritum)
-          Vi har {vunnit} matchen! (vinna, perfekt – skriv formen efter har)
+          Vi har {vunnit} matchen! (vinna, perfekt – skriv har-formen (supinum))
           Vi {ska baka/kommer att baka} bullar i kväll. (baka, futurum)
         `,
       },

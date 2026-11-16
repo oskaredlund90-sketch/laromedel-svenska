@@ -524,7 +524,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           barn + dom = {barndom}
           sjuk + dom = {sjukdom}
           vän + lig = {vänlig}
-          sken + bar = {skenbar}
+          tvätt + bar = {tvättbar}
           spel + are = {spelare}
         `,
       },
