@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/paminn-granskare.sh 2>/dev/null || true",
+            "statusMessage": "Kollar om granskaren ska köras"
+          }
+        ]
+      }
+    ]
+  }
+}

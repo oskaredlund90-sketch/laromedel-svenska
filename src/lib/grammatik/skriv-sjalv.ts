@@ -3,7 +3,7 @@ import type { GrammatikAmne } from "./amnen";
 
 /**
  * "Använd i din text": en skrivuppgift sist i varje kapitel, så att grammatiken
- * används i elevens egen text och inte bara i isolerade övningar.
+ * används i elevens egen text – inte bara i isolerade övningar.
  */
 export const SKRIV_SJALV: Record<GrammatikAmne, Partial<Record<AgeGroup, string>>> = {
   ordklasser: {

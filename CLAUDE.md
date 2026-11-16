@@ -9,3 +9,9 @@
 - `/gruppanalys`: `lararrum/grupper/<grupp>/{texter,analys}/` → `npm run gruppanalys -- <mapp>`. All räkning (fel i ≥3 texter, matriser) i `src/lib/aterkoppling/grupp.ts`, inte i AI:n.
 - Veckans ord: `src/lib/veckansord/data/<ak1…ak9|gy1…gy3>.ts` (36 veckor, gemensamma teman i `typer.ts`). Kontrollera med `npm run veckansord -- kontrollera alla` (format, antal, inga dubbletter inom stadium).
 - `/lasprov`: läsförståelse med öppna frågor rättas mot förlagets facit. Facit och texter ligger BARA i `lararrum/lasforstaelse/` (upphovsrätt – får aldrig publiceras eller committas). `npm run lasprov -- texter|fragor|mall|bygg`. Elevlänk: `/lasresultat#L1.…`.
+
+## Kvalitetsgranskning av läromedlet
+
+- Efter varje ny eller ändrad genomgång, övning, häfte, prov eller facit: kör agenten `granskare` (`.claude/agents/granskare.md`) på det som ändrats och åtgärda fynden innan commit. En hook i `.claude/settings.json` påminner om det.
+- Granskaren läser materialet som text via `npm run granska` (→ `lararrum/granskning/text/`), inte via PDF.
+- Ge granskaren en avgränsad omfattning (ändrade filer/id:n). Hela materialet granskas bara vid större omarbetningar.
