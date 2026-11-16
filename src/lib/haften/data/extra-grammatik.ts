@@ -417,7 +417,7 @@ export const EXTRA_GRAMMATIK: HafteKalla[] = [
           I dag vill ha snabba svar. => I dag vill man ha snabba svar.
           Regnar ute. => Det regnar ute.
           Är kallt i dag. => Det är kallt i dag.
-          I nutidens samhälle vill ha arbetare som kan språk. => I nutidens samhälle vill man ha arbetare som kan språk. || I nutidens samhälle vill man ha arbetare som kan språk.
+          I nutidens samhälle vill ha arbetare som kan språk. => I nutidens samhälle vill man ha arbetare som kan språk.
           På fritiden kan riktigt slappna av. => På fritiden kan man riktigt slappna av. || På fritiden kan man slappna av riktigt.
           Finns många böcker i biblioteket. => Det finns många böcker i biblioteket.
           När är trött blir det svårt att lyssna. => När man är trött blir det svårt att lyssna.
@@ -581,7 +581,7 @@ export const EXTRA_GRAMMATIK: HafteKalla[] = [
           Vi har en ny lärare. Det heter Maria. => Vi har en ny lärare. Hon heter Maria.
           Ett barn behöver sin föräldrar. => Ett barn behöver sina föräldrar.
           Man blir glad när någon hjälper dig. => Man blir glad när någon hjälper en. || Du blir glad när någon hjälper dig.
-          I dag vill man ha allt direkt, och du blir arg om du måste vänta. => I dag vill man ha allt direkt, och man blir arg om man måste vänta.
+          I dag vill man ha allt direkt, och du blir arg om du måste vänta. => I dag vill man ha allt direkt, och man blir arg om man måste vänta. || I dag vill du ha allt direkt, och du blir arg om du måste vänta.
         `,
       },
     ],

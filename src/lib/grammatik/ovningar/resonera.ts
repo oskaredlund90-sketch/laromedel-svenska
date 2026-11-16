@@ -100,7 +100,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
   hogstadiet: {
     ordklasser: [
       ["forklara", "Förklara vad som är fel och skriv meningen rätt.", "Moa och sin bror åkte till Kiruna.", "Sin syftar tillbaka på subjektet och kan inte själv stå i subjektet. Det ska vara: Moa och hennes bror åkte till Kiruna.", ["Jag förklarar att sin inte kan stå i subjektet", "Jag skriver hennes"]],
-      ["skriv-om", "Skriv om meningarna till passiv form. När passar passiv bättre än aktiv?", "Forskarna analyserade proverna. Kommunen stängde badhuset.", "Proverna analyserades av forskarna. Badhuset stängdes av kommunen. Passiv passar när det viktiga är vad som händer, inte vem som gör det – till exempel i en labbrapport.", ["Båda meningarna i passiv", "Jag förklarar när passiv passar"]],
+      ["skriv-om", "Skriv om meningarna till passiv form. När passar passiv bättre än aktiv?", "Forskarna analyserade proven. Kommunen stängde badhuset.", "Proven analyserades av forskarna. Badhuset stängdes av kommunen. Passiv passar när det viktiga är vad som händer, inte vem som gör det – till exempel i en labbrapport.", ["Båda meningarna i passiv", "Jag förklarar när passiv passar"]],
       ["granska", "Stycket har tre fel med kongruens och tempus. Rätta och förklara ett av felen.", "Fönstret var öppen när vi kom hem. Katterna låg på soffan och såg trött ut. Sedan går vi och lade oss.", "Fönstret var öppet när vi kom hem. Katterna låg på soffan och såg trötta ut. Sedan gick vi och lade oss. Fönster är ett ett-ord, därför öppet.", ["öppet", "trötta", "gick", "Jag förklarar ett fel"]],
     ],
     morfem: [
@@ -113,7 +113,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
       ["jamfor", "Välj de tre lånord du tycker passar sämst i en formell text och föreslå svenska ord i stället. Motivera.", "deadline, feedback, mejl, nice, meeting", "deadline → sista dag, nice → trevlig, meeting → möte. Mejl och feedback är så vanliga att de går bra – men nice och meeting är vardagliga och har bra svenska ord.", ["Tre ord med svenska förslag", "Jag motiverar valet"]],
     ],
     stavning: [
-      ["forklara", "Varför stavas ”rum” med ett m men ”damm” med två?", null, "Ord som slutar på m skrivs oftast med ett m (rum, hem). Damm har två m eftersom roten har dubbelteckning i andra former: dammet, dammig. Fråga dig hur ordet låter när det böjs.", ["Jag förklarar regeln om ett m i slutet", "Jag förklarar med de böjda formerna"]],
+      ["forklara", "Varför stavas ”rum” med ett m men ”damm” med två?", null, "Ord som slutar på m skrivs oftast med ett m (rum, hem). Damm är ett undantag – precis som lamm – som man får lära sig utantill. Kontrollera i en ordlista när du är osäker.", ["Jag förklarar regeln om ett m i slutet", "Jag förklarar med de böjda formerna"]],
       ["granska", "Läs stycket och hitta de fyra felen med stor och liten bokstav. Skriv om och förklara ett av felen.", "På Måndag ska vi läsa en Roman av Astrid lindgren. Den heter Bröderna Lejonhjärta och handlar om två Svenska bröder.", "På måndag ska vi läsa en roman av Astrid Lindgren. Den heter Bröderna Lejonhjärta och handlar om två svenska bröder. Veckodagar skrivs med liten bokstav.", ["måndag", "roman", "Lindgren", "svenska", "Jag förklarar ett fel"]],
     ],
     satsdelar: [
@@ -143,7 +143,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
     stilistik: [
       ["skriv-om", "Skriv om sms:et så att det passar i ett mejl till rektorn.", "Tja! Kan vi typ få längre lunch? Det e skitkort nu asså.", "Hej! Vi undrar om det är möjligt att förlänga lunchrasten. Många elever upplever att den är för kort för att hinna äta i lugn och ro. Vänliga hälsningar, klass 8B", ["Hälsning och avslutning", "Inga slangord", "Ett tydligt skäl"]],
       ["forklara", "Vilken stilfigur används? Förklara vilken effekt den har.", "Vi kämpar för klimatet. Vi kämpar för framtiden. Vi kämpar för våra barn.", "Det är en anafor: samma ord inleder varje mening. Upprepningen ger rytm och kraft och gör att budskapet fastnar.", ["Jag namnger stilfiguren", "Jag förklarar effekten"]],
-      ["fortsatt", "Skriv en inledning till ett tal om något du tycker är viktigt. Använd minst två stilfigurer och skriv vilka.", null, "Tänk dig en skola utan stress. En skola där alla får växa. En skola där ingen sitter ensam. (Anafor.) Är det för mycket begärt? (Retorisk fråga.)", ["Minst två stilfigurer", "Jag skriver vilka stilfigurer jag använt"]],
+      ["fortsatt", "Skriv en inledning till ett tal om något du tycker är viktigt. Använd minst två stilfigurer och skriv vilka.", null, "Tänk dig en skola utan stress. En skola där alla får växa. En skola där ingen sitter ensam. (Anafor.) Det är viktigt, det är avgörande, det handlar om våra liv! (Klimax.)", ["Minst två stilfigurer", "Jag skriver vilka stilfigurer jag använt"]],
     ],
   },
 

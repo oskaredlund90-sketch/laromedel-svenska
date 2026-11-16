@@ -364,7 +364,7 @@ export const PROV_HOG_GY: HafteKalla[] = [
           Huset, {vilken|*vilket|vilka} byggdes 1920, ska rivas.
           Han kom inte, {vilken|*vilket|vilka} förvånade alla.
           Eleverna, {vilken|vilket|*vilka} hade pluggat, klarade provet.
-          Den metod {*vilken|vilket|vilka} vi använde var enkel.
+          Metoden, {*vilken|vilket|vilka} vi använde, var enkel.
           Erik lånade {hans|*sin} brors cykel.
           Erik och {*hans|sin} bror spelar fotboll.
           Lisa tycker att {sin|*hennes} lägenhet är för liten.
@@ -377,7 +377,7 @@ export const PROV_HOG_GY: HafteKalla[] = [
         typ: "val",
         rader: `
           I en vetenskaplig rapport: Studien {kollar upp|*påvisar|snackar om} ett tydligt samband.
-          Vilket uttryck är en kliché? → {i Sverige år 2024|*i dagens samhälle|bland svenska tonåringar}
+          Vilket uttryck är en kliché (ett slitet, intetsägande uttryck)? → {i Sverige år 2024|*i dagens samhälle|bland svenska tonåringar}
           ”Hon var en klippa” är en {liknelse|*metafor|besjälning|allitteration}.
           ”Han var stark som en björn” är en {*liknelse|metafor|besjälning|allitteration}.
           ”Vinden viskade i träden” är en {metafor|liknelse|*besjälning|allitteration}.

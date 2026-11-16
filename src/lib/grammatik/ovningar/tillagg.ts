@@ -56,7 +56,7 @@ tbHog.r("Forskarna gjorde ett försök. {Dem|De} fick tydliga resultat.", "Subje
 tbHog.r("Eleverna fick välja bok. {Dom|De} valde mest fantasy.", "I skrift: de (subjekt) och dem (objekt).");
 
 const tbGy = bygg("textbindning", "gymnasiet");
-tbGy.m("Klicka på alla referensuttryck som syftar på ”Selma Lagerlöf”.", "Selma Lagerlöf fick Nobelpriset 1909. [Hon] var den första kvinnan som fick priset. [Författarinnan från Mårbacka] skrev bland annat Nils Holgerssons underbara resa.");
+tbGy.m("Klicka på alla referensuttryck som syftar på ”Selma Lagerlöf”.", "Selma Lagerlöf fick nobelpriset 1909. [Hon] var den första kvinnan som fick priset. [Författarinnan från Mårbacka] skrev bland annat Nils Holgerssons underbara resa.");
 tbGy.m("Klicka på alla sammanfattande referenser.", "Utsläppen ökar, skogarna avverkas och arter dör ut. [Denna utveckling] är oroande. [Problemet] kräver internationellt samarbete.");
 tbGy.m("Klicka på alla metatextuella markörer – ord som visar läsaren hur texten är byggd.", "[I det följande] diskuteras tre orsaker. [Den första] gäller ekonomin. [Avslutningsvis] sammanfattas resonemanget.");
 tbGy.v("Vad menas med tema och rema?", ["*Tema är det kända som meningen utgår från, rema är det nya som sägs om det.", "Tema är rubriken, rema är slutsatsen.", "Det är två ord för samma sak."], "Tema–rema-kedjor skapar flyt: det nya i en mening blir utgångspunkt i nästa.");
@@ -132,7 +132,7 @@ mbGy.v("Vilken konstruktion är en utbrytning?", ["*Det var Anna som vann.", "An
 mbGy.v("Vad är slutfokus?", ["*att den viktigaste eller nya informationen placeras sist i meningen", "att meningen slutar med punkt", "att man sammanfattar sist i texten"], "Svenskan lägger gärna tyngden i slutet.");
 mbGy.v("Vilken mening har onödigt tung nominalstil?", ["*Genomförandet av en förbättring av rutinerna sker under hösten.", "Vi förbättrar rutinerna i höst.", "Rutinerna ska bli bättre."], "Många substantiv bildade av verb gör texten svårläst. Använd verb.");
 mbGy.v("När passar passiv form bäst?", ["*när den som utför handlingen är okänd eller oviktig", "alltid i berättelser", "aldrig i sakprosa"], "Provet rättades under veckan – vem som rättade är inte viktigt.");
-mbGy.v("Vad är ett anakoluti?", ["*en mening som börjar på ett sätt och slutar på ett annat, så att den inte hänger ihop", "en mycket kort mening", "ett stavfel"], "T.ex. Den boken som jag läste, den var den bra.");
+mbGy.v("Vad är ett anakoluti?", ["*en mening som börjar på ett sätt och slutar på ett annat, så att den inte hänger ihop", "en mycket kort mening", "ett stavfel"], "T.ex. Den filmen vi såg i går, jag tyckte att slutet var konstigt.");
 mbGy.k("Vilken stil har meningen?", { Nominalstil: ["Utredningens genomförande krävde en prioritering av resurser.", "En minskning av utsläppen är nödvändig."], Verbalstil: ["För att genomföra utredningen måste vi prioritera.", "Vi måste minska utsläppen."] });
 mbGy.r("Jag vet inte varför {kan hon inte|hon inte kan} komma.", "Bisats: subjekt + satsadverbial + finit verb.");
 mbGy.r("Förslaget avslogs{, styrelsen| eftersom styrelsen} ansåg det för dyrt.", "Undvik satsradning – visa sambandet.");

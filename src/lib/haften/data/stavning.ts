@@ -51,11 +51,11 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Barnen {roppar|*ropar} på hjälp.
           Vi {*äter|ätter} middag klockan sex.
           Jag har en {pena|*penna} i väskan.
-          Den här {*boken|bocken} är spännande.
+          Jag har ont i {*tummen|tumen}.
           Han {van|*vann} matchen.
           Hon {*kan|kann} läsa.
           Bollen {rular|*rullar} iväg.
-          Snön är {*vit|vitt}.
+          Vi {*hoppar|hopar} hopprep.
           Vi {*packar|pakar} väskan.
           Fisken {simar|*simmar} i sjön.
           Han tog ett {*steg|stegg} fram.
@@ -231,7 +231,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Tö{m} papperskorgen! (m/mm)
           Hon tö{m}de glaset. (m/mm)
           Vi si{mm}ade. (m/mm)
-          Hon tö{mm}de lådan. (m/mm)
+          Vi stä{mm}er gitarren. (m/mm)
           Jag mi{nn}s det. (n/nn)
           Ko{m} hit! (m/mm)
           Hi{m}len är grå. (m/mm)
@@ -852,7 +852,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Sverige är med i {*EU|Eu|eu}.
           Vi badade i {*Medelhavet|medelhavet}.
           Hon är {Göteborgare|*göteborgare}.
-          Pappa kör en {Volvo|*volvo}.
+          Vi firar {Nyårsafton|*nyårsafton} hemma.
           Pappa jobbar på {*Volvo|volvo}.
           I dag undersökte {Doktor|*doktor} Lund mig.
           Vi läste om {Andra världskriget|*andra världskriget}.
@@ -895,7 +895,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Sverige är med i Eu. => Sverige är med i EU.
           Vi badade i medelhavet. => Vi badade i Medelhavet.
           Hon är Göteborgare. => Hon är göteborgare.
-          Mamma kör en Volvo. => Mamma kör en volvo.
+          Vi åt gott på Nyårsafton. => Vi åt gott på nyårsafton.
           Jag gick till Doktor Lund. => Jag gick till doktor Lund.
           Andra Världskriget slutade 1945. => Andra världskriget slutade 1945.
           Vi åkte till usa. => Vi åkte till USA.

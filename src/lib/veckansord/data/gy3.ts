@@ -470,7 +470,7 @@ en signifikans | substantiv | Ett mått på att ett resultat sannolikt inte bero
 en nollhypotes | substantiv | Antagandet att det inte finns något samband eller någon skillnad. | Vi kunde förkasta nollhypotesen. | amne
 en generaliserbarhet | substantiv | Hur väl resultaten från en studie gäller för en större grupp. | Det lilla urvalet begränsar studiens generaliserbarhet. | amne
 kvalitativ | adjektiv | Som bygger på tolkning av ord, upplevelser och egenskaper snarare än siffror. | En kvalitativ intervjustudie gav en djupare förståelse. | amne
-ett laboratorium | substantiv | En lokal för vetenskapliga experiment. | Proverna analyserades i ett laboratorium. | stavning
+ett laboratorium | substantiv | En lokal för vetenskapliga experiment. | Proven analyserades i ett laboratorium. | stavning
 en kemikalie | substantiv | Ett kemiskt ämne som har framställts för ett visst syfte. | Förvara kemikalier i ett låst skåp. | stavning
 ett experiment | substantiv | Ett försök för att pröva något. | Experimentet upprepades tre gånger. | stavning
 en procedur | substantiv | Ett bestämt tillvägagångssätt. | Följ samma procedur vid varje mätning. | stavning

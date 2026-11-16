@@ -164,7 +164,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Jag gillar fotboll{,|*_} och handboll.
           Om det regnar{*,|_} stannar vi inne.
           Kom hit{*,|_} Leo!
-          Hon är snäll{*,|_} men lite blyg.
+          Hon är snäll{*,|_} men hon är lite blyg.
           Vi tog med oss korv{*,|_} bröd och saft.
           Eftersom jag var sjuk{*,|_} stannade jag hemma.
           Jag stannade hemma{,|*_} eftersom jag var sjuk.
@@ -180,7 +180,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Katten sov{,|*_} medan jag läste.
           God morgon{*,|_} allihop!
           Jag tog på mig mössa{*,|_} vantar och halsduk.
-          Boken var tjock{*,|_} men spännande.
+          Boken var tjock{*,|_} men den var spännande.
           Om du vill{*,|_} kan du följa med.
           Du kan följa med{,|*_} om du vill.
           Vi åkte till Malmö{*,|_} Lund och Ystad.
@@ -203,7 +203,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           När solen gick ner{*,|_} blev det kallt.
           Det blev kallt{,|*_} när solen gick ner.
           Grattis{*,|_} Ella!
-          Jag letade överallt{*,|_} men hittade inget.
+          Jag letade överallt{*,|_} men jag hittade inget.
           Fast jag var trött{*,|_} gick jag på träningen.
           Hon köpte mjölk{*,|_} ägg och smör.
         `,
@@ -219,7 +219,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Hej Sara! => Hej, Sara!
           Om det regnar stannar vi inne. => Om det regnar, stannar vi inne.
           Kom hit Leo! => Kom hit, Leo!
-          Hon är snäll men lite blyg. => Hon är snäll, men lite blyg.
+          Hon var trött men hon kunde inte sova. => Hon var trött, men hon kunde inte sova.
           Vi tog med oss korv bröd och saft. => Vi tog med oss korv, bröd och saft.
           Eftersom jag var sjuk stannade jag hemma. => Eftersom jag var sjuk, stannade jag hemma.
           Vi har en hund två katter och en kanin. => Vi har en hund, två katter och en kanin.
@@ -230,7 +230,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Medan jag läste sov katten. => Medan jag läste, sov katten.
           God morgon allihop! => God morgon, allihop!
           Jag tog på mig mössa vantar och halsduk. => Jag tog på mig mössa, vantar och halsduk.
-          Boken var tjock men spännande. => Boken var tjock, men spännande.
+          Filmen var lång men den var bra. => Filmen var lång, men den var bra.
           Om du vill kan du följa med. => Om du vill, kan du följa med.
           Vi åkte till Malmö Lund och Ystad. => Vi åkte till Malmö, Lund och Ystad.
           Det var sent men vi var inte trötta. => Det var sent, men vi var inte trötta.
@@ -247,7 +247,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Vi målade klippte och klistrade. => Vi målade, klippte och klistrade.
           När solen gick ner blev det kallt. => När solen gick ner, blev det kallt.
           Grattis Ella! => Grattis, Ella!
-          Jag letade överallt men hittade inget. => Jag letade överallt, men hittade inget.
+          Jag letade överallt men jag hittade inget. => Jag letade överallt, men jag hittade inget.
           Fast jag var trött gick jag på träningen. => Fast jag var trött, gick jag på träningen.
           Hon köpte mjölk ägg och smör. => Hon köpte mjölk, ägg och smör.
           Vi sjöng dansade och skrattade. => Vi sjöng, dansade och skrattade.
@@ -364,9 +364,9 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           – Aj. Skrek Omar. => – Aj! skrek Omar.
           – God natt. Sa pappa. => – God natt, sa pappa.
           – Vem är du frågade draken. => – Vem är du? frågade draken.
-          – Vilken tur, Sa hon. => – Vilken tur, sa hon.
+          – Vilken tur, Sa hon. => – Vilken tur, sa hon. || – Vilken tur! sa hon.
           Kommer du? frågade Alva. => – Kommer du? frågade Alva.
-          – Vad gott. Sa Ali. => – Vad gott, sa Ali.
+          – Vad gott. Sa Ali. => – Vad gott, sa Ali. || – Vad gott! sa Ali.
           – Tyst. Väste bibliotekarien. => – Tyst! väste bibliotekarien.
           – Jag kommer. Svarade hon. => – Jag kommer, svarade hon.
           – Vad konstigt, utbrast Maja! => – Vad konstigt! utbrast Maja.
@@ -380,7 +380,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           – Vi gör det. Sa Ella. => – Vi gör det, sa Ella.
           – Kom nu, Sa pappa. => – Kom nu, sa pappa.
           – Är det sant. Undrade Leo. => – Är det sant? undrade Leo.
-          – Hej, Sa Sara. => – Hej, sa Sara.
+          – Hej, Sa Sara. => – Hej, sa Sara. || – Hej! sa Sara.
           – Nej. Skrek han. => – Nej! skrek han.
           – Vad heter hunden, frågade jag? => – Vad heter hunden? frågade jag.
           – Jag förstår. Sa Sam. => – Jag förstår, sa Sam.

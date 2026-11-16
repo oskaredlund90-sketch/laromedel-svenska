@@ -465,7 +465,7 @@ en slutsats | substantiv | Det man kommer fram till efter att ha tänkt eller un
 undersöka | verb | Ta reda på hur något är. | Forskarna undersökte vattnet i sjön.
 exakt | adjektiv | Helt korrekt, utan minsta fel. | Vi mätte temperaturen med en exakt termometer.
 en forskare | substantiv | En person som söker ny kunskap genom undersökningar. | Forskarna har hittat en ny art.
-ett laboratorium | substantiv | Ett rum där man gör vetenskapliga försök. | Proverna analyserades i ett laboratorium.
+ett laboratorium | substantiv | Ett rum där man gör vetenskapliga försök. | Proven analyserades i ett laboratorium.
 en ekvation | substantiv | Ett matematiskt uttryck med ett likhetstecken och en okänd del. | Lös ekvationen x + 5 = 12. | amne
 ett resultat | substantiv | Det man får fram efter ett försök eller en uträkning. | Resultatet av försöket blev inte som vi trodde. | amne
 en mätning | substantiv | När man tar reda på hur stort, långt eller varmt något är. | Vi gjorde tre mätningar av vattnets temperatur. | amne

@@ -20,6 +20,12 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
           </P>
           <Markerad delar={[["Hunden", s === "lagstadiet" ? "vem?" : "subjekt"], ["skäller", s === "lagstadiet" ? "vad händer?" : "predikat"]]} />
           <Markerad delar={[["Min lillasyster", s === "lagstadiet" ? "vem?" : "subjekt"], ["sover", s === "lagstadiet" ? "vad händer?" : "predikat"]]} />
+          {s === "lagstadiet" && (
+            <Tip>
+              Den som gör något står inte alltid först. I <em>I dag spelar Ali fotboll</em> och <em>I korgen sover katten</em> kommer den som gör
+              något efter verbet. Fråga: Vem sover? – Katten.
+            </Tip>
+          )}
           {minst(s, "mellanstadiet") && (
             <Tip>
               Subjektet kan vara flera ord (min lillasyster) och behöver inte stå först. I <em>I går köpte pappa en cykel</em> är pappa subjekt:

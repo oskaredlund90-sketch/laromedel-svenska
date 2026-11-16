@@ -14,7 +14,7 @@ export function SkiljeteckenGenomgang({ stadie }: { stadie: AgeGroup }) {
       <Section title="Punkt, frågetecken och utropstecken">
         <div className="grid gap-4 sm:grid-cols-3">
           <ExampleCard title="Punkt .">
-            <P>När du berättar något.</P>
+            <P>När du berättar något. Det kallas påstående.</P>
             <Ex>Vi åker till mormor.</Ex>
           </ExampleCard>
           <ExampleCard title="Frågetecken ?">
@@ -22,13 +22,13 @@ export function SkiljeteckenGenomgang({ stadie }: { stadie: AgeGroup }) {
             <Ex>Vill du följa med?</Ex>
           </ExampleCard>
           <ExampleCard title="Utropstecken !">
-            <P>När du ropar, blir glad, arg eller förvånad – eller ger en order.</P>
+            <P>När du ropar, blir glad, arg eller förvånad – eller ger en order. En order kallas uppmaning.</P>
             <Ex>Akta dig!</Ex>
           </ExampleCard>
         </div>
         <Tip>
           {s === "lagstadiet"
-            ? "Läs högt. Där rösten gör en lång paus och går ner sätter du punkt. Efter punkten börjar nästa mening med stor bokstav."
+            ? "Läs högt. Där tanken är klar och rösten går ner sätter du punkt. Efter punkten börjar nästa mening med stor bokstav."
             : "Varje mening ska ha ett slut. Läs texten högt – där du gör en tydlig paus och tanken är klar sätter du punkt."}
         </Tip>
       </Section>

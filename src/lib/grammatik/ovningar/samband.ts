@@ -20,7 +20,7 @@ lag.m("Klicka på ordet som berättar varför.", "Vi skrattade [eftersom] clowne
 lag.m("Klicka på ordet som visar ett villkor.", "[Om] solen skiner, går vi till parken.");
 lag.m("Klicka på ordet som visar följden.", "Bussen var sen, [så] vi gick i stället.");
 lag.o("Bygg en mening som berättar varför.", ["jag", "äter", "eftersom", "jag", "är", "hungrig"], { end: "." });
-lag.o("Bygg en mening med ett villkor.", ["om", "det", "snöar", "bygger", "vi", "en snögubbe"], { end: "." });
+lag.o("Bygg en mening med ett villkor.", ["om", "det", "snöar,", "bygger", "vi", "en snögubbe"], { end: "." });
 lag.o("Bygg en mening som visar följden.", ["det", "var", "varmt,", "så", "vi", "badade"], { end: "." });
 
 /* ------------------------------- Mellanstadiet ------------------------------ */
@@ -70,7 +70,7 @@ hog.k("Sortera sambandsorden.", { Orsak: ["eftersom", "på grund av", "med anled
 hog.k("Är det en sats eller en nominalfras efter sambandsordet?", { "Sats (eftersom …)": ["eftersom det snöade", "eftersom bussen var sen", "eftersom hon var sjuk"], "Nominalfras (på grund av …)": ["på grund av snön", "på grund av förseningen", "på grund av sjukdom"] });
 hog.v("Vilken mening uttrycker en orsak utan att använda en bisats?", ["Eftersom det snöade, ställdes tåget in.", "*Tåget ställdes in på grund av snöfallet.", "Tåget ställdes in eftersom det snöade."], "På grund av + nominalfras uttrycker orsak utan bisats.");
 hog.v("Vilket verb kan uttrycka en följd?", ["*leder till", "beror på", "trots"], "Rökning leder till sjukdomar. Beror på pekar i stället mot orsaken.");
-hog.v("I vilken mening är det orsaken som är huvudsaken?", ["Det snöade, så skolan stängde.", "*Skolan stängde eftersom det snöade.", "Skolan stängde. Det var ingen fara."], "Det viktigaste står ofta sist. I Skolan stängde eftersom det snöade kommer orsaken sist och betonas.");
+hog.v("I vilken mening betonas orsaken?", ["Det snöade, så skolan stängde.", "*Skolan stängde eftersom det snöade.", "Skolan stängde. Det var ingen fara."], "Det viktigaste står ofta sist. I Skolan stängde eftersom det snöade kommer orsaken sist och betonas.");
 hog.v("Vilken mening är bäst i en argumenterande text?", ["Läxor är dåligt och så.", "*Läxor bör slopas eftersom de ökar skillnaderna mellan eleverna.", "Läxor bör slopas, eller?"], "Tesen + eftersom + ett tydligt skäl.");
 hog.v("Vad är fel i ”Han kom för sent därför att bussen var inte i tid.”?", ["*Ordföljden i bisatsen: inte ska stå före verbet.", "Därför att går aldrig att använda.", "Inget är fel."], "BIFF: … därför att bussen inte var i tid.");
 hog.v("Vilket samband uttrycker ”Hade jag vetat det, skulle jag ha stannat.”?", ["orsak", "*villkor", "följd"], "En villkorsbisats kan stå utan om: Hade jag vetat = Om jag hade vetat.");
@@ -83,7 +83,7 @@ hog.o("Ordna bisatsen rätt. Tänk på BIFF!", ["han", "kom", "för sent", "efte
 hog.o("Ordna bisatsen rätt. Tänk på BIFF!", ["vi", "stannar", "hemma", "om", "det", "inte", "slutar", "regna"], { end: "." });
 hog.o("Gör en mening där följden betonas – sätt den sist.", ["det", "regnade", "hela", "natten,", "så", "matchen", "ställdes in"], { end: "." });
 hog.o("Ordna meningarna så att resonemanget hänger ihop.", ["Många elever äter ingen frukost.", "Därför blir de trötta redan på förmiddagen.", "Det leder till att de har svårt att koncentrera sig på lektionerna."], { meningar: true, explanation: "Orsak → följd → följden av följden. Sambandsorden visar ordningen." });
-hog.r("Vi kom fram sent {eftersom att|eftersom} tåget var försenat.", "Eftersom att är en blandning av eftersom och för att. Skriv bara eftersom.");
+hog.r("Vi kom fram sent {eftersom att|eftersom} tåget var försenat.", "Eftersom att är en blandning av eftersom och därför att. Skriv bara eftersom.");
 hog.r("Matchen ställdes in {eftersom|på grund av} regnet.", "Före en nominalfras (regnet) används på grund av.");
 hog.r("Han tränade mycket, {eftersom|så} han vann loppet.", "Följden kommer efter kommat: så.");
 hog.r("{Trots|Trots att} det regnade gick vi ut.", "Före en sats: trots att. Före en nominalfras: trots (trots regnet).");

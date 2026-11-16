@@ -100,7 +100,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Jag har en cykel. {*Dessutom|Därför|Ändå} har jag en sparkcykel.
           Pizzan var kall. {*Ändå|Därför|Alltså} åt vi upp den.
           Han tycker om vinter. Hans bror, {*däremot|därför|alltså}, längtar efter sommaren.
-          Det var mitt i natten. Det var {*alltså|däremot|dessutom} mörkt ute.
+          Det var mitt i natten. Det var {*alltså|däremot|tvärtom} mörkt ute.
           Vi har inget mjöl. Vi kan {*därför|däremot|dessutom} inte baka.
           Hon är bra på att rita. {*Dessutom|Därför|Ändå} sjunger hon fint.
           Jag hade glömt nyckeln. {*Som tur var|Däremot|Därför} var mamma hemma.
@@ -230,7 +230,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Jag slutar nu eftersom jag orkar inte mer. => Jag slutar nu eftersom jag inte orkar mer.
           Det var en dag som jag glömmer aldrig. => Det var en dag som jag aldrig glömmer.
           Mamma sa att vi behöver inte skynda oss. => Mamma sa att vi inte behöver skynda oss.
-          Jag är ledsen för att du kan inte komma. => Jag är ledsen för att du inte kan komma.
+          Jag är ledsen över att du kan inte komma. => Jag är ledsen över att du inte kan komma.
           Han sa att han ville inte följa med. => Han sa att han inte ville följa med.
           Om du vill inte gå, kan du stanna. => Om du inte vill gå, kan du stanna.
           Fast jag hade inte pluggat, klarade jag provet. => Fast jag inte hade pluggat, klarade jag provet.
@@ -261,7 +261,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Det är synd. Du kan inte komma. (att) => Det är synd att du inte kan komma.
           Vi väntade. Han svarade inte. (men) => Vi väntade, men han svarade inte.
           Jag frågade. Varför kom du inte? (varför) => Jag frågade varför du inte kom.
-          Hon var glad. Hon behövde inte gå. (för att) => Hon var glad för att hon inte behövde gå.
+          Hon var glad. Hon behövde inte gå. (eftersom) => Hon var glad eftersom hon inte behövde gå.
           Vi skyndade oss. Vi ville inte missa tåget. (eftersom) => Vi skyndade oss eftersom vi inte ville missa tåget.
           Jag tror något. Det regnar inte i morgon. (att) => Jag tror att det inte regnar i morgon.
           Han ljög. Han ville inte få skäll. (eftersom) => Han ljög eftersom han inte ville få skäll.

@@ -205,7 +205,7 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
             ]}
           />
           <Tip>
-            Passiv passar i faktatexter när det viktiga är vad som händer: <em>Proverna analyserades.</em> Men passiv kan också dölja vem som
+            Passiv passar i faktatexter när det viktiga är vad som händer: <em>Proven analyserades.</em> Men passiv kan också dölja vem som
             är ansvarig: <em>Misstag har begåtts.</em> – av vem?
           </Tip>
         </Section>

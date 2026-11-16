@@ -43,13 +43,13 @@ okHog.m("Klicka på det ord som syftar tillbaka på subjektet.", "Kalle glömde 
 // Aktiv och passiv
 okHog.v("Vilken mening står i passiv form?", ["Kommunen bygger en ny skola.", "*En ny skola byggs av kommunen.", "Kommunen ska bygga en ny skola."], "Passiv: det som påverkas blir subjekt, och verbet får -s eller bli + particip.");
 okHog.v("Gör om till passiv: ”Polisen stoppade bilen.”", ["Bilen stoppade polisen.", "*Bilen stoppades av polisen.", "Polisen stoppades av bilen."], "Bilen blir subjekt, verbet får -s och den som gör något kommer efter av.");
-okHog.v("Varför är passiv form vanlig i faktatexter?", ["*Det viktiga är vad som händer, inte vem som gör det.", "Passiv är alltid kortare.", "Aktiv form är fel i faktatexter."], "Proverna analyserades – det spelar mindre roll vem som gjorde det.");
+okHog.v("Varför är passiv form vanlig i faktatexter?", ["*Det viktiga är vad som händer, inte vem som gör det.", "Passiv är alltid kortare.", "Aktiv form är fel i faktatexter."], "Proven analyserades – det spelar mindre roll vem som gjorde det.");
 okHog.v("Vilken mening är aktiv?", ["Fönstret krossades i natt.", "Boken skrevs 1945.", "*Grannen krossade fönstret i natt."], "Aktiv: den som gör något är subjekt – grannen.");
 okHog.l("Vägen ____ i somras.", ["*asfalterades", "asfalterade", "asfalterat"], "Vägen gjorde inget själv – passiv: asfalterades.");
 okHog.l("Mötet ____ till nästa vecka.", ["flyttade", "*har flyttats", "har flyttat"], "Mötet flyttar inte sig självt – passiv: har flyttats.");
 okHog.k("Aktiv eller passiv form?", { Aktiv: ["Hon skrev brevet.", "Vi målade huset.", "Läraren rättade proven."], Passiv: ["Brevet skrevs av henne.", "Huset målades.", "Proven rättades i går."] });
 // Partikelverb
-okHog.v("I vilken mening är ”om” en betonad partikel?", ["Han talade om resan.", "*Jag tycker om glass.", "Vi pratade om filmen."], "Tycka om är ett partikelverb – om är betonat och hör ihop med verbet.");
+okHog.v("I vilken mening är ”om” en betonad partikel?", ["Han berättade om resan.", "*Jag tycker om glass.", "Vi pratade om filmen."], "Tycka om är ett partikelverb – om är betonat och hör ihop med verbet.");
 okHog.m("Klicka på partiklarna – de betonade småorden som hör ihop med verbet.", "Hon gav [upp] efter en timme, men han höll [ut] och kom [fram].");
 okHog.r("Kan du {avstänga|stänga av} datorn?", "Stänga av är partikelverbet. Avstänga betyder något annat (stänga av någon från ett uppdrag).");
 // Particip
@@ -92,7 +92,7 @@ okGy.m("Klicka på alla verb i passiv form.", "Lagen [antogs] 2019 men [har krit
 const mbGy = bygg("meningsbyggnad", "gymnasiet", "k");
 mbGy.v("Vilken funktion har bisatsen i ”Att klimatet förändras är ställt utom allt tvivel”?", ["*subjekt", "objekt", "adverbial"], "Att-satsen är meningens subjekt: Vad är ställt utom allt tvivel?");
 mbGy.v("Vad syftar ”vilket” på i ”Räntan höjdes, vilket drabbade många”?", ["räntan", "*hela satsen före", "många"], "Vilket kan syfta på en hel sats. Som kan bara syfta på ett ord.");
-mbGy.r("Studien, {vilket|som} publicerades i maj, väckte debatt.", "Som syftar på ett ord (studien). Vilket syftar på en hel sats.");
+mbGy.r("Studien, {vilket|som} publicerades i maj, väckte debatt.", "Studien är ett en-ord, så vilket passar inte. Skriv som (eller vilken). Vilket används om ett ett-ord eller en hel sats.");
 mbGy.k("Vilken satsdel är bisatsen?", { Subjekt: ["Att du kom gladde mig.", "Vem som vann är oklart."], Objekt: ["Jag vet att du har rätt.", "Hon undrade om vi kom."], Adverbial: ["När det blev mörkt gick vi hem.", "Vi stannar om det regnar."] });
 
 export const SPRAKRIKTIGHET = [

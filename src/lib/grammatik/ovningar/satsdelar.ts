@@ -109,7 +109,7 @@ gy.m("Klicka på det egentliga subjektet.", "Det står [en cykel] utanför dörr
 gy.m("Klicka på det egentliga subjektet.", "Det är svårt [att lära sig ett nytt språk].");
 gy.m("Klicka på alla satsadverbial.", "Hon har [tyvärr] [inte] svarat, men hon kommer [säkert] att höra av sig.");
 gy.v("Vad är ”det” i ”Det regnar.”?", ["egentligt subjekt", "*formellt subjekt (utan egentligt subjekt)", "objekt"], "Vid väderverb står det som formellt subjekt utan att syfta på något – det finns inget egentligt subjekt.");
-gy.v("I vilken mening finns en agent?", ["Han åkte med bussen.", "*Huset revs av kommunen.", "Hon var av guld."], "Agenten anger vem som utför handlingen i en passiv sats: revs av kommunen.");
+gy.v("I vilken mening finns en agent?", ["Han åkte med bussen.", "*Huset revs av kommunen.", "Ringen var av guld."], "Agenten anger vem som utför handlingen i en passiv sats: revs av kommunen.");
 gy.v("Vilken satsdel är bisatsen i ”Jag vet att du har rätt.”?", ["subjekt", "*objekt", "adverbial"], "Vad vet jag? – att du har rätt. Bisatsen fungerar som objekt.");
 gy.v("Vilken satsdel är bisatsen i ”När det blev mörkt gick vi hem.”?", ["objekt", "*adverbial", "predikativ"], "När det blev mörkt svarar på när – en adverbialbisats.");
 gy.v("Varför används formellt subjekt?", ["*För att ny information ska kunna komma senare i meningen.", "För att meningen ska bli kortare.", "Det är talspråk och bör undvikas."], "Svenskan placerar gärna ny information sist. Det sitter en fågel på taket låter naturligare än En fågel sitter på taket när fågeln är ny.");

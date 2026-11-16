@@ -209,7 +209,7 @@ export const GY_MENINGAR = [
   "[S:Resultatet] [P:var] [PV:oväntat].",
   "[FS:Det] [P:saknas] [ES:pengar] [A:i budgeten].",
   "[S:Hon] [P:valdes] [PV:till ordförande] [AG:av medlemmarna].",
-  "[S:Läraren] [P:visade] [IO:eleverna] [O:sina omdömen] [A:i fredags].",
+  "[S:Läraren] [P:visade] [IO:eleverna] [O:omdömena] [A:i fredags].",
   "[FS:Det] [P:var] [PV:roligt] [ES:att träffa dig].",
   "[S:Huset] [P:byggdes] [AG:av hans farfar] [A:på 1920-talet].",
   "[FS:Det] [P:hördes] [ES:ett skrik] [A:från källaren].",
@@ -310,10 +310,10 @@ export const SAMMANSATTA: [string, string, string][] = [
   ["kyl", "skåp", "kylskåp"], ["dator", "spel", "datorspel"], ["mat", "sal", "matsal"], ["fot", "spår", "fotspår"],
   ["sol", "glasögon", "solglasögon"], ["snö", "boll", "snöboll"], ["regn", "jacka", "regnjacka"], ["tand", "läkare", "tandläkare"],
   ["sjö", "häst", "sjöhäst"], ["bok", "mal", "bokmal"], ["sten", "bro", "stenbro"], ["is", "glass", "isglass"],
-  ["skol", "bänk", "skolbänk"], ["bil", "dörr", "bildörr"], ["katt", "unge", "kattunge"], ["sand", "slott", "sandslott"],
-  ["måne", "sken", "månsken"], ["fågel", "bo", "fågelbo"], ["hus", "nyckel", "husnyckel"], ["blå", "val", "blåval"],
+  ["skola", "bänk", "skolbänk"], ["bil", "dörr", "bildörr"], ["katt", "unge", "kattunge"], ["sand", "slott", "sandslott"],
+  ["blixt", "ljus", "blixtljus"], ["fågel", "bo", "fågelbo"], ["hus", "nyckel", "husnyckel"], ["blå", "val", "blåval"],
   ["grön", "sak", "grönsak"], ["natt", "linne", "nattlinne"], ["hand", "boll", "handboll"], ["vatten", "glas", "vattenglas"],
-  ["sov", "säck", "sovsäck"], ["stjärn", "himmel", "stjärnhimmel"], ["korv", "bröd", "korvbröd"], ["sommar", "lov", "sommarlov"],
+  ["sova", "säck", "sovsäck"], ["stjärna", "himmel", "stjärnhimmel"], ["korv", "bröd", "korvbröd"], ["sommar", "lov", "sommarlov"],
   ["plommon", "träd", "plommonträd"], ["fisk", "pinne", "fiskpinne"],
 ];
 
@@ -350,7 +350,7 @@ export const ROT_BOJNING: [string, string, string][] = [
   ["springa, dåtid", "sprang", "hon ___ fort"], ["dricka, dåtid", "drack", "vi ___ saft"], ["sjunga, dåtid", "sjöng", "de ___ en sång"], ["skriva, dåtid", "skrev", "jag ___ ett brev"],
   ["tömma, dåtid", "tömde", "hon ___ lådan"], ["bränna, dåtid", "brände", "han ___ sig på spisen"], ["stämma, dåtid", "stämde", "det ___ inte"],
   ["känna", "känd", "hon är ___ i hela landet"], ["bränna", "bränd", "en ___ macka"], ["stänga", "stängd", "en ___ dörr"], ["tömma", "tömd", "en ___ låda"],
-  ["glömma", "glömd", "en ___ mössa"], ["fylla", "fylld", "en ___ påse"], ["ställa", "ställd", "en ___ fråga"], ["bygga", "byggd", "ett nyligen ___ hus"],
+  ["glömma", "glömd", "en ___ mössa"], ["fylla", "fylld", "en ___ påse"], ["ställa", "ställd", "en ___ fråga"], ["bygga", "byggd", "en nyligen ___ bro"],
 ];
 
 export function rotBojningSkriv(): string {

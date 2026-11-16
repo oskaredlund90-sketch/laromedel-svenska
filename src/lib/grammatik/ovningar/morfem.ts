@@ -25,7 +25,7 @@ lag.v("Vad betyder ett ”äppelträd”?", ["*ett träd med äpplen", "ett äpp
 lag.v("Hur skriver man rätt?", ["*fotboll", "fot boll", "fot-boll"], "Sammansatta ord skrivs ihop: fotboll.");
 lag.v("Hur skriver man rätt?", ["glass bil", "*glassbil", "glas bil"], "Glass + bil = glassbil, ett ord.");
 lag.v("Vilken ändelse visar att det är FLERA?", ["*bil-ar", "bil-en", "bil"], "-ar betyder flera: bilar.");
-lag.v("Vilket ord har hänt (dåtid)?", ["leker", "*lekte", "leka"], "Lekte har redan hänt. Ändelsen -te visar dåtid.");
+lag.v("Vilket ord visar att något redan har hänt (dåtid)?", ["leker", "*lekte", "leka"], "Lekte har redan hänt. Ändelsen -te visar dåtid.");
 lag.v("Om du kan stava ”hopp”, hur stavar du då ”hoppar”?", ["*hoppar", "hopar", "hhoppar"], "Ordet hopp finns kvar i hoppar – stava ordet först, lägg sedan till ändelsen.");
 lag.k("Är ordet ett sammansatt ord eller inte?", { "Sammansatt ord": ["sandlåda", "fotboll", "snögubbe", "pannkaka"], "Inte sammansatt": ["katt", "glad", "springa", "blomma"] });
 lag.m("Klicka på de sammansatta orden.", "Vi åt [pannkakor] och spelade [fotboll] i [trädgården].");
@@ -35,7 +35,7 @@ const mel = bygg("morfem", "mellanstadiet");
 mel.d("o|glad", "o- (prefix) + glad (rot). O- betyder ”inte”.");
 mel.d("o|vän|lig", "o- (prefix) + vän (rot) + -lig (suffix).");
 mel.d("vän|skap", "vän (rot) + -skap (suffix) som gör ordet till ett substantiv.");
-mel.d("glad|het", "glad (rot) + -het (suffix): gladhet.");
+mel.d("trygg|het", "trygg (rot) + -het (suffix): trygghet.");
 mel.d("läs|bar", "läs (rot) + -bar (suffix): som går att läsa.");
 mel.d("lär|are", "lär (rot) + -are (suffix): en person som lär ut.");
 mel.d("miss|nöjd", "miss- (prefix) + nöjd (rot): inte nöjd.");
@@ -112,7 +112,7 @@ gy.v("Vad är en allomorf?", ["*en variant av samma morfem, t.ex. -ar, -or, -er 
 gy.v("Hur bildas ”nominaliseringen” av verbet ”utveckla”?", ["*utveckling", "utvecklad", "utvecklande"], "Utveckl- + -ing ger ett substantiv – vanligt i sakprosa.");
 gy.k("Fritt eller bundet morfem?", { Fritt: ["bok", "glad", "spring", "hus"], Bundet: ["-het", "o-", "-lig", "miss-"] });
 gy.k("Vilket språk kommer morfemet från?", { Grekiska: ["bio-", "-logi", "tele-", "-grafi"], Latin: ["inter-", "-tion", "trans-", "multi-"] });
-gy.k("Sortera efter vad morfemet gör.", { Böjning: ["-ade", "-ast", "-na"], Avledning: ["-ing", "-skap", "-bar"], Prefix: ["åter-", "be-", "miss-"] });
+gy.k("Sortera efter vad morfemet gör.", { Böjning: ["-ade", "-ast", "-na"], "Avledning med suffix": ["-ing", "-skap", "-bar"], "Avledning med prefix": ["åter-", "be-", "miss-"] });
 gy.l("Ett system där makten delas mellan flera länder är ____.", ["*mellanstatligt", "statlös", "förstatligat"], "Mellan + stat + -lig.");
 gy.l("Att göra något mer demokratiskt kallas att ____ det.", ["*demokratisera", "demokrati", "demokrat"], "Suffixet -isera bildar verb: demokratisera, digitalisera.");
 gy.l("Ett ord som har en motsatt betydelse kallas en ____.", ["synonym", "*antonym", "homonym"], "Anti/ant- (mot) + -onym (namn).");

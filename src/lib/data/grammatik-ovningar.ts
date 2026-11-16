@@ -1005,11 +1005,11 @@ const meningsbyggnadGymnasietSA: SentenceAnalysisExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "gymnasiet",
     instruction: "Analysera satsdelarna i denna mening.",
-    sentence: "Den berömda författaren tilldelades Nobelpriset i litteratur år 1909.",
+    sentence: "Den berömda författaren tilldelades nobelpriset i litteratur år 1909.",
     parts: [
       { text: "Den berömda författaren", role: "Subjekt" },
       { text: "tilldelades", role: "Predikat" },
-      { text: "Nobelpriset i litteratur", role: "Objekt" },
+      { text: "nobelpriset i litteratur", role: "Objekt" },
       { text: "år 1909", role: "Adverbial" },
     ],
     roleOptions: [
@@ -1502,10 +1502,10 @@ const skiljeteckenGymnasietFIB: FillInBlankExercise[] = [
     instruction: "Vilket skiljetecken saknas?",
     sentence:
       "Språket förändras ständigt____ nya ord tillkommer medan andra faller ur bruk.",
-    options: [",", ";", ":", "."],
+    options: [",", ";", "?", "."],
     correct: ";",
     explanation:
-      "Semikolon binder här samman två nära besläktade huvudsatser.",
+      "Semikolon binder här samman två nära besläktade huvudsatser. Komma ger satsradning, och efter punkt skulle nästa ord börja med stor bokstav.",
   },
   {
     id: "skiljetecken-fib-gym-5",
@@ -2158,7 +2158,7 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     ],
     correct: 3,
     explanation:
-      "'Glad -> glädje' är avledning eftersom ordklassen ändras (adjektiv -> substantiv). De övriga är böjningar inom samma ordklass.",
+      "'Glad → glädje' är avledning: det blir ett nytt ord (här dessutom en ny ordklass). De övriga är böjningsformer av samma ord.",
   },
   {
     id: "ordbildning-mc-gym-6",
@@ -2922,7 +2922,7 @@ const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "vi blev",
     correctWord: "blev vi",
     explanation:
-      "Huvudsatsen efter en bisats har omvänd ordföljd. Korrekt: 'När han inte kom, blev vi oroliga.'",
+      "Huvudsatsen efter en bisats har omvänd ordföljd. Korrekt: 'När han inte kom blev vi oroliga.'",
   },
 ];
 
@@ -3209,8 +3209,8 @@ const skiljeteckenGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "skiljetecken",
     ageGroup: "gymnasiet",
     instruction: "Rätta felet med anföring.",
-    sentence: "\"Jag kommer snart\" sa hon \"vänta på mig\".",
-    correctedSentence: "\"Jag kommer snart\", sa hon, \"vänta på mig\".",
+    sentence: "\"Jag kommer snart\" sa hon \"vänta på mig.\"",
+    correctedSentence: "\"Jag kommer snart\", sa hon, \"vänta på mig.\"",
     errorWord: "snart\" sa hon \"vänta",
     correctWord: "snart\", sa hon, \"vänta",
     explanation:
@@ -3375,7 +3375,7 @@ const stavningGymnasietECExtra: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "stavning",
     ageGroup: "gymnasiet",
-    instruction: "Hitta och rätta stavfelet.",
+    instruction: "Hitta och rätta felet i ordets form.",
     sentence: "Resultat krävde en annan metodik.",
     correctedSentence: "Resultatet krävde en annan metodik.",
     errorWord: "Resultat",
@@ -3645,7 +3645,7 @@ const textbindningGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "textbindning",
     ageGroup: "gymnasiet",
     instruction: "Rätta det felaktiga konnektivet.",
-    sentence: "Forskning visar att motion förbättrar hälsan. Exempelvis bor alla träna mer.",
+    sentence: "Forskning visar att motion förbättrar hälsan. Exempelvis bör alla träna mer.",
     correctedSentence: "Forskning visar att motion förbättrar hälsan. Därför bör alla träna mer.",
     errorWord: "Exempelvis",
     correctWord: "Därför",
@@ -3943,7 +3943,7 @@ const meningsbyggnadLagstadietMC: MultipleChoiceExercise[] = [
     ],
     correct: 1,
     explanation:
-      "'Hunden tuggade på benet' har rätt ordföljd: subjekt + verb + resten av meningen.",
+      "'Hunden tuggade på benet' har rätt ordföljd. Verbet (tuggade) kommer tidigt i meningen.",
   },
   {
     id: "meningsbyggnad-mc-lag-2",
@@ -4007,7 +4007,7 @@ const meningsbyggnadLagstadietMC: MultipleChoiceExercise[] = [
     ],
     correct: 0,
     explanation:
-      "'Fisken simmar i sjön' är korrekt. Subjektet (fisken) kommer först, sedan verbet (simmar).",
+      "'Fisken simmar i sjön' är korrekt. 'I sjön fisken simmar' låter fel – verbet ska komma tidigt: I sjön simmar fisken.",
   },
   {
     id: "meningsbyggnad-mc-lag-6",
@@ -4047,7 +4047,7 @@ const meningsbyggnadLagstadietMC: MultipleChoiceExercise[] = [
     ],
     correct: 1,
     explanation:
-      "'Det regnar ute i dag' har rätt ordföljd. Subjektet (det) kommer före verbet (regnar).",
+      "'Det regnar ute i dag' har rätt ordföljd. Verbet (regnar) kommer tidigt i meningen.",
   },
   {
     id: "meningsbyggnad-mc-lag-9",
@@ -4441,8 +4441,8 @@ const ordbildningMellanstadietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "ordbildning",
     ageGroup: "mellanstadiet",
-    instruction: "Vilken ändelse gör ett substantiv av verbet?",
-    prompt: "Hur gör man ett substantiv av 'tänka'?",
+    instruction: "Hur kan man göra ett substantiv av verbet?",
+    prompt: "Vilka substantiv kan man göra av 'tänka'?",
     options: ["tänkare", "tanke", "tänkande", "Alla är korrekta"],
     correct: 3,
     explanation:
@@ -4478,7 +4478,7 @@ const textbindningMellanstadietFIB: FillInBlankExercise[] = [
     options: ["men", "eftersom", "också"],
     correct: "eftersom",
     explanation:
-      "'Eftersom' anger orsak: vi stannade hemma för att det var storm.",
+      "'Eftersom' anger orsak: vi stannade hemma därför att det var storm.",
   },
   {
     id: "textbindning-fib-mel-3",
@@ -4928,7 +4928,7 @@ const ordbildningGymnasietMCExtra: MultipleChoiceExercise[] = [
     ],
     correct: 2,
     explanation:
-      "Ordet byggs i tre steg: möjlig → omöjlig (prefix o-) → omöjliggöra (sammansättning med göra).",
+      "Ordet byggs i två steg: möjlig → omöjlig (prefix o-) → omöjliggöra (sammansättning med göra).",
   },
   {
     id: "ordbildning-mc-gym-extra-3",

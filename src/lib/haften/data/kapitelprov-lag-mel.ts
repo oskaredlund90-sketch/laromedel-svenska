@@ -360,7 +360,7 @@ export const KAPITELPROV_LAG_MEL = [
         läsare {*läs|are}
         frihet {*fri|het}
         misslyckas {miss|*lyck|as}
-        oärlig {o|*ärlig}
+        otrygg {o|*trygg}
       `,
     },
     {
@@ -378,7 +378,7 @@ export const KAPITELPROV_LAG_MEL = [
       i: "Bilda ett nytt ord med suffixet.",
       t: "skriv",
       r: `
-        simma + are = {simmare}
+        simm + are = {simmare}
         sjuk + dom = {sjukdom}
         kamrat + skap = {kamratskap}
         tvätt + bar = {tvättbar}

@@ -223,7 +223,7 @@ export const KAPITELPROV_HOG_GY = [
       i: "Välj rätt tecken.",
       t: "val",
       r: `
-        Det var sent{*;|:|–} alla hade gått hem.
+        Kalle gillar fotboll{*;|,|:} Lisa gillar handboll.
         Hon behövde tre saker{;|*:|–} mjöl, socker och ägg.
         Han kom till slut {;|:|*–} två timmar för sent.
         Vägen Malmö{-|*–}Lund var avstängd.
@@ -468,12 +468,12 @@ export const KAPITELPROV_HOG_GY = [
       t: "val",
       r: `
         tele- (television) {*fjärran|bild|ljud}
-        -vision (television) {*seende|ljud|avstånd}
+        mikro- (mikroskop) {*liten|stor|många}
         bio- (biografi) {*liv|bok|skrift}
         geo- (geologi) {vatten|*jord|luft}
-        hyper- (hyperaktiv) {*över|under|mot}
-        -fobi (klaustrofobi) {kärlek|*rädsla|sjukdom}
-        neo- (neologism) {gammal|*ny|stor}
+        poly- (polygon) {*många|få|stor}
+        -skop (teleskop) {höra|*se|mäta}
+        mono- (monolog) {många|*en|två}
         -logi (sociologi) {*lära|samhälle|ord}
       `,
     },
@@ -630,7 +630,7 @@ export const KAPITELPROV_HOG_GY = [
         Läs {*s. 30–42|s.30-42|sid 30 - 42}.
         Källan anges {*(Holm, 2019, s. 8)|[Holm 2019 sid 8]|(Holm,2019,s8)}.
         Mötet börjar {*kl. 13.15|kl 13:15:|kl.13,15}.
-        Vi har {*t.ex.|t.ex|t. ex.} träffats två gånger.
+        Ta med {*t.ex.|t.ex|t. ex.} frukt eller smörgåsar.
       `,
     },
     {

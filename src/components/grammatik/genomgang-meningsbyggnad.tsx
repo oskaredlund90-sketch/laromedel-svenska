@@ -106,7 +106,7 @@ export function MeningsbyggnadGenomgang({ stadie }: { stadie: AgeGroup }) {
               ["Konditionell bisats", "adverbiell bisats om villkor", "Om det regnar stannar vi inne."],
               ["Inskjuten bisats", "en bisats mitt i huvudsatsen, ofta inom kommatecken", "Studien, som publicerades i maj, väckte debatt."],
               ["Satsförkortning", "en infinitivfras som ersätter en bisats", "Hon gick ut för att handla. (= så att hon kunde handla)"],
-              ["Anakoluti", "en mening som börjar på ett sätt och slutar på ett annat", "Den boken som jag läste, den var den bra."],
+              ["Anakoluti", "en mening som börjar på ett sätt och slutar på ett annat", "Den filmen vi såg i går, jag tyckte att slutet var konstigt."],
             ]}
           />
         </Section>

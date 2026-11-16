@@ -384,7 +384,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           Trots det regnade gick vi ut. => Trots att det regnade gick vi ut.
           Vi stannar hemma om det slutar inte regna. => Vi stannar hemma om det inte slutar regna.
           Eftersom isen var tunn vi åkte inte skridskor. => Eftersom isen var tunn åkte vi inte skridskor.
-          Det regnade, vi gick in. => Det regnade, så vi gick in. || Det regnade. Vi gick in. || Det regnade, därför gick vi in.
+          Det regnade, vi gick in. => Det regnade, så vi gick in. || Det regnade. Vi gick in. || Det regnade. Därför gick vi in.
           Förseningen berodde på grund av snön. => Förseningen berodde på snön.
           Hon klarade sig eftersom att hon var förberedd. => Hon klarade sig eftersom hon var förberedd.
         `,
@@ -820,7 +820,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           följaktligen {tillägg|motsats|tid|*följd}
           också {*tillägg|motsats|tid|följd}
           å andra sidan {tillägg|*motsats|tid|följd}
-          samtidigt {tillägg|motsats|*tid|följd}
+          sedermera {tillägg|motsats|*tid|följd}
           så {tillägg|motsats|tid|*följd}
           likaså {*tillägg|motsats|tid|följd}
           trots det {tillägg|*motsats|tid|följd}

@@ -229,7 +229,7 @@ export const GENUS_HAFTEN: HafteKalla[] = [
             const slut =
               o.kat === "djur"
                 ? ["sover nu", "heter Sigge", "bor hos oss", "är ute nu", "tittar på oss"][i % 5]
-                : ["ligger där borta", "står i hörnet", "kostade mycket", "kommer från farmor", "syns tydligt"][i % 5];
+                : ["ligger där borta", "syns tydligt", "har jag sett förut", "ser vi härifrån", "syns från vägen"][i % 5];
             return `Där är ${o.art} ${o.ord}. ${o.art === "en" ? "{*Den|Det}" : "{Den|*Det}"} ${slut}.`;
           })
           .join("\n"),

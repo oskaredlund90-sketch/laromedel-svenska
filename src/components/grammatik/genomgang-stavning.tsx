@@ -74,9 +74,9 @@ export function StavningGenomgang({ stadie }: { stadie: AgeGroup }) {
           rubriker={["Stor bokstav", "Liten bokstav"]}
           rader={[
             ["Första ordet i en mening", "Veckodagar: måndag"],
-            ["Namn på personer och djur: Lisa, Sigge", "Månader: april"],
-            ["Platser och länder: Sverige, Malmö", minst(s, "mellanstadiet") ? "Språk och folk: svenska, norrmän" : "Högtider: jul, påsk"],
-            ...(minst(s, "mellanstadiet") ? [["Gator och byggnader: Storgatan, Globen", "Högtider och helgdagar: jul, påsk, midsommarafton"]] : []),
+            ["Namn på personer, djur och lag: Lisa, Sigge, Hammarby", "Månader: april"],
+            ["Platser och länder: Sverige, Malmö", minst(s, "mellanstadiet") ? "Språk och folk: svenska, norrmän" : "Språk: svenska, engelska"],
+            ["Gator och byggnader: Storgatan, Globen", minst(s, "mellanstadiet") ? "Högtider och helgdagar: jul, påsk, midsommarafton" : "Högtider: jul, påsk"],
             ...(minst(s, "hogstadiet")
               ? [
                   ["Organisationer: Förenta nationerna, Riksdagen", "Nationaliteter och adjektiv av namn: svensk, engelsk"],

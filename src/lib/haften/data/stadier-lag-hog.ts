@@ -116,7 +116,7 @@ const berattelseRader = () =>
 const PRONOMEN_LAG: [string, string, string[], string][] = [
   ["Pelle har fått en present.", "Han", ["Hon", "Den"], "öppnar den direkt."],
   ["Lisa har ont i magen.", "Hon", ["Han", "Det"], "stannar hemma i dag."],
-  ["Vi har en katt.", "Den", ["Han", "Det"], "heter Misse."],
+  ["Vi har en katt.", "Den", ["De", "Det"], "är svart."],
   ["Vi har ett marsvin.", "Det", ["Den", "Hon"], "äter morötter."],
   ["Omar och Ali spelar fotboll.", "De", ["Han", "Den"], "vinner med 3–1."],
   ["Mormor ringde i dag.", "Hon", ["Han", "De"], "kommer på besök i morgon."],
@@ -254,7 +254,7 @@ const LANORD: [string, string][] = [
   ["frukost", "lågtyska"], ["handel", "lågtyska"], ["betala", "lågtyska"], ["fönster", "lågtyska"], ["borgmästare", "lågtyska"], ["krydda", "lågtyska"],
   ["restaurang", "franska"], ["paraply", "franska"], ["trottoar", "franska"], ["möbel", "franska"], ["byrå", "franska"], ["parfym", "franska"],
   ["balkong", "franska"], ["garage", "franska"], ["jobb", "engelska"], ["mejl", "engelska"], ["dejt", "engelska"], ["streama", "engelska"],
-  ["tejp", "engelska"], ["fotboll", "engelska"], ["skola", "latin"], ["kyrka", "grekiska"], ["biologi", "grekiska"], ["demokrati", "grekiska"],
+  ["tejp", "engelska"], ["jeans", "engelska"], ["skola", "latin"], ["kyrka", "grekiska"], ["biologi", "grekiska"], ["demokrati", "grekiska"],
   ["präst", "latin"], ["tegel", "latin"], ["sms:a", "engelska"], ["chaufför", "franska"], ["kök", "latin"],
 ];
 const SPRAK = ["lågtyska", "franska", "engelska", "latin", "grekiska"];
@@ -381,7 +381,7 @@ export const HAFTEN_LAG_HOG: HafteKalla[] = [
     regel: [
       "Först, sedan och till slut visar i vilken ordning saker händer.",
       "Skriv han, hon, den, det eller de i stället för att upprepa: Lisa har en katt. Den heter Misse.",
-      "Han = en pojke eller man. Hon = en flicka eller kvinna. Den/det = en sak eller ett djur. De = flera.",
+      "Han = en pojke eller man. Hon = en flicka eller kvinna. En katt – den (har djuret ett namn går han eller hon också bra). Ett hus – det. Vi = jag och någon mer. De = flera andra.",
     ],
     delar: [
       { rubrik: "Del A", instruktion: "Välj först, sedan eller till slut.", typ: "val", rader: rader(berattelseRader()) },
