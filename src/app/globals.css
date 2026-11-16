@@ -3,8 +3,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* Symboltypsnitten före Geists Arial-reserv, annars tar Arial (som saknas på
+     servern) pilar och rutor och de blir tomma rutor i PDF:en. */
+  --font-sans: "Geist", "Noto Sans Math", "Noto Sans Symbols 2", var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono);
+  --font-serif: "Source Serif 4", "Noto Sans Math", "Noto Sans Symbols 2", var(--font-serif-text), Georgia, serif;
 }
 
 :root {

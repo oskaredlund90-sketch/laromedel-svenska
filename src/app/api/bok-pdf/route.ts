@@ -49,6 +49,8 @@ export async function GET(req: NextRequest) {
     const sida = await webblasare.newPage();
     await sida.goto(url, { waitUntil: "networkidle0", timeout: 45_000 });
     await sida.emulateMediaType("print");
+    // Symboltypsnitten laddas först när ett tecken behöver dem – vänta in dem.
+    await sida.evaluate(() => document.fonts.ready);
     const pdf = await sida.pdf({ preferCSSPageSize: true, printBackground: true, displayHeaderFooter: false });
     return new Response(Buffer.from(pdf), {
       headers: {

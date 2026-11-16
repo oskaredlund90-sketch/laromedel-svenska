@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Math, Noto_Sans_Symbols_2, Source_Serif_4 } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/layout/theme-provider";
@@ -10,6 +10,13 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+// Reservtypsnitt för tecken som Geist saknar (→ ≠ ✓ ☐). Utan dem blir tecknen
+// rutor i PDF:er som skapas på servern, där det inte finns några systemtypsnitt.
+const symbolerMatte = Noto_Sans_Math({ variable: "--font-symboler-matte", weight: "400", subsets: ["math"], preload: false, adjustFontFallback: false });
+const symboler = Noto_Sans_Symbols_2({ variable: "--font-symboler", weight: "400", subsets: ["symbols"], preload: false, adjustFontFallback: false });
+
+const serif = Source_Serif_4({ variable: "--font-serif-text", subsets: ["latin"], style: ["normal", "italic"], preload: false });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -43,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="sv"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${symbolerMatte.variable} ${symboler.variable} ${serif.variable} h-full`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background text-foreground antialiased">
