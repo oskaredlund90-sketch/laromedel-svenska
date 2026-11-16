@@ -25,7 +25,7 @@ interface Info {
 }
 
 export const ORDKLASSER: Record<Ordklass, Info> = {
-  substantiv: { namn: "Substantiv", farg: "bla", bojlig: true, test: "Kan du sätta en eller ett framför?", exempel: "en hund, ett hus, Malmö, glädje", fran: "lagstadiet" },
+  substantiv: { namn: "Substantiv", farg: "bla", bojlig: true, test: "Kan du sätta en eller ett framför?", exempel: "en hund, ett hus, en glädje – även namn: Malmö, Lisa", fran: "lagstadiet" },
   verb: { namn: "Verb", farg: "rod", bojlig: true, test: "Kan du sätta att eller jag framför?", exempel: "springa, läser, sov, har", fran: "lagstadiet" },
   adjektiv: { namn: "Adjektiv", farg: "gron", bojlig: true, test: "Kan du jämföra: stor – större – störst?", exempel: "glad, röd, snabb, spännande", fran: "lagstadiet" },
   pronomen: { namn: "Pronomen", farg: "lila", bojlig: true, test: "Kan ordet stå i stället för ett namn eller en sak?", exempel: "jag, hon, de, min, den här", fran: "mellanstadiet" },

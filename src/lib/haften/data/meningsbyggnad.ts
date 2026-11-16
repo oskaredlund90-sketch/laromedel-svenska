@@ -85,7 +85,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Djuret har päls, fyra ben och skäller. Det är {*alltså|däremot|dessutom} en hund.
           {*Å ena sidan|Därför|Dessutom} är det dyrt, å andra sidan håller det länge.
           Hon tränade hårt. {*Till slut|Däremot|Dessutom} vann hon.
-          Vi har ingen bil. {*Istället|Dessutom|Därför} cyklar vi.
+          Vi har ingen bil. {*I stället|Dessutom|Därför} cyklar vi.
           Glass är gott. {*Dessutom|Däremot|Alltså} är det kallt och skönt på sommaren.
           Det var kallt ute. {*Trots det|Därför|Dessutom} badade vi.
           Han svarade inte. Han var {*nämligen|däremot|dessutom} sjuk.

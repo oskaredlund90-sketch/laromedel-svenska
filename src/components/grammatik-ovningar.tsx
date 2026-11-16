@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
+import { MedMarkering } from "@/components/grammatik/med-markering";
 import {
   CheckCircle,
   XCircle,
@@ -106,7 +107,7 @@ function MultipleChoiceRenderer({
         {exercise.instruction}
       </h4>
       <p className="mb-5 text-lg text-neutral-800 dark:text-neutral-200">
-        {exercise.prompt}
+        <MedMarkering text={exercise.prompt} />
       </p>
       <div className="space-y-2">
         {exercise.options.map((option, i) => {

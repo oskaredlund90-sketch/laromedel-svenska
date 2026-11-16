@@ -112,7 +112,7 @@ export function MorfemGenomgang({ stadie }: { stadie: AgeGroup }) {
             rader={[
               ["Vad gör det?", "ny form av samma ord", "nytt ord"],
               ["Byter ordklass?", "aldrig", "ofta"],
-              ["Exempel", "bil-ar, hopp-ade, stor-are", "vän-lig, fri-het, läs-are"],
+              ["Exempel", "bil-ar, hopp-ade, glad-are", "vän-lig, fri-het, läs-are"],
               ["Placering", "sist i ordet", "närmare roten"],
             ]}
           />

@@ -63,7 +63,7 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
             <ExampleCard title="Indirekt objekt – mottagaren">
               <P>Står ofta mellan predikatet och objektet. Fråga: till eller åt vem?</P>
               <Markerad delar={[["Läraren", "S"], ["gav", "P"], ["eleverna", "IO"], ["en läxa", "O"]]} />
-              <P>Vanliga verb: ge, skicka, visa, låna, berätta, önska.</P>
+              <P>Vanliga verb: ge, skicka, visa, låna ut, berätta, önska.</P>
             </ExampleCard>
             <ExampleCard title="Predikativ – beskriver subjektet">
               <P>Står efter vara, bli, heta, verka, kallas, förefalla. Predikativet är samma sak som subjektet.</P>

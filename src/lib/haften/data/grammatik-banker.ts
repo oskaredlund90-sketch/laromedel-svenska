@@ -132,7 +132,7 @@ export const HOG_MENINGAR = [
   "[S:Filmen] [P:verkade] [PV:spännande].",
   "[S:Tränaren] [P:visade] [IO:laget] [O:en ny taktik].",
   "[A:Efter matchen] [P:var] [S:spelarna] [PV:trötta].",
-  "[S:Hon] [P:lånade] [IO:sin bror] [O:tusen kronor].",
+  "[S:Hon] [P:gav] [IO:sin bror] [O:tusen kronor].",
   "[S:Rummet] [P:kändes] [PV:kallt] [A:på morgonen].",
   "[S:Vi] [P:önskade] [IO:henne] [O:lycka till].",
   "[S:Ordföranden] [P:heter] [PV:Sara].",

@@ -134,7 +134,7 @@ const ordklasserLagstadietMC: MultipleChoiceExercise[] = [
     topic: "ordklasser",
     ageGroup: "lagstadiet",
     instruction: "Vilken ordklass tillhör det markerade ordet?",
-    prompt: "Den *stora* hunden skallde.",
+    prompt: "Den *stora* hunden skällde.",
     options: ["Substantiv", "Verb", "Adjektiv"],
     correct: 2,
     explanation:
@@ -304,7 +304,7 @@ const ordklasserMellanstadietMC: MultipleChoiceExercise[] = [
     topic: "ordklasser",
     ageGroup: "mellanstadiet",
     instruction: "Vilken ordklass tillhör det markerade ordet?",
-    prompt: "Pojken sprang *längre* an sin bror.",
+    prompt: "Pojken sprang *längre* än sin bror.",
     options: ["Adjektiv", "Adverb", "Verb", "Pronomen"],
     correct: 1,
     explanation:
@@ -506,14 +506,14 @@ const ordklasserHogstadietCat: CategorizationExercise[] = [
     topic: "ordklasser",
     ageGroup: "hogstadiet",
     instruction: "Sortera orden i rätt ordklass.",
-    items: ["fort", "hon", "vacker", "mot", "att", "bredvid"],
+    items: ["fort", "hon", "vacker", "mot", "och", "bredvid"],
     categories: ["Adverb", "Pronomen", "Adjektiv", "Preposition", "Konjunktion"],
     correctMapping: {
       fort: "Adverb",
       hon: "Pronomen",
       vacker: "Adjektiv",
       mot: "Preposition",
-      att: "Konjunktion",
+      och: "Konjunktion",
       bredvid: "Preposition",
     },
   },
@@ -835,12 +835,12 @@ const meningsbyggnadHogstadietSA: SentenceAnalysisExercise[] = [
       { text: "Läraren", role: "Subjekt" },
       { text: "gav", role: "Predikat" },
       { text: "eleverna", role: "Indirekt objekt" },
-      { text: "en uppgift", role: "Direkt objekt" },
+      { text: "en uppgift", role: "Objekt" },
     ],
     roleOptions: [
       "Subjekt",
       "Predikat",
-      "Direkt objekt",
+      "Objekt",
       "Indirekt objekt",
       "Adverbial",
     ],
@@ -958,10 +958,10 @@ const meningsbyggnadGymnasietSA: SentenceAnalysisExercise[] = [
     ageGroup: "gymnasiet",
     relatedTextSlug: "ai-i-utbildningen",
     instruction: "Analysera satsdelarna i denna mening.",
-    sentence: "Resultatet av undersökningen ansags vara oväntat positivt av forskarlaget.",
+    sentence: "Resultatet av undersökningen ansågs vara oväntat positivt av forskarlaget.",
     parts: [
       { text: "Resultatet av undersökningen", role: "Subjekt" },
-      { text: "ansags vara", role: "Predikat" },
+      { text: "ansågs vara", role: "Predikat" },
       { text: "oväntat positivt", role: "Predikativ" },
       { text: "av forskarlaget", role: "Agentadverbial" },
     ],
@@ -980,12 +980,12 @@ const meningsbyggnadGymnasietSA: SentenceAnalysisExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "gymnasiet",
     instruction: "Analysera satsdelarna i denna mening.",
-    sentence: "Den beryktade författaren tilldelades Nobelpriset i litteratur är 1909.",
+    sentence: "Den berömda författaren tilldelades Nobelpriset i litteratur år 1909.",
     parts: [
-      { text: "Den beryktade författaren", role: "Subjekt" },
+      { text: "Den berömda författaren", role: "Subjekt" },
       { text: "tilldelades", role: "Predikat" },
       { text: "Nobelpriset i litteratur", role: "Objekt" },
-      { text: "ar 1909", role: "Adverbial" },
+      { text: "år 1909", role: "Adverbial" },
     ],
     roleOptions: [
       "Subjekt",
@@ -1062,7 +1062,7 @@ const meningsbyggnadGymnasietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "meningsbyggnad",
     ageGroup: "gymnasiet",
-    instruction: "Vilken mening innehaller en inskjuten bisats?",
+    instruction: "Vilken mening innehåller en inskjuten bisats?",
     prompt: "Välj den mening som har en inskjuten bisats.",
     options: [
       "Boken, som jag lånade, var spännande.",
@@ -1079,7 +1079,7 @@ const meningsbyggnadGymnasietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "meningsbyggnad",
     ageGroup: "gymnasiet",
-    instruction: "Vilken mening innehaller en satsförkortning?",
+    instruction: "Vilken mening innehåller en satsförkortning?",
     prompt: "Välj den mening som har en satsförkortning.",
     options: [
       "Han gick ut för att handla.",
@@ -1209,7 +1209,7 @@ const skiljeteckenMellanstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "mellanstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Vi köpte applen____ bananer och mjolk.",
+    sentence: "Vi köpte applen____ bananer och mjölk.",
     options: [".", ",", "!", "?"],
     correct: ",",
     explanation:
@@ -1246,8 +1246,8 @@ const skiljeteckenMellanstadietFIB: FillInBlankExercise[] = [
     ageGroup: "mellanstadiet",
     instruction: "Vilket skiljetecken saknas?",
     sentence: "Min bror____ som är tio ar____ går i fyran.",
-    options: ["komma (,) på bada ställena", "punkt (.) på bada ställena", "frågetecken (?) på bada ställena", "inget tecken alls"],
-    correct: "komma (,) på bada ställena",
+    options: ["komma (,) på båda ställena", "punkt (.) på båda ställena", "frågetecken (?) på båda ställena", "inget tecken alls"],
+    correct: "komma (,) på båda ställena",
     explanation:
       "Inskjutna bisatser (relativsatser) omges av kommatecken.",
   },
@@ -1333,8 +1333,8 @@ const skiljeteckenHogstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "hogstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Solen sken____ ändå kandes det kallt.",
-    options: [",", ":", ";", "."],
+    sentence: "Solen sken____ ändå kändes det kallt.",
+    options: [":", ";", "!", "?"],
     correct: ";",
     explanation:
       "Semikolon används mellan två självständiga satser som hänger ihop men inte binds av en konjunktion.",
@@ -1369,8 +1369,8 @@ const skiljeteckenHogstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "hogstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Taget var forsenat____ vi tog bussen istället.",
-    options: [",", ";", ":", "!"],
+    sentence: "Vissa ville åka till Rom____ andra ville stanna hemma.",
+    options: [":", ";", "!", "?"],
     correct: ";",
     explanation:
       "Semikolon binder samman två nära relaterade huvudsatser utan konjunktion.",
@@ -1381,10 +1381,10 @@ const skiljeteckenHogstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "hogstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Klockan var 08____ 30 när vi anlande.",
-    options: [".", ",", ":", ";"],
+    sentence: "Skriv följande överst på sidan____ namn, datum och klass.",
+    options: [",", ";", ":", "!"],
     correct: ":",
-    explanation: "Kolon används i klockslag, till exempel 08:30.",
+    explanation: "Kolon används före en uppräkning som inleds med ett ord som följande.",
   },
 ];
 
@@ -1414,10 +1414,10 @@ const skiljeteckenHogstadietMC: MultipleChoiceExercise[] = [
     instruction: "Vilken mening använder kolon korrekt?",
     prompt: "Välj rätt alternativ.",
     options: [
-      "Vi behöver: mjolk, brod och smor.",
-      "Vi behöver följande: mjolk, brod och smor.",
-      "Vi: behöver mjolk brod och smor.",
-      "Vi behöver mjolk: brod och smor.",
+      "Vi behöver: mjölk, bröd och smör.",
+      "Vi behöver följande: mjölk, bröd och smör.",
+      "Vi: behöver mjölk bröd och smör.",
+      "Vi behöver mjölk: bröd och smör.",
     ],
     correct: 1,
     explanation:
@@ -1435,12 +1435,12 @@ const skiljeteckenGymnasietFIB: FillInBlankExercise[] = [
     sentence:
       "Författaren menade____ enligt min tolkning____ att samhället behöver förnyelse.",
     options: [
-      "kommatecken på bada ställena",
-      "kolon på bada ställena",
-      "tankstreck på bada ställena",
-      "semikolon på bada ställena",
+      "kommatecken på båda ställena",
+      "kolon på båda ställena",
+      "tankstreck på båda ställena",
+      "semikolon på båda ställena",
     ],
-    correct: "kommatecken på bada ställena",
+    correct: "kommatecken på båda ställena",
     explanation:
       "Inskjutna fraser som 'enligt min tolkning' omges av kommatecken.",
   },
@@ -1489,7 +1489,7 @@ const skiljeteckenGymnasietFIB: FillInBlankExercise[] = [
     ageGroup: "gymnasiet",
     instruction: "Vilket skiljetecken saknas?",
     sentence:
-      "Texten innehaller flera stilfigurer____ till exempel anafor och allitteration.",
+      "Texten innehåller flera stilfigurer____ till exempel anafor och allitteration.",
     options: [",", ":", ";", "."],
     correct: ",",
     explanation:
@@ -1585,11 +1585,11 @@ const stavningMellanstadietEC: ErrorCorrectionExercise[] = [
     ageGroup: "mellanstadiet",
     instruction: "Hitta och rätta stavfelet i meningen.",
     sentence: "Vi sjöng en sång i skolan.",
-    correctedSentence: "Vi sjong en sång i skolan.",
+    correctedSentence: "Vi sjöng en sång i skolan.",
     errorWord: "sjöng",
     correctWord: "sjong",
     explanation:
-      "'Sjong' stavas utan prickar över o. Tänk på att 'sjunga' har u, inte ö.",
+      "'Sjöng' stavas utan prickar över o. Tänk på att 'sjunga' har u, inte ö.",
   },
   {
     id: "stavning-ec-mel-4",
@@ -1692,8 +1692,8 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "hogstadiet",
     instruction: "Hitta och rätta stavfelet i meningen.",
-    sentence: "Hon körde forbi sjukhuset på vägen hem.",
-    correctedSentence: "Hon körde forbi sjukhuset på vägen hem.",
+    sentence: "Hon körde förbi sjukhuset på vägen hem.",
+    correctedSentence: "Hon körde förbi sjukhuset på vägen hem.",
     errorWord: "körde",
     correctWord: "körde",
     explanation:
@@ -1710,7 +1710,7 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "diskutterade",
     correctWord: "diskuterade",
     explanation:
-      "'Diskuterade' stavas med enkelt t. Lanord följer inte alltid svenska dubbelteckningsregler.",
+      "'Diskuterade' stavas med enkelt t. Lånord följer inte alltid svenska dubbelteckningsregler.",
   },
   {
     id: "stavning-ec-hog-5",
@@ -1736,7 +1736,7 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "Chefen",
     correctWord: "Chefen",
     explanation:
-      "Här är meningen korrekt. Tje-ljudet i 'chef' stavas med ch. Observera att detta sje-ljud kan stavas på många satt.",
+      "Här är meningen korrekt. Tje-ljudet i 'chef' stavas med ch. Observera att detta sje-ljud kan stavas på många sätt.",
   },
 ];
 
@@ -1746,12 +1746,12 @@ const stavningHogstadietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "stavning",
     ageGroup: "hogstadiet",
-    instruction: "Vilket ord innehaller ett sje-ljud?",
+    instruction: "Vilket ord innehåller ett sje-ljud?",
     prompt: "Välj det ord som har sje-ljud.",
     options: ["kjol", "kind", "kaffe", "kall"],
     correct: 0,
     explanation:
-      "'Kjol' innehaller ett sje-ljud som stavas kj. Sje-ljudet kan stavas på många satt: sj, sk, skj, stj, sch, ch, sh, ge, gi, j.",
+      "'Kjol' innehåller ett sje-ljud som stavas kj. Sje-ljudet kan stavas på många sätt: sj, sk, skj, stj, sch, ch, sh, ge, gi, j.",
   },
   {
     id: "stavning-mc-hog-2",
@@ -1763,7 +1763,7 @@ const stavningHogstadietMC: MultipleChoiceExercise[] = [
     options: ["stjärna", "sjarna", "skjarna", "shjarna"],
     correct: 0,
     explanation:
-      "'Stjarna' är korrekt. Sje-ljudet stavas stj i detta ord.",
+      "'Stjärna' är korrekt. Sje-ljudet stavas stj i detta ord.",
   },
 ];
 
@@ -1792,7 +1792,7 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "dem",
     correctWord: "dem",
     explanation:
-      "Här är 'dem' korrekt använt eftersom det står i objektsform. Testa: kan du byta ut mot 'oss'? Da är 'dem' rätt.",
+      "Här är 'dem' korrekt använt eftersom det står i objektsform. Testa: kan du byta ut mot 'oss'? Då är 'dem' rätt.",
   },
   {
     id: "stavning-ec-gym-3",
@@ -1805,7 +1805,7 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "notvandigt",
     correctWord: "nödvändigt",
     explanation:
-      "'Nodvandigt' stavas med d, inte t. Den stumma bokstaven d hörs inte i uttalet.",
+      "'Nödvändigt' stavas med d, inte t. Den stumma bokstaven d hörs inte i uttalet.",
   },
   {
     id: "stavning-ec-gym-4",
@@ -1871,7 +1871,7 @@ const stavningGymnasietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "stavning",
     ageGroup: "gymnasiet",
-    instruction: "Vilket ord innehaller en stum bokstav?",
+    instruction: "Vilket ord innehåller en stum bokstav?",
     prompt: "I vilket ord hörs inte alla bokstäver när man uttalar det?",
     options: ["djur", "dator", "dans", "doft"],
     correct: 0,
@@ -2007,11 +2007,11 @@ const ordbildningHogstadietMC: MultipleChoiceExercise[] = [
     topic: "ordbildning",
     ageGroup: "hogstadiet",
     instruction: "Vilken ordklass får ordet när suffixet läggs till?",
-    prompt: "Om vi lägger till '-het' på adjektivet 'vacker', vilken ordklass får vi?",
+    prompt: "Om vi lägger till '-het' på adjektivet 'tydlig', vilken ordklass får vi?",
     options: ["Verb", "Adverb", "Substantiv", "Adjektiv"],
     correct: 2,
     explanation:
-      "Suffixet '-het' bildar substantiv av adjektiv. 'Vacker' + '-het' = 'vackerhet' (substantiv).",
+      "Suffixet '-het' bildar substantiv av adjektiv. 'Tydlig' + '-het' = 'tydlighet' (substantiv).",
   },
 ];
 
@@ -2076,11 +2076,11 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     topic: "ordbildning",
     ageGroup: "gymnasiet",
     instruction: "Analysera ordets morfologiska struktur.",
-    prompt: "Hur många morfem innehaller ordet 'otacksamhet'?",
+    prompt: "Hur många morfem innehåller ordet 'otacksamhet'?",
     options: ["2", "3", "4", "5"],
     correct: 2,
     explanation:
-      "'Otacksamhet' bestar av fyra morfem: o- (prefix) + tack (rot) + -sam (suffix) + -het (suffix).",
+      "'Otacksamhet' består av fyra morfem: o- (prefix) + tack (rot) + -sam (suffix) + -het (suffix).",
   },
   {
     id: "ordbildning-mc-gym-2",
@@ -2104,7 +2104,7 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     options: ["stuga", "garage", "vatten", "skog"],
     correct: 1,
     explanation:
-      "'Garage' är ett lånord från franska. De ovriga är svenska arvord.",
+      "'Garage' är ett lånord från franska. De övriga är svenska arvord.",
   },
   {
     id: "ordbildning-mc-gym-4",
@@ -2133,7 +2133,7 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     ],
     correct: 3,
     explanation:
-      "'Glad -> glädje' är avledning eftersom ordklassen ändras (adjektiv -> substantiv). De ovriga är böjningar inom samma ordklass.",
+      "'Glad -> glädje' är avledning eftersom ordklassen ändras (adjektiv -> substantiv). De övriga är böjningar inom samma ordklass.",
   },
   {
     id: "ordbildning-mc-gym-6",
@@ -2150,7 +2150,7 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     ],
     correct: 2,
     explanation:
-      "'Bio' är en förkortning av 'biograf'. Förkortning innebar att ett ord förkortas, ofta till första stavelsen.",
+      "'Bio' är en förkortning av 'biograf'. Förkortning innebär att ett ord förkortas, ofta till första stavelsen.",
   },
 ];
 
@@ -2166,7 +2166,7 @@ const textbindningHogstadietFIB: FillInBlankExercise[] = [
     ageGroup: "hogstadiet",
     relatedTextSlug: "klimatet-ar-vart-ansvar",
     instruction: "Välj rätt sambandsord för att binda ihop meningarna.",
-    sentence: "Hon pluggade hårt ____ provet. ____ fick hon ett bra resultat.",
+    sentence: "Hon pluggade hårt inför provet. ____ fick hon ett bra resultat.",
     options: ["Därför", "Dessutom", "Dock", "Trots det"],
     correct: "Därför",
     explanation:
@@ -2217,7 +2217,7 @@ const textbindningHogstadietFIB: FillInBlankExercise[] = [
     instruction: "Välj rätt sambandsord.",
     sentence:
       "Skolan erbjuder många sportaktiviteter. ____ finns det en stor musikavdelning.",
-    options: ["Dock", "Därför", "Dessutom", "Istället"],
+    options: ["Dock", "Därför", "Dessutom", "I stället"],
     correct: "Dessutom",
     explanation:
       "'Dessutom' är ett additivt sambandsord som lägger till information.",
@@ -2551,13 +2551,13 @@ const ordklasserHogstadietEC: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "ordklasser",
     ageGroup: "hogstadiet",
-    instruction: "Rätta felaktigt använd ordklass i meningen.",
-    sentence: "Hon sprang snabbare an jag.",
-    correctedSentence: "Hon sprang snabbare an jag.",
-    errorWord: "jag",
-    correctWord: "jag",
+    instruction: "Rätta pronomenfelet i meningen.",
+    sentence: "Vi träffade han på bussen i morse.",
+    correctedSentence: "Vi träffade honom på bussen i morse.",
+    errorWord: "han",
+    correctWord: "honom",
     explanation:
-      "Här är meningen korrekt med 'jag' (subjektsform). Vanligt fel är att skriva 'mig' efter 'an', men efter 'an' i jämförelser ska subjektsform användas.",
+      "Han är objekt i meningen (vem träffade vi?). Då används objektsformen 'honom', inte subjektsformen 'han'.",
   },
   {
     id: "ordklasser-ec-hog-2",
@@ -2604,8 +2604,8 @@ const ordklasserHogstadietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "hogstadiet",
     instruction: "Rätta pronomenfelet i meningen.",
-    sentence: "Mellan du och jag sagt är det har en hemlighet.",
-    correctedSentence: "Mellan dig och mig sagt är det har en hemlighet.",
+    sentence: "Mellan du och jag sagt är det här en hemlighet.",
+    correctedSentence: "Mellan dig och mig sagt är det här en hemlighet.",
     errorWord: "du och jag",
     correctWord: "dig och mig",
     explanation:
@@ -2620,12 +2620,12 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Rätta det grammatiska felet i meningen.",
-    sentence: "Författaren vars bok blivit prisbelont tackade publiken.",
-    correctedSentence: "Författaren vars bok blivit prisbelont tackade publiken.",
+    sentence: "Författaren vars bok blivit prisbelönt tackade publiken.",
+    correctedSentence: "Författaren vars bok blivit prisbelönt tackade publiken.",
     errorWord: "prisbelont",
     correctWord: "prisbelont",
     explanation:
-      "Meningen är korrekt. 'Vars' är genitiv av relativpronomenet 'som/vilken'. Notera att 'prisbelont' böjs i neutrum för att kongruera med 'bok' (ett-ord).",
+      "Meningen är korrekt. 'Vars' är genitiv av relativpronomenet 'som/vilken'. Notera att 'prisbelönt' böjs i neutrum för att kongruera med 'bok' (ett-ord).",
   },
   {
     id: "ordklasser-ec-gym-2",
@@ -2772,7 +2772,7 @@ const ordklasserGymnasietSA: SentenceAnalysisExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Bestäm ordklassen för varje ord i meningen.",
-    sentence: "Den mest framgångsrika författaren hade dessutom skrivit två essaer.",
+    sentence: "Den mest framgångsrika författaren hade dessutom skrivit två essäer.",
     parts: [
       { text: "Den", role: "Pronomen" },
       { text: "mest", role: "Adverb" },
@@ -2845,7 +2845,7 @@ const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "jag gick",
     correctWord: "gick jag",
     explanation:
-      "I svenska har vi omvänd ordföljd (inversion) när meningen börjar med något annat an subjektet. Verbet ska komma på andra plats: 'Igår gick jag...'.",
+      "I svenska har vi omvänd ordföljd (inversion) när meningen börjar med något annat än subjektet. Verbet ska komma på andra plats: 'Igår gick jag...'.",
   },
   {
     id: "meningsbyggnad-ec-hog-2",
@@ -2867,11 +2867,11 @@ const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
     ageGroup: "hogstadiet",
     instruction: "Rätta ordföljdsfelet.",
     sentence: "På sommaren vi brukar bada i sjön.",
-    correctedSentence: "På sommaren brukar vi bada i sjön.",
+    correctedSentence: "På sommaren brukar vi båda i sjön.",
     errorWord: "vi brukar",
     correctWord: "brukar vi",
     explanation:
-      "Omvand ordföljd: när meningen inleds med ett adverbial ('Pa sommaren') måste verbet komma före subjektet.",
+      "Omvänd ordföljd: när meningen inleds med ett adverbial ('På sommaren') måste verbet komma före subjektet.",
   },
   {
     id: "meningsbyggnad-ec-hog-4",
@@ -2939,7 +2939,7 @@ const meningsbyggnadGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "trött hon",
     correctWord: "trött, sa hon",
     explanation:
-      "Två huvudsatser kan inte bara staplas utan bindeord. Anvand konjunktion ('sa', 'och', 'därför'), semikolon eller punkt.",
+      "Två huvudsatser kan inte bara staplas utan bindeord. Använd konjunktion ('sa', 'och', 'därför'), semikolon eller punkt.",
   },
   {
     id: "meningsbyggnad-ec-gym-4",
@@ -2947,8 +2947,8 @@ const meningsbyggnadGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "gymnasiet",
     instruction: "Rätta felet med particip.",
-    sentence: "Sittandes på banken betraktade han solnedgången.",
-    correctedSentence: "Sittande på banken betraktade han solnedgången.",
+    sentence: "Sittandes på bänken betraktade han solnedgången.",
+    correctedSentence: "Sittande på bänken betraktade han solnedgången.",
     errorWord: "Sittandes",
     correctWord: "Sittande",
     explanation:
@@ -2978,18 +2978,18 @@ const meningsbyggnadHogstadietSAExtra: SentenceAnalysisExercise[] = [
     type: "sentence-analysis",
     topic: "meningsbyggnad",
     ageGroup: "hogstadiet",
-    instruction: "Markera satsdelarna i meningen med direkt och indirekt objekt.",
+    instruction: "Markera satsdelarna i meningen med objekt och indirekt objekt.",
     sentence: "Coachen visade laget den nya strategin.",
     parts: [
       { text: "Coachen", role: "Subjekt" },
       { text: "visade", role: "Predikat" },
       { text: "laget", role: "Indirekt objekt" },
-      { text: "den nya strategin", role: "Direkt objekt" },
+      { text: "den nya strategin", role: "Objekt" },
     ],
     roleOptions: [
       "Subjekt",
       "Predikat",
-      "Direkt objekt",
+      "Objekt",
       "Indirekt objekt",
       "Adverbial",
     ],
@@ -3115,7 +3115,7 @@ const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "skiljetecken",
     ageGroup: "hogstadiet",
-    instruction: "Lagg till saknat skiljetecken.",
+    instruction: "Lägg till saknat skiljetecken.",
     sentence: "Jag tycker om att läsa böcker tidningar och serier.",
     correctedSentence: "Jag tycker om att läsa böcker, tidningar och serier.",
     errorWord: "böcker tidningar",
@@ -3129,8 +3129,8 @@ const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
     topic: "skiljetecken",
     ageGroup: "hogstadiet",
     instruction: "Rätta felet med kolon.",
-    sentence: "Vi behövde kopa: mjolk, brod och smor.",
-    correctedSentence: "Vi behövde kopa mjolk, brod och smor.",
+    sentence: "Vi behövde köpa: mjölk, bröd och smör.",
+    correctedSentence: "Vi behövde köpa mjölk, bröd och smör.",
     errorWord: "kopa:",
     correctWord: "kopa",
     explanation:
@@ -3184,12 +3184,12 @@ const skiljeteckenGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "skiljetecken",
     ageGroup: "gymnasiet",
     instruction: "Rätta felet med anföring.",
-    sentence: "\"Jag kommer snart\" sa hon \"vanta på mig\".",
-    correctedSentence: "\"Jag kommer snart\", sa hon, \"vanta på mig\".",
-    errorWord: "snart\" sa hon \"vanta",
-    correctWord: "snart\", sa hon, \"vanta",
+    sentence: "\"Jag kommer snart\" sa hon \"vänta på mig\".",
+    correctedSentence: "\"Jag kommer snart\", sa hon, \"vänta på mig\".",
+    errorWord: "snart\" sa hon \"vänta",
+    correctWord: "snart\", sa hon, \"vänta",
     explanation:
-      "Vid delad anföring ska komma sättas efter den första anföringen och före den andra: '...snart\", sa hon, \"vanta...'.",
+      "Vid delad anföring ska komma sättas efter den första anföringen och före den andra: '...snart\", sa hon, \"vänta...'.",
   },
   {
     id: "skiljetecken-ec-gym-4",
@@ -3301,7 +3301,7 @@ const stavningHogstadietECExtra: ErrorCorrectionExercise[] = [
     errorWord: "injengör",
     correctWord: "ingenjör",
     explanation:
-      "'Ingenjor' stavas med ng före e och j före o. Det är ett vanligt förväxlingsord.",
+      "'Ingenjör' stavas med ng före e och j före o. Det är ett vanligt förväxlingsord.",
   },
 ];
 
@@ -3407,7 +3407,7 @@ const stavningGymnasietCat: CategorizationExercise[] = [
     type: "categorization",
     topic: "stavning",
     ageGroup: "gymnasiet",
-    instruction: "Sortera orden: skrivs de ihop eller sar?",
+    instruction: "Sortera orden: skrivs de ihop eller isär?",
     items: ["idag", "i dag", "med mera", "medmera", "till exempel", "tillexempel", "i stället", "istället"],
     categories: ["Ihopskrivet (korrekt)", "Särskrivet (korrekt)"],
     correctMapping: {
@@ -3439,7 +3439,7 @@ const ordbildningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "matvarubutik affären",
     correctWord: "matvarubutiksaffaren",
     explanation:
-      "På svenska skrivs sammansatta ord ihop. 'Matvarubutiksaffaren' är ett sammansatt ord och ska inte särskrivas.",
+      "På svenska skrivs sammansatta ord ihop. 'Matvarubutiksaffären' är ett sammansatt ord och ska inte särskrivas.",
   },
   {
     id: "ordbildning-ec-hog-2",
@@ -3452,7 +3452,7 @@ const ordbildningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "träning pass",
     correctWord: "träningspass",
     explanation:
-      "'Traningspass' är ett sammansatt ord med foge-s: träning + s + pass. Sammansatta ord skrivs ihop på svenska.",
+      "'Träningspass' är ett sammansatt ord med foge-s: träning + s + pass. Sammansatta ord skrivs ihop på svenska.",
   },
   {
     id: "ordbildning-ec-hog-3",
@@ -3507,7 +3507,7 @@ const ordbildningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "otillfredstallande",
     correctWord: "otillfredsställande",
     explanation:
-      "'Otillfredsstallande' stavas med dubbelt s: o + till + freds + ställande. Det är sammansatt av 'till freds' + 'ställande' med prefixet 'o-'.",
+      "'Otillfredsställande' stavas med dubbelt s: o + till + freds + ställande. Det är sammansatt av 'till freds' + 'ställande' med prefixet 'o-'.",
   },
   {
     id: "ordbildning-ec-gym-3",
@@ -3520,7 +3520,7 @@ const ordbildningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "risk-",
     correctWord: "risk-",
     explanation:
-      "Meningen är korrekt! Vid samordning med bindestreck behaller första ledet sitt streck: 'risk- och konsekvensanalys' (dvs. riskanalys och konsekvensanalys).",
+      "Meningen är korrekt! Vid samordning med bindestreck behåller första ledet sitt streck: 'risk- och konsekvensanalys' (dvs. riskanalys och konsekvensanalys).",
   },
 ];
 
@@ -3533,15 +3533,15 @@ const ordbildningHogstadietSA: SentenceAnalysisExercise[] = [
     instruction: "Dela upp de sammansatta orden i sina delar.",
     sentence: "fotbollsplan, skolbyggnad, bokhandel",
     parts: [
-      { text: "fotbollsplan", role: "fot + bolls + plan" },
+      { text: "fotbollsplan", role: "fotboll + s + plan" },
       { text: "skolbyggnad", role: "skol + byggnad" },
       { text: "bokhandel", role: "bok + handel" },
     ],
     roleOptions: [
-      "fot + bolls + plan",
+      "fotboll + s + plan",
       "skol + byggnad",
       "bok + handel",
-      "fot + boll + plan",
+      "fot + bolls + plan",
       "bok + hand + el",
     ],
   },
@@ -3551,18 +3551,18 @@ const ordbildningHogstadietSA: SentenceAnalysisExercise[] = [
     topic: "ordbildning",
     ageGroup: "hogstadiet",
     instruction: "Identifiera prefix och suffix i orden.",
-    sentence: "olycklig, förväning, barndom",
+    sentence: "olycklig, förvåning, barndom",
     parts: [
       { text: "olycklig", role: "prefix: o- + lyck + suffix: -lig" },
-      { text: "förväning", role: "prefix: for- + van + suffix: -ing" },
+      { text: "förvåning", role: "prefix: för- + vån + suffix: -ing" },
       { text: "barndom", role: "barn + suffix: -dom" },
     ],
     roleOptions: [
       "prefix: o- + lyck + suffix: -lig",
-      "prefix: for- + van + suffix: -ing",
+      "prefix: för- + vån + suffix: -ing",
       "barn + suffix: -dom",
-      "prefix: o- + lycklig",
-      "forvan + suffix: -ing",
+      "o + lyckl + ig",
+      "förv + åning",
     ],
   },
 ];
@@ -3583,7 +3583,7 @@ const textbindningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "men",
     correctWord: "eftersom",
     explanation:
-      "'Men' uttrycker en kontrast, men har är sambandet orsak-verkan: han är trött EFTERSOM han vaknade tidigt.",
+      "'Men' uttrycker en kontrast, men här är sambandet orsak-verkan: han är trött EFTERSOM han vaknade tidigt.",
   },
   {
     id: "textbindning-ec-hog-2",
@@ -3592,11 +3592,11 @@ const textbindningHogstadietEC: ErrorCorrectionExercise[] = [
     ageGroup: "hogstadiet",
     instruction: "Rätta det felaktiga bindeordet.",
     sentence: "Vi hade planerat en utflykt. Därför regnade det hela dagen.",
-    correctedSentence: "Vi hade planerat en utflykt. Däremot regnade det hela dagen.",
+    correctedSentence: "Vi hade planerat en utflykt. Tyvärr regnade det hela dagen.",
     errorWord: "Därför",
-    correctWord: "Däremot",
+    correctWord: "Tyvärr",
     explanation:
-      "'Därför' anger orsak-verkan, men har behövs en kontrast ('däremot' eller 'men'): utflykten var planerad, MEN det regnade.",
+      "'Därför' anger orsak-verkan, men här behövs ett ord som visar att det gick emot planen ('tyvärr' eller 'men'): utflykten var planerad, MEN det regnade.",
   },
   {
     id: "textbindning-ec-hog-3",
@@ -3731,7 +3731,7 @@ const stilistikHogstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "hogstadiet",
     relatedTextSlug: "spegelbilden",
     instruction: "Vilken stilfigur används i exemplet?",
-    prompt: "'Havet sjong för oss den kvallen.'",
+    prompt: "'Havet sjöng för oss den kvällen.'",
     options: ["Liknelse", "Metafor", "Besjälning", "Anafor"],
     correct: 2,
     explanation:
@@ -3747,7 +3747,7 @@ const stilistikHogstadietMC: MultipleChoiceExercise[] = [
     options: ["Liknelse", "Besjälning", "Anafor", "Hyperbol"],
     correct: 3,
     explanation:
-      "Det är en hyperbol — en medveten överdrift. Man dor förstås inte bokstavligt av skratt.",
+      "Det är en hyperbol — en medveten överdrift. Man dör förstås inte bokstavligt av skratt.",
   },
   {
     id: "stilistik-mc-hog-4",
@@ -3773,7 +3773,7 @@ const stilistikHogstadietMC: MultipleChoiceExercise[] = [
     options: ["Formellt språk", "Slang/ungdomssprak", "Akademiskt språk", "Nyhetsspråk"],
     correct: 1,
     explanation:
-      "Texten innehaller slang och ungdomssprak: 'asså bror', 'fett ball'. Det är en mycket informell språknivå.",
+      "Texten innehåller slang och ungdomsspråk: 'asså bror', 'fett ball'. Det är en mycket informell språknivå.",
   },
 ];
 
@@ -3817,7 +3817,7 @@ const stilistikGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "typ jätteviktigt",
     correctWord: "ytterst viktigt",
     explanation:
-      "I vetenskapligt/formellt språk passar inte vardagliga uttryck som 'typ jätteviktigt'. Anvand formella synonymer: 'ytterst viktigt', 'av stor betydelse'.",
+      "I vetenskapligt/formellt språk passar inte vardagliga uttryck som 'typ jätteviktigt'. Använd formella synonymer: 'ytterst viktigt', 'av stor betydelse'.",
   },
   {
     id: "stilistik-ec-gym-2",
@@ -3830,7 +3830,7 @@ const stilistikGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "fixade en bra",
     correctWord: "formulerade en övertygande",
     explanation:
-      "'Fixade' och 'bra' är vardagliga ord som inte passar i en formell analys. Anvand mer precisa och formella uttryck.",
+      "'Fixade' och 'bra' är vardagliga ord som inte passar i en formell analys. Använd mer precisa och formella uttryck.",
   },
   {
     id: "stilistik-ec-gym-3",
@@ -3950,7 +3950,7 @@ const meningsbyggnadLagstadietMC: MultipleChoiceExercise[] = [
     ],
     correct: 1,
     explanation:
-      "'Lek försiktigt!' är en uppmaning — den talar om för någon vad de ska gora och slutar med utropstecken.",
+      "'Lek försiktigt!' är en uppmaning — den talar om för någon vad de ska göra och slutar med utropstecken.",
   },
   {
     id: "meningsbyggnad-mc-lag-4",
@@ -4064,7 +4064,7 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     type: "sentence-analysis",
     topic: "meningsbyggnad",
     ageGroup: "lagstadiet",
-    instruction: "Hitta subjektet (den som gör något) och predikatet (det som gors).",
+    instruction: "Hitta subjektet (den som gör något) och predikatet (det som görs).",
     sentence: "Katten jagar musen.",
     parts: [
       { text: "Katten", role: "Subjekt" },
@@ -4320,7 +4320,7 @@ const skiljeteckenLagstadietEC: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "skiljetecken",
     ageGroup: "lagstadiet",
-    instruction: "Lagg till rätt skiljetecken i slutet av meningen.",
+    instruction: "Lägg till rätt skiljetecken i slutet av meningen.",
     sentence: "Vad heter du",
     correctedSentence: "Vad heter du?",
     errorWord: "du",
@@ -4333,7 +4333,7 @@ const skiljeteckenLagstadietEC: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "skiljetecken",
     ageGroup: "lagstadiet",
-    instruction: "Lagg till rätt skiljetecken.",
+    instruction: "Lägg till rätt skiljetecken.",
     sentence: "Akta dig",
     correctedSentence: "Akta dig!",
     errorWord: "dig",
@@ -4405,11 +4405,11 @@ const ordbildningMellanstadietMC: MultipleChoiceExercise[] = [
     topic: "ordbildning",
     ageGroup: "mellanstadiet",
     instruction: "Vilka två ord bildar det sammansatta ordet?",
-    prompt: "Vad bestar 'solros' av?",
+    prompt: "Vad består 'solros' av?",
     options: ["sol + ros", "so + ros", "sol + ors", "solr + os"],
     correct: 0,
     explanation:
-      "'Solros' är sammansatt av 'sol' och 'ros' — en ros som vandar sig mot solen.",
+      "'Solros' är sammansatt av 'sol' och 'ros' — en ros som vänder sig mot solen.",
   },
   {
     id: "ordbildning-mc-mel-2",
@@ -4421,7 +4421,7 @@ const ordbildningMellanstadietMC: MultipleChoiceExercise[] = [
     options: ["tankare", "tanke", "tankning", "Alla är korrekta"],
     correct: 3,
     explanation:
-      "Alla är korrekta! '-are' (en tankare), '-e' (en tanke), '-ning' (en tankning) är alla andelser som bildar substantiv av verb.",
+      "Alla är korrekta! '-are' (en tänkare), '-e' (en tanke), '-ning' (en tankning) är alla ändelser som bildar substantiv av verb.",
   },
 ];
 
@@ -4475,7 +4475,7 @@ const textbindningMellanstadietMC: MultipleChoiceExercise[] = [
     type: "multiple-choice",
     topic: "textbindning",
     ageGroup: "mellanstadiet",
-    instruction: "Vilket bindeord passar bast?",
+    instruction: "Vilket bindeord passar bäst?",
     prompt: "Jag tycker om glass ___ jag tycker även om choklad.",
     options: ["men", "och", "därför"],
     correct: 1,
@@ -4508,12 +4508,12 @@ const stavningLagstadietEC: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "lagstadiet",
     instruction: "Hitta och rätta stavfelet.",
-    sentence: "Vi sjonk en sång på lektionen.",
-    correctedSentence: "Vi sjong en sång på lektionen.",
+    sentence: "Vi sjönk en sång på lektionen.",
+    correctedSentence: "Vi sjöng en sång på lektionen.",
     errorWord: "sjonk",
     correctWord: "sjong",
     explanation:
-      "'Sjong' (av sjunga) stavas med g. 'Sjonk' (av sjunka) är ett annat ord.",
+      "'Sjöng' (av sjunga) stavas med g. 'Sjönk' (av sjunka) är ett annat ord.",
   },
   {
     id: "stavning-ec-lag-3",
@@ -4526,7 +4526,7 @@ const stavningLagstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "jetstark",
     correctWord: "jättestark",
     explanation:
-      "'Jattestark' stavas med atte. 'Jatte-' är ett prefix som betyder 'mycket'.",
+      "'Jättestark' stavas med ä. 'Jätte-' är ett prefix som betyder 'mycket'.",
   },
 ];
 

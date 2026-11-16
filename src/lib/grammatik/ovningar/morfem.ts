@@ -82,7 +82,7 @@ hog.v("Vilket ord är bildat med ett prefix som betyder ”fel”?", ["*missför
 hog.v("Vad betyder prefixet ”åter-” i ”återvinna”?", ["mot", "*igen, tillbaka", "inte"], "Återvinna = vinna tillbaka. Återuppta, återfå, återkomma.");
 hog.v("Vilket ord innehåller ett bundet morfem – en del som inte kan stå ensam?", ["bok", "*olycklig", "hus"], "O- och -lig kan inte stå ensamma. De är bundna morfem.");
 hog.v("Ett okänt ord: ”oförutsägbar”. Vad betyder det, om du delar upp det?", ["*som inte går att säga i förväg", "som säger något dåligt", "som har sagt fel"], "o (inte) + för (före) + ut + säg (säga) + bar (går att).");
-hog.k("Är ändelsen ett böjningsmorfem eller ett avledningsmorfem?", { Böjning: ["bil-ar", "hopp-ade", "stor-are", "katt-en"], Avledning: ["vän-lig", "fri-het", "läs-are", "drick-bar"] });
+hog.k("Är ändelsen ett böjningsmorfem eller ett avledningsmorfem?", { Böjning: ["bil-ar", "hopp-ade", "glad-are", "katt-en"], Avledning: ["vän-lig", "fri-het", "läs-are", "drick-bar"] });
 hog.k("Vad betyder prefixet?", { "inte/motsats": ["olaglig", "oärlig", "omöjlig"], "fel": ["missförstå", "misslyckas", "missbruk"], "igen/tillbaka": ["återvinna", "återfå", "återkomma"] });
 hog.l("Hon vann loppet med ____ lätthet.", ["*förvånansvärd", "förvånar", "förvåna"], "Förvåna + -ans + -värd: som är värd att förvånas över.");
 hog.l("Diskussionen var lång och ____.", ["*givande", "giva", "givare"], "Ge/giva + -ande: något som ger mycket.");

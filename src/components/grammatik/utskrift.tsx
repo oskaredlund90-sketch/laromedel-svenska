@@ -5,6 +5,7 @@ import { Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { GrammarExercise } from "@/lib/data/grammatik-ovningar";
 import { blandaFast, delaMarkera, delningar } from "@/lib/grammatik/ovningar/bygg";
+import { MedMarkering } from "@/components/grammatik/med-markering";
 
 const RUBRIK: Record<GrammarExercise["type"], string> = {
   "multiple-choice": "Välj rätt svar",
@@ -40,8 +41,10 @@ function Uppgift({ e }: { e: GrammarExercise }) {
     case "multiple-choice":
       return (
         <>
-          <p>{e.prompt}</p>
-          <ul className="mt-1 space-y-0.5 pl-1">
+          <p>
+            <MedMarkering text={e.prompt} />
+          </p>
+          <ul className={e.options.every((o) => o.length <= 26) ? "mt-0.5 flex flex-wrap gap-x-6 pl-1" : "mt-0.5 space-y-0.5 pl-1"}>
             {e.options.map((o, i) => (
               <li key={i}>
                 ☐ {bokstav(i)}. {o}
@@ -75,7 +78,7 @@ function Uppgift({ e }: { e: GrammarExercise }) {
       return (
         <>
           <p className="mb-1">{blandaFast(e.items, e.id).join(" · ")}</p>
-          <table className="w-full border-collapse text-[10pt]">
+          <table className="w-full table-fixed border-collapse text-[10pt]">
             <thead>
               <tr>
                 {e.categories.map((k) => (
@@ -120,7 +123,7 @@ function Uppgift({ e }: { e: GrammarExercise }) {
         </p>
       );
     case "dela":
-      return <p className="font-mono text-[15pt] tracking-[0.35em]">{delningar(e.word).ord}</p>;
+      return <p className="font-mono text-[14pt] tracking-[0.3em]">{delningar(e.word).ord}</p>;
     case "ordna": {
       let delar = blandaFast(e.parts, e.id);
       if (delar.every((d, i) => d === e.parts[i])) delar = [...delar.slice(1), delar[0]];
@@ -175,29 +178,48 @@ function numrera(ovningar: GrammarExercise[]) {
   return typer.map((t) => ({ typ: t, lista: ovningar.filter((e) => e.type === t).map((e) => ({ e, nr: ++nr })) }));
 }
 
+/** Instruktionen som gäller alla uppgifter i en del, om de har samma. */
+function gemensamInstruktion(lista: { e: GrammarExercise }[]): string | null {
+  const ins = lista.map(({ e }) => (STANDARD.has(e.instruction) ? "" : papper(e.instruction)));
+  return ins.every((i) => i === ins[0]) && ins[0] ? ins[0] : null;
+}
+
+/** Typer med korta uppgifter som får plats i flera spalter. */
+const SPALTER: Partial<Record<GrammarExercise["type"], string>> = { dela: "grid grid-cols-3 gap-x-4 gap-y-2" };
+
 /** Övningarna som uppgifter på papper, uppdelade i delar per övningstyp. */
 export function OvningarPapper({ ovningar, rubrik = "h2" }: { ovningar: GrammarExercise[]; rubrik?: "h2" | "h3" }) {
   const R = rubrik;
   return (
     <>
-      {numrera(ovningar).map(({ typ, lista }, di) => (
-        <section key={typ} className="mb-5">
-          <R className="mb-2 text-[13pt] font-bold">
-            Del {bokstav(di)} – {RUBRIK[typ]}
-          </R>
-          <ol className="space-y-2.5">
-            {lista.map(({ e, nr }) => (
-              <li key={e.id} className="flex break-inside-avoid gap-2">
-                <span className="w-7 shrink-0 text-right font-bold">{nr}.</span>
-                <div className="min-w-0 flex-1">
-                  {!STANDARD.has(e.instruction) && <p className="text-[10pt] italic">{papper(e.instruction)}</p>}
-                  <Uppgift e={e} />
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-      ))}
+      {numrera(ovningar).map(({ typ, lista }, di) => {
+        const gemensam = gemensamInstruktion(lista);
+        let forra = "";
+        return (
+          <section key={typ} className="mb-5">
+            <R className="mb-1 text-[13pt] font-bold">
+              Del {bokstav(di)} – {RUBRIK[typ]}
+            </R>
+            {gemensam && <p className="mb-2 text-[10pt] italic">{gemensam}</p>}
+            <ol className={SPALTER[typ] ?? "space-y-2.5"}>
+              {lista.map(({ e, nr }) => {
+                const ins = STANDARD.has(e.instruction) ? "" : papper(e.instruction);
+                const visa = !gemensam && ins && ins !== forra;
+                forra = ins;
+                return (
+                  <li key={e.id} className="flex break-inside-avoid gap-2">
+                    <span className="w-7 shrink-0 text-right font-bold">{nr}.</span>
+                    <div className="min-w-0 flex-1">
+                      {visa && <p className="text-[10pt] italic">{ins}</p>}
+                      <Uppgift e={e} />
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        );
+      })}
     </>
   );
 }

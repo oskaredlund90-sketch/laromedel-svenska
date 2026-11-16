@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "Promptguide",
   description:
-    "Lar dig skriva bra promptar for att fa hjalp med svenska fran AI-verktyg.",
+    "Lär dig skriva bra promptar för att få hjälp med svenska från AI-verktyg.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -141,33 +141,33 @@ export default function PromptguidePage() {
           Promptguide
         </h1>
         <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
-          Lar dig skriva effektiva promptar sa att AI-verktyg ger dig battre och
-          mer anvandbar hjalp i svenskamnet.
+          Lär dig skriva effektiva promptar så att AI-verktyg ger dig bättre och
+          mer användbar hjälp i svenskämnet.
         </p>
       </div>
 
-      {/* 1. Vad ar en prompt? */}
-      <Section title="Vad ar en prompt?">
+      {/* 1. Vad är en prompt? */}
+      <Section title="Vad är en prompt?">
         <p className="text-neutral-700 dark:text-neutral-300">
-          En <strong>prompt</strong> ar den text du skriver till ett AI-verktyg
-          for att ge det en uppgift. Tankt pa det som en instruktion eller en
-          fraga. Ju tydligare din prompt ar, desto battre svar far du.
+          En <strong>prompt</strong> är den text du skriver till ett AI-verktyg
+          för att ge det en uppgift. Tänk på det som en instruktion eller en
+          fråga. Ju tydligare din prompt är, desto bättre svar får du.
         </p>
         <p className="mt-3 text-neutral-700 dark:text-neutral-300">
-          AI-verktyg som ChatGPT, Copilot och liknande ar sprakmodeller. De
-          genererar text baserat pa monster i enorma mangder textdata. De
-          &quot;forstar&quot; inte pa samma satt som en manniska, men de kan ge
-          mycket anvandbar hjalp om du ger dem ratt instruktioner.
+          AI-verktyg som ChatGPT, Copilot och liknande är språkmodeller. De
+          genererar text baserat på mönster i enorma mängder textdata. De
+          &quot;förstår&quot; inte på samma satt som en människa, men de kan ge
+          mycket användbar hjälp om du ger dem rätt instruktioner.
         </p>
         <Tip>
-          <strong>Tankesatt:</strong> Forestall dig att du ger instruktioner
-          till en mycket kunnig men bokstavlig assistent. Ju mer specifik du ar,
-          desto battre resultat far du.
+          <strong>Tankesätt:</strong> Föreställ dig att du ger instruktioner
+          till en mycket kunnig men bokstavlig assistent. Ju mer specifik du är,
+          desto bättre resultat får du.
         </Tip>
       </Section>
 
       {/* 2. Grundregler */}
-      <Section title="Grundregler for bra promptar">
+      <Section title="Grundregler för bra promptar">
         <div className="grid gap-4 sm:grid-cols-3">
           <Card>
             <CardHeader>
@@ -178,8 +178,8 @@ export default function PromptguidePage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Skriv exakt vad du vill ha. Istallet for &quot;hjalp mig med
-                min text&quot; kan du skriva &quot;ge feedback pa
+                Skriv exakt vad du vill ha. Istället för &quot;hjälp mig med
+                min text&quot; kan du skriva &quot;ge feedback på
                 inledningen till min argumenterande text om sociala
                 medier&quot;.
               </p>
@@ -195,10 +195,10 @@ export default function PromptguidePage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Beratta vem du ar, vad uppgiften gar ut pa och vilken niva
-                du arbetar pa. &quot;Jag gar i arskurs 8 och ska
-                skriva en kronika&quot; ger battre svar an bara &quot;skriv
-                en kronika&quot;.
+                Berätta vem du är, vad uppgiften går ut på och vilken nivå
+                du arbetar på. &quot;Jag går i årskurs 8 och ska
+                skriva en krönika&quot; ger bättre svar än bara &quot;skriv
+                en krönika&quot;.
               </p>
             </CardContent>
           </Card>
@@ -212,9 +212,9 @@ export default function PromptguidePage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Beratta hur du vill ha svaret: en punktlista, en
-                sammanfattning pa tre meningar, en tabell, forslag med
-                forklaringar. Formatet paverkar kvaliteten.
+                Berätta hur du vill ha svaret: en punktlista, en
+                sammanfattning på tre meningar, en tabell, förslag med
+                förklaringar. Formatet påverkar kvaliteten.
               </p>
             </CardContent>
           </Card>
@@ -227,59 +227,59 @@ export default function PromptguidePage() {
           <ul className="ml-4 list-disc space-y-2 text-neutral-700 dark:text-neutral-300">
             <li>
               <strong>Ange roll:</strong> Be AI:n agera som en viss roll, till
-              exempel &quot;Agera som en svensklarare och ge feedback pa min
+              exempel &quot;Agera som en svensklärare och ge feedback på min
               text.&quot;
             </li>
             <li>
-              <strong>Dela upp i steg:</strong> Gor komplexa uppgifter i
-              delsteg. Forst brainstorma, sedan strukturera, sedan
+              <strong>Dela upp i steg:</strong> Gör komplexa uppgifter i
+              delsteg. Först brainstorma, sedan strukturera, sedan
               skriva.
             </li>
             <li>
               <strong>Ge exempel:</strong> Om du vill ha en viss typ av svar,
-              ge ett exempel pa hur det kan se ut.
+              ge ett exempel på hur det kan se ut.
             </li>
             <li>
-              <strong>Iterera:</strong> Om svaret inte ar perfekt, foljd upp
-              med &quot;Kan du gora det kortare?&quot; eller &quot;Fokusera mer
-              pa argumenten.&quot; Du behover inte borja om fran borjan.
+              <strong>Iterera:</strong> Om svaret inte är perfekt, följ upp
+              med &quot;Kan du göra det kortare?&quot; eller &quot;Fokusera mer
+              på argumenten.&quot; Du behöver inte börja om från början.
             </li>
             <li>
               <strong>Begr&auml;nsningar:</strong> Ange vad du INTE vill ha.
-              &quot;Ge mig inte hela texten, bara forslag pa
-              forbattringar.&quot;
+              &quot;Ge mig inte hela texten, bara förslag på
+              förbättringar.&quot;
             </li>
           </ul>
         </div>
       </Section>
 
-      {/* 3. Bra vs daliga promptar */}
-      <Section title="Bra vs daliga promptar &mdash; med exempel">
+      {/* 3. Bra vs dåliga promptar */}
+      <Section title="Bra vs dåliga promptar &mdash; med exempel">
         <p className="mb-6 text-neutral-700 dark:text-neutral-300">
-          Har ar konkreta jamforelser som visar hur en sma forandringar i din
-          prompt kan ge mycket battre resultat.
+          Här är konkreta jämförelser som visar hur små förändringar i din
+          prompt kan ge mycket bättre resultat.
         </p>
 
         {/* Example 1 */}
         <div className="mb-8">
           <h3 className="mb-3 text-lg font-medium text-neutral-900 dark:text-white">
-            Exempel 1: Skrivhjalp
+            Exempel 1: Skrivhjälp
           </h3>
           <div className="grid gap-3 sm:grid-cols-2">
             <PromptExample
               type="bad"
               label="Vag prompt"
-              prompt="Hjalp mig med min text."
+              prompt="Hjälp mig med min text."
             />
             <PromptExample
               type="good"
               label="Specifik prompt"
-              prompt="Jag skriver en argumenterande text om huruvida mobiltelefoner bor vara tillatna i klassrummet. Ge mig tre starka argument for varje sida och forklara varfor de ar overtygande."
+              prompt="Jag skriver en argumenterande text om huruvida mobiltelefoner bör vara tillåtna i klassrummet. Ge mig tre stärka argument för varje sida och förklara varför de är övertygande."
             />
           </div>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-            Den specifika prompten anger amne, texttyp och exakt vilken hjalp
-            som onskas.
+            Den specifika prompten anger ämne, texttyp och exakt vilken hjälp
+            som önskas.
           </p>
         </div>
 
@@ -292,17 +292,17 @@ export default function PromptguidePage() {
             <PromptExample
               type="bad"
               label="Vag prompt"
-              prompt="Forklara grammatik."
+              prompt="Förklara grammatik."
             />
             <PromptExample
               type="good"
               label="Specifik prompt"
-              prompt="Forklara skillnaden mellan huvudsats och bisats pa ett satt som en elev i arskurs 7 forstar. Ge tre exempel pa varje och markera verbet i varje sats."
+              prompt="Förklara skillnaden mellan huvudsats och bisats på ett sätt som en elev i årskurs 7 förstår. Ge tre exempel på varje och markera verbet i varje sats."
             />
           </div>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-            Kontext (arskurs), format (exempel) och specifikt amne gor svaret
-            mycket mer anvandbart.
+            Kontext (årskurs), format (exempel) och specifikt ämne gör svaret
+            mycket mer användbart.
           </p>
         </div>
 
@@ -315,16 +315,16 @@ export default function PromptguidePage() {
             <PromptExample
               type="bad"
               label="Vag prompt"
-              prompt="Ar det har bra? [klistrar in text]"
+              prompt="Är det här bra? [klistrar in text]"
             />
             <PromptExample
               type="good"
               label="Specifik prompt"
-              prompt="Har ar min kronika (300 ord). Ge feedback pa: 1) sprak och stil 2) struktur 3) tonlaget. Ge konkreta forslag pa forbattringar men skriv inte om texten at mig."
+              prompt="Här är min krönika (300 ord). Ge feedback på: 1) språk och stil 2) struktur 3) tonlaget. Ge konkreta förslag på förbättringar men skriv inte om texten åt mig."
             />
           </div>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-            Numrerade fokusomraden och en tydlig begransning (&quot;skriv inte
+            Numrerade fokusområden och en tydlig begränsning (&quot;skriv inte
             om texten&quot;) ger riktad feedback.
           </p>
         </div>
@@ -332,53 +332,53 @@ export default function PromptguidePage() {
         {/* Example 4 */}
         <div className="mb-8">
           <h3 className="mb-3 text-lg font-medium text-neutral-900 dark:text-white">
-            Exempel 4: Kallsokning
+            Exempel 4: Källsökning
           </h3>
           <div className="grid gap-3 sm:grid-cols-2">
             <PromptExample
               type="bad"
               label="Vag prompt"
-              prompt="Beratta om Astrid Lindgren."
+              prompt="Berätta om Astrid Lindgren."
             />
             <PromptExample
               type="good"
               label="Specifik prompt"
-              prompt="Ge en sammanfattning pa fem punkter om Astrid Lindgrens betydelse for svensk barnlitteratur. Inkludera specifika verk och artal. Ange om det finns nagon information du ar osaker pa."
+              prompt="Ge en sammanfattning på fem punkter om Astrid Lindgrens betydelse för svensk barnlitteratur. Inkludera specifika verk och årtal. Ange om det finns någon information du är osäker på."
             />
           </div>
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-            Genom att be om specifik form och att AI:n markerar osakerheter far
-            du ett mer trovardigt svar.
+            Genom att be om specifik form och att AI:n markerar osäkerheter får
+            du ett mer trovärdigt svar.
           </p>
         </div>
       </Section>
 
-      {/* 4. Tips per anvandningsomrade */}
-      <Section title="Tips per anvandningsomrade">
+      {/* 4. Tips per användningsområde */}
+      <Section title="Tips per användningsområde">
         <div className="space-y-4">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
                 <PenLine className="h-5 w-5 text-neutral-600 dark:text-neutral-400" />
-                <CardTitle className="text-base">Skrivhjalp</CardTitle>
+                <CardTitle className="text-base">Skrivhjälp</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="ml-4 list-disc space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
                 <li>
-                  Be om ideer och brainstorming innan du borjar skriva. &quot;Ge
-                  mig tio infallsvinklar for en kronika om ensamhet.&quot;
+                  Be om idéer och brainstorming innan du börjar skriva. &quot;Ge
+                  mig tio infallsvinklar för en krönika om ensamhet.&quot;
                 </li>
                 <li>
-                  Anvand AI for att forbattra, inte for att skriva at dig.
-                  &quot;Har ar min text. Vad kan bli battre?&quot;
+                  Använd AI för att förbättra, inte för att skriva åt dig.
+                  &quot;Här är min text. Vad kan bli bättre?&quot;
                 </li>
                 <li>
-                  Be om hjalp med specifika delar: &quot;Ge mig tre alternativa
+                  Be om hjälp med specifika delar: &quot;Ge mig tre alternativa
                   inledningar till min text.&quot;
                 </li>
                 <li>
-                  Fragata efter forklaringar: &quot;Varfor ar denna mening
+                  Fråga efter förklaringar: &quot;Varför är denna mening
                   otydlig?&quot;
                 </li>
               </ul>
@@ -389,25 +389,25 @@ export default function PromptguidePage() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Search className="h-5 w-5 text-neutral-600 dark:text-neutral-400" />
-                <CardTitle className="text-base">Kallsokning</CardTitle>
+                <CardTitle className="text-base">Källsökning</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="ml-4 list-disc space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
                 <li>
-                  Be alltid AI:n att ange kallor eller markera nar den ar
-                  osaker.
+                  Be alltid AI:n att ange källor eller markera när den är
+                  osäker.
                 </li>
                 <li>
-                  Dubbelkolla fakta i en annan kalla. AI kan &quot;hallucinera&quot;
-                  &mdash; hitta pa fakta som later troliga.
+                  Dubbelkolla fakta i en annan källa. AI kan &quot;hallucinera&quot;
+                  &mdash; hitta på fakta som låter troliga.
                 </li>
                 <li>
-                  Anvand prompten &quot;Vad vet du sakert och vad ar du osaker
-                  pa?&quot; for att fa arligare svar.
+                  Använd prompten &quot;Vad vet du säkert och vad är du osäker
+                  på?&quot; för att få ärligare svar.
                 </li>
                 <li>
-                  Be om specifika hanvisningar: &quot;Vilka forskare har studerat
+                  Be om specifika hänvisningar: &quot;Vilka forskare har studerat
                   detta?&quot;
                 </li>
               </ul>
@@ -429,16 +429,16 @@ export default function PromptguidePage() {
                   ordval.&quot;
                 </li>
                 <li>
-                  Be om forklaringar, inte bara rattningar: &quot;Ratta mina
-                  grammatikfel och forklara regeln bakom varje rattning.&quot;
+                  Be om förklaringar, inte bara rättningar: &quot;Rätta mina
+                  grammatikfel och förklara regeln bakom varje rättning.&quot;
                 </li>
                 <li>
-                  Anvand AI for att lara dig monster: &quot;Ge mig fem ovningar
-                  pa BIFF-regeln med facit.&quot;
+                  Använd AI för att lära dig mönster: &quot;Ge mig fem övningar
+                  på BIFF-regeln med facit.&quot;
                 </li>
                 <li>
-                  Kontrollera svaret &mdash; AI gor ibland fel pa svenska
-                  grammatik, sarskilt med ordfoljd och kommatering.
+                  Kontrollera svaret &mdash; AI gör ibland fel på svenska
+                  grammatik, särskilt med ordföljd och kommatering.
                 </li>
               </ul>
             </CardContent>
@@ -446,51 +446,51 @@ export default function PromptguidePage() {
         </div>
       </Section>
 
-      {/* 5. Ovningsuppgifter */}
-      <Section title="Ovningsuppgifter">
+      {/* 5. Övningsuppgifter */}
+      <Section title="Övningsuppgifter">
         <p className="mb-6 text-neutral-700 dark:text-neutral-300">
-          Testa dina kunskaper genom att ova pa att skriva promptar. For varje
-          ovning: skriv din prompt, prova den i ett AI-verktyg, och utvardera
+          Testa dina kunskaper genom att öva på att skriva promptar. För varje
+          övning: skriv din prompt, prova den i ett AI-verktyg, och utvärdera
           resultatet.
         </p>
 
         <div className="space-y-3">
           <ExerciseCard
             number={1}
-            title="Forbattra den vaga prompten"
-            description="Skriv om denna prompt sa att den blir mer effektiv: 'Beratta om bocker.' Tankt pa att lagga till amne, malgrupp, format och begransning."
+            title="Förbättra den vaga prompten"
+            description="Skriv om denna prompt så att den blir mer effektiv: 'Berätta om böcker.' Tänk på att lägga till ämne, målgrupp, format och begränsning."
           />
           <ExerciseCard
             number={2}
             title="Skriv en feedbackprompt"
-            description="Du har skrivit en insandare om skolmaten. Skriv en prompt som ber AI:n om konstruktiv feedback pa din text utan att skriva om den."
+            description="Du har skrivit en insändare om skolmaten. Skriv en prompt som ber AI:n om konstruktiv feedback på din text utan att skriva om den."
           />
           <ExerciseCard
             number={3}
             title="Brainstorming med AI"
-            description="Du ska skriva en novell med temat 'overraskningar'. Skriv en prompt som ger dig kreativa ideer utan att AI:n skriver hela berattelsen."
+            description="Du ska skriva en novell med temat 'överraskningar'. Skriv en prompt som ger dig kreativa idéer utan att AI:n skriver hela berättelsen."
           />
           <ExerciseCard
             number={4}
             title="Prompt med roll"
-            description="Skriv en prompt dar du ber AI:n att agera som en bibliotekarie som rekommenderar bocker for en elev i din alder. Var specifik om dina intressen."
+            description="Skriv en prompt där du ber AI:n att agera som en bibliotekarie som rekommenderar böcker för en elev i din ålder. Var specifik om dina intressen."
           />
           <ExerciseCard
             number={5}
-            title="Iterera och forbattra"
-            description="Borja med en enkel prompt om skiljetecken. Skriv sedan tre uppfoljningsfragor som gor svaret allt mer anvandbart. Dokumentera hur svaret forbattras med varje steg."
+            title="Iterera och förbättra"
+            description="Börja med en enkel prompt om skiljetecken. Skriv sedan tre uppföljningsfrågor som gör svaret allt mer användbart. Dokumentera hur svaret förbättras med varje steg."
           />
           <ExerciseCard
             number={6}
             title="Kritisk prompt"
-            description="Skriv en prompt som ber AI:n att forklara nagonting om svensk sprakhistoria, och som uppmanar den att markera vad den ar osaker pa. Utvardera sedan svaret mot en trovarding kalla."
+            description="Skriv en prompt som ber AI:n att förklara någonting om svensk språkhistoria, och som uppmanar den att markera vad den är osäker på. Utvärdera sedan svaret mot en trovärdig källa."
           />
         </div>
 
         <Tip>
           <strong>Extrautmaning:</strong> Byt promptar med en klasskompis.
-          Ger er promptar lika bra resultat? Diskutera vad som fungerare bra och
-          vad som kan forbattras.
+          Ger er promptar lika bra resultat? Diskutera vad som fungerar bra och
+          vad som kan förbättras.
         </Tip>
       </Section>
 
@@ -501,21 +501,21 @@ export default function PromptguidePage() {
         </h2>
         <ol className="ml-4 list-decimal space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
           <li>
-            <strong>Var specifik</strong> &mdash; ju mer detaljer, desto battre
+            <strong>Var specifik</strong> &mdash; ju mer detaljer, desto bättre
             svar.
           </li>
           <li>
-            <strong>Ge kontext</strong> &mdash; beratta vem du ar och vad
+            <strong>Ge kontext</strong> &mdash; berätta vem du är och vad
             uppgiften handlar om.
           </li>
           <li>
-            <strong>Ange format</strong> &mdash; bestam hur svaret ska se ut.
+            <strong>Ange format</strong> &mdash; bestäm hur svaret ska se ut.
           </li>
           <li>
-            <strong>Iterera</strong> &mdash; foljd upp och forfina dina fragor.
+            <strong>Iterera</strong> &mdash; följ upp och förfina dina frågor.
           </li>
           <li>
-            <strong>Granska alltid svaret</strong> &mdash; AI ar ett verktyg,
+            <strong>Granska alltid svaret</strong> &mdash; AI är ett verktyg,
             inte en sanning.
           </li>
         </ol>

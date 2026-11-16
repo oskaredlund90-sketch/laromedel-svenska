@@ -18,24 +18,24 @@ const SECTIONS = [
     href: "/ai-labbet/promptguide",
     title: "Promptguide",
     description:
-      "Lar dig skriva effektiva promptar for att fa ut det basta av AI-verktyg i svenskamnet.",
+      "Lär dig skriva effektiva promptar för att få ut det bästa av AI-verktyg i svenskämnet.",
     icon: MessageSquare,
     color: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
   },
   {
     href: "/ai-labbet/skrivhjalp",
-    title: "Skrivhjalp med AI",
+    title: "Skrivhjälp med AI",
     description:
-      "Anvand AI som ett stod i skrivprocessen utan att tappa din egen rost.",
+      "Använd AI som ett stöd i skrivprocessen utan att tappa din egen röst.",
     icon: PenLine,
     color:
       "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300",
   },
   {
     href: "/ai-labbet/kallkritik",
-    title: "Kallkritik och AI",
+    title: "Källkritik och AI",
     description:
-      "Granska AI-genererad text kritiskt. Lar dig varfor AI kan ha fel och hur du kontrollerar.",
+      "Granska AI-genererad text kritiskt. Lär dig varför AI kan ha fel och hur du kontrollerar.",
     icon: ShieldCheck,
     color:
       "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
@@ -54,8 +54,8 @@ export default function AiLabbetPage() {
           AI-labbet
         </h1>
         <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
-          Lar dig anvanda AI-verktyg pa ett kritiskt, kreativt och ansvarsfullt
-          satt i svenskundervisningen. Har hittar du guider, ovningar och
+          Lär dig använda AI-verktyg på ett kritiskt, kreativt och ansvarsfullt
+          sätt i svenskundervisningen. Här hittar du guider, övningar och
           praktiska tips.
         </p>
       </div>
@@ -64,11 +64,11 @@ export default function AiLabbetPage() {
       <div className="mb-10 flex gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-800 dark:bg-neutral-900">
         <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
         <div className="text-sm text-neutral-700 dark:text-neutral-300">
-          <p className="font-medium">Varfor AI-labbet?</p>
+          <p className="font-medium">Varför AI-labbet?</p>
           <p className="mt-1">
-            AI-verktyg som ChatGPT och liknande sprakmodeller ar kraftfulla
-            hjalmedel, men de kraver kunskap for att anvandas ratt. I AI-labbet
-            lar du dig att skriva bra promptar, anvanda AI som skrivstod och
+            AI-verktyg som ChatGPT och liknande språkmodeller är kraftfulla
+            hjälpmedel, men de kräver kunskap för att användas rätt. I AI-labbet
+            lär du dig att skriva bra promptar, använda AI som skrivstöd och
             &mdash; viktigast av allt &mdash; granska AI-svar kritiskt.
           </p>
         </div>
@@ -98,8 +98,8 @@ export default function AiLabbetPage() {
 
       {/* Bottom note */}
       <p className="mt-10 text-center text-sm text-neutral-500 dark:text-neutral-500">
-        AI-labbet ar under utveckling. Innehallet uppdateras lopande i takt med
-        att AI-verktygen och skolans behov forandras.
+        AI-labbet är under utveckling. Innehållet uppdateras löpande i takt med
+        att AI-verktygen och skolans behov förändras.
       </p>
     </div>
   );

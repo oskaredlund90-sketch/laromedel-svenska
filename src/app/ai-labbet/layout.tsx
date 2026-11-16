@@ -5,10 +5,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     default: "AI-labbet",
-    template: "%s | AI-labbet | Laromedel i Svenska",
+    template: "%s | AI-labbet | Läromedel i Svenska",
   },
   description:
-    "Lar dig anvanda AI-verktyg pa ett kritiskt och kreativt satt i svenskundervisningen.",
+    "Lär dig använda AI-verktyg på ett kritiskt och kreativt sätt i svenskundervisningen.",
 };
 
 export default function AiLabbetLayout({

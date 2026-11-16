@@ -31,13 +31,37 @@ export const AMNEN: Record<GrammatikAmne, { titel: string; beskrivning: string }
   stilistik: { titel: "Stilistik", beskrivning: "Stilnivå, ton och stilfigurer" },
 };
 
-/** Ämnen per stadium, i den ordning de bör tas. */
+/**
+ * Ämnen per stadium, i den ordning de bör tas: från ordet, via meningen, till
+ * texten. Ordets byggstenar, ordbildning och stavning står ihop eftersom
+ * stavningen bygger på morfemen.
+ */
 export const AMNEN_PER_STADIUM: Record<AgeGroup, GrammatikAmne[]> = {
-  lagstadiet: ["ordklasser", "morfem", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "stavning", "textbindning"],
-  mellanstadiet: ["ordklasser", "morfem", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "stavning", "ordbildning", "textbindning"],
-  hogstadiet: ["ordklasser", "morfem", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "stavning", "ordbildning", "textbindning", "stilistik"],
-  gymnasiet: ["ordklasser", "morfem", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "stavning", "ordbildning", "textbindning", "stilistik"],
+  lagstadiet: ["ordklasser", "morfem", "stavning", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "textbindning"],
+  mellanstadiet: ["ordklasser", "morfem", "ordbildning", "stavning", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "textbindning"],
+  hogstadiet: ["ordklasser", "morfem", "ordbildning", "stavning", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "textbindning", "stilistik"],
+  gymnasiet: ["ordklasser", "morfem", "ordbildning", "stavning", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "textbindning", "stilistik"],
 };
+
+/** Bokens tre delar. Kapitlen hamnar i den del där ämnet hör hemma. */
+export const DELAR: { nr: number; titel: string; beskrivning: string; amnen: GrammatikAmne[] }[] = [
+  { nr: 1, titel: "Ordet", beskrivning: "Ordklasser, ordens byggstenar och stavning", amnen: ["ordklasser", "morfem", "ordbildning", "stavning"] },
+  { nr: 2, titel: "Meningen", beskrivning: "Satsdelar, meningsbyggnad, samband och skiljetecken", amnen: ["satsdelar", "meningsbyggnad", "samband", "skiljetecken"] },
+  { nr: 3, titel: "Texten", beskrivning: "Textbindning, stycken och stil", amnen: ["textbindning", "stilistik"] },
+];
+
+/** Delarna med stadiets kapitel (och kapitelnummer i boken). */
+export function delarForStadium(stadie: AgeGroup) {
+  const alla = AMNEN_PER_STADIUM[stadie];
+  return DELAR.map((d) => ({
+    ...d,
+    kapitel: alla.filter((a) => d.amnen.includes(a)).map((a) => ({ amne: a, nr: alla.indexOf(a) + 1 })),
+  })).filter((d) => d.kapitel.length > 0);
+}
+
+export function delForAmne(amne: GrammatikAmne) {
+  return DELAR.find((d) => d.amnen.includes(amne))!;
+}
 
 /** Vad eleven ska kunna efter stadiet – kort, för progressionsöversikten. */
 export const MAL_PER_STADIUM: Record<AgeGroup, string[]> = {
@@ -144,4 +168,4 @@ export const PROGRESSION: Record<GrammatikAmne, Partial<Record<AgeGroup, string>
 };
 
 /** Alla ämnen i bokens ordning (oavsett stadium). */
-export const ALLA_AMNEN: GrammatikAmne[] = ["ordklasser", "morfem", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "stavning", "ordbildning", "textbindning", "stilistik"];
+export const ALLA_AMNEN: GrammatikAmne[] = ["ordklasser", "morfem", "ordbildning", "stavning", "satsdelar", "meningsbyggnad", "samband", "skiljetecken", "textbindning", "stilistik"];

@@ -69,7 +69,7 @@ hog.s("Gör en satsanalys.", "I går:Adverbial | skickade:Predikat | jag:Subjekt
 hog.s("Gör en satsanalys.", "Filmen:Subjekt | verkade:Predikat | spännande:Predikativ", HOG);
 hog.s("Gör en satsanalys.", "Tränaren:Subjekt | visade:Predikat | laget:Indirekt objekt | en ny taktik:Objekt | på mötet:Adverbial", HOG);
 hog.s("Gör en satsanalys.", "Efter matchen:Adverbial | var:Predikat | spelarna:Subjekt | trötta:Predikativ", HOG);
-hog.s("Gör en satsanalys.", "Hon:Subjekt | lånade:Predikat | sin bror:Indirekt objekt | tusen kronor:Objekt", HOG);
+hog.s("Gör en satsanalys.", "Hon:Subjekt | gav:Predikat | sin bror:Indirekt objekt | tusen kronor:Objekt", HOG);
 hog.s("Gör en satsanalys.", "Rummet:Subjekt | kändes:Predikat | kallt:Predikativ | på morgonen:Adverbial", HOG);
 hog.s("Gör en satsanalys.", "Kommunen:Subjekt | bygger:Predikat | en ny skola:Objekt | nästa år:Adverbial", HOG);
 hog.s("Gör en satsanalys.", "Vi:Subjekt | önskade:Predikat | henne:Indirekt objekt | lycka till:Objekt", HOG);
