@@ -95,7 +95,7 @@ export function repetitionForDel(stadie: AgeGroup, del: { nr: number; titel: str
       const valda = [Math.floor(n / 3), Math.floor((2 * n) / 3), n - 1].filter((v, i, a) => a.indexOf(v) === i).map((i) => d.uppgifter[i]);
       // Häftets egna delbokstäver (Del E …) stämmer inte med kapitlet – visa kapitlet i stället.
       i++;
-      delar.push({ ...d, rubrik: `Från kapitel ${nr}: ${AMNEN[amne].titel}${i > 1 ? " (fler)" : ""}`, uppgifter: valda.map((u) => ({ ...u, id: `rep-${del.nr}-${u.id}` })) });
+      delar.push({ ...d, rubrik: `Kapitel ${nr}: ${AMNEN[amne].titel}${i > 1 ? " – fler uppgifter" : ""}`, uppgifter: valda.map((u) => ({ ...u, id: `rep-${del.nr}-${u.id}` })) });
     }
   }
   if (delar.length === 0) return undefined;

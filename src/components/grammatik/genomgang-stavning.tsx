@@ -40,7 +40,8 @@ export function StavningGenomgang({ stadie }: { stadie: AgeGroup }) {
             <Ex>sk före e, i, y, ä, ö: sked, skina, skön</Ex>
             <Ex>stj: stjärna, stjäla</Ex>
             {minst(s, "mellanstadiet") && <Ex>skj: skjorta, skjuta · sch: dusch</Ex>}
-            {minst(s, "hogstadiet") && <Ex>-tion, -sion: station, version · ch, sh: choklad, show</Ex>}
+            {minst(s, "mellanstadiet") && <Ex>-tion i slutet av ord: lektion, station, information</Ex>}
+            {minst(s, "hogstadiet") && <Ex>-sion: version, explosion · ch, sh: choklad, show</Ex>}
           </ExampleCard>
           <ExampleCard title="Tje-ljudet">
             <Ex>tj: tjugo, tjej</Ex>

@@ -112,32 +112,58 @@ const berattelseRader = () =>
     ),
   );
 
-const PRONOMEN_LAG: [string, string, string[]][] = [
-  ["Pelle har fått en present.", "Han", ["Hon", "Den"]], ["Lisa har ont i magen.", "Hon", ["Han", "Det"]], ["Vi har en katt.", "Den", ["Han", "Det"]],
-  ["Vi har ett marsvin.", "Det", ["Den", "Hon"]], ["Omar och Ali spelar fotboll.", "De", ["Han", "Den"]], ["Mormor ringde i dag.", "Hon", ["Han", "De"]],
-  ["Morfar har en båt.", "Han", ["Hon", "Det"]], ["Jag har en ny cykel.", "Den", ["Det", "Han"]], ["Jag har ett nytt pussel.", "Det", ["Den", "Hon"]],
-  ["Barnen är ute.", "De", ["Den", "Hon"]], ["Bebisen gråter.", "Den", ["De", "Han"]], ["Elsa och jag är kompisar.", "Vi", ["De", "Hon"]],
-  ["Hunden skäller.", "Den", ["Det", "De"]], ["Huset är gult.", "Det", ["Den", "Han"]], ["Fröken läser en saga.", "Hon", ["Han", "Det"]],
-  ["Sam är min bror.", "Han", ["Hon", "Den"]], ["Fåglarna sjunger.", "De", ["Den", "Det"]], ["Äpplet är rött.", "Det", ["Den", "De"]],
-  ["Bollen är borta.", "Den", ["Det", "De"]], ["Pappa och mamma lagar mat.", "De", ["Han", "Hon"]],
+/** Mening, rätt pronomen, felaktiga alternativ och en fortsättning som passar just den meningen. */
+const PRONOMEN_LAG: [string, string, string[], string][] = [
+  ["Pelle har fått en present.", "Han", ["Hon", "Den"], "öppnar den direkt."],
+  ["Lisa har ont i magen.", "Hon", ["Han", "Det"], "stannar hemma i dag."],
+  ["Vi har en katt.", "Den", ["Han", "Det"], "heter Misse."],
+  ["Vi har ett marsvin.", "Det", ["Den", "Hon"], "äter morötter."],
+  ["Omar och Ali spelar fotboll.", "De", ["Han", "Den"], "vinner med 3–1."],
+  ["Mormor ringde i dag.", "Hon", ["Han", "De"], "kommer på besök i morgon."],
+  ["Morfar har en båt.", "Han", ["Hon", "Det"], "fiskar varje helg."],
+  ["Jag har en ny cykel.", "Den", ["Det", "Han"], "är röd."],
+  ["Jag har ett nytt pussel.", "Det", ["Den", "Hon"], "har hundra bitar."],
+  ["Barnen är ute.", "De", ["Den", "Hon"], "leker i snön."],
+  ["Bebisen gråter.", "Den", ["De", "Han"], "är hungrig."],
+  ["Elsa och jag är kompisar.", "Vi", ["De", "Hon"], "går i samma klass."],
+  ["Hunden skäller.", "Den", ["Det", "De"], "vill gå ut."],
+  ["Huset är gult.", "Det", ["Den", "Han"], "ligger vid sjön."],
+  ["Fröken läser en saga.", "Hon", ["Han", "Det"], "läser högt."],
+  ["Sam är min bror.", "Han", ["Hon", "Den"], "är tio år."],
+  ["Fåglarna sjunger.", "De", ["Den", "Det"], "sitter i trädet."],
+  ["Äpplet är rött.", "Det", ["Den", "De"], "smakar gott."],
+  ["Bollen är borta.", "Den", ["Det", "De"], "ligger kanske under soffan."],
+  ["Pappa och mamma lagar mat.", "De", ["Han", "Hon"], "gör pannkakor."],
 ];
-/** Slut som passar alla pronomen – inga adjektiv som måste böjas. */
-const FORTSATTNING = ["syns inte nu.", "är här.", "har bråttom.", "väntar ute.", "kommer snart.", "är borta."];
 
-const PRONOMEN_LAG_2: [string, string, string[]][] = [
-  ["Lisa och Ali bygger en koja.", "De", ["Hon", "Han"]], ["Min mormor heter Rut.", "Hon", ["Han", "Den"]], ["Kalle har en ny jacka.", "Han", ["Hon", "De"]],
-  ["Vi köpte en glass.", "Den", ["Det", "De"]], ["Vi köpte ett paket.", "Det", ["Den", "Han"]], ["Pappa och jag fiskar.", "Vi", ["De", "Han"]],
-  ["Kaninen hoppar.", "Den", ["Det", "Han"]], ["Lammet bräker.", "Det", ["Den", "De"]], ["Mina kusiner kommer på besök.", "De", ["Hon", "Den"]],
-  ["Läraren skriver på tavlan.", "Hon", ["Det", "De"]], ["Sara spelar fiol.", "Hon", ["Han", "Den"]], ["Bollen rullar.", "Den", ["Det", "Han"]],
-  ["Trädet är högt.", "Det", ["Den", "Han"]], ["Morfar och mormor dansar.", "De", ["Han", "Hon"]], ["Leo är sju år.", "Han", ["Hon", "Det"]],
-  ["Glassen smälter.", "Den", ["Det", "Hon"]], ["Huset är rött.", "Det", ["Den", "De"]], ["Barnen badar.", "De", ["Den", "Hon"]],
-  ["Elsa och jag ritar.", "Vi", ["De", "Hon"]], ["Bilen är snabb.", "Den", ["Det", "Han"]], ["Brevet kom i dag.", "Det", ["Den", "Hon"]],
-  ["Ugglan sover på dagen.", "Den", ["Det", "Hon"]], ["Kusinerna leker.", "De", ["Den", "Han"]], ["Pojken skrattar.", "Han", ["Hon", "Den"]],
-  ["Flickan sjunger.", "Hon", ["Han", "Det"]],
+const PRONOMEN_LAG_2: [string, string, string[], string][] = [
+  ["Lisa och Ali bygger en koja.", "De", ["Hon", "Han"], "använder pinnar och löv."],
+  ["Min mormor heter Rut.", "Hon", ["Han", "Den"], "bor i Umeå."],
+  ["Kalle har en ny jacka.", "Han", ["Hon", "De"], "har den på sig i dag."],
+  ["Vi köpte en glass.", "Den", ["Det", "De"], "smakade jordgubb."],
+  ["Vi köpte ett paket.", "Det", ["Den", "Han"], "var till mormor."],
+  ["Pappa och jag fiskar.", "Vi", ["De", "Han"], "sitter på bryggan."],
+  ["Kaninen hoppar.", "Den", ["Det", "Han"], "har långa öron."],
+  ["Lammet bräker.", "Det", ["Den", "De"], "letar efter sin mamma."],
+  ["Mina kusiner kommer på besök.", "De", ["Hon", "Den"], "stannar i två dagar."],
+  ["Läraren skriver på tavlan.", "Hon", ["Det", "De"], "skriver dagens datum."],
+  ["Sara spelar fiol.", "Hon", ["Han", "Den"], "övar varje dag."],
+  ["Bollen rullar.", "Den", ["Det", "Han"], "stannar vid staketet."],
+  ["Trädet är högt.", "Det", ["Den", "Han"], "är över hundra år gammalt."],
+  ["Morfar och mormor dansar.", "De", ["Han", "Hon"], "har kul tillsammans."],
+  ["Leo är sju år.", "Han", ["Hon", "Det"], "går i ettan."],
+  ["Glassen smälter.", "Den", ["Det", "Hon"], "droppar på bordet."],
+  ["Huset är rött.", "Det", ["Den", "De"], "har vita fönster."],
+  ["Barnen badar.", "De", ["Den", "Hon"], "simmar till bryggan."],
+  ["Elsa och jag ritar.", "Vi", ["De", "Hon"], "ritar en drake."],
+  ["Bilen är snabb.", "Den", ["Det", "Han"], "kör förbi oss."],
+  ["Brevet kom i dag.", "Det", ["Den", "Hon"], "var från farmor."],
+  ["Ugglan sover på dagen.", "Den", ["Det", "Hon"], "jagar på natten."],
+  ["Kusinerna leker.", "De", ["Den", "Han"], "leker kurragömma."],
+  ["Pojken skrattar.", "Han", ["Hon", "Den"], "tycker att filmen är rolig."],
+  ["Flickan sjunger.", "Hon", ["Han", "Det"], "sjunger i kören."],
 ];
-const FORTS2 = ["är där.", "har kul.", "syns inte.", "väntar.", "är här nu.", "kommer snart."];
-const pronomenRader = () =>
-  PRONOMEN_LAG.map(([m, r, fel], i) => `${m} {*${r}|${fel.join("|")}} ${FORTSATTNING[i % FORTSATTNING.length]}`);
+const pronomenRader = () => PRONOMEN_LAG.map(([m, r, fel, forts]) => `${m} {*${r}|${fel.join("|")}} ${forts}`);
 
 /* -------------------------------- Högstadiet ------------------------------ */
 
@@ -321,7 +347,7 @@ export const HAFTEN_LAG_HOG: HafteKalla[] = [
     ],
     delar: [
       { rubrik: "Del A", instruktion: "Vilken ordklass är ordet?", typ: "val", rader: rader(ORD_LAG.map(([o, k]) => `${o} {${["substantiv", "verb", "adjektiv"].map((x) => (x === k ? "*" : "") + x).join("|")}}`)) },
-      { rubrik: "Del B", instruktion: "Skriv ordet i flertal.", typ: "skriv", rader: rader(PLURAL_LAG.map(([e, f]) => `en ${e} – två {${f}}`)) },
+      { rubrik: "Del B", instruktion: "Skriv ordet i flertal.", typ: "skriv", rader: rader(PLURAL_LAG.map(([e, f]) => `${e} – två {${f}}`)) },
       { rubrik: "Del C", instruktion: "Skriv verbet i dåtid.", typ: "skriv", rader: rader(DATID_LAG.map(([nu, da]) => `I dag ${nu} jag. I går {${da}} jag.`)) },
       { rubrik: "Del D", instruktion: "Jämför adjektivet.", typ: "skriv", rader: rader(JAMFOR_LAG.map(([a, b, c]) => `${a} – {${b}} – {${c}}`)) },
     ],
@@ -364,7 +390,7 @@ export const HAFTEN_LAG_HOG: HafteKalla[] = [
         rubrik: "Del C",
         instruktion: "Välj det ord som pekar tillbaka rätt.",
         typ: "val",
-        rader: rader(PRONOMEN_LAG_2.map(([m, r, fel], i) => `${m} {${[`*${r}`, ...fel].slice(i % 3).concat([`*${r}`, ...fel].slice(0, i % 3)).join("|")}} ${FORTS2[i % FORTS2.length]}`)),
+        rader: rader(PRONOMEN_LAG_2.map(([m, r, fel, forts], i) => `${m} {${[`*${r}`, ...fel].slice(i % 3).concat([`*${r}`, ...fel].slice(0, i % 3)).join("|")}} ${forts}`)),
       },
       {
         rubrik: "Del D",

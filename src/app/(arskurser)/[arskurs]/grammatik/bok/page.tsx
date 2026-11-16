@@ -469,13 +469,23 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                     svar och skriva en sak som saknas. Ge sedan återkoppling på en punkt i taget – helst i elevens egen text.
                   </p>
                 </div>
-                <div>
-                  <p className="font-semibold">Skrivdelen i proven</p>
-                  <p>
-                    Kapitelproven från mellanstadiet har en skrivdel utanför de 20 poängen. Bedöm den med kriterierna i facit: kan eleven använda
-                    grammatiken – inte bara känna igen den?
-                  </p>
-                </div>
+                {stadie === "lagstadiet" ? (
+                  <div>
+                    <p className="font-semibold">Slutprovet</p>
+                    <p>
+                      Slutprovet prövar också sådant som tränas i hela svenskundervisningen i årskurs 1–3, till exempel alfabetet, vokaler och
+                      konsonanter samt motsatsord och synonymer. Använd det gärna som en bredare diagnos.
+                    </p>
+                  </div>
+                ) : (
+                  <div>
+                    <p className="font-semibold">Skrivdelen i proven</p>
+                    <p>
+                      Varje kapitelprov har en skrivdel utanför de 20 poängen. Bedöm den med kriterierna i facit: kan eleven använda grammatiken
+                      – inte bara känna igen den?
+                    </p>
+                  </div>
+                )}
               </div>
               <p className="text-[9.5pt] text-neutral-500">
                 Facit finns bara i lärarboken. Sajten har ingen inloggning, så en elev som letar kan hitta lärarboken där.

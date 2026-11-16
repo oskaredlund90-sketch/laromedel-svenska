@@ -231,7 +231,7 @@ export const KAPITELPROV_LAG_MEL = [
       r: `
         Vi ska {*hoppa|hopa} hopprep.
         Jag fick en {*klocka|kloka} i present.
-        Han har en {katt|*kat|kkatt}.
+        Han har en {*katt|kat|kkatt}.
         Vi badar i {*sjön|schön|chön}.
         Hon räknade till {*tjugo|kjugo|schugo}.
         Vi åt {*glass|glas} på stranden.

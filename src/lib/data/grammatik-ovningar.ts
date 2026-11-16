@@ -1270,7 +1270,7 @@ const skiljeteckenMellanstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "mellanstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Min bror____ som är tio ar____ går i fyran.",
+    sentence: "Min bror____ som är tio år____ går i fyran.",
     options: ["komma (,) på båda ställena", "punkt (.) på båda ställena", "frågetecken (?) på båda ställena", "inget tecken alls"],
     correct: "komma (,) på båda ställena",
     explanation:
@@ -1282,7 +1282,7 @@ const skiljeteckenMellanstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "mellanstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Mamma sa: Kom in nu____",
+    sentence: "Mamma sa: ”Kom in nu____”",
     options: [".", "!", "?", ","],
     correct: "!",
     explanation:
@@ -4410,12 +4410,12 @@ const ordbildningMellanstadietCat: CategorizationExercise[] = [
     topic: "ordbildning",
     ageGroup: "mellanstadiet",
     instruction: "Sortera orden efter ändelse.",
-    items: ["gladlig", "kunskap", "vänner", "möjlig", "vänskap", "lycklig"],
+    items: ["tydlig", "kunskap", "vänlig", "möjlig", "vänskap", "lycklig"],
     categories: ["Ändelse -lig", "Ändelse -skap"],
     correctMapping: {
-      gladlig: "Ändelse -lig",
+      tydlig: "Ändelse -lig",
       kunskap: "Ändelse -skap",
-      "vänner": "Ändelse -lig",
+      "vänlig": "Ändelse -lig",
       "möjlig": "Ändelse -lig",
       vänskap: "Ändelse -skap",
       lycklig: "Ändelse -lig",
