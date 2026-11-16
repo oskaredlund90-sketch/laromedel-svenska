@@ -302,7 +302,7 @@ export const EXTRA_GRAMMATIK: HafteKalla[] = [
   },
   {
     id: "meningsbyggnad-3-subjekt-verb",
-    titel: "Vem gör vad?",
+    titel: "Någon som gör något",
     underrubrik: "Varje mening behöver subjekt och verb",
     omrade: "Meningsbyggnad",
     steg: 2,

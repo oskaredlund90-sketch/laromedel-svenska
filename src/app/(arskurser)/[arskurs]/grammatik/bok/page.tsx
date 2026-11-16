@@ -493,14 +493,15 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
             </div>
 
             <h3 className="mb-2 mt-8 text-xl font-bold">Progression genom stadierna</h3>
-            <p className="mb-3 text-[10pt] text-neutral-600 dark:text-neutral-400">Den markerade kolumnen är den här boken.</p>
+            <p className="mb-3 text-[10pt] text-neutral-600 dark:text-neutral-400">Kolumnen med fet text är den här boken.</p>
             <table className="w-full table-fixed border-collapse text-[8.5pt] leading-snug">
               <thead>
                 <tr>
                   <th className="w-[16%] border border-neutral-400 p-1.5 text-left">Område</th>
                   {AGE_GROUPS.map((g) => (
-                    <th key={g.slug} className={cn("border border-neutral-400 p-1.5 text-left", g.slug === stadie && "bg-sky-50 dark:bg-sky-950/40 print:border-2")}>
+                    <th key={g.slug} className={cn("border border-neutral-400 p-1.5 text-left", g.slug === stadie && "bg-sky-50 dark:bg-sky-950/40")}>
                       {g.label}
+                      {g.slug === stadie && <span className="block text-[7.5pt] font-normal">den här boken</span>}
                     </th>
                   ))}
                 </tr>
@@ -510,7 +511,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                   <tr key={a}>
                     <td className="border border-neutral-400 p-1.5 font-semibold">{AMNEN[a].titel}</td>
                     {AGE_GROUPS.map((g) => (
-                      <td key={g.slug} className={cn("border border-neutral-400 p-1.5 align-top", g.slug === stadie && "bg-sky-50 font-medium dark:bg-sky-950/40 print:border-2")}>
+                      <td key={g.slug} className={cn("border border-neutral-400 p-1.5 align-top", g.slug === stadie && "bg-sky-50 font-semibold dark:bg-sky-950/40")}>
                         {PROGRESSION[a][g.slug as AgeGroup] ?? "–"}
                       </td>
                     ))}
