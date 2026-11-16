@@ -88,6 +88,18 @@ export function StavningGenomgang({ stadie }: { stadie: AgeGroup }) {
         />
       </Section>
 
+      {minst(s, "hogstadiet") && (
+        <Section title="Stava med hjälp av roten">
+          <P>
+            Roten stavas oftast likadant i alla ord som bildas av den. Är du osäker på ett ord – leta upp roten och en annan form av ordet.
+          </P>
+          <Ex>glad → glatt (d + t blir tt), känna → kände (nn blir n före en konsonant)</Ex>
+          <Ex>skriv → beskriva, skrivare, beskrivning – roten stavas likadant</Ex>
+          <Ex>damm → dammet, dammig: två m hörs i de böjda formerna, därför två m även i damm</Ex>
+          <Vidare href={`/${s}/grammatik/morfem`}>Mer om rot, prefix och suffix i Ordets byggstenar</Vidare>
+        </Section>
+      )}
+
       {minst(s, "mellanstadiet") && (
         <Section title="Sammansatta ord skrivs ihop">
           <Ex>fotbollsmatch – inte fotbolls match</Ex>

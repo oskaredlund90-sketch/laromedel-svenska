@@ -72,7 +72,7 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
                 påverkar miljontals människor.</em>
               </P>
               <P>
-                Det första gången något nämns står det ofta i obestämd form (<em>en hund</em>), sedan i bestämd form (<em>hunden</em>) – det är också
+                Första gången något nämns står det ofta i obestämd form (<em>en hund</em>), sedan i bestämd form (<em>hunden</em>) – det är också
                 referensbindning.
               </P>
             </>

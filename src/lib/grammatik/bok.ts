@@ -1,7 +1,7 @@
 import type { AgeGroup } from "@/lib/supabase/types";
 import { hamtaHafte } from "@/lib/haften";
 import type { Hafte } from "@/lib/haften/typer";
-import type { GrammatikAmne } from "./amnen";
+import { AMNEN, type GrammatikAmne } from "./amnen";
 
 /**
  * Övningsboken: vilka övningshäften som hör till varje kapitel på varje
@@ -84,6 +84,7 @@ export function repetitionForDel(stadie: AgeGroup, del: { nr: number; titel: str
   const anvanda = new Set<string>();
   const delar: Hafte["delar"] = [];
   for (const { amne, nr } of del.kapitel) {
+    let i = 0;
     const hafte = haftenForKapitel(amne, stadie).find((h) => !anvanda.has(h.id)) ?? haftenForKapitel(amne, stadie)[0];
     if (!hafte) continue;
     anvanda.add(hafte.id);
@@ -92,7 +93,9 @@ export function repetitionForDel(stadie: AgeGroup, del: { nr: number; titel: str
       const n = d.uppgifter.length;
       if (n === 0) continue;
       const valda = [Math.floor(n / 3), Math.floor((2 * n) / 3), n - 1].filter((v, i, a) => a.indexOf(v) === i).map((i) => d.uppgifter[i]);
-      delar.push({ ...d, rubrik: `Kapitel ${nr} · ${d.rubrik}`, uppgifter: valda.map((u) => ({ ...u, id: `rep-${del.nr}-${u.id}` })) });
+      // Häftets egna delbokstäver (Del E …) stämmer inte med kapitlet – visa kapitlet i stället.
+      i++;
+      delar.push({ ...d, rubrik: `Från kapitel ${nr}: ${AMNEN[amne].titel}${i > 1 ? " (fler)" : ""}`, uppgifter: valda.map((u) => ({ ...u, id: `rep-${del.nr}-${u.id}` })) });
     }
   }
   if (delar.length === 0) return undefined;
