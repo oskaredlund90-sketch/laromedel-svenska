@@ -147,7 +147,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
     regel: [
       "Uppräkning: komma mellan sakerna, men inte före och: äpplen, päron och bananer.",
       "Före men sätter man komma: Jag ville gå ut, men det regnade.",
-      "Börjar meningen med en bisats (när, om, eftersom, fast …) sätter man komma efter den: När jag kom hem, åt jag mat.",
+      "Börjar meningen med en bisats (när, om, eftersom, fast …) sätter man oftast komma efter den: När jag kom hem, åt jag mat. I det här häftet ska du sätta ut det.",
       "Komma efter hälsning och när man vänder sig till någon: Hej, Sara! Kom hit, Leo!",
     ],
     delar: [

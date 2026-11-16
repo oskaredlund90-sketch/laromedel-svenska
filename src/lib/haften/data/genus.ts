@@ -228,8 +228,8 @@ export const GENUS_HAFTEN: HafteKalla[] = [
             // Fortsättningar utan adjektiv, så att formen inte avslöjar svaret
             const slut =
               o.kat === "djur"
-                ? ["är min", "sover nu", "heter Sigge", "springer fort", "bor hos oss"][i % 5]
-                : ["är min", "ligger där borta", "är borta", "kostade mycket", "kommer från farmor"][i % 5];
+                ? ["sover nu", "heter Sigge", "bor hos oss", "är ute nu", "tittar på oss"][i % 5]
+                : ["ligger där borta", "står i hörnet", "kostade mycket", "kommer från farmor", "syns tydligt"][i % 5];
             return `Där är ${o.art} ${o.ord}. ${o.art === "en" ? "{*Den|Det}" : "{Den|*Det}"} ${slut}.`;
           })
           .join("\n"),

@@ -227,10 +227,10 @@ const KONJ_SUBJ: [string, "konjunktion" | "subjunktion"][] = [
   ["Han skrattade, FÖR det var roligt.", "konjunktion"], ["OM du vill, kan du följa med.", "subjunktion"], ["Han är snäll OCH rolig.", "konjunktion"],
   ["Jag undrar OM hon kommer.", "subjunktion"], ["Vi väntade TILLS regnet slutade.", "subjunktion"], ["Hon tränar mycket, MEN hon är aldrig trött.", "konjunktion"],
   ["Läs boken INNAN du ser filmen.", "subjunktion"], ["Jag kan inte komma, UTAN du får gå själv.", "konjunktion"], ["Han blev glad DÅ han fick brevet.", "subjunktion"],
-  ["Vi kan cykla ELLER gå.", "konjunktion"], ["Boken SOM jag läser är spännande.", "subjunktion"], ["Hon stannade hemma, EFTERSOM hon var sjuk.", "subjunktion"],
+  ["Vi kan cykla ELLER gå.", "konjunktion"], ["Vi gick hem NÄR filmen var slut.", "subjunktion"], ["Hon stannade hemma, EFTERSOM hon var sjuk.", "subjunktion"],
   ["Jag ringde, MEN ingen svarade.", "konjunktion"], ["TROTS ATT det regnade, gick vi ut.", "subjunktion"], ["Han åt SÅ ATT han blev mätt.", "subjunktion"],
-  ["Vi sjöng OCH dansade hela kvällen.", "konjunktion"], ["SEDAN du kom har allt varit bättre.", "subjunktion"], ["Jag frågade VARFÖR hon grät.", "subjunktion"],
-  ["Hon log, FÖR hon visste svaret.", "konjunktion"], ["Han sprang FÖR ATT hinna med bussen.", "subjunktion"], ["Det var mörkt OCH kallt.", "konjunktion"],
+  ["Vi sjöng OCH dansade hela kvällen.", "konjunktion"], ["SEDAN du kom har allt varit bättre.", "subjunktion"], ["Hon log FAST hon var ledsen.", "subjunktion"],
+  ["Hon log, FÖR hon visste svaret.", "konjunktion"], ["Vi väntar MEDAN du handlar.", "subjunktion"], ["Det var mörkt OCH kallt.", "konjunktion"],
 ];
 
 const TEMPUS_HOG: [string, string, string][] = [
@@ -272,7 +272,7 @@ const FOGAR: [string, string, string][] = [
   ["mat", "säck", "matsäck"], ["ålder", "grupp", "åldersgrupp"], ["regering", "beslut", "regeringsbeslut"], ["fågel", "sång", "fågelsång"],
   ["vinter", "jacka", "vinterjacka"], ["sjukdom", "tid", "sjukdomstid"], ["land", "väg", "landsväg"], ["hand", "boll", "handboll"],
   ["lärare", "rum", "lärarrum"], ["frihet", "kamp", "frihetskamp"], ["vatten", "glas", "vattenglas"], ["tåg", "station", "tågstation"],
-  ["semester", "resa", "semesterresa"], ["rätt", "skrivning", "rättskrivning"], ["köpman", "skap", "köpmanskap"],
+  ["semester", "resa", "semesterresa"], ["rätt", "skrivning", "rättskrivning"], ["dag", "tidning", "dagstidning"],
 ];
 
 const FORKORTNINGSTYP: [string, string][] = [

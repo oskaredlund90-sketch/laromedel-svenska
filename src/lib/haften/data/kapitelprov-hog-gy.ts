@@ -171,7 +171,7 @@ export const KAPITELPROV_HOG_GY = [
         Tåget var försenat {*eftersom|på grund av} det stormade.
         Hon vann loppet {eftersom|*trots att} hon hade ont i foten.
         Han var trött. {Därför|*Ändå} tränade han.
-        Fler cyklar, {*vilket leder till att|eftersom} luften blir renare.
+        Fler cyklar till jobbet, {*vilket leder till att|eftersom} luften blir renare.
         {*Om|Därför|Följaktligen} fler cyklade, skulle luften bli renare.
         Vi måste spara. {*Annars|Eftersom|Trots det} räcker inte pengarna.
         {Trots att|*Trots} kylan badade vi.
@@ -226,7 +226,7 @@ export const KAPITELPROV_HOG_GY = [
         Det var sent{*;|:|–} alla hade gått hem.
         Hon behövde tre saker{;|*:|–} mjöl, socker och ägg.
         Han kom till slut {;|:|*–} två timmar för sent.
-        Vägen Malmö{-|*–} Lund var avstängd.
+        Vägen Malmö{-|*–}Lund var avstängd.
         Vi träffades på ett FN{*-|–}möte.
         Läs sidorna 10{-|*–}15.
       `,
@@ -281,7 +281,7 @@ export const KAPITELPROV_HOG_GY = [
       i: "Ett eller två m/n?",
       t: "val",
       r: `
-        Det står en {*damm|dam} i parken. (vattensamling)
+        Vi badade i en {*damm|dam} i parken.
         Hon tog {*fram|framm} boken.
         Vi går {*hem|hemm}.
         Han är en {*man|mann} på trettio år.
@@ -319,7 +319,7 @@ export const KAPITELPROV_HOG_GY = [
       r: `
         SMHI {*initialord|akronym|kortord}
         Unesco {initialord|*akronym|kortord}
-        mopp (moped) {initialord|akronym|*kortord}
+        moppe (moped) {initialord|akronym|*kortord}
         KTH {*initialord|akronym|kortord}
       `,
     },

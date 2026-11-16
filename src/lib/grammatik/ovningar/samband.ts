@@ -58,12 +58,12 @@ mel.r("{Därför|Om} du vill, kan du följa med.", "Det är ett villkor: Om du v
 const hog = bygg("samband", "hogstadiet");
 hog.l("Många djurarter hotas ____ deras livsmiljöer försvinner.", ["*eftersom", "trots att", "därför"], "Orsak: livsmiljöerna försvinner.");
 hog.l("Livsmiljöerna försvinner. ____ hotas många djurarter.", ["Eftersom", "*Följaktligen", "Trots det"], "Följaktligen = som en följd av detta. Passar i formell text.");
-hog.l("Skolan borde ha längre lunch, ____ eleverna orkar mer på eftermiddagen.", ["trots att", "*eftersom", "om"], "Eftersom inleder argumentets skäl.");
+hog.l("Skolan borde ha längre lunch, ____ eleverna då skulle orka mer på eftermiddagen.", ["trots att", "*eftersom", "om"], "Eftersom inleder argumentets skäl.");
 hog.l("____ fler cyklade till skolan, skulle luften bli renare.", ["Eftersom", "Därför", "*Om"], "Villkor: Om fler cyklade …");
 hog.l("Priserna steg kraftigt, ____ många fick svårt att betala hyran.", ["*vilket ledde till att", "eftersom", "ifall"], "Vilket ledde till att visar en följd och binder ihop meningen.");
 hog.l("Hon klarade provet ____ hon hade varit sjuk hela veckan.", ["eftersom", "*trots att", "så"], "Trots att visar att något händer fast man inte väntar sig det.");
 hog.l("Han var sjuk. ____ spelade han matchen.", ["Därför", "*Ändå", "Eftersom"], "Ändå = trots det.");
-hog.l("____ du inte lämnar in uppgiften, kan läraren inte bedöma den.", ["Därför", "*Såvida", "Eftersom"], "Såvida … inte = om … inte. Villkor.");
+hog.l("____ du inte lämnar in uppgiften, kan läraren inte bedöma den.", ["Därför", "*Såvida", "Följaktligen"], "Såvida … inte = om … inte. Villkor.");
 hog.l("Utsläppen måste minska. ____ kommer klimatet att förändras ännu mer.", ["*Annars", "Därför", "Eftersom"], "Annars = om det inte sker. Villkor åt andra hållet.");
 hog.l("Bussen var försenad ____ en olycka på motorvägen.", ["eftersom", "*på grund av", "så"], "På grund av följs av en nominalfras (en olycka), eftersom av en sats.");
 hog.k("Sortera sambandsorden.", { Orsak: ["eftersom", "på grund av", "med anledning av", "därför att"], Följd: ["därför", "följaktligen", "vilket ledde till att", "alltså"], Villkor: ["om", "såvida inte", "förutsatt att", "ifall"], Medgivande: ["trots att", "ändå", "även om", "fastän"] });
@@ -97,11 +97,11 @@ gy.l("Reformen kan bli lyckad ____ den får tillräcklig finansiering.", ["efter
 gy.l("____ den ekonomiska krisen tvingades många företag säga upp personal.", ["Eftersom", "*Till följd av", "Förutsatt"], "Till följd av + nominalfras uttrycker orsak.");
 gy.l("Metoden är billig. ____ har den låg tillförlitlighet.", ["Följaktligen", "*Å andra sidan", "Därför"], "Å andra sidan väger mot det föregående.");
 gy.l("Forskarna fann inga skillnader. ____ förkastades hypotesen.", ["Trots det", "*Således", "Förutsatt att"], "Således = alltså, därmed. Följd i formell stil.");
-gy.l("Ökningen ____ främst den nya lagstiftningen.", ["leder till", "*beror på", "medför"], "Beror på pekar mot orsaken.");
+gy.l("Ökningen ____ den nya lagstiftningen.", ["leder till", "*beror på", "medför"], "Beror på pekar mot orsaken.");
 gy.l("Den nya lagen ____ en kraftig ökning av antalet ansökningar.", ["beror på", "*medförde", "trots"], "Medförde pekar mot följden.");
 gy.l("____ man inte beaktar urvalets storlek, blir slutsatserna osäkra.", ["*Om", "Således", "Följaktligen"], "Villkor: om man inte beaktar …");
 gy.k("Sortera uttrycken efter samband.", { Orsak: ["till följd av", "beror på", "orsakas av", "med anledning av"], Följd: ["medför", "resulterar i", "således", "därmed"], Villkor: ["förutsatt att", "under förutsättning att", "i händelse av", "såvida inte"], Medgivande: ["trots att", "även om", "visserligen … men", "icke desto mindre"] });
-gy.k("Vilken nivå passar uttrycket i?", { "Formell text": ["följaktligen", "till följd av", "således", "med anledning av"], Vardagligt: ["så", "därför att", "pga.", "liksom"] });
+gy.k("Vilken nivå passar uttrycket i?", { "Formell text": ["följaktligen", "till följd av", "således", "med anledning av"], Vardagligt: ["så", "för", "pga.", "liksom"] });
 gy.v("Vilken mening uttrycker orsak med ett substantiv (nominalisering)?", ["Eftersom priserna steg, minskade köpen.", "*Prisökningen ledde till minskade köp.", "Priserna steg, så köpen minskade."], "Prisökningen är en nominalisering av priserna steg. Vanligt i sakprosa.");
 gy.v("Vad är problemet med ”Glassförsäljningen ökar, vilket leder till fler drunkningsolyckor.”?", ["*Samband förväxlas med orsak – båda beror på varmt väder.", "Meningen saknar verb.", "Vilket ska vara som."], "Korrelation är inte kausalitet. En bakomliggande faktor (värme) förklarar båda.");
 gy.v("Vilken konstruktion uttrycker villkor utan subjunktion?", ["Om du kommer, stannar jag.", "*Kommer du, stannar jag.", "Eftersom du kommer, stannar jag."], "Med omvänd ordföljd kan om utelämnas: Kommer du (= Om du kommer).");

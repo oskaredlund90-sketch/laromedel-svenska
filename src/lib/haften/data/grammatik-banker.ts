@@ -172,7 +172,7 @@ export const HOG_MENINGAR = [
   "[S:Ordföranden] [P:heter] [PV:Sara].",
   "[S:Pappa] [P:köpte] [IO:mig] [O:en ny jacka] [A:i går].",
   "[S:Vattnet] [P:blev] [PV:varmt] [A:i solen].",
-  "[S:Rektorn] [P:berättade] [IO:föräldrarna] [O:nyheten].",
+  "[S:Rektorn] [P:skickade] [IO:föräldrarna] [O:ett brev].",
   "[S:Uppgiften] [P:var] [PV:svår].",
   "[S:Han] [P:visade] [IO:oss] [O:vägen].",
   "[S:Barnen] [P:blev] [PV:glada] [A:av överraskningen].",
@@ -186,7 +186,7 @@ export const HOG_MENINGAR = [
   "[S:Äpplena] [P:var] [PV:sura].",
   "[S:Sjuksköterskan] [P:gav] [IO:patienten] [O:medicin].",
   "[S:Hon] [P:blev] [PV:förvånad] [A:i går].",
-  "[S:Läraren] [P:lämnade] [IO:klassen] [O:proven] [A:på fredagen].",
+  "[S:Läraren] [P:gav] [IO:klassen] [O:proven] [A:på fredagen].",
 ];
 
 export const GY_MENINGAR = [
@@ -204,12 +204,12 @@ export const GY_MENINGAR = [
   "[FS:Det] [P:är] [PV:svårt] [ES:att lära sig ett nytt språk].",
   "[S:Förslaget] [P:har granskats] [AG:av tre experter].",
   "[A:I natt] [P:inträffade] [S:en olycka].",
-  "[FS:Det] [P:finns] [ES:flera skäl] [A:till oro].",
+  "[FS:Det] [P:finns] [ES:flera skäl] [A:i rapporten].",
   "[S:Rapporten] [P:publicerades] [AG:av myndigheten] [A:i våras].",
   "[S:Resultatet] [P:var] [PV:oväntat].",
   "[FS:Det] [P:saknas] [ES:pengar] [A:i budgeten].",
   "[S:Hon] [P:valdes] [PV:till ordförande] [AG:av medlemmarna].",
-  "[S:Läraren] [P:lämnade] [IO:eleverna] [O:sina omdömen] [A:i fredags].",
+  "[S:Läraren] [P:visade] [IO:eleverna] [O:sina omdömen] [A:i fredags].",
   "[FS:Det] [P:var] [PV:roligt] [ES:att träffa dig].",
   "[S:Huset] [P:byggdes] [AG:av hans farfar] [A:på 1920-talet].",
   "[FS:Det] [P:hördes] [ES:ett skrik] [A:från källaren].",
@@ -344,13 +344,13 @@ export function avledningarSkriv(): string {
 
 /** Böjda former där roten behålls: [grundform, böjd form, beskrivning]. */
 export const ROT_BOJNING: [string, string, string][] = [
-  ["glad", "glatt", "ett ___ barn"], ["röd", "rött", "ett ___ hus"], ["god", "gott", "ett ___ äpple"], ["bred", "brett", "ett ___ band"],
-  ["söt", "sött", "ett ___ godis"], ["vit", "vitt", "ett ___ papper"], ["het", "hett", "ett ___ bad"], ["blå", "blått", "ett ___ hav"],
-  ["ny", "nytt", "ett ___ år"], ["fri", "fritt", "ett ___ land"], ["känna", "kände", "jag ___ honom"], ["glömma", "glömde", "jag ___ nyckeln"],
-  ["tänka", "tänkte", "vi ___ på dig"], ["ställa", "ställde", "hon ___ glaset"], ["fylla", "fyllde", "han ___ år"], ["bygga", "byggde", "de ___ en koja"],
-  ["kyssa", "kysste", "hon ___ honom"], ["hänga", "hängde", "jag ___ upp jackan"], ["skämmas", "skämdes", "han ___ över det"], ["minnas", "mindes", "jag ___ allt"],
-  ["springa", "sprang", "hon ___ fort"], ["dricka", "drack", "vi ___ saft"], ["sjunga", "sjöng", "de ___ en sång"], ["skriva", "skrev", "jag ___ ett brev"],
+  ["blå", "blått", "ett ___ hav"], ["ny", "nytt", "ett ___ år"], ["fri", "fritt", "ett ___ land"], ["död", "dött", "ett ___ träd"],
+  ["lätt", "lätt", "ett ___ prov"], ["trött", "trött", "ett ___ barn"], ["glad", "glada", "två ___ barn"], ["röd", "röda", "de ___ husen"],
+  ["hänga, dåtid", "hängde", "jag ___ upp jackan"], ["skämmas, dåtid", "skämdes", "han ___ över det"], ["minnas, dåtid", "mindes", "jag ___ allt"],
+  ["springa, dåtid", "sprang", "hon ___ fort"], ["dricka, dåtid", "drack", "vi ___ saft"], ["sjunga, dåtid", "sjöng", "de ___ en sång"], ["skriva, dåtid", "skrev", "jag ___ ett brev"],
+  ["tömma, dåtid", "tömde", "hon ___ lådan"], ["bränna, dåtid", "brände", "han ___ sig på spisen"], ["stämma, dåtid", "stämde", "det ___ inte"],
   ["känna", "känd", "hon är ___ i hela landet"], ["bränna", "bränd", "en ___ macka"], ["stänga", "stängd", "en ___ dörr"], ["tömma", "tömd", "en ___ låda"],
+  ["glömma", "glömd", "en ___ mössa"], ["fylla", "fylld", "en ___ påse"], ["ställa", "ställd", "en ___ fråga"], ["bygga", "byggd", "ett nyligen ___ hus"],
 ];
 
 export function rotBojningSkriv(): string {

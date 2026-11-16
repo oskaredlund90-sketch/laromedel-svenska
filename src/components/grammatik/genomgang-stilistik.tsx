@@ -54,14 +54,16 @@ export function StilistikGenomgang({ stadie }: { stadie: AgeGroup }) {
             ["Kontrast (antites)", "motsatser ställs mot varandra", "Ute stormade det, inne var det stilla."],
             ["Anafor", "samma ord inleder flera meningar eller led", "Vi kämpar för klimatet. Vi kämpar för framtiden."],
             ["Klimax", "en stegring mot det starkaste", "Det var bra, mycket bra, helt fantastiskt."],
-            ["Asyndes", "uppräkning utan och – ger tempo", "Han åt. Han drack. Han somnade."],
+            ["Asyndes", "uppräkning utan och – ger tempo", "Han åt, drack, somnade."],
             ...(minst(s, "gymnasiet")
               ? [
                   ["Retorisk fråga", "fråga som inte väntar svar", "Vem vill inte leva i fred?"],
-                  ["Tretal", "tre led för rytm och kraft", "Jag kom, jag såg, jag segrade."],
+                  ["Tretal", "tre led för rytm och kraft", "Mod, kunskap och vilja."],
                   ["Allitteration", "samma ljud i början av ord", "sol, sand och semester"],
                   ["Ironi", "säger motsatsen till det man menar", "Vilket härligt väder! (i ösregn)"],
                   ["Eufemism", "mildare omskrivning", "gå bort (dö)"],
+                  ["Litotes", "förstärker genom att förneka motsatsen", "Det var inte så dumt. (= ganska bra)"],
+                  ["Metonymi", "ett ord ersätts med något som hör ihop med det", "Stockholm har beslutat. Hon läser Lagerlöf."],
                 ]
               : []),
           ]}

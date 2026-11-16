@@ -64,7 +64,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Jag lånade en bok {*som|men|fast} handlade om rymden.
           Han kom för sent {*fast|så|för att} han sprang.
           {*Efter det|Men|Fast} åkte vi hem.
-          Jag stannade hemma {*för att|men|fast} jag var sjuk.
+          Jag stannade hemma {*eftersom|men|fast} jag var sjuk.
           Vi kan inte gå ut {*förrän|men|så} vi har ätit.
           Hon blev glad {*när|men|fast} hon fick brevet.
           Det var svårt, {*men|eftersom|så} jag gav inte upp.
@@ -82,7 +82,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Bussen var försenad. {*Därför|Däremot|Dessutom} kom vi för sent.
           Vi gick ut {*trots att|eftersom|därför} det stormade.
           Alla var trötta. {*Ändå|Därför|Dessutom} fortsatte vi.
-          Djuret har päls, fyra ben och skäller. Det är {*alltså|däremot|dessutom} en hund.
+          Djuret har päls och fyra ben och det skäller. Det är {*alltså|däremot|dessutom} en hund.
           {*Å ena sidan|Därför|Dessutom} är det dyrt, å andra sidan håller det länge.
           Hon tränade hårt. {*Till slut|Däremot|Dessutom} vann hon.
           Vi har ingen bil. {*I stället|Dessutom|Därför} cyklar vi.
@@ -114,7 +114,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
         typ: "skriv",
         rader: `
           Jag ville följa med, {men} jag var sjuk.
-          Vi stannade inne {eftersom/för att/då} det regnade.
+          Vi stannade inne {eftersom/därför att/då} det regnade.
           Det regnade, {så/därför} vi stannade inne.
           {När/Efter att/Sedan} jag ätit, borstade jag tänderna.
           Han sprang fort, {men/ändå} han kom sist.
@@ -184,10 +184,10 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Bussen {*kom inte|inte kom}.
           Vi gick hem när bussen {*inte kom|kom inte}.
           De {*har inte|inte har} gjort läxan.
-          Läraren blev arg för att de {*inte hade|hade inte} gjort läxan.
+          Läraren blev arg eftersom de {*inte hade|hade inte} gjort läxan.
           Jag {*kan inte|inte kan} simma.
           Jag badar bara där jag bottnar, eftersom jag {*inte kan|kan inte} simma.
-          Hon {*kommer kanske|kanske kommer} i morgon.
+          Hon {*kommer aldrig|aldrig kommer} i tid.
           Hon sa att hon {*kanske kommer|kommer kanske} i morgon.
           Vi {*får inte|inte får} springa i korridoren.
           Det är en regel att vi {*inte får|får inte} springa i korridoren.
@@ -222,7 +222,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Det är dumt att han äter aldrig frukost. => Det är dumt att han aldrig äter frukost.
           Alla vet att jag tycker inte om spindlar. => Alla vet att jag inte tycker om spindlar.
           Vi gick hem när bussen kom inte. => Vi gick hem när bussen inte kom.
-          Läraren blev arg för att de hade inte gjort läxan. => Läraren blev arg för att de inte hade gjort läxan.
+          Läraren blev arg eftersom de hade inte gjort läxan. => Läraren blev arg eftersom de inte hade gjort läxan.
           Jag badar inte där eftersom jag kan inte simma. => Jag badar inte där eftersom jag inte kan simma.
           Det är en regel att vi får inte springa. => Det är en regel att vi inte får springa.
           Det syns att han vet inte svaret. => Det syns att han inte vet svaret.
@@ -256,7 +256,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Jag vet något. Du gillar inte fisk. (att) => Jag vet att du inte gillar fisk.
           Vi badade. Det var inte varmt. (fast) => Vi badade fast det inte var varmt.
           Han frös. Han hade inte jacka. (eftersom) => Han frös eftersom han inte hade jacka.
-          Mamma blev arg. Jag hade inte städat. (för att) => Mamma blev arg för att jag inte hade städat.
+          Mamma blev arg. Jag hade inte städat. (eftersom) => Mamma blev arg eftersom jag inte hade städat.
           Jag stannar hemma. Jag mår inte bra. (eftersom) => Jag stannar hemma eftersom jag inte mår bra.
           Det är synd. Du kan inte komma. (att) => Det är synd att du inte kan komma.
           Vi väntade. Han svarade inte. (men) => Vi väntade, men han svarade inte.

@@ -250,6 +250,20 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
               singular: <em>Varje elev tar med sin dator</em> – inte <em>deras</em>.
             </Warning>
           </ExampleCard>
+          <ExampleCard title="Verbets modus och aspekt">
+            <Tabell
+              rubriker={["Modus", "Används för", "Exempel"]}
+              rader={[
+                ["Indikativ", "det som är eller händer – den vanliga formen", "Hon läser. Han kom i går."],
+                ["Imperativ", "uppmaningar", "Läs! Stäng dörren."],
+                ["Konjunktiv", "önskan eller något overkligt – mest i fasta uttryck", "Leve kungen! Gud bevare oss! Om jag vore du …"],
+              ]}
+            />
+            <P>
+              Aspekt visar om en handling är pågående eller avslutad: <em>Hon höll på att läsa</em>, <em>Hon satt och läste</em> (pågående) – <em>Hon läste ut boken</em>{" "}
+              (avslutad).
+            </P>
+          </ExampleCard>
           <ExampleCard title="Samma ord – olika ordklass">
             <Ex>Hon är snabb. (adjektiv) – Hon springer snabbt. (adverb)</Ex>
             <Ex>Jag vet att du kommer. (subjunktion) – Det är svårt att veta. (infinitivmärke)</Ex>

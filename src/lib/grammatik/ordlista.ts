@@ -14,7 +14,7 @@ export interface Term {
 export const ORDLISTA: Term[] = [
   { term: "anafor", forklaring: "Stilfigur där samma ord inleder flera meningar eller led.", exempel: "Vi kämpar för … Vi kämpar för …", fran: "hogstadiet" },
   { term: "antites", forklaring: "Stilfigur där motsatser ställs mot varandra.", exempel: "Ute stormade det, inne var det stilla.", fran: "hogstadiet" },
-  { term: "asyndes", forklaring: "Uppräkning utan och. Ger tempo.", exempel: "Han åt. Han drack. Han somnade.", fran: "hogstadiet" },
+  { term: "asyndes", forklaring: "Uppräkning utan och. Ger tempo.", exempel: "Han åt, drack, somnade.", fran: "hogstadiet" },
   { term: "klimax", forklaring: "Stilfigur med en stegring mot det starkaste.", exempel: "bra, mycket bra, fantastiskt", fran: "hogstadiet" },
   { term: "additiv", forklaring: "Om sambandsord som lägger till något.", exempel: "dessutom, även", fran: "hogstadiet" },
   { term: "adversativ", forklaring: "Om sambandsord som visar motsats.", exempel: "men, däremot", fran: "hogstadiet" },

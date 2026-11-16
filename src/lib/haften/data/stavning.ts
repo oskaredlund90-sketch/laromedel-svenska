@@ -146,7 +146,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
     steg: 3,
     feltyper: ["stavning.dubbelteckning"],
     regel: [
-      "Inga ord slutar på mm: hem, rum, kom, som, fem. Men när ordet får en ändelse blir det mm: hemma, rummet, komma.",
+      "De flesta korta ord slutar på ett m: hem, rum, kom, som, fem. När ordet får en ändelse blir det ofta mm: hemma, rummet. Några ord har mm redan i grundformen (damm, lamm) – dem får man lära sig.",
       "Småord slutar sällan på nn: man, men, han, hon, vän. Men med ändelse: mannen, vännen.",
       "Verb som glömma, känna och tömma tappar en bokstav före -de: glömde, kände, tömde. Uppmaningen blir också kort: Glöm inte! Kom hit!",
     ],
@@ -231,7 +231,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Tö{m} papperskorgen! (m/mm)
           Hon tö{m}de glaset. (m/mm)
           Vi si{mm}ade. (m/mm)
-          Si{m} fort! (m/mm)
+          Hon tö{mm}de lådan. (m/mm)
           Jag mi{nn}s det. (n/nn)
           Ko{m} hit! (m/mm)
           Hi{m}len är grå. (m/mm)
@@ -840,7 +840,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Vi seglade över {*Atlanten|atlanten}.
           Hon är {Svensk|*svensk} men bor i Norge.
           Han är {Norrman|*norrman}.
-          {Kung|*kung} Carl Gustaf höll ett tal.
+          I går höll {Kung|*kung} Carl Gustaf ett tal.
           Det beslutade {Riksdagen|*riksdagen} i går.
           Vi läste {*Ronja rövardotter|Ronja Rövardotter}.
           Jag läser {*Bröderna Lejonhjärta|Bröderna lejonhjärta}.
@@ -854,7 +854,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Hon är {Göteborgare|*göteborgare}.
           Pappa kör en {Volvo|*volvo}.
           Pappa jobbar på {*Volvo|volvo}.
-          {Doktor|*doktor} Lund undersökte mig.
+          I dag undersökte {Doktor|*doktor} Lund mig.
           Vi läste om {Andra världskriget|*andra världskriget}.
           De bor i {Norra|*norra} Norrland.
           Min mormor bor i {*Norrland|norrland}.
@@ -869,7 +869,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           {*Östersjön|östersjön} är ett innanhav.
           Vi besökte {*Vasamuseet|vasamuseet}.
           Vår {Statsminister|*statsminister} höll presskonferens.
-          {Påven|*påven} bor i Vatikanen.
+          Den nya {Påven|*påven} bor i Vatikanen.
           Vi läser {Kristendom|*kristendom} och islam i religion.
           Hon bor på {*Drottninggatan|drottninggatan}.
           Hon jobbar på {*Apple|apple}.

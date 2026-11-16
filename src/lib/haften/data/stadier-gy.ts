@@ -194,7 +194,7 @@ const BIFF_GY: string[] = [
   "Han ångrade att han hade aldrig rest utomlands. => Han ångrade att han aldrig hade rest utomlands.",
   "Det är viktigt att man glömmer inte källorna. => Det är viktigt att man inte glömmer källorna.",
   "Jag vet att de har alltid stöttat mig. => Jag vet att de alltid har stöttat mig.",
-  "Hon blev arg för att ingen lyssnade inte. => Hon blev arg för att ingen lyssnade.",
+  "Hon blev arg eftersom ingen lyssnade inte. => Hon blev arg eftersom ingen lyssnade.",
   "I går jag läste hela romanen. => I går läste jag hela romanen.",
   "Därför forskarna föreslår nya regler. => Därför föreslår forskarna nya regler.",
   "Sammanfattningsvis det finns flera orsaker. => Sammanfattningsvis finns det flera orsaker.",
@@ -235,7 +235,7 @@ const FORMELLA_SAMBAND: [string, string, string[]][] = [
   ["Reformen kan lyckas ____ den får tillräcklig finansiering.", "förutsatt att", ["följaktligen", "till följd av"]],
   ["Forskarna fann inga skillnader. ____ förkastades hypotesen.", "Således", ["Förutsatt att", "Trots att"]],
   ["Metoden är billig. ____ har den låg tillförlitlighet.", "Å andra sidan", ["Följaktligen", "Således"]],
-  ["Ökningen ____ främst den nya lagstiftningen.", "beror på", ["medför", "leder till"]],
+  ["Ökningen ____ den nya lagstiftningen.", "beror på", ["medför", "leder till"]],
   ["Den nya lagen ____ en kraftig ökning av ansökningar.", "medförde", ["berodde på", "orsakades av"]],
   ["____ urvalet är litet ger studien en tydlig indikation.", "Även om", ["Följaktligen", "Till följd av"]],
   ["Projektet stoppades ____ bristande finansiering.", "på grund av", ["eftersom", "således"]],
@@ -393,10 +393,10 @@ const STORLITEN: [string, string, string[]][] = [
 const FORVAXLING: [string, string, string[]][] = [
   ["____ bor du?", "Var", ["Vart"]], ["____ ska du?", "Vart", ["Var"]], ["Jag vet inte ____ nyckeln är.", "var", ["vart"]],
   ["____ tog den vägen?", "Vart", ["Var"]], ["Hon frågade ____ vi skulle åka.", "vart", ["var"]],
-  ["Det regnade, ____ vi gick in.", "så", ["då"]], ["Vi kom fram. ____ var affären stängd.", "Då", ["Så"]], ["____ jag var liten bodde vi i Umeå.", "När", ["Då"]],
+  ["Det regnade, ____ vi gick in.", "så", ["då"]], ["Vi kom fram. ____ var affären stängd.", "Då", ["Så"]], ["____ du vill följa med, säg till.", "Om", ["När"]],
   ["____ kom för sent.", "De", ["Dem", "Dom"]], ["Jag såg ____ i går.", "dem", ["de", "dom"]], ["____ som vill får gå.", "De", ["Dem"]],
   ["Vi bjöd ____ på fika.", "dem", ["de"]], ["Det är ____ som bestämmer.", "de", ["dem"]], ["Hon pratade med ____.", "dem", ["de"]],
-  ["Jag ville ____ stanna.", "egentligen", ["igentligen", "egentlien"]], ["Det var ____ roligt.", "jätteroligt", ["jätte roligt", "jätte-roligt"]],
+  ["Jag ville ____ stanna.", "egentligen", ["igentligen", "egentlien"]], ["Det var ____.", "jätteroligt", ["jätte roligt", "jätte-roligt"]],
   ["Vi åkte ____.", "i alla fall", ["iallafall", "ialla fall"]], ["Hon är ____ duktig.", "väldigt", ["väldit", "välldigt"]], ["Det ____ bra.", "känns", ["kännts", "kens"]], ["Jag ____ honom.", "känner", ["känder", "kenner"]],
   ["Han ____ ingenting.", "sa", ["sad", "saa"]], ["Hon har ____ hela boken.", "läst", ["lässt", "läsit"]], ["Jag ____ dig.", "saknar", ["saknnar", "sakna"]], ["____ du kommer, ring mig.", "Om", ["Ifall att", "Omm"]],
   ["Hon kom ____ tidigt.", "alldeles", ["aldeles", "alldelles"]], ["Det är ____ sant.", "faktiskt", ["faktikst", "fakstiskt"]], ["Vi ____ hem.", "åkte", ["åckte", "åkkte"]],
@@ -449,7 +449,7 @@ const MARKORER_GY: [string, string, string[]][] = [
   ["Detta innebär ____ att fler måste hjälpa till.", "med andra ord", ["däremot", "dessutom"]],
   ["Vissa forskare menar att skärmar skadar. ____ hävdar att effekten är liten.", "Andra", ["Dessutom", "Således"]],
   ["Frågan är politisk, ____ också etisk.", "men", ["således", "följaktligen"]],
-  ["Slutligen ____ förslag på fortsatt forskning.", "ges", ["inledes", "avslutas"]],
+  ["Slutligen ____ förslag på fortsatt forskning.", "ges", ["inleds", "avslutas"]],
   ["Studien har två syften. ____ att kartlägga läsvanor.", "Det första är", ["Däremot är", "Således är"]],
   ["Läsningen minskar. ____ ökar skärmtiden.", "Parallellt med detta", ["Följaktligen", "Inledningsvis"]],
   ["Teorin har fått kritik. ____ menar flera forskare att den förenklar.", "Bland annat", ["Således", "Avslutningsvis"]],
@@ -522,12 +522,12 @@ const SAMMANFATTANDE: [string, string, string[]][] = [
 
 const RETORIK: [string, string][] = [
   ["Jag har en dröm. Jag har en dröm om rättvisa. Jag har en dröm om frihet.", "anafor"], ["Vem vill inte leva i fred?", "retorisk fråga"],
-  ["Jag kom, jag såg, jag segrade.", "tretal"], ["sol, sand och semester", "allitteration"], ["Vilket härligt väder! (i ösregn)", "ironi"],
-  ["Han har gått bort.", "eufemism"], ["Ute stormade det, inne var det stilla.", "antites"], ["Vi ska kämpa på stränderna, vi ska kämpa på fälten, vi ska kämpa i städerna.", "anafor"],
-  ["Är det verkligen rimligt att barn ska betala för vuxnas misstag?", "retorisk fråga"], ["Frihet, jämlikhet, broderskap.", "tretal"], ["Stilla, stjärnklara, strålande natt", "allitteration"],
+  ["Mod, kunskap och vilja.", "tretal"], ["sol, sand och semester", "allitteration"], ["Vilket härligt väder! (i ösregn)", "ironi"],
+  ["Han har gått bort.", "eufemism"], ["Ute stormade det, inne var det stilla.", "antites"], ["Vi ska kämpa på stränderna, vi ska kämpa på fälten.", "anafor"],
+  ["Är det verkligen rimligt att barn ska betala för vuxnas misstag?", "retorisk fråga"], ["Frihet, jämlikhet, broderskap.", "tretal"], ["Stilla stjärnklara natt", "allitteration"],
   ["Toppen, nu missade vi bussen också.", "ironi"], ["Han blev uppsagd. → Hans tjänst avvecklades.", "eufemism"], ["Rik och fattig, ung och gammal – alla drabbas.", "antites"],
   ["Inte en gång. Inte två gånger. Utan tusen gånger har vi sagt det.", "anafor"], ["Hur länge ska vi vänta?", "retorisk fråga"], ["Snabbt, enkelt och billigt.", "tretal"],
-  ["Glada, gröna gräsmattor", "allitteration"],
+  ["Gröna gräsmattor", "allitteration"],
   ["Så snällt av dig att äta upp hela kakan själv.", "ironi"], ["en äldre medborgare (i stället för en gammal person)", "eufemism"],
   ["Krig är fred. Frihet är slaveri.", "antites"], ["Varje dag. Varje timme. Varje minut tänker jag på det.", "anafor"],
   ["Kan vi verkligen blunda för detta?", "retorisk fråga"], ["Lyssna, lär och led!", "tretal"], ["Mycket mjuk mjölkchoklad", "allitteration"],
@@ -557,8 +557,8 @@ const GENRE: [string, string][] = [
 const GENRER = ["vetenskaplig text", "nyhetsartikel", "krönika", "debattartikel", "skönlitteratur"];
 
 const KONNOTATION: [string, "positiv" | "negativ" | "neutral"][] = [
-  ["hem", "positiv"], ["bostad", "neutral"], ["kåk", "negativ"], ["bestämd", "positiv"], ["envis", "negativ"], ["målmedveten", "positiv"],
-  ["sparsam", "positiv"], ["snål", "negativ"], ["ekonomisk", "neutral"], ["smal", "neutral"], ["slank", "positiv"], ["mager", "negativ"],
+  ["hem", "positiv"], ["bostad", "neutral"], ["kåk", "negativ"], ["bestämd", "neutral"], ["envis", "negativ"], ["målmedveten", "positiv"],
+  ["sparsam", "neutral"], ["snål", "negativ"], ["ekonomisk", "neutral"], ["smal", "neutral"], ["slank", "positiv"], ["mager", "negativ"],
   ["nyfiken", "positiv"], ["snokig", "negativ"], ["äldre", "neutral"], ["gammal stofil", "negativ"], ["erfaren", "positiv"], ["barnslig", "negativ"],
   ["barnsligt förtjust", "positiv"], ["frihetskämpe", "positiv"], ["upprorsmakare", "negativ"], ["demonstrant", "neutral"], ["doft", "positiv"], ["stank", "negativ"],
 ];

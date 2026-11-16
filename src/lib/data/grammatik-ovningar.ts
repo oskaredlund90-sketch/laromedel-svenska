@@ -499,11 +499,11 @@ const ordklasserHogstadietMC: MultipleChoiceExercise[] = [
     topic: "ordklasser",
     ageGroup: "hogstadiet",
     instruction: "Vilken ordklass tillhör det markerade ordet?",
-    prompt: "Hon studerar *för att* hon vill bli läkare.",
+    prompt: "Hon studerar *därför att* hon vill bli läkare.",
     options: ["Preposition", "Subjunktion", "Adverb", "Pronomen"],
     correct: 1,
     explanation:
-      "'För att' är en subjunktion som anger orsak och inleder en bisats.",
+      "Därför att är en subjunktion som anger orsak och inleder en bisats.",
   },
 ];
 
@@ -579,7 +579,7 @@ const ordklasserGymnasietMC: MultipleChoiceExercise[] = [
     prompt: "Hon hade *tre* katter hemma.",
     options: ["Adjektiv", "Räkneord", "Adverb", "Pronomen"],
     correct: 1,
-    explanation: "'Tre' är ett räknord (grundtal) som anger antalet katter.",
+    explanation: "'Tre' är ett räkneord (grundtal) som anger antalet katter.",
   },
   {
     id: "ordklasser-mc-gym-4",
@@ -614,7 +614,7 @@ const ordklasserGymnasietMC: MultipleChoiceExercise[] = [
     prompt: "Det är *två* sidor av samma mynt.",
     options: ["Pronomen", "Adjektiv", "Räkneord", "Adverb"],
     correct: 2,
-    explanation: "'Två' är ett räknord som anger antal.",
+    explanation: "'Två' är ett räkneord som anger antal.",
   },
   {
     id: "ordklasser-mc-gym-7",
@@ -988,7 +988,7 @@ const meningsbyggnadGymnasietSA: SentenceAnalysisExercise[] = [
       { text: "Resultatet av undersökningen", role: "Subjekt" },
       { text: "ansågs vara", role: "Predikat" },
       { text: "oväntat positivt", role: "Predikativ" },
-      { text: "av forskarlaget", role: "Agentadverbial" },
+      { text: "av forskarlaget", role: "Agent" },
     ],
     roleOptions: [
       "Subjekt",
@@ -996,7 +996,7 @@ const meningsbyggnadGymnasietSA: SentenceAnalysisExercise[] = [
       "Objekt",
       "Adverbial",
       "Predikativ",
-      "Agentadverbial",
+      "Agent",
     ],
   },
   {
@@ -1091,7 +1091,7 @@ const meningsbyggnadGymnasietMC: MultipleChoiceExercise[] = [
     prompt: "Välj den mening som har en inskjuten bisats.",
     options: [
       "Boken, som jag lånade, var spännande.",
-      "Jag läst boken och den var spännande.",
+      "Jag har läst boken och den var spännande.",
       "Boken var spännande eftersom den hade bra handling.",
       "Den spännande boken låg på bordet.",
     ],
@@ -1462,7 +1462,7 @@ const skiljeteckenGymnasietFIB: FillInBlankExercise[] = [
     options: [
       "kommatecken på båda ställena",
       "kolon på båda ställena",
-      "tankstreck på båda ställena",
+      "punkt på båda ställena",
       "semikolon på båda ställena",
     ],
     correct: "kommatecken på båda ställena",
@@ -1505,7 +1505,7 @@ const skiljeteckenGymnasietFIB: FillInBlankExercise[] = [
     options: [",", ";", ":", "."],
     correct: ";",
     explanation:
-      "Semikolon binder har samman två nära besläktade huvudsatser.",
+      "Semikolon binder här samman två nära besläktade huvudsatser.",
   },
   {
     id: "skiljetecken-fib-gym-5",
@@ -1527,7 +1527,7 @@ const skiljeteckenGymnasietFIB: FillInBlankExercise[] = [
     ageGroup: "gymnasiet",
     instruction: "Vilket skiljetecken saknas?",
     sentence:
-      "Rapporten behandlade tre omraden____ ekonomi, miljö och utbildning.",
+      "Rapporten behandlade tre områden____ ekonomi, miljö och utbildning.",
     options: [",", ";", ":", "!"],
     correct: ":",
     explanation:
@@ -1722,7 +1722,7 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "kjörde",
     correctWord: "körde",
     explanation:
-      "Körde stavas med k. Sje- och tje-ljud före ö stavas ofta bara med k: kör, köpa, kök.",
+      "Körde stavas med k. Tje-ljud före ö stavas ofta bara med k: kör, köpa, kök.",
   },
   {
     id: "stavning-ec-hog-4",
@@ -1773,10 +1773,10 @@ const stavningHogstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "hogstadiet",
     instruction: "Vilket ord innehåller ett sje-ljud?",
     prompt: "Välj det ord som har sje-ljud.",
-    options: ["kjol", "kind", "kaffe", "kall"],
+    options: ["skjorta", "kind", "kaffe", "kall"],
     correct: 0,
     explanation:
-      "'Kjol' innehåller ett sje-ljud som stavas kj. Sje-ljudet kan stavas på många sätt: sj, sk, skj, stj, sch, ch, sh, ge, gi, j.",
+      "Skjorta har sje-ljud som stavas skj. Sje-ljudet kan stavas på många sätt: sj, sk, skj, stj, sch, ch, sh, -tion.",
   },
   {
     id: "stavning-mc-hog-2",
@@ -1785,7 +1785,7 @@ const stavningHogstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "hogstadiet",
     instruction: "Vilket ord är rätt stavat?",
     prompt: "Välj det korrekt stavade ordet för sje-ljudet.",
-    options: ["stjärna", "sjarna", "skjarna", "shjarna"],
+    options: ["stjärna", "sjärna", "skjärna", "schärna"],
     correct: 0,
     explanation:
       "'Stjärna' är korrekt. Sje-ljudet stavas stj i detta ord.",
@@ -1830,7 +1830,7 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "notvandigt",
     correctWord: "nödvändigt",
     explanation:
-      "'Nödvändigt' stavas med d, inte t. Den stumma bokstaven d hörs inte i uttalet.",
+      "Nödvändigt kommer av nöd + vändig – därför ö och d.",
   },
   {
     id: "stavning-ec-gym-4",
@@ -1843,7 +1843,7 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "Dem",
     correctWord: "De",
     explanation:
-      "'De' är korrekt har eftersom det är subjekt i satsen. Tips: om du kan ersätta med 'vi' är det 'de', om du kan ersätta med 'oss' är det 'dem'.",
+      "'De' är korrekt här eftersom det är subjekt i satsen. Tips: om du kan ersätta med 'vi' är det 'de', om du kan ersätta med 'oss' är det 'dem'.",
   },
   {
     id: "stavning-ec-gym-5",
@@ -1856,7 +1856,7 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "beskreft",
     correctWord: "beskrev",
     explanation:
-      "'Beskrev' stavas med v, inte ft. Den stumma bokstaven förändras inte i preteritum av 'beskriva'.",
+      "Beskrev kommer av beskriva – roten skriv behåller v.",
   },
   {
     id: "stavning-ec-gym-6",
@@ -1992,7 +1992,7 @@ const ordbildningHogstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "hogstadiet",
     instruction: "Vilket är prefixet (förstavelsen) i ordet?",
     prompt: "Vilket är prefixet i ordet 'överraskad'?",
-    options: ["över-", "overr-", "o-", "overras-"],
+    options: ["över-", "överr-", "o-", "överras-"],
     correct: 0,
     explanation:
       "Prefixet \u00e4r '\u00f6ver-'. Det l\u00e4ggs f\u00f6re verbet 'raska' f\u00f6r att bilda '\u00f6verraska', vars particip \u00e4r '\u00f6verraskad'.",
@@ -2117,7 +2117,7 @@ const ordbildningGymnasietMC: MultipleChoiceExercise[] = [
     options: ["-lig", "-ning", "-bar", "-sam"],
     correct: 1,
     explanation:
-      "Suffixet '-ning' är mycket produktivt för att bilda substantiv av verb: lösa -> lösning, bygga -> byggning.",
+      "Suffixet '-ning' är mycket produktivt för att bilda substantiv av verb: lösa → lösning, tävla → tävling.",
   },
   {
     id: "ordbildning-mc-gym-3",
@@ -2308,7 +2308,7 @@ const textbindningGymnasietFIB: FillInBlankExercise[] = [
     relatedTextSlug: "sprak-och-makt",
     instruction: "Välj det mest passande sambandsordet.",
     sentence:
-      "Författaren använder ett rikt bildspråk. ____ skapar hon en nära förhållandevis personlig ton.",
+      "Författaren använder ett rikt bildspråk. ____ skapar hon en nära och personlig ton.",
     options: ["Följaktligen", "Däremot", "Likväl", "Därtill"],
     correct: "Därtill",
     explanation:
@@ -2374,7 +2374,7 @@ const textbindningGymnasietFIB: FillInBlankExercise[] = [
     ageGroup: "gymnasiet",
     instruction: "Välj det mest passande sambandsordet.",
     sentence:
-      "Kritikerna var till en början skeptiska. ____ ändrade många av dem sin uppfattning efter premiaren.",
+      "Kritikerna var till en början skeptiska. ____ ändrade många av dem sin uppfattning efter premiären.",
     options: ["Dessutom", "Således", "Sedermera", "Därtill"],
     correct: "Sedermera",
     explanation:
@@ -2657,7 +2657,7 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "ordklasser",
     ageGroup: "gymnasiet",
-    instruction: "Rätta felet med verbkongruens.",
+    instruction: "Rätta det felaktiga pronomenet.",
     sentence: "Varje elev ska ta med deras dator till lektionen.",
     correctedSentence: "Varje elev ska ta med sin dator till lektionen.",
     errorWord: "deras",
@@ -2684,12 +2684,12 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Rätta felaktig adjektivböjning.",
-    sentence: "Den nya studenten var mycket duktig.",
-    correctedSentence: "Den nye studenten var mycket duktig.",
-    errorWord: "nya",
-    correctWord: "nye",
+    sentence: "Det nya huset var mycket stor.",
+    correctedSentence: "Det nya huset var mycket stort.",
+    errorWord: "stor",
+    correctWord: "stort",
     explanation:
-      "Vid bestämd form singularis maskulinum av adjektiv kan formen 'nye' användas för manliga referenter: 'den nye studenten'. Dock accepteras 'nya' alltmer i modernt språk.",
+      "Predikativet ska kongruera med subjektet. Huset är ett ett-ord, så adjektivet får -t: stort."
   },
   {
     id: "ordklasser-ec-gym-5",
@@ -2807,7 +2807,7 @@ const ordklasserGymnasietSA: SentenceAnalysisExercise[] = [
       { text: "dessutom", role: "Adverb" },
       { text: "skrivit", role: "Verb (supinum)" },
       { text: "två", role: "Räkneord" },
-      { text: "essaer", role: "Substantiv" },
+      { text: "essäer", role: "Substantiv" },
     ],
     roleOptions: [
       "Substantiv",
@@ -3047,14 +3047,14 @@ const meningsbyggnadGymnasietSAExtra: SentenceAnalysisExercise[] = [
       { text: "Förslaget", role: "Subjekt" },
       { text: "har granskats", role: "Predikat" },
       { text: "grundligt", role: "Adverbial" },
-      { text: "av den parlamentariska kommittén", role: "Agentadverbial" },
+      { text: "av den parlamentariska kommittén", role: "Agent" },
     ],
     roleOptions: [
       "Subjekt",
       "Predikat",
       "Objekt",
       "Adverbial",
-      "Agentadverbial",
+      "Agent",
       "Predikativ",
     ],
   },
@@ -3087,19 +3087,19 @@ const meningsbyggnadGymnasietSAExtra: SentenceAnalysisExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "gymnasiet",
     instruction: "Analysera satsdelarna i denna formella mening.",
-    sentence: "De involverade parterna tilldelades ersättning av forsäkringsbolaget.",
+    sentence: "De involverade parterna tilldelades ersättning av försäkringsbolaget.",
     parts: [
       { text: "De involverade parterna", role: "Subjekt" },
       { text: "tilldelades", role: "Predikat" },
       { text: "ersättning", role: "Objekt" },
-      { text: "av forsäkringsbolaget", role: "Agentadverbial" },
+      { text: "av försäkringsbolaget", role: "Agent" },
     ],
     roleOptions: [
       "Subjekt",
       "Predikat",
       "Objekt",
       "Adverbial",
-      "Agentadverbial",
+      "Agent",
     ],
   },
 ];
@@ -3133,7 +3133,7 @@ const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "sjön,",
     correctWord: "sjön",
     explanation:
-      "Komma sätts inte före 'och' när det binder ihop två verb med samma subjekt. Komma före 'och' används bara vid uppräkning eller när det binder två fullständiga huvudsatser.",
+      "Komma sätts inte före och när och binder ihop två verb med samma subjekt: Vi åkte till stugan och badade.",
   },
   {
     id: "skiljetecken-ec-hog-3",
@@ -3188,7 +3188,7 @@ const skiljeteckenGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "tydlig,",
     correctWord: "tydlig;",
     explanation:
-      "Två besläktade huvudsatser utan bindeord bor skiljas med semikolon, inte komma. Kommafel av denna typ kallas 'satsradning'.",
+      "Två besläktade huvudsatser utan bindeord bör skiljas med semikolon, inte komma. Kommafel av denna typ kallas 'satsradning'.",
   },
   {
     id: "skiljetecken-ec-gym-2",
@@ -3227,7 +3227,7 @@ const skiljeteckenGymnasietEC: ErrorCorrectionExercise[] = [
     errorWord: "Alex's",
     correctWord: "Alex",
     explanation:
-      "På svenska används inte apostrof vid genitiv. Korrekt är 'Alex bok'. Apostrof används bara när namnet slutar på s, x eller z: 'Agnes' bok'.",
+      "På svenska används inte apostrof vid genitiv. Korrekt är 'Alex bok'. Om namnet slutar på s, x eller z skriver man genitiv utan extra s, ofta med apostrof: Alex' bok.",
   },
   {
     id: "skiljetecken-ec-gym-5",
@@ -3326,7 +3326,7 @@ const stavningHogstadietECExtra: ErrorCorrectionExercise[] = [
     errorWord: "injengör",
     correctWord: "ingenjör",
     explanation:
-      "'Ingenjör' stavas med ng före e och j före o. Det är ett vanligt förväxlingsord.",
+      "Ingenjör stavas med ng före e och j före ö.",
   },
 ];
 
@@ -3646,11 +3646,11 @@ const textbindningGymnasietEC: ErrorCorrectionExercise[] = [
     ageGroup: "gymnasiet",
     instruction: "Rätta det felaktiga konnektivet.",
     sentence: "Forskning visar att motion förbättrar hälsan. Exempelvis bor alla träna mer.",
-    correctedSentence: "Forskning visar att motion förbättrar hälsan. Därför bor alla träna mer.",
+    correctedSentence: "Forskning visar att motion förbättrar hälsan. Därför bör alla träna mer.",
     errorWord: "Exempelvis",
     correctWord: "Därför",
     explanation:
-      "'Exempelvis' inleder ett exempel, men har dras en slutsats. 'Därför' eller 'följaktligen' uttrycker slutledning.",
+      "'Exempelvis' inleder ett exempel, men här dras en slutsats. 'Därför' eller 'följaktligen' uttrycker slutledning.",
   },
   {
     id: "textbindning-ec-gym-2",
@@ -3883,7 +3883,7 @@ const stilistikGymnasietCat: CategorizationExercise[] = [
       "Härmed meddelas",
       "Kolla in det här",
       "Undersökningen påvisar",
-      "De går typ inte",
+      "Det går typ inte",
       "Resultaten indikerar",
       "Fett najs",
     ],
@@ -3892,7 +3892,7 @@ const stilistikGymnasietCat: CategorizationExercise[] = [
       "Härmed meddelas": "Formellt/akademiskt",
       "Kolla in det här": "Informellt/vardagligt",
       "Undersökningen påvisar": "Formellt/akademiskt",
-      "De går typ inte": "Informellt/vardagligt",
+      "Det går typ inte": "Informellt/vardagligt",
       "Resultaten indikerar": "Formellt/akademiskt",
       "Fett najs": "Informellt/vardagligt",
     },
@@ -3905,7 +3905,7 @@ const stilistikGymnasietCat: CategorizationExercise[] = [
     instruction: "Sortera stilfigurerna i rätt kategori.",
     items: [
       "Livet är en resa",
-      "Stark som en lejon",
+      "Stark som ett lejon",
       "Jag har sagt det tusen gånger",
       "Blommorna dansade i vinden",
       "Kall som is",
@@ -3914,7 +3914,7 @@ const stilistikGymnasietCat: CategorizationExercise[] = [
     categories: ["Metafor", "Liknelse", "Hyperbol", "Besjälning"],
     correctMapping: {
       "Livet är en resa": "Metafor",
-      "Stark som en lejon": "Liknelse",
+      "Stark som ett lejon": "Liknelse",
       "Jag har sagt det tusen gånger": "Hyperbol",
       "Blommorna dansade i vinden": "Besjälning",
       "Kall som is": "Liknelse",
@@ -4621,7 +4621,7 @@ const stilistikHogstadietMCExtra: MultipleChoiceExercise[] = [
     topic: "stilistik",
     ageGroup: "hogstadiet",
     instruction: "Vilken stilfigur används i exemplet?",
-    prompt: "'Han drack. Han åt. Han somnade.'",
+    prompt: "'Han åt, drack, somnade.'",
     options: ["Allitteration", "Hyperbol", "Asyndes", "Anafor"],
     correct: 2,
     explanation:
@@ -4683,10 +4683,10 @@ const stilistikGymnasietMCExtra: MultipleChoiceExercise[] = [
     ageGroup: "gymnasiet",
     instruction: "Vilken retorisk strategi används?",
     prompt: "'Tre saker behövs: mod, vilja och uthållighet.'",
-    options: ["Trikolon", "Anafor", "Klimax", "Asyndes"],
+    options: ["Tretal", "Anafor", "Klimax", "Asyndes"],
     correct: 0,
     explanation:
-      "Trikolon är en uppräkning av tre parallella led. Det är ett vanligt retoriskt grepp som ger rytm och tyngd.",
+      "Tretal (trikolon) är en uppräkning av tre parallella led. Det är ett vanligt retoriskt grepp som ger rytm och tyngd.",
   },
   {
     id: "stilistik-mc-gym-extra-2",

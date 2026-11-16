@@ -82,7 +82,7 @@ export function MeningsbyggnadGenomgang({ stadie }: { stadie: AgeGroup }) {
           <Tabell
             rubriker={["Bisats", "Inleds ofta med", "Exempel", "Fungerar som"]}
             rader={[
-              ["Att-sats", "att, om, vad, vem", "Jag vet att du har rätt.", "subjekt eller objekt"],
+              ["Att-sats", "att", "Jag vet att du har rätt.", "subjekt eller objekt"],
               ["Relativsats", "som, där, vilket, vars", "Boken som jag läste var bra.", "attribut – beskriver ett ord"],
               ["Adverbiell bisats", "när, eftersom, om, trots att", "Vi gick hem när det blev mörkt.", "adverbial – när, varför, villkor"],
             ]}
@@ -92,6 +92,23 @@ export function MeningsbyggnadGenomgang({ stadie }: { stadie: AgeGroup }) {
             <em>Räntan höjdes, vilket drabbade många.</em>
           </Tip>
           <P>Alla tre följer BIFF-regeln. Adverbiella bisatser finns också i kapitlet om orsak, följd och villkor.</P>
+        </Section>
+      )}
+
+      {minst(s, "gymnasiet") && (
+        <Section title="Fördjupning: fler termer för bisatser">
+          <Tabell
+            rubriker={["Term", "Vad det är", "Exempel"]}
+            rader={[
+              ["Frågebisats", "en indirekt fråga – inleds med om eller ett frågeord (vem, vad, hur …)", "Jag undrar om hon har ringt. Vet du vem som kommer?"],
+              ["Temporal bisats", "adverbiell bisats om tid", "När det blev mörkt gick vi hem."],
+              ["Kausal bisats", "adverbiell bisats om orsak", "Vi stannade inne eftersom det regnade."],
+              ["Konditionell bisats", "adverbiell bisats om villkor", "Om det regnar stannar vi inne."],
+              ["Inskjuten bisats", "en bisats mitt i huvudsatsen, ofta inom kommatecken", "Studien, som publicerades i maj, väckte debatt."],
+              ["Satsförkortning", "en infinitivfras som ersätter en bisats", "Hon gick ut för att handla. (= så att hon kunde handla)"],
+              ["Anakoluti", "en mening som börjar på ett sätt och slutar på ett annat", "Den boken som jag läste, den var den bra."],
+            ]}
+          />
         </Section>
       )}
 

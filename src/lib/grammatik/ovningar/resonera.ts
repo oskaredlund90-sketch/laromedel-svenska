@@ -143,7 +143,7 @@ const UPPGIFTER: Record<AgeGroup, Partial<Record<GrammatikAmne, Rad[]>>> = {
     stilistik: [
       ["skriv-om", "Skriv om sms:et så att det passar i ett mejl till rektorn.", "Tja! Kan vi typ få längre lunch? Det e skitkort nu asså.", "Hej! Vi undrar om det är möjligt att förlänga lunchrasten. Många elever upplever att den är för kort för att hinna äta i lugn och ro. Vänliga hälsningar, klass 8B", ["Hälsning och avslutning", "Inga slangord", "Ett tydligt skäl"]],
       ["forklara", "Vilken stilfigur används? Förklara vilken effekt den har.", "Vi kämpar för klimatet. Vi kämpar för framtiden. Vi kämpar för våra barn.", "Det är en anafor: samma ord inleder varje mening. Upprepningen ger rytm och kraft och gör att budskapet fastnar.", ["Jag namnger stilfiguren", "Jag förklarar effekten"]],
-      ["fortsatt", "Skriv en inledning till ett tal om något du tycker är viktigt. Använd minst två stilfigurer och skriv vilka.", null, "Tänk dig en skola utan stress. En skola där alla får växa. En skola där ingen sitter ensam. (Anafor och tretal.) Är det för mycket begärt? (Retorisk fråga.)", ["Minst två stilfigurer", "Jag skriver vilka stilfigurer jag använt"]],
+      ["fortsatt", "Skriv en inledning till ett tal om något du tycker är viktigt. Använd minst två stilfigurer och skriv vilka.", null, "Tänk dig en skola utan stress. En skola där alla får växa. En skola där ingen sitter ensam. (Anafor.) Är det för mycket begärt? (Retorisk fråga.)", ["Minst två stilfigurer", "Jag skriver vilka stilfigurer jag använt"]],
     ],
   },
 

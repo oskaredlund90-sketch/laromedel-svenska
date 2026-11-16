@@ -220,8 +220,8 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           Hon träffade EN LÄKARE. {*objekt|indirekt objekt|predikativ}
           Vi skickade MORMOR ett vykort. {objekt|*indirekt objekt|predikativ}
           Filmen verkade SPÄNNANDE. {objekt|indirekt objekt|*predikativ}
-          Han lånade MIG sin cykel. {objekt|*indirekt objekt|predikativ}
-          Han lånade mig SIN CYKEL. {*objekt|indirekt objekt|predikativ}
+          Han erbjöd MIG sin cykel. {objekt|*indirekt objekt|predikativ}
+          Han erbjöd mig SIN CYKEL. {*objekt|indirekt objekt|predikativ}
           Rummet kändes KALLT. {objekt|indirekt objekt|*predikativ}
           Tränaren visade LAGET en ny taktik. {objekt|*indirekt objekt|predikativ}
           Min hund heter SIGGE. {objekt|indirekt objekt|*predikativ}
@@ -565,7 +565,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
       { rubrik: "Del E", instruktion: "Bilda ett nytt ord. Ledtråden står i parentes.", typ: "skriv", rader: avledningarSkriv() },
       {
         rubrik: "Del F",
-        instruktion: "Dela ordet i två delar: prefix + rot eller rot + suffix.",
+        instruktion: "Dela ordet i två delar: prefix + grundord eller grundord + suffix.",
         typ: "skriv",
         rader: `
           olycklig = {o} + {lycklig}

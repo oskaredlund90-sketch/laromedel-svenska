@@ -51,17 +51,17 @@ export const PROV_HOG_GY: HafteKalla[] = [
         instruktion: "Vilken satsdel är ordet eller orden i VERSALER?",
         typ: "val",
         rader: `
-          HUNDEN skällde på brevbäraren. → {*subjekt|direkt objekt|predikat|adverbial}
+          HUNDEN skällde på brevbäraren. → {*subjekt|objekt|predikat|adverbial}
           Hunden SKÄLLDE på brevbäraren. → {subjekt|*predikat|adverbial|predikativ}
-          Elsa köpte EN NY JACKA. → {indirekt objekt|subjekt|*direkt objekt|predikativ}
-          Elsa gav SIN BROR en present. → {direkt objekt|*indirekt objekt|subjekt|adverbial}
-          Vi träffas I MORGON. → {direkt objekt|predikativ|subjekt|*adverbial}
-          Min syster är LÄKARE. → {direkt objekt|*predikativ|subjekt|adverbial}
-          Maten blev KALL. → {adverbial|direkt objekt|*predikativ|predikat}
-          I PARKEN spelade barnen fotboll. → {subjekt|*adverbial|direkt objekt|predikativ}
-          I parken spelade BARNEN fotboll. → {direkt objekt|adverbial|*subjekt|predikativ}
-          I parken spelade barnen FOTBOLL. → {*direkt objekt|subjekt|predikativ|indirekt objekt}
-          Läraren visade ELEVERNA kartan. → {direkt objekt|subjekt|adverbial|*indirekt objekt}
+          Elsa köpte EN NY JACKA. → {indirekt objekt|subjekt|*objekt|predikativ}
+          Elsa gav SIN BROR en present. → {objekt|*indirekt objekt|subjekt|adverbial}
+          Vi träffas I MORGON. → {objekt|predikativ|subjekt|*adverbial}
+          Min syster är LÄKARE. → {objekt|*predikativ|subjekt|adverbial}
+          Maten blev KALL. → {adverbial|objekt|*predikativ|predikat}
+          I PARKEN spelade barnen fotboll. → {subjekt|*adverbial|objekt|predikativ}
+          I parken spelade BARNEN fotboll. → {objekt|adverbial|*subjekt|predikativ}
+          I parken spelade barnen FOTBOLL. → {*objekt|subjekt|predikativ|indirekt objekt}
+          Läraren visade ELEVERNA kartan. → {objekt|subjekt|adverbial|*indirekt objekt}
           Han har ALDRIG varit i Spanien. → {predikat|*adverbial|subjekt|predikativ}
         `,
       },
@@ -223,17 +223,17 @@ export const PROV_HOG_GY: HafteKalla[] = [
         typ: "val",
         rader: `
           Den RÖDA bilen stod parkerad. → {adverbial|*attribut|predikativ|subjekt}
-          Bilen var RÖD. → {*predikativ|attribut|adverbial|direkt objekt}
+          Bilen var RÖD. → {*predikativ|attribut|adverbial|objekt}
           Beslutet fattades AV STYRELSEN. → {adverbial|indirekt objekt|*agent|subjekt}
           Boken PÅ BORDET är min. → {adverbial|*attribut|agent|predikativ}
-          Hon lade boken PÅ BORDET. → {attribut|*adverbial|predikativ|direkt objekt}
-          Vi valde Lisa TILL ORDFÖRANDE. → {direkt objekt|attribut|*predikativ|adverbial}
+          Hon lade boken PÅ BORDET. → {attribut|*adverbial|predikativ|objekt}
+          Vi valde Lisa TILL ORDFÖRANDE. → {objekt|attribut|*predikativ|adverbial}
           Bostadsbristen I STORSTÄDERNA har ökat. → {adverbial|agent|subjekt|*attribut}
-          Läraren gav ELEVERNA nya uppgifter. → {direkt objekt|*indirekt objekt|agent|attribut}
-          Läraren gav eleverna NYA uppgifter. → {*attribut|predikativ|adverbial|direkt objekt}
+          Läraren gav ELEVERNA nya uppgifter. → {objekt|*indirekt objekt|agent|attribut}
+          Läraren gav eleverna NYA uppgifter. → {*attribut|predikativ|adverbial|objekt}
           Matchen sköts upp PÅ GRUND AV REGNET. → {agent|*adverbial|attribut|indirekt objekt}
           Huset målades AV MIN MORFAR. → {*agent|adverbial|subjekt|attribut}
-          Hennes bror är EN SKICKLIG PIANIST. → {direkt objekt|attribut|subjekt|*predikativ}
+          Hennes bror är EN SKICKLIG PIANIST. → {objekt|attribut|subjekt|*predikativ}
         `,
       },
       {
@@ -281,8 +281,8 @@ export const PROV_HOG_GY: HafteKalla[] = [
           Staden DÄR JAG VÄXTE UPP har förändrats. → {adverbiell bisats|frågebisats|*relativsats|att-sats}
           Det är viktigt ATT ALLA FÅR KOMMA TILL TALS. → {*att-sats|relativsats|adverbiell bisats|frågebisats}
           Han ringde INNAN HAN KOM. → {relativsats|att-sats|frågebisats|*adverbiell bisats}
-          Jag hoppas ATT DU KOMMER. Bisatsen fungerar som {*direkt objekt|subjekt|adverbial|attribut}.
-          Boken SOM JAG LÄSTE var spännande. Bisatsen fungerar som {adverbial|*attribut|direkt objekt|predikativ}.
+          Jag hoppas ATT DU KOMMER. Bisatsen fungerar som {*objekt|subjekt|adverbial|attribut}.
+          Boken SOM JAG LÄSTE var spännande. Bisatsen fungerar som {adverbial|*attribut|objekt|predikativ}.
         `,
       },
       {

@@ -76,7 +76,7 @@ hog.d("fri|het|s|kämp|e", "fri (rot) + -het + s (foge) + kämp (rot) + -e.");
 hog.v("Vad är skillnaden mellan böjning och avledning?", ["*Böjning ger en ny form av samma ord, avledning ger ett nytt ord.", "Det är samma sak.", "Böjning finns bara hos verb."], "Bil → bilar (böjning). Vän → vänlig (avledning, nytt ord och ny ordklass).");
 hog.v("Vilket är ett böjningsmorfem?", ["-lig i vänlig", "*-ade i hoppade", "o- i olycklig"], "-ade anger dåtid: samma ord, ny form.");
 hog.v("Vilket är ett avledningsmorfem?", ["-ar i bilar", "-en i bilen", "*-het i frihet"], "-het skapar ett nytt substantiv av adjektivet fri.");
-hog.v("Varför stavas ”känd” med ett n trots att det kommer från ”känna”?", ["*Dubbelteckning försvinner ofta före en annan konsonant (känn + d → känd).", "Det är ett undantag utan förklaring.", "Det är ett stavfel."], "Samma mönster: glömma – glömde, tänka – tänkte, ränna – rände.");
+hog.v("Varför stavas ”känd” med ett n trots att det kommer från ”känna”?", ["*Dubbelteckning försvinner ofta före en annan konsonant (känn + d → känd).", "Det är ett undantag utan förklaring.", "Det är ett stavfel."], "Samma mönster: glömma – glömde, tömma – tömde, bränna – brände.");
 hog.v("Hur stavas ”ljus” + ”sken”?", ["*ljussken", "ljusken", "ljus sken"], "Båda leden behåller sina s: ljus + sken.");
 hog.v("Vilket ord är bildat med ett prefix som betyder ”fel”?", ["*missförstånd", "förstånd", "oförstånd"], "Miss- = fel: missförstå, misslyckas, missuppfatta.");
 hog.v("Vad betyder prefixet ”åter-” i ”återvinna”?", ["mot", "*igen, tillbaka", "inte"], "Återvinna = vinna tillbaka. Återuppta, återfå, återkomma.");
@@ -108,7 +108,7 @@ gy.v("Vilket är ett fritt morfem?", ["-het", "o-", "*hus"], "Fria morfem kan st
 gy.v("Vilket lånmorfem betyder ”mot” eller ”emot”?", ["*anti-", "pro-", "inter-"], "Anti-: antibiotika, antirasism.");
 gy.v("Vad betyder morfemet ”bio-” i biologi och biografi?", ["*liv", "bok", "jord"], "Grekiska bios = liv. -logi = lära, -grafi = skrift.");
 gy.v("Varför är morfologisk medvetenhet ett stöd för stavning?", ["*Rotens stavning behålls ofta i alla ord som bildas av den.", "För att alla ord stavas som de låter.", "Den hjälper bara med lånord."], "Hänsyn – hänsynsfull – hänsynslös: roten stavas likadant.");
-gy.v("Vad är ett allomorf?", ["*en variant av samma morfem, t.ex. -ar, -or, -er för plural", "ett ord med två betydelser", "ett lånord"], "Pluralmorfemet har flera former: bil-ar, flick-or, katt-er, hus-Ø.");
+gy.v("Vad är en allomorf?", ["*en variant av samma morfem, t.ex. -ar, -or, -er för plural", "ett ord med två betydelser", "ett lånord"], "Pluralmorfemet har flera former: bil-ar, flick-or, katt-er, hus-Ø.");
 gy.v("Hur bildas ”nominaliseringen” av verbet ”utveckla”?", ["*utveckling", "utvecklad", "utvecklande"], "Utveckl- + -ing ger ett substantiv – vanligt i sakprosa.");
 gy.k("Fritt eller bundet morfem?", { Fritt: ["bok", "glad", "spring", "hus"], Bundet: ["-het", "o-", "-lig", "miss-"] });
 gy.k("Vilket språk kommer morfemet från?", { Grekiska: ["bio-", "-logi", "tele-", "-grafi"], Latin: ["inter-", "-tion", "trans-", "multi-"] });
