@@ -103,6 +103,10 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
               här till räkneorden – i Svenska Akademiens grammatik räknas de som adjektiv, eftersom de böjs och används som adjektiv.
             </P>
           )}
+          <Tip>
+            <strong>De eller dem?</strong> De gör något: <em>De spelar fotboll.</em> Dem händer det något med: <em>Jag ser dem.</em> Testa att
+            byta mot <em>vi</em> och <em>oss</em>: vi spelar → de spelar, jag ser oss → jag ser dem. Skriv inte <em>dom</em> i en text.
+          </Tip>
           {s === "mellanstadiet" && (
             <P>På högstadiet lär du dig de tre sista ordklasserna: konjunktioner, subjunktioner och interjektioner.</P>
           )}

@@ -30,7 +30,7 @@ mel.l("Planen var översvämmad. ____ ställdes matchen in.", ["Eftersom", "*Dä
 mel.l("____ du inte sparar, räcker inte pengarna till cykeln.", ["Därför", "*Om", "Eftersom"], "Om … – villkoret som måste uppfyllas.");
 mel.l("Hon tränade varje dag, ____ hon blev snabbare.", ["*vilket gjorde att", "eftersom", "om"], "Vilket gjorde att visar följden av träningen.");
 mel.l("Han fick ont i magen ____ han hade ätit för mycket godis.", ["så", "*på grund av att", "om"], "På grund av att = eftersom.");
-mel.l("Vi går till stranden ____ det inte regnar.", ["eftersom", "*om", "därför"], "Om det inte regnar – ett villkor.");
+mel.l("Vi går till stranden ____ det inte regnar i morgon.", ["därför", "*om", "men"], "Om det inte regnar – ett villkor.");
 mel.l("Jag glömde väckarklockan. ____ kom jag för sent.", ["*Därför", "Eftersom", "Om"], "Därför visar vad som blev följden.");
 mel.l("____ isen är tunn, får ingen gå ut på sjön.", ["*Eftersom", "Därför", "Så"], "Eftersom isen är tunn – orsaken står först.");
 mel.l("Det blåste mycket, ____ båtarna stannade i hamnen.", ["eftersom", "*så", "om"], "Så visar följden.");

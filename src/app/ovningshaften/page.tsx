@@ -70,7 +70,7 @@ export default async function OvningshaftenPage({ searchParams }: { searchParams
                       ))}
                     </span>
                     <span className="inline-flex items-center gap-1">
-                      <Printer className="h-3.5 w-3.5" /> {h.antalUppgifter} uppgifter
+                      <Printer className="h-3.5 w-3.5" /> {h.antalRader} uppgifter
                     </span>
                   </div>
                   <p className="font-semibold text-neutral-900 group-hover:underline dark:text-white">{h.titel}</p>

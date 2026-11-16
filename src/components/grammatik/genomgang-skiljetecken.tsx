@@ -42,7 +42,12 @@ export function SkiljeteckenGenomgang({ stadie }: { stadie: AgeGroup }) {
           <ExampleCard title="Före men">
             <Ex>Jag ville gå ut, men det regnade.</Ex>
           </ExampleCard>
-          {minst(s, "hogstadiet") && (
+          {minst(s, "mellanstadiet") && (
+            <ExampleCard title="Efter ja, nej och tilltal">
+              <Ex>Ja, det låter bra. Nej, tack. Lisa, kom hit!</Ex>
+            </ExampleCard>
+          )}
+          {minst(s, "mellanstadiet") && (
             <>
               <ExampleCard title="Mellan huvudsatser och efter en inledande bisats">
                 <Ex>Det började regna, så vi gick in.</Ex>

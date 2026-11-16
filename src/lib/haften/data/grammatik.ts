@@ -21,7 +21,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         typ: "val",
         rader: `
           {*De|Dem} spelar fotboll varje dag.
-          Jag träffade {de|*dem} igår.
+          Jag träffade {de|*dem} i går.
           {*De|Dem} bor i ett gult hus.
           Vi hjälpte {de|*dem} med läxan.
           Har du sett {de|*dem}?
@@ -30,7 +30,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
           Mamma gav {de|*dem} en present.
           {*De|Dem} är mina bästa vänner.
           Kan du fråga {de|*dem}?
-          Igår åkte {*de|dem} till stan.
+          I går åkte {*de|dem} till stan.
           Jag tycker om {de|*dem}.
           Varför skrattar {*de|dem}?
           Vi väntade på {de|*dem} i en timme.
@@ -81,7 +81,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
           {*De|Dem} andra kom senare.
           Jag vill ha {*de|dem} här skorna.
           Vi tittade på {*de|dem} vackra blommorna.
-          Skorna? Jag köpte {de|*dem} igår.
+          Skorna? Jag köpte {de|*dem} i går.
           Böckerna är bra. Jag har läst {de|*dem}.
           {*De|Dem} här kakorna är goda.
           Glöm inte {*de|dem} viktiga papperen.
@@ -105,13 +105,13 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         typ: "ratta",
         rader: `
           Dom spelar fotboll. => De spelar fotboll.
-          Jag såg dom igår. => Jag såg dem igår.
+          Jag såg dom i går. => Jag såg dem i går.
           Dom bor nära skolan. => De bor nära skolan.
           Vi hjälpte dom. => Vi hjälpte dem.
           Har du träffat dom? => Har du träffat dem?
-          Dom kommer imorgon. => De kommer imorgon.
+          Dom kommer i morgon. => De kommer i morgon.
           Jag ringde dom. => Jag ringde dem.
-          Igår åkte dom till stan. => Igår åkte de till stan.
+          I går åkte dom till stan. => I går åkte de till stan.
           Jag gillar dom röda skorna. => Jag gillar de röda skorna.
           Vi väntade på dom. => Vi väntade på dem.
           Dom vann matchen. => De vann matchen.
@@ -128,7 +128,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
           Jag träffade de på bussen. => Jag träffade dem på bussen.
           Dem är mina kusiner. => De är mina kusiner.
           Kan du hjälpa de? => Kan du hjälpa dem?
-          Igår åkte dem hem. => Igår åkte de hem.
+          I går åkte dem hem. => I går åkte de hem.
           Vi bjöd de på glass. => Vi bjöd dem på glass.
           Dem andra kom sent. => De andra kom sent.
           Jag hörde de skratta. => Jag hörde dem skratta.
@@ -148,7 +148,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
     regel: [
       "Många verb får -de, -te eller -dde i dåtid: hoppa – hoppade, läsa – läste, bo – bodde.",
       "Starka verb byter vokal i stället: springa – sprang, komma – kom, äta – åt, skriva – skrev.",
-      "De vanligaste starka verben behöver man lära sig utantill. Tips: säg 'Igår …' framför verbet.",
+      "De vanligaste starka verben behöver man lära sig utantill. Tips: säg 'I går …' framför verbet.",
     ],
     delar: [
       {
@@ -156,7 +156,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         instruktion: "Skriv verbet i dåtid.",
         typ: "skriv",
         rader: `
-          Igår {sprang} jag till skolan. (springa)
+          I går {sprang} jag till skolan. (springa)
           Han {kom} hem sent. (komma)
           Vi {gick} till parken. (gå)
           Jag {såg} en älg i skogen. (se)
@@ -213,7 +213,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         instruktion: "Välj rätt form av verbet i dåtid.",
         typ: "val",
         rader: `
-          Igår {*kom|komade} min kusin.
+          I går {*kom|komade} min kusin.
           Hon {springde|*sprang} fort.
           Vi {*gick|gådde} hem.
           Jag {*sov|sovde} gott.
@@ -250,7 +250,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         instruktion: "Ett verb har fel form. Skriv meningen rätt.",
         typ: "ratta",
         rader: `
-          Igår springde jag till bussen. => Igår sprang jag till bussen.
+          I går springde jag till bussen. => I går sprang jag till bussen.
           Hon komade för sent. => Hon kom för sent.
           Vi gådde till stranden. => Vi gick till stranden.
           Jag sovde hela natten. => Jag sov hela natten.
@@ -276,14 +276,14 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
   },
   {
     id: "grammatik-3-ordfoljd",
-    titel: "Igår åt vi glass",
+    titel: "I går åt vi glass",
     underrubrik: "Ordföljd – verbet på andra plats",
     omrade: "Grammatik",
     steg: 2,
     feltyper: ["grammatik.ordfoljd"],
     regel: [
-      "I en vanlig mening står verbet alltid på andra plats: Vi åt glass igår.",
-      "Börjar meningen med något annat än den som gör något, så byter verbet och subjektet plats: Igår åt vi glass. På lördag ska jag simma.",
+      "I en vanlig mening står verbet alltid på andra plats: Vi åt glass i går.",
+      "Börjar meningen med något annat än den som gör något, så byter verbet och subjektet plats: I går åt vi glass. På lördag ska jag simma.",
       "I frågor kommer verbet först eller direkt efter frågeordet: Kommer du? Varför kommer du?",
     ],
     delar: [
@@ -292,7 +292,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         instruktion: "Välj rätt ordföljd.",
         typ: "val",
         rader: `
-          Igår {*åt vi|vi åt} glass.
+          I går {*åt vi|vi åt} glass.
           På lördag {jag ska|*ska jag} simma.
           Efter skolan {*går jag|jag går} hem.
           Sedan {vi spelade|*spelade vi} fotboll.
@@ -339,7 +339,7 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         instruktion: "Ordföljden är fel. Skriv meningen rätt.",
         typ: "ratta",
         rader: `
-          Igår vi åt pizza. => Igår åt vi pizza.
+          I går vi åt pizza. => I går åt vi pizza.
           På måndag jag har prov. => På måndag har jag prov.
           Efter skolan vi spelar fotboll. => Efter skolan spelar vi fotboll.
           Sedan hon gick hem. => Sedan gick hon hem.
@@ -376,12 +376,12 @@ export const GRAMMATIK_HAFTEN: HafteKalla[] = [
         instruktion: "Skriv om meningen så att den börjar med ordet i parentesen.",
         typ: "ratta",
         rader: `
-          Vi åt glass igår. (Igår) => Igår åt vi glass.
+          Vi åt glass i går. (I går) => I går åt vi glass.
           Jag ska simma på lördag. (På lördag) => På lördag ska jag simma.
           Vi spelade fotboll efter skolan. (Efter skolan) => Efter skolan spelade vi fotboll.
           Hon läser varje kväll. (Varje kväll) => Varje kväll läser hon.
           Vi badar på sommaren. (På sommaren) => På sommaren badar vi.
-          Jag har prov imorgon. (Imorgon) => Imorgon har jag prov.
+          Jag har prov i morgon. (I morgon) => I morgon har jag prov.
           Han var sjuk förra veckan. (Förra veckan) => Förra veckan var han sjuk.
           Vi har en katt hemma. (Hemma) => Hemma har vi en katt.
           Det började regna plötsligt. (Plötsligt) => Plötsligt började det regna.

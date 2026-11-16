@@ -25,7 +25,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Min katt heter Måns{*.|?|!}
           Kommer du på festen{.|*?|!}
           Akta dig{.|?|*!}
-          Idag regnar det{*.|?|!}
+          I dag regnar det{*.|?|!}
           Var bor du{.|*?|!}
           Grattis på födelsedagen{.|?|*!}
           Jag gillar att läsa{*.|?|!}
@@ -53,7 +53,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           Vad är klockan{.|*?|!}
           Hurra{.|?|*!}
           Det finns många sjöar i Sverige{*.|?|!}
-          Får jag låna din sudd{.|*?|!}
+          Får jag låna ditt suddgummi{.|*?|!}
           Kom hit genast{.|?|*!}
           Pappa lagar mat{*.|?|!}
           Vilken färg gillar du{.|*?|!}
@@ -100,7 +100,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
       },
       {
         rubrik: "Del C",
-        instruktion: "Ta bort 'och sen' och 'och' där en ny mening ska börja. Sätt punkt och stor bokstav i stället. Ändra inga andra ord.",
+        instruktion: "Ta bort och där en ny mening ska börja. Sätt punkt och stor bokstav i stället. Ändra inga andra ord.",
         typ: "ratta",
         rader: `
           Vi gick till stranden och sen badade vi. => Vi gick till stranden. Sen badade vi.
@@ -303,7 +303,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           – Jag förstår inte{*,|.} sa Sam.
           – Vem där{*?|,} frågade en röst.
           – Vilken tur{*!|.} sa hon glatt.
-          – Vi ses imorgon{*,|.} sa Maja.
+          – Vi ses i morgon{*,|.} sa Maja.
           – Är du säker{*?|.} frågade han.
           – Aj{*!|,} skrek Omar.
           – Jag älskar sommaren{*,|.} sa Lisa.
@@ -355,7 +355,7 @@ export const SKILJETECKEN_HAFTEN: HafteKalla[] = [
           – Jag vet inte sa Noor. => – Jag vet inte, sa Noor.
           – Hur mår du. Undrade Ella. => – Hur mår du? undrade Ella.
           – Stopp. Ropade vakten. => – Stopp! ropade vakten.
-          – Vi ses imorgon. sa Maja. => – Vi ses imorgon, sa Maja.
+          – Vi ses i morgon. sa Maja. => – Vi ses i morgon, sa Maja.
           – Varför då, frågade Leo? => – Varför då? frågade Leo.
           Det var inte jag, sa Hugo. => – Det var inte jag, sa Hugo.
           – Spring, ropade tränaren! => – Spring! ropade tränaren.

@@ -9,7 +9,7 @@ import { bygg } from "./bygg";
 
 const tbLag = bygg("textbindning", "lagstadiet");
 tbLag.l("Först borstade jag tänderna. ____ gick jag och la mig.", ["*Sedan", "Men", "Eftersom"], "Sedan visar vad som hände efter.");
-tbLag.l("Vi har en katt. ____ heter Misse.", ["*Hon", "Den hon", "Katt"], "Hon syftar tillbaka på katten. Då slipper vi upprepa ordet.");
+tbLag.l("Vi har en katt. ____ heter Misse.", ["*Den", "Det", "Katt"], "Den syftar tillbaka på en katt. Då slipper vi upprepa ordet.");
 tbLag.l("Pelle har en ny cykel. ____ är röd.", ["Pelle", "*Den", "Han"], "Den syftar på cykeln.");
 tbLag.l("Jag och Ali spelade fotboll. Sedan åt ____ glass.", ["*vi", "dom", "jag och Ali och"], "Vi = jag och Ali.");
 tbLag.l("Det var en gång en drake. ____ bodde i ett berg.", ["*Draken", "En drake", "Berget"], "När vi har berättat om draken skriver vi draken (bestämd form).");
@@ -33,8 +33,8 @@ tbMel.v("Vilket ord passar för att börja ett stycke om något som hände senar
 tbMel.o("Ordna meningarna så att det blir en text som hänger ihop.", ["Igelkotten är ett däggdjur som lever i Sverige.", "Den äter maskar, sniglar och insekter.", "På vintern går den i ide under en hög med löv."], { meningar: true, explanation: "Först vad det är, sedan vad den äter, sist vad den gör på vintern. Den syftar på igelkotten." });
 tbMel.o("Ordna meningarna till en berättelse.", ["Ella hittade en karta på vinden.", "Den visade vägen till en skatt i skogen.", "Hon tog med sig sin bror och gick dit.", "Under en gammal gran grävde de fram en låda."], { meningar: true });
 tbMel.o("Ordna meningarna så att texten hänger ihop.", ["Vi borde få längre rast.", "Det första skälet är att vi behöver röra på oss.", "Dessutom hinner vi inte äta i lugn och ro.", "Därför tycker jag att rasten ska bli tio minuter längre."], { meningar: true, explanation: "Åsikt – skäl – fler skäl – avslutning." });
-tbMel.r("Morfar har en båt. {Båten båten|Båten} är blå.", "Ett ord räcker.");
-tbMel.r("Jag har en hund. {Hunden hon|Hon} heter Bella.", "Använd antingen hunden eller hon – inte båda.");
+tbMel.r("Morfar har en båt. {Båten den|Den} är blå.", "Båten den är blå har två subjekt. Skriv antingen Båten är blå eller Den är blå.");
+tbMel.r("Jag har en hund. {Hunden hon|Hon} heter Bella.", "Hunden hon heter Bella har två subjekt. Skriv antingen Hunden heter Bella eller Hon heter Bella.");
 
 const tbHog = bygg("textbindning", "hogstadiet");
 tbHog.m("Klicka på alla ord och uttryck som syftar på ”mobiltelefoner”.", "Mobiltelefoner finns i nästan varje ficka. [De] har förändrat hur vi umgås. [Apparaterna] gör det lätt att hålla kontakten, men [skärmarna] tar också mycket tid.");
@@ -93,12 +93,12 @@ mbMel.m("Klicka på bisatsen – den del som inte kan stå ensam.", "Vi gick in 
 mbMel.m("Klicka på bisatsen.", "[Eftersom jag var hungrig] åt jag två mackor.");
 mbMel.m("Klicka på bisatsen.", "Jag tror [att det blir sol i morgon].");
 mbMel.m("Klicka på bisatsen.", "Boken [som jag läser] är spännande.");
-mbMel.v("Vilken mening har rätt ordföljd?", ["Igår jag åt pizza.", "*Igår åt jag pizza.", "Igår pizza åt jag."], "Verbet står på plats två: Igår (1) åt (2) jag …");
+mbMel.v("Vilken mening har rätt ordföljd?", ["I går jag åt pizza.", "*I går åt jag pizza.", "I går pizza åt jag."], "Verbet står på plats två: I går (1) åt (2) jag …");
 mbMel.v("Vilken mening har rätt ordföljd?", ["*På lördag ska vi gå på bio.", "På lördag vi ska gå på bio.", "Vi på lördag ska gå på bio."], "På lördag (1) ska (2) vi …");
 mbMel.v("Vilken del är en huvudsats?", ["*Vi åt glass", "eftersom det var varmt", "när vi kom hem"], "En huvudsats kan stå ensam: Vi åt glass.");
 mbMel.v("Vilket ord inleder ofta en bisats?", ["och", "men", "*eftersom"], "Bisatser inleds ofta av att, som, när, om, eftersom, medan.");
 mbMel.v("Hur blir texten mer varierad?", ["Jag vaknade. Jag åt. Jag gick.", "*När jag hade vaknat åt jag frukost. Sedan gick jag till skolan.", "Jag vaknade och jag åt och jag gick."], "Variera meningsbörjan och blanda korta och långa meningar.");
-mbMel.r("Igår {vi spelade|spelade vi} innebandy.", "Verbet på plats två: Igår spelade vi.");
+mbMel.r("I går {vi spelade|spelade vi} innebandy.", "Verbet på plats två: I går spelade vi.");
 mbMel.r("Sedan {vi gick|gick vi} hem.", "Sedan gick vi hem.");
 mbMel.r("Hon sa att hon {kommer inte|inte kommer}.", "I bisatsen står inte före verbet.");
 

@@ -36,7 +36,7 @@ export function MorfemGenomgang({ stadie }: { stadie: AgeGroup }) {
           <Markerad delar={[["lek", "rot"], ["te", "dåtid"]]} />
           <P>
             {s === "lagstadiet"
-              ? "Stava först själva ordet. Lägg sedan till ändelsen: hopp + ar = hoppar."
+              ? "Stava först själva ordet. Lägg sedan till ändelsen: hopp + ar = hoppar. Ibland försvinner en bokstav: flicka → flickor, måne + sken → månsken."
               : "Böjningsändelser ändrar inte ordets betydelse eller ordklass – bara formen: antal, bestämdhet, tid eller grad."}
           </P>
           {minst(s, "mellanstadiet") && (

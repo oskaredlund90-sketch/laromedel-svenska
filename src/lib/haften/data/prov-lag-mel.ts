@@ -56,7 +56,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
           lisa har en katt. => Lisa har en katt.
           vi bor i malmö. => Vi bor i Malmö.
           Min kompis heter omar => Min kompis heter Omar.
-          idag är det sol. => Idag är det sol. || I dag är det sol.
+          i dag är det sol. => I dag är det sol. || I dag är det sol.
           jag åker till norge. => Jag åker till Norge.
           Hunden springer fort Katten sover. => Hunden springer fort. Katten sover.
           Pappa heter erik. => Pappa heter Erik.
@@ -133,19 +133,19 @@ export const PROV_LAG_MEL: HafteKalla[] = [
       },
       {
         rubrik: "Del 8: Nutid och dåtid",
-        instruktion: "Skriv verbet i rätt tid. Igår = dåtid. Idag = nutid.",
+        instruktion: "Skriv verbet i rätt tid. I går = dåtid. I dag = nutid.",
         typ: "skriv",
         rader: `
-          Igår {lekte} jag i parken. (leker)
-          Igår {åt} vi pannkakor. (äter)
-          Igår {sprang} hunden i skogen. (springer)
-          Igår {skrev} jag ett brev. (skriver)
-          Igår {hoppade} vi studsmatta. (hoppar)
-          Igår {såg} jag en film. (ser)
-          Idag {läser} jag en bok. (läste)
-          Idag {simmar} vi i sjön. (simmade)
-          Idag {sover} katten i soffan. (sov)
-          Igår {var} det kallt ute. (är)
+          I går {lekte} jag i parken. (leker)
+          I går {åt} vi pannkakor. (äter)
+          I går {sprang} hunden i skogen. (springer)
+          I går {skrev} jag ett brev. (skriver)
+          I går {hoppade} vi studsmatta. (hoppar)
+          I går {såg} jag en film. (ser)
+          I dag {läser} jag en bok. (läste)
+          I dag {simmar} vi i sjön. (simmade)
+          I dag {sover} katten i soffan. (sov)
+          I går {var} det kallt ute. (är)
         `,
       },
       {
@@ -216,7 +216,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
           Katten ligger under bordet. – under: {adverb|*preposition|konjunktion|pronomen}
           Hon har tre syskon. – tre: {*räkneord|adjektiv|pronomen|substantiv}
           Jag gillar äpplen och päron. – och: {preposition|adverb|*konjunktion|räkneord}
-          Vi ska träffas imorgon. – vi: {substantiv|*pronomen|räkneord|adverb}
+          Vi ska träffas i morgon. – vi: {substantiv|*pronomen|räkneord|adverb}
           Elefanten är ett stort djur. – stort: {adverb|*adjektiv|verb|substantiv}
           Barnen sjunger i kören. – sjunger: {substantiv|adjektiv|*verb|adverb}
           Lisa cyklar till skolan. – Lisa: {*substantiv|pronomen|verb|adjektiv}
@@ -225,7 +225,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
           Vi går ofta till biblioteket. – ofta: {*adverb|adjektiv|preposition|verb}
           Boken ligger på hyllan. – på: {adverb|*preposition|konjunktion|verb}
           Ge den till mig! – mig: {substantiv|räkneord|*pronomen|preposition}
-          Solen lyser idag. – solen: {*substantiv|verb|adjektiv|pronomen}
+          Solen lyser i dag. – solen: {*substantiv|verb|adjektiv|pronomen}
           De skrattade åt skämtet. – skrattade: {substantiv|*verb|adverb|adjektiv}
           Vill du ha te eller kaffe? – eller: {preposition|*konjunktion|adverb|pronomen}
         `,
@@ -254,17 +254,17 @@ export const PROV_LAG_MEL: HafteKalla[] = [
         instruktion: "Skriv verbet i den tempusform som står inom parentes: presens, preteritum, perfekt eller futurum.",
         typ: "skriv",
         rader: `
-          Igår {skrev} jag en dikt. (skriva, preteritum)
+          I går {skrev} jag en dikt. (skriva, preteritum)
           Just nu {läser} hon en tidning. (läsa, presens)
-          Jag har {ätit} lunch redan. (äta, perfekt)
+          Jag har {ätit} lunch redan. (äta, perfekt – skriv formen efter har)
           Jag {ska resa/kommer att resa} till Spanien i sommar. (resa, futurum)
           Förra veckan {sprang} vi fem kilometer. (springa, preteritum)
           Varje morgon {dricker} pappa kaffe. (dricka, presens)
-          Hon har {skrivit} tre böcker. (skriva, perfekt)
+          Hon har {skrivit} tre böcker. (skriva, perfekt – skriv formen efter har)
           I fredags {gick} vi på bio. (gå, preteritum)
-          Har du {sett} min mobil? (se, perfekt)
+          Har du {sett} min mobil? (se, perfekt – skriv formen efter har)
           Förra natten {sov} hunden i min säng. (sova, preteritum)
-          Vi har {vunnit} matchen! (vinna, perfekt)
+          Vi har {vunnit} matchen! (vinna, perfekt – skriv formen efter har)
           Vi {ska baka/kommer att baka} bullar i kväll. (baka, futurum)
         `,
       },
@@ -291,7 +291,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
         typ: "val",
         rader: `
           Vad är subjektet? Mormor bakar bullar. {*Mormor|bakar|bullar}
-          Vad är subjektet? Igår spelade Ali fotboll. {Igår|spelade|*Ali|fotboll}
+          Vad är subjektet? I går spelade Ali fotboll. {I går|spelade|*Ali|fotboll}
           Vad är subjektet? På lördag ska vi bada. {lördag|ska|*vi|bada}
           Vad är subjektet? Bussen kom för sent. {*Bussen|kom|sent}
           Vad är subjektet? I skogen bor en räv. {skogen|bor|*en räv}
@@ -299,7 +299,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
           Vad är predikatet? Solen lyste hela dagen. {Solen|*lyste|dagen}
           Vad är predikatet? Min bror cyklar till jobbet. {bror|*cyklar|jobbet}
           Vad är predikatet? Katten jagade en mus. {Katten|*jagade|mus}
-          Vad är predikatet? Imorgon åker vi till Göteborg. {Imorgon|*åker|vi|Göteborg}
+          Vad är predikatet? I morgon åker vi till Göteborg. {I morgon|*åker|vi|Göteborg}
         `,
       },
       {
@@ -323,13 +323,13 @@ export const PROV_LAG_MEL: HafteKalla[] = [
         typ: "val",
         rader: `
           {*De|Dem} har en stor trädgård.
-          Jag pratade med {de|*dem} igår.
+          Jag pratade med {de|*dem} i går.
           Vi såg {*de|dem} nya filmerna.
           Läraren hjälpte {de|*dem} med uppgiften.
           Vet du var {*de|dem} bor?
           {*De|Dem} flesta gillar sommaren.
-          Jag ska ringa {de|*dem} ikväll.
-          Igår spelade {*de|dem} schack.
+          Jag ska ringa {de|*dem} i kväll.
+          I går spelade {*de|dem} schack.
         `,
       },
       {

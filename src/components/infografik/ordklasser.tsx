@@ -29,8 +29,8 @@ export const ORDKLASSER: Record<Ordklass, Info> = {
   verb: { namn: "Verb", farg: "rod", bojlig: true, test: "Kan du sätta att eller jag framför?", exempel: "springa, läser, sov, har", fran: "lagstadiet" },
   adjektiv: { namn: "Adjektiv", farg: "gron", bojlig: true, test: "Kan du jämföra: stor – större – störst?", exempel: "glad, röd, snabb, spännande", fran: "lagstadiet" },
   pronomen: { namn: "Pronomen", farg: "lila", bojlig: true, test: "Kan ordet stå i stället för ett namn eller en sak?", exempel: "jag, hon, de, min, den här", fran: "mellanstadiet" },
-  rakneord: { namn: "Räkneord", farg: "orange", bojlig: true, test: "Svarar ordet på hur många? eller vilken i ordningen?", exempel: "tre, hundra, första, tionde", fran: "mellanstadiet" },
-  adverb: { namn: "Adverb", farg: "turkos", bojlig: false, test: "Svarar ordet på hur? var? när? hur mycket?", exempel: "snabbt, här, ofta, mycket", fran: "mellanstadiet" },
+  rakneord: { namn: "Räkneord", farg: "orange", bojlig: false, test: "Svarar ordet på hur många? eller vilken i ordningen?", exempel: "tre, hundra, första, tionde", fran: "mellanstadiet" },
+  adverb: { namn: "Adverb", farg: "turkos", bojlig: false, test: "Svarar ordet på hur? var? när? hur mycket?", exempel: "här, inte, ofta, i morgon", fran: "mellanstadiet" },
   preposition: { namn: "Preposition", farg: "gul", bojlig: false, test: "Visar ordet var något är? Tänk: katten ___ lådan.", exempel: "i, på, under, efter, med", fran: "mellanstadiet" },
   konjunktion: { namn: "Konjunktion", farg: "indigo", bojlig: false, test: "Binder ordet ihop två lika delar?", exempel: "och, men, eller, utan, för", fran: "mellanstadiet" },
   subjunktion: { namn: "Subjunktion", farg: "rosa", bojlig: false, test: "Inleder ordet en bisats?", exempel: "att, eftersom, när, om, fast", fran: "hogstadiet" },
@@ -92,8 +92,8 @@ export function OrdklasserInfografik({ stadie }: { stadie: AgeGroup }) {
             </div>
           </div>
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-600 dark:text-neutral-400">Oböjliga ord – ser alltid likadana ut</p>
-            <p className="mb-3 text-sm text-neutral-500">på, och, eftersom, oj</p>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-600 dark:text-neutral-400">Oböjliga ord – ändrar sällan form</p>
+            <p className="mb-3 text-sm text-neutral-500">på, och, eftersom, oj – några adverb kan ändå jämföras: ofta – oftare</p>
             <div className="grid gap-3">
               {obojliga.map((k) => (
                 <Kort key={k} k={k} />

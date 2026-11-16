@@ -15,7 +15,7 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
         <ExampleCard title={s === "lagstadiet" ? "Två frågor hittar kärnan" : "Predikatet är verbet eller verben, subjektet är den som gör"}>
           <P>
             {s === "lagstadiet"
-              ? "Fråga först: Vad händer? Då hittar du verbet. Fråga sedan: Vem gör det? Då hittar du den som gör något."
+              ? "Fråga först: Vad händer? Då hittar du verbet. Fråga sedan: Vem eller vad gör det? Då hittar du den som gör något."
               : "Börja med det böjda verbet – det är alltid en del av predikatet. Fråga sedan vem eller vad + verbet för att hitta subjektet."}
           </P>
           <Markerad delar={[["Hunden", s === "lagstadiet" ? "vem?" : "subjekt"], ["skäller", s === "lagstadiet" ? "vad händer?" : "predikat"]]} />
@@ -151,7 +151,7 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
       <Minneslista
         punkter={
           s === "lagstadiet"
-            ? ["Vad händer? → verbet (predikat).", "Vem gör det? → den som gör något (subjekt).", "En hel mening har båda."]
+            ? ["Vad händer? → verbet (predikat).", "Vem eller vad gör det? → den som gör något (subjekt).", "En hel mening har båda."]
             : [
                 "Leta upp predikatet (verbet) först.",
                 "Subjekt: vem/vad + predikat?",

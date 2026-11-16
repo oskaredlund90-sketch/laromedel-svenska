@@ -90,7 +90,10 @@ export interface Del extends Omit<DelKalla, "rader"> {
 
 export interface Hafte extends Omit<HafteKalla, "delar"> {
   delar: Del[];
+  /** Antal svar (luckor) – används som poäng i proven. */
   antalUppgifter: number;
+  /** Antal uppgifter (rader) – det som visas för eleven. */
+  antalRader: number;
 }
 
 const LUCKA_RE = /\{([^{}]+)\}/g;
@@ -152,7 +155,8 @@ export function byggHafte(k: HafteKalla): Hafte {
     uppgifter: rader(d.rader).map((r, i) => tolkaRad(r, d.typ, `${k.id}-${di + 1}-${i + 1}`)),
   }));
   const antalUppgifter = delar.reduce((s, d) => s + d.uppgifter.reduce((t, u) => t + antalLuckor(u), 0), 0);
-  return { ...k, delar, antalUppgifter };
+  const antalRader = delar.reduce((s, d) => s + d.uppgifter.length, 0);
+  return { ...k, delar, antalUppgifter, antalRader };
 }
 
 /** Jämför ett elevsvar med de godkända svaren. */

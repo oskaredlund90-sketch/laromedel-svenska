@@ -172,7 +172,7 @@ const ordklasserLagstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "lagstadiet",
     relatedTextSlug: "forsta-dagen-i-skolan",
     instruction: "Vilken ordklass tillhör det markerade ordet?",
-    prompt: "Vi åkte till *skolan* idag.",
+    prompt: "Vi åkte till *skolan* i dag.",
     options: ["Substantiv", "Verb", "Adjektiv"],
     correct: 0,
     explanation:
@@ -839,9 +839,9 @@ const meningsbyggnadHogstadietSA: SentenceAnalysisExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "hogstadiet",
     instruction: "Markera satsdelarna i meningen.",
-    sentence: "Igår skrev eleverna en ny dikt i klassrummet.",
+    sentence: "I går skrev eleverna en ny dikt i klassrummet.",
     parts: [
-      { text: "Igår", role: "Adverbial" },
+      { text: "I går", role: "Adverbial" },
       { text: "skrev", role: "Predikat" },
       { text: "eleverna", role: "Subjekt" },
       { text: "en ny dikt", role: "Objekt" },
@@ -896,7 +896,7 @@ const meningsbyggnadHogstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "hogstadiet",
     relatedTextSlug: "ensam-i-storstaden",
     instruction: "Tillämpa BIFF-regeln. Var ska adverbet 'inte' placeras?",
-    prompt: "Jag har ____ ätit frukost idag. (bisats: ...eftersom jag ____ har ätit frukost idag.)",
+    prompt: "Jag har ____ ätit frukost i dag. (bisats: ...eftersom jag ____ har ätit frukost i dag.)",
     options: [
       "Före verbet i bisats, efter verbet i huvudsats",
       "Efter verbet i både huvudsats och bisats",
@@ -2697,8 +2697,8 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Rätta det felaktiga relativpronomenet.",
-    sentence: "Mannen vad jag träffade igår är lärare.",
-    correctedSentence: "Mannen som jag träffade igår är lärare.",
+    sentence: "Mannen vad jag träffade i går är lärare.",
+    correctedSentence: "Mannen som jag träffade i går är lärare.",
     errorWord: "vad",
     correctWord: "som",
     explanation:
@@ -2865,12 +2865,12 @@ const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
     topic: "meningsbyggnad",
     ageGroup: "hogstadiet",
     instruction: "Rätta ordföljdsfelet i meningen.",
-    sentence: "Igår jag gick till skolan.",
-    correctedSentence: "Igår gick jag till skolan.",
+    sentence: "I går jag gick till skolan.",
+    correctedSentence: "I går gick jag till skolan.",
     errorWord: "jag gick",
     correctWord: "gick jag",
     explanation:
-      "I svenska har vi omvänd ordföljd (inversion) när meningen börjar med något annat än subjektet. Verbet ska komma på andra plats: 'Igår gick jag...'.",
+      "I svenska har vi omvänd ordföljd (inversion) när meningen börjar med något annat än subjektet. Verbet ska komma på andra plats: 'I går gick jag...'.",
   },
   {
     id: "meningsbyggnad-ec-hog-2",
@@ -3432,18 +3432,18 @@ const stavningGymnasietCat: CategorizationExercise[] = [
     type: "categorization",
     topic: "stavning",
     ageGroup: "gymnasiet",
-    instruction: "Sortera orden: skrivs de ihop eller isär?",
-    items: ["idag", "i dag", "med mera", "medmera", "till exempel", "tillexempel", "i stället", "istället"],
-    categories: ["Ihopskrivet (korrekt)", "Särskrivet (korrekt)"],
+    instruction: "Sortera: skrivs uttrycket ihop eller isär?",
+    items: ["till exempel", "med mera", "på grund av", "i alla fall", "fotbollsmatch", "sjukhus", "busshållplats", "glasskiosk"],
+    categories: ["Skrivs isär", "Skrivs ihop"],
     correctMapping: {
-      idag: "Ihopskrivet (korrekt)",
-      "i dag": "Särskrivet (korrekt)",
-      "med mera": "Särskrivet (korrekt)",
-      medmera: "Ihopskrivet (korrekt)",
-      "till exempel": "Särskrivet (korrekt)",
-      tillexempel: "Ihopskrivet (korrekt)",
-      "i stället": "Särskrivet (korrekt)",
-      "istället": "Ihopskrivet (korrekt)",
+      "till exempel": "Skrivs isär",
+      "med mera": "Skrivs isär",
+      "på grund av": "Skrivs isär",
+      "i alla fall": "Skrivs isär",
+      fotbollsmatch: "Skrivs ihop",
+      sjukhus: "Skrivs ihop",
+      "busshållplats": "Skrivs ihop",
+      glasskiosk: "Skrivs ihop",
     },
   },
 ];
@@ -4041,13 +4041,13 @@ const meningsbyggnadLagstadietMC: MultipleChoiceExercise[] = [
     instruction: "Vilken mening är korrekt?",
     prompt: "Vilken mening låter bäst?",
     options: [
-      "Regnar det ute idag.",
-      "Det regnar ute idag.",
-      "Ute idag det regnar.",
+      "Regnar det ute i dag.",
+      "Det regnar ute i dag.",
+      "Ute i dag det regnar.",
     ],
     correct: 1,
     explanation:
-      "'Det regnar ute idag' har rätt ordföljd. Subjektet (det) kommer före verbet (regnar).",
+      "'Det regnar ute i dag' har rätt ordföljd. Subjektet (det) kommer före verbet (regnar).",
   },
   {
     id: "meningsbyggnad-mc-lag-9",
@@ -4094,9 +4094,9 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     parts: [
       { text: "Katten", role: "Subjekt" },
       { text: "jagar", role: "Predikat" },
-      { text: "musen", role: "Objekt" },
+      { text: "musen", role: "Resten av meningen" },
     ],
-    roleOptions: ["Subjekt", "Predikat", "Objekt"],
+    roleOptions: ["Subjekt", "Predikat", "Resten av meningen"],
   },
   {
     id: "meningsbyggnad-sa-lag-2",
@@ -4108,9 +4108,9 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     parts: [
       { text: "Mamma", role: "Subjekt" },
       { text: "bakar", role: "Predikat" },
-      { text: "bullar", role: "Objekt" },
+      { text: "bullar", role: "Resten av meningen" },
     ],
-    roleOptions: ["Subjekt", "Predikat", "Objekt"],
+    roleOptions: ["Subjekt", "Predikat", "Resten av meningen"],
   },
   {
     id: "meningsbyggnad-sa-lag-3",
@@ -4122,9 +4122,9 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     parts: [
       { text: "Fågeln", role: "Subjekt" },
       { text: "sjunger", role: "Predikat" },
-      { text: "i trädet", role: "Platsadverbial" },
+      { text: "i trädet", role: "Resten av meningen" },
     ],
-    roleOptions: ["Subjekt", "Predikat", "Platsadverbial"],
+    roleOptions: ["Subjekt", "Predikat", "Resten av meningen"],
   },
   {
     id: "meningsbyggnad-sa-lag-4",
@@ -4136,9 +4136,9 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     parts: [
       { text: "Barnen", role: "Subjekt" },
       { text: "leker", role: "Predikat" },
-      { text: "på gården", role: "Platsadverbial" },
+      { text: "på gården", role: "Resten av meningen" },
     ],
-    roleOptions: ["Subjekt", "Predikat", "Platsadverbial"],
+    roleOptions: ["Subjekt", "Predikat", "Resten av meningen"],
   },
   {
     id: "meningsbyggnad-sa-lag-5",
@@ -4150,9 +4150,9 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     parts: [
       { text: "Hunden", role: "Subjekt" },
       { text: "äter", role: "Predikat" },
-      { text: "maten", role: "Objekt" },
+      { text: "maten", role: "Resten av meningen" },
     ],
-    roleOptions: ["Subjekt", "Predikat", "Objekt"],
+    roleOptions: ["Subjekt", "Predikat", "Resten av meningen"],
   },
   {
     id: "meningsbyggnad-sa-lag-6",
@@ -4164,9 +4164,9 @@ const meningsbyggnadLagstadietSA: SentenceAnalysisExercise[] = [
     parts: [
       { text: "Läraren", role: "Subjekt" },
       { text: "läser", role: "Predikat" },
-      { text: "en bok", role: "Objekt" },
+      { text: "en bok", role: "Resten av meningen" },
     ],
-    roleOptions: ["Subjekt", "Predikat", "Objekt"],
+    roleOptions: ["Subjekt", "Predikat", "Resten av meningen"],
   },
 ];
 
@@ -4443,10 +4443,10 @@ const ordbildningMellanstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "mellanstadiet",
     instruction: "Vilken ändelse gör ett substantiv av verbet?",
     prompt: "Hur gör man ett substantiv av 'tänka'?",
-    options: ["tankare", "tanke", "tankning", "Alla är korrekta"],
+    options: ["tänkare", "tanke", "tänkande", "Alla är korrekta"],
     correct: 3,
     explanation:
-      "Alla är korrekta! '-are' (en tänkare), '-e' (en tanke), '-ning' (en räkning) är alla ändelser som bildar substantiv av verb.",
+      "Alla är korrekta: en tänkare (en person som tänker), en tanke och ett tänkande. Ändelserna -are, -e och -ande bildar substantiv av verb.",
   },
 ];
 

@@ -49,10 +49,10 @@ export function OrdbildningGenomgang({ stadie }: { stadie: AgeGroup }) {
           rubriker={["Typ", "Exempel"]}
           rader={[
             ["Med punkt", "t.ex. (till exempel), bl.a. (bland annat), m.m. (med mera), s.k. (så kallad)"],
-            ["Initialord – läses bokstav för bokstav", "SVT, FN, EU, tv"],
+            ["Initialord som läses bokstav för bokstav", "SVT, FN, EU, tv"],
             ...(minst(s, "hogstadiet")
               ? [
-                  ["Akronymer – läses som ett ord", "Nato, Unicef, Saab"],
+                  ["Initialord som läses som ett ord (akronymer)", "Nato, Unicef, Saab"],
                   ["Kortord", "bil (automobil), kilo (kilogram), foto (fotografi)"],
                 ]
               : []),

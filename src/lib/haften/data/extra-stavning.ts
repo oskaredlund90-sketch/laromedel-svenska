@@ -193,7 +193,7 @@ export const EXTRA_STAVNING: HafteKalla[] = [
           Det var {*precis|presis} rätt.
           Jag tänker {aldri|*aldrig} göra om det.
           Skriv din {adres|*adress} här.
-          Det var {*särskilt|särskillt} roligt idag.
+          Det var {*särskilt|särskillt} roligt i dag.
           Vi har {*olika|ollika} åsikter.
           Det är {*förmodligen|förmodlien} stängt.
           Jag var {*verkligen|värkligen} trött.

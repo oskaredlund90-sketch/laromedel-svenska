@@ -181,7 +181,7 @@ function Stavning({ stadie }: { stadie: AgeGroup }) {
           <div className="mt-2 h-2 w-1/4 rounded-full bg-rose-500" />
         </div>
       </div>
-      <p className="mt-2 text-sm text-neutral-500">Undantag att lära sig: <i>man, hon, han, den, vem, kom, dom</i> och ord som slutar på m: <i>hem, rum, glöm</i>.</p>
+      <p className="mt-2 text-sm text-neutral-500">Undantag att lära sig: <i>man, hon, han, den, vem, kom</i>. Ord som slutar på m skrivs oftast med ett m: <i>hem, rum, glöm</i>.</p>
 
       <Rubrik>Samma ljud – olika stavning</Rubrik>
       <div className="grid gap-3 md:grid-cols-3">

@@ -174,7 +174,7 @@ export const KAPITELPROV_LAG_MEL = [
         Det var halt, {eftersom|*så|om} hon ramlade.
         Vi stannar hemma {eftersom|så|*om} du blir sjuk.
         Fisken simmade bort {*eftersom|så|om} den blev rädd.
-        Jag ringer {eftersom|så|*om} jag kommer sent.
+        Jag ringer {så|därför|*om} jag kommer sent.
       `,
     },
     {

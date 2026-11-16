@@ -7,11 +7,12 @@ export function VariationGenomgang({ stadie }: { stadie: AgeGroup }) {
   if (s === "lagstadiet")
     return (
       <>
-        <Section title="Påstående, fråga och utrop">
+        <Section title="Påstående, fråga, utrop och uppmaning">
           <ExampleCard title="Olika sorters meningar">
             <Ex>Hunden sover. (berättar något – punkt)</Ex>
             <Ex>Sover hunden? (frågar – frågetecken)</Ex>
             <Ex>Vad hunden sover mycket! (utrop – utropstecken)</Ex>
+            <Ex>Stäng dörren! (uppmaning – säger åt någon att göra något, utropstecken eller punkt)</Ex>
             <P>I en fråga kommer verbet ofta först: Sover hunden? Vill du leka?</P>
           </ExampleCard>
         </Section>

@@ -110,5 +110,6 @@ export function repetitionForDel(stadie: AgeGroup, del: { nr: number; titel: str
     regel: ["Uppgifterna blandar kapitlen i delen. Det är meningen – så minns du bättre.", "Är du osäker? Bläddra tillbaka till kapitlet och läs genomgången igen."],
     delar,
     antalUppgifter: antal,
+    antalRader: antal,
   };
 }

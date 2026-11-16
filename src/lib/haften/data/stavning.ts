@@ -26,10 +26,10 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Kan du {koma|*komma} hit?
           Han {*kom|komm} hem sent.
           Vi ska {*simma|sima} i sjön.
-          Det är {kalt|*kallt} ute idag.
+          Det är {kalt|*kallt} ute i dag.
           Sätt på dig {*mössan|mösan}!
           Jag har en {kat|*katt}.
-          Solen {*skiner|skinner} idag.
+          Solen {*skiner|skinner} i dag.
           Vi bor i ett gult {*hus|huss}.
           Vill du {tita|*titta} på film?
           Han {*sitter|siter} på stolen.
@@ -121,7 +121,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Kan du koma hit? => Kan du komma hit?
           Boken liger på bordet. => Boken ligger på bordet.
           Hon siter på stolen. => Hon sitter på stolen.
-          Solen skinner idag. => Solen skiner idag.
+          Solen skinner i dag. => Solen skiner i dag.
           Jag har en röd hat. => Jag har en röd hatt.
           Vi badar i vatnet. => Vi badar i vattnet.
           Det är somar nu. => Det är sommar nu.
@@ -160,14 +160,14 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Vi går {*hem|hemm}.
           Jag är {hema|*hemma}.
           Han {*kom|komm} sent.
-          Kan du {koma|*komma} imorgon?
+          Kan du {koma|*komma} i morgon?
           Det var {*dumt|dummt} gjort.
           Det var det {dumaste|*dummaste} jag hört.
           Jag har {*fem|femm} kronor.
           Han är {somm|*som} sin pappa.
           Min {*vän|vänn} heter Ali.
-          Jag ringde till {vänen|*vännen} igår.
-          Mina {*vänner|väner} kommer ikväll.
+          Jag ringde till {vänen|*vännen} i går.
+          Mina {*vänner|väner} kommer i kväll.
           En {mann|*man} gick förbi.
           {*Mannen|Manen} hade en hatt.
           Barnen {stanade|*stannade} vid vägen.
@@ -250,7 +250,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Vi gick hemm efter skolan. => Vi gick hem efter skolan.
           Mitt rumm är blått. => Mitt rum är blått.
           Jag städade rumet. => Jag städade rummet.
-          Hon är hema idag. => Hon är hemma idag.
+          Hon är hema i dag. => Hon är hemma i dag.
           Han komm för sent. => Han kom för sent.
           Glömm inte nyckeln! => Glöm inte nyckeln!
           Hon glömmde boken. => Hon glömde boken.
@@ -296,7 +296,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Jag tvättar håret med {*schampo|sjampo|champo}.
           Vi äter soppa med en {sjed|*sked|schked}.
           Solen {sjiner|chiner|*skiner}.
-          Pappa är {*sjuk|skjuk|schuk} idag.
+          Pappa är {*sjuk|skjuk|schuk} i dag.
           Vi spelar {sjack|*schack|skack}.
           Jag älskar {sjoklad|schoklad|*choklad}.
           Bussen stannar vid {*stationen|stasjonen|staschonen}.
@@ -388,8 +388,8 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Han har en blå sjorta. => Han har en blå skjorta.
           Vi såg en sjärna. => Vi såg en stjärna.
           Jag åt sjoklad. => Jag åt choklad.
-          Solen sjiner idag. => Solen skiner idag.
-          Hon är skjuk idag. => Hon är sjuk idag.
+          Solen sjiner i dag. => Solen skiner i dag.
+          Hon är skjuk i dag. => Hon är sjuk i dag.
           Vi har leksjon nu. => Vi har lektion nu.
           Jag tvättar håret med sjampo. => Jag tvättar håret med schampo.
           Vi spelade sjack. => Vi spelade schack.
@@ -509,7 +509,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Det var en {j}ättestor hund.
           Han har en {lj}usblå tröja.
           Svaret är {j}a.
-          Vi har {g}ympa idag.
+          Vi har {g}ympa i dag.
           Han är {tj}ugofem år.
           Vi {k}ör till stan.
           Det är {lj}ust ute.
@@ -701,7 +701,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
         rader: `
           Min kompis heter {*Ali|ali}.
           Vi bor i {göteborg|*Göteborg}.
-          Idag är det {*måndag|Måndag}.
+          I dag är det {*måndag|Måndag}.
           Jag fyller år i {Juni|*juni}.
           Vi firar {*jul|Jul} hemma.
           Hon pratar {Engelska|*engelska}.
@@ -714,7 +714,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Skolan slutar i {*juni|Juni}.
           Vi åker till {*Skåne|skåne} i sommar.
           Min mormor heter {*Ingrid|ingrid}.
-          {*Igår|igår} regnade det.
+          {*I går|i går} regnade det.
           Hon är född i {Mars|*mars}.
           Vi har {*påsklov|Påsklov} i april.
           Jag kan prata {Arabiska|*arabiska}.
@@ -748,7 +748,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
         rader: `
           {*A|a}lla barn får vara med.
           Vi åkte till {*D|d}anmark.
-          Imorgon är det {T|*t}orsdag.
+          I morgon är det {T|*t}orsdag.
           Jag heter {*S|s}ofia.
           Vi har {E|*e}ngelska på tisdagar.
           Han bor i {*L|l}uleå.
@@ -761,7 +761,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Jag pratar {S|*s}panska.
           Min lärare heter {*J|j}ohan.
           Vi går på {*D|d}rottninggatan.
-          Det är {S|*s}öndag idag.
+          Det är {S|*s}öndag i dag.
           {*V|v}i åt pizza.
           Han kommer från {*S|s}omalia.
           I {A|*a}ugusti börjar skolan.
@@ -796,7 +796,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           vi åkte till skolan. => Vi åkte till skolan.
           Min kompis heter sara. => Min kompis heter Sara.
           Vi bor i malmö. => Vi bor i Malmö.
-          Idag är det Måndag. => Idag är det måndag.
+          I dag är det Måndag. => I dag är det måndag.
           Jag fyller år i Maj. => Jag fyller år i maj.
           Hon pratar Engelska. => Hon pratar engelska.
           Vi åkte till norge. => Vi åkte till Norge.
@@ -840,7 +840,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Hon är {Svensk|*svensk} men bor i Norge.
           Han är {Norrman|*norrman}.
           {Kung|*kung} Carl Gustaf höll ett tal.
-          Det beslutade {Riksdagen|*riksdagen} igår.
+          Det beslutade {Riksdagen|*riksdagen} i går.
           Vi läste {*Ronja rövardotter|Ronja Rövardotter}.
           Jag läser {*Bröderna Lejonhjärta|Bröderna lejonhjärta}.
           Hon jobbar på {*Röda korset|Röda Korset}.

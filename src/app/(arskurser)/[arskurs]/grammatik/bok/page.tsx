@@ -220,7 +220,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                   <li key={hafte.id} className="mb-2 break-inside-avoid">
                     <span className="font-semibold">{hafte.titel}</span>
                     <span className="block text-[9pt] text-neutral-500">
-                      Kapitel {nrFor(amne)} {AMNEN[amne].titel} · {hafte.antalUppgifter} uppgifter{sidor[`hafte-${hafte.id}`] ? ` · s. ${sidor[`hafte-${hafte.id}`]}` : ""}
+                      Kapitel {nrFor(amne)} {AMNEN[amne].titel} · {hafte.antalRader} uppgifter{sidor[`hafte-${hafte.id}`] ? ` · s. ${sidor[`hafte-${hafte.id}`]}` : ""}
                     </span>
                   </li>
                 ))}

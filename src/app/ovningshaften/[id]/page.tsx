@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!h) return {};
   return {
     title: `${h.titel} – Övningshäfte`,
-    description: `${h.underrubrik}. ${h.antalUppgifter} uppgifter som rättas direkt eller skrivs ut med facit.`,
+    description: `${h.underrubrik}. ${h.antalRader} uppgifter som rättas direkt eller skrivs ut med facit.`,
   };
 }
 

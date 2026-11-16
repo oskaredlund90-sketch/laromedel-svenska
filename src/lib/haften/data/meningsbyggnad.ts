@@ -57,7 +57,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           {*Medan|Men|Så} mamma lagade mat, dukade jag.
           Han vann {*eftersom|men|fast} han hade tränat mycket.
           Jag tycker om sommaren {*eftersom|men|fast} det är varmt.
-          Vi har prov imorgon, {*så|men|fast} jag måste plugga.
+          Vi har prov i morgon, {*så|men|fast} jag måste plugga.
           Hon ville sova, {*men|så|eftersom} grannen spelade musik.
           {*Sedan|Men|Fast} gick vi och la oss.
           Vi kan gå på bio {*eller|men|fast} spela spel.
@@ -187,8 +187,8 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Läraren blev arg för att de {*inte hade|hade inte} gjort läxan.
           Jag {*kan inte|inte kan} simma.
           Jag badar bara där jag bottnar, eftersom jag {*inte kan|kan inte} simma.
-          Hon {*kommer kanske|kanske kommer} imorgon.
-          Hon sa att hon {*kanske kommer|kommer kanske} imorgon.
+          Hon {*kommer kanske|kanske kommer} i morgon.
+          Hon sa att hon {*kanske kommer|kommer kanske} i morgon.
           Vi {*får inte|inte får} springa i korridoren.
           Det är en regel att vi {*inte får|får inte} springa i korridoren.
           Han {*vet inte|inte vet} svaret.
@@ -236,7 +236,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Fast jag hade inte pluggat, klarade jag provet. => Fast jag inte hade pluggat, klarade jag provet.
           Vi vet inte varför katten äter inte. => Vi vet inte varför katten inte äter.
           När han kom inte, gick vi. => När han inte kom, gick vi.
-          Jag hoppas att det regnar inte imorgon. => Jag hoppas att det inte regnar imorgon.
+          Jag hoppas att det regnar inte i morgon. => Jag hoppas att det inte regnar i morgon.
           Hon blev glad att hon behövde inte städa. => Hon blev glad att hon inte behövde städa.
           Det är konstigt att du har aldrig sett snö. => Det är konstigt att du aldrig har sett snö.
           Han skämdes för att han kunde inte svaret. => Han skämdes för att han inte kunde svaret.
@@ -263,7 +263,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
           Jag frågade. Varför kom du inte? (varför) => Jag frågade varför du inte kom.
           Hon var glad. Hon behövde inte gå. (för att) => Hon var glad för att hon inte behövde gå.
           Vi skyndade oss. Vi ville inte missa tåget. (eftersom) => Vi skyndade oss eftersom vi inte ville missa tåget.
-          Jag tror något. Det regnar inte imorgon. (att) => Jag tror att det inte regnar imorgon.
+          Jag tror något. Det regnar inte i morgon. (att) => Jag tror att det inte regnar i morgon.
           Han ljög. Han ville inte få skäll. (eftersom) => Han ljög eftersom han inte ville få skäll.
           Det är bra. Du gav inte upp. (att) => Det är bra att du inte gav upp.
           Jag läser. Jag kan inte sova. (när) => Jag läser när jag inte kan sova.

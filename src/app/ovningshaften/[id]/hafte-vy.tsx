@@ -46,7 +46,7 @@ export function HafteVy({ hafte }: { hafte: Hafte }) {
           <ChevronLeft className="h-4 w-4" /> Alla övningshäften
         </Link>
         <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-          {hafte.omrade} · Steg {hafte.steg} · {hafte.antalUppgifter} uppgifter
+          {hafte.omrade} · Steg {hafte.steg} · {hafte.antalRader} uppgifter
         </p>
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">{hafte.titel}</h1>
         <p className="mt-1 text-lg text-neutral-600 dark:text-neutral-400">{hafte.underrubrik}</p>

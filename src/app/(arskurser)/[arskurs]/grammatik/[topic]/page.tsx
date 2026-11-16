@@ -167,7 +167,7 @@ export default async function GrammatikTopicPage({ params }: Props) {
                 <p className="font-semibold text-neutral-900 dark:text-white">{h.titel}</p>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">{h.underrubrik}</p>
                 <p className="mt-1 text-xs text-neutral-500">
-                  Steg {h.steg} · {h.antalUppgifter} uppgifter
+                  Steg {h.steg} · {h.antalRader} uppgifter
                 </p>
               </Link>
             ))}

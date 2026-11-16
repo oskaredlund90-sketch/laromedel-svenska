@@ -46,7 +46,7 @@ export function HafteUppgifter({
         <div className="mb-4 flex justify-between border-b border-current pb-2">
           <div>
             <p className="text-[9pt]">
-              {hafte.omrade} · Steg {hafte.steg} · {hafte.antalUppgifter}{" "}
+              {hafte.omrade} · Steg {hafte.steg} · {hafte.antalRader}{" "}
               uppgifter
             </p>
             <h1 className="text-[18pt] font-bold">{hafte.titel}</h1>
