@@ -7,6 +7,7 @@ import type { AgeGroup } from "@/lib/supabase/types";
 import { AMNEN, MAL_PER_STADIUM, PROGRESSION, delarForStadium } from "@/lib/grammatik/amnen";
 import { STARTPROV_FOR, haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
 import { hamtaHafte } from "@/lib/haften";
+import { ARSPLAN } from "@/lib/grammatik/arsplan";
 import { getExercisesForTopic } from "@/lib/data/grammatik-ovningar";
 
 const PDF_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "lokal";
@@ -104,6 +105,26 @@ export default async function GrammatikPage({ params }: Props) {
             <span className="block font-semibold text-neutral-900 dark:text-white">Lärarbok</span>
           </Link>
         )}
+      </div>
+
+      <div className="-mt-6 mb-6 rounded-xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-900 dark:bg-sky-950/30">
+        <p className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-white">
+          <Target className="h-5 w-5 text-sky-600" /> Lektionsplan och presentation per årskurs
+        </p>
+        <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+          Lektion för lektion: vilka bilder som ska visas, vilka sidor i boken som gäller och vad som ska skrivas ut.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {ARSPLAN[stadie].map((a) => (
+            <Link
+              key={a.ak}
+              href={`/${stadie}/grammatik/planering/${a.ak}`}
+              className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-neutral-800 ring-1 ring-sky-200 hover:ring-sky-500 dark:bg-neutral-900 dark:text-neutral-200 dark:ring-sky-800"
+            >
+              {a.titel}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {(() => {
