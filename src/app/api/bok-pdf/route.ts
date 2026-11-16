@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition": `attachment; filename="${namn}.pdf"`,
-        "Cache-Control": "public, max-age=3600, s-maxage=31536000",
+        "Cache-Control": "public, max-age=0, must-revalidate, s-maxage=31536000",
       },
     });
   } catch (fel) {

@@ -7,6 +7,8 @@ import type { AgeGroup } from "@/lib/supabase/types";
 import { AMNEN, MAL_PER_STADIUM, PROGRESSION, delarForStadium } from "@/lib/grammatik/amnen";
 import { haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
 import { getExercisesForTopic } from "@/lib/data/grammatik-ovningar";
+
+const PDF_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "lokal";
 import { pdfFinns, pdfSokvag } from "@/lib/grammatik/pdf";
 
 interface Props {
@@ -105,11 +107,11 @@ export default async function GrammatikPage({ params }: Props) {
 
       <p className="-mt-8 mb-12 text-sm text-neutral-500">
         Alla övningshäften samlade:{" "}
-        <a href={`/api/bok-pdf?stadie=${stadie}&haften=bara`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">
+        <a href={`/api/bok-pdf?stadie=${stadie}&haften=bara&v=${PDF_VERSION}`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">
           elevversion (PDF)
         </a>{" "}
         ·{" "}
-        <a href={`/api/bok-pdf?stadie=${stadie}&haften=bara&version=larare`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">
+        <a href={`/api/bok-pdf?stadie=${stadie}&haften=bara&version=larare&v=${PDF_VERSION}`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">
           med facit (PDF)
         </a>
         . Välj kapitel och version själv under <Link href={`/${arskurs}/grammatik/bok`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">Hela boken</Link>.

@@ -22,6 +22,9 @@ import { QrKod } from "@/components/grammatik/qr-kod";
 import { GrammatikInfografik } from "@/components/infografik/grammatik";
 import { SkrivUtKnapp } from "@/components/grammatik/skriv-ut-knapp";
 import { minst } from "@/components/grammatik/delar";
+
+// Ny adress för PDF:en vid varje ny version av sajten, så att ingen cache lämnar ut en gammal fil.
+const PDF_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "lokal";
 import { LaddaNerPdf } from "@/components/grammatik/ladda-ner-pdf";
 
 interface Props {
@@ -133,7 +136,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
   const ordlista = ordlistaFor(stadie);
   const nrFor = (a: GrammatikAmne) => allaKapitel.indexOf(a) + 1;
 
-  const apiSok = new URLSearchParams({ stadie, ...(larare ? { version: "larare" } : {}), ...(valt ? { kapitel: valt } : {}), ...(medHaften ? { haften: baraHaften ? "bara" : "1" } : {}) }).toString();
+  const apiSok = new URLSearchParams({ stadie, ...(larare ? { version: "larare" } : {}), ...(valt ? { kapitel: valt } : {}), ...(medHaften ? { haften: baraHaften ? "bara" : "1" } : {}), v: PDF_VERSION }).toString();
   const filnamn = ["grammatik", stadie, baraHaften ? "ovningshaften" : null, valt, larare ? "larare" : "elev", medHaften && !baraHaften ? "med-haften" : null].filter(Boolean).join("-");
   const pdfElev = pdfSokvag(stadie, false);
   const pdfLarare = pdfSokvag(stadie, true);
