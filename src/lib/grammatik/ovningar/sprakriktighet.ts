@@ -51,7 +51,7 @@ okHog.k("Aktiv eller passiv form?", { Aktiv: ["Hon skrev brevet.", "Vi målade h
 // Partikelverb
 okHog.v("I vilken mening är ”om” en betonad partikel?", ["Han talade om resan.", "*Jag tycker om glass.", "Vi pratade om filmen."], "Tycka om är ett partikelverb – om är betonat och hör ihop med verbet.");
 okHog.m("Klicka på partiklarna – de betonade småorden som hör ihop med verbet.", "Hon gav [upp] efter en timme, men han höll [ut] och kom [fram].");
-okHog.r("Kan du {stänga av|avstänga} datorn?", "Stänga av är partikelverbet. Avstänga betyder något annat (stänga av någon från ett uppdrag).");
+okHog.r("Kan du {avstänga|stänga av} datorn?", "Stänga av är partikelverbet. Avstänga betyder något annat (stänga av någon från ett uppdrag).");
 // Particip
 okHog.v("Vilket ord är ett presens particip?", ["stängd", "*skrattande", "skrattade"], "Presens particip slutar på -ande eller -ende: skrattande, gående.");
 okHog.v("Vilket ord är ett perfekt particip?", ["*målad", "målande", "målar"], "Perfekt particip: målad, stängd, skriven. Det böjs som ett adjektiv.");
@@ -79,10 +79,10 @@ mbHog.r("Flickan {vilken|som} vann loppet heter Ella.", "Som är det vanliga rel
 
 /* -------------------------------- Gymnasiet -------------------------------- */
 const okGy = bygg("ordklasser", "gymnasiet", "k");
-okGy.r("Varje elev ska ta med {sin|deras} dator.", "Subjektet är varje elev (singular) – sin.");
+okGy.r("Varje elev ska ta med {deras|sin} dator.", "Subjektet är varje elev (singular) – sin.");
 okGy.r("Resultaten av undersökningen var {oväntad|oväntade}.", "Huvudordet är resultaten (plural) – oväntade. Låt dig inte luras av undersökningen.");
 okGy.r("Antalet sökande har {ökad|ökat} kraftigt.", "Har + supinum: ökat. Ökad är particip: en ökad risk.");
-okGy.r("Ett av förslagen {antogs|antogos}.", "Pluralformerna på -o (antogos) är ålderdomliga. Skriv antogs.");
+okGy.r("Ett av förslagen {antogos|antogs}.", "Pluralformerna på -o (antogos) är ålderdomliga. Skriv antogs.");
 okGy.v("Vilken mening har en utsatt agent?", ["Beslutet fattades i går.", "*Beslutet fattades av styrelsen.", "Styrelsen fattade beslutet."], "Agenten är den som utför handlingen i en passiv mening: av styrelsen.");
 okGy.v("Varför kan passiv vara problematiskt i en debattartikel?", ["*Den som ansvarar för handlingen kan döljas.", "Passiv är grammatiskt fel i debattartiklar.", "Passiv gör texten alltid längre."], "Misstag har begåtts – av vem? Passiv kan dölja ansvar.");
 okGy.v("Vilken s-form är INTE passiv?", ["Huset byggdes 1920.", "*Vi ses i morgon.", "Proven rättas i helgen."], "Ses är ett deponens- eller reciprokt verb – vi ser varandra. Det är inte passiv.");
@@ -92,7 +92,7 @@ okGy.m("Klicka på alla verb i passiv form.", "Lagen [antogs] 2019 men [har krit
 const mbGy = bygg("meningsbyggnad", "gymnasiet", "k");
 mbGy.v("Vilken funktion har bisatsen i ”Att klimatet förändras är ställt utom allt tvivel”?", ["*subjekt", "objekt", "adverbial"], "Att-satsen är meningens subjekt: Vad är ställt utom allt tvivel?");
 mbGy.v("Vad syftar ”vilket” på i ”Räntan höjdes, vilket drabbade många”?", ["räntan", "*hela satsen före", "många"], "Vilket kan syfta på en hel sats. Som kan bara syfta på ett ord.");
-mbGy.r("Studien, {som|vilket} publicerades i maj, väckte debatt.", "Som syftar på ett ord (studien). Vilket syftar på en hel sats.");
+mbGy.r("Studien, {vilket|som} publicerades i maj, väckte debatt.", "Som syftar på ett ord (studien). Vilket syftar på en hel sats.");
 mbGy.k("Vilken satsdel är bisatsen?", { Subjekt: ["Att du kom gladde mig.", "Vem som vann är oklart."], Objekt: ["Jag vet att du har rätt.", "Hon undrade om vi kom."], Adverbial: ["När det blev mörkt gick vi hem.", "Vi stannar om det regnar."] });
 
 export const SPRAKRIKTIGHET = [

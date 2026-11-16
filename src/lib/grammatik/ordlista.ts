@@ -12,6 +12,16 @@ export interface Term {
 }
 
 export const ORDLISTA: Term[] = [
+  { term: "anafor", forklaring: "Stilfigur där samma ord inleder flera meningar eller led.", exempel: "Vi kämpar för … Vi kämpar för …", fran: "hogstadiet" },
+  { term: "antites", forklaring: "Stilfigur där motsatser ställs mot varandra.", exempel: "Ute stormade det, inne var det stilla.", fran: "hogstadiet" },
+  { term: "asyndes", forklaring: "Uppräkning utan och. Ger tempo.", exempel: "Han åt. Han drack. Han somnade.", fran: "hogstadiet" },
+  { term: "klimax", forklaring: "Stilfigur med en stegring mot det starkaste.", exempel: "bra, mycket bra, fantastiskt", fran: "hogstadiet" },
+  { term: "additiv", forklaring: "Om sambandsord som lägger till något.", exempel: "dessutom, även", fran: "hogstadiet" },
+  { term: "adversativ", forklaring: "Om sambandsord som visar motsats.", exempel: "men, däremot", fran: "hogstadiet" },
+  { term: "kausal", forklaring: "Om sambandsord som visar orsak eller följd.", exempel: "eftersom, därför", fran: "hogstadiet" },
+  { term: "temporal", forklaring: "Om sambandsord som visar tid.", exempel: "först, sedan", fran: "hogstadiet" },
+  { term: "initialord", forklaring: "Förkortning som läses bokstav för bokstav.", exempel: "SVT, IT, EU", fran: "hogstadiet" },
+  { term: "akronym", forklaring: "Förkortning som läses som ett ord.", exempel: "Nato, Unicef", fran: "hogstadiet" },
   { term: "adjektiv", forklaring: "Ord som beskriver hur något är.", exempel: "stor, glad, röd", fran: "lagstadiet" },
   { term: "adverb", forklaring: "Ord som berättar hur, var, när eller hur mycket.", exempel: "snabbt, här, ofta", fran: "mellanstadiet" },
   { term: "adverbial", forklaring: "Satsdel som berättar när, var, hur eller varför något händer.", exempel: "I går åt vi glass på stranden.", fran: "mellanstadiet" },

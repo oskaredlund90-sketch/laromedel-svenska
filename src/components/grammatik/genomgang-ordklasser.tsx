@@ -75,6 +75,12 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
                 : []),
             ]}
           />
+          {minst(s, "hogstadiet") && (
+            <P>
+              Artiklarna <em>en, ett</em> och <em>den, det, de</em> räknas i skolgrammatiken till pronomenen. Ordningstalen (första, andra) räknas
+              här till räkneorden – i Svenska Akademiens grammatik räknas de som adjektiv, eftersom de böjs och används som adjektiv.
+            </P>
+          )}
           {s === "mellanstadiet" && (
             <P>På högstadiet lär du dig de tre sista ordklasserna: konjunktioner, subjunktioner och interjektioner.</P>
           )}

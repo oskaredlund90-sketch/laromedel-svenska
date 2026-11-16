@@ -51,10 +51,12 @@ export function StilistikGenomgang({ stadie }: { stadie: AgeGroup }) {
             ["Besjälning", "döda ting får mänskliga egenskaper", "Vinden viskade i träden."],
             ["Överdrift (hyperbol)", "kraftig förstoring", "Jag har sagt det tusen gånger."],
             ["Upprepning", "ord eller fras återkommer", "Vi kämpar. Vi kämpar varje dag."],
-            ["Kontrast", "motsatser ställs mot varandra", "Ute stormade det, inne var det stilla."],
+            ["Kontrast (antites)", "motsatser ställs mot varandra", "Ute stormade det, inne var det stilla."],
+            ["Anafor", "samma ord inleder flera meningar eller led", "Vi kämpar för klimatet. Vi kämpar för framtiden."],
+            ["Klimax", "en stegring mot det starkaste", "Det var bra, mycket bra, helt fantastiskt."],
+            ["Asyndes", "uppräkning utan och – ger tempo", "Han åt. Han drack. Han somnade."],
             ...(minst(s, "gymnasiet")
               ? [
-                  ["Anafor", "samma ord inleder flera meningar", "Jag har en dröm …"],
                   ["Retorisk fråga", "fråga som inte väntar svar", "Vem vill inte leva i fred?"],
                   ["Tretal", "tre led för rytm och kraft", "Jag kom, jag såg, jag segrade."],
                   ["Allitteration", "samma ljud i början av ord", "sol, sand och semester"],

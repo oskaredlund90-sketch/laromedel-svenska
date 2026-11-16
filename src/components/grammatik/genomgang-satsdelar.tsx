@@ -12,11 +12,11 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
       </Intro>
 
       <Section title={s === "lagstadiet" ? "Vem gör något? Vad händer?" : "Subjekt och predikat – meningens kärna"}>
-        <ExampleCard title={s === "lagstadiet" ? "Två frågor hittar kärnan" : "Predikatet är verbet, subjektet är den som gör"}>
+        <ExampleCard title={s === "lagstadiet" ? "Två frågor hittar kärnan" : "Predikatet är verbet eller verben, subjektet är den som gör"}>
           <P>
             {s === "lagstadiet"
               ? "Fråga först: Vad händer? Då hittar du verbet. Fråga sedan: Vem gör det? Då hittar du den som gör något."
-              : "Börja alltid med predikatet – det böjda verbet. Fråga sedan vem eller vad + verbet för att hitta subjektet."}
+              : "Börja med det böjda verbet – det är alltid en del av predikatet. Fråga sedan vem eller vad + verbet för att hitta subjektet."}
           </P>
           <Markerad delar={[["Hunden", s === "lagstadiet" ? "vem?" : "subjekt"], ["skäller", s === "lagstadiet" ? "vad händer?" : "predikat"]]} />
           <Markerad delar={[["Min lillasyster", s === "lagstadiet" ? "vem?" : "subjekt"], ["sover", s === "lagstadiet" ? "vad händer?" : "predikat"]]} />
@@ -29,7 +29,7 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
           {minst(s, "hogstadiet") && (
             <P>
               Predikatet kan bestå av flera verb: <strong>har ätit</strong>, <strong>ska åka</strong>, <strong>kan ha glömt</strong>. Det
-              finita (böjda) verbet är det första: har, ska, kan.
+              finita (böjda) verbet är det första: har, ska, kan. Alla verben tillsammans är predikatet.
             </P>
           )}
         </ExampleCard>

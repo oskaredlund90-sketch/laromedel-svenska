@@ -180,7 +180,7 @@ function numrera(ovningar: GrammarExercise[]) {
 
 /** Instruktionen som gäller alla uppgifter i en del, om de har samma. */
 function gemensamInstruktion(lista: { e: GrammarExercise }[]): string | null {
-  const ins = lista.map(({ e }) => (STANDARD.has(e.instruction) ? "" : papper(e.instruction)));
+  const ins = lista.map(({ e }) => (STANDARD.has(e.instruction) || (e.type === "multiple-choice" && e.prompt.trim().endsWith("?")) ? "" : papper(e.instruction)));
   return ins.every((i) => i === ins[0]) && ins[0] ? ins[0] : null;
 }
 
@@ -203,7 +203,7 @@ export function OvningarPapper({ ovningar, rubrik = "h2" }: { ovningar: GrammarE
             {gemensam && <p className="mb-2 text-[10pt] italic">{gemensam}</p>}
             <ol className={SPALTER[typ] ?? "space-y-2.5"}>
               {lista.map(({ e, nr }) => {
-                const ins = STANDARD.has(e.instruction) ? "" : papper(e.instruction);
+                const ins = STANDARD.has(e.instruction) || (e.type === "multiple-choice" && e.prompt.trim().endsWith("?")) ? "" : papper(e.instruction);
                 const visa = !gemensam && ins && ins !== forra;
                 forra = ins;
                 return (

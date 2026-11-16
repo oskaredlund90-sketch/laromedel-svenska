@@ -47,11 +47,19 @@ export function SkiljeteckenGenomgang({ stadie }: { stadie: AgeGroup }) {
               <ExampleCard title="Mellan huvudsatser och efter en inledande bisats">
                 <Ex>Det började regna, så vi gick in.</Ex>
                 <Ex>När vi kom hem, var middagen klar.</Ex>
-                <P>Komma efter en inledande bisats är frivilligt men hjälper läsaren i långa meningar.</P>
+                <P>
+                  Efter en inledande bisats sätter man komma. I korta meningar kan det ibland strykas, men i skolans uppgifter och i sakprosa är
+                  det säkrast att alltid ha med det.
+                </P>
               </ExampleCard>
-              <ExampleCard title="Kring inskott">
-                <Ex>Min bror, som är tolv år, spelar trummor.</Ex>
-                <P>Om du kan stryka delen utan att meningen blir fel är det ett inskott – sätt komma på båda sidor.</P>
+              <ExampleCard title="Relativsatser – nödvändig eller extra information?">
+                <Ex>Boken som ligger på bordet är min.</Ex>
+                <P>Vilken bok? Bisatsen behövs för att veta vilken bok det gäller. Då blir det inget komma.</P>
+                <Ex>Min moster, som bor i Kiruna, kommer på besök.</Ex>
+                <P>
+                  Bisatsen är extra information – du vet redan vem det gäller. Då sätts komma på båda sidor. Testa: kan du stryka delen och ändå
+                  veta vem eller vad det handlar om? Då ska det vara komma.
+                </P>
               </ExampleCard>
               <Warning>
                 Komma kan inte ersätta punkt mellan två huvudsatser: <em>Det regnade, vi gick in.</em> är satsradning. Skriv <em>Det regnade. Vi gick

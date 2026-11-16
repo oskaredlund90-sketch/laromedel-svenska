@@ -30,6 +30,13 @@ export function SambandGenomgang({ stadie }: { stadie: AgeGroup }) {
           Samma händelse – tre samband. Lägg märke till att <strong>eftersom</strong> pekar bakåt mot orsaken, medan <strong>så</strong> och{" "}
           <strong>därför</strong> pekar framåt mot följden.
         </Tip>
+        {minst(s, "hogstadiet") && (
+          <Warning>
+            <strong>Så</strong> och <strong>så att</strong> är olika ord. <em>Det regnade, så vi stannade inne</em> – så är en konjunktion och
+            följs av en huvudsats. <em>Vi tog med paraply så att vi inte skulle bli blöta</em> – så att är en subjunktion och inleder en bisats.
+            Där gäller BIFF: <em>så att vi inte blev blöta</em>.
+          </Warning>
+        )}
       </Section>
 
       {minst(s, "mellanstadiet") && (

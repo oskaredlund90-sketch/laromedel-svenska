@@ -35,14 +35,20 @@ export function TextbindningGenomgang({ stadie }: { stadie: AgeGroup }) {
             <Tabell
               rubriker={["Funktion", "Sambandsmarkörer"]}
               rader={[
-                ["Tid", "först, sedan, därefter, samtidigt, till slut"],
-                ["Tillägg", "och, dessutom, även, vidare"],
-                ["Motsats", "men, däremot, ändå, å andra sidan"],
-                ["Orsak och följd", "eftersom, därför, alltså, följaktligen"],
+                [minst(s, "hogstadiet") ? "Tid (temporala)" : "Tid", "först, sedan, därefter, samtidigt, till slut"],
+                [minst(s, "hogstadiet") ? "Tillägg (additiva)" : "Tillägg", "och, dessutom, även, vidare"],
+                [minst(s, "hogstadiet") ? "Motsats (adversativa)" : "Motsats", "men, däremot, ändå, å andra sidan"],
+                [minst(s, "hogstadiet") ? "Orsak och följd (kausala)" : "Orsak och följd", "eftersom, därför, alltså, följaktligen"],
                 ...(minst(s, "hogstadiet") ? [["Exempel och sammanfattning", "till exempel, sammanfattningsvis, kort sagt"]] : []),
                 ...(minst(s, "gymnasiet") ? [["Textens uppbyggnad (metatext)", "inledningsvis, i det följande, avslutningsvis"]] : []),
               ]}
             />
+          )}
+          {minst(s, "hogstadiet") && (
+            <P>
+              Orden inom parentes är de fackord som används om sambanden: temporal (tid), additiv (tillägg), adversativ (motsats) och kausal
+              (orsak).
+            </P>
           )}
           {minst(s, "mellanstadiet") && <Tip>Variera! Börja inte varje mening med och sen. Sambanden mellan orsak och följd finns i ett eget avsnitt.</Tip>}
           {minst(s, "mellanstadiet") && <Vidare href={`/${s}/grammatik/samband`}>Orsak, följd och villkor</Vidare>}
