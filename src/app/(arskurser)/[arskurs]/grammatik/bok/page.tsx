@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { AMNEN, AMNEN_PER_STADIUM, MAL_PER_STADIUM, PROGRESSION, ALLA_AMNEN, delarForStadium, type GrammatikAmne } from "@/lib/grammatik/amnen";
 import { haftenForKapitel, kapitelprovFor, repetitionForDel } from "@/lib/grammatik/bok";
 import { SKRIV_SJALV } from "@/lib/grammatik/skriv-sjalv";
+import { skrivdelFor } from "@/lib/grammatik/prov-skrivdel";
 import { ordlistaFor } from "@/lib/grammatik/ordlista";
 import { sidnummerFor } from "@/lib/grammatik/sidnummer";
 import { pdfFinns, pdfSokvag } from "@/lib/grammatik/pdf";
@@ -59,7 +60,7 @@ function DelRubrik({ overrad, titel, text }: { overrad: string; titel: string; t
   return (
     <div className="mb-6 border-b-2 border-neutral-900 pb-3 dark:border-white">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">{overrad}</p>
-      <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">{titel}</h2>
+      <h2 className="rubrik-med-plats text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">{titel}</h2>
       {text && <p className="mt-1 text-neutral-600 dark:text-neutral-400">{text}</p>}
     </div>
   );
@@ -234,7 +235,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
               </div>
 
               <div className="flex flex-wrap items-end justify-between gap-6 border-t border-neutral-300 pt-5 dark:border-neutral-700">
-                <QrKod sokvag={`/${stadie}/grammatik`} text="Hela boken finns på sajten – övningarna rättas direkt" storlek={64} />
+                <QrKod sokvag={`/${stadie}/grammatik`} text="Hela boken finns på sajten – övningarna rättas direkt" storlek={88} />
                 {!larare && <p className="text-[10pt]">Namn: ______________________ Klass: ________</p>}
               </div>
             </section>
@@ -319,7 +320,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                         </p>
                       </div>
                       <div className="hidden shrink-0 sm:block print:block">
-                        <QrKod sokvag={`/${stadie}/grammatik/${a}`} storlek={56} kompakt />
+                        <QrKod sokvag={`/${stadie}/grammatik/${a}`} storlek={88} kompakt />
                       </div>
                     </div>
 
@@ -330,7 +331,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
 
                     <section className="mt-6 border-t-2 border-neutral-900 pt-4 dark:border-white">
                       <div className="mb-3 flex items-baseline justify-between gap-4">
-                        <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Öva – {AMNEN[a].titel}</h3>
+                        <h3 className="rubrik-med-plats text-2xl font-bold text-neutral-900 dark:text-white">Öva – {AMNEN[a].titel}</h3>
                         <p className="text-[9pt] text-neutral-500">{ovningar.length} uppgifter · rättas direkt på sajten</p>
                       </div>
                       <OvningarPapper ovningar={ovningar} rubrik="h3" />
@@ -404,6 +405,40 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                     <li>Kapitelproven innehåller nya uppgifter som inte finns bland övningarna.</li>
                     <li>Grammatiken syns till sist i elevernas egna texter – följ upp med skrivuppgifterna och med återkoppling på texter.</li>
                   </ul>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2">
+                <div>
+                  <p className="font-semibold">Fördelning över stadiet</p>
+                  <p>
+                    {stadie === "hogstadiet"
+                      ? "Ett förslag: del 1 (Ordet) i årskurs 7, del 2 (Meningen) i årskurs 8 och del 3 (Texten) i årskurs 9. Ta repetitionen efter varje del i början av nästa termin, och använd slutprovet som förtest i årskurs 7 och eftertest i årskurs 9."
+                      : stadie === "gymnasiet"
+                        ? "Ett förslag: del 1 och 2 i Svenska 1, del 3 i Svenska 2 – med repetition av del 1–2 i början av Svenska 2. Slutprovet fungerar som diagnos vid kursstart."
+                        : "Ett förslag: en del per termin, med repetitionen i början av nästa termin. Slutprovet kan användas som förtest och eftertest."}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">Elever med svenska som andraspråk</p>
+                  <p>
+                    Lägg extra tid på det som skiljer sig mellan språk: verbet på plats två och BIFF (Meningsbyggnad), kongruens och en/ett, sin
+                    eller hans/hennes samt partikelverb (Ordklasser). Låt eleverna jämföra med sitt modersmål och säga meningarna högt – ordföljd
+                    sitter i örat.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">Resonera och skriv – återkoppling</p>
+                  <p>
+                    De öppna uppgifterna har exempelsvar och en checklista i facit. Låt eleverna bocka av checklistan på sitt eget eller en kamrats
+                    svar och skriva en sak som saknas. Ge sedan återkoppling på en punkt i taget – helst i elevens egen text.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">Skrivdelen i proven</p>
+                  <p>
+                    Kapitelproven från mellanstadiet har en skrivdel utanför de 20 poängen. Bedöm den med kriterierna i facit: kan eleven använda
+                    grammatiken – inte bara känna igen den?
+                  </p>
                 </div>
               </div>
               <p className="text-[9.5pt] text-neutral-500">
@@ -487,6 +522,15 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
             {i === 0 && <DelRubrik overrad="Lärarmaterial" titel="Prov" text="Ett kapitelprov på 20 poäng per kapitel och ett slutprov. Facit efter proven." />}
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Kapitel {nrFor(amne)}</p>
             <HafteUppgifter hafte={prov} />
+            {skrivdelFor(amne, stadie) && (
+              <div className="mt-4 break-inside-avoid rounded-lg border-2 border-neutral-900 p-4 dark:border-white">
+                <p className="font-bold">Skrivdel – bedöms separat, ingår inte i de 20 poängen</p>
+                <p className="mt-1">{skrivdelFor(amne, stadie)!.uppgift}</p>
+                {Array.from({ length: 8 }).map((_, r) => (
+                  <p key={r} className="h-7 border-b border-dotted border-current" />
+                ))}
+              </div>
+            )}
           </section>
         ))}
         {slutprov && (
@@ -499,12 +543,26 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
           <section className="break-before-page pt-10 print:pt-0">
             <DelRubrik overrad="Lärarmaterial" titel="Facit till proven" />
             <div className="space-y-6">
-              {[...kapitelprov.map((k) => k.prov), ...(slutprov ? [slutprov] : [])].map((p) => (
-                <div key={p.id}>
-                  <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">{p.titel}</h3>
-                  <HafteFacit hafte={p} />
+              {kapitelprov.map(({ amne, prov: p }) => {
+                const skriv = skrivdelFor(amne, stadie);
+                return (
+                  <div key={p.id}>
+                    <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">{p.titel}</h3>
+                    <HafteFacit hafte={p} />
+                    {skriv && (
+                      <p className="text-[9.5pt]">
+                        <strong>Skrivdelen – bedöm:</strong> {skriv.kriterier.join(" · ")}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+              {slutprov && (
+                <div>
+                  <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">{slutprov.titel}</h3>
+                  <HafteFacit hafte={slutprov} />
                 </div>
-              ))}
+              )}
             </div>
           </section>
         )}

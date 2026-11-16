@@ -48,8 +48,9 @@ export function SkiljeteckenGenomgang({ stadie }: { stadie: AgeGroup }) {
                 <Ex>Det började regna, så vi gick in.</Ex>
                 <Ex>När vi kom hem, var middagen klar.</Ex>
                 <P>
-                  Efter en inledande bisats sätter man komma. I korta meningar kan det ibland strykas, men i skolans uppgifter och i sakprosa är
-                  det säkrast att alltid ha med det.
+                  Efter en inledande bisats sätter man oftast komma – det hjälper läsaren att se var huvudsatsen börjar. I korta, lättlästa
+                  meningar kan kommat strykas: <em>När vi kom hem var middagen klar.</em> I bokens uppgifter godkänns båda, utom när uppgiften
+                  handlar om just kommat.
                 </P>
               </ExampleCard>
               <ExampleCard title="Relativsatser – nödvändig eller extra information?">

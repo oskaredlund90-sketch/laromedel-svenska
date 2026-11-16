@@ -77,7 +77,7 @@ export const PROV_HOG_GY: HafteKalla[] = [
           Hon sa att hon {ville inte|*inte ville} följa med.
           Vi blev förvånade eftersom vi {*aldrig hade|hade aldrig} sett snö förut.
           Det är filmen som jag {såg inte|*inte såg}.
-          Om du {*inte hinner|hinner inte} i dag kan du ringa i morgon.
+          Om du {*inte hinner|hinner inte} i dag, kan du ringa i morgon.
           Vilket ord inleder bisatsen i meningen ”Hon log när hon såg brevet”? → {hon|log|*när|såg}
         `,
       },

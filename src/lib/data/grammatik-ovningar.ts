@@ -104,7 +104,7 @@ export interface ResoneraExercise extends GrammarExerciseBase {
 }
 
 export const RESONERA_ETIKETT: Record<ResoneraExercise["variant"], string> = {
-  forklara: "Förklara felet",
+  forklara: "Förklara",
   "skriv-om": "Skriv om",
   "bygg-ut": "Bygg ut",
   jamfor: "Jämför och motivera",
@@ -3127,7 +3127,7 @@ const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
     type: "error-correction",
     topic: "skiljetecken",
     ageGroup: "hogstadiet",
-    instruction: "Sätt ut kommat efter den inledande bisatsen.",
+    instruction: "Rätta kommafelet.",
     sentence: "Vi åkte till stugan som låg vid sjön, och badade hela dagen.",
     correctedSentence: "Vi åkte till stugan som låg vid sjön och badade hela dagen.",
     errorWord: "sjön,",
@@ -3172,7 +3172,7 @@ const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "ner blev",
     correctWord: "ner, blev",
     explanation:
-      "Komma ska sättas mellan en inledande bisats och huvudsatsen. 'När solen gick ner' är bisatsen.",
+      "Efter en inledande bisats sätter man oftast komma. Det visar var huvudsatsen börjar. 'När solen gick ner' är bisatsen.",
   },
 ];
 

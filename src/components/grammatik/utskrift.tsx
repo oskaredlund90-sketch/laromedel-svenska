@@ -77,9 +77,9 @@ function Uppgift({ e }: { e: GrammarExercise }) {
     }
     case "categorization":
       return (
-        <>
+        <div className="block break-inside-avoid">
           <p className="mb-1">{blandaFast(e.items, e.id).join(" · ")}</p>
-          <table className="w-full table-fixed border-collapse text-[10pt]">
+          <table className="w-full table-fixed break-inside-avoid border-collapse text-[10pt]">
             <thead>
               <tr>
                 {e.categories.map((k) => (
@@ -99,7 +99,7 @@ function Uppgift({ e }: { e: GrammarExercise }) {
               ))}
             </tbody>
           </table>
-        </>
+        </div>
       );
     case "sentence-analysis":
       return (

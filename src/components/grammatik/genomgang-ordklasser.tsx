@@ -33,6 +33,28 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
         </div>
       </Section>
 
+      {minst(s, "hogstadiet") && (
+        <Section title="När testen inte räcker – titta på böjningen">
+          <P>
+            Testen ovan fungerar för de flesta ord, men inte för alla. Abstrakta substantiv som <em>mod</em> och <em>demokrati</em>, verb som{" "}
+            <em>vara</em>, <em>heta</em> och <em>kunna</em>, och adjektiv som <em>död</em> och <em>nuvarande</em> passar dåligt i testerna. Titta
+            då på hur ordet böjs och vad det gör i meningen:
+          </P>
+          <Tabell
+            rubriker={["Ordklass", "Böjs efter", "Exempel"]}
+            rader={[
+              ["Substantiv", "bestämd form och plural", "mod – modet, demokrati – demokratier"],
+              ["Verb", "tempus", "vara – var – har varit, kan – kunde"],
+              ["Adjektiv", "genus och antal (kongruens)", "en död fågel – ett dött träd – döda fåglar"],
+            ]}
+          />
+          <P>
+            <strong>Hjälpverb</strong> är också verb: <em>har, hade, ska, kan, vill, måste, får</em>. De står tillsammans med ett annat verb och
+            visar till exempel tid eller vilja: <em>Vi har planerat. Hon ska åka.</em>
+          </P>
+        </Section>
+      )}
+
       <Section title={s === "lagstadiet" ? "Ord kan ändra form" : "Böjning"}>
         <Tabell
           rubriker={["Ordklass", "Böjs efter", "Exempel"]}

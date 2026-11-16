@@ -70,3 +70,12 @@ describe("haftenForFeltyp", () => {
     expect(haftenForFeltyp("grammatik.tempus").map((h) => h.id)).toEqual(["grammatik-2-starka-verb", "ordklasser-2-alla-tio"]);
   });
 });
+
+describe("komma efter inledande bisats", () => {
+  it("godkänns både med och utan komma i rätta-uppgifter", async () => {
+    const { arRattMening } = await import("../typer");
+    expect(arRattMening("Om du inte skyndar dig missar du bussen.", ["Om du inte skyndar dig, missar du bussen."])).toBe(true);
+    expect(arRattMening("Om du inte skyndar dig, missar du bussen.", ["Om du inte skyndar dig missar du bussen."])).toBe(true);
+    expect(arRattMening("Jag kom, hem.", ["Jag kom hem."])).toBe(false);
+  });
+});

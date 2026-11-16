@@ -108,6 +108,7 @@ body {
   /* Små block delas inte mellan sidor. Stora block (infografik, kapitel) får delas. */
   .bok .rounded-lg,
   .bok table tr,
+  .bok li > div,
   .bok li,
   .bok h2,
   .bok h3,
@@ -125,6 +126,21 @@ body {
   .bok h3,
   .bok h4 {
     break-after: avoid;
+  }
+  /* Rubriker ska inte hamna ensamma sist på en sida: ett osynligt block under
+     rubriken kräver plats för innehållet efter den, annars flyttas rubriken. */
+  .bok section > h2::after,
+  .bok .rubrik-med-plats::after {
+    content: "";
+    display: block;
+    height: 45mm;
+    margin-bottom: -45mm;
+  }
+  .bok section > h3::after {
+    content: "";
+    display: block;
+    height: 25mm;
+    margin-bottom: -25mm;
   }
   .bok p {
     orphans: 3;

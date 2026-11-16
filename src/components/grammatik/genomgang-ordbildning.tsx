@@ -66,8 +66,8 @@ export function OrdbildningGenomgang({ stadie }: { stadie: AgeGroup }) {
             rubriker={["Språk", "Period", "Exempel"]}
             rader={[
               ["Latin och grekiska", "medeltiden och framåt", "skola, kyrka, biologi, demokrati"],
-              ["Lågtyska", "1300–1500-talet (Hansan)", "handel, betala, frukost, fönster"],
-              ["Franska", "1700-talet", "restaurang, paraply, trottoar, möbel"],
+              ["Lågtyska", "1300–1500-talet (Hansan)", "handel, betala, köpman, borgmästare"],
+              ["Franska", "1700-talet", "restaurang, paraply, fåtölj, frisör"],
               ["Engelska", "1900-talet och i dag", "jobb, mejl, dejt, streama"],
             ]}
           />

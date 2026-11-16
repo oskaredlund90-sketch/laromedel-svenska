@@ -150,9 +150,15 @@ export const KAPITELPROV_HOG_GY = [
         Jag var hungrig, jag åt en macka. {*satsradning|korrekt}
         Jag var hungrig, så jag åt en macka. {satsradning|*korrekt}
         Det snöade, skolan stängde. {*satsradning|korrekt}
-        Eftersom det snöade, stängde skolan. {satsradning|*korrekt}
-        Hon log, hon visste svaret. {*satsradning|korrekt}
-        Hon log. Hon visste svaret. {satsradning|*korrekt}
+      `,
+    },
+    {
+      i: "Vilken version passar bäst för syftet?",
+      t: "val",
+      r: `
+        En instruktion: {*Vispa äggen. Häll i mjölet. Rör om.|Äggen, som först ska vispas, blandas sedan med mjölet medan man rör.}
+        En spänningsscen: {*Det knarrade. Någon var där. Jag höll andan.|Det knarrade i trappan, vilket fick mig att tro att någon kanske var där.}
+        En förklaring: {*Isen smälter eftersom temperaturen stiger.|Isen smälter. Temperaturen. Den stiger.}
       `,
     },
   ]),
@@ -250,13 +256,13 @@ export const KAPITELPROV_HOG_GY = [
       `,
     },
     {
-      i: "Var eller vart?",
+      i: "Tänk på roten. Vilket ord är rätt stavat?",
       t: "val",
       r: `
-        {*Var|Vart} ligger Kiruna?
-        {Var|*Vart} är du på väg?
-        Jag vet inte {*var|vart} jag har lagt boken.
-        {Var|*Vart} tog hunden vägen?
+        Det var ett {*glatt|gladt} gäng.
+        Hon {*kände|kännde} igen honom direkt.
+        Vi {*tänkte|tänkde} på dig.
+        Det han sa var {*sant|sannt}.
       `,
     },
     {
@@ -377,10 +383,16 @@ export const KAPITELPROV_HOG_GY = [
         Skolan är ett fängelse. {liknelse|*metafor|besjälning|överdrift}
         Dörren knarrade surt. {liknelse|metafor|*besjälning|överdrift}
         Jag har ringt hundra gånger. {liknelse|metafor|besjälning|*överdrift}
-        Hennes skratt var solsken. {liknelse|*metafor|besjälning|överdrift}
-        Han åt som en häst. {*liknelse|metafor|besjälning|överdrift}
-        Löven dansade i vinden. {liknelse|metafor|*besjälning|överdrift}
-        Väskan vägde mer än en elefant. {liknelse|metafor|besjälning|*överdrift}
+      `,
+    },
+    {
+      i: "Vilken stilfigur är det?",
+      t: "val",
+      r: `
+        Vi vill ha trygghet. Vi vill ha frihet. Vi vill ha framtid. {*anafor|antites|klimax|asyndes}
+        Rik och fattig, ung och gammal – alla drabbas. {anafor|*antites|klimax|asyndes}
+        Det var bra, det var fantastiskt, det var det bästa jag sett. {anafor|antites|*klimax|asyndes}
+        Han åt, drack, somnade. {anafor|antites|klimax|*asyndes}
       `,
     },
     {

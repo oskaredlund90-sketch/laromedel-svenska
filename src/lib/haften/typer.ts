@@ -176,8 +176,13 @@ export function arRatt(svar: string, godkanda: string[], skiftlage: boolean): bo
 export function arRattMening(svar: string, godkanda: string[]): boolean {
   // Tillåt rak bindestreck i stället för talstreck.
   const n = (s: string) => normalisera(s, true).replace(/^- /, "– ").replace(/ - /g, " – ");
-  return godkanda.some((g) => n(g) === n(svar));
+  if (godkanda.some((g) => n(g) === n(svar))) return true;
+  // Komma efter en inledande bisats får sättas ut eller strykas (Svenska skrivregler).
+  return godkanda.some((g) => INLEDANDE_BISATS.test(g) && utanForstaKomma(n(g)) === utanForstaKomma(n(svar)));
 }
+
+const INLEDANDE_BISATS = /^(När|Om|Eftersom|Innan|Medan|Trots att|Även om|Fastän|Fast|Sedan|Då|Ifall|Hade|Om)\s/;
+const utanForstaKomma = (s: string) => s.replace(",", "");
 
 /** Ett tomt alternativ visas som "inget". */
 export function visaAlternativ(a: string): string {

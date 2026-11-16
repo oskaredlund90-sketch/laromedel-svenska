@@ -31,6 +31,15 @@ export function SambandGenomgang({ stadie }: { stadie: AgeGroup }) {
           <strong>därför</strong> pekar framåt mot följden.
         </Tip>
         {minst(s, "hogstadiet") && (
+          <ExampleCard title="Samband är inte alltid orsak">
+            <Ex>Glassförsäljningen och antalet drunkningsolyckor ökar på sommaren.</Ex>
+            <P>
+              Två saker kan hänga ihop utan att den ena orsakar den andra. Här beror båda på en tredje sak: varmt väder. Innan du skriver
+              <em> leder till</em> eller <em>därför</em> – fråga dig om det verkligen är en orsak, eller bara något som händer samtidigt.
+            </P>
+          </ExampleCard>
+        )}
+        {minst(s, "hogstadiet") && (
           <Warning>
             <strong>Så</strong> och <strong>så att</strong> är olika ord. <em>Det regnade, så vi stannade inne</em> – så är en konjunktion och
             följs av en huvudsats. <em>Vi tog med paraply så att vi inte skulle bli blöta</em> – så att är en subjunktion och inleder en bisats.

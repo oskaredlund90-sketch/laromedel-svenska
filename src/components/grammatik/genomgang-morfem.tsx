@@ -64,7 +64,7 @@ export function MorfemGenomgang({ stadie }: { stadie: AgeGroup }) {
                   ["miss-", "fel", "missförstå, misslyckas"],
                   ["be-", "göra till", "beskriva, befria"],
                   ["för-", "mer/förändring", "förstora, förklara"],
-                  ...(minst(s, "hogstadiet") ? [["åter-", "igen", "återvinna, återfå"], ["an-", "riktning mot", "ankomma, angripa"]] : []),
+                  ...(minst(s, "hogstadiet") ? [["åter-", "igen", "återvinna, återfå"], ["an-", "riktning mot", "ankomma, angripa"], ["er-", "göra till, nå fram till", "erkänna, ersätta, erövra"]] : []),
                 ]}
               />
             </ExampleCard>
