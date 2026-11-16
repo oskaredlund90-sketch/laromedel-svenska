@@ -103,6 +103,18 @@ export default async function GrammatikPage({ params }: Props) {
         )}
       </div>
 
+      <p className="-mt-8 mb-12 text-sm text-neutral-500">
+        Alla övningshäften samlade:{" "}
+        <a href={`/api/bok-pdf?stadie=${stadie}&haften=bara`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">
+          elevversion (PDF)
+        </a>{" "}
+        ·{" "}
+        <a href={`/api/bok-pdf?stadie=${stadie}&haften=bara&version=larare`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">
+          med facit (PDF)
+        </a>
+        . Välj kapitel och version själv under <Link href={`/${arskurs}/grammatik/bok`} className="font-medium text-sky-700 hover:underline dark:text-sky-400">Hela boken</Link>.
+      </p>
+
       {/* Delar och kapitel */}
       <div className="space-y-12">
         {delar.map((d) => (

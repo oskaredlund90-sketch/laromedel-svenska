@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Chromium för PDF-nedladdningen (src/app/api/bok-pdf) packas som binärer.
+  outputFileTracingIncludes: {
+    "/api/bok-pdf": ["./node_modules/@sparticuz/chromium/bin/**"],
+  },
   async redirects() {
     return [
       // Old standalone routes → redirect to hogstadiet as default
