@@ -1,6 +1,6 @@
 import type { HafteKalla } from "../typer";
 import {
-  ENKLA_MENINGAR,
+  ENKLA_MENINGAR, ENKLA_MENINGAR_2,
   HOG_MENINGAR,
   SPOA_MENINGAR,
   SYFTNING_RADER,
@@ -102,7 +102,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
         `,
       },
       { rubrik: "Del D", instruktion: "Skriv subjektet.", typ: "skriv", rader: skrivSatsdel(ENKLA_MENINGAR, "S") },
-      { rubrik: "Del E", instruktion: "Skriv predikatet.", typ: "skriv", rader: skrivSatsdel(ENKLA_MENINGAR, "P") },
+      { rubrik: "Del E", instruktion: "Skriv predikatet.", typ: "skriv", rader: skrivSatsdel(ENKLA_MENINGAR_2, "P") },
     ],
   },
   {
@@ -191,7 +191,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
         rubrik: "Del D",
         instruktion: "Vilken satsdel är delen med STORA BOKSTÄVER?",
         typ: "val",
-        rader: valjSatsdel(SPOA_MENINGAR, ["S", "P", "O", "A"]),
+        rader: valjSatsdel(SPOA_MENINGAR.slice(5), ["S", "P", "O", "A"]),
       },
     ],
   },

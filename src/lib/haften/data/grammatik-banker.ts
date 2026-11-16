@@ -96,6 +96,40 @@ export const ENKLA_MENINGAR = [
   "[S:Farfar] [P:fiskar] vid bryggan.",
 ];
 
+/** Andra uppsättningen enkla meningar, så att två delar i samma häfte inte upprepar varandra. */
+export const ENKLA_MENINGAR_2 = [
+  "[S:Snön] [P:faller] tyst.",
+  "[S:Mamma] [P:cyklar] till jobbet.",
+  "[S:Bebisen] [P:skrattar] högt.",
+  "På morgonen [P:sjunger] [S:fåglarna].",
+  "[S:Tåget] [P:går] klockan åtta.",
+  "[S:Ella] [P:ritar] en häst.",
+  "[S:Vinden] [P:blåser] hårt i dag.",
+  "[S:Min kompis] [P:bor] i Luleå.",
+  "Efter maten [P:diskar] [S:pappa].",
+  "[S:Grodan] [P:hoppar] i dammen.",
+  "[S:Läraren] [P:delar] ut böckerna.",
+  "[S:Solen] [P:lyser] över sjön.",
+  "[S:Vi] [P:väntar] på bussen.",
+  "I helgen [P:tävlar] [S:Omar] i simning.",
+  "[S:Kaninen] [P:äter] en morot.",
+  "[S:Farfar] [P:berättar] en historia.",
+  "[S:Klockan] [P:ringer] varje morgon.",
+  "[S:Barnen] [P:åker] pulka.",
+  "På kvällen [P:läser] [S:jag] en bok.",
+  "[S:Hunden] [P:sover] i sin korg.",
+  "[S:Alla] [P:applåderar].",
+  "[S:Regnet] [P:smattrar] mot rutan.",
+  "[S:Sara] [P:spelar] piano.",
+  "I morgon [P:börjar] [S:skolan].",
+  "[S:Katterna] [P:leker] med ett nystan.",
+  "[S:Brandbilen] [P:tutar].",
+  "[S:Min bror] [P:bakar] pizza.",
+  "Plötsligt [P:slocknade] [S:lampan].",
+  "[S:Hästarna] [P:springer] på ängen.",
+  "[S:Fröken] [P:skriver] på tavlan.",
+];
+
 export const SPOA_MENINGAR = [
   "[S:Lisa] [P:spelar] [O:fotboll] [A:på lördagar].",
   "[A:I går] [P:köpte] [S:vi] [O:en ny soffa].",
