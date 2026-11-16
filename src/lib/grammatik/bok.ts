@@ -74,3 +74,38 @@ export function stadierForHafte(id: string): AgeGroup[] {
   if (prov) return [prov];
   return ORDNING.filter((s) => Object.values(HAFTEN_PER_KAPITEL[s]).some((ids) => ids?.includes(id)));
 }
+
+/**
+ * Blandad repetition efter varje del i boken: några uppgifter från varje
+ * kapitel i delen, hämtade ur kapitlets övningshäften (som inte står i själva
+ * boken). Uppgifterna är spridda över häftet så att de inte är de första.
+ */
+export function repetitionForDel(stadie: AgeGroup, del: { nr: number; titel: string; kapitel: { amne: GrammatikAmne; nr: number }[] }): Hafte | undefined {
+  const anvanda = new Set<string>();
+  const delar: Hafte["delar"] = [];
+  for (const { amne, nr } of del.kapitel) {
+    const hafte = haftenForKapitel(amne, stadie).find((h) => !anvanda.has(h.id)) ?? haftenForKapitel(amne, stadie)[0];
+    if (!hafte) continue;
+    anvanda.add(hafte.id);
+    // Två delar ur häftet (de sista, som oftast är svårast), tre uppgifter ur varje.
+    for (const d of hafte.delar.slice(-2)) {
+      const n = d.uppgifter.length;
+      if (n === 0) continue;
+      const valda = [Math.floor(n / 3), Math.floor((2 * n) / 3), n - 1].filter((v, i, a) => a.indexOf(v) === i).map((i) => d.uppgifter[i]);
+      delar.push({ ...d, rubrik: `Kapitel ${nr} · ${d.rubrik}`, uppgifter: valda.map((u) => ({ ...u, id: `rep-${del.nr}-${u.id}` })) });
+    }
+  }
+  if (delar.length === 0) return undefined;
+  const antal = delar.reduce((s, d) => s + d.uppgifter.length, 0);
+  return {
+    id: `repetition-${stadie}-${del.nr}`,
+    titel: `Repetition – del ${del.nr}: ${del.titel}`,
+    underrubrik: "Blandade uppgifter från alla kapitel i delen",
+    omrade: "Grammatik",
+    steg: 1,
+    feltyper: [],
+    regel: ["Uppgifterna blandar kapitlen i delen. Det är meningen – så minns du bättre.", "Är du osäker? Bläddra tillbaka till kapitlet och läs genomgången igen."],
+    delar,
+    antalUppgifter: antal,
+  };
+}

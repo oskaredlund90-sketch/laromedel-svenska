@@ -1584,12 +1584,12 @@ const stavningMellanstadietEC: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "mellanstadiet",
     instruction: "Hitta och rätta stavfelet i meningen.",
-    sentence: "Vi sjöng en sång i skolan.",
+    sentence: "Vi sjong en sång i skolan.",
     correctedSentence: "Vi sjöng en sång i skolan.",
-    errorWord: "sjöng",
-    correctWord: "sjong",
+    errorWord: "sjong",
+    correctWord: "sjöng",
     explanation:
-      "'Sjöng' stavas utan prickar över o. Tänk på att 'sjunga' har u, inte ö.",
+      "Sjöng (av sjunga) stavas med ö.",
   },
   {
     id: "stavning-ec-mel-4",
@@ -1652,8 +1652,8 @@ const stavningMellanstadietMC: MultipleChoiceExercise[] = [
     ageGroup: "mellanstadiet",
     instruction: "Vilket ord är rätt stavat?",
     prompt: "Välj det korrekt stavade ordet.",
-    options: ["längre", "langgre", "längre", "laangre"],
-    correct: 2,
+    options: ["längre", "langgre", "lengre", "laangre"],
+    correct: 0,
     explanation:
       "'Längre' är komparativformen av 'lång'. Observera att a med prickar (ä) används i komparativ.",
   },
@@ -1692,12 +1692,12 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "hogstadiet",
     instruction: "Hitta och rätta stavfelet i meningen.",
-    sentence: "Hon körde förbi sjukhuset på vägen hem.",
+    sentence: "Hon kjörde förbi sjukhuset på vägen hem.",
     correctedSentence: "Hon körde förbi sjukhuset på vägen hem.",
-    errorWord: "körde",
+    errorWord: "kjörde",
     correctWord: "körde",
     explanation:
-      "'Körde' stavas med ö. Sje-ljudet i 'kör' stavas med k före ö.",
+      "Körde stavas med k. Sje- och tje-ljud före ö stavas ofta bara med k: kör, köpa, kök.",
   },
   {
     id: "stavning-ec-hog-4",
@@ -1731,12 +1731,12 @@ const stavningHogstadietEC: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "hogstadiet",
     instruction: "Hitta och rätta stavfelet i meningen.",
-    sentence: "Chefen presenterade en ny strategi för företaget.",
+    sentence: "Schefen presenterade en ny strategi för företaget.",
     correctedSentence: "Chefen presenterade en ny strategi för företaget.",
-    errorWord: "Chefen",
+    errorWord: "Schefen",
     correctWord: "Chefen",
     explanation:
-      "Här är meningen korrekt. Tje-ljudet i 'chef' stavas med ch. Observera att detta sje-ljud kan stavas på många sätt.",
+      "Chef är ett lånord från franskan. Sje-ljudet stavas ch.",
   },
 ];
 
@@ -1787,12 +1787,12 @@ const stavningGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "gymnasiet",
     instruction: "Hitta och rätta stavfelet i meningen.",
-    sentence: "Läraren gav dem en ny uppgift att arbeta med.",
+    sentence: "Läraren gav dom en ny uppgift att arbeta med.",
     correctedSentence: "Läraren gav dem en ny uppgift att arbeta med.",
-    errorWord: "dem",
+    errorWord: "dom",
     correctWord: "dem",
     explanation:
-      "Här är 'dem' korrekt använt eftersom det står i objektsform. Testa: kan du byta ut mot 'oss'? Då är 'dem' rätt.",
+      "I skrift används de (subjektsform) och dem (objektsform), inte dom. Här är det objektsform: gav dem.",
   },
   {
     id: "stavning-ec-gym-3",
@@ -2593,10 +2593,10 @@ const ordklasserHogstadietEC: ErrorCorrectionExercise[] = [
     instruction: "Rätta det felaktiga adjektivet i meningen.",
     sentence: "De fick en jättestor paketen.",
     correctedSentence: "De fick ett jättestort paket.",
-    errorWord: "jättestor paketen",
-    correctWord: "jättestort paket",
+    errorWord: "en jättestor paketen",
+    correctWord: "ett jättestort paket",
     explanation:
-      "'Paket' är ett ett-ord, s\u00e5 adjektivet ska vara 'jättestort' (neutrum). Dessutom ska det vara obest\u00e4md form 'paket', inte 'paketen'.",
+      "Paket är ett ett-ord: ett jättestort paket. Efter en/ett används obestämd form, alltså paket och inte paketen.",
   },
   {
     id: "ordklasser-ec-hog-5",
@@ -2620,12 +2620,12 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Rätta det grammatiska felet i meningen.",
-    sentence: "Författaren vars bok blivit prisbelönt tackade publiken.",
-    correctedSentence: "Författaren vars bok blivit prisbelönt tackade publiken.",
-    errorWord: "prisbelont",
-    correctWord: "prisbelont",
+    sentence: "Boken, som blivit prisbelönt, är översatta till tjugo språk.",
+    correctedSentence: "Boken, som blivit prisbelönt, är översatt till tjugo språk.",
+    errorWord: "översatta",
+    correctWord: "översatt",
     explanation:
-      "Meningen är korrekt. 'Vars' är genitiv av relativpronomenet 'som/vilken'. Notera att 'prisbelönt' böjs i neutrum för att kongruera med 'bok' (ett-ord).",
+      "Subjektet är boken (singular, en-ord). Particip ska kongruera: boken är översatt.",
   },
   {
     id: "ordklasser-ec-gym-2",
@@ -2633,12 +2633,12 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Rätta felet med verbkongruens.",
-    sentence: "Ingen av eleverna vare sig vill eller kan lösa uppgiften.",
-    correctedSentence: "Ingen av eleverna vare sig vill eller kan lösa uppgiften.",
-    errorWord: "vill",
-    correctWord: "vill",
+    sentence: "Varje elev ska ta med deras dator till lektionen.",
+    correctedSentence: "Varje elev ska ta med sin dator till lektionen.",
+    errorWord: "deras",
+    correctWord: "sin",
     explanation:
-      "Meningen är korrekt. 'Ingen' är singulart subjekt, sa verbet står i singular: 'vill' och 'kan'. Hade subjektet varit 'inga' (plural) hade verbformen ändå blivit densamma i svenska.",
+      "Subjektet varje elev är singular och äger datorn själv – då används sin.",
   },
   {
     id: "ordklasser-ec-gym-3",
@@ -2646,12 +2646,12 @@ const ordklasserGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordklasser",
     ageGroup: "gymnasiet",
     instruction: "Rätta det felaktiga pronomenet.",
-    sentence: "Uppsatsen som hen lämnade in var välskriven.",
-    correctedSentence: "Uppsatsen som hen lämnade in var välskriven.",
-    errorWord: "hen",
-    correctWord: "hen",
+    sentence: "Jag gav honom och hon varsin present.",
+    correctedSentence: "Jag gav henneom och hon varsin present.",
+    errorWord: "hon",
+    correctWord: "henne",
     explanation:
-      "Pronomenet 'hen' är ett könsneutralt pronomen som fungerar korrekt har. Det blev officiellt uppfordrat i SAOL 2015.",
+      "Efter verbet gav är pronomenen objekt (indirekt objekt). Objektsformen är henne.",
   },
   {
     id: "ordklasser-ec-gym-4",
@@ -2867,7 +2867,7 @@ const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
     ageGroup: "hogstadiet",
     instruction: "Rätta ordföljdsfelet.",
     sentence: "På sommaren vi brukar bada i sjön.",
-    correctedSentence: "På sommaren brukar vi båda i sjön.",
+    correctedSentence: "På sommaren brukar vi bada i sjön.",
     errorWord: "vi brukar",
     correctWord: "brukar vi",
     explanation:
@@ -2894,8 +2894,8 @@ const meningsbyggnadHogstadietEC: ErrorCorrectionExercise[] = [
     instruction: "Rätta bisatsfelet.",
     sentence: "När han inte kom vi blev oroliga.",
     correctedSentence: "När han inte kom blev vi oroliga.",
-    errorWord: "kom vi",
-    correctWord: "kom blev vi",
+    errorWord: "vi blev",
+    correctWord: "blev vi",
     explanation:
       "Huvudsatsen efter en bisats har omvänd ordföljd. Korrekt: 'När han inte kom, blev vi oroliga.'",
   },
@@ -3131,8 +3131,8 @@ const skiljeteckenHogstadietEC: ErrorCorrectionExercise[] = [
     instruction: "Rätta felet med kolon.",
     sentence: "Vi behövde köpa: mjölk, bröd och smör.",
     correctedSentence: "Vi behövde köpa mjölk, bröd och smör.",
-    errorWord: "kopa:",
-    correctWord: "kopa",
+    errorWord: "köpa:",
+    correctWord: "köpa",
     explanation:
       "Kolon ska inte användas mitt i en mening som flyter på naturligt. Kolon används efter en hel mening som inleder en uppräkning.",
   },
@@ -3257,12 +3257,12 @@ const stavningHogstadietECExtra: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "hogstadiet",
     instruction: "Hitta och rätta stavfelet.",
-    sentence: "Det är viktigt att skilja mellan de och dem.",
-    correctedSentence: "Det är viktigt att skilja mellan de och dem.",
+    sentence: "Jag såg de på bussen i morse.",
+    correctedSentence: "Jag såg dem på bussen i morse.",
     errorWord: "de",
-    correctWord: "de",
+    correctWord: "dem",
     explanation:
-      "Meningen är korrekt. 'De' är subjektsform och 'dem' är objektsform. Många forväxlar dessa i skrift.",
+      "Vem såg jag? De är objekt i meningen och ska stå i objektsform: dem.",
   },
   {
     id: "stavning-ec-hog-8",
@@ -3312,12 +3312,12 @@ const stavningGymnasietECExtra: ErrorCorrectionExercise[] = [
     topic: "stavning",
     ageGroup: "gymnasiet",
     instruction: "Hitta och rätta stavfelet.",
-    sentence: "Symposiumet fokuserade på medier's påverkan.",
+    sentence: "Symposiet fokuserade på medier's påverkan.",
     correctedSentence: "Symposiet fokuserade på mediers påverkan.",
     errorWord: "medier's",
     correctWord: "mediers",
     explanation:
-      "På svenska används inte apostrof vid genitiv. Korrekt är 'mediers'. Dessutom stavas det 'symposiet'.",
+      "Svensk genitiv skrivs utan apostrof: mediers.",
   },
   {
     id: "stavning-ec-gym-8",
@@ -3449,10 +3449,10 @@ const ordbildningHogstadietEC: ErrorCorrectionExercise[] = [
     instruction: "Rätta särskrivningsfelet.",
     sentence: "Vi hade en träning pass på eftermiddagen.",
     correctedSentence: "Vi hade ett träningspass på eftermiddagen.",
-    errorWord: "träning pass",
-    correctWord: "träningspass",
+    errorWord: "en träning pass",
+    correctWord: "ett träningspass",
     explanation:
-      "'Träningspass' är ett sammansatt ord med foge-s: träning + s + pass. Sammansatta ord skrivs ihop på svenska.",
+      "Träningspass är ett sammansatt ord med foge-s och skrivs ihop. Pass är ett ett-ord: ett träningspass.",
   },
   {
     id: "ordbildning-ec-hog-3",
@@ -3515,12 +3515,12 @@ const ordbildningGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "ordbildning",
     ageGroup: "gymnasiet",
     instruction: "Rätta det felaktiga sammansatta ordet.",
-    sentence: "Det krävs en risk- och konsekvensanalys.",
+    sentence: "Det krävs en risk och konsekvensanalys.",
     correctedSentence: "Det krävs en risk- och konsekvensanalys.",
-    errorWord: "risk-",
-    correctWord: "risk-",
+    errorWord: "risk och",
+    correctWord: "risk- och",
     explanation:
-      "Meningen är korrekt! Vid samordning med bindestreck behåller första ledet sitt streck: 'risk- och konsekvensanalys' (dvs. riskanalys och konsekvensanalys).",
+      "Vid samordning sätts bindestreck efter det första ledet: risk- och konsekvensanalys (riskanalys och konsekvensanalys).",
   },
 ];
 
@@ -3838,12 +3838,12 @@ const stilistikGymnasietEC: ErrorCorrectionExercise[] = [
     topic: "stilistik",
     ageGroup: "gymnasiet",
     instruction: "Rätta den stilistiska inkonsekvensen.",
-    sentence: "Hej! Jag skriver för att informera er om att erat avtal utgår.",
+    sentence: "Jag skriver för att informera er om att erat avtal utgår.",
     correctedSentence: "Jag skriver för att informera er om att ert avtal utgår.",
-    errorWord: "Hej! Jag",
-    correctWord: "Jag",
+    errorWord: "erat",
+    correctWord: "ert",
     explanation:
-      "I formella brev är 'Hej!' för informellt som inledning. Dessutom är 'erat' felaktigt — korrekt possessivt pronomen är 'ert' (neutrum).",
+      "Possessiva pronomenet heter ert i neutrum: ert avtal. Erat är talspråk och hör inte hemma i ett formellt brev.",
   },
 ];
 
@@ -4437,7 +4437,7 @@ const textbindningMellanstadietFIB: FillInBlankExercise[] = [
     ageGroup: "mellanstadiet",
     relatedTextSlug: "hundar-ar-bast",
     instruction: "Välj rätt bindeord.",
-    sentence: "Jag ville gå ut ___ det regnade.",
+    sentence: "Jag ville gå ut ____ det regnade.",
     options: ["och", "men", "för att"],
     correct: "men",
     explanation:
@@ -4449,7 +4449,7 @@ const textbindningMellanstadietFIB: FillInBlankExercise[] = [
     topic: "textbindning",
     ageGroup: "mellanstadiet",
     instruction: "Välj rätt bindeord.",
-    sentence: "Vi stannade hemma ___ det var storm ute.",
+    sentence: "Vi stannade hemma ____ det var storm ute.",
     options: ["men", "eftersom", "också"],
     correct: "eftersom",
     explanation:
@@ -4461,7 +4461,7 @@ const textbindningMellanstadietFIB: FillInBlankExercise[] = [
     topic: "textbindning",
     ageGroup: "mellanstadiet",
     instruction: "Välj rätt bindeord.",
-    sentence: "Först åkte vi till affären, ___ gick vi hem.",
+    sentence: "Först åkte vi till affären, ____ gick vi hem.",
     options: ["sedan", "men", "för att"],
     correct: "sedan",
     explanation:
@@ -4510,10 +4510,10 @@ const stavningLagstadietEC: ErrorCorrectionExercise[] = [
     instruction: "Hitta och rätta stavfelet.",
     sentence: "Vi sjönk en sång på lektionen.",
     correctedSentence: "Vi sjöng en sång på lektionen.",
-    errorWord: "sjonk",
-    correctWord: "sjong",
+    errorWord: "sjönk",
+    correctWord: "sjöng",
     explanation:
-      "'Sjöng' (av sjunga) stavas med g. 'Sjönk' (av sjunka) är ett annat ord.",
+      "Sjöng (av sjunga) stavas med g. Sjönk (av sjunka) är ett annat ord.",
   },
   {
     id: "stavning-ec-lag-3",

@@ -52,7 +52,11 @@ export function Warning({ children }: { children: ReactNode }) {
 }
 
 export function Ex({ children }: { children: ReactNode }) {
-  return <p className="my-1 rounded bg-neutral-100 px-3 py-1.5 font-mono text-sm dark:bg-neutral-800">{children}</p>;
+  return (
+    <p className="my-1.5 border-l-4 border-sky-300 bg-neutral-50 py-1.5 pl-3 pr-2 text-sm italic text-neutral-800 dark:border-sky-800 dark:bg-neutral-900 dark:text-neutral-200 print:border-l-2 print:py-0.5">
+      {children}
+    </p>
+  );
 }
 
 export function Intro({ children }: { children: ReactNode }) {
@@ -88,8 +92,8 @@ export function Markerad({ delar }: { delar: [string, string?][] }) {
 /** Ordföljdstabell: kolumnrubriker + rader. */
 export function Tabell({ rubriker, rader }: { rubriker: string[]; rader: string[][] }) {
   return (
-    <div className="my-3 overflow-x-auto">
-      <table className="w-full min-w-[480px] border-collapse text-sm">
+    <div className="my-3 overflow-x-auto print:overflow-visible">
+      <table className="w-full min-w-[480px] border-collapse text-sm print:min-w-0">
         <thead>
           <tr>
             {rubriker.map((r) => (
@@ -118,7 +122,7 @@ export function Tabell({ rubriker, rader }: { rubriker: string[]; rader: string[
 /** Länk till ett annat grammatikämne eller en annan del av sajten. */
 export function Vidare({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <Link href={href} className="inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:underline dark:text-sky-400">
+    <Link href={href} className="inline-flex items-center gap-1 text-sm font-semibold text-sky-700 hover:underline dark:text-sky-400 print:hidden">
       {children} <ArrowRight className="h-4 w-4" />
     </Link>
   );

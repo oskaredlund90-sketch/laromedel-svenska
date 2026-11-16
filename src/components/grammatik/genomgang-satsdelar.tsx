@@ -85,6 +85,27 @@ export function SatsdelarGenomgang({ stadie }: { stadie: AgeGroup }) {
         </Section>
       )}
 
+      {minst(s, "hogstadiet") && (
+        <Section title="Fraser och attribut">
+          <P>
+            En satsdel kan vara ett enda ord eller en hel fras. En <strong>nominalfras</strong> har ett substantiv eller pronomen som huvudord.
+            Orden runt huvudordet som beskriver det kallas <strong>attribut</strong>.
+          </P>
+          <Markerad delar={[["Den", "attribut"], ["lilla röda", "attribut"], ["stugan", "huvudord"], ["vid sjön", "attribut"]]} />
+          <Tabell
+            rubriker={["Attribut", "Exempel"]}
+            rader={[
+              ["Före huvudordet", "en spännande film, tre katter, Lisas cykel, min bror"],
+              ["Efter huvudordet", "huset på hörnet, boken om rymden, en film som skrämde alla"],
+            ]}
+          />
+          <Tip>
+            Hela frasen är en satsdel: <em>Den lilla röda stugan vid sjön</em> brann ner – allt det är subjekt. Leta upp huvudordet när du ska
+            böja verb och adjektiv rätt: <em>Resultaten av undersökningen var oväntade.</em>
+          </Tip>
+        </Section>
+      )}
+
       {minst(s, "gymnasiet") && (
         <Section title="Agent, formellt och egentligt subjekt">
           <div className="grid gap-4 sm:grid-cols-2">

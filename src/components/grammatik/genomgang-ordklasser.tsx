@@ -118,8 +118,88 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
         </Section>
       )}
 
+      {minst(s, "mellanstadiet") && (
+        <Section title="Kongruens – orden ska passa ihop">
+          <P>
+            Adjektiv{minst(s, "hogstadiet") ? " och particip" : ""} ska passa ihop med det substantiv de beskriver. Det kallas kongruens. Det
+            gäller både när adjektivet står framför substantivet och när det kommer efter <em>är</em>, <em>var</em> eller <em>blir</em>.
+          </P>
+          <Tabell
+            rubriker={["", "en-ord", "ett-ord", "flera"]}
+            rader={[
+              ["Framför substantivet", "en stor bil", "ett stort hus", "stora bilar"],
+              ["Efter är/var/blir", "bilen är stor", "huset är stort", "bilarna är stora"],
+              ...(minst(s, "hogstadiet") ? [["Particip", "dörren är stängd", "fönstret är stängt", "dörrarna är stängda"]] : []),
+            ]}
+          />
+          <Warning>
+            Vanliga fel: <em>Huset är stor</em> → <em>Huset är stort</em>. <em>Vi är glad</em> → <em>Vi är glada</em>. Fråga: vem eller vad
+            är det som beskrivs?
+          </Warning>
+        </Section>
+      )}
+
+      {minst(s, "hogstadiet") && (
+        <Section title="Sin eller hans, hennes, deras?">
+          <ExampleCard title="Sin syftar tillbaka på subjektet">
+            <Ex>Elsa tog sin jacka. (Elsas egen jacka)</Ex>
+            <Ex>Elsa tog hennes jacka. (någon annans jacka)</Ex>
+            <P>
+              Använd <strong>sin, sitt, sina</strong> när ägaren är subjektet i samma sats. Använd <strong>hans, hennes, deras</strong> när ägaren
+              är någon annan.
+            </P>
+            <Warning>
+              Sin kan inte stå i subjektet: <em>Ali och sin syster kom</em> är fel. Skriv <em>Ali och hans syster kom</em>.
+            </Warning>
+          </ExampleCard>
+        </Section>
+      )}
+
+      {minst(s, "hogstadiet") && (
+        <Section title="Aktiv och passiv form">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <ExampleCard title="Aktiv – den som gör något är subjekt">
+              <Markerad delar={[["Kommunen", "S"], ["bygger", "P"], ["en ny skola", "O"]]} />
+            </ExampleCard>
+            <ExampleCard title="Passiv – det som påverkas är subjekt">
+              <Markerad delar={[["En ny skola", "S"], ["byggs", "P"], ["av kommunen"]]} />
+            </ExampleCard>
+          </div>
+          <Tabell
+            rubriker={["Så bildas passiv", "Exempel"]}
+            rader={[
+              ["verbet + s", "byggs, byggdes, har byggts"],
+              ["bli/vara + perfekt particip", "blev byggd, är byggd"],
+            ]}
+          />
+          <Tip>
+            Passiv passar i faktatexter när det viktiga är vad som händer: <em>Proverna analyserades.</em> Men passiv kan också dölja vem som
+            är ansvarig: <em>Misstag har begåtts.</em> – av vem?
+          </Tip>
+        </Section>
+      )}
+
+      {minst(s, "hogstadiet") && (
+        <Section title="Partikelverb och particip">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <ExampleCard title="Partikelverb – verb + betonat småord">
+              <Ex>tycka om, ge upp, stänga av, komma fram, hålla med</Ex>
+              <P>
+                Partikeln är betonad och hör ihop med verbet. Den ändrar ofta betydelsen: <em>Jag tycker om glass</em> (gillar) – <em>Jag
+                tycker att glass är gott</em>. Partikelverb skrivs isär.
+              </P>
+            </ExampleCard>
+            <ExampleCard title="Particip – verb som fungerar som adjektiv">
+              <Ex>en springande hund, ett skrattande barn (presens particip)</Ex>
+              <Ex>en stängd dörr, ett målat hus (perfekt particip)</Ex>
+              <P>Perfekt particip böjs som adjektiv: stängd – stängt – stängda.</P>
+            </ExampleCard>
+          </div>
+        </Section>
+      )}
+
       {minst(s, "gymnasiet") && (
-        <Section title="Fördjupning: pronomen, particip och ordklassbyte">
+        <Section title="Fördjupning: pronomen och ordklassbyte">
           <ExampleCard title="Pronomenens grupper">
             <Tabell
               rubriker={["Typ", "Exempel"]}
@@ -134,14 +214,9 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
               ]}
             />
             <Warning>
-              <em>De</em> är subjektsform och <em>dem</em> objektsform: <em>De såg dem.</em> Sin syftar på subjektet: <em>Hon tog sin jacka</em>{" "}
-              (sin egen), <em>Hon tog hennes jacka</em> (någon annans).
+              <em>De</em> är subjektsform och <em>dem</em> objektsform: <em>De såg dem.</em> Med <em>varje</em> och <em>var och en</em> blir det
+              singular: <em>Varje elev tar med sin dator</em> – inte <em>deras</em>.
             </Warning>
-          </ExampleCard>
-          <ExampleCard title="Particip – verb som fungerar som adjektiv">
-            <Ex>en springande hund (presens particip)</Ex>
-            <Ex>en stängd dörr, ett målat hus (perfekt particip)</Ex>
-            <P>Perfekt particip böjs som adjektiv: stängd – stängt – stängda.</P>
           </ExampleCard>
           <ExampleCard title="Samma ord – olika ordklass">
             <Ex>Hon är snabb. (adjektiv) – Hon springer snabbt. (adverb)</Ex>
@@ -159,8 +234,16 @@ export function OrdklasserGenomgang({ stadie }: { stadie: AgeGroup }) {
             : [
                 "Substantiv: en/ett framför. Verb: jag framför. Adjektiv: en ___ sak.",
                 "Adjektivet böjs efter substantivet: en röd bil, ett rött hus.",
-                ...(minst(s, "hogstadiet") ? ["Konjunktion binder likvärdiga led, subjunktion inleder bisats.", "Håll samma tempus genom texten."] : []),
-                ...(minst(s, "gymnasiet") ? ["De = subjekt, dem = objekt. Sin syftar på subjektet."] : []),
+                "Kongruens: huset är stort, bilarna är stora.",
+                ...(minst(s, "hogstadiet")
+                  ? [
+                      "Konjunktion binder likvärdiga led, subjunktion inleder bisats.",
+                      "Sin syftar på subjektet: Elsa tog sin jacka. Sin står aldrig i subjektet.",
+                      "Passiv: det som påverkas blir subjekt – skolan byggs.",
+                      "Håll samma tempus genom texten.",
+                    ]
+                  : []),
+                ...(minst(s, "gymnasiet") ? ["De = subjekt, dem = objekt. Varje elev … sin, inte deras."] : []),
               ]
         }
       />

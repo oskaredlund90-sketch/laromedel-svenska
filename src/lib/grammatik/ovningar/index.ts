@@ -3,6 +3,7 @@ import { SATSDELAR } from "./satsdelar";
 import { SAMBAND } from "./samband";
 import { MORFEM } from "./morfem";
 import { TILLAGG } from "./tillagg";
+import { SPRAKRIKTIGHET } from "./sprakriktighet";
 
 /** Övningar skrivna med byggarna i ./bygg – läggs till de äldre i grammatik-ovningar.ts. */
-export const NYA_OVNINGAR: GrammarExercise[] = [...SATSDELAR, ...SAMBAND, ...MORFEM, ...TILLAGG];
+export const NYA_OVNINGAR: GrammarExercise[] = [...SATSDELAR, ...SAMBAND, ...MORFEM, ...TILLAGG, ...SPRAKRIKTIGHET];

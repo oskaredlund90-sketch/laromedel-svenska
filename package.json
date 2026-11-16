@@ -12,6 +12,7 @@
     "gruppanalys": "tsx scripts/gruppanalys.ts",
     "klassrespons": "tsx scripts/klassrespons.ts",
     "veckansord": "tsx scripts/veckansord.ts",
+    "bok:pdf": "tsx scripts/bok-pdf.ts",
     "lasprov": "tsx scripts/lasprov.ts"
   },
   "dependencies": {

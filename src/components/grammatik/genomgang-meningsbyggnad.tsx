@@ -1,5 +1,5 @@
 import type { AgeGroup } from "@/lib/supabase/types";
-import { ExampleCard, Ex, Intro, Markerad, P, Section, Tabell, Tip, Vidare, Warning, minst } from "./delar";
+import { ExampleCard, Ex, Intro, Markerad, P, Section, Tabell, Tip, Warning, minst } from "./delar";
 import { VariationGenomgang } from "./genomgang-variation";
 
 export function MeningsbyggnadGenomgang({ stadie }: { stadie: AgeGroup }) {
@@ -77,10 +77,23 @@ export function MeningsbyggnadGenomgang({ stadie }: { stadie: AgeGroup }) {
         </Section>
       )}
 
-      <Section title="Satsdelar">
-        <P>Subjekt, predikat, objekt och adverbial har ett eget kapitel med genomgång och övningar.</P>
-        <Vidare href={`/${s}/grammatik/satsdelar`}>Till Satsdelar</Vidare>
-      </Section>
+      {minst(s, "hogstadiet") && (
+        <Section title="Tre sorters bisatser">
+          <Tabell
+            rubriker={["Bisats", "Inleds ofta med", "Exempel", "Fungerar som"]}
+            rader={[
+              ["Att-sats", "att, om, vad, vem", "Jag vet att du har rätt.", "subjekt eller objekt"],
+              ["Relativsats", "som, där, vilket, vars", "Boken som jag läste var bra.", "attribut – beskriver ett ord"],
+              ["Adverbiell bisats", "när, eftersom, om, trots att", "Vi gick hem när det blev mörkt.", "adverbial – när, varför, villkor"],
+            ]}
+          />
+          <Tip>
+            <em>Som</em> syftar på ett ord: <em>Studien, som publicerades i maj …</em> <em>Vilket</em> kan syfta på en hel sats:{" "}
+            <em>Räntan höjdes, vilket drabbade många.</em>
+          </Tip>
+          <P>Alla tre följer BIFF-regeln. Adverbiella bisatser finns också i kapitlet om orsak, följd och villkor.</P>
+        </Section>
+      )}
 
       <VariationGenomgang stadie={s} />
     </>

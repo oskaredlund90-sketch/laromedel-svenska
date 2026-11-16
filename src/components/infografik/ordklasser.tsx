@@ -52,8 +52,8 @@ const MENING_FULL: DetektivOrd[] = [
 function Kort({ k }: { k: Ordklass }) {
   const o = ORDKLASSER[k];
   return (
-    <div className={`rounded-xl border-2 p-4 ${FARG[o.farg]}`}>
-      <p className="text-lg font-bold">{o.namn}</p>
+    <div className={`rounded-xl border-2 p-4 print:px-3 print:py-2 ${FARG[o.farg]}`}>
+      <p className="text-lg font-bold print:text-base">{o.namn}</p>
       <p className="mt-1 text-sm font-medium">{o.test}</p>
       <p className="mt-2 text-sm italic opacity-80">{o.exempel}</p>
     </div>

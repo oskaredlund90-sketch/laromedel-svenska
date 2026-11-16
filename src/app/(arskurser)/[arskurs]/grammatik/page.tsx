@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, BookOpen, ClipboardCheck, GraduationCap, NotebookPen, Printer, Target } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, BookOpen, ClipboardCheck, Download, GraduationCap, NotebookPen, Printer, Target } from "lucide-react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
-import { AMNEN, AMNEN_PER_STADIUM, MAL_PER_STADIUM, PROGRESSION } from "@/lib/grammatik/amnen";
+import { AMNEN, MAL_PER_STADIUM, PROGRESSION, delarForStadium } from "@/lib/grammatik/amnen";
+import { haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
+import { getExercisesForTopic } from "@/lib/data/grammatik-ovningar";
+import { pdfFinns, pdfSokvag } from "@/lib/grammatik/pdf";
 
 interface Props {
   params: Promise<{ arskurs: string }>;
@@ -17,9 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!group) return {};
   return {
     title: `Grammatik – ${group.label}`,
-    description: `Grammatikens viktigaste delar för ${group.label.toLowerCase()}, steg för steg – med övningar, häften och prov.`,
+    description: `Grammatikbok för ${group.label.toLowerCase()} i tre delar – ordet, meningen och texten. Genomgångar, övningar som rättas direkt, övningshäften och prov. Ladda ner som PDF.`,
   };
 }
+
+const CHIP =
+  "rounded-full border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-700 transition-colors hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800";
 
 export default async function GrammatikPage({ params }: Props) {
   const { arskurs } = await params;
@@ -27,107 +32,171 @@ export default async function GrammatikPage({ params }: Props) {
   if (!group) notFound();
 
   const stadie = arskurs as AgeGroup;
-  const amnen = AMNEN_PER_STADIUM[stadie];
+  const delar = delarForStadium(stadie);
+  const pdfElev = pdfSokvag(stadie, false);
+  const pdfLarare = pdfSokvag(stadie, true);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <div className="mb-8">
         <p className="text-sm font-semibold uppercase tracking-widest text-neutral-500">Grammatikboken</p>
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">Grammatik – {group.label}</h1>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-          En lärobok och övningsbok i ett. Följ kapitlen i ordning – varje kapitel har en genomgång, övningar som rättas direkt och
-          övningshäften. Allt går också att skriva ut.
+        <p className="mt-2 max-w-3xl text-neutral-600 dark:text-neutral-400">
+          En lärobok och övningsbok i tre delar: ordet, meningen och texten. Välj ett kapitel nedan – varje kapitel har en genomgång,
+          övningar som rättas direkt, övningshäften och ett kapitelprov.
         </p>
       </div>
 
-      <div className="mb-10 grid gap-3 sm:grid-cols-2">
+      {/* Boken: läsa, ladda ner, skriva ut */}
+      <div className="mb-12 grid gap-3 sm:grid-cols-3">
         <Link
           href={`/${arskurs}/grammatik/bok`}
-          className="group flex items-center gap-4 rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+          className="flex items-center gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
         >
-          <BookOpen className="h-8 w-8 shrink-0 text-sky-600" />
+          <BookOpen className="h-7 w-7 shrink-0 text-sky-600" />
           <span>
-            <span className="block font-semibold text-neutral-900 dark:text-white">Hela boken – elevbok</span>
-            <span className="text-sm text-neutral-600 dark:text-neutral-400">Läs eller skriv ut alla kapitel med övningar</span>
+            <span className="block font-semibold text-neutral-900 dark:text-white">Hela boken</span>
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">Läs eller skriv ut – välj kapitel</span>
           </span>
-          <Printer className="ml-auto h-5 w-5 text-neutral-400" />
+        </Link>
+        {pdfFinns(pdfElev) ? (
+          <a
+            href={pdfElev}
+            download
+            className="flex items-center gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+          >
+            <Download className="h-7 w-7 shrink-0 text-sky-600" />
+            <span>
+              <span className="block font-semibold text-neutral-900 dark:text-white">Elevbok (PDF)</span>
+              <span className="text-sm text-neutral-600 dark:text-neutral-400">Genomgångar, övningar och ordlista</span>
+            </span>
+          </a>
+        ) : (
+          <Link
+            href={`/${arskurs}/grammatik/bok`}
+            className="flex items-center gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-neutral-400 dark:border-neutral-800"
+          >
+            <Printer className="h-7 w-7 shrink-0 text-sky-600" />
+            <span className="block font-semibold text-neutral-900 dark:text-white">Skriv ut elevboken</span>
+          </Link>
+        )}
+        {pdfFinns(pdfLarare) ? (
+          <a
+            href={pdfLarare}
+            download
+            className="flex items-center gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+          >
+            <GraduationCap className="h-7 w-7 shrink-0 text-emerald-600" />
+            <span>
+              <span className="block font-semibold text-neutral-900 dark:text-white">Lärarbok (PDF)</span>
+              <span className="text-sm text-neutral-600 dark:text-neutral-400">Med handledning, facit och prov</span>
+            </span>
+          </a>
+        ) : (
+          <Link
+            href={`/${arskurs}/grammatik/bok?version=larare`}
+            className="flex items-center gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-neutral-400 dark:border-neutral-800"
+          >
+            <GraduationCap className="h-7 w-7 shrink-0 text-emerald-600" />
+            <span className="block font-semibold text-neutral-900 dark:text-white">Lärarbok</span>
+          </Link>
+        )}
+      </div>
+
+      {/* Delar och kapitel */}
+      <div className="space-y-12">
+        {delar.map((d) => (
+          <section key={d.nr} aria-labelledby={`del-${d.nr}`}>
+            <div className="mb-4 flex items-baseline gap-3 border-b-2 border-neutral-900 pb-2 dark:border-white">
+              <span className="text-sm font-semibold uppercase tracking-widest text-neutral-500">Del {d.nr}</span>
+              <h2 id={`del-${d.nr}`} className="text-2xl font-bold text-neutral-900 dark:text-white">
+                {d.titel}
+              </h2>
+              <span className="hidden text-sm text-neutral-500 sm:inline">{d.beskrivning}</span>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {d.kapitel.map(({ amne, nr }) => {
+                const bas = `/${arskurs}/grammatik/${amne}`;
+                const antalOvningar = getExercisesForTopic(amne, stadie).length;
+                const antalHaften = haftenForKapitel(amne, stadie).length;
+                const prov = kapitelprovFor(amne, stadie);
+                return (
+                  <div
+                    key={amne}
+                    className="group flex flex-col rounded-xl border border-neutral-200 p-5 transition-shadow hover:shadow-md dark:border-neutral-800"
+                  >
+                    <Link href={bas} className="flex-1">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Kapitel {nr}</p>
+                      <p className="flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-white">
+                        {AMNEN[amne].titel}
+                        <ArrowRight className="h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-1" />
+                      </p>
+                      <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{PROGRESSION[amne][stadie] ?? AMNEN[amne].beskrivning}</p>
+                    </Link>
+                    <div className="mt-4 flex flex-wrap gap-1.5">
+                      <Link href={`${bas}#genomgang`} className={CHIP}>
+                        Genomgång
+                      </Link>
+                      <Link href={`${bas}#ovningar`} className={CHIP}>
+                        Öva ({antalOvningar})
+                      </Link>
+                      {antalHaften > 0 && (
+                        <Link href={`${bas}#haften`} className={CHIP}>
+                          Häften ({antalHaften})
+                        </Link>
+                      )}
+                      {prov && (
+                        <Link href={`/ovningshaften/${prov.id}`} className={CHIP}>
+                          Kapitelprov
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      {/* Slutprov, mål och fler häften */}
+      <div className="mt-12 grid gap-4 md:grid-cols-2">
+        <Link
+          href={`/ovningshaften/prov-${stadie}`}
+          className="flex items-center gap-4 rounded-xl border border-emerald-300 p-5 transition-shadow hover:shadow-md dark:border-emerald-800"
+        >
+          <ClipboardCheck className="h-7 w-7 shrink-0 text-emerald-600" />
+          <span className="flex-1">
+            <span className="block font-semibold text-neutral-900 dark:text-white">Slutprov – hela boken</span>
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">100 uppgifter, 100 poäng. Passar också som förtest.</span>
+          </span>
+          <ArrowRight className="h-5 w-5 text-emerald-600" />
         </Link>
         <Link
-          href={`/${arskurs}/grammatik/bok?version=larare`}
-          className="group flex items-center gap-4 rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+          href={`/ovningshaften?stadium=${stadie}`}
+          className="flex items-center gap-4 rounded-xl border border-neutral-200 p-5 transition-shadow hover:shadow-md dark:border-neutral-800"
         >
-          <GraduationCap className="h-8 w-8 shrink-0 text-emerald-600" />
-          <span>
-            <span className="block font-semibold text-neutral-900 dark:text-white">Lärarbok</span>
-            <span className="text-sm text-neutral-600 dark:text-neutral-400">Med progression, facit och slutprov</span>
+          <NotebookPen className="h-7 w-7 shrink-0 text-neutral-600" />
+          <span className="flex-1">
+            <span className="block font-semibold text-neutral-900 dark:text-white">Alla övningshäften</span>
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">Minst 100 uppgifter per häfte – på sajten eller utskrivna.</span>
           </span>
-          <Printer className="ml-auto h-5 w-5 text-neutral-400" />
+          <ArrowRight className="h-5 w-5 text-neutral-400" />
         </Link>
       </div>
 
-      <Card className="mb-10 border-sky-200 bg-sky-50 dark:border-sky-900 dark:bg-sky-950/30">
-        <CardContent className="p-6">
-          <p className="mb-2 flex items-center gap-2 font-semibold text-neutral-900 dark:text-white">
-            <Target className="h-5 w-5 text-sky-600" /> Det här ska du kunna efter {group.label.toLowerCase()}
-          </p>
-          <ul className="grid gap-1 text-neutral-800 sm:grid-cols-2 dark:text-neutral-200">
-            {MAL_PER_STADIUM[stadie].map((m) => (
-              <li key={m} className="flex gap-2">
-                <span className="text-sky-600">✓</span> {m}
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-
-      <ol className="relative space-y-4 border-l-2 border-neutral-200 pl-8 dark:border-neutral-800">
-        {amnen.map((slug, i) => (
-          <li key={slug} className="relative">
-            <span className="absolute -left-[45px] flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900 text-sm font-bold text-white dark:bg-white dark:text-neutral-900">
-              {i + 1}
-            </span>
-            <Link href={`/${arskurs}/grammatik/${slug}`} className="group block">
-              <Card className="transition-shadow group-hover:shadow-md">
-                <CardContent className="flex items-center justify-between gap-4 p-5">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Kapitel {i + 1}</p>
-                    <p className="text-lg font-semibold text-neutral-900 dark:text-white">{AMNEN[slug].titel}</p>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">{PROGRESSION[slug][stadie] ?? AMNEN[slug].beskrivning}</p>
-                  </div>
-                  <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-transform group-hover:translate-x-1" />
-                </CardContent>
-              </Card>
-            </Link>
-          </li>
-        ))}
-        <li className="relative">
-          <span className="absolute -left-[45px] flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white">
-            <ClipboardCheck className="h-4 w-4" />
-          </span>
-          <Link href={`/ovningshaften/prov-${stadie}`} className="group block">
-            <Card className="border-emerald-300 transition-shadow group-hover:shadow-md dark:border-emerald-800">
-              <CardContent className="flex items-center justify-between gap-4 p-5">
-                <div>
-                  <p className="text-lg font-semibold text-neutral-900 dark:text-white">Grammatikprov – {group.label.toLowerCase()}</p>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">100 uppgifter från alla steg. Max 100 poäng.</p>
-                </div>
-                <ArrowRight className="h-5 w-5 shrink-0 text-emerald-600 transition-transform group-hover:translate-x-1" />
-              </CardContent>
-            </Card>
-          </Link>
-        </li>
-      </ol>
-
-      <Link
-        href="/ovningshaften"
-        className="mt-10 flex items-center gap-3 rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400 dark:border-neutral-800"
-      >
-        <NotebookPen className="h-5 w-5 text-neutral-600" />
-        <span>
-          <span className="block font-semibold text-neutral-900 dark:text-white">Behöver du mer träning?</span>
-          <span className="text-sm text-neutral-600 dark:text-neutral-400">Övningshäften med minst 100 uppgifter – att göra här eller skriva ut.</span>
-        </span>
-      </Link>
+      <details className="mt-6 rounded-xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950/30">
+        <summary className="flex cursor-pointer items-center gap-2 font-semibold text-neutral-900 dark:text-white">
+          <Target className="h-5 w-5 text-sky-600" /> Det här tränar du i boken
+        </summary>
+        <ul className="mt-3 grid gap-1 text-neutral-800 sm:grid-cols-2 dark:text-neutral-200">
+          {MAL_PER_STADIUM[stadie].map((m) => (
+            <li key={m} className="flex gap-2">
+              <span className="text-sky-600">✓</span> {m}
+            </li>
+          ))}
+        </ul>
+      </details>
     </div>
   );
 }

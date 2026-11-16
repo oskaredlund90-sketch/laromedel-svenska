@@ -6,11 +6,11 @@ export function Infografik({ titel, ingress, children, className }: { titel: str
   return (
     <figure
       className={cn(
-        "mb-12 break-inside-avoid rounded-2xl border border-neutral-200 bg-gradient-to-br from-white to-neutral-50 p-5 shadow-sm sm:p-8 dark:border-neutral-800 dark:from-neutral-900 dark:to-neutral-950",
+        "mb-12 break-inside-avoid rounded-2xl border border-neutral-200 bg-gradient-to-br from-white to-neutral-50 p-5 shadow-sm sm:p-8 print:mb-6 print:break-inside-auto print:sm:p-5 dark:border-neutral-800 dark:from-neutral-900 dark:to-neutral-950",
         className,
       )}
     >
-      <figcaption className="mb-6">
+      <figcaption className="mb-6 print:mb-3 break-after-avoid">
         <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Infografik</p>
         <p className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">{titel}</p>
         {ingress && <p className="mt-1 text-neutral-600 dark:text-neutral-400">{ingress}</p>}

@@ -83,7 +83,8 @@ export const MAL_PER_STADIUM: Record<AgeGroup, string[]> = {
   ],
   hogstadiet: [
     "Översikt över alla tio ordklasser",
-    "Satsdelar, även indirekt objekt och predikativ",
+    "Satsdelar, även indirekt objekt och predikativ – och fraser med attribut",
+    "Språkriktighet: kongruens, sin eller hans/hennes och aktiv eller passiv form",
     "BIFF-regeln och varierad meningsbyggnad för olika syften",
     "Orsaks-, konsekvens- och villkorssamband – med bisatser, sambandsord och verb",
     "Morfologisk medvetenhet: rotmorfem, böjning, prefix, suffix och sammansatta ord",

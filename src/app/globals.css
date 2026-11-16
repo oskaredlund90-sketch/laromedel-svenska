@@ -101,22 +101,76 @@ body {
   .bok svg rect[fill="#ffffff"] {
     fill: #fff !important;
   }
-}
-@media print {
-  .bok .rounded-xl,
+  /* Sidnummer i sidfoten (utom på titelsidan). */
+  .bok {
+    page: bok;
+  }
+  /* Små block delas inte mellan sidor. Stora block (infografik, kapitel) får delas. */
   .bok .rounded-lg,
   .bok table tr,
+  .bok li,
   .bok h2,
-  .bok h3 {
+  .bok h3,
+  .bok h4 {
+    break-inside: avoid;
+  }
+  .bok .rounded-xl {
+    break-inside: auto;
+  }
+  .bok .rounded-xl .rounded-xl,
+  .bok .rounded-xl .rounded-lg {
     break-inside: avoid;
   }
   .bok h2,
-  .bok h3 {
+  .bok h3,
+  .bok h4 {
     break-after: avoid;
   }
+  .bok p {
+    orphans: 3;
+    widows: 3;
+  }
+  /* Tabeller och kort ska rymmas på papperets bredd. */
+  .bok .overflow-x-auto {
+    overflow: visible !important;
+  }
+  .bok table {
+    min-width: 0 !important;
+  }
+  /* Kort i genomgångarna: lite tätare på papper. */
+  .bok .p-6 {
+    padding: 0.9rem 1rem !important;
+  }
+  .bok .p-6.pt-0 {
+    padding-top: 0 !important;
+  }
+  /* Papperet är smalare än md-brytpunkten – använd ändå spalterna. */
+  .bok .md\:grid-cols-2,
+  .bok .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bok .md\:grid-cols-3,
+  .bok .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .bok .bok-titel {
+    min-height: 255mm;
+  }
+  .bok section.mb-10 {
+    margin-bottom: 1.25rem;
+  }
 }
-@media print {
-  .bok .grid {
-    break-inside: avoid;
+@page bok {
+  size: A4;
+  margin: 15mm 16mm 18mm;
+  @bottom-center {
+    content: counter(page);
+    font-size: 9pt;
+    color: #444;
+  }
+}
+@page bok:first {
+  @bottom-center {
+    content: none;
   }
 }

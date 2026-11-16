@@ -213,7 +213,7 @@ Sedan fick de mata h\u00f6nsen. Nora kastade ut korn och h\u00f6nsen kom springa
 
 const LAGSTADIET_WORDS: WordQuestion[] = [
   {
-    sentence: "Solen sken starkt \u00f6ver skolgarden.",
+    sentence: "Solen sken starkt \u00f6ver skolg\u00e5rden.",
     targetWord: "sken",
     options: ["Regnade", "Lyste", "Bl\u00e5ste", "Sm\u00e4lte"],
     correct: 1,

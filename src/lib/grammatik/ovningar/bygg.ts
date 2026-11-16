@@ -44,12 +44,12 @@ export function blandaFast<T>(lista: T[], nyckel: string): T[] {
 
 const KORT: Record<AgeGroup, string> = { lagstadiet: "lag", mellanstadiet: "mel", hogstadiet: "hog", gymnasiet: "gy" };
 
-export function bygg(topic: string, ageGroup: AgeGroup) {
+export function bygg(topic: string, ageGroup: AgeGroup, serie = "n") {
   const ut: GrammarExercise[] = [];
   const nr: Record<string, number> = {};
   const bas = (typ: string) => {
     nr[typ] = (nr[typ] ?? 0) + 1;
-    return { id: `${topic}-${typ}-${KORT[ageGroup]}-n${nr[typ]}`, topic, ageGroup };
+    return { id: `${topic}-${typ}-${KORT[ageGroup]}-${serie}${nr[typ]}`, topic, ageGroup };
   };
   /** Alternativen blandas (fast ordning per övning) så att rätt svar inte alltid står först. */
   const rattIndex = (alt: string[], nyckel: string) => {

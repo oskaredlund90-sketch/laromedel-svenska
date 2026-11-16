@@ -21,16 +21,13 @@ export function VariationGenomgang({ stadie }: { stadie: AgeGroup }) {
 
   return (
     <>
-      <Section title="Ordföljd: verbet på plats två">
-        <Tabell
-          rubriker={["Plats 1 (fundament)", "Plats 2 (verb)", "Subjekt", "Resten"]}
-          rader={[
-            ["Vi", "åkte", "–", "till fjällen i februari."],
-            ["I februari", "åkte", "vi", "till fjällen."],
-            ["Till fjällen", "åkte", "vi", "i februari."],
-          ]}
-        />
-        <P>Det du sätter först blir utgångspunkt för meningen. Verbet står alltid kvar på plats två i en påståendesats.</P>
+      <Section title="Välj vad som står först">
+        <P>
+          Det du sätter på plats ett blir utgångspunkten för meningen. Börjar alla meningar med subjektet blir texten enformig. Flytta tid,
+          plats eller orsak först när det passar – verbet står ändå kvar på plats två.
+        </P>
+        <Ex>Jag vaknade tidigt. Jag åt frukost. Jag gick till bussen.</Ex>
+        <Ex>Jag vaknade tidigt. Efter frukosten gick jag till bussen. Där väntade Sam.</Ex>
       </Section>
 
       <Section title="Variera meningsbyggnaden för olika syften">
