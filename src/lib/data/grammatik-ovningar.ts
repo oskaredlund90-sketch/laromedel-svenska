@@ -13,7 +13,8 @@ export type GrammarExerciseType =
   | "sentence-analysis"
   | "markera"
   | "dela"
-  | "ordna";
+  | "ordna"
+  | "resonera";
 
 export interface GrammarExerciseBase {
   id: string;
@@ -88,6 +89,29 @@ export interface OrdnaExercise extends GrammarExerciseBase {
   explanation?: string;
 }
 
+/**
+ * Öppen uppgift där eleven förklarar, skriver om eller skriver själv. Ingen
+ * automatisk rättning: eleven jämför med ett exempelsvar och en checklista.
+ */
+export interface ResoneraExercise extends GrammarExerciseBase {
+  type: "resonera";
+  variant: "forklara" | "skriv-om" | "bygg-ut" | "jamfor" | "granska" | "fortsatt";
+  /** Underlag: en mening, två versioner eller ett kort stycke. */
+  text?: string;
+  exempelsvar: string;
+  /** Det som ska finnas med i ett bra svar – eleven bockar av. */
+  checklista: string[];
+}
+
+export const RESONERA_ETIKETT: Record<ResoneraExercise["variant"], string> = {
+  forklara: "Förklara felet",
+  "skriv-om": "Skriv om",
+  "bygg-ut": "Bygg ut",
+  jamfor: "Jämför och motivera",
+  granska: "Granska texten",
+  fortsatt: "Fortsätt texten",
+};
+
 export type GrammarExercise =
   | MultipleChoiceExercise
   | FillInBlankExercise
@@ -96,7 +120,8 @@ export type GrammarExercise =
   | SentenceAnalysisExercise
   | MarkeraExercise
   | DelaExercise
-  | OrdnaExercise;
+  | OrdnaExercise
+  | ResoneraExercise;
 
 // ---------------------------------------------------------------------------
 // Helper

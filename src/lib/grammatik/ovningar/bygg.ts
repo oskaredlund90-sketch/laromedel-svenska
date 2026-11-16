@@ -22,6 +22,7 @@ import type {
   MarkeraExercise,
   MultipleChoiceExercise,
   OrdnaExercise,
+  ResoneraExercise,
   SentenceAnalysisExercise,
 } from "@/lib/data/grammatik-ovningar";
 
@@ -125,6 +126,19 @@ export function bygg(topic: string, ageGroup: AgeGroup, serie = "n") {
       extra: { end?: string; alternatives?: string[][]; meningar?: boolean; explanation?: string } = {},
     ) {
       ut.push({ ...bas("ordna"), type: "ordna", instruction, parts, ...extra } satisfies OrdnaExercise);
+    },
+    /** Öppen uppgift: förklara, skriv om, bygg ut, jämför, granska eller fortsätt. */
+    x(variant: ResoneraExercise["variant"], uppgift: string, text: string | null, exempelsvar: string, checklista: string[]) {
+      if (checklista.length === 0) throw new Error(`Checklista saknas: ${uppgift}`);
+      ut.push({
+        ...bas("res"),
+        type: "resonera",
+        variant,
+        instruction: uppgift,
+        ...(text ? { text } : {}),
+        exempelsvar,
+        checklista,
+      } satisfies ResoneraExercise);
     },
   };
 }

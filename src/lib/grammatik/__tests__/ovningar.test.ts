@@ -36,3 +36,15 @@ describe("grammatikövningarna", () => {
     }
   });
 });
+
+describe("resonera och skriv", () => {
+  it("varje kapitel på varje stadium har minst två öppna uppgifter", async () => {
+    const { AMNEN_PER_STADIUM } = await import("../amnen");
+    for (const [stadie, kapitel] of Object.entries(AMNEN_PER_STADIUM)) {
+      for (const a of kapitel) {
+        const n = getExercisesForTopic(a, stadie as (typeof STADIER)[number]).filter((e) => e.type === "resonera" && e.ageGroup === stadie).length;
+        expect(n, `${stadie} ${a}`).toBeGreaterThanOrEqual(2);
+      }
+    }
+  });
+});

@@ -4,6 +4,7 @@ import { SAMBAND } from "./samband";
 import { MORFEM } from "./morfem";
 import { TILLAGG } from "./tillagg";
 import { SPRAKRIKTIGHET } from "./sprakriktighet";
+import { RESONERA } from "./resonera";
 
 /** Övningar skrivna med byggarna i ./bygg – läggs till de äldre i grammatik-ovningar.ts. */
-export const NYA_OVNINGAR: GrammarExercise[] = [...SATSDELAR, ...SAMBAND, ...MORFEM, ...TILLAGG, ...SPRAKRIKTIGHET];
+export const NYA_OVNINGAR: GrammarExercise[] = [...SATSDELAR, ...SAMBAND, ...MORFEM, ...TILLAGG, ...SPRAKRIKTIGHET, ...RESONERA];

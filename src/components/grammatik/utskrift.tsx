@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { GrammarExercise } from "@/lib/data/grammatik-ovningar";
+import { RESONERA_ETIKETT, type GrammarExercise } from "@/lib/data/grammatik-ovningar";
 import { blandaFast, delaMarkera, delningar } from "@/lib/grammatik/ovningar/bygg";
 import { MedMarkering } from "@/components/grammatik/med-markering";
 
@@ -16,6 +16,7 @@ const RUBRIK: Record<GrammarExercise["type"], string> = {
   markera: "Stryk under",
   dela: "Dela orden",
   ordna: "Skriv i rätt ordning",
+  resonera: "Resonera och skriv",
 };
 
 /** Instruktioner skrivna för skärmen görs om till papper. */
@@ -144,6 +145,17 @@ function Uppgift({ e }: { e: GrammarExercise }) {
         </>
       );
     }
+    case "resonera": {
+      const rader = e.variant === "fortsatt" || e.variant === "granska" ? 6 : e.variant === "jamfor" || e.variant === "forklara" ? 4 : 3;
+      return (
+        <>
+          {e.text && <p className="my-1 whitespace-pre-line border-l-2 border-current pl-3 italic">{e.text}</p>}
+          {Array.from({ length: rader }).map((_, r) => (
+            <p key={r} className={`h-7 ${LINJE}`} />
+          ))}
+        </>
+      );
+    }
   }
 }
 
@@ -169,6 +181,8 @@ function facit(e: GrammarExercise): string {
     case "ordna":
       if (e.meningar) return e.parts.map((p, i) => `${i + 1}. ${p}`).join(" ");
       return e.parts.join(" ").replace(/^./, (c) => c.toUpperCase()) + (e.end ?? "");
+    case "resonera":
+      return `${e.exempelsvar} (Bedöm: ${e.checklista.join("; ")})`;
   }
 }
 
@@ -180,6 +194,7 @@ function numrera(ovningar: GrammarExercise[]) {
 
 /** Instruktionen som gäller alla uppgifter i en del, om de har samma. */
 function gemensamInstruktion(lista: { e: GrammarExercise }[]): string | null {
+  if (lista.some(({ e }) => e.type === "resonera")) return null;
   const ins = lista.map(({ e }) => (STANDARD.has(e.instruction) || (e.type === "multiple-choice" && e.prompt.trim().endsWith("?")) ? "" : papper(e.instruction)));
   return ins.every((i) => i === ins[0]) && ins[0] ? ins[0] : null;
 }
@@ -210,7 +225,13 @@ export function OvningarPapper({ ovningar, rubrik = "h2" }: { ovningar: GrammarE
                   <li key={e.id} className="flex break-inside-avoid gap-2">
                     <span className="w-7 shrink-0 text-right font-bold">{nr}.</span>
                     <div className="min-w-0 flex-1">
-                      {visa && <p className="text-[10pt] italic">{ins}</p>}
+                      {e.type === "resonera" ? (
+                        <p className="text-[10.5pt]">
+                          <strong>{RESONERA_ETIKETT[e.variant]}.</strong> {e.instruction}
+                        </p>
+                      ) : (
+                        visa && <p className="text-[10pt] italic">{ins}</p>
+                      )}
                       <Uppgift e={e} />
                     </div>
                   </li>

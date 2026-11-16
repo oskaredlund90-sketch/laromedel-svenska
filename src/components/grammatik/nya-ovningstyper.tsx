@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { CheckCircle, RotateCcw, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { DelaExercise, MarkeraExercise, OrdnaExercise } from "@/lib/data/grammatik-ovningar";
+import { RESONERA_ETIKETT, type DelaExercise, type MarkeraExercise, type OrdnaExercise, type ResoneraExercise } from "@/lib/data/grammatik-ovningar";
 import { delaMarkera, delningar } from "@/lib/grammatik/ovningar/bygg";
 
 interface Props<T> {
@@ -266,6 +266,78 @@ export function OrdnaRenderer({ exercise, answered, isCorrect, onAnswer }: Props
           )}
           {exercise.explanation && <p className="mt-1">{exercise.explanation}</p>}
         </Resultat>
+      )}
+    </div>
+  );
+}
+
+/* ---- Resonera och skriv: öppen uppgift med exempelsvar och checklista ---- */
+export function ResoneraRenderer({ exercise, answered, onAnswer }: Props<ResoneraExercise>) {
+  const [svar, setSvar] = useState("");
+  const [visat, setVisat] = useState(false);
+  const [bockar, setBockar] = useState<Set<number>>(new Set());
+  const allt = bockar.size === exercise.checklista.length;
+  const vaxla = (i: number) =>
+    setBockar((b) => {
+      const n = new Set(b);
+      if (n.has(i)) n.delete(i);
+      else n.add(i);
+      return n;
+    });
+
+  return (
+    <div>
+      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-400">{RESONERA_ETIKETT[exercise.variant]}</p>
+      <p className="mb-3 text-lg font-medium text-neutral-900 dark:text-white">{exercise.instruction}</p>
+      {exercise.text && (
+        <p className="mb-4 whitespace-pre-line rounded-lg border-l-4 border-sky-300 bg-neutral-50 px-4 py-3 italic text-neutral-800 dark:border-sky-800 dark:bg-neutral-900 dark:text-neutral-200">
+          {exercise.text}
+        </p>
+      )}
+      <textarea
+        value={svar}
+        onChange={(e) => setSvar(e.target.value)}
+        disabled={visat}
+        rows={exercise.variant === "fortsatt" || exercise.variant === "granska" ? 6 : 4}
+        placeholder="Skriv ditt svar här …"
+        className="w-full rounded-lg border border-neutral-300 bg-white p-3 text-base text-neutral-900 focus:border-sky-500 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+      />
+      {!visat ? (
+        <Button className="mt-3" onClick={() => setVisat(true)} disabled={svar.trim().length < 5}>
+          Jämför med exempelsvar
+        </Button>
+      ) : (
+        <div className="mt-4 space-y-3">
+          <div className="rounded-lg bg-sky-50 px-4 py-3 text-sm text-sky-950 dark:bg-sky-950/40 dark:text-sky-100">
+            <p className="mb-1 font-semibold">Exempelsvar</p>
+            <p className="whitespace-pre-line">{exercise.exempelsvar}</p>
+          </div>
+          <div className="rounded-lg border border-neutral-200 px-4 py-3 text-sm dark:border-neutral-800">
+            <p className="mb-2 font-semibold text-neutral-900 dark:text-white">Kolla ditt svar – bocka för det du har med</p>
+            <ul className="space-y-1.5">
+              {exercise.checklista.map((k, i) => (
+                <li key={i}>
+                  <label className="flex cursor-pointer items-start gap-2">
+                    <input type="checkbox" className="mt-1" checked={bockar.has(i)} onChange={() => vaxla(i)} disabled={answered} />
+                    <span>{k}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {!answered ? (
+            <Button onClick={() => onAnswer(allt)}>Klar</Button>
+          ) : (
+            <Resultat ratt={allt}>
+              {allt ? "Allt finns med – bra jobbat!" : "Något saknas. Läs exempelsvaret och skriv till det som fattas i ditt svar."}
+            </Resultat>
+          )}
+          {!answered && (
+            <button type="button" className="ml-3 inline-flex items-center gap-1 text-sm text-neutral-500 hover:underline" onClick={() => { setVisat(false); setBockar(new Set()); }}>
+              <RotateCcw className="h-3.5 w-3.5" /> Skriv om svaret
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

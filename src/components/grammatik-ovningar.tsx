@@ -25,8 +25,9 @@ import {
   type MarkeraExercise,
   type DelaExercise,
   type OrdnaExercise,
+  type ResoneraExercise,
 } from "@/lib/data/grammatik-ovningar";
-import { DelaRenderer, MarkeraRenderer, OrdnaRenderer } from "@/components/grammatik/nya-ovningstyper";
+import { DelaRenderer, MarkeraRenderer, OrdnaRenderer, ResoneraRenderer } from "@/components/grammatik/nya-ovningstyper";
 import type { GrammatikAmne } from "@/lib/grammatik/amnen";
 import { recordQuizResult, recordActivity } from "@/lib/progress";
 import type { AgeGroup } from "@/lib/supabase/types";
@@ -58,6 +59,7 @@ const TAB_LABELS: Record<string, string> = {
   markera: "Markera",
   dela: "Dela ord",
   ordna: "Ordna",
+  resonera: "Resonera och skriv",
 };
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -1013,6 +1015,15 @@ export function GrammatikOvningar({ topic, ageGroup }: GrammatikOvningarProps) {
           <DelaRenderer
             key={`dela-${currentExercise.id}`}
             exercise={currentExercise as DelaExercise}
+            answered={answered}
+            isCorrect={isCorrect}
+            onAnswer={handleAnswer}
+          />
+        )}
+        {currentExercise.type === "resonera" && (
+          <ResoneraRenderer
+            key={`res-${currentExercise.id}`}
+            exercise={currentExercise as ResoneraExercise}
             answered={answered}
             isCorrect={isCorrect}
             onAnswer={handleAnswer}
