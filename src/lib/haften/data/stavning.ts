@@ -12,6 +12,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
       "Lyssna på vokalen. Är den kort skriver man oftast två konsonanter efter: glass, katt, hoppa.",
       "Är vokalen lång skriver man en konsonant: glas, hus, bil, mat.",
       "Säg ordet högt och lyssna: glaaas (lång) – glass (kort).",
+      "Undantag: m och n i slutet av ord skrivs oftast med en bokstav: hem, rum, kom, fem, kan, vän.",
     ],
     delar: [
       {
@@ -374,7 +375,7 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
           Jag kom på {sj}ätte plats.
           Jag kan göra det {sj}älv.
           Hon fick en {ch}ock.
-          Det fanns inga moln på {sk}yn.
+          Vi läste vad det stod på {sk}ylten.
           Vi åker till {sj}ön.
           Det blev en stor sensa{ti}on.
         `,

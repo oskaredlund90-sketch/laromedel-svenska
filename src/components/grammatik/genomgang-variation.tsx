@@ -86,7 +86,7 @@ export function VariationGenomgang({ stadie }: { stadie: AgeGroup }) {
       <Minneslista
         punkter={[
           "Verbet står på plats två i en huvudsats.",
-          "I en bisats står inte före verbet (BIFF).",
+          minst(s, "hogstadiet") ? "I en bisats står inte före verbet (BIFF)." : "I en bisats står inte före verbet.",
           "Välj meningsbyggnad efter syftet: tempo, förklaring, betoning eller tydlighet.",
           "Blanda korta och långa meningar.",
         ]}

@@ -45,7 +45,7 @@ mel.s("Markera satsdelarna.", "Ahmed:Subjekt | sprang:Predikat | snabbt:Adverbia
 mel.s("Markera satsdelarna.", "Min bror:Subjekt | har:Predikat | en ny mobil:Objekt", SPOA);
 mel.m("Klicka på subjektet. Fråga: Vem eller vad + verbet?", "På rasten spelade [de stora barnen] fotboll.");
 mel.m("Klicka på subjektet.", "Varje morgon cyklar [min mamma] till jobbet.");
-mel.m("Klicka på objektet. Fråga: Vad/vem + verbet + subjektet?", "Lärarna planerade [en utflykt] till museet.");
+mel.m("Klicka på objektet. Fråga: Vad/vem + verbet + subjektet?", "Lärarna planerade [en utflykt] i går.");
 mel.m("Klicka på objektet.", "I går såg vi [en älg] i skogen.");
 mel.m("Klicka på predikatet (verbet).", "Efter skolan [simmar] Maja i simhallen.");
 mel.m("Klicka på alla adverbial (när, var eller hur).", "[I går] åt vi glass [på stranden].");

@@ -307,14 +307,14 @@ export function sambandOrdfoljd(): string {
 
 /** [förled, efterled, sammansatt ord] */
 export const SAMMANSATTA: [string, string, string][] = [
-  ["kyl", "skåp", "kylskåp"], ["tv", "spel", "tv-spel"], ["mat", "sal", "matsal"], ["fot", "spår", "fotspår"],
+  ["kyl", "skåp", "kylskåp"], ["dator", "spel", "datorspel"], ["mat", "sal", "matsal"], ["fot", "spår", "fotspår"],
   ["sol", "glasögon", "solglasögon"], ["snö", "boll", "snöboll"], ["regn", "jacka", "regnjacka"], ["tand", "läkare", "tandläkare"],
   ["sjö", "häst", "sjöhäst"], ["bok", "mal", "bokmal"], ["sten", "bro", "stenbro"], ["is", "glass", "isglass"],
   ["skol", "bänk", "skolbänk"], ["bil", "dörr", "bildörr"], ["katt", "unge", "kattunge"], ["sand", "slott", "sandslott"],
   ["måne", "sken", "månsken"], ["fågel", "bo", "fågelbo"], ["hus", "nyckel", "husnyckel"], ["blå", "val", "blåval"],
   ["grön", "sak", "grönsak"], ["natt", "linne", "nattlinne"], ["hand", "boll", "handboll"], ["vatten", "glas", "vattenglas"],
   ["sov", "säck", "sovsäck"], ["stjärn", "himmel", "stjärnhimmel"], ["korv", "bröd", "korvbröd"], ["sommar", "lov", "sommarlov"],
-  ["äpple", "träd", "äppelträd"], ["fisk", "pinne", "fiskpinne"],
+  ["plommon", "träd", "plommonträd"], ["fisk", "pinne", "fiskpinne"],
 ];
 
 export function sammansattaSkriv(): string {

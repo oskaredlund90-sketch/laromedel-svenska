@@ -25,12 +25,10 @@ export function StavningGenomgang({ stadie }: { stadie: AgeGroup }) {
           <P>Lyssna på vokalen. Är den kort, skriver du ofta två konsonanter efter: hoppa, glass, komma.</P>
           {minst(s, "mellanstadiet") && <Tip>K-ljudet efter kort vokal skrivs ck: tack, ficka, rocka.</Tip>}
         </ExampleCard>
-        {minst(s, "mellanstadiet") && (
-          <Warning>
-            Undantag med m och n: i slutet av ord skrivs oftast bara ett m eller n: <em>hem, rum, vem, fram, man, min</em>. Men när ordet böjs kommer
-            dubbelteckningen tillbaka: <em>hemma, rummet, mannen</em>.
-          </Warning>
-        )}
+        <Warning>
+          Undantag med m och n: i slutet av ord skrivs oftast bara ett m eller n: <em>hem, rum, vem, fram, man, min{s === "lagstadiet" ? ", kom, fem, kan, vän" : ""}</em>. Men när ordet böjs kommer
+          dubbelteckningen tillbaka: <em>hemma, rummet, mannen</em>.
+        </Warning>
       </Section>
 
       <Section title="Ljud som kan stavas på flera sätt">
@@ -89,7 +87,7 @@ export function StavningGenomgang({ stadie }: { stadie: AgeGroup }) {
         />
       </Section>
 
-      {minst(s, "hogstadiet") && (
+      {minst(s, "mellanstadiet") && (
         <Section title="Stava med hjälp av roten">
           <P>
             Roten stavas oftast likadant i alla ord som bildas av den. Är du osäker på ett ord – leta upp roten och en annan form av ordet.

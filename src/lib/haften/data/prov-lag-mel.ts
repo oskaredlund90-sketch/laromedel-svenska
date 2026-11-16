@@ -56,7 +56,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
           lisa har en katt. => Lisa har en katt.
           vi bor i malmö. => Vi bor i Malmö.
           Min kompis heter omar => Min kompis heter Omar.
-          i dag är det sol. => I dag är det sol. || I dag är det sol.
+          i dag är det sol. => I dag är det sol.
           jag åker till norge. => Jag åker till Norge.
           Hunden springer fort Katten sover. => Hunden springer fort. Katten sover.
           Pappa heter erik. => Pappa heter Erik.
@@ -319,7 +319,7 @@ export const PROV_LAG_MEL: HafteKalla[] = [
       },
       {
         rubrik: "Del 7: De eller dem",
-        instruktion: "Välj de eller dem. Byt ut ordet mot vi eller oss: passar vi ska det vara de, passar oss ska det vara dem.",
+        instruktion: "Välj de eller dem. Byt ut ordet mot vi eller oss: passar vi ska det vara de, passar oss ska det vara dem. Före ett adjektiv eller flesta är det alltid de: de nya, de flesta.",
         typ: "val",
         rader: `
           {*De|Dem} har en stor trädgård.

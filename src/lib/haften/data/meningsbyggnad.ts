@@ -9,7 +9,7 @@ export const MENINGSBYGGNAD_HAFTEN: HafteKalla[] = [
     steg: 2,
     feltyper: ["struktur.textbindning", "struktur.meningsvariation"],
     regel: [
-      "Sambandsord visar hur saker hänger ihop: och (lägger till), men (motsats), eftersom/för att (orsak), så/därför (följd), när/innan/sedan (tid), om (villkor).",
+      "Sambandsord visar hur saker hänger ihop: och (lägger till), men (motsats), eftersom (orsak), för att + verb i att-form (syfte: för att hinna), så/därför (följd), när/innan/sedan (tid), om (villkor).",
       "Variera! Skriv inte bara 'och sen'. Pröva: först, sedan, efter det, till slut.",
       "Tips: läs meningen med olika sambandsord och lyssna vilket som passar.",
     ],

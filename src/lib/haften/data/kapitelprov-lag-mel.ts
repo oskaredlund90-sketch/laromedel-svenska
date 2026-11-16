@@ -184,7 +184,7 @@ export const KAPITELPROV_LAG_MEL = [
         Vi åt glass EFTERSOM det var varmt. {*varför|vad som händer sedan|vad som måste hända först}
         Det var varmt, SÅ vi åt glass. {varför|*vad som händer sedan|vad som måste hända först}
         OM det är varmt, äter vi glass. {varför|vad som händer sedan|*vad som måste hända först}
-        Hon log FÖR ATT hon var glad. {*varför|vad som händer sedan|vad som måste hända först}
+        Hon log EFTERSOM hon var glad. {*varför|vad som händer sedan|vad som måste hända först}
         Han var trött. DÄRFÖR sov han. {varför|*vad som händer sedan|vad som måste hända först}
         Du får en kaka OM du dukar. {varför|vad som händer sedan|*vad som måste hända först}
       `,
@@ -467,14 +467,14 @@ export const KAPITELPROV_LAG_MEL = [
       r: `
         Vi stannade inne {*eftersom|så|om} det stormade.
         Det stormade, {eftersom|*så|om} vi stannade inne.
-        {Eftersom|Därför|*Om} du övar, blir du bättre.
+        {Så|Därför|*Om} du övar, blir du bättre.
         Isen var tunn. {Eftersom|*Därför|Om} fick ingen åka skridskor.
         Hon fick ont i halsen {så|*på grund av att|om} hon hade skrikit.
         Ta med mössa {så|därför|*ifall} det blir kallt.
         Han hade glömt nyckeln, {eftersom|*vilket gjorde att|om} han inte kom in.
         {*Eftersom|Därför|Så} det var lördag, sov vi länge.
         Vi missade tåget. {Eftersom|*Därför|Om} kom vi sent.
-        Vi går på bio {eftersom|därför|*om} vi hinner.
+        Vi går på bio i kväll {så|därför|*om} vi hinner.
       `,
     },
     {
@@ -559,7 +559,7 @@ export const KAPITELPROV_LAG_MEL = [
       i: "Ett eller två m/n?",
       t: "val",
       r: `
-        Jag är {*hem|hemm} nu.
+        Jag går {*hem|hemm} nu.
         Vi är {*hemma|hema}.
         Han går {*fram|framm}.
         Lampan i {rumet|*rummet} är tänd.

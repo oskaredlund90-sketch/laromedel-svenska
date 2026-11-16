@@ -1270,11 +1270,11 @@ const skiljeteckenMellanstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "mellanstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Min bror____ som är tio år____ går i fyran.",
+    sentence: "Min enda moster____ som bor i Kiruna____ kommer på besök.",
     options: ["komma (,) på båda ställena", "punkt (.) på båda ställena", "frågetecken (?) på båda ställena", "inget tecken alls"],
     correct: "komma (,) på båda ställena",
     explanation:
-      "Inskjutna bisatser (relativsatser) omges av kommatecken.",
+      "Bisatsen är extra information – du vet redan vem det gäller. Då sätts komma på båda sidor.",
   },
   {
     id: "skiljetecken-fib-mel-5",
@@ -1282,11 +1282,11 @@ const skiljeteckenMellanstadietFIB: FillInBlankExercise[] = [
     topic: "skiljetecken",
     ageGroup: "mellanstadiet",
     instruction: "Vilket skiljetecken saknas?",
-    sentence: "Mamma sa: ”Kom in nu____”",
+    sentence: "Mamma ropade: ”Akta dig____”",
     options: [".", "!", "?", ","],
     correct: "!",
     explanation:
-      "Det är en uppmaning och avslutas med utropstecken.",
+      "En varning avslutas med utropstecken.",
   },
   {
     id: "skiljetecken-fib-mel-6",
@@ -1627,7 +1627,7 @@ const stavningMellanstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "Hunnen",
     correctWord: "Hunden",
     explanation:
-      "Ordet stavas 'hunden' med nd-ljud. Förväxla inte ng-ljud och nd-ljud.",
+      "Hunden kommer av hund – roten slutar på nd.",
   },
   {
     id: "stavning-ec-mel-5",
@@ -1640,7 +1640,7 @@ const stavningMellanstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "onssdagen",
     correctWord: "onsdagen",
     explanation:
-      "'Onsdagen' stavas med enkelt s. Dubbelteckning gäller inte före d har.",
+      "Onsdag = ons + dag. Ons stavas med ett s.",
   },
   {
     id: "stavning-ec-mel-6",
@@ -1680,7 +1680,7 @@ const stavningMellanstadietMC: MultipleChoiceExercise[] = [
     options: ["längre", "langgre", "lengre", "laangre"],
     correct: 0,
     explanation:
-      "'Längre' är komparativformen av 'lång'. Observera att a med prickar (ä) används i komparativ.",
+      "Längre är komparativ av lång. Vokalen ändras: lång – längre – längst.",
   },
 ];
 
@@ -4364,14 +4364,14 @@ const skiljeteckenLagstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "dig",
     correctWord: "dig!",
     explanation:
-      "Uppmaningar och varningar avslutas med utropstecken (!).",
+      "Varningar avslutas med utropstecken (!).",
   },
   {
     id: "skiljetecken-ec-lag-3",
     type: "error-correction",
     topic: "skiljetecken",
     ageGroup: "lagstadiet",
-    instruction: "Rätta stort/liten bokstav-felet.",
+    instruction: "Rätta felet med stor bokstav.",
     sentence: "jag bor i Stockholm.",
     correctedSentence: "Jag bor i Stockholm.",
     errorWord: "jag",
@@ -4446,7 +4446,7 @@ const ordbildningMellanstadietMC: MultipleChoiceExercise[] = [
     options: ["tänkare", "tanke", "tänkande", "Alla är korrekta"],
     correct: 3,
     explanation:
-      "Alla är korrekta: en tänkare (en person som tänker), en tanke och ett tänkande. Ändelserna -are, -e och -ande bildar substantiv av verb.",
+      "Alla är korrekta: en tänkare (en person som tänker), en tanke och ett tänkande. -are och -ande är ändelser. I tanke ändras vokalen.",
   },
 ];
 
@@ -4551,7 +4551,7 @@ const stavningLagstadietEC: ErrorCorrectionExercise[] = [
     errorWord: "jetstark",
     correctWord: "jättestark",
     explanation:
-      "'Jättestark' stavas med ä. 'Jätte-' är ett prefix som betyder 'mycket'.",
+      "Jätte- betyder mycket och skrivs med ä: jättestark.",
   },
 ];
 
@@ -4823,7 +4823,7 @@ const ordbildningMellanstadietMCExtra: MultipleChoiceExercise[] = [
     ],
     correct: 1,
     explanation:
-      "Suffixet -lig bildar adjektiv: vän → vänlig, skada → skadlig, möjl → möjlig.",
+      "Suffixet -lig bildar adjektiv: vän → vänlig, skada → skadlig.",
   },
   {
     id: "ordbildning-mc-mel-extra-4",

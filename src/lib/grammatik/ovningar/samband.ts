@@ -9,7 +9,7 @@ lag.l("Hunden skäller ____ den är hungrig.", ["så", "*eftersom", "om"], "Efte
 lag.l("Jag var trött, ____ jag gick och la mig.", ["*så", "eftersom", "om"], "Trött → gick och la mig. Så visar följden.");
 lag.l("Du får glass ____ du äter upp maten.", ["så", "*om", "men"], "Om = på villkor att.");
 lag.l("Vi stannade inne ____ det åskade.", ["*eftersom", "om", "så"], "Varför stannade vi inne? Eftersom det åskade.");
-lag.l("Det åskade, ____ vi stannade inne.", ["om", "*därför", "eftersom"], "Därför visar följden, precis som så.");
+lag.l("Det åskade, ____ vi stannade inne.", ["om", "*så", "eftersom"], "Så visar följden: det åskade, så vi stannade inne.");
 lag.l("____ du skyndar dig, hinner du med bussen.", ["*Om", "Så", "Därför"], "Om du skyndar dig – det är ett villkor.");
 lag.l("Maja grät ____ hon hade ramlat.", ["så", "*eftersom", "om"], "Varför grät Maja? Eftersom hon hade ramlat.");
 lag.v("Vilket ord berättar VARFÖR något händer?", ["*eftersom", "men", "och"], "Eftersom svarar på frågan varför.");
@@ -27,7 +27,7 @@ lag.o("Bygg en mening som visar följden.", ["det", "var", "varmt,", "så", "vi"
 const mel = bygg("samband", "mellanstadiet");
 mel.l("Matchen ställdes in ____ planen var översvämmad.", ["*eftersom", "så", "trots att"], "Varför ställdes matchen in? Eftersom planen var översvämmad – orsak.");
 mel.l("Planen var översvämmad. ____ ställdes matchen in.", ["Eftersom", "*Därför", "Om"], "Därför inleder följden i en ny mening.");
-mel.l("____ du inte sparar, räcker inte pengarna till cykeln.", ["Därför", "*Om", "Eftersom"], "Om … – villkoret som måste uppfyllas.");
+mel.l("____ du inte sparar, räcker inte pengarna till cykeln.", ["Därför", "*Om", "Så"], "Om … – villkoret som måste uppfyllas.");
 mel.l("Hon tränade varje dag, ____ hon blev snabbare.", ["*vilket gjorde att", "eftersom", "om"], "Vilket gjorde att visar följden av träningen.");
 mel.l("Han fick ont i magen ____ han hade ätit för mycket godis.", ["så", "*på grund av att", "om"], "På grund av att = eftersom.");
 mel.l("Vi går till stranden ____ det inte regnar i morgon.", ["därför", "*om", "men"], "Om det inte regnar – ett villkor.");

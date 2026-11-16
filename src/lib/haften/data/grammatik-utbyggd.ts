@@ -74,7 +74,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           Mormor bakar bullar. Predikat: {bakar}
           Bussen kom för sent. Predikat: {kom}
           Jag äter äpplen. Predikat: {äter}
-          Barnen sprang ut på rasten. Predikat: {sprang}
+          Barnen sprang på skolgården. Predikat: {sprang}
           Katten jagar en mus. Predikat: {jagar}
           Pappa sover på soffan. Predikat: {sover}
           Läraren läste en dikt. Predikat: {läste}
@@ -160,7 +160,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           Jag gick hem PÅ GRUND AV REGNET. {när|var|*varför}
           Han svarade ARGT. {när|var|*hur}
           Vi träffas EFTER SKOLAN. {*när|var|hur}
-          Fåglarna flög SÖDERUT. {när|*var|hur}
+          Fåglarna bor I SKOGEN. {när|*var|hur}
           Hon skrev FÖRSIKTIGT. {när|var|*hur}
           I SOMRAS var vi i Grekland. {*när|var|hur}
           Vi åt middag HOS MORMOR. {när|*var|hur}
@@ -270,7 +270,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
     steg: 1,
     feltyper: ["struktur.textbindning"],
     regel: [
-      "Orsak – varför? eftersom, för att: Vi stannade inne EFTERSOM det regnade.",
+      "Orsak – varför? eftersom: Vi stannade inne EFTERSOM det regnade.",
       "Följd – vad blir det av det? så, därför: Det regnade, SÅ vi stannade inne.",
       "Villkor – vad måste hända först? om: OM det regnar, stannar vi inne.",
     ],
@@ -282,27 +282,27 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
         rader: `
           Jag tar på mig jackan {*eftersom|så|om} det är kallt.
           Det är kallt, {eftersom|*så|om} jag tar på mig jackan.
-          {Eftersom|Så|*Om} det regnar, tar vi med paraply.
-          Hunden skäller {*för att|så|om} den är hungrig.
+          {Därför|Så|*Om} det regnar, tar vi med paraply.
+          Hunden skäller {*eftersom|så|om} den är hungrig.
           Jag var trött, {eftersom|*så|om} jag gick och la mig.
-          Du får glass {eftersom|så|*om} du äter upp maten.
+          Du får glass {därför|så|*om} du äter upp maten.
           Vi stannade inne {*eftersom|så|om} det åskade.
-          Det åskade, {eftersom|*därför|om} stannade vi inne.
-          {Eftersom|Så|*Om} du skyndar dig, hinner du med bussen.
+          Det åskade. {Eftersom|*Därför|Om} stannade vi inne.
+          {Därför|Så|*Om} du skyndar dig, hinner du med bussen.
           Maja grät {*eftersom|så|om} hon hade ramlat.
           Bussen var sen, {eftersom|*så|om} vi gick i stället.
-          Vi går ut {eftersom|så|*om} solen kommer fram.
+          Vi går ut {därför|så|*om} solen kommer fram.
           Han skrattade {*eftersom|så|om} clownen ramlade.
           Isen var tunn, {eftersom|*så|om} vi åkte inte skridskor.
-          {Eftersom|Så|*Om} du vill, kan du följa med.
+          {Därför|Så|*Om} du vill, kan du följa med.
           Jag vattnar blommorna {*eftersom|så|om} jorden är torr.
           Jorden är torr, {eftersom|*så|om} jag vattnar blommorna.
-          Vi badar {eftersom|så|*om} vattnet är varmt nog.
-          Hon log {*för att|så|om} hon var glad.
-          Jag ringer dig {eftersom|så|*om} jag blir sen.
-          Det var mörkt, {eftersom|*därför|om} tände vi lampan.
+          Vi badar {därför|så|*om} vattnet är varmt nog.
+          Hon log {*eftersom|så|om} hon var glad.
+          Jag ringer dig {därför|så|*om} jag blir sen.
+          Det var mörkt. {Eftersom|*Därför|Om} tände vi lampan.
           Vi åt pannkakor {*eftersom|så|om} det var torsdag.
-          {Eftersom|Därför|*Om} det snöar i morgon, bygger vi en snögubbe.
+          {Så|Därför|*Om} det snöar i morgon, bygger vi en snögubbe.
           Pelle blev blöt {*eftersom|så|om} han glömde paraplyet.
           Han glömde paraplyet, {eftersom|*så|om} han blev blöt.
         `,
@@ -321,12 +321,12 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           Matchen ställdes in PÅ GRUND AV REGNET. {*orsak|följd|villkor}
           Jag glömde väckarklockan. DÄRFÖR KOM JAG FÖR SENT. {orsak|*följd|villkor}
           IFALL DET REGNAR, tar vi bussen. {orsak|följd|*villkor}
-          Vi stannade hemma FÖR ATT MORMOR KOM. {*orsak|följd|villkor}
+          Vi stannade hemma EFTERSOM MORMOR KOM. {*orsak|följd|villkor}
           Det blåste, SÅ BÅTARNA STANNADE I HAMNEN. {orsak|*följd|villkor}
           OM DU TRÄNAR, blir du bättre. {orsak|följd|*villkor}
         `,
       },
-      { rubrik: "Del C", instruktion: "Välj eftersom, så eller om.", typ: "val", rader: sambandValEnkel() },
+      { rubrik: "Del C", instruktion: "Välj det ord som passar.", typ: "val", rader: sambandValEnkel() },
     ],
   },
   {
@@ -723,7 +723,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
     feltyper: ["struktur.textbindning", "struktur.stycken"],
     regel: [
       "Syfta tillbaka i stället för att upprepa: Elsa har en hund. HON går ut med DEN.",
-      "Du kan syfta med pronomen (hon, den, de), synonymer (hunden → valpen) eller ett ord för gruppen (äpplen och päron → frukten).",
+      "Du kan syfta med pronomen (hon, den, de), ett annat ord för samma sak (hunden → djuret, Leo → pojken) eller ett ord för gruppen (äpplen och päron → frukten).",
       "Var tydlig: Sara träffade Moa. Hon var arg. – Vem? Skriv namnet om det kan missförstås.",
       "Sambandsmarkörer visar hur meningarna hänger ihop: tid (sedan), tillägg (dessutom), motsats (däremot), följd (därför).",
       "Tematisk bindning: varje mening tar upp något från den förra. Vi besökte en borg. BORGEN byggdes på 1300-talet.",
@@ -784,7 +784,7 @@ export const GRAMMATIK_UTBYGGD: HafteKalla[] = [
           Plast skadar djuren i havet. {*Därför|Däremot|Först} behövs nya regler.
           Vi åt middag. {*Efter det|Däremot|Dessutom} tittade vi på film.
           Sommaren var varm. Vintern {*däremot|därför|dessutom} var mycket kall.
-          Läxor ger extra träning. {*Samtidigt|Först|Till slut} kan de skapa stress.
+          Läxor ger extra träning. {*Å andra sidan|Först|Till slut} kan de skapa stress.
           {*Avslutningsvis|För det första|Dessutom} vill jag säga att alla kan hjälpa till.
         `,
       },

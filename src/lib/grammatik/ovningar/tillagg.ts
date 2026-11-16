@@ -15,7 +15,7 @@ tbLag.l("Jag och Ali spelade fotboll. Sedan åt ____ glass.", ["*vi", "dom", "ja
 tbLag.l("Det var en gång en drake. ____ bodde i ett berg.", ["*Draken", "En drake", "Berget"], "När vi har berättat om draken skriver vi draken (bestämd form).");
 tbLag.v("Vilket ord berättar vad som hände sist?", ["först", "sedan", "*till slut"], "Först – sedan – till slut.");
 tbLag.v("Vem är ”han” i: ”Omar tappade sin mössa. Han letade länge.”?", ["*Omar", "mössan", "någon annan"], "Han syftar tillbaka på Omar.");
-tbLag.m("Klicka på orden som syftar på Elsa.", "Elsa har en hund. [Hon] går ut med den varje dag. [Elsa] tycker att det är roligt.");
+tbLag.m("Klicka på ordet som pekar tillbaka på Elsa.", "Elsa har en hund. [Hon] går ut med den varje dag. Hunden tycker att det är roligt.");
 tbLag.m("Klicka på orden som visar ordningen.", "[Först] packade vi väskan. [Sedan] åkte vi till stranden. [Till slut] somnade vi i bilen.");
 tbLag.o("Sätt meningarna i rätt ordning.", ["Först tog vi fram mjöl, mjölk och ägg.", "Sedan vispade vi en smet.", "Till slut stekte vi pannkakorna."], { meningar: true });
 tbLag.o("Sätt meningarna i rätt ordning.", ["Det var en gång en liten mus.", "Musen var mycket hungrig.", "Därför letade den efter ost i köket."], { meningar: true });

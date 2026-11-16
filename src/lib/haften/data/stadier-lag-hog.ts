@@ -35,7 +35,7 @@ const DATID_LAG: [string, string][] = [
 
 const JAMFOR_LAG: [string, string, string][] = [
   ["stor", "större", "störst"], ["glad", "gladare", "gladast"], ["snabb", "snabbare", "snabbast"], ["liten", "mindre", "minst"],
-  ["lång", "längre", "längst"], ["kall", "kallare", "kallast"], ["varm", "varmare", "varmast"], ["god", "bättre", "bäst"],
+  ["lång", "längre", "längst"], ["kall", "kallare", "kallast"], ["varm", "varmare", "varmast"], ["snäll", "snällare", "snällast"],
   ["mjuk", "mjukare", "mjukast"], ["tung", "tyngre", "tyngst"], ["söt", "sötare", "sötast"], ["ung", "yngre", "yngst"],
 ];
 
