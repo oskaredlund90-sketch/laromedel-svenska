@@ -5,7 +5,8 @@ import { ArrowRight, BookOpen, ClipboardCheck, Download, GraduationCap, Notebook
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { AMNEN, MAL_PER_STADIUM, PROGRESSION, delarForStadium } from "@/lib/grammatik/amnen";
-import { haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
+import { STARTPROV_FOR, haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
+import { hamtaHafte } from "@/lib/haften";
 import { getExercisesForTopic } from "@/lib/data/grammatik-ovningar";
 
 const PDF_VERSION = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "lokal";
@@ -104,6 +105,24 @@ export default async function GrammatikPage({ params }: Props) {
           </Link>
         )}
       </div>
+
+      {(() => {
+        const start = hamtaHafte(STARTPROV_FOR[stadie]);
+        return start ? (
+          <Link
+            href={`/ovningshaften/${start.id}`}
+            className="-mt-6 mb-10 flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 transition-colors hover:border-amber-400 dark:border-amber-900 dark:bg-amber-950/30"
+          >
+            <ClipboardCheck className="h-7 w-7 shrink-0 text-amber-600" />
+            <span>
+              <span className="block font-semibold text-neutral-900 dark:text-white">{start.titel}</span>
+              <span className="block text-sm text-neutral-600 dark:text-neutral-400">
+                {start.underrubrik} · {start.antalUppgifter} poäng. Kartlägg gruppen innan ni börjar – varje del motsvarar ett kapitel.
+              </span>
+            </span>
+          </Link>
+        ) : null;
+      })()}
 
       <p className="-mt-8 mb-12 text-sm text-neutral-500">
         Alla övningshäften samlade:{" "}

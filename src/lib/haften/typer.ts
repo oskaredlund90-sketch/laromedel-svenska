@@ -82,6 +82,7 @@ export type Omradesnamn =
   | "Ordbildning"
   | "Stilistik"
   | "Kapitelprov"
+  | "Startprov"
   | "Grammatikprov";
 
 export interface Del extends Omit<DelKalla, "rader"> {

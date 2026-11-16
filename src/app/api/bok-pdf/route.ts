@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { AMNEN_PER_STADIUM, type GrammatikAmne } from "@/lib/grammatik/amnen";
 import type { AgeGroup } from "@/lib/supabase/types";
+import { arskursFor } from "@/lib/grammatik/arsplan";
 
 /**
  * Grammatikboken som PDF – exakt det urval som är valt på boksidan (version,
@@ -31,16 +32,19 @@ export async function GET(req: NextRequest) {
   const larare = q.get("version") === "larare";
   const kapitel = q.get("kapitel");
   if (kapitel && !AMNEN_PER_STADIUM[stadie].includes(kapitel as GrammatikAmne)) return new Response("Okänt kapitel", { status: 400 });
+  const ak = q.get("ak");
+  if (ak && !arskursFor(stadie, ak)) return new Response("Okänd årskurs", { status: 400 });
   const haften = q.get("haften");
   if (haften && haften !== "1" && haften !== "bara") return new Response("Okänt val", { status: 400 });
 
   const sok = new URLSearchParams();
   if (larare) sok.set("version", "larare");
   if (kapitel) sok.set("kapitel", kapitel);
+  if (ak) sok.set("ak", ak);
   if (haften) sok.set("haften", haften);
   const url = `${req.nextUrl.origin}/${stadie}/grammatik/bok${sok.size ? `?${sok}` : ""}`;
 
-  const namn = ["grammatik", stadie, haften === "bara" ? "ovningshaften" : null, kapitel, larare ? "larare" : "elev", haften === "1" ? "med-haften" : null]
+  const namn = ["grammatik", stadie, ak ? `ak${ak}` : null, haften === "bara" ? "ovningshaften" : null, kapitel, larare ? "larare" : "elev", haften === "1" ? "med-haften" : null]
     .filter(Boolean)
     .join("-");
 

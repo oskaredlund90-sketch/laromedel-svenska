@@ -12,7 +12,7 @@ import path from "node:path";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { AMNEN, AMNEN_PER_STADIUM } from "@/lib/grammatik/amnen";
 import { getExercisesForTopic, RESONERA_ETIKETT, type GrammarExercise } from "@/lib/data/grammatik-ovningar";
-import { haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
+import { STARTPROV_FOR, haftenForKapitel, kapitelprovFor } from "@/lib/grammatik/bok";
 import { hamtaHafte } from "@/lib/haften";
 import { facitText, utskriftsText, type Hafte } from "@/lib/haften/typer";
 import { SKRIV_SJALV } from "@/lib/grammatik/skriv-sjalv";
@@ -87,6 +87,8 @@ for (const stadie of stadier) {
     }
     delar.push("");
   });
+  const start = hamtaHafte(STARTPROV_FOR[stadie]);
+  if (start && (!idFilter || start.id.includes(idFilter))) delar.push("## Startprov (prövar föregående stadium)", hafte(start), "");
   const slut = hamtaHafte(`prov-${stadie}`);
   if (slut && (!idFilter || slut.id.includes(idFilter))) delar.push("## Slutprov", hafte(slut));
   const fil = path.join(ut, `${stadie}.md`);

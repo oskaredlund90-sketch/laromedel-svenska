@@ -6,7 +6,8 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { cn } from "@/lib/utils";
 import { AMNEN, AMNEN_PER_STADIUM, MAL_PER_STADIUM, PROGRESSION, ALLA_AMNEN, delarForStadium, type GrammatikAmne } from "@/lib/grammatik/amnen";
-import { haftenForKapitel, kapitelprovFor, repetitionForDel } from "@/lib/grammatik/bok";
+import { STARTPROV_FOR, haftenForKapitel, kapitelprovFor, repetitionForDel } from "@/lib/grammatik/bok";
+import { ARSPLAN, arSistaAret, arskursFor, repetitionsKapitel } from "@/lib/grammatik/arsplan";
 import { SKRIV_SJALV } from "@/lib/grammatik/skriv-sjalv";
 import { skrivdelFor } from "@/lib/grammatik/prov-skrivdel";
 import { ordlistaFor } from "@/lib/grammatik/ordlista";
@@ -29,7 +30,7 @@ import { LaddaNerPdf } from "@/components/grammatik/ladda-ner-pdf";
 
 interface Props {
   params: Promise<{ arskurs: string }>;
-  searchParams: Promise<{ version?: string; kapitel?: string; haften?: string; sidor?: string }>;
+  searchParams: Promise<{ version?: string; kapitel?: string; haften?: string; sidor?: string; ak?: string }>;
 }
 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
@@ -100,7 +101,11 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
   const medHaften = sp.haften === "1" || baraHaften;
   const allaKapitel = AMNEN_PER_STADIUM[stadie];
   const valt = allaKapitel.includes(sp.kapitel as GrammatikAmne) ? (sp.kapitel as GrammatikAmne) : null;
-  const helaBoken = !valt;
+  // Årskurs (?ak=8): årets kapitel i sin helhet + kort repetition av tidigare års kapitel.
+  const arval = valt ? undefined : arskursFor(stadie, sp.ak);
+  const repKapitel = arval ? repetitionsKapitel(stadie, arval.ak) : [];
+  const visade: GrammatikAmne[] = arval ? arval.kapitel : valt ? [valt] : allaKapitel;
+  const helaBoken = !valt && !arval;
   const delar = delarForStadium(stadie);
 
   // Sidnummer i innehållsförteckningen: från PDF-skriptet (?sidor=) eller sparade sidnummer.
@@ -117,27 +122,34 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
     return sidnummerFor(stadie, larare);
   })();
 
-  const lank = (andra: Partial<Record<"version" | "kapitel" | "haften", string | null>>) => {
+  const lank = (andra: Partial<Record<"version" | "kapitel" | "haften" | "ak", string | null>>) => {
     const q = new URLSearchParams();
-    const v = { version: larare ? "larare" : null, kapitel: valt, haften: sp.haften === "1" || baraHaften ? sp.haften! : null, ...andra };
+    const v = { version: larare ? "larare" : null, kapitel: valt, ak: arval?.ak ?? null, haften: sp.haften === "1" || baraHaften ? sp.haften! : null, ...andra };
     for (const [k, val] of Object.entries(v)) if (val) q.set(k, val);
     const s = q.toString();
     return `/${stadie}/grammatik/bok${s ? `?${s}` : ""}`;
   };
 
-  const slutprov = larare && helaBoken && !baraHaften ? hamtaHafte(`prov-${stadie}`) : undefined;
+  const slutprov = larare && (helaBoken || (arval && arSistaAret(stadie, arval.ak))) && !baraHaften ? hamtaHafte(`prov-${stadie}`) : undefined;
+  const startprov =
+    larare && !baraHaften && (helaBoken || (arval && ARSPLAN[stadie][0].ak === arval.ak)) ? hamtaHafte(STARTPROV_FOR[stadie]) : undefined;
+  const tidigareRep = (() => {
+    if (!repKapitel.length || baraHaften) return undefined;
+    const h = repetitionForDel(stadie, { nr: 0, titel: "Tidigare år", kapitel: repKapitel.map((a) => ({ amne: a, nr: allaKapitel.indexOf(a) + 1 })) });
+    return h && { ...h, id: `repetition-${stadie}-ak${arval!.ak}`, titel: "Repetition – tidigare år", underrubrik: "Blandade uppgifter från kapitlen ni har arbetat med tidigare" };
+  })();
   const repetitioner = helaBoken && !baraHaften ? delar.map((d) => ({ del: d, hafte: repetitionForDel(stadie, d) })) : [];
   const repetitionFor = (nr: number) => repetitioner.find((r) => r.del.nr === nr)?.hafte;
-  const kapitelprov = larare && !baraHaften ? (valt ? [valt] : allaKapitel).map((a) => ({ amne: a, prov: kapitelprovFor(a, stadie) })).filter((k): k is { amne: GrammatikAmne; prov: Hafte } => !!k.prov) : [];
+  const kapitelprov = larare && !baraHaften ? visade.map((a) => ({ amne: a, prov: kapitelprovFor(a, stadie) })).filter((k): k is { amne: GrammatikAmne; prov: Hafte } => !!k.prov) : [];
   const extraHaften = medHaften
-    ? (valt ? [valt] : allaKapitel).flatMap((a) => haftenForKapitel(a, stadie).map((h) => ({ amne: a, hafte: h })))
+    ? visade.flatMap((a) => haftenForKapitel(a, stadie).map((h) => ({ amne: a, hafte: h })))
     : [];
   const unikaExtra = extraHaften.filter((x, i) => extraHaften.findIndex((y) => y.hafte.id === x.hafte.id) === i);
   const ordlista = ordlistaFor(stadie);
   const nrFor = (a: GrammatikAmne) => allaKapitel.indexOf(a) + 1;
 
-  const apiSok = new URLSearchParams({ stadie, ...(larare ? { version: "larare" } : {}), ...(valt ? { kapitel: valt } : {}), ...(medHaften ? { haften: baraHaften ? "bara" : "1" } : {}), v: PDF_VERSION }).toString();
-  const filnamn = ["grammatik", stadie, baraHaften ? "ovningshaften" : null, valt, larare ? "larare" : "elev", medHaften && !baraHaften ? "med-haften" : null].filter(Boolean).join("-");
+  const apiSok = new URLSearchParams({ stadie, ...(larare ? { version: "larare" } : {}), ...(valt ? { kapitel: valt } : {}), ...(arval ? { ak: arval.ak } : {}), ...(medHaften ? { haften: baraHaften ? "bara" : "1" } : {}), v: PDF_VERSION }).toString();
+  const filnamn = ["grammatik", stadie, arval ? `ak${arval.ak}` : null, baraHaften ? "ovningshaften" : null, valt, larare ? "larare" : "elev", medHaften && !baraHaften ? "med-haften" : null].filter(Boolean).join("-");
   const pdfElev = pdfSokvag(stadie, false);
   const pdfLarare = pdfSokvag(stadie, true);
 
@@ -163,12 +175,29 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
           </Val>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="w-20 text-sm text-neutral-500">Innehåll</span>
-          <Val href={lank({ kapitel: null })} aktiv={!valt}>
+          <span className="w-20 text-sm text-neutral-500">Årskurs</span>
+          <Val href={lank({ ak: null, kapitel: null })} aktiv={!arval && !valt}>
+            Hela stadiet
+          </Val>
+          {ARSPLAN[stadie].map((a) => (
+            <Val key={a.ak} href={lank({ ak: a.ak, kapitel: null })} aktiv={arval?.ak === a.ak}>
+              {a.titel}
+            </Val>
+          ))}
+        </div>
+        {arval && (
+          <p className="-mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+            {arval.titel}: {arval.kapitel.map((a) => AMNEN[a].titel).join(", ")}
+            {repKapitel.length > 0 && <> – plus kort repetition av {repKapitel.map((a) => AMNEN[a].titel.toLowerCase()).join(", ")}</>}.
+          </p>
+        )}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="w-20 text-sm text-neutral-500">Kapitel</span>
+          <Val href={lank({ kapitel: null, ak: null })} aktiv={helaBoken}>
             Hela boken
           </Val>
           {allaKapitel.map((a, i) => (
-            <Val key={a} href={lank({ kapitel: a })} aktiv={valt === a}>
+            <Val key={a} href={lank({ kapitel: a, ak: null })} aktiv={valt === a}>
               {i + 1}. {AMNEN[a].titel}
             </Val>
           ))}
@@ -194,7 +223,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
           />
           <SkrivUtKnapp text="Skriv ut" />
           <p className="w-full text-sm text-neutral-500">
-            PDF:en innehåller det du har valt ovan: {larare ? "lärarbok" : "elevbok"}, {valt ? `kapitel ${nrFor(valt)}` : "hela boken"}
+            PDF:en innehåller det du har valt ovan: {larare ? "lärarbok" : "elevbok"}, {valt ? `kapitel ${nrFor(valt)}` : arval ? arval.titel.toLowerCase() : "hela boken"}
             {baraHaften ? " – bara övningshäftena" : medHaften ? " med övningshäften" : ""}.
           </p>
         </div>
@@ -335,10 +364,84 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
           </>
         )}
 
+        {arval && !baraHaften && (
+          <>
+            <section className="bok-titel flex flex-col justify-between gap-10 break-after-page pb-12 print:pb-0">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-neutral-500">Läromedel i Svenska</p>
+                <div className="mt-10 border-l-8 border-neutral-900 pl-6 dark:border-white">
+                  <h1 className="text-6xl font-bold tracking-tight text-neutral-900 dark:text-white">Grammatik</h1>
+                  <p className="mt-2 text-3xl font-semibold text-neutral-700 dark:text-neutral-300">
+                    {group.label} · {arval.titel}
+                  </p>
+                  <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">{arval.fokus}</p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2">
+                <div className="rounded-lg border-2 border-neutral-900 p-4 dark:border-white">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Det här året</p>
+                  <ul className="mt-2 space-y-0.5">
+                    {arval.kapitel.map((a) => (
+                      <li key={a} className="font-semibold">
+                        Kapitel {nrFor(a)}. {AMNEN[a].titel}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {repKapitel.length > 0 && (
+                  <div className="rounded-lg border border-neutral-400 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500">Repetition från tidigare år</p>
+                    <ul className="mt-2 space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                      {repKapitel.map((a) => (
+                        <li key={a}>
+                          Kapitel {nrFor(a)}. {AMNEN[a].titel}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-wrap items-end justify-between gap-6 border-t border-neutral-300 pt-5 dark:border-neutral-700">
+                <QrKod sokvag={`/${stadie}/grammatik`} text="Hela boken finns på sajten – övningarna rättas direkt" storlek={88} />
+                {!larare && <p className="text-[10pt]">Namn: ______________________ Klass: ________</p>}
+              </div>
+            </section>
+
+            {repKapitel.length > 0 && (
+              <section className="break-after-page pt-10 print:pt-0" data-sida="repetition-tidigare">
+                <DelRubrik
+                  overrad={`${arval.titel} · Börja här`}
+                  titel="Repetition – det du har lärt dig tidigare"
+                  text="Kort om varje kapitel från tidigare år. Läs reglerna, gör uppgifterna och bläddra till kapitlet på sajten om något känns osäkert."
+                />
+                <div className="mb-6 grid gap-3 sm:grid-cols-2 print:grid-cols-2">
+                  {repKapitel.map((a) => {
+                    const regel = haftenForKapitel(a, stadie)[0]?.regel ?? [];
+                    return (
+                      <div key={a} className="break-inside-avoid rounded-lg border border-neutral-300 p-3 text-[10pt] dark:border-neutral-700">
+                        <p className="font-bold text-neutral-900 dark:text-white">
+                          Kapitel {nrFor(a)}: {AMNEN[a].titel}
+                        </p>
+                        <p className="mb-1 text-neutral-600 dark:text-neutral-400">{PROGRESSION[a][stadie]}</p>
+                        <ul className="list-disc space-y-0.5 pl-4">
+                          {regel.slice(0, 3).map((r) => (
+                            <li key={r}>{r}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+                {tidigareRep && <HafteUppgifter hafte={tidigareRep} utanRubrik />}
+              </section>
+            )}
+          </>
+        )}
+
         {/* ---------- Delar och kapitel ---------- */}
         {!baraHaften && delar.map((d) =>
           d.kapitel
-            .filter((k) => helaBoken || k.amne === valt)
+            .filter((k) => visade.includes(k.amne))
             .map((k, i) => {
               const a = k.amne;
               const Genomgang = KAPITEL[a].content;
@@ -399,7 +502,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
         )}
 
         {/* ---------- Ordlista ---------- */}
-        {helaBoken && !baraHaften && (
+        {(helaBoken || arval) && !baraHaften && (
           <section className="break-before-page pt-10 print:pt-0" data-sida="ordlista">
             <DelRubrik overrad="Slå upp" titel="Ordlista – grammatiska termer" />
             <dl className="columns-1 gap-8 text-[9pt] leading-snug sm:columns-2 print:columns-2">
@@ -450,12 +553,16 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
               <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2">
                 <div>
                   <p className="font-semibold">Fördelning över stadiet</p>
-                  <p>
-                    {stadie === "hogstadiet"
-                      ? "Ett förslag: del 1 (Ordet) i årskurs 7, del 2 (Meningen) i årskurs 8 och del 3 (Texten) i årskurs 9. Ta repetitionen efter varje del i början av nästa termin, och använd slutprovet som förtest i årskurs 7 och eftertest i årskurs 9."
-                      : stadie === "gymnasiet"
-                        ? "Ett förslag: del 1 och 2 i Svenska 1, del 3 i Svenska 2 – med repetition av del 1–2 i början av Svenska 2. Slutprovet fungerar som diagnos vid kursstart."
-                        : "Ett förslag: en del per termin, med repetitionen i början av nästa termin. Slutprovet kan användas som förtest och eftertest."}
+                  <ul className="list-disc space-y-0.5 pl-5">
+                    {ARSPLAN[stadie].map((a) => (
+                      <li key={a.ak}>
+                        <strong>{a.titel}:</strong> {a.kapitel.map((k) => AMNEN[k].titel).join(", ")}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-1">
+                    Välj årskurs överst på sidan för en bok med just det årets kapitel och en kort repetition av tidigare år. Börja stadiet med
+                    startprovet och avsluta med slutprovet.
                   </p>
                 </div>
                 <div>
@@ -542,7 +649,7 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
           <section className="break-before-page pt-10 print:pt-0" data-sida="facit">
             <DelRubrik overrad="Lärarmaterial" titel="Facit" text="Numreringen följer övningarna i varje kapitel." />
             <div className="space-y-6">
-              {(baraHaften ? [] : valt ? [valt] : allaKapitel).map((a) => (
+              {(baraHaften ? [] : visade).map((a) => (
                 <div key={a}>
                   <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">
                     Kapitel {nrFor(a)}: {AMNEN[a].titel}
@@ -550,6 +657,12 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                   <OvningarFacit ovningar={getExercisesForTopic(a, stadie)} />
                 </div>
               ))}
+              {tidigareRep && (
+                <div>
+                  <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">Repetition – tidigare år</h3>
+                  <HafteFacit hafte={tidigareRep} />
+                </div>
+              )}
               {repetitioner.map(({ del, hafte }) =>
                 hafte ? (
                   <div key={del.nr}>
@@ -591,6 +704,12 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
             <HafteUppgifter hafte={slutprov} />
           </section>
         )}
+        {startprov && (
+          <section className="break-before-page pt-10 print:pt-0">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Startprov – i början av stadiet (50 minuter)</p>
+            <HafteUppgifter hafte={startprov} />
+          </section>
+        )}
         {kapitelprov.length > 0 && (
           <section className="break-before-page pt-10 print:pt-0">
             <DelRubrik overrad="Lärarmaterial" titel="Facit till proven" />
@@ -613,6 +732,12 @@ export default async function GrammatikbokPage({ params, searchParams }: Props) 
                 <div>
                   <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">{slutprov.titel}</h3>
                   <HafteFacit hafte={slutprov} />
+                </div>
+              )}
+              {startprov && (
+                <div>
+                  <h3 className="mb-1 border-b border-neutral-400 pb-0.5 text-[12pt] font-bold">{startprov.titel}</h3>
+                  <HafteFacit hafte={startprov} />
                 </div>
               )}
             </div>

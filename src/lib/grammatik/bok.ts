@@ -69,7 +69,17 @@ export function kapitelprovFor(amne: GrammatikAmne, stadie: AgeGroup): Hafte | u
 }
 
 /** Stadierna där ett häfte ingår i grammatikboken. Prov hör till sitt eget stadium. */
+/** Startprovet i början av stadiet (tioårig grundskola: åk 3, 5, 8 och gymnasiet). */
+export const STARTPROV_FOR: Record<AgeGroup, string> = {
+  lagstadiet: "startprov-ak3",
+  mellanstadiet: "startprov-ak5",
+  hogstadiet: "startprov-ak8",
+  gymnasiet: "startprov-gy",
+};
+
 export function stadierForHafte(id: string): AgeGroup[] {
+  const start = ORDNING.find((s) => STARTPROV_FOR[s] === id);
+  if (start) return [start];
   const prov = ORDNING.find((s) => id === `prov-${s}` || id.startsWith(`kapitelprov-${s}-`));
   if (prov) return [prov];
   return ORDNING.filter((s) => Object.values(HAFTEN_PER_KAPITEL[s]).some((ids) => ids?.includes(id)));
