@@ -8,7 +8,7 @@ const STADIER: AgeGroup[] = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymna
 const SAKNAS: Record<string, AgeGroup[]> = {
   kallkritik: ["lagstadiet"],
   retorik: ["lagstadiet"],
-  litteraturbegrepp: ["lagstadiet", "mellanstadiet"],
+  litteraturbegrepp: ["lagstadiet"],
   "nordiska-sprak": ["lagstadiet", "mellanstadiet"],
   sprakhistoria: ["lagstadiet", "mellanstadiet"],
 };

@@ -9,6 +9,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { getNordiskaSprakExercises } from "@/lib/data/nordiska-sprak-ovningar";
 import { NordiskaSprakOvningar } from "@/components/nordiska-sprak-ovningar";
+import { LasMer } from "@/components/arbetsomraden/las-mer";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -186,6 +187,8 @@ export default async function NordiskaSprakPage({ params }: Props) {
       {/* ============================================================= */}
 
       <NordiskaInfografik />
+
+      <LasMer stadie={level} id={level === "hogstadiet" ? "nordens-sprak-och-minoritetssprak" : "sprak-identitet-och-makt"} />
 
       <Section title="Den nordiska språkfamiljen">
         <div className="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">

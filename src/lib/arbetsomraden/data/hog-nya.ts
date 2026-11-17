@@ -21,7 +21,7 @@ export const SKRIVA_LARA_HOG: Arbetsomrade = {
     { fraga: "Vad visar en begreppskarta?", alternativ: ["hur begrepp hänger ihop", "en karta över skolan", "alla ord i en text"], ratt: 0 },
     { fraga: "Vad skiljer ett referat från ett citat?", alternativ: ["referatet är med egna ord", "referatet är ordagrant", "det finns ingen skillnad"], ratt: 0 },
     { fraga: "Vad är en reflektionstext?", alternativ: ["en kort text där man tänker vidare om det man lärt sig", "en sammanfattning av en film", "en dikt"], ratt: 0 },
-    { fraga: "Vad tyder flera studier på om att anteckna för hand?", alternativ: ["att många minns bättre", "att det är sämre för minnet", "att det inte spelar någon roll alls"], ratt: 0 },
+    { fraga: "Vad är viktigast för att anteckningar ska hjälpa dig att lära?", alternativ: ["att du väljer ut och formulerar om med egna ord", "att du skriver ner allt ordagrant", "att du använder många färger"], ratt: 0 },
   ],
   lektioner: [
     {
@@ -52,7 +52,7 @@ export const SKRIVA_LARA_HOG: Arbetsomrade = {
       upplagg: ["Genomgång: sammanfattning, referat och reflektion (15 min).", "Eleverna sammanfattar en artikel med källhänvisning (20 min).", "Skriv en reflektionstext om innehållet (15 min).", "Diskussion: anteckna för hand eller på dator? Repetera inför provet."],
       bilder: [
         { typ: "jamfor", rubrik: "Tre sätt att skriva om en text", kolumner: ["Sätt", "Vad du gör"], rader: [["Sammanfattning", "det viktigaste, kort, med egna ord"], ["Referat", "återger innehållet med egna ord och anger källan: Enligt …"], ["Reflektion", "tänker vidare: Vad betyder det? Håller jag med? Vad undrar jag?"]] },
-        { typ: "punkter", rubrik: "För hand eller på dator?", punkter: ["På dator kan man skriva snabbare – men frestas att skriva ordagrant.", "Flera studier tyder på att anteckningar för hand gör att många bearbetar och minns mer.", "Testa båda och se vad som fungerar för dig."] },
+        { typ: "punkter", rubrik: "För hand eller på dator?", punkter: ["På dator kan man skriva snabbare – men frestas att skriva ordagrant.", "Vissa studier tyder på att anteckningar för hand gör att man bearbetar och minns mer – men forskningen är inte entydig.", "Testa båda och se vad som fungerar för dig."] },
         { typ: "diskutera", fragor: ["Hur skriver du helst anteckningar – och varför?", "Hur kan reflektionstexter hjälpa dig inför ett prov?"] },
       ],
       elevtext: [{ rubrik: "Att skriva om det man läser", stycken: ["En sammanfattning tar med det viktigaste i en text. Ett referat återger innehållet med egna ord och talar om var det kommer ifrån: Enligt artikeln i … Ett referat är neutralt – dina egna åsikter hör inte hemma där.", "I en reflektionstext tänker du vidare. Vad betyder det du har läst? Hur hänger det ihop med det du redan vet? Vad håller du med om, och vad undrar du? Att skriva reflektioner tränar ditt resonerande och gör det lättare att minnas."] }],

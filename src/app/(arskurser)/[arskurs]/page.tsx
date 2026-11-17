@@ -138,6 +138,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
         { slug: "lastraning", title: "Lästräning", description: "Testa läsförståelse och läshastighet, och följ en läsplan", icon: Gauge },
         { slug: "textbank", title: "Textbank", description: "Exempeltexter i olika genrer med analysfrågor", icon: BookText },
         { slug: "litteraturhistoria", title: "Litteraturhistoria", description: "En första introduktion till svenska författare och epoker", icon: Library },
+        { slug: "litteraturbegrepp", title: "Litteraturbegrepp", description: "Kronologi, tillbakablickar, miljö- och personbeskrivningar, dialog, myter och sagor", icon: BookText },
         { slug: "lasstrategier", title: "Lässtrategier", description: "Fem strategier för bättre läsförståelse", icon: Eye },
         { slug: "ordkunskap", title: "Ordkunskap", description: "Veckans ord och ordberikning för åk 4–6", icon: MessageSquareText },
       ],

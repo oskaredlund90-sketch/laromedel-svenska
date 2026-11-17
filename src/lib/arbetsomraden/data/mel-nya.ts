@@ -43,9 +43,9 @@ export const SKRIVA_LARA_MEL: Arbetsomrade = {
       upplagg: ["Visa en enkel anteckningsmall: ämne – nyckelord – fråga (5 min).", "Kort genomgång i ett ämne (t.ex. en djurart eller ett historiskt skeende) medan eleverna antecknar (10 min).", "Eleverna jämför sina anteckningar i par och fyller på (10 min).", "De skriver tre meningar ur minnet med hjälp av anteckningarna (15 min)."],
       bilder: [
         { typ: "jamfor", rubrik: "Anteckningsmall", kolumner: ["Del", "Skriv"], rader: [["Ämne", "vad genomgången handlar om"], ["Nyckelord", "de viktigaste orden, en rad var"], ["Fråga", "något du undrar över"]] },
-        { typ: "punkter", rubrik: "Tips", punkter: ["Skriv korta ord – inte hela meningar.", "Använd pilar och tecken: → (leder till), = (betyder).", "Skriv för hand – flera studier tyder på att det hjälper många att minnas."] },
+        { typ: "punkter", rubrik: "Tips", punkter: ["Skriv korta ord – inte hela meningar.", "Använd pilar och tecken: → (leder till), = (betyder).", "Skriv gärna för hand – många upplever att det hjälper dem att minnas."] },
       ],
-      elevtext: [{ rubrik: "Anteckningar", stycken: ["Anteckningar är korta ord och fraser som hjälper dig att minnas. Du behöver inte skriva hela meningar. Använd gärna pilar och tecken.", "När du skriver för hand måste du välja vad som är viktigast. Det gör att många minns bättre."] }],
+      elevtext: [{ rubrik: "Anteckningar", stycken: ["Anteckningar är korta ord och fraser som hjälper dig att minnas. Du behöver inte skriva hela meningar. Använd gärna pilar och tecken.", "När du skriver för hand måste du välja vad som är viktigast. Det hjälper många att minnas."] }],
       uppgifter: ["Anteckna under lärarens genomgång med mallen.", "Skriv tre meningar om innehållet med hjälp av dina anteckningar."],
     },
     {

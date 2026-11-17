@@ -9,6 +9,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { getSprakhistoriaExercises } from "@/lib/data/sprakhistoria-ovningar";
 import { SprakhistoriaOvningar } from "@/components/sprakhistoria-ovningar";
+import { LasMer } from "@/components/arbetsomraden/las-mer";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -594,6 +595,8 @@ export default async function SprakhistoriaPage({ params }: Props) {
       </div>
 
       <SprakhistoriaInfografik />
+
+      <LasMer stadie={level} id={level === "hogstadiet" ? "svenskans-historia" : "sprak-identitet-och-makt"} />
 
       {/* Timeline overview */}
       <Section title="Tidslinje">

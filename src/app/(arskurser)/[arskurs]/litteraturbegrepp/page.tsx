@@ -10,6 +10,8 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { getLittBegreppExercises } from "@/lib/data/litteraturbegrepp-ovningar";
 import { LitteraturbegreppOvningar } from "@/components/litteraturbegrepp-ovningar";
+import { LasMer } from "@/components/arbetsomraden/las-mer";
+import { hamtaArbetsomrade } from "@/lib/arbetsomraden";
 
 const VALID_AGE_GROUPS = new Set<string>(AGE_GROUPS.map((g) => g.slug));
 
@@ -233,9 +235,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return AGE_GROUPS.filter(
-    (g) => g.slug !== "lagstadiet" && g.slug !== "mellanstadiet"
-  ).map((g) => ({
+  return AGE_GROUPS.filter((g) => g.slug !== "lagstadiet").map((g) => ({
     arskurs: g.slug,
   }));
 }
@@ -255,10 +255,38 @@ export default async function LitteraturbegreppPage({ params }: Props) {
 
   if (
     !VALID_AGE_GROUPS.has(arskurs) ||
-    arskurs === "lagstadiet" ||
-    arskurs === "mellanstadiet"
+    arskurs === "lagstadiet"
   ) {
     notFound();
+  }
+
+  // Mellanstadiet: berättelsens byggstenar ur arbetsområdet (förslaget till ny kursplan, åk 5–7).
+  if (arskurs === "mellanstadiet") {
+    const ao = hamtaArbetsomrade("mellanstadiet", "berattelsens-byggstenar")!;
+    return (
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+        <div className="mb-8">
+          <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-800">
+            <BookOpen className="h-6 w-6 text-neutral-700 dark:text-neutral-300" />
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">Litteraturbegrepp</h1>
+          <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-400">
+            Så är berättelser byggda: kronologi, tillbakablickar, miljö- och personbeskrivningar och dialog – och myter, sagor och dikter.
+          </p>
+        </div>
+        <Section title="Begrepp">
+          <dl className="grid gap-3 sm:grid-cols-2">
+            {ao.begrepp.map(([t, f]) => (
+              <div key={t} className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+                <dt className="font-semibold text-neutral-900 dark:text-white">{t}</dt>
+                <dd className="text-sm text-neutral-600 dark:text-neutral-400">{f}</dd>
+              </div>
+            ))}
+          </dl>
+        </Section>
+        <LasMer stadie="mellanstadiet" id="berattelsens-byggstenar" />
+      </div>
+    );
   }
 
   const group = AGE_GROUPS.find((g) => g.slug === arskurs)!;

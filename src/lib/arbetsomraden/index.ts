@@ -9,6 +9,7 @@ import { RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY } from "./data/gymnasie
 import { INSTRUKTIONER, LJUD_BOKSTAVER, SKRIVA_FOR_HAND } from "./data/lag-nya";
 import { BERATTELSER_MEL, DIGITALT_MEL, SKRIVA_LARA_MEL } from "./data/mel-nya";
 import { DIGITALT_HOG, SKONLITTERATUR_HOG, SKRIVA_LARA_HOG } from "./data/hog-nya";
+import { SKRIVA_LARA_GY } from "./data/gy-skriva";
 
 export const ARBETSOMRADEN: Arbetsomrade[] = [
   LJUD_BOKSTAVER,
@@ -20,7 +21,7 @@ export const ARBETSOMRADEN: Arbetsomrade[] = [
   SKRIVA_LARA_HOG,
   DIGITALT_HOG,
   SKONLITTERATUR_HOG,
-  KALLOR_LAG, KALLKRITIK_MEL, ORDENS_VARDE_MEL, DIALEKTER, KALLKRITIK_HOG, SPRAKHISTORIA, NORDEN, RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY];
+  KALLOR_LAG, KALLKRITIK_MEL, ORDENS_VARDE_MEL, DIALEKTER, KALLKRITIK_HOG, SPRAKHISTORIA, NORDEN, RETORIK_GY, SKRIVA_LARA_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY];
 
 export function arbetsomradenFor(stadie: AgeGroup): Arbetsomrade[] {
   return ARBETSOMRADEN.filter((a) => a.stadie === stadie).sort((a, b) => Number(a.arskurs) - Number(b.arskurs));

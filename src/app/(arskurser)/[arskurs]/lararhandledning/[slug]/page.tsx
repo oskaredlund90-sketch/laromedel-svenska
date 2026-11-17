@@ -90,6 +90,18 @@ export default async function GuideDetailPage({ params }: Props) {
           >
             <FileText className="h-4 w-4" /> Elevblad att skriva ut
           </Link>
+          <Link
+            href={`/${arskurs}/lararhandledning/${slug}/prov?del=fortest`}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium hover:border-neutral-500 dark:border-neutral-700"
+          >
+            Förtest
+          </Link>
+          <Link
+            href={`/${arskurs}/lararhandledning/${slug}/prov?del=prov`}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium hover:border-neutral-500 dark:border-neutral-700"
+          >
+            Prov med facit
+          </Link>
         </div>
       </header>
 

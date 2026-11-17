@@ -965,7 +965,7 @@ export const TEACHER_GUIDES: TeacherGuide[] = [
       {
         steg: "Lektion 2: Lånord och påverkan (45 min)",
         beskrivning:
-          "Fokusera på hur andra språk påverkat svenska: tyska under hansatiden (arbete, köpa, fönster), franska under stormaktstiden (möbel, paraply, fåtölj), engelska idag (cool, dejta, streama). Eleverna arbetar i grupper med att sortera lånord efter ursprungsspråk. Diskutera: Varför lånar vi ord? Är det bra eller dåligt? Jämför med hur Svenska Akademien och Språkrådet arbetar med språkvård idag.",
+          "Fokusera på hur andra språk påverkat svenska: tyska under hansatiden (arbeta, betala, handla), franska på 1700-talet (möbel, paraply, fåtölj), engelska idag (cool, dejta, streama). Eleverna arbetar i grupper med att sortera lånord efter ursprungsspråk. Diskutera: Varför lånar vi ord? Är det bra eller dåligt? Jämför med hur Svenska Akademien och Språkrådet arbetar med språkvård idag.",
       },
       {
         steg: "Lektion 3: Levande språkförändring (45 min)",
