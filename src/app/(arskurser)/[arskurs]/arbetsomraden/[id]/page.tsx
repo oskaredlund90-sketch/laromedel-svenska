@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { BookOpen, ChevronRight, ClipboardCheck, ExternalLink, MonitorPlay, Printer } from "lucide-react";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
-import { hamtaArbetsomrade } from "@/lib/arbetsomraden";
+import { arEtikett, hamtaArbetsomrade, underlag } from "@/lib/arbetsomraden";
 
 interface Props {
   params: Promise<{ arskurs: string; id: string }>;
@@ -55,7 +55,7 @@ export default async function ArbetsomradePage({ params }: Props) {
       </nav>
 
       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700 dark:text-sky-400">
-        Arbetsområde · förslag: årskurs {ao.arskurs} · {ao.lektioner.length + 1} lektioner
+        Arbetsområde · förslag: {arEtikett(stadie, ao.arskurs)} · {ao.lektioner.length + 1} lektioner
       </p>
       <h1 className="mt-1 text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">{ao.titel}</h1>
       <p className="mt-3 max-w-3xl text-lg text-neutral-600 dark:text-neutral-400">{ao.ingress}</p>
@@ -86,8 +86,8 @@ export default async function ArbetsomradePage({ params }: Props) {
 
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <section>
-          <h2 className="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Koppling till kursplanen</h2>
-          <p className="mb-2 text-sm text-neutral-500">Utifrån förslaget till ny kursplan i svenska (remiss november 2026).</p>
+          <h2 className="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Koppling till {stadie === "gymnasiet" ? "ämnesplanen" : "kursplanen"}</h2>
+          <p className="mb-2 text-sm text-neutral-500">Utifrån {underlag(stadie)}.</p>
           <ul className="list-disc space-y-1 pl-5 text-neutral-700 dark:text-neutral-300">
             {ao.kursplan.map((k) => (
               <li key={k}>{k}</li>

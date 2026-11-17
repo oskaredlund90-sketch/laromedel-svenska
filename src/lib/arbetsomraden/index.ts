@@ -5,8 +5,9 @@ import { DIALEKTER } from "./data/dialekter";
 import { NORDEN } from "./data/norden";
 import { KALLKRITIK_HOG } from "./data/kallkritik";
 import { KALLKRITIK_MEL, KALLOR_LAG, ORDENS_VARDE_MEL } from "./data/mellan-lag";
+import { RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY } from "./data/gymnasiet";
 
-export const ARBETSOMRADEN: Arbetsomrade[] = [KALLOR_LAG, KALLKRITIK_MEL, ORDENS_VARDE_MEL, DIALEKTER, KALLKRITIK_HOG, SPRAKHISTORIA, NORDEN];
+export const ARBETSOMRADEN: Arbetsomrade[] = [KALLOR_LAG, KALLKRITIK_MEL, ORDENS_VARDE_MEL, DIALEKTER, KALLKRITIK_HOG, SPRAKHISTORIA, NORDEN, RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY];
 
 export function arbetsomradenFor(stadie: AgeGroup): Arbetsomrade[] {
   return ARBETSOMRADEN.filter((a) => a.stadie === stadie).sort((a, b) => Number(a.arskurs) - Number(b.arskurs));
@@ -23,3 +24,14 @@ export const STADIESPANN: Record<AgeGroup, string> = {
   hogstadiet: "åk 8–10",
   gymnasiet: "gymnasiet",
 };
+
+/** Vad arbetsområdena på stadiet utgår från. */
+export function underlag(stadie: AgeGroup): string {
+  return stadie === "gymnasiet"
+    ? "ämnesplanen i svenska för gymnasieskolan"
+    : "förslaget till ny kursplan i svenska (remiss november 2026)";
+}
+
+export function arEtikett(stadie: AgeGroup, ak: string): string {
+  return stadie === "gymnasiet" ? `år ${ak}` : `årskurs ${ak}`;
+}

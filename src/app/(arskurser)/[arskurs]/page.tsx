@@ -290,6 +290,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Users,
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för vetenskapligt skrivande, retorik och litteratur", icon: Users },
+        { slug: "arbetsomraden", title: "Arbetsområden", description: "Retorik, språksociologi och vetenskapligt skrivande – med förtest, lektioner och prov", icon: LayoutList },
         { slug: "kursplan", title: "Kursplan", description: "Kursplaner för Svenska 1–3 och SVA 1–3 från Skolverket", icon: BookOpen },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI i akademiskt skrivande – möjligheter, risker och källkritik", icon: Sparkles },
       ],

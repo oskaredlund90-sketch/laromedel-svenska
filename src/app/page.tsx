@@ -289,7 +289,7 @@ export default async function HomePage() {
                     Lektionsplaner – {g.label.toLowerCase()}
                   </Link>
                 ))}
-                {(["lagstadiet", "mellanstadiet", "hogstadiet"] as const).map((s) => (
+                {(["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"] as const).map((s) => (
                   <Link key={s} href={`/${s}/arbetsomraden`} className="rounded-full bg-amber-400/90 px-4 py-2 text-sm font-medium text-amber-950 hover:bg-amber-300">
                     Arbetsområden – {AGE_GROUPS.find((g) => g.slug === s)?.label.toLowerCase()}
                   </Link>
