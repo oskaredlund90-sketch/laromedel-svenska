@@ -12,6 +12,13 @@
 
 ## Kvalitetsgranskning av läromedlet
 
-- Efter varje ny eller ändrad genomgång, övning, häfte, prov eller facit: kör agenten `granskare` (`.claude/agents/granskare.md`) på det som ändrats och åtgärda fynden innan commit. En hook i `.claude/settings.json` påminner om det.
+- Efter varje ny eller ändrad genomgång, övning, häfte, prov, facit, arbetsområde eller lärarhandledning: kör agenten `granskare` (`.claude/agents/granskare.md`) på det som ändrats och åtgärda fynden innan commit. En hook i `.claude/settings.json` påminner om det.
 - Granskaren läser materialet som text via `npm run granska` (→ `lararrum/granskning/text/`), inte via PDF.
 - Ge granskaren en avgränsad omfattning (ändrade filer/id:n). Hela materialet granskas bara vid större omarbetningar.
+
+## Planering och arbetsområden
+
+- Årsplan för grammatiken: `src/lib/grammatik/arsplan.ts` (kapitel och lektioner per årskurs i den föreslagna tioåriga grundskolan). Lektioner, bilder och utskrifter: `src/lib/grammatik/lektioner.ts` → `/[stadium]/grammatik/planering/[ak]`.
+- Arbetsområden: `src/lib/arbetsomraden/data/*.ts` (typer i `typer.ts`, register i `index.ts`) → `/[stadium]/arbetsomraden/[id]` med presentation och utskrift. Nya områden följer samma format: förtest, lektioner (mål, upplägg, bilder, elevtext, uppgifter, länkar), prov med bedömningsstöd.
+- Lärarhandledningar: `src/lib/data/lararhandledningar.ts` + `lararhandledning-remiss.ts` (koppling till förslaget) + `lararhandledning-prov.ts` (förtest/prov).
+- Sidan om förslaget till ny kursplan: `src/app/ny-kursplan/page.tsx`.

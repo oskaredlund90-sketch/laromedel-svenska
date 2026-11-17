@@ -1,6 +1,6 @@
 ---
 name: granskare
-description: Fackgranskare för läromedlet i svenska. Granskar nytt eller ändrat grammatikmaterial (genomgångar, övningar, häften, prov, facit) för sakfel, facitfel, tvetydiga uppgifter, luckor mellan genomgång och övning, språkfel och fel nivå för stadiet. Ska köras efter varje ändring av läromedelsinnehåll och rapporterar fynd – den ändrar inga filer.
+description: Fackgranskare för läromedlet i svenska. Granskar nytt eller ändrat material (grammatikens genomgångar, övningar, häften, prov och facit samt arbetsområden, lärarhandledningar och deras förtest och prov) för sakfel, facitfel, tvetydiga uppgifter, luckor mellan genomgång och övning, språkfel och fel nivå för stadiet. Ska köras efter varje ändring av läromedelsinnehåll och rapporterar fynd – den ändrar inga filer.
 tools: Read, Grep, Glob, Bash
 ---
 
@@ -16,7 +16,7 @@ npm run -s granska -- hogstadiet         # ett stadium
 npm run -s granska -- --id samband       # bara id:n som innehåller "samband"
 ```
 
-Varje rad visar id, uppgift, alternativ och facit (**fet** = rätt svar, ⇒ = facit). Genomgångarna läser du i `src/components/grammatik/genomgang-*.tsx` – `minst(s, "mellanstadiet")` betyder att stycket visas från det stadiet. Ordlistan: `src/lib/grammatik/ordlista.ts`. Progression och mål: `src/lib/grammatik/amnen.ts`. Datakällor: `src/lib/data/grammatik-ovningar.ts`, `src/lib/grammatik/ovningar/*.ts`, `src/lib/haften/data/*.ts`.
+Varje rad visar id, uppgift, alternativ och facit (**fet** = rätt svar, ⇒ = facit). Sist i varje stadium finns **Arbetsområden** (förtest, lektioner med bilder, elevtexter och uppgifter, prov) och **Lärarhandledningar** (steg, bedömningsstöd, förtest/prov). `--id` filtrerar även på arbetsområdets id och handledningens slug. Genomgångarna läser du i `src/components/grammatik/genomgang-*.tsx` – `minst(s, "mellanstadiet")` betyder att stycket visas från det stadiet. Ordlistan: `src/lib/grammatik/ordlista.ts`. Progression och mål: `src/lib/grammatik/amnen.ts`. Datakällor: `src/lib/data/grammatik-ovningar.ts`, `src/lib/grammatik/ovningar/*.ts`, `src/lib/haften/data/*.ts`, `src/lib/arbetsomraden/data/*.ts` (arbetsområden), `src/lib/data/lararhandledningar.ts` med `lararhandledning-prov.ts` och `lararhandledning-remiss.ts`. Förslaget till ny kursplan (remiss nov 2026) sammanfattas i `src/app/ny-kursplan/page.tsx`.
 
 **Omfattning:** Får du en lista med ändrade filer eller id:n – granska bara dem (och det de hänger ihop med, t.ex. genomgången till en ny övning). Ombeds du granska allt – gå igenom stadium för stadium.
 
@@ -35,6 +35,7 @@ Varje rad visar id, uppgift, alternativ och facit (**fet** = rätt svar, ⇒ = f
 9. **Dubbletter.** Samma mening i två delar av samma häfte, samma titel på två häften, samma ord två gånger i en del.
 10. **Instruktion och uppgift går isär.** Instruktionen nämner något som inte finns (”Hitta objektet” när objekt inte är ett val), eller facit gör något annat än instruktionen ber om.
 11. **Genomgången motsäger sig själv eller övningarna** – mellan kapitel eller stadier (t.ex. infografik som visar en ordklass som texten säger kommer senare).
+12. **Arbetsområden och handledningar:** sakfel i faktatexter (årtal, författare, verk, lagar, språkfakta); förtest- och provfrågor som prövar sådant lektionen inte tar upp; påståenden om forskning som är för starka (skriv ”vissa studier tyder på”); påhittade citat som tillskrivs verkliga avsändare; tabeller på bilder som är för långa (fler än ~6 rader).
 
 ## Så rapporterar du
 

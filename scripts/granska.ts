@@ -17,6 +17,11 @@ import { hamtaHafte } from "@/lib/haften";
 import { facitText, utskriftsText, type Hafte } from "@/lib/haften/typer";
 import { SKRIV_SJALV } from "@/lib/grammatik/skriv-sjalv";
 import { skrivdelFor } from "@/lib/grammatik/prov-skrivdel";
+import { arbetsomradenFor } from "@/lib/arbetsomraden";
+import type { AoBild, AoFraga, Arbetsomrade } from "@/lib/arbetsomraden/typer";
+import { TEACHER_GUIDES } from "@/lib/data/lararhandledningar";
+import { HANDLEDNING_PROV } from "@/lib/data/lararhandledning-prov";
+import { HANDLEDNING_TILLAGG } from "@/lib/data/lararhandledning-remiss";
 
 const STADIER: AgeGroup[] = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
 const args = process.argv.slice(2);
@@ -63,6 +68,51 @@ function hafte(h: Hafte): string {
   return rader.join("\n");
 }
 
+function aoFraga(f: AoFraga, i: number): string {
+  return `${i + 1}. ${f.fraga}  Alternativ: ${f.alternativ.map((a, j) => (j === f.ratt ? `**${a}**` : a)).join(" | ")}${f.forklaring ? `  (Förklaring: ${f.forklaring})` : ""}`;
+}
+
+function aoBild(b: AoBild): string {
+  switch (b.typ) {
+    case "punkter":
+      return `- Bild "${b.rubrik}": ${b.punkter.join(" / ")}`;
+    case "jamfor":
+      return `- Tabell "${b.rubrik}" (${b.kolumner.join(" | ")}): ${b.rader.map(([a, c]) => `${a} → ${c}`).join(" / ")}`;
+    case "fraga":
+      return `- Bildfråga: ${aoFraga(b.fraga, 0).slice(3)}`;
+    case "uppgift":
+      return `- Uppgift "${b.rubrik}": ${b.text}${b.punkter ? " " + b.punkter.join(" / ") : ""}`;
+    case "diskutera":
+      return `- Diskutera: ${b.fragor.join(" / ")}`;
+  }
+}
+
+function arbetsomrade(a: Arbetsomrade): string {
+  const r: string[] = [`### Arbetsområde: ${a.titel} [${a.id}] – förslag åk/år ${a.arskurs}`, a.ingress, `Kursplan: ${a.kursplan.join(" / ")}`, `Mål: ${a.mal.join(" / ")}`, `Begrepp: ${a.begrepp.map(([t, f]) => `${t} = ${f}`).join(" / ")}`, "#### Förtest", ...a.fortest.map(aoFraga)];
+  a.lektioner.forEach((l, i) => {
+    r.push(`#### Lektion ${i + 1}: ${l.titel}`, `Mål: ${l.mal}`, `Upplägg: ${l.upplagg.join(" / ")}`, ...l.bilder.map(aoBild));
+    for (const t of l.elevtext) r.push(`Elevtext "${t.rubrik}": ${t.stycken.join(" ")}`);
+    r.push(`Uppgifter: ${l.uppgifter.join(" / ")}`);
+  });
+  r.push("#### Prov", ...a.prov.fragor.map(aoFraga), ...a.prov.oppna.map((o) => `Öppen: ${o.fraga} | Bedöm: ${o.bedomning.join("; ")}`), `Tips: ${a.tips.join(" / ")}`);
+  return r.join("\n");
+}
+
+function handledningar(stadie: AgeGroup): string[] {
+  return TEACHER_GUIDES.filter((g) => g.ageGroup === stadie && (!idFilter || g.slug.includes(idFilter))).map((g) => {
+    const p = HANDLEDNING_PROV[g.slug];
+    const t = HANDLEDNING_TILLAGG[g.slug];
+    return [
+      `### Lärarhandledning: ${g.title} [${g.slug}]`,
+      `Syfte: ${g.syfte}`,
+      ...(t?.remiss.length ? [`Koppling till förslaget: ${t.remiss.join(" / ")}`] : []),
+      ...g.genomforande.map((x) => `- ${x.steg}: ${x.beskrivning}`),
+      `Bedömningsstöd: ${g.bedomningsstod.join(" / ")}`,
+      ...(p ? ["Förtest/prov:", ...p.fragor.map(aoFraga), `Bedömningsuppgift: ${p.uppgift}`] : []),
+    ].join("\n");
+  });
+}
+
 const ut = path.join(process.cwd(), "lararrum", "granskning", "text");
 mkdirSync(ut, { recursive: true });
 
@@ -91,6 +141,10 @@ for (const stadie of stadier) {
   if (start && (!idFilter || start.id.includes(idFilter))) delar.push("## Startprov (prövar föregående stadium)", hafte(start), "");
   const slut = hamtaHafte(`prov-${stadie}`);
   if (slut && (!idFilter || slut.id.includes(idFilter))) delar.push("## Slutprov", hafte(slut));
+  const ao = arbetsomradenFor(stadie).filter((x) => !idFilter || x.id.includes(idFilter));
+  if (ao.length) delar.push("", "## Arbetsområden", ...ao.map((x) => arbetsomrade(x) + "\n"));
+  const lh = handledningar(stadie);
+  if (lh.length) delar.push("", "## Lärarhandledningar", ...lh.map((x) => x + "\n"));
   const fil = path.join(ut, `${stadie}.md`);
   writeFileSync(fil, delar.join("\n") + "\n");
   console.log(`${fil} (${delar.join("\n").split("\n").length} rader)`);
