@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AGE_GROUPS, GRADE_RANGES } from "@/lib/skolverket/constants";
 import { getSvenskaGrundskola, getSvaGrundskola, getSvenskaGymnasium, getSvaGymnasium } from "@/lib/skolverket/client";
@@ -61,6 +62,16 @@ export default async function KursplanPage({ params, searchParams }: Props) {
         <p className="mt-2 text-neutral-600 dark:text-neutral-400">
           {gradeRange ? gradeRange.label : "Gymnasiet"} &middot; Från Skolverkets öppna API
         </p>
+        <Link
+          href="/ny-kursplan"
+          className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm dark:border-amber-900 dark:bg-amber-950/30"
+        >
+          <span>
+            <strong className="text-neutral-900 dark:text-white">Ny kursplan på remiss.</strong>{" "}
+            <span className="text-neutral-700 dark:text-neutral-300">Skolverket föreslår en tioårig grundskola med ny kursplan från 2028. Läs vad som ändras i svenska.</span>
+          </span>
+          <span className="shrink-0 font-semibold text-amber-800 dark:text-amber-300">Läs mer →</span>
+        </Link>
       </div>
 
       <SubjectToggle currentSubject={isSva ? "sva" : "svenska"} />

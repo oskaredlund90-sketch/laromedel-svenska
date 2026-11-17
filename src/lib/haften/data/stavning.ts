@@ -245,30 +245,30 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
       },
       {
         rubrik: "Del C",
-        instruktion: "Det finns ett stavfel i varje mening. Skriv meningen rätt.",
+        instruktion: "Varje mening har två eller tre stavfel. Hitta alla och skriv meningen rätt.",
         typ: "ratta",
         rader: `
-          Vi gick hemm efter skolan. => Vi gick hem efter skolan.
-          Mitt rumm är blått. => Mitt rum är blått.
-          Jag städade rumet. => Jag städade rummet.
-          Hon är hema i dag. => Hon är hemma i dag.
-          Han komm för sent. => Han kom för sent.
-          Glömm inte nyckeln! => Glöm inte nyckeln!
-          Hon glömmde boken. => Hon glömde boken.
-          Jag kännde mig trött. => Jag kände mig trött.
-          Min vänn heter Sara. => Min vän heter Sara.
-          Vi är bästa väner. => Vi är bästa vänner.
-          Manen hade en röd mössa. => Mannen hade en röd mössa.
-          Isen är för tun. => Isen är för tunn.
-          Ljuset briner på bordet. => Ljuset brinner på bordet.
-          Vårt lag van matchen. => Vårt lag vann matchen.
-          Han drömmde om sommaren. => Han drömde om sommaren.
-          Jag mins inte hans namn. => Jag minns inte hans namn.
-          Komm hit och titta! => Kom hit och titta!
-          Hon tömmde glaset. => Hon tömde glaset.
-          Öppna munen! => Öppna munnen!
-          Himmlen var mörk. => Himlen var mörk.
-          Jag käner igen dig. => Jag känner igen dig.
+          Vi stanade hema hela söndagen. => Vi stannade hemma hela söndagen.
+          Min vänn glömmde sin mössa i rumet. => Min vän glömde sin mössa i rummet.
+          Hon kännde igen manen som komm in. => Hon kände igen mannen som kom in.
+          Glömm inte att tömma papperskorgen i rumet. => Glöm inte att tömma papperskorgen i rummet.
+          Ljuset brane hela natten och vaxet ran ner på bordet. => Ljuset brann hela natten och vaxet rann ner på bordet.
+          Vi van matchen, men tränaren glömmde att gratulera oss. => Vi vann matchen, men tränaren glömde att gratulera oss.
+          Han drömmde att himmlen var grön. => Han drömde att himlen var grön.
+          Jag mins inte vem som tände ljusen i rumet. => Jag minns inte vem som tände ljusen i rummet.
+          Komm ihåg att stänga dörren när du komer hem. => Kom ihåg att stänga dörren när du kommer hem.
+          Hon var ensamm hema hela kvällen. => Hon var ensam hemma hela kvällen.
+          Isen var tun, så mamma sa att vi skulle stana på land. => Isen var tunn, så mamma sa att vi skulle stanna på land.
+          Vänerna samlades hemma hos Sara men glömmde tårtan. => Vännerna samlades hemma hos Sara men glömde tårtan.
+          Han kännde sig glad när han van tävlingen. => Han kände sig glad när han vann tävlingen.
+          Barnen sprang ut ur rumet och glömmde att stänga dörren. => Barnen sprang ut ur rummet och glömde att stänga dörren.
+          Tömm glaset och ställ det i diskmaskinen, sa manen. => Töm glaset och ställ det i diskmaskinen, sa mannen.
+          Mina tumar frös när vi väntade på tåget i fem timar. => Mina tummar frös när vi väntade på tåget i fem timmar.
+          Hon hade glömmt kamen hemma. => Hon hade glömt kammen hemma.
+          Vi brukar sima i damen bakom huset. => Vi brukar simma i dammen bakom huset.
+          Jag käner inte igen den där kvinan. => Jag känner inte igen den där kvinnan.
+          Lampan i rumet slocknade och himmlen blev mörk. => Lampan i rummet slocknade och himlen blev mörk.
+          Han komm hem sent, glömmde nycklarna och fick sova hos en vänn. => Han kom hem sent, glömde nycklarna och fick sova hos en vän.
         `,
       },
     ],
@@ -881,39 +881,39 @@ export const STAVNING_HAFTEN: HafteKalla[] = [
       },
       {
         rubrik: "Del B",
-        instruktion: "Det finns ett fel med versal eller gemen i varje mening. Skriv meningen rätt.",
+        instruktion: "Varje mening har två till fyra fel med versal eller gemen. Hitta alla och skriv meningen rätt.",
         typ: "ratta",
         rader: `
-          Vi seglade över atlanten. => Vi seglade över Atlanten.
-          Han är Svensk. => Han är svensk.
-          Vi träffade Kung Carl Gustaf. => Vi träffade kung Carl Gustaf.
-          Hon bor i Södra Sverige. => Hon bor i södra Sverige.
-          Vi läste Ronja Rövardotter. => Vi läste Ronja rövardotter.
-          Jag är med i röda korset. => Jag är med i Röda korset.
-          På Medeltiden fanns riddare. => På medeltiden fanns riddare.
-          Vi firar Nationaldagen i juni. => Vi firar nationaldagen i juni.
-          Sverige är med i Eu. => Sverige är med i EU.
-          Vi badade i medelhavet. => Vi badade i Medelhavet.
-          Hon är Göteborgare. => Hon är göteborgare.
-          Vi åt gott på Nyårsafton. => Vi åt gott på nyårsafton.
-          Jag gick till Doktor Lund. => Jag gick till doktor Lund.
-          Andra Världskriget slutade 1945. => Andra världskriget slutade 1945.
-          Vi åkte till usa. => Vi åkte till USA.
-          Vi tog med frukt, T.ex. äpplen. => Vi tog med frukt, t.ex. äpplen.
-          Fn arbetar för fred. => FN arbetar för fred.
-          Vi tittade på Sagan Om Ringen. => Vi tittade på Sagan om ringen.
-          Vi läser om Islam. => Vi läser om islam.
-          Hon talar Engelska hemma. => Hon talar engelska hemma.
-          Vi besökte vasamuseet. => Vi besökte Vasamuseet.
-          Det beslutade Riksdagen. => Det beslutade riksdagen.
-          Vår Statsminister talade. => Vår statsminister talade.
-          Vi gick på liseberg. => Vi gick på Liseberg.
-          Min kusin är Norrman. => Min kusin är norrman.
-          Hon bor i norrland. => Hon bor i Norrland.
-          Vi firar Påsk i april. => Vi firar påsk i april.
-          Östersjön ligger öster om sverige. => Östersjön ligger öster om Sverige.
-          Jag tittar på svt. => Jag tittar på SVT.
-          Han är Muslim. => Han är muslim.
+          I Juli åkte vi till Norra Italien med Familjen Berg. => I juli åkte vi till norra Italien med familjen Berg.
+          Statsministern talade i Riksdagen om Eu-valet. => Statsministern talade i riksdagen om EU-valet.
+          Vi läste Bröderna Lejonhjärta av astrid Lindgren på Svenskan. => Vi läste Bröderna Lejonhjärta av Astrid Lindgren på svenskan.
+          Min Moster är Dansk men bor i Norra Skåne. => Min moster är dansk men bor i norra Skåne.
+          På Måndag firar vi Nationaldagen med Kungen. => På måndag firar vi nationaldagen med kungen.
+          Hon jobbar på skolverket och läser Engelska på Kvällarna. => Hon jobbar på Skolverket och läser engelska på kvällarna.
+          Under Renässansen målade Leonardo Da Vinci Mona Lisa. => Under renässansen målade Leonardo da Vinci Mona Lisa.
+          Vi såg filmen Sagan Om Ringen på Bio i Malmö. => Vi såg filmen Sagan om ringen på bio i Malmö.
+          Förenta Nationerna har sitt huvudkontor i new York. => Förenta nationerna har sitt huvudkontor i New York.
+          Han är Muslim och firar Ramadan med sina Syriska vänner. => Han är muslim och firar ramadan med sina syriska vänner.
+          Vi åkte över stora Bält till Köpenhamn i Maj. => Vi åkte över Stora Bält till Köpenhamn i maj.
+          Doktor Ahmed jobbar på Karolinska Universitetssjukhuset i Solna Kommun. => Doktor Ahmed jobbar på Karolinska universitetssjukhuset i Solna kommun.
+          Under Andra Världskriget var Sverige neutralt enligt Regeringen. => Under andra världskriget var Sverige neutralt enligt regeringen.
+          Vi firar Jul och Nyår hos Mormor i Dalarna. => Vi firar jul och nyår hos mormor i Dalarna.
+          Jag har läst bibeln och Koranen på Religionen. => Jag har läst Bibeln och Koranen på religionen.
+          Hon flyttade från norrland till Södra Spanien på Fredagen. => Hon flyttade från Norrland till södra Spanien på fredagen.
+          Svt och sveriges Radio sände nyheterna på Söndagen. => SVT och Sveriges Radio sände nyheterna på söndagen.
+          Vi besökte eiffeltornet och Louvren i Paris förra Sommaren. => Vi besökte Eiffeltornet och Louvren i Paris förra sommaren.
+          Min bror är Norrman och hejar på Norska Landslaget. => Min bror är norrman och hejar på norska landslaget.
+          Alla Göteborgare firade när Ifk Göteborg vann matchen. => Alla göteborgare firade när IFK Göteborg vann matchen.
+          Vi läser om Vikingatiden och Medeltiden i Historia. => Vi läser om vikingatiden och medeltiden i historia.
+          Vi träffade Påven i Rom på Allhelgonadagen. => Vi träffade påven i Rom på allhelgonadagen.
+          Han studerar Juridik vid Uppsala Universitet. => Han studerar juridik vid Uppsala universitet.
+          Vi såg Kronprinsessan Victoria på Nationaldagen. => Vi såg kronprinsessan Victoria på nationaldagen.
+          Atlanten och stilla Havet är världens största Hav. => Atlanten och Stilla havet är världens största hav.
+          Min Farfar kommer från Turkiet och talar Turkiska. => Min farfar kommer från Turkiet och talar turkiska.
+          Vi läste Harry Potter Och De Vises Sten på höstlovet. => Vi läste Harry Potter och de vises sten på höstlovet.
+          Moderaterna och socialdemokraterna debatterade i Partiledardebatten på Svt. => Moderaterna och Socialdemokraterna debatterade i partiledardebatten på SVT.
+          Vi tog Tåget från Stockholms Central till Uppsala. => Vi tog tåget från Stockholms central till Uppsala.
+          Han är Ordförande i Röda Korset sedan Januari. => Han är ordförande i Röda korset sedan januari.
         `,
       },
       {

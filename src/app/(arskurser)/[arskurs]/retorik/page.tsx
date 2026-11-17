@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { RetorikOvningar } from "@/components/retorik-ovningar";
+import { LasMer } from "@/components/arbetsomraden/las-mer";
 
 const VALID_AGE_GROUPS = new Set(AGE_GROUPS.map((g) => g.slug));
 
@@ -62,6 +63,8 @@ export default async function RetorikPage({ params }: Props) {
       </div>
 
       <RetorikInfografik stadie={level} />
+
+      <LasMer stadie={level} id={{ lagstadiet: undefined, mellanstadiet: "ord-som-paverkar", hogstadiet: "dialekter-och-sprakbruk", gymnasiet: "retorik-och-argumentation" }[level]} />
 
       <RetorikOvningar ageGroup={level} />
     </div>

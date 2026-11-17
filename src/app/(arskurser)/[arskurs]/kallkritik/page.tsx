@@ -6,6 +6,7 @@ import { AGE_GROUPS } from "@/lib/skolverket/constants";
 import type { AgeGroup } from "@/lib/supabase/types";
 import { getKallkritikExercises } from "@/lib/data/kallkritik-ovningar";
 import KallkritikOvningar from "@/components/kallkritik-ovningar";
+import { LasMer } from "@/components/arbetsomraden/las-mer";
 
 const VALID_AGE_GROUPS = new Set(AGE_GROUPS.map((g) => g.slug));
 
@@ -64,6 +65,8 @@ export default async function KallkritikPage({ params }: Props) {
       </div>
 
       <KallkritikInfografik stadie={level} />
+
+      <LasMer stadie={level} id={{ lagstadiet: undefined, mellanstadiet: "sant-eller-falskt", hogstadiet: "kallkritik-algoritmer-och-ai", gymnasiet: "vetenskapligt-skrivande" }[level]} />
 
       <KallkritikOvningar exercises={exercises} ageGroup={level} />
     </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, Printer } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, FileText, MonitorPlay, Printer } from "lucide-react";
+import { HANDLEDNING_TILLAGG } from "@/lib/data/lararhandledning-remiss";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { AGE_GROUPS } from "@/lib/skolverket/constants";
@@ -41,6 +42,7 @@ export default async function GuideDetailPage({ params }: Props) {
   }
 
   const group = AGE_GROUPS.find((g) => g.slug === arskurs);
+  const tillagg = HANDLEDNING_TILLAGG[slug];
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
@@ -75,6 +77,20 @@ export default async function GuideDetailPage({ params }: Props) {
             </Badge>
           ))}
         </div>
+        <div className="mt-6 flex flex-wrap gap-2 no-print">
+          <Link
+            href={`/${arskurs}/lararhandledning/${slug}/presentation`}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-sky-600 px-3 py-2 text-sm font-medium text-white hover:bg-sky-700"
+          >
+            <MonitorPlay className="h-4 w-4" /> Bilder till lektionen
+          </Link>
+          <Link
+            href={`/${arskurs}/lararhandledning/${slug}/elevblad`}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 px-3 py-2 text-sm font-medium hover:border-neutral-500 dark:border-neutral-700"
+          >
+            <FileText className="h-4 w-4" /> Elevblad att skriva ut
+          </Link>
+        </div>
       </header>
 
       {/* Syfte */}
@@ -84,8 +100,25 @@ export default async function GuideDetailPage({ params }: Props) {
         </p>
       </Section>
 
-      {/* Koppling till kursplan */}
-      <Section title="Koppling till kursplan">
+      {/* Koppling till förslaget till ny kursplan */}
+      {tillagg && tillagg.remiss.length > 0 && (
+        <Section title="Koppling till förslaget till ny kursplan">
+          <p className="mb-2 text-sm text-neutral-500">
+            Förslaget till kursplan i svenska för den tioåriga grundskolan (remiss november 2026).{" "}
+            <Link href="/ny-kursplan" className="font-medium text-sky-700 hover:underline dark:text-sky-400">
+              Läs om vad som ändras
+            </Link>
+          </p>
+          <ul className="list-disc space-y-1 pl-5 text-neutral-700 dark:text-neutral-300">
+            {tillagg.remiss.map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
+      {/* Koppling till nuvarande kursplan */}
+      <Section title={arskurs === "gymnasiet" ? "Koppling till ämnesplanen" : "Koppling till nuvarande kursplan (Lgr22)"}>
         <p className="text-neutral-700 leading-relaxed dark:text-neutral-300">
           {guide.kopplingKursplan}
         </p>
@@ -144,6 +177,27 @@ export default async function GuideDetailPage({ params }: Props) {
           ))}
         </ul>
       </Section>
+
+      {/* Fortsätt med */}
+      {tillagg && tillagg.fortsatt.length > 0 && (
+        <Section title="Fortsätt med">
+          <p className="mb-3 text-sm text-neutral-600 dark:text-neutral-400">
+            Lektionen är en enskild lektion. Vill du arbeta längre med området finns färdiga arbetsområden med förtest, flera lektioner,
+            presentation och prov.
+          </p>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {tillagg.fortsatt.map(([titel, sokvag]) => (
+              <Link
+                key={sokvag}
+                href={`/${arskurs}/${sokvag}`}
+                className="flex items-center justify-between gap-2 rounded-lg border border-neutral-200 px-4 py-3 text-sm font-medium hover:border-neutral-400 dark:border-neutral-800"
+              >
+                {titel} <ArrowRight className="h-4 w-4 shrink-0" />
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* Share & Copy */}
       <ShareToolbar

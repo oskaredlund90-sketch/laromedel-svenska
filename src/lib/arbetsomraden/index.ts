@@ -6,8 +6,21 @@ import { NORDEN } from "./data/norden";
 import { KALLKRITIK_HOG } from "./data/kallkritik";
 import { KALLKRITIK_MEL, KALLOR_LAG, ORDENS_VARDE_MEL } from "./data/mellan-lag";
 import { RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY } from "./data/gymnasiet";
+import { INSTRUKTIONER, LJUD_BOKSTAVER, SKRIVA_FOR_HAND } from "./data/lag-nya";
+import { BERATTELSER_MEL, DIGITALT_MEL, SKRIVA_LARA_MEL } from "./data/mel-nya";
+import { DIGITALT_HOG, SKONLITTERATUR_HOG, SKRIVA_LARA_HOG } from "./data/hog-nya";
 
-export const ARBETSOMRADEN: Arbetsomrade[] = [KALLOR_LAG, KALLKRITIK_MEL, ORDENS_VARDE_MEL, DIALEKTER, KALLKRITIK_HOG, SPRAKHISTORIA, NORDEN, RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY];
+export const ARBETSOMRADEN: Arbetsomrade[] = [
+  LJUD_BOKSTAVER,
+  SKRIVA_FOR_HAND,
+  INSTRUKTIONER,
+  SKRIVA_LARA_MEL,
+  BERATTELSER_MEL,
+  DIGITALT_MEL,
+  SKRIVA_LARA_HOG,
+  DIGITALT_HOG,
+  SKONLITTERATUR_HOG,
+  KALLOR_LAG, KALLKRITIK_MEL, ORDENS_VARDE_MEL, DIALEKTER, KALLKRITIK_HOG, SPRAKHISTORIA, NORDEN, RETORIK_GY, SPRAKSOCIOLOGI_GY, VETENSKAPLIGT_GY];
 
 export function arbetsomradenFor(stadie: AgeGroup): Arbetsomrade[] {
   return ARBETSOMRADEN.filter((a) => a.stadie === stadie).sort((a, b) => Number(a.arskurs) - Number(b.arskurs));

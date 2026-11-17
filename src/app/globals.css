@@ -125,6 +125,14 @@ body {
   .bok .rounded-xl .rounded-lg {
     break-inside: avoid;
   }
+  /* Infografik: ramen får delas mellan sidor, men aldrig korten i den. */
+  .bok .infografik-bok > * {
+    break-inside: auto;
+  }
+  .bok .infografik-bok > * [class*="rounded"],
+  .bok .infografik-bok > * [class*="border-l-"] {
+    break-inside: avoid;
+  }
   .bok h2,
   .bok h3,
   .bok h4 {

@@ -280,6 +280,9 @@ export default async function HomePage() {
                 </div>
               </div>
               <div className="mt-8 flex flex-wrap gap-2 border-t border-white/10 pt-6">
+                <Link href="/ny-kursplan" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-neutral-100">
+                  Ny kursplan på remiss – vad ändras?
+                </Link>
                 {AGE_GROUPS.map((g) => (
                   <Link
                     key={g.slug}

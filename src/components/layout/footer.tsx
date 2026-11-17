@@ -77,6 +77,11 @@ export function Footer() {
             </h3>
             <ul className="mt-2 space-y-1 text-sm text-neutral-500 dark:text-neutral-400">
               <li>Kursplaner fr&aring;n Skolverkets &ouml;ppna API</li>
+              <li>
+                <Link href="/ny-kursplan" className="hover:text-neutral-900 dark:hover:text-white">
+                  Ny kursplan p&aring; remiss &ndash; vad &auml;ndras?
+                </Link>
+              </li>
               <li>Fritt att anv&auml;nda (CC0)</li>
               <li>
                 <Link
