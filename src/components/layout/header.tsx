@@ -1,25 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { BookOpen, Menu, Search, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
+import { bytStadium } from "@/lib/stadiebyte";
+import type { AgeGroup } from "@/lib/supabase/types";
 
-const AGE_GROUPS = [
-  { href: "/lagstadiet", label: "Lågstadiet", short: "Åk 1–3" },
-  { href: "/mellanstadiet", label: "Mellanstadiet", short: "Åk 4–6" },
-  { href: "/hogstadiet", label: "Högstadiet", short: "Åk 7–9" },
-  { href: "/gymnasiet", label: "Gymnasiet", short: "Gym" },
+const AGE_GROUPS: { href: string; label: string; short: string; stadium?: AgeGroup }[] = [
+  { href: "/lagstadiet", label: "Lågstadiet", short: "Åk 1–3", stadium: "lagstadiet" },
+  { href: "/mellanstadiet", label: "Mellanstadiet", short: "Åk 4–6", stadium: "mellanstadiet" },
+  { href: "/hogstadiet", label: "Högstadiet", short: "Åk 7–9", stadium: "hogstadiet" },
+  { href: "/gymnasiet", label: "Gymnasiet", short: "Gym", stadium: "gymnasiet" },
   { href: "/ovningshaften", label: "Övningshäften", short: "Häften" },
   { href: "/veckans-ord", label: "Veckans ord", short: "Ord" },
 ];
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Stadieknapparna byter stadium men stannar på samma sida (grammatik → grammatik).
+  const lank = (item: (typeof AGE_GROUPS)[number]) => (item.stadium ? bytStadium(pathname, "", item.stadium) : item.href);
+  const byt = (e: React.MouseEvent, item: (typeof AGE_GROUPS)[number]) => {
+    if (!item.stadium || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    router.push(bytStadium(pathname, window.location.search, item.stadium));
+  };
   const [scrolled, setScrolled] = useState(false);
 
   // Detect which age group is active based on path
@@ -52,7 +63,8 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-white"
         >
-          <BookOpen className="h-5 w-5" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/icon.svg" alt="" width={26} height={26} className="h-[26px] w-[26px]" />
           <span className="hidden sm:inline">Läromedel i Svenska</span>
           <span className="sm:hidden">Svenska</span>
         </Link>
@@ -62,7 +74,8 @@ export function Header() {
           {AGE_GROUPS.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={lank(item)}
+              onClick={(e) => byt(e, item)}
               className={cn(
                 "rounded-md px-3 py-1.5 text-sm font-medium transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800",
                 activeGroup?.href === item.href
@@ -111,7 +124,8 @@ export function Header() {
             {AGE_GROUPS.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={lank(item)}
+                onClick={(e) => byt(e, item)}
                 className={cn(
                   "flex min-h-[48px] items-center rounded-md px-3 text-sm font-medium transition-colors",
                   activeGroup?.href === item.href
