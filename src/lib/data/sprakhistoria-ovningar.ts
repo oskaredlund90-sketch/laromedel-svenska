@@ -131,16 +131,16 @@ const hogstadietExercises: SprakhistoriaExercise[] = [
     ],
     correct: 1,
     explanation:
-      "Stavningsreformen 1906 förenklarade stavningen: 'hvad' blev 'vad', 'godt' blev 'gott' och 'lefva' blev 'leva'. Syftet var att stavningen bättre skulle spegla uttalet.",
+      "Stavningsreformen 1906 förenklade stavningen: 'hvad' blev 'vad', 'godt' blev 'gott' och 'lefva' blev 'leva'. Syftet var att stavningen bättre skulle spegla uttalet.",
   },
   {
     type: "quiz",
     id: "spr-hog-q9",
-    prompt: "Vad kallas den förändring som skedde på 1960-talet då svenskar slutade säga 'ni' till varandra?",
+    prompt: "Vad kallas den förändring som skedde på 1960-talet då svenskar slutade använda titlar och började säga 'du' till varandra?",
     options: ["Stavningsreformen", "Du-reformen", "Språkvårdslagen", "Ordreformen"],
     correct: 1,
     explanation:
-      "Du-reformen på 1960-talet innebar att svenskar alltmer började tilltala varandra med 'du' i stället för titlar eller 'ni'. Det speglade en samhällsförändring mot ökad jämlikhet.",
+      "Du-reformen på 1960-talet innebar att svenskar alltmer började tilltala varandra med 'du' i stället för titlar och tilltal i tredje person. Det speglade en samhällsförändring mot ökad jämlikhet.",
   },
   {
     type: "quiz",
@@ -286,10 +286,10 @@ const gymnasietExercises: SprakhistoriaExercise[] = [
     prompt:
       "Vilken princip låg bakom den fornsvenska ordföljden som skiljer sig från nusvenskans?",
     options: [
-      "Verbet stod alltid sist (SOV-ordföljd)",
+      "Verbet kunde oftare stå sist, särskilt i bisatser",
       "Subjektet stod alltid sist",
       "Ordföljden var helt fri",
-      "Fornsvenskan hade samma ordföljd som nusvenskan",
+      "Fornsvenskan hade exakt samma ordföljd som nusvenskan",
     ],
     correct: 0,
     explanation:
@@ -299,11 +299,11 @@ const gymnasietExercises: SprakhistoriaExercise[] = [
     type: "quiz",
     id: "spr-gym-q4",
     prompt:
-      "Ungefär hur stor andel av det svenska grundordförrådet uppskattas ha tyskt ursprung?",
-    options: ["Cirka 5 %", "Cirka 15 %", "Cirka 30–40 %", "Över 60 %"],
-    correct: 2,
+      "Inom vilka områden kom många lågtyska lånord in under medeltiden?",
+    options: ["Rymdfart och teknik", "Handel, hantverk och stadsliv", "Sport och musik", "Datorer och internet"],
+    correct: 1,
     explanation:
-      "Uppskattningsvis 30–40 % av det svenska ordförrådet har tyskt ursprung, med lånord inom handel (köpa, betala), hantverk (snickare, gesäll) och samhälle (borgare, fogde).",
+      "Under Hansatiden kom många lågtyska lånord inom handel (betala, handla), hantverk (snickare, gesäll) och samhälle (borgare, borgmästare).",
   },
   {
     type: "quiz",
@@ -400,8 +400,8 @@ const gymnasietExercises: SprakhistoriaExercise[] = [
     pairs: [
       { left: "Fyra kasus (nominativ, genitiv, dativ, ackusativ)", right: "Fornsvenska" },
       { left: "SOV-ordföljd i bisatser", right: "Fornsvenska" },
-      { left: "Artiklar börjar utvecklas (en/ett, -en/-et)", right: "Äldre nysvenska" },
-      { left: "Fast SVO-ordföljd som huvudregel", right: "Nusvenska" },
+      { left: "Bestämd artikel som ändelse (-en/-et) växer fram", right: "Runsvenska och fornsvenska" },
+      { left: "Verbens pluralformer (vi äro) försvinner ur skriften", right: "Nusvenska" },
     ],
   },
   {
@@ -411,7 +411,7 @@ const gymnasietExercises: SprakhistoriaExercise[] = [
     pairs: [
       { left: "Latinska lånord (t.ex. kyrka, präst)", right: "Kristnandet" },
       { left: "Lågtyska lånord (t.ex. arbeta, betala)", right: "Hansahandeln" },
-      { left: "Franska lånord (t.ex. möbel, parfym)", right: "Stormaktstidens hovkultur" },
+      { left: "Franska lånord (t.ex. möbel, parfym)", right: "Hovkulturen på 1700-talet" },
       { left: "Engelska lånord (t.ex. mejl, sajt)", right: "Globaliseringen och internet" },
     ],
   },
@@ -421,9 +421,9 @@ const gymnasietExercises: SprakhistoriaExercise[] = [
     instruction: "Para ihop den språkpolitiska händelsen med rätt person eller institution.",
     pairs: [
       { left: "Bibelöversättningen 1541", right: "Gustav Vasa" },
-      { left: "Stavningsnormen 1801", right: "Carl Gustaf af Leopold" },
+      { left: "Svenska Akademiens ordlista (SAOL) första upplagan 1874", right: "Svenska Akademien" },
       { left: "Grundandet av Svenska Akademien", right: "Gustav III" },
-      { left: "Stavningsreformen 1906", right: "Riksdagsbeslut" },
+      { left: "Stavningsreformen 1906", right: "Fridtjuv Berg" },
     ],
   },
   {

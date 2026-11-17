@@ -259,7 +259,7 @@ export default async function HomePage() {
               <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-center">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-400">För lärare</p>
-                  <h2 className="mt-2 text-3xl font-bold tracking-tight">Färdiga lektioner i grammatik</h2>
+                  <h2 className="mt-2 text-3xl font-bold tracking-tight">Färdiga lektioner och arbetsområden</h2>
                   <p className="mt-3 text-neutral-300">
                     En lektionsplan per årskurs med presentation, sidor i boken och material att skriva ut – lektion för lektion. Börja stadiet med
                     ett startprov och se vad gruppen behöver.
@@ -269,7 +269,7 @@ export default async function HomePage() {
                   {[
                     { Ikon: MonitorPlay, titel: "Lektionsplaner", text: "Presentation och utskrift för varje lektion" },
                     { Ikon: ClipboardCheck, titel: "Startprov", text: "50 minuter i början av varje stadium" },
-                    { Ikon: BookOpen, titel: "Grammatikboken", text: "Som PDF – per årskurs eller hela stadiet" },
+                    { Ikon: BookOpen, titel: "Arbetsområden", text: "Språkhistoria, dialekter, källkritik med mera – med förtest och prov" },
                   ].map(({ Ikon, titel, text }) => (
                     <div key={titel} className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
                       <Ikon className="h-5 w-5 text-amber-400" />
@@ -287,6 +287,11 @@ export default async function HomePage() {
                     className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium hover:bg-white/20"
                   >
                     Lektionsplaner – {g.label.toLowerCase()}
+                  </Link>
+                ))}
+                {(["lagstadiet", "mellanstadiet", "hogstadiet"] as const).map((s) => (
+                  <Link key={s} href={`/${s}/arbetsomraden`} className="rounded-full bg-amber-400/90 px-4 py-2 text-sm font-medium text-amber-950 hover:bg-amber-300">
+                    Arbetsområden – {AGE_GROUPS.find((g) => g.slug === s)?.label.toLowerCase()}
                   </Link>
                 ))}
               </div>

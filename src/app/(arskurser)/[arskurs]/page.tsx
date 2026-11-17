@@ -22,8 +22,7 @@ import { Gauge,
   BookMarked,
   Globe,
   Eye,
-  MessageCircle,
-} from "lucide-react";
+  MessageCircle, LayoutList } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -123,6 +122,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Users,
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för högläsning, bokstäver och enkel berättelse", icon: Users },
+        { slug: "arbetsomraden", title: "Arbetsområden", description: "Färdiga arbetsområden med förtest, lektioner, presentation och prov", icon: LayoutList },
         { slug: "kursplan", title: "Kursplan", description: "Centralt innehåll och kunskapskrav från Skolverket för åk 1–3", icon: BookOpen },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "Hur lärare kan använda AI-verktyg i undervisningen", icon: Sparkles },
       ],
@@ -176,6 +176,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Users,
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för lässtrategier, faktatexter och kamratrespons", icon: Users },
+        { slug: "arbetsomraden", title: "Arbetsområden", description: "Färdiga arbetsområden med förtest, lektioner, presentation och prov", icon: LayoutList },
         { slug: "kursplan", title: "Kursplan", description: "Centralt innehåll och kunskapskrav från Skolverket för åk 4–6", icon: BookOpen },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI som verktyg för skrivande och lärande", icon: Sparkles },
       ],
@@ -232,6 +233,7 @@ const GROUPED_SECTION_CONFIGS: Record<string, SectionGroup[]> = {
       groupIcon: Users,
       sections: [
         { slug: "lararhandledning", title: "Lärarhandledning", description: "Lektionsplaneringar för argumentation, litteraturanalys och kritisk läsning", icon: Users },
+        { slug: "arbetsomraden", title: "Arbetsområden", description: "Färdiga arbetsområden med förtest, lektioner, presentation och prov", icon: LayoutList },
         { slug: "kursplan", title: "Kursplan", description: "Centralt innehåll och kunskapskrav från Skolverket för åk 7–9", icon: BookOpen },
         { slug: "ai-i-svenskan", title: "AI i svenskan", description: "AI-verktyg för skrivande, källkritik och språkutveckling", icon: Sparkles },
       ],

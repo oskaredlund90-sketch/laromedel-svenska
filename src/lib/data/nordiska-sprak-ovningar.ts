@@ -87,7 +87,7 @@ const hogstadietExercises: NordiskaSprakExercise[] = [
   {
     type: "quiz",
     id: "ns-hog-q4",
-    prompt: "Vilket minoritetsspråk talas främst i norra Sverige och har gamla rötter i Norden?",
+    prompt: "Vilket minoritetsspråk talas av Sveriges urfolk?",
     options: ["Romani chib", "Jiddisch", "Samiska", "Meänkieli"],
     correct: 2,
     explanation:
@@ -144,7 +144,7 @@ const hogstadietExercises: NordiskaSprakExercise[] = [
     id: "ns-hog-m3",
     instruction: "Para ihop minoritetsspråket med den region där det traditionellt talas mest.",
     pairs: [
-      { left: "Finska", right: "Tornedalen och Mälardalen" },
+      { left: "Finska", right: "Stockholm, Mälardalen och industriorter" },
       { left: "Meänkieli", right: "Tornedalen" },
       { left: "Samiska", right: "Norra Sverige (Sápmi)" },
       { left: "Jiddisch", right: "Spritt över hela Sverige (inget kärnområde)" },
@@ -157,7 +157,7 @@ const hogstadietExercises: NordiskaSprakExercise[] = [
     pairs: [
       { left: "Svenska", right: "Nordgermanska (indoeuropeiska)" },
       { left: "Finska", right: "Finsk-ugriska (uraliska)" },
-      { left: "Samiska", right: "Finsk-ugriska (uraliska)" },
+      { left: "Jiddisch", right: "Västgermanska (indoeuropeiska)" },
       { left: "Romani chib", right: "Indoariska (indoeuropeiska)" },
     ],
   },
@@ -322,7 +322,7 @@ const hogstadietExercises: NordiskaSprakExercise[] = [
       { left: "Samiska", right: "Fjällområden i Norrbotten och Västerbotten" },
       { left: "Meänkieli", right: "Tornedalen vid finska gränsen" },
       { left: "Romani chib", right: "Spritt över hela Sverige, ingen specifik region" },
-      { left: "Finska", right: "Tornedalen, Stockholm och Mälardalen" },
+      { left: "Finska", right: "Stockholm, Mälardalen och industriorter" },
     ],
   },
   {
@@ -544,11 +544,11 @@ const gymnasietExercises: NordiskaSprakExercise[] = [
   {
     type: "match",
     id: "ns-gym-m4",
-    instruction: "Para ihop det falska vänskapet (falskt kognater) med rätt förklaring.",
+    instruction: "Para ihop den falska vännen med rätt förklaring.",
     pairs: [
       { left: "rolig (da) = lugn, stilla", right: "Inte samma som svenska 'rolig' (= kul)" },
-      { left: "rar (da/no) = söt, snäll", right: "Inte samma som svenska 'rar' (= udda, konstig)" },
-      { left: "grine (da) = gråta", right: "Inte samma som svenska 'grina' (= le/skratta)" },
+      { left: "frokost (da) = lunch", right: "Inte samma som svenska 'frukost'" },
+      { left: "grine (da) = skratta", right: "Inte samma som svenska 'grina' (= gråta, göra en grimas)" },
       { left: "by (no) = stad", right: "Inte samma som svenska 'by' (= liten ort)" },
     ],
   },
@@ -636,7 +636,7 @@ const gymnasietExercises: NordiskaSprakExercise[] = [
     id: "ns-gym-rc3",
     instruction: "Läs den danska texten och svara på frågorna.",
     language: "danska",
-    text: "Det danske sprog har gennemgået store forandringer i udtalen de sidste hundrede år. Mange konsonanter er blevet svagere eller er helt forsvundet. Det gælder for eksempel det bløde 'd', som ikke findes i svensk eller norsk. Forskere kalder det 'det store konsonantfald'. Disse ændringer er en vigtig årsag til at danskere er sværere at forstå for svenskere end nordmænd er.",
+    text: "Det danske sprog har gennemgået store forandringer i udtalen de sidste hundrede år. Mange konsonanter er blevet svagere eller er helt forsvundet. Det gælder for eksempel det bløde 'd', som ikke findes i svensk eller norsk. Disse ændringer er en vigtig årsag til at danskere er sværere at forstå for svenskere end nordmænd er.",
     questions: [
       {
         prompt: "Vilken förändring har danskan genomgått enligt texten?",
@@ -654,13 +654,13 @@ const gymnasietExercises: NordiskaSprakExercise[] = [
         prompt: "Varför är danskar svårare att förstå för svenskar än norrmän?",
         options: [
           "Danskar talar för snabbt",
-          "Uttalssförändringarna har gjort danskan mer olik svenska",
+          "Uttalsförändringarna har gjort danskan mer olik svenska",
           "Danskar använder för många engelska ord",
           "Danskan har helt annan grammatik",
         ],
         correct: 1,
         explanation:
-          "Texten pekar på att konsonantförändringarna ('det store konsonantfald') är en viktig orsak till att danskan blivit svårare att förstå för svenskar.",
+          "Texten pekar på att konsonantförändringarna är en viktig orsak till att danskan blivit svårare att förstå för svenskar.",
       },
     ],
   },

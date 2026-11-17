@@ -21,15 +21,15 @@ import { SAJT } from "./qr-kod";
 
 /* -------------------------------- Bildtyper -------------------------------- */
 
-function Overrad({ children }: { children: ReactNode }) {
+export function Overrad({ children }: { children: ReactNode }) {
   return <p className="mb-[1.2cqw] text-[1.7cqw] font-semibold uppercase tracking-[0.25em] text-sky-700">{children}</p>;
 }
 
-function Rubrik({ children }: { children: ReactNode }) {
+export function Rubrik({ children }: { children: ReactNode }) {
   return <h2 className="mb-[2.5cqw] text-[4.4cqw] font-bold leading-tight tracking-tight">{children}</h2>;
 }
 
-function TitelBild({ lektion, overrad, idag }: { lektion: Lektion; overrad: string; idag: string }) {
+export function TitelBild({ lektion, overrad, idag }: { lektion: { titel: string }; overrad: string; idag: string }) {
   return (
     <div className="flex h-full flex-col justify-center border-l-[1.2cqw] border-sky-700 pl-[4cqw]">
       <Overrad>{overrad}</Overrad>
@@ -39,7 +39,7 @@ function TitelBild({ lektion, overrad, idag }: { lektion: Lektion; overrad: stri
   );
 }
 
-function PunktBild({ overrad, rubrik, punkter }: { overrad: string; rubrik: string; punkter: string[] }) {
+export function PunktBild({ overrad, rubrik, punkter }: { overrad: string; rubrik: string; punkter: string[] }) {
   return (
     <div className="flex h-full flex-col">
       <Overrad>{overrad}</Overrad>
@@ -56,7 +56,7 @@ function PunktBild({ overrad, rubrik, punkter }: { overrad: string; rubrik: stri
   );
 }
 
-function FragaBild({ overrad, fraga, nr }: { overrad: string; fraga: Fraga; nr: number }) {
+export function FragaBild({ overrad, fraga, nr }: { overrad: string; fraga: Fraga; nr: number }) {
   return (
     <div className="flex h-full flex-col">
       <Overrad>
@@ -71,7 +71,7 @@ function FragaBild({ overrad, fraga, nr }: { overrad: string; fraga: Fraga; nr: 
   );
 }
 
-function UppgiftBild({
+export function UppgiftBild({
   overrad,
   rubrik,
   text,

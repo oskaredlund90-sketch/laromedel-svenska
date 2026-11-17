@@ -199,7 +199,7 @@ export default async function NordiskaSprakPage({ params }: Props) {
             <Card>
               <CardContent className="py-4">
                 <p className="mb-1 font-semibold text-neutral-900 dark:text-white">
-                  Fastlandsnordiska (östnordiska)
+                  Skandinaviska (fastlandsnordiska)
                 </p>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   <strong>Svenska, danska</strong> och <strong>norska</strong>{" "}
@@ -211,7 +211,7 @@ export default async function NordiskaSprakPage({ params }: Props) {
             <Card>
               <CardContent className="py-4">
                 <p className="mb-1 font-semibold text-neutral-900 dark:text-white">
-                  Önordiska (västnordiska)
+                  Önordiska
                 </p>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   <strong>Isländska</strong> och <strong>färöiska</strong>.
@@ -264,7 +264,7 @@ export default async function NordiskaSprakPage({ params }: Props) {
                   <ul className="space-y-1 pl-4">
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600" />
-                      Norrmän exponeras mer för svenska och dansk media
+                      Norrmän exponeras mer för svenska och danska medier
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600" />
@@ -441,8 +441,9 @@ export default async function NordiskaSprakPage({ params }: Props) {
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600" />
-                        Akta dig för falska vänner: gøy (kul), morsom
-                        (rolig), hytte (stuga)
+                        Akta dig för falska vänner: rolig (lugn), frokost
+                        (frukost på norska, lunch på danska), glad (glad – men
+                        &quot;glass&quot; betyder glas)
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600" />
@@ -525,8 +526,7 @@ export default async function NordiskaSprakPage({ params }: Props) {
               <Tip>
                 <strong>Språkpolitisk fråga:</strong> Nordiska ministerrådet
                 har arbetat för att bevara den skandinaviska
-                grannspråksförståelsen, bland annat genom satsningen{" "}
-                &quot;Nordisk språkförståelse&quot;. Diskutera: Vems ansvar
+                grannspråksförståelsen, bland annat genom satsningar på grannspråksundervisning. Diskutera: Vems ansvar
                 är det att upprätthålla grannspråksförståelsen {"\u2014"}{" "}
                 individens, skolans eller statens?
               </Tip>

@@ -184,7 +184,7 @@ const HOGSTADIET_PERIODS = [
       {
         name: "Landskapslagarna (1200-talet)",
         description:
-          "De äldsta svenska lagtexterna, skrivna på folkspråket. Varje landskap hade sina lagar, t.ex. Västgötalagen (ca 1225) som är den äldsta bevarade texten på svenska.",
+          "De äldsta svenska lagtexterna, skrivna på folkspråket. Varje landskap hade sina lagar, t.ex. Västgötalagen, den äldsta bevarade boken på svenska skriven med latinska bokstäver (texten från 1220-talet, handskriften från ca 1280).",
       },
       {
         name: "Heliga Birgittas Uppenbarelser (1300-talet)",
@@ -194,7 +194,7 @@ const HOGSTADIET_PERIODS = [
       {
         name: "Hansans inflytande (1300\u20131400-talet)",
         description:
-          "Tyska köpmän dominerade handeln och med dem kom tusentals tyska lånord. Uppskattningsvis en tredjedel av svenska ordförrådet har tyskt ursprung.",
+          "Tyska köpmän dominerade handeln och med dem kom tusentals tyska lånord. En stor del av svenskans ordförråd har tyskt ursprung.",
       },
       {
         name: "Erikskrönikan (1320-talet)",
@@ -236,7 +236,7 @@ const HOGSTADIET_PERIODS = [
       },
     ],
     connection:
-      "Bibelöversättningen 1541 lade grunden för modernt svenskt skriftspråk. Många av de uttryck vi använder dagligen \u2014 som \u201Dsyndabock\u201D och \u201Dbarmhärtig\u201D \u2014 kommer från bibelspråket.",
+      "Bibelöversättningen 1541 lade grunden för modernt svenskt skriftspråk. Många av de uttryck vi använder dagligen \u2014 som \u201Dsyndabock\u201D \u2014 kommer från bibelspråket.",
   },
   {
     title: "Yngre nysvenska",
@@ -270,7 +270,7 @@ const HOGSTADIET_PERIODS = [
       {
         name: "Allmänna folkskolan (1842)",
         description:
-          "Folkskolan gjorde att alla barn lärde sig läsa och skriva, vilket ökade behovet av ett standardiserat skriftspråk.",
+          "Folkskolan (1842) gav alla barn skolgång och lärde dem skriva – läsa kunde många redan genom kyrkans husförhör. Det ökade behovet av ett standardiserat skriftspråk.",
       },
     ],
     connection:
@@ -283,8 +283,8 @@ const HOGSTADIET_PERIODS = [
     context:
       "Stavningsreformen 1906 moderniserade skriftspråket markant. Under 1900-talet genomgick svenskan stora förändringar: du-reformen, engelska lånords intåg och digitaliseringens påverkan på språk och kommunikation.",
     characteristics: [
-      "Stavningsreformen 1906: hv blev v (hvad \u2192 vad), dt blev t (godt \u2192 gott), f ersatte fv (hufvud \u2192 huvud)",
-      "Du-reformen på 1960-talet: bortfallet av tilltalsordet \u201DNi\u201D till förmån för \u201Ddu\u201D",
+      "Stavningsreformen 1906: hv blev v (hvad \u2192 vad), dt blev t (godt \u2192 gott), v ersatte fv och f (hufvud \u2192 huvud, lefva \u2192 leva)",
+      "Du-reformen på 1960-talet: titlar och tilltal i tredje person (\u201DVill doktorn …?\u201D) ersattes av \u201Ddu\u201D",
       "Engelska lånord strömmar in, särskilt från 1940-talet: jobb, dejt, mejl, podcast, streama",
       "Nya kommunikationsformer: sms-språk, chattspråk, emojier, sociala medier",
       "Språklagstiftning: sedan 2009 är svenska huvudspråk i Sverige enligt språklagen",
@@ -293,7 +293,7 @@ const HOGSTADIET_PERIODS = [
       {
         name: "Stavningsreformen (1906)",
         description:
-          "Riksdagen beslutade om en genomgripande stavningsreform som moderniserade skriftspråket och gjorde det mer logiskt och lättläst.",
+          "Regeringen (ecklesiastikminister Fridtjuv Berg) beslutade om en genomgripande stavningsreform som moderniserade skriftspråket och gjorde det mer logiskt och lättläst.",
       },
       {
         name: "Du-reformen (1960-talet)",
@@ -312,7 +312,7 @@ const HOGSTADIET_PERIODS = [
       },
     ],
     connection:
-      "Vi lever mitt i nusvenskans fortsatta utveckling. Varje år lägger SAOL till nya ord \u2014 som padel, swisha och klimatångest. Språket formas av alla som använder det, inklusive dig.",
+      "Vi lever mitt i nusvenskans fortsatta utveckling. Varje år samlar Språkrådet nya ord i en nyordslista, och nya upplagor av SAOL tar med ord som swisha och klimatångest. Språket formas av alla som använder det, inklusive dig.",
   },
 ];
 
@@ -330,8 +330,8 @@ const GYMNASIET_PERIODS = [
     characteristics: [
       "Två runrader användes: den äldre futharken (24 tecken, ca 200\u2013700 e.Kr.) och den yngre futharken (16 tecken, från ca 700 e.Kr.)",
       "Rikt kasussystem med fyra kasus: nominativ, genitiv, dativ, ackusativ \u2014 både substantiv och adjektiv böjdes efter kasus, genus och numerus",
-      "Verben hade både konjunktiv och indikativ i presens och preteritum, samt dualisformer (vi två)",
-      "Vokalsystemet var rikt med nasal- och långvokaler som senare försvann",
+      "Verben hade både konjunktiv och indikativ i presens och preteritum, och pronomen hade dualisformer (vit = vi två)",
+      "Vokalsystemet var rikare än i dag, bland annat med nasalvokaler som senare försvann",
       "Ordföljden var friare än i modern svenska tack vare kasusmarkering \u2014 subjekt, objekt och predikat kunde stå i varierande ordning",
       "Språket var fortfarande ömsesidigt begripligt med danska och norska \u2014 man talar om \u201Durnordiska\u201D för den äldsta perioden och \u201Dfornnordiska\u201D för den yngre",
     ],
@@ -368,8 +368,8 @@ const GYMNASIET_PERIODS = [
       "Övergången till latinskt alfabet och uppkomsten av längre prosatexter markerar fornsvenskans början. Perioden präglas av två stora yttre krafter: kyrkans latinkultur och Hansaförbundets enorma ekonomiska och språkliga inflytande. Medellågtyskan blev ett prestige- och handelsspråk som fundamentalt omformade svenskans ordförråd och syntax.",
     characteristics: [
       "Kasussystemet förenklades successivt: distinktionen dativ/ackusativ försvann i de flesta dialekter under perioden",
-      "Bestämda artikeln utvecklades: \u201Dhuset\u201D (slutartikel) blev standard \u2014 detta saknas i många andra europeiska språk och är en särnordisk innovation",
-      "Medellågtyska lånord var massiva: uppskattningsvis 40 % av svenska ordförrådet har tyskt ursprung. Det gällde både vardagliga ord (arbeta, betala, billig) och abstrakta (begripa, avsikt, framtid)",
+      "Bestämda artikeln utvecklades: \u201Dhuset\u201D (slutartikel) blev standard \u2014 något som saknas i de flesta andra europeiska språk",
+      "Medellågtyska lånord var mycket många, och en stor del av svenskans ordförråd har tyskt ursprung. Det gällde både vardagliga ord (arbeta, betala, billig) och abstrakta (begripa, avsikt, framtid)",
       "Även tyska affix lånades in: be-, an-, för-, -skap, -het, -aktig, -bar, -mässig, vilka är produktiva än idag",
       "Ordföljden stabiliserades mot SVO-mönster (subjekt\u2013verb\u2013objekt) som i modern svenska",
       "Skriftspråksnormen varierade kraftigt mellan regioner \u2014 texter från Västergötland skiljer sig markant från texter från Uppland",
@@ -383,12 +383,12 @@ const GYMNASIET_PERIODS = [
       {
         name: "Hansans språkliga påverkan",
         description:
-          "Tyska köpmän dominerade i städerna och många invandrare från tyska områden bosatte sig i Sverige. Resultatet var inte bara lånord utan även språkstrukturell påverkan: konjunktioner som \u201Datt\u201D och \u201Deftersom\u201D, samt prefix och suffix.",
+          "Tyska köpmän dominerade i städerna och många invandrare från tyska områden bosatte sig i Sverige. Resultatet var inte bara lånord utan även språkstrukturell påverkan: ord som \u201Dmen\u201D och \u201Ddock\u201D, samt prefix och suffix (be-, för-, -het, -bar).",
       },
       {
         name: "Språkexempel: Fornsvensk lag",
         description:
-          "Ur Västgötalagen: \u201DSverigher ä äldra\u2026\u201D (Sverige är att välja\u2026, dvs. konungen väljs av svearna). Texten visar typiska fornsvenska drag: verbändelse -er i presens, annan ordföljd och ordformer som är svårbegripliga för moderna läsare.",
+          "Ur Västgötalagen: \u201DSwear egho konong at taka ok sva vrækæ\u201D (svearna har rätt att välja kung och också att avsätta honom). Texten visar typiska fornsvenska drag: andra ordformer, annan stavning och ord som är svåra för moderna läsare.",
       },
       {
         name: "Birgittinsk prosa",
@@ -461,7 +461,7 @@ const GYMNASIET_PERIODS = [
       {
         name: "Svenska Akademien (1786)",
         description:
-          "Gustav III grundade akademien efter franskt mönster. Dess normering av språket genom ordlistan (SAOL, första upplagan 1874) och ordboken (SAOB, påbörjad 1898) är fortfarande central.",
+          "Gustav III grundade akademien efter franskt mönster. Dess normering av språket genom ordlistan (SAOL, första upplagan 1874) och ordboken (SAOB, första häftet 1893) är fortfarande central.",
       },
       {
         name: "Folkskolan (1842)",
@@ -486,9 +486,9 @@ const GYMNASIET_PERIODS = [
     characteristics: [
       "Stavningsreformen 1906: hv \u2192 v (hvad \u2192 vad), dt \u2192 t (godt \u2192 gott), fv \u2192 v (hufvud \u2192 huvud), f \u2192 v i vissa ord",
       "Du-reformen (1960-talet): de invecklade tilltalsnormerna med titlar ersattes av generellt \u201Ddu\u201D \u2014 en social revolution som speglade jämställdhetssträvanden",
-      "Engelska lånord i vågor: 1940-talet (jazz, film, team), 1980-talet (dator, mjukvara), 2000-talet (mejl, blogg, streama, padda)",
+      "Engelska lånord i vågor: första halvan av 1900-talet (jazz, film, sport), efter 1945 (team, tejp, jeans), 2000-talet (mejl, blogg, streama)",
       "Språkpolitik formaliserades: Språklagen 2009, Språkrådet, Klarspråk i myndigheter",
-      "Multietniskt ungdomsspråk (Rinkebysvenska/förtortsspråk) utmanar och berikar normen",
+      "Multietniskt ungdomsspråk (ibland kallat förortssvenska) utmanar och berikar normen",
       "Digitalt språk: emojier, förkortningar, röstmeddelanden suddar ut gränsen mellan tal och skrift",
       "Genusneutral språkutveckling: pronomenet \u201Dhen\u201D togs in i SAOL 2015",
     ],
@@ -496,12 +496,12 @@ const GYMNASIET_PERIODS = [
       {
         name: "Stavningsreformen (1906)",
         description:
-          "En genomgripande reform som beslutades av riksdagen efter årtionden av debatt. Reformen berodde på demokratiseringssträvanden: det gamla stavningssättet var svårt att lära sig och gynnande de högre klasserna.",
+          "En genomgripande reform som regeringen beslutade 1906 efter årtionden av debatt. Reformen berodde på demokratiseringssträvanden: det gamla stavningssättet var svårt att lära sig och gynnande de högre klasserna.",
       },
       {
         name: "Du-reformen (1960-talet)",
         description:
-          "Generaldirektören på Medicinalverket, Bror Rexed, började tilltala alla med \u201Ddu\u201D 1967. Det spred sig snabbt i hela samhället. Reformen saknade formellt beslut men är en av de största sociala språkförändringarna i Sverige.",
+          "Generaldirektören för Medicinalstyrelsen, Bror Rexed, började tilltala alla med \u201Ddu\u201D 1967. Det spred sig snabbt i hela samhället. Reformen saknade formellt beslut men är en av de största sociala språkförändringarna i Sverige.",
       },
       {
         name: "Språklagen (2009)",
@@ -649,7 +649,7 @@ export default async function SprakhistoriaPage({ params }: Props) {
                   <CardContent>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
                       Latinet var kyrkans och lärdomens språk i över 500 år.
-                      Tidiga lån: kyrka, präst, skola, fönster, bok. Senare
+                      Tidiga lån: kyrka, präst, skola, fönster, brev. Senare
                       vetenskapliga lån: universitet, professor, grammatik.
                       Många latinska lån kom indirekt via tyskan.
                     </p>
@@ -698,8 +698,8 @@ export default async function SprakhistoriaPage({ params }: Props) {
                   <CardContent>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
                       Engelskan dominerar den moderna lånordsvägen. Tidiga lån
-                      (1900-talet): sport, film, jazz, strejk. Teknik
-                      (1980-tal): dator, mjukvara, surfplatta. Digitalt
+                      (1900-talet): sport, film, jazz, strejk. Teknik:
+                      chip, app, laptop. Digitalt
                       (2000-tal): mejl, blogg, podda, streama, googla. Debatten
                       om engelska lån är aktuell: är de ett hot mot svenskan
                       eller en naturlig del av språkutvecklingen?
@@ -797,7 +797,7 @@ export default async function SprakhistoriaPage({ params }: Props) {
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">
                       Runsvenskan hade fyra kasus. Under fornsvenskan smälte
                       dativ och ackusativ samman. I modern svenska finns kasus
-                      bara kvar i pronomen (jag/mig, han/honom) och fasta
+                      kvar i pronomen (jag/mig, han/honom), i genitiv-s och i fasta
                       uttryck (till sjöss, i mannaminne). Istället använder vi
                       prepositioner och ordföljd för att markera grammatiska
                       roller.
@@ -816,8 +816,8 @@ export default async function SprakhistoriaPage({ params }: Props) {
                       kasusmarkeringen. När kasussystemet försvann blev
                       ordföljden fastare: SVO (subjekt\u2013verb\u2013objekt) i
                       huvudsatser och V2-regeln (verbet på andra plats) är nu
-                      grundläggande. Bisatsernas ordföljd (BIFF-regeln: bisats,
-                      inte, fundament, finit verb) utvecklades också under denna
+                      grundläggande. Bisatsernas ordföljd (BIFF-regeln: Bisats –
+                      Inte Före Finit verb) utvecklades också under denna
                       period.
                     </p>
                   </CardContent>
@@ -832,8 +832,8 @@ export default async function SprakhistoriaPage({ params }: Props) {
                       har i modern svenska nästan helt försvunnit \u2014 kvar är
                       fasta uttryck som \u201Dleve kungen\u201D och \u201Dvore
                       det inte för\u2026\u201D. Pluralformer av verb (vi gingo,
-                      de kommo) försvann ur skriftspråket 1945 efter officiellt
-                      beslut.
+                      de kommo) försvann gradvis ur skriftspråket under
+                      första halvan av 1900-talet.
                     </p>
                   </CardContent>
                 </Card>
