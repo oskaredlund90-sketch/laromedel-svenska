@@ -19,6 +19,7 @@ import {
   Dumbbell,
 } from "lucide-react";
 import SvaOvningar from "@/components/sva-ovningar";
+import { SvaDrag } from "@/components/sva/sva-drag";
 
 /* ------------------------------------------------------------------ */
 /*  Age-group adapted content                                          */
@@ -487,6 +488,8 @@ export default async function SvaPage({ params }: Props) {
       </nav>
 
       <SvaInfografik stadie={age} />
+
+      <SvaDrag stadie={age} />
 
       {/* ---- Main content sections ---- */}
       <div className="space-y-16">
